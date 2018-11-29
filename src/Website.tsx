@@ -1,19 +1,18 @@
 import * as React from 'react';
+import Body from './components/Body';
+import Footer from './components/Footer';
+import Header from "./components/Header";
 import './Website.css';
 
-import logo from './logo.svg';
+const Website: React.FunctionComponent = props => {
+  return (
 
-class Website extends React.Component {
-  public render() {
-    return (
-      <div className="Website">
-        <header>
-          <img src={logo} className="Website-logo" alt="logo" />
-          <h1>Site en construction</h1>
-        </header>
-      </div>
-    );
-  }
+    <div>
+      <Header />
+      <Body />
+      <Footer />
+    </div>
+  )
 }
 
 export default Website;
