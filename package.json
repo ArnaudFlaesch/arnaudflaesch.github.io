@@ -12,12 +12,8 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "chart.js": "^2.7.3",
-    "github-card": "^1.2.1",
-    "hexo-github-card": "^1.0.2",
-    "jquery": "^3.3.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-github": "^2.1.2",
     "react-github-cards": "^1.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0"
