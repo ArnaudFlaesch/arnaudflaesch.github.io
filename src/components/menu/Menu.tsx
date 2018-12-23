@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 const Menu: React.FunctionComponent = props => {
     return (
         <div>
-            <nav>
-                <ul className="vertical dropdown menu">
-                    <li>
-                        <Link to="/">CV</Link>
-                    </li>
-                    <li>
-                        <Link to="/skills/">Compétences</Link>
-                    </li>
-                </ul>
-            </nav>
+            <ul className="nav flex-column">
+                <li className="nav-item">
+                    <a className="nav-link active" href="#"><Link to="/">CV</Link></a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#"><Link to="/projects/">Projets</Link></a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#"><Link to="/skills">Compétences</Link></a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#"><Link to="/perso/">Personnel</Link></a>
+                </li>
+            </ul>
         </div>
     )
 }
