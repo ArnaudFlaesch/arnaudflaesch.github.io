@@ -13,14 +13,14 @@ const Body: React.FunctionComponent = props => {
         <Router>
             <div>
                 <Menu />
-                <header className="body">
+                <header className="center">
                     <img src={logo} className="Website-logo" alt="logo" />
                     <h1>Site en construction</h1>
-                    <Route path="/" exact={true} component={CVPage} />
-                    <Route path="/projects/" component={ProjectsPage} />
-                    <Route path="/skills/" component={SkillsPage} />
-                    <Route path="/perso/" component={PersoPage} />
                 </header>
+                <Route path="/" exact={true} component={CVPage} />
+                <Route path="/projects/" component={ProjectsPage} />
+                <Route path="/skills/" component={SkillsPage} />
+                <Route path="/perso/" component={PersoPage} />
             </div>
         </Router>
     )

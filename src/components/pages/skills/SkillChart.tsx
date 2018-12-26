@@ -1,7 +1,7 @@
 import { Chart } from "chart.js";
 import * as React from 'react';
 import { ISkill } from './ISkill';
-import "./Skills.css";
+import "./SkillChart.css";
 
 class SkillChart extends React.Component<ISkill> {
 
@@ -12,9 +12,8 @@ class SkillChart extends React.Component<ISkill> {
     public componentDidMount() {
         const ctx: any = document.getElementById(this.props.id);
         if (ctx) {
-            const myChart = new Chart(ctx.getContext('2d'), {
+            const radarChart = new Chart(ctx.getContext('2d'), {
                 data: {
-
                     datasets: [{
                         data: this.props.level.map((level) => {
                             return (level);
@@ -28,14 +27,12 @@ class SkillChart extends React.Component<ISkill> {
                 },
                 options: {
                     responsive: true,
-                    scales: {
+                    scale: {
                         ticks: {
-                            minor: {
-                                stepSize: 1,
-                                beginAtZero: true,
-                                min: 0,
-                                max: 10
-                            }
+                            display: false,
+                            beginAtZero: true,
+                            min: 0,
+                            max: 10
                         }
                     }
                 },
