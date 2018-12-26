@@ -6,16 +6,16 @@ const Menu: React.FunctionComponent = props => {
         <div>
             <ul className="nav flex-column">
                 <li className="nav-item">
-                    <a className="nav-link active" href="#"><Link to="/">CV</Link></a>
+                    <Link to="/" className="nav-link">CV</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#"><Link to="/projects/">Projets</Link></a>
+                    <Link to="/projects/" className="nav-link">Projets</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#"><Link to="/skills">Compétences</Link></a>
+                    <Link to="/skills" className="nav-link">Compétences</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#"><Link to="/perso/">Personnel</Link></a>
+                    <Link to="/perso/" className="nav-link">Personnel</Link>
                 </li>
             </ul>
         </div>

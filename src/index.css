@@ -1,5 +1,8 @@
-.Website {
+body {
   background-color : wheat;
+}
+
+.Website {
   height: 100%;
   width : 100%;
 }
