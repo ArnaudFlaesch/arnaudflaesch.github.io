@@ -3,9 +3,18 @@
   "private": true,
   "description": "A simple portfolio for developers",
   "version": "0.1.2",
+  "engines": {
+    "node": ">=14.0.0 <=15.12.0",
+    "npm": "7.9.0"
+  },
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop -o",
+    "ci": "run-p -r start cy:run:ci",
+    "cy:open": "cypress open",
+    "cy:run": "wait-on http://localhost:8000 && cypress run --headless --browser chrome",
+    "cy:run:ci": "NODE_ENV=develop npm run cy:run -- --config-file cypress-test.json",
+    "cy:verify": "npx cypress verify",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "reset": "rm -rf .cache/ public/",
@@ -40,8 +49,15 @@
     "yup": "0.26.10"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "3.9.4",
+    "@types/mocha": "8.2.2",
+    "@typescript-eslint/eslint-plugin": "4.21.0",
+    "@typescript-eslint/parser": "4.21.0",
     "babel-eslint": "9.0.0",
+    "babel-plugin-istanbul": "6.0.0",
     "babel-plugin-styled-components": "1.12.0",
+    "babel-preset-gatsby": "1.2.0",
+    "cypress": "^7.0.1",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.1",
     "eslint-config-prettier": "4.3.0",
@@ -53,6 +69,7 @@
     "eslint-plugin-react": "7.23.2",
     "eslint-plugin-react-hooks": "1.7.0",
     "prettier": "1.19.1",
-    "typescript": "4.2.4"
+    "typescript": "4.2.4",
+    "wait-on": "5.3.0"
   }
 }

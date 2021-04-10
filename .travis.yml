@@ -1,0 +1,29 @@
+os: linux
+dist: xenial
+
+language: node_js
+
+node_js:
+  - 15.8.0
+
+install: yarn install --frozen-lockfile
+
+cache:
+  directories:
+    - '$HOME/.npm'
+    - ~/.cache/yarn
+    - ~/.cache/Cypress
+
+before_install:
+  - yarn global add typescript coveralls codacy-coverage npm-run-all wait-on
+
+before_script:
+  - npm run eslint
+
+script: npm run ci
+
+after_success:
+  - npx nyc report --reporter lcov --report-dir coverage
+  - cat ./coverage/lcov.info | coveralls
+  - cat ./coverage/lcov.info | codacy-coverage
+  - bash <(curl -s https://codecov.io/bash)
