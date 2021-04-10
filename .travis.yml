@@ -17,9 +17,6 @@ cache:
 before_install:
   - yarn global add typescript coveralls codacy-coverage npm-run-all wait-on
 
-before_script:
-  - npm run eslint
-
 script: npm run ci
 
 after_success:
