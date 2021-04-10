@@ -1,12 +1,12 @@
 {
   "env": {
-    "develop": {
+    "test": {
       "plugins": [
         [
           "babel-plugin-istanbul",
           {
             "include": [
-              "src/**/*.js"
+              "src/**/*.ts"
             ]
           }
         ]

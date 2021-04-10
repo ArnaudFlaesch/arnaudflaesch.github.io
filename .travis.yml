@@ -20,7 +20,6 @@ before_install:
 script: npm run ci
 
 after_success:
-  - npx nyc report --reporter lcov --report-dir coverage
   - cat ./coverage/lcov.info | coveralls
   - cat ./coverage/lcov.info | codacy-coverage
   - bash <(curl -s https://codecov.io/bash)
