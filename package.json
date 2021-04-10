@@ -15,8 +15,8 @@
     "cy:run": "wait-on http://localhost:8000 && cypress run --headless --browser chrome",
     "cy:run:ci": "NODE_ENV=develop npm run cy:run -- --config-file cypress-test.json",
     "cy:verify": "npx cypress verify",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
     "reset": "rm -rf .cache/ public/",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
