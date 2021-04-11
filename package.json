@@ -19,7 +19,7 @@
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
     "reset": "rm -rf .cache/ public/",
-    "test":  "npm run cy:run"
+    "test": "npm run cy:run"
   },
   "dependencies": {
     "axios": "0.21.1",
