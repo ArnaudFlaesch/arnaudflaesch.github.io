@@ -1,6 +1,6 @@
 {
   "env": {
-    "dev": {
+    "development": {
       "plugins": [
         [
           "babel-plugin-istanbul",
