@@ -1,6 +1,6 @@
 {
   "env": {
-    "test": {
+    "dev": {
       "plugins": [
         [
           "babel-plugin-istanbul",
