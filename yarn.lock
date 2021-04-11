@@ -7129,7 +7129,7 @@ gatsby-plugin-canonical-urls@3.2.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-plugin-favicons@ArnaudFlaesch/gatsby-plugin-favicon#ft_webpack5:
+gatsby-plugin-favicon@ArnaudFlaesch/gatsby-plugin-favicon#ft_webpack5:
   version "3.1.6"
   resolved "https://codeload.github.com/ArnaudFlaesch/gatsby-plugin-favicon/tar.gz/8bbbba877c1300584da1731a817f8793729c82e3"
   dependencies:

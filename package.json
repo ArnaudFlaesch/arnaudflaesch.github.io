@@ -28,7 +28,7 @@
     "gatsby": "3.2.1",
     "gatsby-image": "3.2.0",
     "gatsby-plugin-canonical-urls": "3.2.0",
-    "gatsby-plugin-favicons": "ArnaudFlaesch/gatsby-plugin-favicon#ft_webpack5",
+    "gatsby-plugin-favicon": "ArnaudFlaesch/gatsby-plugin-favicon#ft_webpack5",
     "gatsby-plugin-google-analytics": "3.2.0",
     "gatsby-plugin-manifest": "3.2.0",
     "gatsby-plugin-nprogress": "3.2.0",
