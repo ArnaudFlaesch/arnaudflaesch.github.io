@@ -5,6 +5,8 @@
 [![codecov](https://codecov.io/gh/ArnaudFlaesch/arnaudflaesch.github.io/branch/master/graph/badge.svg)](https://codecov.io/gh/ArnaudFlaesch/arnaudflaesch.github.io)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/92532453d7fd4c58ba8a659c4f9133d4)](https://www.codacy.com/gh/ArnaudFlaesch/arnaudflaesch.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ArnaudFlaesch/arnaudflaesch.github.io&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/92532453d7fd4c58ba8a659c4f9133d4)](https://www.codacy.com/gh/ArnaudFlaesch/arnaudflaesch.github.io/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ArnaudFlaesch/arnaudflaesch.github.io&utm_campaign=Badge_Coverage)
+[![dependencies Status](https://status.david-dm.org/gh/ArnaudFlaesch/arnaudflaesch.github.io.svg)](https://david-dm.org/ArnaudFlaesch/arnaudflaesch.github.io)
+[![devDependencies Status](https://status.david-dm.org/gh/ArnaudFlaesch/arnaudflaesch.github.io.svg?type=dev)](https://david-dm.org/ArnaudFlaesch/arnaudflaesch.github.io?type=dev)
 ## Theme
 
 [Gatsby-theme-portfolio](https://github.com/smakosh/gatsby-theme-portfolio)
