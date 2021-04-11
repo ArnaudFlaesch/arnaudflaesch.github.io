@@ -46,7 +46,7 @@
     "react-dom": "16.14.0",
     "react-google-recaptcha": "2.1.0",
     "react-helmet": "6.1.0",
-    "styled-components": "4.4.1",
+    "styled-components": "5.2.3",
     "yup": "0.32.9"
   },
   "devDependencies": {
