@@ -9,7 +9,7 @@ const ToggleTheme = () => {
 
   return (
     <Wrapper type="button" onClick={toggleTheme}>
-      <img src={theme === 'light' ? moonIcon : sunIcon} alt={theme} />
+      <img id='themeIconToggle' src={theme === 'light' ? moonIcon : sunIcon} alt={theme} />
     </Wrapper>
   );
 };
