@@ -1,14 +1,18 @@
 {
+  "env": {
+    "test": {
       "plugins": [
         [
           "babel-plugin-istanbul",
           {
             "include": [
-              "src/**/*.ts"
+              "src/**/*.tsx"
             ]
           }
         ]
-      ],
+      ]
+    }
+  },
   "presets": [
     [
       "babel-preset-gatsby",
