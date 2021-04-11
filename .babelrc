@@ -6,7 +6,8 @@
           "babel-plugin-istanbul",
           {
             "include": [
-              "src/**/*.tsx"
+              "src/**/*.tsx",
+              "src/**/*.ts"
             ]
           }
         ]
