@@ -1,18 +1,15 @@
 {
   "name": "arnaudflaesch.github.io",
-  "private": true,
+  "author": "Arnaud Flaesch",
   "version": "0.1.2",
   "description": "Portfolio professionnel",
-  "author": "Arnaud Flaesch",
   "homepage": "https://arnaudflaesch.github.io",
+  "private": true,
+
   "engines": {
     "node": ">=14.0.0 <=15.12.0",
     "npm": "7.9.0"
   },
-  "keywords": [
-    "portfolio",
-    "website"
-  ],
   "scripts": {
     "build": "gatsby build",
     "start": " gatsby develop -o",
