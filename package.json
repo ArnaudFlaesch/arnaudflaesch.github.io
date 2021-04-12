@@ -1,16 +1,24 @@
 {
-  "name": "portfolio",
+  "name": "arnaudflaesch.github.io",
   "private": true,
-  "description": "A simple portfolio for developers",
   "version": "0.1.2",
+  "description": "Portfolio professionnel",
+  "author": "Arnaud Flaesch",
+  "homepage": "https://arnaudflaesch.github.io",
   "engines": {
     "node": ">=14.0.0 <=15.12.0",
     "npm": "7.9.0"
   },
+  "keywords": [
+    "portfolio",
+    "website"
+  ],
   "scripts": {
     "build": "gatsby build",
     "start": " gatsby develop -o",
     "start:ci": "export NODE_ENV=development && npm run start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "ci": "run-p -r start:ci cy:run:ci",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",
@@ -39,6 +47,7 @@
     "gatsby-source-filesystem": "3.2.0",
     "gatsby-source-graphql": "3.2.0",
     "gatsby-transformer-sharp": "3.2.0",
+    "gh-pages": "^2.0.1",
     "prop-types": "15.7.2",
     "react": "17.0.2",
     "react-anchor-link-smooth-scroll": "1.0.12",
