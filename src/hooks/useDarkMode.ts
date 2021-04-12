@@ -14,7 +14,11 @@ export default () => {
     }
   };
 
-  const prefersDarkMode = useMedia(['(prefers-color-scheme: dark)'], [true], false);
+  const prefersDarkMode = useMedia(
+    ['(prefers-color-scheme: dark)'],
+    [true],
+    false
+  );
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
