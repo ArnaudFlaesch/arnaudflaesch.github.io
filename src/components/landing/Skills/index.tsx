@@ -6,7 +6,7 @@ import dev from 'assets/illustrations/skills.svg';
 import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
 
 export const Skills = () => {
-  const { theme } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <Wrapper id="about">

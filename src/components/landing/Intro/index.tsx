@@ -7,7 +7,7 @@ import dev from 'assets/illustrations/dev.svg';
 import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
 
 export const Intro = () => {
-  const { theme } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <Wrapper>
