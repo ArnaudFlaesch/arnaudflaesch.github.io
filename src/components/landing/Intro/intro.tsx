@@ -9,7 +9,7 @@ export const Intro = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className="wrapper">
+    <div className="wrapperIntro">
       <Header />
       <div className="introWrapper container">
         <div className={"details " + theme}>
