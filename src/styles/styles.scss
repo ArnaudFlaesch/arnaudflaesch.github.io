@@ -35,6 +35,41 @@
     background: gray;
   }
   &.secondary {
-    background: #001F3F;
+    background: #001f3f;
+  }
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #6c63ff;
+  padding: 0.8rem 1rem;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+
+  &::placeholder {
+    color: #a7a7a7;
+  }
+
+  &.error {
+    border-color: #ff4136;
+  }
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 1rem;
+  height: 100%;
+  &.light {
+    background: '#fff';
+  }
+  &.dark {
+    background: '#181717';
   }
 }

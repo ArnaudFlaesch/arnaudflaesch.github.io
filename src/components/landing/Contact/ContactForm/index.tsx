@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Formik, Form, FastField, ErrorMessage } from 'formik';
 import Recaptcha from 'react-google-recaptcha';
 import * as Yup from 'yup';
-import { Input } from 'components/common';
 import { Error, Center, InputField } from './styles';
 
 export default () => (
@@ -53,41 +52,38 @@ export default () => (
     {({ values, touched, errors, setFieldValue, isSubmitting }) => (
       <Form>
         <InputField>
-          <Input
-            as={FastField}
+          <input
+            className={'input ' + (touched.name && errors.name ? 'error' : '')}
             type="text"
             name="name"
-            component="input"
             aria-label="name"
             placeholder="Full name*"
-            error={touched.name && errors.name}
           />
           <ErrorMessage component={Error} name="name" />
         </InputField>
         <InputField>
-          <Input
+          <input
+            className={
+              'input ' + (touched.email && errors.email ? 'error' : '')
+            }
             id="email"
             aria-label="email"
-            component="input"
-            as={FastField}
             type="email"
             name="email"
             placeholder="Email*"
-            error={touched.email && errors.email}
           />
           <ErrorMessage component={Error} name="email" />
         </InputField>
         <InputField>
-          <Input
-            as={FastField}
-            component="textarea"
+          <textarea
+            className={
+              'input ' + (touched.message && errors.message ? 'error' : '')
+            }
             aria-label="message"
             id="message"
-            rows="8"
-            type="text"
+            rows={8}
             name="message"
             placeholder="Message*"
-            error={touched.message && errors.message}
           />
           <ErrorMessage component={Error} name="message" />
         </InputField>

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeContext } from 'providers/ThemeProvider';
-import { Card, TitleWrap } from 'components/common';
 import Star from 'components/common/Icons/Star';
 import Fork from 'components/common/Icons/Fork';
 import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles';
@@ -51,12 +50,12 @@ export const Projects = () => {
       <Grid>
         {edges.map(({ node }) => (
           <Item key={node.id} as="a" href={node.url} target="_blank" rel="noopener noreferrer" theme={theme}>
-            <Card theme={theme}>
+            <div className={"card " + theme}>
               <Content>
                 <h4>{node.name}</h4>
                 <p>{node.description}</p>
               </Content>
-              <TitleWrap>
+              <div className="titleWrap">
                 <Stats theme={theme}>
                   <div>
                     <Star color={theme === "light" ? "#000" : "#fff"} />
@@ -78,8 +77,8 @@ export const Projects = () => {
                     }
                   </Languages>
                 </Stats>
-              </TitleWrap>
-            </Card>
+              </div>
+            </div>
           </Item>
         ))}
       </Grid>
