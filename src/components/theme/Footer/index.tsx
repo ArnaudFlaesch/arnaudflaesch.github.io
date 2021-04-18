@@ -1,11 +1,10 @@
 import React from 'react';
-import { Container } from 'components/common';
 import { Wrapper, Flex, Links, Details } from './styles';
 import social from './social.json';
 
 export const Footer = () => (
   <Wrapper>
-    <Flex as={Container}>
+    <Flex className="container">
       <Details>
         <h2>John Doe</h2>
         <span>
