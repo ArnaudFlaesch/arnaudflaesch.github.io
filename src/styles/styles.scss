@@ -73,18 +73,3 @@
     background: '#181717';
   }
 }
-
-html {
-  &.light {
-    body {
-      color :'hsla(0, 0%, 0%, 0.8)';
-      background-color : '#fff';
-    }
-  }
-  &.dark {
-    body {
-      color : '#fff';
-      background-color : '#212121';
-    }
-  }
-}
