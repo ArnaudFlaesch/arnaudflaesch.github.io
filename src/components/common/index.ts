@@ -1,2 +1,2 @@
-export * from './Layout';
-export * from './SEO';
+export * from './Layout/layout';
+export * from './SEO/seo';
