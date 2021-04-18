@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { ThemeContext } from 'providers/ThemeProvider';
 import dev from 'assets/illustrations/skills.svg';
-import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
+import { Wrapper, SkillsWrapper, Details, Thumbnail } from './skills.scss';
 
 export const Skills = () => {
   const { theme } = useContext(ThemeContext);
