@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeContext } from 'providers/ThemeProvider';
 import Star from 'components/common/Icons/Star';
 import Fork from 'components/common/Icons/Fork';
-import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles';
+import  './projects.scss';
 
 export const Projects = () => {
   const { theme }  = useContext(ThemeContext);
@@ -45,18 +45,18 @@ export const Projects = () => {
     `
   );
   return (
-    <Wrapper className="container" id="projects">
+    <div className="wrapper container" id="projects">
       <h2>Projects</h2>
-      <Grid>
+      <div className="grid">
         {edges.map(({ node }) => (
-          <Item key={node.id} as="a" href={node.url} target="_blank" rel="noopener noreferrer" theme={theme}>
+          <a className="item" key={node.id} href={node.url} target="_blank" rel="noopener noreferrer">
             <div className={"card " + theme}>
-              <Content>
+              <div className="content">
                 <h4>{node.name}</h4>
                 <p>{node.description}</p>
-              </Content>
+              </div>
               <div className="titleWrap">
-                <Stats theme={theme}>
+                <div className="stats" >
                   <div>
                     <Star color={theme === "light" ? "#000" : "#fff"} />
                     <span>{node.stargazers.totalCount}</span>
@@ -65,9 +65,9 @@ export const Projects = () => {
                     <Fork color={theme === "light" ? "#000" : "#fff"} />
                     <span>{node.forkCount}</span>
                   </div>
-                </Stats>
-                <Stats theme={theme}>
-                  <Languages>
+                </div>
+                <div className="stats">
+                  <div className="languages">
                     {
                       node.languages.nodes.map(({ id, name }) => (
                         <span key={id}>
@@ -75,13 +75,13 @@ export const Projects = () => {
                         </span>
                       ))
                     }
-                  </Languages>
-                </Stats>
+                  </div>
+                </div>
               </div>
             </div>
-          </Item>
+          </a>
         ))}
-      </Grid>
-    </Wrapper>
+      </div>
+    </div>
   );
 };

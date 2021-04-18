@@ -8,7 +8,7 @@ export const Skills = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className="wrapper" id="about">
+    <div className="wrapperSkills" id="about">
       <div className="skillsWrapper container">
         <div className="thumbnail">
           <img
@@ -16,7 +16,7 @@ export const Skills = () => {
             alt="I'm Arnaud and I'm a Backend & Devops engineer!"
           />
         </div>
-        <div className={'details' + theme}>
+        <div className={'details ' + theme}>
           <h1>More about me</h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
