@@ -1,11 +1,11 @@
 import React from 'react';
-import { Wrapper, Flex, Links, Details } from './styles';
+import './footer.scss';
 import social from './social.json';
 
 export const Footer = () => (
-  <Wrapper>
-    <Flex className="container">
-      <Details>
+  <div className="wrapper">
+    <div className="flex container">
+      <div className="details">
         <h2>John Doe</h2>
         <span>
           © All rights are reserved | {new Date().getFullYear()} | Made with{' '}
@@ -17,14 +17,14 @@ export const Footer = () => (
             Smakosh
           </a>
         </span>
-      </Details>
-      <Links>
+      </div>
+      <div className="links">
         {social.map(({ id, name, link, icon }) => (
           <a key={id} href={link} target="_blank" rel="noopener noreferrer" aria-label={`follow me on ${name}`}>
             <img width="24" src={icon} alt={name} />
           </a>
         ))}
-      </Links>
-    </Flex>
-  </Wrapper>
+      </div>
+    </div>
+  </div>
 );

@@ -3,26 +3,26 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Header } from 'components/theme';
 import dev from 'assets/illustrations/dev.svg';
-import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
+import './intro.scss';
 
 export const Intro = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Wrapper>
+    <div className="wrapper">
       <Header />
-      <IntroWrapper className="container">
-        <Details theme={theme}>
+      <div className="introWrapper container">
+        <div className={"details " + theme}>
           <h1>Hi There!</h1>
           <h4>I'm Arnaud and I'm a JAMStack engineer!</h4>
           <AnchorLink href="#contact">
             <button className="button">Hire me</button>
           </AnchorLink>
-        </Details>
-        <Thumbnail>
+        </div>
+        <div className="thumbnail">
           <img src={dev} alt="I'm Arnaud and I'm a JAMStack engineer!" />
-        </Thumbnail>
-      </IntroWrapper>
-    </Wrapper>
+        </div>
+      </div>
+    </div>
   );
 };
