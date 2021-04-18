@@ -2,28 +2,31 @@ import React, { useContext } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { ThemeContext } from 'providers/ThemeProvider';
 import dev from 'assets/illustrations/skills.svg';
-import { Wrapper, SkillsWrapper, Details, Thumbnail } from './skills.scss';
+import './skills.scss';
 
 export const Skills = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Wrapper id="about">
-      <SkillsWrapper className="container">
-        <Thumbnail>
-          <img src={dev} alt="I'm Arnaud and I'm a Backend & Devops engineer!" />
-        </Thumbnail>
-        <Details theme={theme}>
+    <div className="wrapper" id="about">
+      <div className="skillsWrapper container">
+        <div className="thumbnail">
+          <img
+            src={dev}
+            alt="I'm Arnaud and I'm a Backend & Devops engineer!"
+          />
+        </div>
+        <div className={'details' + theme}>
           <h1>More about me</h1>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy.
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy.
           </p>
           <AnchorLink href="#contact">
             <button className="button">Hire me</button>
           </AnchorLink>
-        </Details>
-      </SkillsWrapper>
-    </Wrapper>
+        </div>
+      </div>
+    </div>
   );
 };
