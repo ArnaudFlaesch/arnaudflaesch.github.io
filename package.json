@@ -10,11 +10,11 @@
     "npm": "7.12.0"
   },
   "scripts": {
-    "build": "gatsby build",
-    "start": " gatsby develop -o",
+    "build": "export NODE_ENV=production && gatsby build",
+    "start": "gatsby develop -o",
     "start:ci": "export NODE_ENV=development && npm run start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -b master -d public",
     "ci": "run-p -r start:ci cy:run:ci",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",

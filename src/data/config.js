@@ -1,6 +1,6 @@
 module.exports = {
   defaultTitle: "Portfolio d'Arnaud Flaesch",
-  logo: './static/favicon/favicon.ico',
+  // logo: './static/favicon/favicon.ico',
   author: 'Arnaud Flaesch',
   url: 'https://arnaudflaesch.github.io/',
   legalName: 'Arnaud Flaesch',
