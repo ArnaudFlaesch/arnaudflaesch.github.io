@@ -38,7 +38,7 @@ jobs:
         run: npm run build
 
       - name: Test
-        run: yarn test -- --coverage
+        run: npm run ci
 
       - name: Send coverage report
         run: |
