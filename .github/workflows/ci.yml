@@ -9,6 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      GATSBY_PORTFOLIO_GITHUB_TOKEN: ${{ secrets.GATSBY_PORTFOLIO_GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
 
@@ -31,7 +34,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: npm i -g codacy-coverage npm-run-all wait-on
 
-      - name: build
+      - name: Build
         run: npm run build
 
       - name: Test
