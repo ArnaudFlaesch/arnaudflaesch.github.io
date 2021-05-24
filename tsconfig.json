@@ -5,7 +5,8 @@
     "baseUrl": "src",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react"
+    "jsx": "react-jsx",
+    "resolveJsonModule": true
   },
   "include": ["src/**/*", "typings.d.ts"]
 }
