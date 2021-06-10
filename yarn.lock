@@ -7553,6 +7553,20 @@ gatsby-core-utils@^2.7.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+gatsby-core-utils@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-2.7.1.tgz#c50b0f0e21154d4701b30917b60db251814f16da"
+  integrity sha512-ofiAzLMeLjkS9huo0JQRbNzOfwCCxzPg7mSXeEhZhHGfbXoqZ9ZufmlTTgSYLc5v6agoM4yi4rHqdMOXu4qXAw==
+  dependencies:
+    ci-info "2.0.0"
+    configstore "^5.0.1"
+    file-type "^16.2.0"
+    fs-extra "^8.1.0"
+    node-object-hash "^2.0.0"
+    proper-lockfile "^4.1.1"
+    tmp "^0.2.1"
+    xdg-basedir "^4.0.0"
+
 gatsby-graphiql-explorer@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-1.7.0.tgz#a94ca9095fbb832bb472d27a9f4677744848ddc9"
@@ -7560,10 +7574,10 @@ gatsby-graphiql-explorer@^1.7.0:
   dependencies:
     "@babel/runtime" "^7.14.0"
 
-gatsby-image@3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-3.7.0.tgz#b098454283f2f5017571aff0ea148c59566ec717"
-  integrity sha512-2jc7pc53hd/7aOxI4QWkbIzKkVhQWre/3m3L3lvhPApIyFUjuKD0Vfh6bovGBTP6qfY30+hBxlg1yfUy79SnLQ==
+gatsby-image@3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-3.7.1.tgz#ccf0884c2503d2282bc92de110d375135040637c"
+  integrity sha512-cYGL00RDJXYRiVI2aNf6FGDjP5ebfAI3v8R9SakPa78LYVlgX8wUxtTTT7Pq95Lq5Lxo8m5mM+cFUnLFLsMK/A==
   dependencies:
     "@babel/runtime" "^7.14.0"
     object-fit-images "^3.2.4"
@@ -7802,17 +7816,17 @@ gatsby-recipes@^0.18.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-source-filesystem@3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-3.7.0.tgz#c6d8a17d4ebaf18f293ab915f4f289b54e0b275e"
-  integrity sha512-6w67rcL2n0YxJ1c7YzWbjDKsMgldroTA9oiYmvRmHwhOF7diUijoj3/6wZDHfrZZtFvRVoDqa6MI0ahlyJt5RA==
+gatsby-source-filesystem@3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-3.7.1.tgz#11b22ea0ae699163a4372bf95604412a49b4fcc1"
+  integrity sha512-JLMFJxvGnmVFW0UDr6r3XlqCp9GJ5Eqz4baWe9cVSdn61rz6YuV+BrtZIRBkqaWbnhv14+z7J+59OxpLG/kXHg==
   dependencies:
     "@babel/runtime" "^7.14.0"
     better-queue "^3.8.10"
     chokidar "^3.4.3"
     file-type "^16.0.0"
     fs-extra "^8.1.0"
-    gatsby-core-utils "^2.7.0"
+    gatsby-core-utils "^2.7.1"
     got "^9.6.0"
     md5-file "^5.0.0"
     mime "^2.4.6"
@@ -7821,10 +7835,10 @@ gatsby-source-filesystem@3.7.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-graphql@3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-3.7.0.tgz#28a694bb3abab57b45e1b65471b0d8d8af976426"
-  integrity sha512-4XV4JSgMF6Cu9rh0XflCEGCowZ0i5QdNau2vnYnTWUTa0BDm4bha5XgS68yPnrk3lV+fGFjI2elA2mId+QRj+A==
+gatsby-source-graphql@3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-3.7.1.tgz#3360ff4b5d8a73995a90f1dc875695c0515c6dce"
+  integrity sha512-NZD14TtvSj5/gb8ZN+SM97qenVffjUy5giiBf7L2Q13v8BGJ5mJnpmipxI7drUEyzaH3uNbtCURxryCZlEl/Qw==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@graphql-tools/links" "^7.1.0"
