@@ -27,7 +27,7 @@
     "axios": "0.21.1",
     "dotenv": "10.0.0",
     "formik": "2.2.9",
-    "gatsby": "3.7.1",
+    "gatsby": "3.7.2",
     "gatsby-image": "3.7.1",
     "gatsby-plugin-canonical-urls": "3.7.1",
     "gatsby-plugin-google-analytics": "3.7.1",
