@@ -52,7 +52,7 @@
     "yup": "0.32.9"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "3.9.7",
+    "@cypress/code-coverage": "3.9.8",
     "@types/mocha": "8.2.2",
     "@typescript-eslint/eslint-plugin": "4.28.1",
     "@typescript-eslint/parser": "4.28.1",
