@@ -24,7 +24,7 @@
     "test": "npm run cy:run"
   },
   "dependencies": {
-    "axios": "0.21.3",
+    "axios": "0.21.4",
     "dotenv": "10.0.0",
     "formik": "2.2.9",
     "gatsby": "3.13.0",
