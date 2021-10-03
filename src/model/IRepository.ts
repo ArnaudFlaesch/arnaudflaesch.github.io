@@ -4,7 +4,7 @@ export interface IRepository {
   name: string;
   pushedAt: Date;
   url: string;
-  primaryLanguage: {
+  primaryLanguage?: {
     name: string;
   };
   languages: ILanguagesData;

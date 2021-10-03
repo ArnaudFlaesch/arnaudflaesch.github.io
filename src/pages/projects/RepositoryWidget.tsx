@@ -20,7 +20,7 @@ export default function RepositoryWidget(repositoryData: IRepository) {
         <a href={repositoryData.url}>{repositoryData.name}</a>
       </h3>
       <div>{repositoryData.description}</div>
-      <div>{repositoryData.primaryLanguage.name}</div>
+      <div>{repositoryData.primaryLanguage?.name}</div>
       <div>
         {repositoryData.languages &&
           sortEdgesBySize(repositoryData.languages.edges).map((edge) => {
