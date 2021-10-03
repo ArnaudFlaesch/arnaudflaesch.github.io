@@ -1,19 +1,17 @@
-import React from "react";
-import { Layout, SEO } from "components/common";
-import { Intro, Skills, Contact, Projects } from "components/landing";
+import { Link } from 'gatsby';
+import React from 'react';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
 
 export default () => (
   <Layout>
-    <SEO />
-    <Intro />
-    <Projects />
-    <Skills />
-    <Contact />
-    <script
-      type="text/javascript"
-      src="https://platform.linkedin.com/badges/js/profile.js"
-      async
-      defer
-    ></script>
+    <Seo title="Home" />
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+
+    <p>
+      <Link to="/projects/">Projets professionnels et personnels</Link> <br />
+    </p>
   </Layout>
 );
