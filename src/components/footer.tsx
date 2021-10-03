@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ReactElement } from 'react';
 
-export default function Footer(): ReactElement {
+export default function Footer() {
   return (
     <footer
       style={{
