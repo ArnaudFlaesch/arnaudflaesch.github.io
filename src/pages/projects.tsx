@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import { IRepository } from './projects/IRepository';
+import { IRepository } from '../model/IRepository';
 
 import RepositoryWidget from './projects/RepositoryWidget';
 export default function Projects() {

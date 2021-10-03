@@ -1,9 +1,7 @@
 import React from 'react';
-import { IEdge, IRepository } from './IRepository';
+import { IEdge, IRepository } from '../../model/IRepository';
 
-export default function RepositoryWidget(
-  repositoryData: IRepository
-): React.ReactElement {
+export default function RepositoryWidget(repositoryData: IRepository) {
   function sortEdgesBySize(edges: IEdge[]): IEdge[] {
     return edges.sort((edgeA: IEdge, edgeB: IEdge) => {
       if (edgeA.size > edgeB.size) {
