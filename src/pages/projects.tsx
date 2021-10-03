@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 import { IRepository } from '../model/IRepository';
 
-import RepositoryWidget from './projects/RepositoryWidget';
+import RepositoryWidget from '../components/projects/RepositoryWidget';
 export default function Projects() {
   const QUERY = graphql`
     {

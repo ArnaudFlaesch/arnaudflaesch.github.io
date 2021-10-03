@@ -22,13 +22,20 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: |
+            - ~/.npm
+            - ~/.cache/Cypress
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       - run: npm ci
       - run: npm i -g codacy-coverage npm-run-all wait-on
+
+      - name: Lint
+        run: |
+          npm run lint:styles
+          npm run eslint
 
       - name: Build
         run: npm run build

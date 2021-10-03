@@ -12,6 +12,14 @@ export default () => (
 
     <p>
       <Link to="/projects/">Projets professionnels et personnels</Link> <br />
+      <Link to="/curriculum/">Curriculum Vitae</Link> <br />
+      <Link to="/skills/">Compétences</Link> <br />
     </p>
+    <script
+      src="https://platform.linkedin.com/badges/js/profile.js"
+      async
+      defer
+      type="text/javascript"
+    ></script>
   </Layout>
 );

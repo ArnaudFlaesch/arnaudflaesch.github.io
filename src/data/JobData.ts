@@ -1,4 +1,4 @@
-import Experience from './Experience';
+import Experience from '../components/curriculum/Experience';
 
 const jobs: Experience[] = [
   {
