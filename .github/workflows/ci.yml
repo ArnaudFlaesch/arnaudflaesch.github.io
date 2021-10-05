@@ -49,9 +49,9 @@ jobs:
           bash <(curl -s https://codecov.io/bash)
 
       - name: Deploy with gh-pages
-        if: success() && github.ref == 'refs/heads/develop'
+        if: success() && github.ref == 'refs/heads/master'
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npx gh-pages -b master -d public -u "github-actions-bot <support+actions@github.com>"
+          npx gh-pages -d public -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
