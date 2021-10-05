@@ -1,7 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-export default function Profile() {
+export default function Profile(): React.ReactElement {
   const IMG_HEIGHT = 34;
   const IMG_WIDTH = 34;
 

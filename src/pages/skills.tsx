@@ -4,7 +4,7 @@ import * as React from 'react';
 import skills from '../components/skills/SkillData';
 import './skills/skills.css';
 
-export default function Skills(props) {
+export default function Skills(): React.ReactElement {
   return (
     <Layout>
       <Seo title="Compétences" />

@@ -17,7 +17,7 @@ interface IProps {
   location?: string;
 }
 
-function Seo(props: IProps) {
+function Seo(props: IProps): React.ReactElement {
   const { site } = useStaticQuery(
     graphql`
       query {

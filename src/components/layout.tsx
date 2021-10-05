@@ -17,7 +17,7 @@ interface IProps {
   children: unknown[];
 }
 
-function Layout(props: IProps) {
+function Layout(props: IProps): React.ReactElement {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

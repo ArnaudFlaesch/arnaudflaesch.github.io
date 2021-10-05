@@ -2,10 +2,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import { IRepository } from '../model/IRepository';
+import { IEdge, IRepository } from '../model/IRepository';
 
 import RepositoryWidget from '../components/projects/RepositoryWidget';
-export default function Projects() {
+export default function Projects(): React.ReactElement {
   const QUERY = graphql`
     {
       github {
@@ -49,7 +49,7 @@ export default function Projects() {
     'FunChess'
   ];
   const repositories: IRepository[] = useStaticQuery(QUERY)
-    .github.viewer.repositories.edges.map((data: any) => data.node)
+    .github.viewer.repositories.edges.map((data: IEdge) => data.node)
     .filter((repository: IRepository) =>
       REPOSITORIES_LIST.includes(repository.name)
     );

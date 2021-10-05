@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-export default () => (
+export default (): React.ReactElement => (
   <Layout>
     <Seo title="404: Not found" location="/404" />
     <h1>NOT FOUND</h1>

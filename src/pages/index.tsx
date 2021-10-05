@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Profile from '../components/Profile';
 import Seo from '../components/seo';
 
-export default function Index() {
+export default function Index(): React.ReactElement {
   return (
     <div>
       <div className="float-left ml-10 mt-40">

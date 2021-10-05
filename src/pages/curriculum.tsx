@@ -5,7 +5,7 @@ import jobs from '../data/JobData';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-export default function Curriculum() {
+export default function Curriculum(): React.ReactElement {
   return (
     <Layout>
       <Seo title="Curiculum Vitae CV" />

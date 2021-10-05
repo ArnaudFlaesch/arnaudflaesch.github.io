@@ -5,7 +5,7 @@ interface IProps {
   siteTitle: string;
 }
 
-export default function Header(props: IProps) {
+export default function Header(props: IProps): React.ReactElement {
   return (
     <header
       style={{
