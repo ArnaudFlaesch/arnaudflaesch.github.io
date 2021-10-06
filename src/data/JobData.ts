@@ -1,6 +1,6 @@
 import Experience from '../components/curriculum/Experience';
 
-const jobs: Experience[] = [
+const jobData: Experience[] = [
   {
     id: 7,
     title: 'Développeur Java / JS',
@@ -20,9 +20,9 @@ const jobs: Experience[] = [
       'SQL',
       'Spring Boot',
       'Sass',
-      'Git',
+      'Git'
     ],
-    isCurrentExperience: true,
+    isCurrentExperience: true
   },
   {
     id: 6,
@@ -34,7 +34,7 @@ const jobs: Experience[] = [
     description:
       "Développeur Liferay / Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.",
     skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN'],
-    isCurrentExperience: false,
+    isCurrentExperience: false
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const jobs: Experience[] = [
     description:
       "Développeur Web / Alternance dans le cadre de ma première année de mastère à l'ESGI.",
     skills: ['PHP', 'SQL', 'JavaScript', 'Git'],
-    isCurrentExperience: false,
+    isCurrentExperience: false
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const jobs: Experience[] = [
     description:
       "Développeur Java / Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.",
     skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git'],
-    isCurrentExperience: false,
+    isCurrentExperience: false
   },
   {
     id: 3,
@@ -69,7 +69,7 @@ const jobs: Experience[] = [
     location: 'Paris 08è',
     description: 'Stage de deux mois ',
     skills: ['PHP', 'SQL', 'JavaScript', 'JQuery'],
-    isCurrentExperience: false,
+    isCurrentExperience: false
   },
   {
     id: 2,
@@ -80,7 +80,7 @@ const jobs: Experience[] = [
     location: 'Saint-Mandé 94300',
     description: "Réalisation d'un site web e-commerce pour une association.",
     skills: ['Wordpress', 'PHP', 'SQL'],
-    isCurrentExperience: false,
+    isCurrentExperience: false
   },
   {
     id: 1,
@@ -92,8 +92,8 @@ const jobs: Experience[] = [
     description:
       "Stage d'un mois dans le cadre de ma première année de BTS SIO.",
     skills: ['PHP', 'SQL', 'JavaScript'],
-    isCurrentExperience: false,
-  },
+    isCurrentExperience: false
+  }
 ];
 
-export default jobs;
+export default jobData;

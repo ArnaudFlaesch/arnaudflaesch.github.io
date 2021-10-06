@@ -1,6 +1,6 @@
 import Experience from '../components/curriculum/Experience';
 
-const formations: Experience[] = [
+const formationData: Experience[] = [
   {
     id: 5,
     title: 'Mastmere Architecture des Logiciels',
@@ -9,7 +9,7 @@ const formations: Experience[] = [
     description: '',
     dateDebut: new Date(2015, 9, 1),
     dateFin: new Date(2017, 8, 31),
-    skills: [],
+    skills: []
   },
   {
     id: 4,
@@ -19,7 +19,7 @@ const formations: Experience[] = [
     description: '',
     dateDebut: new Date(2014, 9, 1),
     dateFin: new Date(2015, 5, 31),
-    skills: [],
+    skills: []
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const formations: Experience[] = [
     description: '',
     dateDebut: new Date(2012, 9, 1),
     dateFin: new Date(2014, 5, 31),
-    skills: [],
+    skills: []
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const formations: Experience[] = [
     description: '',
     dateDebut: new Date(2015, 9, 18),
     dateFin: new Date(2015, 9, 18),
-    skills: [],
+    skills: []
   },
   {
     id: 1,
@@ -49,8 +49,8 @@ const formations: Experience[] = [
     description: '',
     dateDebut: new Date(2015, 9, 1),
     dateFin: new Date(2015, 9, 18),
-    skills: [],
-  },
+    skills: []
+  }
 ];
 
-export default formations;
+export default formationData;
