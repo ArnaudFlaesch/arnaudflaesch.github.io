@@ -32,13 +32,13 @@ jobs:
       - run: npm ci
       - run: npm i -g codacy-coverage npm-run-all wait-on
 
-      - name: Lint
-        run: |
-          npm run lint:styles:report
-          npm run eslint
+      #  - name: Lint
+      #    run: |
+      #     npm run lint:styles:report
+      #     npm run eslint
 
-      - name: Build
-        run: npm run build
+      #   - name: Build
+      #    run: npm run build
 
       - name: Test
         run: npm run test:ci
