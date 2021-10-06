@@ -6,8 +6,11 @@ describe('Portfolio tests', () => {
   });
 
   it('Should get the title', () => {
-    cy.title().should('equals', 'Home | Arnaud Flaesch, Développeur Web');
-    cy.get('h1').first().should('have.text', 'Arnaud Flaesch, Développeur Web');
+    cy.title()
+      .should('equals', 'Home | Arnaud Flaesch, Développeur Web')
+      .get('h1')
+      .first()
+      .should('have.text', 'Arnaud Flaesch, Développeur Web');
   });
 
   it('Should display the 404 error page', () => {
