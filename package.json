@@ -11,7 +11,6 @@
   },
   "scripts": {
     "start": "gatsby develop -o",
-    "start:ci": "export NODE_ENV=development && npm run start",
     "build": "export NODE_ENV=production && gatsby build",
     "test:ci": "run-p -r start:ci cy:run:ci",
     "cy:open": "cypress open",
