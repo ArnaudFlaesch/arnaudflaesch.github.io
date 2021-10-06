@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
-      - run: npm i -g codacy-coverage npm-run-all wait-on
+      - run: npm i -g npm-run-all wait-on
 
       #  - name: Lint
       #    run: |
@@ -45,7 +45,7 @@ jobs:
 
       - name: Send coverage report
         run: |
-          cat ./coverage/lcov.info | codacy-coverage --token ${{ secrets.CODACY_PROJECT_TOKEN }}
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage/clover.xml --project-token ${{ secrets.CODACY_PROJECT_TOKEN }}
           bash <(curl -s https://codecov.io/bash)
 
       - name: SonarCloud Scan
