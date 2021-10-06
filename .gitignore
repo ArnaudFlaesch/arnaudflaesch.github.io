@@ -73,3 +73,5 @@ yarn-error.log
 
 .now
 .vscode/
+
+styleLintReport.json
