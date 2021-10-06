@@ -3,7 +3,7 @@ import Experience from '../components/curriculum/Experience';
 const formationData: Experience[] = [
   {
     id: 5,
-    title: 'Mastmere Architecture des Logiciels',
+    title: 'Mastère Architecture des Logiciels',
     name: 'ESGI - École Supérieure de Génie Informatique',
     location: 'Paris 12ème',
     description: '',

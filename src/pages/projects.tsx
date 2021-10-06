@@ -44,7 +44,6 @@ export default function Projects(): React.ReactElement {
   const REPOSITORIES_LIST = [
     'Dash-Web',
     'Dash-WebServices',
-    'TreasureHunt',
     'WizardLibrary',
     'FunChess'
   ];

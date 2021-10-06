@@ -10,7 +10,7 @@ export default function Curriculum(): React.ReactElement {
     <Layout>
       <Seo title="Curiculum Vitae CV" />
       <div>
-        CV
+        <h1>CV</h1>
         {jobs.map((experience) => {
           return <ExperienceComponent key={experience.id} {...experience} />;
         })}

@@ -11,9 +11,9 @@ export default function Skills(): React.ReactElement {
       <div>
         Skills
         <div className="skillPage">
-          {skills.map((skill) => {
-            return <div>{skill.title}</div>;
-          })}
+          {skills.map((skill) => (
+            <div className="skillLabel">{skill.title}</div>
+          ))}
         </div>
       </div>
     </Layout>
