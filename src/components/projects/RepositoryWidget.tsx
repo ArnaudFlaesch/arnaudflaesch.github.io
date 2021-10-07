@@ -27,7 +27,10 @@ export default function RepositoryWidget(
         {repositoryData.languages &&
           sortEdgesBySize(repositoryData.languages.edges).map((edge) => {
             return (
-              <div style={{ backgroundColor: edge.node.color }}>
+              <div
+                key={edge.node.name}
+                style={{ backgroundColor: edge.node.color }}
+              >
                 <span>{edge.node.name}</span>
                 <span>
                   {Math.round(

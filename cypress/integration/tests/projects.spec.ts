@@ -1,6 +1,6 @@
 /// <reference types='cypress' />
 
-describe('Portfolio tests', () => {
+describe('Projects tests', () => {
   const PROJECTS_TITLES = [
     'FunChess',
     'Dash-Web',

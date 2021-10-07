@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import './header.scss';
 
 interface IProps {
   siteTitle: string;
@@ -7,12 +8,7 @@ interface IProps {
 
 export default function Header(props: IProps): React.ReactElement {
   return (
-    <header
-      style={{
-        background: `rebeccapurple`,
-        marginBottom: `1.45rem`
-      }}
-    >
+    <header>
       <div
         style={{
           margin: `0 auto`,
