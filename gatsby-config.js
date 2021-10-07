@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
-    description: "Site Web professionnel d'Arnaud Flaesch, développeur web",
+    description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
     author: '@ArnaudFlaesch',
     siteUrl: 'https://arnaudflaesch.github.io/'
   },
