@@ -9,14 +9,8 @@ interface IProps {
 export default function Header(props: IProps): React.ReactElement {
   return (
     <header>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`
-        }}
-      >
-        <h1 style={{ margin: 0 }}>
+      <div id="headerTitle">
+        <h1>
           <Link
             to="/"
             style={{
