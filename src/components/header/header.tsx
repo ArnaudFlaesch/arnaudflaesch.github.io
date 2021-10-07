@@ -11,13 +11,7 @@ export default function Header(props: IProps): React.ReactElement {
     <header>
       <div id="headerTitle">
         <h1>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`
-            }}
-          >
+          <Link to="/" style={{}}>
             {props.siteTitle}
           </Link>
         </h1>
