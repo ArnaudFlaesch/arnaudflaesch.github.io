@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "assignees": [
-    "ArnaudFlaesch"
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "assignees": ["ArnaudFlaesch"]
 }

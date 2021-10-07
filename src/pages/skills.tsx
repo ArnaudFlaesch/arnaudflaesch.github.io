@@ -1,0 +1,21 @@
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import * as React from 'react';
+import skills from '../data/SkillData';
+import './skills/skills.css';
+
+export default function Skills(): React.ReactElement {
+  return (
+    <Layout>
+      <Seo title="Compétences" />
+      <div>
+        Skills
+        <div className="skillPage">
+          {skills.map((skill) => (
+            <div className="skillLabel">{skill.title}</div>
+          ))}
+        </div>
+      </div>
+    </Layout>
+  );
+}

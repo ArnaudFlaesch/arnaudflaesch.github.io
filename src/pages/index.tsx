@@ -1,19 +1,29 @@
-import React from "react";
-import { Layout, SEO } from "components/common";
-import { Intro, Skills, Contact, Projects } from "components/landing";
+import { Link } from 'gatsby';
+import React from 'react';
+import Layout from '../components/layout';
+import Profile from '../components/Profile';
+import Seo from '../components/seo';
 
-export default () => (
-  <Layout>
-    <SEO />
-    <Intro />
-    <Projects />
-    <Skills />
-    <Contact />
-    <script
-      type="text/javascript"
-      src="https://platform.linkedin.com/badges/js/profile.js"
-      async
-      defer
-    ></script>
-  </Layout>
-);
+export default function Index(): React.ReactElement {
+  return (
+    <div>
+      <div className="float-left ml-10 mt-40">
+        <Profile />
+      </div>
+
+      <Layout>
+        <Seo title="Home" />
+        <h1>Hi people</h1>
+        <p>Welcome to your new Gatsby site.</p>
+        <p>Now go build something great.</p>
+
+        <p>
+          <Link to="/projects/">Projets professionnels et personnels</Link>{' '}
+          <br />
+          <Link to="/curriculum/">Curriculum Vitae</Link> <br />
+          <Link to="/skills/">Compétences</Link> <br />
+        </p>
+      </Layout>
+    </div>
+  );
+}
