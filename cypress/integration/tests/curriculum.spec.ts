@@ -20,7 +20,7 @@ describe('Curriculum tests', () => {
     cy.visit('/curriculum');
   });
   it('Should display the curriculum page', () => {
-    cy.get('.jobTitle').each((element, index) => {
+    cy.get('.job-title').each((element, index) => {
       expect(element.text().trim()).to.equal(JOB_TITLES[index]);
     });
   });

@@ -9,7 +9,7 @@ interface IProps {
 export default function Header(props: IProps): React.ReactElement {
   return (
     <header>
-      <div id="headerTitle">
+      <div id="header-title">
         <h1>
           <Link to="/" style={{}}>
             {props.siteTitle}

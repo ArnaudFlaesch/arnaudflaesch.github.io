@@ -31,7 +31,7 @@ function Layout(props: IProps): React.ReactElement {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className="portfolioBody">
+      <div className="portfolio-body">
         <main>{props.children}</main>
         <Footer />
       </div>

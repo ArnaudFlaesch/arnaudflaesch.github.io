@@ -10,10 +10,10 @@ const ExperienceComponent: React.FunctionComponent<Experience> = (
   props: Experience
 ) => {
   return (
-    <div className="experienceBlock">
-      <header className="jobTitle">{props.title}</header>
-      <div className="employerName">{props.name}</div>
-      <div className="employerLocation">{props.location}</div>
+    <div className="experience-block">
+      <header className="job-title">{props.title}</header>
+      <div className="employer-name">{props.name}</div>
+      <div className="employer-location">{props.location}</div>
       <div>
         {formatDateFromExperience(props.dateDebut)} -&gt;{' '}
         {formatDateEndFromExperience(props.dateFin)}
@@ -22,7 +22,7 @@ const ExperienceComponent: React.FunctionComponent<Experience> = (
       <div>
         {props.skills.map((skill) => {
           return (
-            <span key={skill} className="skillBlock">
+            <span key={skill} className="skill-block">
               {skill}
             </span>
           );
