@@ -17,7 +17,7 @@ interface IProps {
   location?: string;
 }
 
-function Seo(props: IProps): React.ReactElement {
+export default function Seo(props: IProps): React.ReactElement {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,7 +25,9 @@ function Seo(props: IProps): React.ReactElement {
           siteMetadata {
             title
             description
-            author
+            author {
+              name
+            }
           }
         }
       }
@@ -82,5 +84,3 @@ function Seo(props: IProps): React.ReactElement {
     />
   );
 }
-
-export default Seo;
