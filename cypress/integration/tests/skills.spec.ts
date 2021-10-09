@@ -15,7 +15,7 @@ describe('Skills tests', () => {
     cy.visit('/skills');
   });
   it('Should display the skills page', () => {
-    cy.get('.skillLabel').each((element, index) => {
+    cy.get('.skill-label').each((element, index) => {
       expect(element.text().trim()).to.equal(SKILLS_LIST[index]);
     });
   });

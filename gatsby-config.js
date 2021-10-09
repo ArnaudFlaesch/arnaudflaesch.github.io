@@ -6,8 +6,14 @@ module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
     description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
-    author: '@ArnaudFlaesch',
-    siteUrl: 'https://arnaudflaesch.github.io/'
+    author: {
+      name: `ArnaudFlaesch`,
+      summary: `Développeur Web`
+    },
+    siteUrl: 'https://arnaudflaesch.github.io/',
+    social: {
+      twitter: `arnaudflaesch`
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,6 +25,35 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630
+            }
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`
+        ]
       }
     },
     'gatsby-transformer-sharp',
@@ -38,8 +73,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: "Blog d'Arnaud Flaesch",
+        short_name: "Blog d'Arnaud Flaesch",
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',

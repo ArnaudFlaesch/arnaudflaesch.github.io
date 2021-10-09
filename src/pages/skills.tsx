@@ -10,9 +10,9 @@ export default function Skills(): React.ReactElement {
       <Seo title="Compétences" />
       <div>
         Skills
-        <div className="skillPage">
+        <div className="skill-page">
           {skills.map((skill) => (
-            <div className="skillLabel">{skill.title}</div>
+            <div className="skill-label">{skill.title}</div>
           ))}
         </div>
       </div>
