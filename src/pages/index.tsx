@@ -1,19 +1,14 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import Layout from '../components/layout';
+import Bio from '../components/bio/Bio';
+import Layout from '../components/layout/layout';
+import Post from '../components/post/Post';
 import Profile from '../components/Profile';
 import Seo from '../components/seo';
-import Post from '../components/post/Post';
+import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
-import Bio from '../components/bio/Bio';
 
-interface IProps {
-  data: any;
-  location: any;
-}
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function Index(props: IProps): React.ReactElement {
+export default function Index(props: IPageProps): React.ReactElement {
   const siteTitle = props.data.site.siteMetadata?.title || `Title`;
   const posts = props.data.allMarkdownRemark.nodes;
 

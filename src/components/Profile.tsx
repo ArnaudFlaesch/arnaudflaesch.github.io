@@ -6,7 +6,7 @@ export default function Profile(): React.ReactElement {
   const IMG_WIDTH = 34;
 
   return (
-    <div>
+    <>
       <div className="mx-auto mb-5 bg-indigo-500 h-24 w-24 text-white text-center font-extrabold flex items-center justify-center rounded-full">
         Photo
       </div>
@@ -47,6 +47,6 @@ export default function Profile(): React.ReactElement {
           alt="malt"
         />
       </a>
-    </div>
+    </>
   );
 }

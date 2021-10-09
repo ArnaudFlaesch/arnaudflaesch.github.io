@@ -1,9 +1,9 @@
 import * as React from 'react';
 import ExperienceComponent from '../components/curriculum/ExperienceComponent';
+import Layout from '../components/layout/layout';
+import Seo from '../components/seo';
 import formations from '../data/FormationData';
 import jobs from '../data/JobData';
-import Layout from '../components/layout';
-import Seo from '../components/seo';
 
 export default function Curriculum(): React.ReactElement {
   return (

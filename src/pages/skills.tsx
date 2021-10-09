@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import Seo from '../components/seo';
 import * as React from 'react';
 import skills from '../data/SkillData';
