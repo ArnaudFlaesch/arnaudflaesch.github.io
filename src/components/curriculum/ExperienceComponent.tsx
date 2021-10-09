@@ -4,7 +4,7 @@ import {
   formatDateFromExperience
 } from '../../utils/DateUtils';
 import Experience from './Experience';
-import './Experience.css';
+import './Experience.scss';
 
 const ExperienceComponent: React.FunctionComponent<Experience> = (
   props: Experience
