@@ -33,8 +33,7 @@ const jobData: Experience[] = [
     location: 'Chennevières sur Marne - 94190',
     description:
       "Développeur Liferay / Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.",
-    skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN'],
-    isCurrentExperience: false
+    skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN']
   },
   {
     id: 5,
@@ -45,8 +44,7 @@ const jobData: Experience[] = [
     location: 'Montreuil - 93340',
     description:
       "Développeur Web / Alternance dans le cadre de ma première année de mastère à l'ESGI.",
-    skills: ['PHP', 'SQL', 'JavaScript', 'Git'],
-    isCurrentExperience: false
+    skills: ['PHP', 'SQL', 'JavaScript', 'Git']
   },
   {
     id: 4,
@@ -57,8 +55,7 @@ const jobData: Experience[] = [
     location: 'Levallois',
     description:
       "Développeur Java / Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.",
-    skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git'],
-    isCurrentExperience: false
+    skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git']
   },
   {
     id: 3,
@@ -68,8 +65,7 @@ const jobData: Experience[] = [
     dateFin: new Date(2014, 7, 31),
     location: 'Paris 08è',
     description: 'Stage de deux mois ',
-    skills: ['PHP', 'SQL', 'JavaScript', 'JQuery'],
-    isCurrentExperience: false
+    skills: ['PHP', 'SQL', 'JavaScript', 'JQuery']
   },
   {
     id: 2,
@@ -79,8 +75,7 @@ const jobData: Experience[] = [
     dateFin: new Date(2014, 2, 13),
     location: 'Saint-Mandé 94300',
     description: "Réalisation d'un site web e-commerce pour une association.",
-    skills: ['Wordpress', 'PHP', 'SQL'],
-    isCurrentExperience: false
+    skills: ['Wordpress', 'PHP', 'SQL']
   },
   {
     id: 1,
@@ -91,8 +86,7 @@ const jobData: Experience[] = [
     location: 'Paris 08è',
     description:
       "Stage d'un mois dans le cadre de ma première année de BTS SIO.",
-    skills: ['PHP', 'SQL', 'JavaScript'],
-    isCurrentExperience: false
+    skills: ['PHP', 'SQL', 'JavaScript']
   }
 ];
 

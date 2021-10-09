@@ -7,5 +7,5 @@ export default class Experience {
   public dateDebut: Date;
   public dateFin?: Date;
   public skills: string[];
-  public isCurrentExperience?: boolean;
+  public isCurrentExperience?: boolean = false;
 }
