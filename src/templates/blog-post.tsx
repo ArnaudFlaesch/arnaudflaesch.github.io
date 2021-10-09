@@ -3,14 +3,22 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import Bio from '../components/bio/Bio';
 
-const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const { previous, next } = data;
+import './blog-post.scss';
+
+interface IProps {
+  data: any;
+  location: any;
+}
+
+export default function BlogPostTemplate(props: IProps): React.ReactElement {
+  const post = props.data.markdownRemark;
+  const siteTitle = props.data.site.siteMetadata?.title || `Title`;
+  const { previous, next } = props.data;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout {...(props.location, siteTitle)}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -18,7 +26,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <article
         className="blog-post"
         itemScope
-        itemType="http://schema.org/Article"
+        itemType="https://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
@@ -29,18 +37,12 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
         />
         <hr />
-        <footer>Bio</footer>
+        <footer>
+          <Bio />
+        </footer>
       </article>
       <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
-          }}
-        >
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -59,9 +61,7 @@ const BlogPostTemplate = ({ data, location }) => {
       </nav>
     </Layout>
   );
-};
-
-export default BlogPostTemplate;
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

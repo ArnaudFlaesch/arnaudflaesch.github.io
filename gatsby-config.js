@@ -10,7 +10,10 @@ module.exports = {
       name: `ArnaudFlaesch`,
       summary: ``
     },
-    siteUrl: 'https://arnaudflaesch.github.io/'
+    siteUrl: 'https://arnaudflaesch.github.io/',
+    social: {
+      twitter: `arnaudflaesch`
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
