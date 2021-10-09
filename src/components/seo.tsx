@@ -29,6 +29,9 @@ export default function Seo(props: IProps): React.ReactElement {
               name
               summary
             }
+            social {
+              twitter
+            }
           }
         }
       }
@@ -71,7 +74,7 @@ export default function Seo(props: IProps): React.ReactElement {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``
+          content: site.siteMetadata?.social.twitter || ``
         },
         {
           name: `twitter:title`,
