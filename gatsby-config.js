@@ -8,7 +8,7 @@ module.exports = {
     description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
     author: {
       name: `ArnaudFlaesch`,
-      summary: ``
+      summary: `Développeur Web`
     },
     siteUrl: 'https://arnaudflaesch.github.io/',
     social: {

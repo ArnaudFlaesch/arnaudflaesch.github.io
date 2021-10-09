@@ -27,6 +27,7 @@ export default function Seo(props: IProps): React.ReactElement {
             description
             author {
               name
+              summary
             }
           }
         }
