@@ -1,0 +1,5 @@
+**/coverage/**
+**/node_modules/**
+gatsby-browser.js
+gatsby-config.js
+gatsby-node.js
