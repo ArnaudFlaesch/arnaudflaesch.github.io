@@ -10,7 +10,7 @@ export default function SocialLinks(): React.ReactElement {
         <StaticImage
           height={IMG_HEIGHT}
           width={IMG_WIDTH}
-          src="../images/icons/github-icon.png"
+          src="../../images/icons/github-icon.png"
           alt="github"
         />
       </a>
@@ -20,7 +20,7 @@ export default function SocialLinks(): React.ReactElement {
           className="mx-5"
           height={IMG_HEIGHT}
           width={IMG_WIDTH}
-          src="../images/icons/linkedin-icon.png"
+          src="../../images/icons/linkedin-icon.png"
           alt="linkedin"
         />
       </a>
@@ -29,7 +29,7 @@ export default function SocialLinks(): React.ReactElement {
         <StaticImage
           height={IMG_HEIGHT}
           width={IMG_WIDTH}
-          src="../images/icons/malt-icon.png"
+          src="../../images/icons/malt-icon.png"
           alt="malt"
         />
       </a>

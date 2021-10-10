@@ -5,7 +5,8 @@ import Layout from '../components/layout/layout';
 import Seo from '../components/seo';
 import Bio from '../components/bio/Bio';
 
-import './blog-post.scss';
+import './template-blog-post.scss';
+import { Share } from 'react-twitter-widgets';
 
 interface IProps {
   data: any;
@@ -29,10 +30,38 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
           itemScope
           itemType="https://schema.org/Article"
         >
-          <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
-          </header>
+          <div>
+            <header>
+              <div className="flex flex-row">
+                <h1 itemProp="headline">{post.frontmatter.title}</h1>
+                <div className="flex flex-row">
+                  <div
+                    className="fb-share-button"
+                    data-href="https://developers.facebook.com/docs/plugins/"
+                    data-layout="button_count"
+                    data-size="small"
+                  >
+                    <a
+                      target="_blank"
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${props.location.href}`}
+                      className="fb-xfbml-parse-ignore"
+                    >
+                      Partager sur Facebook
+                    </a>
+                  </div>
+                  <Share url={props.location.href} />
+                  <button>
+                    <a
+                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${props.location.href}`}
+                    >
+                      Partager sur Linkedin
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <p>{post.frontmatter.date}</p>
+            </header>
+          </div>
           <section
             dangerouslySetInnerHTML={{ __html: post.html }}
             itemProp="articleBody"
@@ -61,6 +90,15 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
           </ul>
         </nav>
       </div>
+
+      <div id="fb-root"></div>
+      <script
+        async
+        defer
+        crossOrigin="anonymous"
+        src={`https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0&appId=${process.env.FACEBOOK_SDK_APP_ID}&autoLogAppEvents=1`}
+        nonce="ixhpUZRo"
+      ></script>
     </Layout>
   );
 }

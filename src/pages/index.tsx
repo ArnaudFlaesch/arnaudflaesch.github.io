@@ -26,7 +26,7 @@ export default function Index(props: IPageProps): React.ReactElement {
         </ol>
         <br />
         <p>
-          <Link to="/projects/">Projets professionnels et personnels</Link>{' '}
+          <Link to="/projects/">Projets professionnels et personnels</Link>
           <br />
           <Link to="/curriculum/">Curriculum Vitae</Link> <br />
           <Link to="/skills/">Compétences</Link> <br />
