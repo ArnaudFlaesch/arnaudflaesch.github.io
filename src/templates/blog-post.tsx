@@ -14,7 +14,7 @@ interface IProps {
 
 export default function BlogPostTemplate(props: IProps): React.ReactElement {
   const post = props.data.markdownRemark;
-  const siteTitle = props.data.site.siteMetadata?.title || `Title`;
+  const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const { previous, next } = props.data;
 
   return (

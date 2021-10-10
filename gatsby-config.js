@@ -7,12 +7,12 @@ module.exports = {
     title: 'Arnaud Flaesch, Développeur Web',
     description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
     author: {
-      name: `ArnaudFlaesch`,
-      summary: `Développeur Web`
+      name: 'ArnaudFlaesch',
+      summary: 'Développeur Web'
     },
     siteUrl: 'https://arnaudflaesch.github.io/',
     social: {
-      twitter: `arnaudflaesch`
+      twitter: 'arnaudflaesch'
     }
   },
   plugins: [
@@ -28,31 +28,31 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`
+        name: 'blog'
       }
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 630
             }
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
+              wrapperStyle: 'margin-bottom: 1.0725rem'
             }
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants'
         ]
       }
     },
@@ -84,6 +84,11 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    'gatsby-plugin-offline'
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: ['/blog/*', '/projects/, /curriculum/']
+      }
+    }
   ]
 };

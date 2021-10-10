@@ -9,7 +9,7 @@ import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 
 export default function Index(props: IPageProps): React.ReactElement {
-  const siteTitle = props.data.site.siteMetadata?.title || `Title`;
+  const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const posts = props.data.allMarkdownRemark.nodes;
 
   if (posts.length === 0) {

@@ -28,7 +28,7 @@
 
 ## Structure
 
-```bash
+"""bash
 .
 ├── data
 │   └── config              # SEO related tags
@@ -43,4 +43,4 @@
 │   │   └── theme             # Header & Footer
 │   └── pages               # Pages
 └── static                  # favicon & Netlify redirects
-```
+"""

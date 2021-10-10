@@ -49,39 +49,39 @@ export default function Seo(props: IProps): React.ReactElement {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ''}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: props.title
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription
         },
         {
-          property: `og:url`,
+          property: 'og:url',
           content: `https://arnaudflaesch.github.io/${props.location}`
         },
         {
-          property: `og:type`,
-          content: `website`
+          property: 'og:type',
+          content: 'website'
         },
         {
-          name: `twitter:card`,
-          content: `summary`
+          name: 'twitter:card',
+          content: 'summary'
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.social.twitter || ``
+          name: 'twitter:creator',
+          content: site.siteMetadata?.social.twitter || ''
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: props.title
         },
         {
-          name: `twitter:description`,
+          name: 'twitter:description',
           content: metaDescription
         }
       ].concat(meta)}

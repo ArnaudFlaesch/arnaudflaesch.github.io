@@ -30,7 +30,7 @@ export default function Layout(props: IProps): React.ReactElement {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
       <div className="portfolio-body">
         <main>{props.children}</main>
         <Footer />
