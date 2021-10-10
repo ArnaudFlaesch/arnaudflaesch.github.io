@@ -6,6 +6,7 @@
 
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const BLOG_URL_PREFIX = '/blog';
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
@@ -69,8 +70,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-
+    const value = `${BLOG_URL_PREFIX}${createFilePath({ node, getNode })}`;
     createNodeField({
       name: `slug`,
       node,
