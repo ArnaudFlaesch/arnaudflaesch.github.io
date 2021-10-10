@@ -14,22 +14,14 @@ export default function Blog(props: IPageProps): React.ReactElement {
       <Seo title="Blog" location="/blog" />
       <h1>Blog</h1>
 
-      <ol>
-        {posts &&
-          posts.map((post: IPost) => (
-            <Post key={post.frontmatter.title} {...post} />
-          ))}
-      </ol>
+      <ol>{posts && posts.map((post: IPost) => <Post key={post.frontmatter.title} {...post} />)}</ol>
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
       nodes {
         excerpt
         fields {

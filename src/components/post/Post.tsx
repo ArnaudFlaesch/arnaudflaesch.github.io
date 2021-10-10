@@ -9,11 +9,7 @@ export default function Post(post: IPost): React.ReactElement {
 
   return (
     <li key={post.fields.slug}>
-      <article
-        className="post-list-item"
-        itemScope
-        itemType="https://schema.org/Article"
-      >
+      <article className="post-list-item" itemScope itemType="https://schema.org/Article">
         <header>
           <h2>
             <Link to={post.fields.slug} itemProp="url">

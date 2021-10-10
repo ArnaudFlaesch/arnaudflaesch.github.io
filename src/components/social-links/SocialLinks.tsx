@@ -7,12 +7,7 @@ export default function SocialLinks(): React.ReactElement {
   return (
     <div>
       <a href="https://github.com/ArnaudFlaesch">
-        <StaticImage
-          height={IMG_HEIGHT}
-          width={IMG_WIDTH}
-          src="../../images/icons/github-icon.png"
-          alt="github"
-        />
+        <StaticImage height={IMG_HEIGHT} width={IMG_WIDTH} src="../../images/icons/github-icon.png" alt="github" />
       </a>
 
       <a href="https://www.linkedin.com/in/arnaudflaesch/">
@@ -26,12 +21,7 @@ export default function SocialLinks(): React.ReactElement {
       </a>
 
       <a href="https://www.malt.fr/profile/arnaudflaesch">
-        <StaticImage
-          height={IMG_HEIGHT}
-          width={IMG_WIDTH}
-          src="../../images/icons/malt-icon.png"
-          alt="malt"
-        />
+        <StaticImage height={IMG_HEIGHT} width={IMG_WIDTH} src="../../images/icons/malt-icon.png" alt="malt" />
       </a>
     </div>
   );

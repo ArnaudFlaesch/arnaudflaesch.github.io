@@ -31,8 +31,7 @@ const jobData: Experience[] = [
     dateDebut: new Date(2016, 10, 1),
     dateFin: new Date(2017, 8, 31),
     location: 'Chennevières sur Marne - 94190',
-    description:
-      "Développeur Liferay / Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.",
+    description: "Développeur Liferay / Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.",
     skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN']
   },
   {
@@ -42,8 +41,7 @@ const jobData: Experience[] = [
     dateDebut: new Date(2015, 10, 1),
     dateFin: new Date(2016, 8, 31),
     location: 'Montreuil - 93340',
-    description:
-      "Développeur Web / Alternance dans le cadre de ma première année de mastère à l'ESGI.",
+    description: "Développeur Web / Alternance dans le cadre de ma première année de mastère à l'ESGI.",
     skills: ['PHP', 'SQL', 'JavaScript', 'Git']
   },
   {
@@ -53,8 +51,7 @@ const jobData: Experience[] = [
     dateDebut: new Date(2015, 5, 15),
     dateFin: new Date(2015, 7, 31),
     location: 'Levallois',
-    description:
-      "Développeur Java / Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.",
+    description: "Développeur Java / Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.",
     skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git']
   },
   {
@@ -84,8 +81,7 @@ const jobData: Experience[] = [
     dateDebut: new Date(2013, 5, 31),
     dateFin: new Date(2013, 6, 27),
     location: 'Paris 08è',
-    description:
-      "Stage d'un mois dans le cadre de ma première année de BTS SIO.",
+    description: "Stage d'un mois dans le cadre de ma première année de BTS SIO.",
     skills: ['PHP', 'SQL', 'JavaScript']
   }
 ];

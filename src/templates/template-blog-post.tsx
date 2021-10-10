@@ -20,16 +20,9 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
 
   return (
     <Layout {...(props.location, siteTitle)}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <div>
-        <article
-          className="blog-post"
-          itemScope
-          itemType="https://schema.org/Article"
-        >
+        <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <div>
             <header>
               <div className="flex flex-row">
@@ -51,9 +44,7 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
                   </div>
                   <Share url={props.location.href} />
                   <button>
-                    <a
-                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${props.location.href}`}
-                    >
+                    <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${props.location.href}`}>
                       Partager sur Linkedin
                     </a>
                   </button>
@@ -62,10 +53,7 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
               <p>{post.frontmatter.date}</p>
             </header>
           </div>
-          <section
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            itemProp="articleBody"
-          />
+          <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
           <footer>
             <Bio />
@@ -104,11 +92,7 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         title

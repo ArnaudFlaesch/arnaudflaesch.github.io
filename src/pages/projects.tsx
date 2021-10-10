@@ -41,17 +41,10 @@ export default function Projects(): React.ReactElement {
       }
     }
   `;
-  const REPOSITORIES_LIST = [
-    'Dash-Web',
-    'Dash-WebServices',
-    'WizardLibrary',
-    'FunChess'
-  ];
+  const REPOSITORIES_LIST = ['Dash-Web', 'Dash-WebServices', 'WizardLibrary', 'FunChess'];
   const repositories: IRepository[] = useStaticQuery(QUERY)
     .github.viewer.repositories.edges.map((data: IEdge) => data.node)
-    .filter((repository: IRepository) =>
-      REPOSITORIES_LIST.includes(repository.name)
-    );
+    .filter((repository: IRepository) => REPOSITORIES_LIST.includes(repository.name));
 
   return (
     <Layout>
