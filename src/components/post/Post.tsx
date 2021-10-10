@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { IPost } from '../../model/IPost';
 
+import './Post.scss';
+
 export default function Post(post: IPost): React.ReactElement {
   const title = post.frontmatter.title || post.fields.slug;
 

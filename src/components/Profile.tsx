@@ -1,14 +1,20 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
+import SocialLinks from './social-links/SocialLinks';
 
 export default function Profile(): React.ReactElement {
-  const IMG_HEIGHT = 34;
-  const IMG_WIDTH = 34;
-
   return (
-    <>
-      <div className="mx-auto mb-5 bg-indigo-500 h-24 w-24 text-white text-center font-extrabold flex items-center justify-center rounded-full">
-        Photo
+    <div>
+      <div className="mx-auto mb-5  text-white ">
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          src="../images/profile-picture.jpg"
+          width={100}
+          height={100}
+          quality={95}
+          alt="Profile picture"
+        />
       </div>
 
       <div>
@@ -19,34 +25,7 @@ export default function Profile(): React.ReactElement {
           Paris
         </p>
       </div>
-
-      <a href="https://github.com/ArnaudFlaesch">
-        <StaticImage
-          height={IMG_HEIGHT}
-          width={IMG_WIDTH}
-          src="../images/icons/github-icon.png"
-          alt="github"
-        />
-      </a>
-
-      <a href="https://www.linkedin.com/in/arnaudflaesch/">
-        <StaticImage
-          className="mx-5"
-          height={IMG_HEIGHT}
-          width={IMG_WIDTH}
-          src="../images/icons/linkedin-icon.png"
-          alt="linkedin"
-        />
-      </a>
-
-      <a href="https://www.malt.fr/profile/arnaudflaesch">
-        <StaticImage
-          height={IMG_HEIGHT}
-          width={IMG_WIDTH}
-          src="../images/icons/malt-icon.png"
-          alt="malt"
-        />
-      </a>
-    </>
+      <SocialLinks />
+    </div>
   );
 }

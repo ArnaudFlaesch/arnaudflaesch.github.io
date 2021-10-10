@@ -36,7 +36,7 @@ export default function Bio(): React.ReactElement {
         className="bio-avatar"
         layout="fixed"
         formats={['auto', 'webp', 'avif']}
-        src="../../images/profile-picture.png"
+        src="../../images/profile-picture.jpg"
         width={50}
         height={50}
         quality={95}

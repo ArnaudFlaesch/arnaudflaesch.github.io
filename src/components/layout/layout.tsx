@@ -12,6 +12,7 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 
 import './layout.css';
+import Profile from '../Profile';
 
 interface IProps {
   children: React.ReactElement[];
@@ -31,9 +32,16 @@ export default function Layout(props: IProps): React.ReactElement {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
-      <div className="portfolio-body">
-        <main>{props.children}</main>
-        <Footer />
+      <div className="flex flex-row space-x-10">
+        <div className="ml-10 w-1/6 items-center">
+          <Profile />
+        </div>
+        <div className="w-full">
+          <main className="portfolio-body">
+            <div>{props.children}</div>
+            <Footer />
+          </main>
+        </div>
       </div>
     </>
   );
