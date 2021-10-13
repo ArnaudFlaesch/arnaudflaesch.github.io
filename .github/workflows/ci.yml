@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         run: |
-          echo REACT_APP_STEAMFACEBOOK_SDK_APP_ID_API_KEY=${{ secrets.FACEBOOK_SDK_APP_ID }} >> .env.production
+          echo FACEBOOK_SDK_APP_ID_API_KEY=${{ secrets.FACEBOOK_SDK_APP_ID }} >> .env.production
           npm run build
 
       - name: Test

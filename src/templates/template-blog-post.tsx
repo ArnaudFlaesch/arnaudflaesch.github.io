@@ -6,7 +6,6 @@ import Seo from '../components/seo';
 import Bio from '../components/bio/Bio';
 
 import './template-blog-post.scss';
-import { Share } from 'react-twitter-widgets';
 
 interface IProps {
   data: any;
@@ -18,6 +17,11 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
   const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const { previous, next } = props.data;
 
+  function handleShare(url: string) {
+    window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
+    return false;
+  }
+
   return (
     <Layout {...(props.location, siteTitle)}>
       <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
@@ -28,26 +32,29 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
               <div className="flex flex-row">
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
                 <div className="flex flex-row">
-                  <div
-                    className="fb-share-button"
-                    data-href="https://developers.facebook.com/docs/plugins/"
-                    data-layout="button_count"
-                    data-size="small"
-                  >
+                  <div>
                     <a
-                      target="_blank"
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${props.location.href}`}
-                      className="fb-xfbml-parse-ignore"
+                      href="#"
+                      onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}
                     >
                       Partager sur Facebook
                     </a>
                   </div>
-                  <Share url={props.location.href} />
-                  <button>
-                    <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${props.location.href}`}>
+                  <div>
+                    <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
+                      Partager sur Twitter
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      onClick={() =>
+                        handleShare(`https://www.linkedin.com/shareArticle?mini=true&url=${props.location.href}`)
+                      }
+                    >
                       Partager sur Linkedin
                     </a>
-                  </button>
+                  </div>
                 </div>
               </div>
               <p>{post.frontmatter.date}</p>
@@ -78,15 +85,6 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
           </ul>
         </nav>
       </div>
-
-      <div id="fb-root"></div>
-      <script
-        async
-        defer
-        crossOrigin="anonymous"
-        src={`https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0&appId=${process.env.FACEBOOK_SDK_APP_ID}&autoLogAppEvents=1`}
-        nonce="ixhpUZRo"
-      ></script>
     </Layout>
   );
 }
