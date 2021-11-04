@@ -4,18 +4,16 @@ import SocialLinks from './social-links/SocialLinks';
 
 export default function Profile(): React.ReactElement {
   return (
-    <div>
-      <div className="mx-auto mb-5  text-white ">
-        <StaticImage
-          className="bio-avatar"
-          layout="fixed"
-          src="../images/profile-picture.jpg"
-          width={100}
-          height={100}
-          quality={95}
-          alt="Profile picture"
-        />
-      </div>
+    <div className="space-y-3">
+      <StaticImage
+        className="bio-avatar"
+        layout="fixed"
+        src="../images/profile-picture.jpg"
+        width={100}
+        height={100}
+        quality={95}
+        alt="Profile picture"
+      />
 
       <div>
         <p>
