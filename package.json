@@ -28,7 +28,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "dotenv": "12.0.4",
+    "dotenv": "14.1.0",
     "gatsby": "4.5.2",
     "gatsby-plugin-image": "2.5.1",
     "gatsby-plugin-manifest": "4.5.1",
