@@ -4,4 +4,4 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 import 'prismjs/themes/prism.css';
-import './src/styles/global.css';
+import './src/styles/global.scss';
