@@ -1,7 +1,11 @@
 /// <reference types='cypress' />
 
 describe('Projects tests', () => {
-  const PROJECTS_TITLES = ['Dash-Web', 'Dash-WebServices'];
+  const PROJECTS_TITLES = [
+    'Dash-Web',
+    'Dash-WebServices',
+    'arnaudflaesch.github.io'
+  ];
 
   beforeEach(() => {
     cy.visit('/projects');

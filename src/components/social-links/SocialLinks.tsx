@@ -12,16 +12,12 @@ export default function SocialLinks(): React.ReactElement {
 
       <a href="https://www.linkedin.com/in/arnaudflaesch/">
         <StaticImage
-          className="mx-5"
+          className="ml-5"
           height={IMG_HEIGHT}
           width={IMG_WIDTH}
           src="../../images/icons/linkedin-icon.png"
           alt="linkedin"
         />
-      </a>
-
-      <a href="https://www.malt.fr/profile/arnaudflaesch">
-        <StaticImage height={IMG_HEIGHT} width={IMG_WIDTH} src="../../images/icons/malt-icon.png" alt="malt" />
       </a>
     </div>
   );
