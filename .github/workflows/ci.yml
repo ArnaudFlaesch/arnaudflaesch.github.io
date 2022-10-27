@@ -36,7 +36,6 @@ jobs:
 
       - name: Build
         run: |
-          echo FACEBOOK_SDK_APP_ID_API_KEY=${{ secrets.FACEBOOK_SDK_APP_ID }} >> .env.production
           npm run build
 
       - name: Test
