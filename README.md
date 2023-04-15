@@ -2,7 +2,6 @@
 
 [![CI](https://github.com/ArnaudFlaesch/arnaudflaesch.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/ArnaudFlaesch/arnaudflaesch.github.io/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ArnaudFlaesch_arnaudflaesch.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ArnaudFlaesch_arnaudflaesch.github.io)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/92532453d7fd4c58ba8a659c4f9133d4)](https://www.codacy.com/gh/ArnaudFlaesch/arnaudflaesch.github.io/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ArnaudFlaesch/arnaudflaesch.github.io&utm_campaign=Badge_Grade)
 [![Known Vulnerabilities](https://snyk.io/test/github/ArnaudFlaesch/arnaudflaesch.github.io/badge.svg)](https://snyk.io/test/github/ArnaudFlaesch/arnaudflaesch.github.io)
 [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 
