@@ -37,18 +37,17 @@ export default function PortfolioProject(): React.ReactElement {
 
   const portfolioRepo: IRepository = useStaticQuery(QUERY).github.repository;
   const repositoryIcons = [
-    <StaticImage className="h-10 w-10" src="../../images/programming-logos/react-logo.png" alt="react-logo" />
+    <StaticImage
+      key="react"
+      style={{ height: '2.5rem', width: '2.5rem' }}
+      src="../../images/programming-logos/react-logo.png"
+      alt="react-logo"
+    />
   ];
 
   return (
     <div>
-      {
-        <RepositoryWidget
-          key={portfolioRepo.name}
-          repoIcons={repositoryIcons}
-          repositoryData={portfolioRepo}
-        />
-      }
+      {<RepositoryWidget key={portfolioRepo.name} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />}
     </div>
   );
 }

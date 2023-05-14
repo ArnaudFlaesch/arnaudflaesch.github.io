@@ -7,8 +7,8 @@ export default function NotFoundPage(): React.ReactElement {
   return (
     <Layout>
       <Seo title="404: Not found" location="/404" />
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <h1>404</h1>
+      <p>La page que vous cherchez n'existe pas.</p>
     </Layout>
   );
 }

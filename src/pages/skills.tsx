@@ -12,7 +12,9 @@ export default function Skills(): React.ReactElement {
         Skills
         <div className="skill-page">
           {skills.map((skill) => (
-            <div className="skill-label">{skill.title}</div>
+            <div key={skill.id} className="skill-label">
+              {skill.title}
+            </div>
           ))}
         </div>
       </div>

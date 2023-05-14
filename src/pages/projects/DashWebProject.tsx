@@ -37,7 +37,12 @@ export default function DashWebProject(): React.ReactElement {
 
   const dashWebRepo: IRepository = useStaticQuery(QUERY_DASH_WEB).github.repository;
   const repositoryIcons = [
-    <StaticImage className="h-10 w-10" src="../../images/programming-logos/angular-logo.png" alt="angular-logo" />
+    <StaticImage
+      key="angular"
+      style={{ height: '2.5rem', width: '2.5rem' }}
+      src="../../images/programming-logos/angular-logo.png"
+      alt="angular-logo"
+    />
   ];
 
   return (

@@ -17,9 +17,8 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
   const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const { previous, next } = props.data;
 
-  function handleShare(url: string) {
+  function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
-    return false;
   }
 
   return (
@@ -29,9 +28,9 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <div>
             <header>
-              <div className="flex flex-row">
+              <div className="header-container">
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
-                <div className="flex flex-row">
+                <div className="share-buttons">
                   <div>
                     <a
                       href="#"
@@ -48,9 +47,7 @@ export default function BlogPostTemplate(props: IProps): React.ReactElement {
                   <div>
                     <a
                       href="#"
-                      onClick={() =>
-                        handleShare(`https://www.linkedin.com/shareArticle?mini=true&url=${props.location.href}`)
-                      }
+                      onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
                     >
                       Partager sur Linkedin
                     </a>

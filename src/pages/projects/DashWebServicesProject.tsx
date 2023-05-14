@@ -37,7 +37,12 @@ export default function DashWebServicesProject(): React.ReactElement {
 
   const dashWebServicesRepo: IRepository = useStaticQuery(QUERY).github.repository;
   const repositoryIcons = [
-    <StaticImage className="h-10 w-10" src="../../images/programming-logos/kotlin-logo.png" alt="kotlin-logo" />
+    <StaticImage
+      key="kotlin"
+      style={{ height: '2.5rem', width: '2.5rem' }}
+      src="../../images/programming-logos/kotlin-logo.png"
+      alt="kotlin-logo"
+    />
   ];
 
   return (
