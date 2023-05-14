@@ -14,7 +14,11 @@ export default function Blog(props: IPageProps): React.ReactElement {
       <Seo title="Blog" location="/blog" />
       <h1>Blog</h1>
 
-      <ol>{posts && posts.map((post: IPost) => <Post key={post.frontmatter.title} {...post} />)}</ol>
+      <ol>
+        {posts?.map((post: IPost) => (
+          <Post key={post.frontmatter.title} {...post} />
+        ))}
+      </ol>
     </Layout>
   );
 }

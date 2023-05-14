@@ -18,7 +18,11 @@ export default function Index(props: IPageProps): React.ReactElement {
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <Bio />
-        <ol>{posts && posts.map((post: IPost) => <Post key={post.frontmatter.title} {...post} />)}</ol>
+        <ol>
+          {posts.map((post: IPost) => (
+            <Post key={post.frontmatter.title} {...post} />
+          ))}
+        </ol>
         <br />
         <p>
           <Link to="/projects/">Projets professionnels et personnels</Link>

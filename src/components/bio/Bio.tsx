@@ -28,7 +28,6 @@ export default function Bio(): React.ReactElement {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author;
-  const social = data.site.siteMetadata?.social;
 
   return (
     <div className="bio">

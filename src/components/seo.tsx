@@ -38,9 +38,9 @@ export default function Seo(props: IProps): React.ReactElement {
     `
   );
 
-  const metaDescription = props.description || site.siteMetadata.description;
+  const metaDescription = props.description ?? site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-  const meta = props.meta || [];
+  const meta = props.meta ?? [];
 
   return (
     <Helmet
