@@ -21,7 +21,7 @@ export default function Blog(props: IPageProps): React.ReactElement {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
+    allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
       nodes {
         excerpt
         fields {

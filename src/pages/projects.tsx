@@ -4,7 +4,7 @@ import Seo from '../components/seo';
 import DashWebProject from './projects/DashWebProject';
 import DashWebServicesProject from './projects/DashWebServicesProject';
 import PortfolioProject from './projects/PortfolioProject';
-import './projects/projects.scss';
+import './projects.scss';
 
 export default function Projects(): React.ReactElement {
   return (
