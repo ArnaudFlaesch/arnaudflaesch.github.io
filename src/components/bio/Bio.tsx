@@ -45,7 +45,6 @@ export default function Bio(): React.ReactElement {
       {author?.name && (
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}{' '}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>Follow on Twitter</a>
         </p>
       )}
     </div>
