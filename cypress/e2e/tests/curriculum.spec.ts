@@ -2,6 +2,8 @@
 
 describe('Curriculum tests', () => {
   const JOB_TITLES = [
+    'Software Engineer',
+    'Développeur Fullstack',
     'Développeur Java / JS',
     'Développeur Java',
     'Développeur Web',

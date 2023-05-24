@@ -13,7 +13,7 @@ const jobData: Experience[] = [
   },
   {
     id: 8,
-    title: 'Développeur Java / JS',
+    title: 'Développeur Fullstack',
     dateDebut: new Date(Date.parse('2019-05-01')),
     dateFin: new Date(Date.parse('2021-04-30')),
     name: 'tbMaestro',
