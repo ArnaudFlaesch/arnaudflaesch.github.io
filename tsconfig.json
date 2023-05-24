@@ -13,5 +13,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "**/coverage/**", "cypress"]
+  "exclude": ["node_modules", "cypress"]
 }

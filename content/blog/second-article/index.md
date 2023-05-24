@@ -1,7 +1,7 @@
 ---
-title: Don't wait, Renovate
+title: Blog post 2
 date: '2021-05-28T22:40:32.169Z'
-description: Renovate.
+description: Description.
 ---
 
-Tuto Renovate
+Post content

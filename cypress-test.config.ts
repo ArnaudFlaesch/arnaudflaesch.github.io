@@ -8,9 +8,6 @@ export default defineConfig({
   screenshotOnRunFailure: true,
   video: false,
   videoCompression: false,
-  env: {
-    coverage: false
-  },
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
