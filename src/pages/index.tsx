@@ -1,6 +1,5 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import Bio from '../components/bio/Bio';
 import Layout from '../components/layout/layout';
 import Post from '../components/post/Post';
 import Seo from '../components/seo';
@@ -17,7 +16,6 @@ export default function Index(props: IPageProps): React.ReactElement {
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <Bio />
         <ol>
           {posts.map((post: IPost) => (
             <Post key={post.frontmatter.title} {...post} />

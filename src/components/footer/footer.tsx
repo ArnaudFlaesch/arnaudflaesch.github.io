@@ -5,7 +5,7 @@ export default function Footer(): React.ReactElement {
   return (
     <footer>
       <div>
-        © {new Date().getFullYear()}, Développé avec <a href="https://www.gatsbyjs.com">Gatsby</a>
+        © 2023, Développé avec <a href="https://www.gatsbyjs.com">Gatsby</a>
       </div>
     </footer>
   );
