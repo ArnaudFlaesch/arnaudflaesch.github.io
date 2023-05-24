@@ -2,9 +2,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import SocialLinks from './social-links/SocialLinks';
 
+import './Profile.scss';
+
 export default function Profile(): React.ReactElement {
   return (
-    <div className="space-y-3">
+    <div id="profile-container">
       <StaticImage
         className="bio-avatar"
         layout="fixed"
