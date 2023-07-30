@@ -6,8 +6,10 @@ export interface IPageProps {
       };
     };
     allMarkdownRemark: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       nodes: any[];
     };
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   location: any;
 }

@@ -8,7 +8,9 @@ import Bio from '../components/bio/Bio';
 import './template-blog-post.scss';
 
 interface IProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   location: any;
 }
 
