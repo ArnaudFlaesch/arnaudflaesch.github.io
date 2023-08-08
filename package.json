@@ -58,7 +58,7 @@
     "cypress": "12.17.3",
     "eslint": "8.46.0",
     "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-cypress": "2.13.4",
+    "eslint-plugin-cypress": "2.14.0",
     "eslint-plugin-prettier": "5.0.0",
     "gatsby-plugin-postcss": "6.11.0",
     "gh-pages": "5.0.0",
