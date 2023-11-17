@@ -1,12 +1,13 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
 import './header.scss';
+
+import { Link } from 'gatsby';
+import * as React from 'react';
 
 interface IProps {
   siteTitle: string;
 }
 
-export default function Header(props: IProps): React.ReactElement {
+export default function Header(props: Readonly<IProps>): React.ReactElement {
   return (
     <header id="portfolio-header">
       <div id="header-title">
@@ -15,9 +16,7 @@ export default function Header(props: IProps): React.ReactElement {
         </h1>
       </div>
       <div id="url-list">
-        <Link to="/projects/">Projets </Link>
-        <Link to="/curriculum/">CV</Link>
-        <Link to="/skills/">Compétences</Link>
+        <Link to="/contact/">Contact</Link>
       </div>
     </header>
   );

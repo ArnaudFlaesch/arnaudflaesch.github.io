@@ -1,32 +1,25 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import Layout from '../components/layout/layout';
-import Post from '../components/post/Post';
-import Seo from '../components/seo';
-import { IPageProps } from '../model/IPageProps';
-import { IPost } from '../model/IPost';
 
-export default function Index(props: IPageProps): React.ReactElement {
-  const posts = props.data.allMarkdownRemark.nodes;
+import Layout from '../components/layout/layout';
+import Seo from '../components/seo';
+
+export default function Index(/*props: IPageProps*/): React.ReactElement {
+  // const posts = props.data.allMarkdownRemark.nodes;
 
   return (
     <div>
       <Layout>
         <Seo title="Home" />
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <ol>
+        <h1>Bonjour !</h1>
+        {/*<ol>
           {posts.map((post: IPost) => (
             <Post key={post.frontmatter.title} {...post} />
           ))}
-        </ol>
+          </ol>*/}
         <br />
         <p>
-          <Link to="/projects/">Projets professionnels et personnels</Link>
-          <br />
-          <Link to="/curriculum/">Curriculum Vitae</Link> <br />
-          <Link to="/skills/">Compétences</Link> <br />
+          <Link to="/contact/">Contact</Link>
         </p>
       </Layout>
     </div>
