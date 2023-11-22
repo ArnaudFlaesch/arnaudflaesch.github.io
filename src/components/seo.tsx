@@ -67,22 +67,6 @@ export default function Seo(props: IProps): React.ReactElement {
         {
           property: 'og:type',
           content: 'website'
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary'
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata?.social.twitter || ''
-        },
-        {
-          name: 'twitter:title',
-          content: props.title
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription
         }
       ].concat(meta)}
     />

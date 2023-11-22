@@ -18,9 +18,6 @@ export default function Bio(): React.ReactElement {
             name
             summary
           }
-          social {
-            twitter
-          }
         }
       }
     }
