@@ -1,0 +1,36 @@
+@import '../../styles/colors';
+
+#portfolio-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: $header-background-color;
+  margin-bottom: 1.45rem;
+
+  #header-title {
+    max-width: 960px;
+    padding: 1.45rem 1.0875rem;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  #url-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+
+      margin-right: calc(2rem * var(--tw-space-x-reverse));
+      margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+
+  a {
+    color: $header-text-color;
+    text-decoration: none;
+  }
+}

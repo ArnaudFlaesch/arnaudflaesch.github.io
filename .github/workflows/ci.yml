@@ -1,0 +1,70 @@
+name: Node.js CI
+
+on: ['push']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      GATSBY_PORTFOLIO_GITHUB_TOKEN: ${{ secrets.GATSBY_PORTFOLIO_GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.8.1
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: |
+          npm run lint:styles
+          npm run lint:styles:report
+          npm run eslint
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+          config-file: cypress-test.config.ts
+          start: npm start
+          wait-on: 'http://localhost:8000'
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        if: success() && github.ref == 'refs/heads/master'
+        with:
+          path: ./public
+
+  deploy:
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: test
+    if: success() && github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
