@@ -1,8 +1,8 @@
 {
   "name": "arnaudflaesch.github.io",
   "author": "Arnaud Flaesch",
-  "version": "0.1.2",
-  "description": "Portfolio professionnel",
+  "version": "0.2.0",
+  "description": "Site web personnel",
   "homepage": "https://arnaudflaesch.github.io",
   "private": true,
   "engines": {
@@ -12,10 +12,8 @@
   "scripts": {
     "start": "gatsby develop -o",
     "build": "export NODE_ENV=production && gatsby build",
-    "test:ci": "run-p -r start cy:run:ci",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",
-    "cy:run:ci": "wait-on http://localhost:8000 && npm run cy:run -- --config-file cypress-test.config.ts",
     "cy:verify": "npx cypress verify",
     "eslint": "eslint src/",
     "eslint:fix": "npm run eslint -- --fix",
@@ -62,7 +60,6 @@
     "eslint-plugin-prettier": "5.0.1",
     "gatsby-plugin-postcss": "6.12.0",
     "gh-pages": "6.1.0",
-    "npm-run-all": "4.1.5",
     "postcss": "8.4.31",
     "prettier": "3.1.0",
     "sass": "1.69.5",
@@ -70,7 +67,6 @@
     "stylelint-config-prettier-scss": "1.0.0",
     "stylelint-config-standard-scss": "11.1.0",
     "tailwindcss": "3.3.5",
-    "typescript": "5.3.2",
-    "wait-on": "7.2.0"
+    "typescript": "5.3.2"
   }
 }
