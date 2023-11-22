@@ -29,9 +29,6 @@ export default function Seo(props: IProps): React.ReactElement {
               name
               summary
             }
-            social {
-              twitter
-            }
           }
         }
       }
