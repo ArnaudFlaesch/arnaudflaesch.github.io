@@ -32,16 +32,14 @@ export default function Layout(props: IProps): React.ReactElement {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
-      <div className="flex flex-row space-x-10">
-        <div className="ml-10 w-1/6 items-center">
+      <div id="site-container">
+        <div id="profile-container">
           <Profile />
         </div>
-        <div className="w-full">
-          <main className="portfolio-body">
-            <div>{props.children}</div>
-            <Footer />
-          </main>
-        </div>
+        <main className="portfolio-body">
+          <div>{props.children}</div>
+          <Footer />
+        </main>
       </div>
     </>
   );

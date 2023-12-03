@@ -1,4 +1,4 @@
-import { graphql, Link, Script } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 
 import Layout from '../components/layout/layout';
@@ -18,11 +18,13 @@ export default function Index(/*props: IPageProps*/): React.ReactElement {
           ))}
           </ol>*/}
         <br />
-        <p>
-          <Link to="/contact/">Contact</Link>
-        </p>
 
-        <Script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript" />
+        <iframe
+          title="Curriculum Vitae"
+          width={document.body.clientWidth}
+          height={document.body.clientHeight}
+          src="/cv.pdf"
+        ></iframe>
       </Layout>
     </div>
   );

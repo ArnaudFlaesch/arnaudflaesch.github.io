@@ -17,23 +17,21 @@ interface IProps {
   location?: string;
 }
 
-export default function Seo(props: IProps): React.ReactElement {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author {
-              name
-              summary
-            }
+export default function Seo(props: Readonly<IProps>): React.ReactElement {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author {
+            name
+            summary
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   const metaDescription = props.description ?? site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
