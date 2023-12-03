@@ -1,6 +1,6 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
-
+import './index.css';
 import Layout from '../components/layout/layout';
 import Seo from '../components/seo';
 
@@ -18,9 +18,8 @@ export default function Index(/*props: IPageProps*/): React.ReactElement {
           ))}
           </ol>*/}
         <br />
-        <p>
-          <Link to="/contact/">Contact</Link>
-        </p>
+
+        <iframe id="cv-container" title="Curriculum Vitae" src="/cv.pdf"></iframe>
       </Layout>
     </div>
   );

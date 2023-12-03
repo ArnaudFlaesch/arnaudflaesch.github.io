@@ -3,7 +3,10 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
+  font:
+    112.5%/1.45em georgia,
+    serif,
+    sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -711,14 +714,7 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family:
-    'SFMono-Regular',
-    Consolas,
-    'Roboto Mono',
-    'Droid Sans Mono',
-    'Liberation Mono',
-    Menlo,
-    Courier,
+  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier,
     monospace;
   padding: 0;
   padding-top: 0.2em;
@@ -751,9 +747,23 @@ pre tt::after {
   }
 }
 
-.portfolio-body {
-  max-width: 80%;
-  padding: 0 1.0875rem 1.45rem;
+#site-container {
+  display: flex;
+  flex-direction: row;
+  > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem /* 40px */ * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem /* 40px */ * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  #profile-container {
+    margin: 0 auto;
+  }
+
+  .portfolio-body {
+    width: 80%;
+    padding: 0 1.0875rem 1.45rem;
+  }
 }
 
 /* stylelint-enable */
