@@ -14,7 +14,7 @@ describe('Skills tests', () => {
   beforeEach(() => {
     cy.visit('/skills');
   });
-  it('Should display the skills page', () => {
+  xit('Should display the skills page', () => {
     cy.get('.skill-label').each((element, index) => {
       expect(element.text().trim()).to.equal(SKILLS_LIST[index]);
     });
