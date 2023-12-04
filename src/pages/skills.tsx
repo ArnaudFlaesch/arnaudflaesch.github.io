@@ -83,7 +83,7 @@ export default function Skills(): React.ReactElement {
 
         <div className="language-list-container">
           <h4>Backend</h4>
-          <span>Java 11, Kotlin, Spring Boot, Spring Security</span>
+          <span>Spring Boot, Spring Security</span>
           <span>
             <a href="https://dev.java/">
               <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" width="40" height="40" />
@@ -108,7 +108,7 @@ export default function Skills(): React.ReactElement {
 
         <div className="language-list-container">
           <h4>Outils</h4>
-          <span>Github Actions, Jenkins, Sonarcloud, Snyk, Git</span>
+          <span>Github Actions, Sonarcloud, Snyk</span>
           <span>
             <a href="https://www.docker.com/" target="_blank">
               <img
