@@ -24,7 +24,6 @@ export default function Index(/*props: IPageProps*/): React.ReactElement {
             <Post key={post.frontmatter.title} {...post} />
           ))}
           </ol>*/}
-        <br />
 
         <div id="cv">
           <h2>Curriculum Vitae</h2>
