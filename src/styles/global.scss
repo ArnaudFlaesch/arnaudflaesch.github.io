@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 /* CSS Custom Properties Definitions */
 
@@ -33,28 +33,9 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans:
-    montserrat,
-    system-ui,
-    -apple-system,
-    blinkmacsystemfont,
-    'Segoe UI',
-    roboto,
-    'Helvetica Neue',
-    arial,
-    'Noto Sans',
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji';
-  --fontFamily-serif:
-    'Merriweather',
-    'Georgia',
-    cambria,
-    'Times New Roman',
-    times,
-    serif;
+  --fontFamily-sans: montserrat, system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue',
+    arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --fontFamily-serif: 'Merriweather', 'Georgia', cambria, 'Times New Roman', times, serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
@@ -338,5 +319,6 @@ a:focus {
     list-style-position: inside;
   }
 }
-a {}
+a {
+}
 /* stylelint-enable */

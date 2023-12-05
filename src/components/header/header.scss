@@ -22,15 +22,16 @@
     align-items: center;
 
     > :not([hidden]) ~ :not([hidden]) {
-      --tw-space-x-reverse: 0;
+      margin-left: 2rem;
+    }
 
-      margin-right: calc(2rem * var(--tw-space-x-reverse));
-      margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+    @media (max-width: 500px) {
+      flex-direction: column;
+      margin: auto 10px auto 0;
     }
   }
 
   a {
     color: $header-text-color;
-    text-decoration: none;
   }
 }

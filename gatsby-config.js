@@ -6,10 +6,9 @@ module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
     description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
-    author: {
-      name: 'ArnaudFlaesch',
-      summary: 'Développeur Web'
-    },
+    author: 'Arnaud Flaesch',
+    job: 'Développeur Web',
+    keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
     siteUrl: 'https://arnaudflaesch.github.io/'
   },
   plugins: [
