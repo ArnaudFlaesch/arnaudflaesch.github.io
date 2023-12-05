@@ -4,7 +4,7 @@
   justify-content: space-around;
   border: 2px solid black;
 
-  @media (max-width: 600px) {
+  @media (width <= 600px) {
     flex-direction: column;
   }
 
@@ -16,7 +16,7 @@
   h4 {
     text-align: center;
 
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
       text-align: left;
     }
   }
