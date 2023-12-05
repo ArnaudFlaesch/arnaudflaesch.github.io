@@ -22,7 +22,6 @@ export default function Bio(): React.ReactElement {
     <div className="bio">
       <StaticImage
         className="bio-avatar"
-        layout="fixed"
         formats={['auto', 'webp', 'avif']}
         src="../../images/profile-picture.jpg"
         width={50}
@@ -30,12 +29,11 @@ export default function Bio(): React.ReactElement {
         quality={95}
         alt="Profile picture"
       />
-      {author &&
-        job(
-          <p>
-            Written by <strong>{author}</strong> {job}{' '}
-          </p>
-        )}
+      {author && job && (
+        <p>
+          Écrit par <strong>{author}</strong>, {job}
+        </p>
+      )}
     </div>
   );
 }

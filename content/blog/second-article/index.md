@@ -1,7 +1,7 @@
 ---
-title: Blog post 2
-date: '2021-05-28T22:40:32.169Z'
-description: Description.
+title: Deuxième article
+date: '2023-12-05T15:18'
+description: A venir...
 ---
 
 Post content

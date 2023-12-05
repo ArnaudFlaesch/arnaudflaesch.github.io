@@ -14,7 +14,7 @@ interface IProps {
   location: any;
 }
 
-export default function BlogPostTemplate(props: IProps): React.ReactElement {
+export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactElement {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const { previous, next } = props.data;
@@ -101,7 +101,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMMM, YYYY", locale: "fr")
         description
       }
     }

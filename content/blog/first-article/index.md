@@ -1,7 +1,7 @@
 ---
-title: New Beginnings
-date: '2021-05-12T22:40:32.169Z'
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+title: Bienvenue sur ce blog
+date: '2023-12-04T15:18'
+description: A venir...
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
@@ -51,10 +51,10 @@ Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
 didn’t listen. She packed her seven versalia, put her initial into the belt and
 made herself on the way.
 
-1.  So baboon this
-2.  Mounted militant weasel gregariously admonishingly straightly hey
-3.  Dear foresaw hungry and much some overhung
-4.  Rash opossum less because less some amid besides yikes jeepers frenetic
+1. So baboon this
+2. Mounted militant weasel gregariously admonishingly straightly hey
+3. Dear foresaw hungry and much some overhung
+4. Rash opossum less because less some amid besides yikes jeepers frenetic
     impassive fruitlessly shut
 
 When she reached the first hills of the Italic Mountains, she had a last view
