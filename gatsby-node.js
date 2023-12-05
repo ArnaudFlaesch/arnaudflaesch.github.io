@@ -15,20 +15,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPost = path.resolve('./src/templates/template-blog-post.tsx');
 
   // Get all markdown blog posts sorted by date
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
-          nodes {
-            id
-            fields {
-              slug
-            }
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
+        nodes {
+          id
+          fields {
+            slug
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   if (result.errors) {
     reporter.panicOnBuild('There was an error loading your blog posts', result.errors);
@@ -83,12 +81,12 @@ exports.createSchemaCustomization = ({ actions }) => {
   // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
      type SiteSiteMetadata {
-       author: Author
-       siteUrl: String
-     }
-     type Author {
-       name: String
-       summary: String
+        title: String
+        description: String
+        author: String
+        job: String
+        siteUrl: String
+        keywords: String
      }
      type MarkdownRemark implements Node {
        frontmatter: Frontmatter

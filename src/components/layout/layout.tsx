@@ -18,7 +18,7 @@ interface IProps {
   children: React.ReactElement[];
 }
 
-export default function Layout(props: IProps): React.ReactElement {
+export default function Layout(props: Readonly<IProps>): React.ReactElement {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

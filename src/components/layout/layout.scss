@@ -750,10 +750,15 @@ pre tt::after {
 #site-container {
   display: flex;
   flex-direction: row;
+
   > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2.5rem /* 40px */ * var(--tw-space-x-reverse));
     margin-left: calc(2.5rem /* 40px */ * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  @media (max-width: 500) {
+    flex-direction: column;
   }
 
   #profile-container {

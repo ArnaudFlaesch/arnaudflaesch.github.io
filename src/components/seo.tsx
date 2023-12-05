@@ -24,10 +24,9 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
         siteMetadata {
           title
           description
-          author {
-            name
-            summary
-          }
+          author
+          job
+          siteUrl
         }
       }
     }
@@ -62,6 +61,10 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
         {
           property: 'og:type',
           content: 'website'
+        },
+        {
+          name: 'keywords',
+          content: site.siteMetadata.keywords
         }
       ].concat(meta)}
     />

@@ -7,10 +7,8 @@ export default function Bio(): React.ReactElement {
     query BioQuery {
       site {
         siteMetadata {
-          author {
-            name
-            summary
-          }
+          author
+          job
         }
       }
     }
@@ -18,12 +16,12 @@ export default function Bio(): React.ReactElement {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author;
+  const job = data.site.siteMetadata?.job;
 
   return (
     <div className="bio">
       <StaticImage
         className="bio-avatar"
-        layout="fixed"
         formats={['auto', 'webp', 'avif']}
         src="../../images/profile-picture.jpg"
         width={50}
@@ -31,9 +29,9 @@ export default function Bio(): React.ReactElement {
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && (
+      {author && job && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}{' '}
+          Écrit par <strong>{author}</strong>, {job}
         </p>
       )}
     </div>
