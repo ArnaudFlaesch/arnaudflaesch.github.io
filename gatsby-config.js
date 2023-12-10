@@ -2,6 +2,8 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+const siteUrl = 'https://arnaudflaesch.github.io/';
+
 module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
@@ -9,7 +11,7 @@ module.exports = {
     author: 'Arnaud Flaesch',
     job: 'Développeur Web',
     keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
-    siteUrl: 'https://arnaudflaesch.github.io/'
+    siteUrl: siteUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -82,8 +84,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: siteMetadata.siteUrl,
-        sitemap: `${siteMetadata.siteUrl}sitemap/sitemap-index.xml`,
+        host: siteUrl,
+        sitemap: `${siteUrl}sitemap/sitemap-index.xml`,
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
