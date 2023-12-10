@@ -2,6 +2,8 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+const siteUrl = 'https://arnaudflaesch.github.io/';
+
 module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
@@ -9,13 +11,14 @@ module.exports = {
     author: 'Arnaud Flaesch',
     job: 'Développeur Web',
     keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
-    siteUrl: 'https://arnaudflaesch.github.io/'
+    siteUrl: siteUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-plugin-postcss',
     'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -76,6 +79,14 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}sitemap/sitemap-index.xml`,
+        policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
