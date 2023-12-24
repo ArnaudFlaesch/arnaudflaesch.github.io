@@ -25,7 +25,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 
         <div id="cv">
           <h2>Curriculum Vitae</h2>
-          <iframe id="cv-container" title="Curriculum Vitae" src="/cv.pdf"></iframe>
+          <iframe id="cv-container" title="Curriculum Vitae" src="/Curriculum Vitae Arnaud Flaesch.pdf"></iframe>
         </div>
 
         <div id="technos">
