@@ -1,6 +1,5 @@
 import './header.scss';
 
-import { Link } from 'gatsby';
 import * as React from 'react';
 
 interface IProps {
