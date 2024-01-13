@@ -1,14 +1,14 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { IRepository } from '../../model/IRepository';
-import RepositoryWidget from '../../components/projects/RepositoryWidget';
+import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export default function DashWebServicesProject(): React.ReactElement {
+export default function PortfolioProject(): React.ReactElement {
   const QUERY = graphql`
     {
       github {
-        repository(name: "Dash-WebServices", owner: "ArnaudFlaesch") {
+        repository(name: "arnaudflaesch.github.io", owner: "ArnaudFlaesch") {
           createdAt
           description
           name
@@ -35,25 +35,19 @@ export default function DashWebServicesProject(): React.ReactElement {
     }
   `;
 
-  const dashWebServicesRepo: IRepository = useStaticQuery(QUERY).github.repository;
+  const portfolioRepo: IRepository = useStaticQuery(QUERY).github.repository;
   const repositoryIcons = [
     <StaticImage
-      key="kotlin"
+      key="react"
       style={{ height: '2.5rem', width: '2.5rem' }}
-      src="../../images/programming-logos/kotlin-logo.png"
-      alt="kotlin-logo"
+      src="../../images/programming-logos/react-logo.png"
+      alt="react-logo"
     />
   ];
 
   return (
     <div>
-      {
-        <RepositoryWidget
-          key={dashWebServicesRepo.name}
-          repoIcons={repositoryIcons}
-          repositoryData={dashWebServicesRepo}
-        />
-      }
+      {<RepositoryWidget key={portfolioRepo.name} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />}
     </div>
   );
 }

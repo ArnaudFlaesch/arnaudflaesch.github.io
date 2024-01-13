@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { IRepository } from '../../model/IRepository';
-import RepositoryWidget from '../../components/projects/RepositoryWidget';
+import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
 
 export default function DashWebProject(): React.ReactElement {
