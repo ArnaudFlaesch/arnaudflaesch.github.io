@@ -26,6 +26,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@formspree/react": "2.5.1",
     "dotenv": "16.3.1",
     "gatsby": "5.13.1",
     "gatsby-plugin-image": "3.13.0",

@@ -7,6 +7,7 @@ import Skills from './skills/skills';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 import Post from '../components/post/Post';
+import Contact from '../components/contact/Contact';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
@@ -22,6 +23,8 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je
           travaille.
         </p>
+
+        <Contact />
 
         <div id="cv">
           <h2>Curriculum Vitae</h2>
