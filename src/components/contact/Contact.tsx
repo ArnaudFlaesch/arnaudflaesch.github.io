@@ -1,7 +1,5 @@
-import { ValidationError, useForm } from '@formspree/react';
-import axios from 'axios';
+import { useForm, ValidationError } from '@formspree/react';
 import * as React from 'react';
-import { useState } from 'react';
 
 export default function Contact(): React.ReactElement {
   const [state, handleSubmit] = useForm('mkndgrkd');
