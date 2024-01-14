@@ -11,6 +11,7 @@ import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 import Skills from './skills/skills';
 import Projects from '../components/projects/projects';
+import CV from '../components/cv/CV';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
@@ -31,11 +32,16 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           <Contact />
         </div>
 
+        <div>
+          <h2>Curriculum Vitae</h2>
+          <CV />
+        </div>
+        {/*
         <div id="cv">
           <h2>Curriculum Vitae</h2>
           <iframe id="cv-container" title="Curriculum Vitae" src="/Curriculum Vitae Arnaud Flaesch.pdf"></iframe>
         </div>
-
+  */}
         <div id="technos">
           <Skills />
         </div>

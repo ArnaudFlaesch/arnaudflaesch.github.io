@@ -1,0 +1,8 @@
+#job-list > *:not(:last-child) {
+  margin-top: 10px;
+}
+
+#cv-grid {
+  display: flex;
+  flex-direction: row;
+}

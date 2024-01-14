@@ -1,7 +1,12 @@
-.social-link {
-  margin-left: 0.75rem;
+#social-links {
+  display: flex;
+  flex-direction: row;
 
-  img {
-    border-radius: 50%;
+  .social-link {
+    margin-left: 0.75rem;
+
+    img {
+      border-radius: 50%;
+    }
   }
 }
