@@ -40,7 +40,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
     <Helmet
       htmlAttributes={{ lang: props.lang }}
       title={props.title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ''}
+      titleTemplate={defaultTitle ? `${defaultTitle}` : ''}
       meta={[
         {
           name: 'description',
