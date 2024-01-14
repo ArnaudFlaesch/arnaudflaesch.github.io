@@ -1,5 +1,5 @@
 import React from 'react';
-import { IEdge, IRepository } from '../../model/IRepository';
+import { IEdge, IRepository } from '../../../model/IRepository';
 import './RepositoryWidget.scss';
 
 interface IProps {

@@ -1,6 +1,6 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import SocialLinks from './social-links/SocialLinks';
+import SocialLinks from '../social-links/SocialLinks';
 
 import './Profile.scss';
 
@@ -10,7 +10,7 @@ export default function Profile(): React.ReactElement {
       <StaticImage
         className="bio-avatar"
         layout="fixed"
-        src="../images/profile-picture.jpg"
+        src="../../images/profile-picture.jpg"
         width={100}
         height={100}
         quality={95}

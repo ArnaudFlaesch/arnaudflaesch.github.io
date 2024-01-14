@@ -1,13 +1,16 @@
+import './index.css';
+
 import { graphql } from 'gatsby';
 import React from 'react';
-import './index.css';
-import Layout from '../components/layout/layout';
+
+import Contact from '../components/contact/Contact';
+import Layout from '../layout/layout';
+import Post from '../components/post/Post';
 import Seo from '../components/seo';
-import Skills from './skills/skills';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
-import Post from '../components/post/Post';
-import Contact from '../components/contact/Contact';
+import Skills from './skills/skills';
+import Projects from '../components/projects/projects';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
@@ -24,7 +27,9 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           travaille.
         </p>
 
-        <Contact />
+        <div id="contact">
+          <Contact />
+        </div>
 
         <div id="cv">
           <h2>Curriculum Vitae</h2>
@@ -42,6 +47,9 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
             ))}
           </ol>
         }
+
+        <h3>Projets en cours</h3>
+        <Projects />
       </Layout>
     </div>
   );

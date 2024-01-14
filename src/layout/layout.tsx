@@ -8,11 +8,11 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
 
 import './layout.scss';
-import Profile from '../Profile';
+import Profile from '../components/profile/Profile';
 
 interface IProps {
   children: React.ReactElement[];
@@ -36,7 +36,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <div id="profile-container">
           <Profile />
         </div>
-        <main className="portfolio-body">
+        <main id="portfolio-body">
           <div>{props.children}</div>
           <Footer />
         </main>
