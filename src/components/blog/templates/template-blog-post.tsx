@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout/layout';
-import Seo from '../components/seo';
-import Bio from '../components/bio/Bio';
+import Layout from '../../layout/layout';
+import Seo from '../../seo';
+import Bio from '../../bio/Bio';
 
 import './template-blog-post.scss';
 

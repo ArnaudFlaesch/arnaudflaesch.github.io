@@ -12,7 +12,7 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 
 import './layout.scss';
-import Profile from '../Profile';
+import Profile from '../profile/Profile';
 
 interface IProps {
   children: React.ReactElement[];

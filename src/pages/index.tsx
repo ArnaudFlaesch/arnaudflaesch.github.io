@@ -10,7 +10,7 @@ import Seo from '../components/seo';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 import Skills from './skills/skills';
-import Projects from './projects';
+import Projects from '../components/projects/projects';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
