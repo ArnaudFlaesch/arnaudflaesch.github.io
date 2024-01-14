@@ -1,0 +1,23 @@
+#contact-form {
+  border: 1px solid black;
+  padding: 10px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  textarea {
+    border: 1px solid black;
+    border-radius: 1%;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: lightblue;
+    font-size: medium;
+    border-radius: 10%;
+  }
+}

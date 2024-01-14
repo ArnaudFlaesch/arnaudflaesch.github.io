@@ -8,11 +8,11 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
 
 import './layout.scss';
-import Profile from '../profile/Profile';
+import Profile from '../components/profile/Profile';
 
 interface IProps {
   children: React.ReactElement[];

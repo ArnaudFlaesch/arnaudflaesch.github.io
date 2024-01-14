@@ -757,7 +757,7 @@ pre tt::after {
     margin-left: calc(2.5rem /* 40px */ * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  @media (max-width: 500) {
+  @media (width <= 600px) {
     flex-direction: column;
   }
 
