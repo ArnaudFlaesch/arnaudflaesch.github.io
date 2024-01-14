@@ -759,13 +759,17 @@ pre tt::after {
 
   @media (width <= 600px) {
     flex-direction: column;
+
+    #portfolio-body {
+      margin-top: 20px;
+    }
   }
 
   #profile-container {
     margin: 0 auto;
   }
 
-  .portfolio-body {
+  #portfolio-body {
     width: 80%;
     padding: 0 1.0875rem 1.45rem;
   }

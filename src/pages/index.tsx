@@ -48,6 +48,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           </ol>
         }
 
+        <h3>Projets en cours</h3>
         <Projects />
       </Layout>
     </div>

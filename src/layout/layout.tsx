@@ -36,7 +36,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <div id="profile-container">
           <Profile />
         </div>
-        <main className="portfolio-body">
+        <main id="portfolio-body">
           <div>{props.children}</div>
           <Footer />
         </main>
