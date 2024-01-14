@@ -17,7 +17,7 @@ export default function Profile(): React.ReactElement {
         alt="Profile picture"
       />
 
-      <div>
+      <div id="short-presentation">
         <p>
           Arnaud Flaesch <br />
           Développeur Web

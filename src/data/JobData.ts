@@ -1,36 +1,50 @@
-import Experience from '../components/curriculum/Experience';
+import { IExperience } from '../model/IExperience';
 
-const jobData: Experience[] = [
+export const jobData: IExperience[] = [
   {
-    id: 9,
-    title: 'Software Engineer',
+    title: 'Développeur backend Java',
     dateDebut: new Date(Date.parse('2021-08-02')),
     name: 'Publicis Sapient France',
-    location: 'Paris - 75020',
-    description: 'CDI',
-    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot'],
-    isCurrentExperience: true
+    location: 'Paris 20è, France',
+    description: `Développement sur la partie backend d'une application e-commerce dans une équipe agile d'une dizaine
+    de personnes avec le framework SAFe.
+• Développement de nouveaux endpoints permettant de récupérer la liste des produits déjà achetés
+par un utilisateur, les commandes et la liste des bons de livraisons associés aux différentes
+commandes.
+• Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
+Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.`,
+    skills: []
   },
   {
-    id: 8,
-    title: 'Développeur Fullstack',
+    title: 'Développeur fullstack',
     dateDebut: new Date(Date.parse('2019-05-01')),
     dateFin: new Date(Date.parse('2021-04-30')),
     name: 'tbMaestro',
     location: 'Montréal - Canada',
-    description: 'V.I.E.',
-    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot'],
-    isCurrentExperience: false
+    description: `Volontariat International en Entreprise dans une équipe agile (Scrum) de 6 développeurs et un Product
+    Owner. Réalisation de développements sur l'application SaaS de l'entreprise.Création du module de
+    gestion des contrôles liés aux actifs.
+    • Création du module de génération d'un compte rendu envoyé par mail contenant les différentes
+    actions effectuées par les utilisateurs (création, modification et suppression d'un actif par exemple)
+    durant une période configurable.
+    • Module de gestion des espaces liés à un actif.
+    • Migration des tests End-to-End de l'application de Selenium vers Cypress.
+    Environnement technique : Angular 10, Kotlin, Sass, Spring Boot, PostgreSQL, MongoDB, Docker et
+    Jenkins.`,
+    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot']
   },
   {
-    id: 7,
-    title: 'Développeur Java / JS',
+    title: 'Développeur fullstack',
     dateDebut: new Date(Date.parse('2017-08-18')),
     dateFin: new Date(Date.parse('2018-04-12')),
     name: 'Sopra Steria',
     location: 'Montreuil - 93340',
-    description:
-      "CDI Développement d'une application Web de gestion des limitations de vitesse sur les routes de France.",
+    description: `Développement d'une application Web permettant de répertorier et gérer les limitations de vitesses sur les
+    tronçons des routes de France. Équipe de 4 développeurs, une Scrum Master et un Product Owner.
+    • Création d'IHM, affichage et gestion des données cartographiques côté front-end.
+    • Développement de la partie back-end et gestion de la base de données.
+    • Développement des tests unitaires.
+    Environnement technique : Java (Struts 2), JQuery, SQL, CSS (Sass) et OpenLayers`,
     skills: [
       'JavaScript ES6',
       'Java 8',
@@ -43,11 +57,9 @@ const jobData: Experience[] = [
       'Spring Boot',
       'Sass',
       'Git'
-    ],
-    isCurrentExperience: false
+    ]
   },
   {
-    id: 6,
     title: 'Développeur Java',
     name: 'Franprix - Leader Price',
     dateDebut: new Date(Date.parse('2015-10-01')),
@@ -57,7 +69,6 @@ const jobData: Experience[] = [
     skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN']
   },
   {
-    id: 5,
     title: 'Développeur Web',
     name: 'AB Cube',
     dateDebut: new Date(Date.parse('2015-10-01')),
@@ -67,7 +78,6 @@ const jobData: Experience[] = [
     skills: ['PHP', 'SQL', 'JavaScript', 'Git']
   },
   {
-    id: 4,
     title: 'Développeur Java',
     name: 'GMF Assurances',
     dateDebut: new Date(Date.parse('2015-05-15')),
@@ -77,7 +87,6 @@ const jobData: Experience[] = [
     skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git']
   },
   {
-    id: 3,
     title: 'Développeur Java / JS',
     name: 'La Réserve',
     dateDebut: new Date(Date.parse('2014-06-02')),
@@ -87,7 +96,6 @@ const jobData: Experience[] = [
     skills: ['PHP', 'SQL', 'JavaScript', 'JQuery']
   },
   {
-    id: 2,
     title: 'Développeur Web',
     name: 'Accueil Cambodgien',
     dateDebut: new Date(Date.parse('2014-01-13')),
@@ -97,7 +105,6 @@ const jobData: Experience[] = [
     skills: ['Wordpress', 'PHP', 'SQL']
   },
   {
-    id: 1,
     title: 'Développeur PHP',
     name: 'Free / MCRA',
     dateDebut: new Date(Date.parse('2013-05-31')),

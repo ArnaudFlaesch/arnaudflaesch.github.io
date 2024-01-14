@@ -1,8 +1,7 @@
-import Experience from '../components/curriculum/Experience';
+import { IExperience } from '../model/IExperience';
 
-const formationData: Experience[] = [
+export const formationData: IExperience[] = [
   {
-    id: 5,
     title: 'Mastère Architecture des Logiciels',
     name: 'ESGI - École Supérieure de Génie Informatique',
     location: 'Paris 12ème',
@@ -12,7 +11,6 @@ const formationData: Experience[] = [
     skills: []
   },
   {
-    id: 4,
     title: 'Bachelor Architecture des Logiciels',
     name: 'ESGI - École Supérieure de Génie Informatique',
     location: 'Paris 12ème',
@@ -22,7 +20,6 @@ const formationData: Experience[] = [
     skills: []
   },
   {
-    id: 3,
     title: 'Brevet de Technicien Supérieur',
     name: 'Lycée Privé Saint Michel de Picpus',
     location: 'Saint Mandé',
@@ -32,7 +29,6 @@ const formationData: Experience[] = [
     skills: []
   },
   {
-    id: 2,
     title: 'Licence Mathématiques - Informatique',
     name: 'Université Paris Descartes - Paris 5',
     location: 'Paris 07ème',
@@ -42,7 +38,6 @@ const formationData: Experience[] = [
     skills: []
   },
   {
-    id: 1,
     title: 'Baccalauréat Économique et Social',
     name: 'Lycée privé Massillon',
     location: 'Paris 12ème',

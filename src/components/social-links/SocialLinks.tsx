@@ -7,7 +7,7 @@ export default function SocialLinks(): React.ReactElement {
   const IMG_HEIGHT = 34;
   const IMG_WIDTH = 34;
   return (
-    <div>
+    <div id="social-links">
       <a href="https://github.com/ArnaudFlaesch">
         <StaticImage height={IMG_HEIGHT} width={IMG_WIDTH} src="../../images/icons/github-icon.png" alt="github" />
       </a>
