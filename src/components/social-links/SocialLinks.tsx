@@ -23,6 +23,14 @@ export default function SocialLinks(): React.ReactElement {
           alt="welovedevs"
         />
       </a>
+      <a href="https://www.scrum.org/user/1355891" className="social-link">
+        <StaticImage
+          height={IMG_HEIGHT}
+          width={IMG_WIDTH}
+          src="../../images/icons/scrum-org-icon.png"
+          alt="scrum.org"
+        />
+      </a>
     </div>
   );
 }

@@ -30,8 +30,10 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   `);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
+    <div id="page-container">
+      <div id="fixed-header">
+        <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
+      </div>
       <div id="site-container">
         <div id="profile-container">
           <Profile />
@@ -41,6 +43,6 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
           <Footer />
         </main>
       </div>
-    </>
+    </div>
   );
 }

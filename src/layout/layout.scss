@@ -747,31 +747,42 @@ pre tt::after {
   }
 }
 
-#site-container {
-  display: flex;
-  flex-direction: row;
+#page-container {
+  height: 100%;
 
-  > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2.5rem /* 40px */ * var(--tw-space-x-reverse));
-    margin-left: calc(2.5rem /* 40px */ * calc(1 - var(--tw-space-x-reverse)));
+  #fixed-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
   }
 
-  @media (width <= 600px) {
-    flex-direction: column;
+  #site-container {
+    position: absolute;
+    margin-top: 6em;
+    display: flex;
+    flex-direction: row;
+
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(2.5rem /* 40px */ * var(--tw-space-x-reverse));
+    }
+
+    @media (width <= 600px) {
+      flex-direction: column;
+
+      #portfolio-body {
+        margin-top: 20px;
+      }
+    }
+
+    #profile-container {
+      margin: 0 auto;
+    }
 
     #portfolio-body {
-      margin-top: 20px;
+      width: 85%;
+      padding: 0 1.0875rem 1.45rem;
     }
-  }
-
-  #profile-container {
-    margin: 0 auto;
-  }
-
-  #portfolio-body {
-    width: 80%;
-    padding: 0 1.0875rem 1.45rem;
   }
 }
 
