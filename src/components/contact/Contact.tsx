@@ -11,6 +11,8 @@ export default function Contact(): React.ReactElement {
       {state.succeeded && <p>Votre email a bien été envoyé !</p>}
       {!state.succeeded && (
         <form id="contact-form" onSubmit={handleSubmit}>
+          <h3>Formulaire de contact</h3>
+
           <div className="form-group">
             <label htmlFor="email">Votre adresse mail</label>
             <input id="email" type="email" name="email" />
