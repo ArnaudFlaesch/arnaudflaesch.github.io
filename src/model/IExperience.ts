@@ -6,4 +6,5 @@ export interface IExperience {
   dateDebut: Date;
   dateFin?: Date;
   skills: string[];
+  website?: string;
 }

@@ -28,22 +28,17 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           travaille.
         </p>
 
-        <div id="contact">
-          <Contact />
-        </div>
-
         <div>
           <h2>Curriculum Vitae</h2>
           <CV />
         </div>
-        {/*
-        <div id="cv">
-          <h2>Curriculum Vitae</h2>
-          <iframe id="cv-container" title="Curriculum Vitae" src="/Curriculum Vitae Arnaud Flaesch.pdf"></iframe>
-        </div>
-  */}
+
         <div id="technos">
           <Skills />
+        </div>
+
+        <div id="contact">
+          <Contact />
         </div>
 
         {

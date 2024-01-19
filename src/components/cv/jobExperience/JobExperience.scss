@@ -1,0 +1,21 @@
+.job {
+  display: flex;
+  flex-direction: row;
+
+  border: 2px solid blue;
+
+  .job-title {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .job-name {
+      margin: auto;
+    }
+  }
+
+  .job-details {
+    flex-basis: 80%;
+  }
+}

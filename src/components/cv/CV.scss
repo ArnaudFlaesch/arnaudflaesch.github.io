@@ -1,5 +1,5 @@
-#job-list > *:not(:last-child) {
-  margin-top: 10px;
+#job-list > *:not(:first-child) {
+  margin-top: 20px;
 }
 
 #cv-grid {

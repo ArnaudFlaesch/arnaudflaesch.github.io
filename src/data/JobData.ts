@@ -13,7 +13,8 @@ par un utilisateur, les commandes et la liste des bons de livraisons associés a
 commandes.
 • Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
 Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.`,
-    skills: []
+    skills: [],
+    website: 'https://www.publicissapient.fr/'
   },
   {
     title: 'Développeur fullstack',
@@ -31,11 +32,12 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     • Migration des tests End-to-End de l'application de Selenium vers Cypress.
     Environnement technique : Angular 10, Kotlin, Sass, Spring Boot, PostgreSQL, MongoDB, Docker et
     Jenkins.`,
-    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot']
+    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot'],
+    website: 'https://www.tbmaestro.com/'
   },
   {
     title: 'Développeur fullstack',
-    dateDebut: new Date(Date.parse('2017-08-18')),
+    dateDebut: new Date(Date.parse('2017-09-18')),
     dateFin: new Date(Date.parse('2018-04-12')),
     name: 'Sopra Steria',
     location: 'Montreuil - 93340',
@@ -57,7 +59,8 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
       'Spring Boot',
       'Sass',
       'Git'
-    ]
+    ],
+    website: 'https://www.soprasteria.com/fr'
   },
   {
     title: 'Développeur Java',

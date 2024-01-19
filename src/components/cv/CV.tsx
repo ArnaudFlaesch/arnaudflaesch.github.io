@@ -3,25 +3,17 @@ import './CV.scss';
 import * as React from 'react';
 
 import jobData from '../../data/JobData';
-import { IExperience } from '../../model/IExperience';
 import { skillsList } from '../../data/SkillsData';
 import { ICVElement } from '../../model/ICVElement';
 import { hobbiesList } from '../../data/HobbiesData';
 import { certificationsList } from '../../data/CertificationsData';
 import { projectList } from '../../data/PersonalProjectsData';
+import JobExperience from './jobExperience/JobExperience';
 
 export default function CV(): React.ReactElement {
-  function createJobComponent(experience: IExperience): React.ReactElement {
-    return (
-      <div>
-        <h3>{experience.title}</h3>
-        <div>
-          {experience.name} / {experience.location}
-        </div>
-        <div>{experience.description}</div>
-      </div>
-    );
-  }
+  const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
+
+  const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
 
   function createCVElement(element: ICVElement) {
     return (
@@ -32,9 +24,28 @@ export default function CV(): React.ReactElement {
     );
   }
 
+  function showMoreJobs() {
+    setJobIndexEnd(undefined);
+  }
+
+  function showLessJobs() {
+    setJobIndexEnd(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
+  }
+
   return (
     <>
-      <div id="job-list">{jobData.map((job) => createJobComponent(job))}</div>
+      <button>
+        <a href="/CV.pdf" download={'Curriculum Vitae Arnaud Flaesch.pdf'}>
+          Télécharger mon CV
+        </a>
+      </button>
+
+      <div id="job-list">{jobData.map((job) => JobExperience(job)).slice(0, jobIndexEnd)}</div>
+
+      {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && <button onClick={showMoreJobs}>Voir plus d'expériences</button>}
+      {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+        <button onClick={showLessJobs}>Voir moins d'expériences</button>
+      )}
 
       <div id="cv-grid">
         <div>
