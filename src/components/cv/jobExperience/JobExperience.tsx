@@ -17,7 +17,7 @@ export default function JobExperience(props: Readonly<IExperience>): React.React
   }
 
   function formatDate(date: Date): string {
-    const formattedDate = format(date, 'LLLL-yyyy', { locale: fr });
+    const formattedDate = format(date, 'LLLL yyyy', { locale: fr });
     return formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
   }
 
@@ -26,13 +26,17 @@ export default function JobExperience(props: Readonly<IExperience>): React.React
       <div className="job-title">
         <div className="job-period">{displayPeriod(props.dateDebut, props.dateFin)}</div>
         <div className="job-name">
-          <h3>{props.name}</h3>
+          {props.website && (
+            <a href={props.website}>
+              <h3>{props.name}</h3>
+            </a>
+          )}
+          {!props.website && <h3>{props.name}</h3>}
         </div>
+        {props.location}
       </div>
       <div className="job-details">
-        <div>
-          {props.title} / {props.location}
-        </div>
+        <h3>{props.title}</h3>
         <div>{props.description}</div>
       </div>
     </div>

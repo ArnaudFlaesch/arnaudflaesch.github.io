@@ -751,21 +751,15 @@ pre tt::after {
   height: 100%;
 
   #fixed-header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 1000;
   }
 
   #site-container {
     position: absolute;
-    margin-top: 6em;
     display: flex;
-    flex-direction: row;
-
-    > :not([hidden]) ~ :not([hidden]) {
-      --tw-space-x-reverse: 0;
-      margin-right: calc(2.5rem /* 40px */ * var(--tw-space-x-reverse));
-    }
 
     @media (width <= 600px) {
       flex-direction: column;
