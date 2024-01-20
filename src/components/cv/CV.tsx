@@ -1,4 +1,4 @@
-import './Cv.scss';
+import './CV.scss';
 
 import { Button } from '@mui/material';
 import * as React from 'react';
