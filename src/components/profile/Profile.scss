@@ -9,6 +9,11 @@
   #bio {
     margin-bottom: 1.5em;
 
+    svg {
+      margin-right: 0.2em;
+      width: 20px;
+    }
+
     > * {
       display: flex;
       justify-content: center;

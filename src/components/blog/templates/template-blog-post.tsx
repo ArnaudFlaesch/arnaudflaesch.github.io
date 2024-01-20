@@ -6,6 +6,8 @@ import Seo from '../../seo';
 import Bio from '../../bio/Bio';
 
 import './template-blog-post.scss';
+import { Facebook, LinkedIn, X } from '@mui/icons-material';
+import Tooltip from '@mui/material/Tooltip/Tooltip';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -34,25 +36,31 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
                 <div className="share-buttons">
                   <div>
-                    <a
-                      href="#"
-                      onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}
-                    >
-                      Partager sur Facebook
-                    </a>
+                    <Tooltip title="Partager sur Facebook">
+                      <a
+                        href="#"
+                        onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}
+                      >
+                        <Facebook />
+                      </a>
+                    </Tooltip>
                   </div>
                   <div>
-                    <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
-                      Partager sur Twitter
-                    </a>
+                    <Tooltip title="Partager sur X">
+                      <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
+                        <X />
+                      </a>
+                    </Tooltip>
                   </div>
                   <div>
-                    <a
-                      href="#"
-                      onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
-                    >
-                      Partager sur Linkedin
-                    </a>
+                    <Tooltip title="Partager sur LinkedIn">
+                      <a
+                        href="#"
+                        onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
+                      >
+                        <LinkedIn />
+                      </a>
+                    </Tooltip>
                   </div>
                 </div>
               </div>
