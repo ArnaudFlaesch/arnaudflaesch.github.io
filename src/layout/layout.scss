@@ -763,8 +763,24 @@ pre tt::after {
   }
 
   #site-container {
-    margin-top: 1em;
     display: flex;
+
+    #profile-container {
+      background-color: rgb(50, 91, 204); // TODO CHANGE
+      flex: 1 0 15%;
+
+      #profile-content {
+        margin: 0.5em;
+      }
+    }
+
+    #portfolio-body {
+      background-color: rgb(27, 47, 100); // TODO CHANGE
+
+      #portfolio-content {
+        margin: 1em;
+      }
+    }
 
     @media (width <= 600px) {
       flex-direction: column;
@@ -772,15 +788,6 @@ pre tt::after {
       #portfolio-body {
         margin-top: 20px;
       }
-    }
-
-    #profile-container {
-      background-color: blue;
-    }
-
-    #portfolio-body {
-      width: 85%;
-      padding: 0 1.0875rem 1.45rem;
     }
   }
 }

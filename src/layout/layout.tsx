@@ -36,11 +36,16 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
       </div>
       <div id="site-container">
         <div id="profile-container">
-          <Profile />
+          <div id="profile-content">
+            <Profile />
+          </div>
         </div>
         <main id="portfolio-body">
-          <div>{props.children}</div>
-          <Footer />
+          <div id="portfolio-content">
+            <div>{props.children}</div>
+
+            <Footer />
+          </div>
         </main>
       </div>
     </div>

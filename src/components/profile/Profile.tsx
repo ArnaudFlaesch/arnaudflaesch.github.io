@@ -24,8 +24,8 @@ export default function Profile(): React.ReactElement {
           <LocationOn />
           Paris
         </div>
+        <SocialLinks />
       </div>
-      <SocialLinks />
     </div>
   );
 }
