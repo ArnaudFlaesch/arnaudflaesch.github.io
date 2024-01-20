@@ -766,7 +766,7 @@ pre tt::after {
     display: flex;
 
     #profile-container {
-      background-color: rgb(50, 91, 204); // TODO CHANGE
+      background-color: #325bcc; // TODO CHANGE
       flex: 1 0 15%;
 
       #profile-content {
@@ -775,7 +775,7 @@ pre tt::after {
     }
 
     #portfolio-body {
-      background-color: rgb(27, 47, 100); // TODO CHANGE
+      background-color: #1b2f64; // TODO CHANGE
 
       #portfolio-content {
         margin: 1em;
