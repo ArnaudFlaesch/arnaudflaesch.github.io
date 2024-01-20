@@ -748,6 +748,8 @@ pre tt::after {
   }
 }
 
+/* stylelint-enable */
+
 #page-container {
   > * {
     width: 100%;
@@ -773,7 +775,7 @@ pre tt::after {
     }
 
     #profile-container {
-      margin: 0 auto;
+      background-color: blue;
     }
 
     #portfolio-body {
@@ -782,5 +784,3 @@ pre tt::after {
     }
   }
 }
-
-/* stylelint-enable */
