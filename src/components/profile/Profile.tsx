@@ -1,21 +1,13 @@
-import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import SocialLinks from '../social-links/SocialLinks';
 
 import './Profile.scss';
+import Avatar from '@mui/material/Avatar/Avatar';
 
 export default function Profile(): React.ReactElement {
   return (
     <div id="profile-container">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        src="../../images/profile-picture.jpg"
-        width={100}
-        height={100}
-        quality={95}
-        alt="Profile picture"
-      />
+      <Avatar className="bio-avatar" alt="Arnaud Flaesch" sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
 
       <div id="short-presentation">
         <p>

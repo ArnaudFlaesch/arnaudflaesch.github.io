@@ -151,7 +151,6 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 }
 
 svg:not(:root) {
@@ -748,13 +747,9 @@ pre tt::after {
 }
 
 #page-container {
-  height: 100%;
-
   #fixed-header {
     position: sticky;
     top: 0;
-    width: 100%;
-    z-index: 1000;
   }
 
   #site-container {
