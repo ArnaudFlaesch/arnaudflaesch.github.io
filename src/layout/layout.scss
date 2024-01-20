@@ -776,15 +776,11 @@ pre tt::after {
     }
 
     #portfolio-body {
-      background-color: #232f50; // TODO CHANGE
+      background-color: #37415e; // TODO CHANGE
     }
 
     @media (width <= 600px) {
       flex-direction: column;
-
-      #portfolio-body {
-        margin-top: 20px;
-      }
     }
   }
 }
