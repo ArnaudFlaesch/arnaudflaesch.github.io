@@ -23,7 +23,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          author
         }
       }
     }
@@ -32,7 +32,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   return (
     <div id="page-container">
       <div id="fixed-header">
-        <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
+        <Header siteTitle={data.site.siteMetadata?.author || 'Title'} />
       </div>
       <div id="site-container">
         <div id="profile-container">
