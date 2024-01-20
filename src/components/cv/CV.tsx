@@ -1,28 +1,16 @@
 import './CV.scss';
 
+import { Button } from '@mui/material';
 import * as React from 'react';
 
 import jobData from '../../data/JobData';
-import { IExperience } from '../../model/IExperience';
-import { skillsList } from '../../data/SkillsData';
-import { ICVElement } from '../../model/ICVElement';
-import { hobbiesList } from '../../data/HobbiesData';
-import { certificationsList } from '../../data/CertificationsData';
-import { projectList } from '../../data/PersonalProjectsData';
+import JobExperience from './jobExperience/JobExperience';
 
 export default function CV(): React.ReactElement {
-  function createJobComponent(experience: IExperience): React.ReactElement {
-    return (
-      <div>
-        <h3>{experience.title}</h3>
-        <div>
-          {experience.name} / {experience.location}
-        </div>
-        <div>{experience.description}</div>
-      </div>
-    );
-  }
+  const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
 
+  const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
+  /*
   function createCVElement(element: ICVElement) {
     return (
       <div>
@@ -30,38 +18,57 @@ export default function CV(): React.ReactElement {
         {element.description}
       </div>
     );
+  }*/
+
+  function showMoreJobs() {
+    setJobIndexEnd(undefined);
+  }
+
+  function showLessJobs() {
+    setJobIndexEnd(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
   }
 
   return (
     <>
-      <div id="job-list">{jobData.map((job) => createJobComponent(job))}</div>
+      <Button href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
+        Télécharger mon CV
+      </Button>
 
-      <div id="cv-grid">
-        <div>
-          <div id="skills-block">
-            <h4>Compétences</h4>
-            {skillsList.map((skill) => createCVElement(skill))}
-          </div>
-          <div id="certifications-block">
-            <h4>Certifications</h4>
-            {certificationsList.map((certification) => createCVElement(certification))}
-          </div>
-          <div id="personal-projects-block">
-            <h4>Projets personnels</h4>
-            {projectList.map((project) => createCVElement(project))}
-          </div>
-        </div>
-        <div>
-          <div id="experience-block">
-            <h4>Formation</h4>
-          </div>
+      <br />
 
-          <div id="hobbies-block">
-            <h4>Centres d'intérêts</h4>
-            {hobbiesList.map((hobby) => createCVElement(hobby))}
+      <div id="job-list">{jobData.map((job) => JobExperience(job)).slice(0, jobIndexEnd)}</div>
+
+      {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>}
+      {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+        <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
+      )}
+      {/**
+        <div id="cv-grid">
+          <div>
+            <div id="skills-block">
+              <h4>Compétences</h4>
+              {skillsList.map((skill) => createCVElement(skill))}
+            </div>
+            <div id="certifications-block">
+              <h4>Certifications</h4>
+              {certificationsList.map((certification) => createCVElement(certification))}
+            </div>
+            <div id="personal-projects-block">
+              <h4>Projets personnels</h4>
+              {projectList.map((project) => createCVElement(project))}
+            </div>
           </div>
-        </div>
-      </div>
+          <div>
+            <div id="experience-block">
+              <h4>Formation</h4>
+            </div>
+
+            <div id="hobbies-block">
+              <h4>Centres d'intérêts</h4>
+              {hobbiesList.map((hobby) => createCVElement(hobby))}
+            </div>
+          </div>
+        </div> */}
     </>
   );
 }

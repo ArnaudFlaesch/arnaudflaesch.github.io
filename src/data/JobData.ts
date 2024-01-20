@@ -5,7 +5,7 @@ export const jobData: IExperience[] = [
     title: 'Développeur backend Java',
     dateDebut: new Date(Date.parse('2021-08-02')),
     name: 'Publicis Sapient France',
-    location: 'Paris 20è, France',
+    location: 'Paris 20, France',
     description: `Développement sur la partie backend d'une application e-commerce dans une équipe agile d'une dizaine
     de personnes avec le framework SAFe.
 • Développement de nouveaux endpoints permettant de récupérer la liste des produits déjà achetés
@@ -13,14 +13,15 @@ par un utilisateur, les commandes et la liste des bons de livraisons associés a
 commandes.
 • Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
 Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.`,
-    skills: []
+    skills: [],
+    website: 'https://www.publicissapient.fr/'
   },
   {
     title: 'Développeur fullstack',
     dateDebut: new Date(Date.parse('2019-05-01')),
     dateFin: new Date(Date.parse('2021-04-30')),
     name: 'tbMaestro',
-    location: 'Montréal - Canada',
+    location: 'Montréal, Canada',
     description: `Volontariat International en Entreprise dans une équipe agile (Scrum) de 6 développeurs et un Product
     Owner. Réalisation de développements sur l'application SaaS de l'entreprise.Création du module de
     gestion des contrôles liés aux actifs.
@@ -31,14 +32,15 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     • Migration des tests End-to-End de l'application de Selenium vers Cypress.
     Environnement technique : Angular 10, Kotlin, Sass, Spring Boot, PostgreSQL, MongoDB, Docker et
     Jenkins.`,
-    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot']
+    skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot'],
+    website: 'https://www.tbmaestro.com/'
   },
   {
     title: 'Développeur fullstack',
-    dateDebut: new Date(Date.parse('2017-08-18')),
+    dateDebut: new Date(Date.parse('2017-09-18')),
     dateFin: new Date(Date.parse('2018-04-12')),
     name: 'Sopra Steria',
-    location: 'Montreuil - 93340',
+    location: 'Montreuil, France',
     description: `Développement d'une application Web permettant de répertorier et gérer les limitations de vitesses sur les
     tronçons des routes de France. Équipe de 4 développeurs, une Scrum Master et un Product Owner.
     • Création d'IHM, affichage et gestion des données cartographiques côté front-end.
@@ -57,14 +59,15 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
       'Spring Boot',
       'Sass',
       'Git'
-    ]
+    ],
+    website: 'https://www.soprasteria.com/fr'
   },
   {
     title: 'Développeur Java',
     name: 'Franprix - Leader Price',
     dateDebut: new Date(Date.parse('2015-10-01')),
     dateFin: new Date(Date.parse('2017-08-31')),
-    location: 'Chennevières sur Marne - 94190',
+    location: 'Chennevières sur Marne, 94190 France',
     description: "Développeur Liferay / Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.",
     skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN']
   },
@@ -73,7 +76,7 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     name: 'AB Cube',
     dateDebut: new Date(Date.parse('2015-10-01')),
     dateFin: new Date(Date.parse('2015-08-31')),
-    location: 'Montreuil - 93340',
+    location: 'Montreuil, France',
     description: "Développeur Web / Alternance dans le cadre de ma première année de mastère à l'ESGI.",
     skills: ['PHP', 'SQL', 'JavaScript', 'Git']
   },
@@ -91,7 +94,7 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     name: 'La Réserve',
     dateDebut: new Date(Date.parse('2014-06-02')),
     dateFin: new Date(Date.parse('2014-07-31')),
-    location: 'Paris 08è',
+    location: 'Paris 08',
     description: 'Stage de deux mois ',
     skills: ['PHP', 'SQL', 'JavaScript', 'JQuery']
   },
@@ -109,7 +112,7 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     name: 'Free / MCRA',
     dateDebut: new Date(Date.parse('2013-05-31')),
     dateFin: new Date(Date.parse('2013-06-27')),
-    location: 'Paris 08è',
+    location: 'Paris 08',
     description: "Stage d'un mois dans le cadre de ma première année de BTS SIO.",
     skills: ['PHP', 'SQL', 'JavaScript']
   }

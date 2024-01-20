@@ -1,6 +1,6 @@
+import Avatar from '@mui/material/Avatar/Avatar';
+import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 
 export default function Bio(): React.ReactElement {
   const data = useStaticQuery(graphql`
@@ -20,15 +20,8 @@ export default function Bio(): React.ReactElement {
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        formats={['auto', 'webp', 'avif']}
-        src="../../images/profile-picture.jpg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
+      <Avatar className="bio-avatar" alt="Arnaud Flaesch" sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
+
       {author && job && (
         <p>
           Écrit par <strong>{author}</strong>, {job}

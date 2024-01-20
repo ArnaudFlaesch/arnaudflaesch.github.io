@@ -1,4 +1,10 @@
-#cv-container {
-  height: 100vh;
-  width : 100%;
+#home {
+  > *:not(:last-child) {
+    margin-bottom: 3em;
+  }
+
+  ol {
+    list-style-type: none;
+  }
 }
+
