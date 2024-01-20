@@ -6,7 +6,7 @@ import * as React from 'react';
 import jobData from '../../data/JobData';
 import JobExperience from './jobExperience/JobExperience';
 
-export default function Cv(): React.ReactElement {
+export default function CV(): React.ReactElement {
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
 
   const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);

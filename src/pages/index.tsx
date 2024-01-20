@@ -10,7 +10,7 @@ import Seo from '../components/seo';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 import Skills from '../components/skills/Skills';
-import Cv from '../components/cv/Cv';
+import CV from '../components/cv/CV';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
@@ -33,7 +33,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 
           <div id="cv">
             <h2>Curriculum Vitae</h2>
-            <Cv />
+            <CV />
           </div>
 
           <div id="technos">
