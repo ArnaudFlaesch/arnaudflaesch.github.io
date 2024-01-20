@@ -3,6 +3,7 @@ import SocialLinks from '../social-links/SocialLinks';
 
 import './Profile.scss';
 import Avatar from '@mui/material/Avatar/Avatar';
+import { LocationOn, Person, Work } from '@mui/icons-material';
 
 export default function Profile(): React.ReactElement {
   return (
@@ -11,9 +12,12 @@ export default function Profile(): React.ReactElement {
 
       <div id="short-presentation">
         <p>
+          <Person />
           Arnaud Flaesch <br />
+          <Work />
           Développeur Web
           <br />
+          <LocationOn />
           Paris
         </p>
       </div>
