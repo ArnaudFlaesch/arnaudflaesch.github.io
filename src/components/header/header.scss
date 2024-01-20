@@ -20,16 +20,13 @@
   #url-list {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin-right: 10px;
 
-    > :not([hidden]) ~ :not([hidden]) {
-      margin-left: 2rem;
+    > * {
+      margin: auto 10px auto 2rem;
     }
 
     @media (width <= 500px) {
       flex-direction: column;
-      margin: auto 10px;
     }
   }
 
