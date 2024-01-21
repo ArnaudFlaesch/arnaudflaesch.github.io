@@ -25,11 +25,15 @@
     justify-content: right;
     margin-right: 5vw;
 
-    > * {
+    a {
       height: 100%;
       place-content: center;
-      display: grid;
-      margin: auto 10px auto 2rem;
+      display: inline-grid;
+      margin: auto 0.7em;
+
+      span {
+        place-content: center;
+      }
 
       &:hover {
         background-color: white;

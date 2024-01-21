@@ -36,7 +36,11 @@ export default function CV(): React.ReactElement {
 
       <br />
 
-      <div id="job-list">{jobData.map((job) => JobExperience(job)).slice(0, jobIndexEnd)}</div>
+      <div id="job-list">
+        {jobData.slice(0, jobIndexEnd).map((job) => (
+          <JobExperience key={job.name} {...job} />
+        ))}
+      </div>
 
       {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>}
       {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (

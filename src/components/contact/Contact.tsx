@@ -25,13 +25,35 @@ export default function Contact(): React.ReactElement {
         <form onSubmit={handleSubmit}>
           <Box id="contact-form" component={'section'} gap={4}>
             <div id="contact-informations">
-              <TextField id="name" type="text" name="name" label="Votre nom et prénom" variant="outlined" />
+              <TextField
+                id="name"
+                type="text"
+                name="name"
+                className="contact-field"
+                label="Votre nom et prénom"
+                variant="outlined"
+              />
               <ValidationError prefix="Name" field="name" errors={state.errors} />
 
-              <TextField id="email" type="email" name="email" label="Votre adresse mail" variant="outlined" />
+              <TextField
+                id="email"
+                type="email"
+                name="email"
+                className="contact-field"
+                label="Votre adresse mail"
+                variant="outlined"
+              />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
-            <TextField id="message" type="message" name="message" label="Message" multiline rows={8} />
+            <TextField
+              id="message"
+              type="message"
+              name="message"
+              className="contact-field"
+              label="Message"
+              multiline
+              rows={8}
+            />
             <ValidationError prefix="Message" field="message" errors={state.errors} />
 
             <Button id="submit-button" type="submit" disabled={isFormInvalid()} variant="contained">

@@ -771,12 +771,13 @@ pre tt::after {
     }
 
     #profile-container {
-      background-color: #325bcc; // TODO CHANGE
+      background-color: $body-background-color;
       flex: 1 0 15%;
+      border-right: 1px solid black;
     }
 
     #portfolio-body {
-      background-color: #37415e; // TODO CHANGE
+      background-color: $body-background-color;
     }
 
     @media (width <= 600px) {

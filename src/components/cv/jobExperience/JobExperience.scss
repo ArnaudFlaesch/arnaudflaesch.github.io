@@ -1,7 +1,10 @@
+@import '../../../styles/colors';
+
 .job {
   display: flex;
   flex-direction: row;
   border: 2px solid blue;
+  background-color: $block-background-color;
 
   a {
     text-decoration: none;
