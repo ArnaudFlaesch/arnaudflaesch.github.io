@@ -19,6 +19,11 @@
     }
   }
 
+  a {
+    color: $header-text-color;
+    text-decoration: none;
+  }
+
   #url-list {
     display: flex;
     flex-direction: row;
@@ -43,10 +48,5 @@
     @media (width <= 500px) {
       flex-direction: column;
     }
-  }
-
-  a {
-    color: $header-text-color;
-    text-decoration: none;
   }
 }
