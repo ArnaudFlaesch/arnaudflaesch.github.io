@@ -765,19 +765,22 @@ pre tt::after {
   #site-container {
     display: flex;
 
+    #profile-container {
+      background-color: $profile-background-color;
+    }
+
+    #portfolio-body {
+      background-color: $body-background-color;
+    }
+
     #profile-content,
     #portfolio-content {
       margin: 1em;
     }
 
     #profile-container {
-      background-color: $body-background-color;
       flex: 1 0 15%;
       border-right: 1px solid black;
-    }
-
-    #portfolio-body {
-      background-color: $body-background-color;
     }
 
     @media (width <= 600px) {

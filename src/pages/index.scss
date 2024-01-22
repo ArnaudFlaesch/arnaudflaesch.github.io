@@ -1,15 +1,6 @@
 @import '../styles/colors';
 
 #home {
-  #presentation {
-    background-color: $block-background-color;
-  }
-
-  > *:not(:first-child) {
-    border: 0.5px solid black;
-    border-radius: 1%;
-  }
-
   > *:not(:last-child) {
     margin-bottom: 2em;
   }

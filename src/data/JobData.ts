@@ -12,7 +12,8 @@ export const jobData: IExperience[] = [
 par un utilisateur, les commandes et la liste des bons de livraisons associés aux différentes
 commandes.
 • Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
-Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.`,
+Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
+Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureurs de l'entreprise.`,
     skills: [],
     website: 'https://www.publicissapient.fr/'
   },
@@ -46,7 +47,9 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     • Création d'IHM, affichage et gestion des données cartographiques côté front-end.
     • Développement de la partie back-end et gestion de la base de données.
     • Développement des tests unitaires.
-    Environnement technique : Java (Struts 2), JQuery, SQL, CSS (Sass) et OpenLayers`,
+    Environnement technique : Java (Struts 2), JQuery, SQL, CSS (Sass) et OpenLayers.
+    Participation à l'édition 2017 de l'Ekiden de Paris avec d'autres coureurs de l'entreprise.
+    `,
     skills: [
       'JavaScript ES6',
       'Java 8',
@@ -54,6 +57,9 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
       'Webpack',
       'Gulp',
       'CSS',
+      'JQuery',
+      'Sonar',
+      'Jenkins',
       'Struts 2',
       'SQL',
       'Spring Boot',
@@ -67,8 +73,11 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     name: 'Franprix - Leader Price',
     dateDebut: new Date(Date.parse('2015-10-01')),
     dateFin: new Date(Date.parse('2017-08-31')),
-    location: 'Chennevières sur Marne, 94190 France',
-    description: "Développeur Liferay / Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.",
+    location: 'Chennevières sur Marne France',
+    description: `Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.Contrat de professionnalisation en alternance au sein du service dédié au portail magasin et à l'intranet du siège.
+    Développement et maintenance d'outils à destination des services RH (entretiens annuels) ou encore du personnel chargé de la sécurité des magasins (gestion des incidents).
+    Environnement technique : Java J2EE (JSF 2, Vaadin, Liferay, Tomcat Server).
+    Équipe agile de 6 personnes.`,
     skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN']
   },
   {
@@ -77,7 +86,10 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     dateDebut: new Date(Date.parse('2015-10-01')),
     dateFin: new Date(Date.parse('2015-08-31')),
     location: 'Montreuil, France',
-    description: "Développeur Web / Alternance dans le cadre de ma première année de mastère à l'ESGI.",
+    description: `Alternance dans le cadre de ma première année de mastère à l'ESGI.
+    Contrat de professionnalisation dans le cadre de ma quatrième année à l'ESGI.
+Réalisation d’un outil de gestion des produits pour les laboratoires pharmaceutiques : ajout, import et export au format XML pour envoi aux autorités pharmaceutiques (EMA).
+`,
     skills: ['PHP', 'SQL', 'JavaScript', 'Git']
   },
   {
@@ -86,35 +98,22 @@ Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
     dateDebut: new Date(Date.parse('2015-05-15')),
     dateFin: new Date(Date.parse('2015-07-31')),
     location: 'Levallois',
-    description: "Développeur Java / Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.",
+    description: `Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.
+     Stage de trois mois dans le cadre de ma troisième année à l'ESGI : participation à la refonte graphique d'une application web d'entreprise dans une équipe de 10 personnes.
+        Le but était de changer les pages web en respectant les nouvelles normes graphiques et de remplacer le code de l'ancien framework utilisé (Struts 1) par celui du framework JSF 2.
+
+    `,
     skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git']
   },
   {
     title: 'Développeur Java / JS',
-    name: 'La Réserve',
+    name: 'La Réserve Paris',
     dateDebut: new Date(Date.parse('2014-06-02')),
     dateFin: new Date(Date.parse('2014-07-31')),
     location: 'Paris 08',
-    description: 'Stage de deux mois ',
-    skills: ['PHP', 'SQL', 'JavaScript', 'JQuery']
-  },
-  {
-    title: 'Développeur Web',
-    name: 'Accueil Cambodgien',
-    dateDebut: new Date(Date.parse('2014-01-13')),
-    dateFin: new Date(Date.parse('2014-02-14')),
-    location: 'Saint-Mandé 94300',
-    description: "Réalisation d'un site web e-commerce pour une association.",
-    skills: ['Wordpress', 'PHP', 'SQL']
-  },
-  {
-    title: 'Développeur PHP',
-    name: 'Free / MCRA',
-    dateDebut: new Date(Date.parse('2013-05-31')),
-    dateFin: new Date(Date.parse('2013-06-27')),
-    location: 'Paris 08',
-    description: "Stage d'un mois dans le cadre de ma première année de BTS SIO.",
-    skills: ['PHP', 'SQL', 'JavaScript']
+    description: `Stage de deux mois : développement d'une application web en PHP, SQL et JavaScript dont l'objectif est d'enregistrer des événements concernant les clients d'un hôtel ainsi que la gestion automatique d'un fichier permettant d'actualiser la liste des clients.`,
+    skills: ['PHP', 'SQL', 'JavaScript', 'JQuery', 'CSS'],
+    website: 'https://www.lareserve-paris.com/'
   }
 ];
 
