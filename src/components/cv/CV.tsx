@@ -4,7 +4,8 @@ import { Button } from '@mui/material';
 import * as React from 'react';
 
 import jobData from '../../data/JobData';
-import JobExperience from './jobExperience/JobExperience';
+import formationData from '../../data/FormationData';
+import Experience from './experience/Experience';
 
 export default function CV(): React.ReactElement {
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
@@ -30,24 +31,30 @@ export default function CV(): React.ReactElement {
 
   return (
     <>
-      <Button href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
+      <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
         Télécharger mon CV
       </Button>
 
-      <br />
-
-      <div id="job-list">
+      <div id="job-list" className="experience-container">
         {jobData.slice(0, jobIndexEnd).map((job) => (
-          <JobExperience key={job.name} {...job} />
+          <Experience key={job.name} {...job} />
         ))}
+
+        {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+          <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>
+        )}
+        {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+          <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
+        )}
       </div>
 
-      {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>}
-      {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
-        <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
-      )}
+      <div id="experience-list" className="experience-container">
+        {formationData.map((formation) => (
+          <Experience key={formation.name} {...formation} />
+        ))}
+      </div>
       {/**
-        <div id="cv-grid">
+        <div >
           <div>
             <div id="skills-block">
               <h4>Compétences</h4>

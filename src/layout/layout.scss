@@ -766,6 +766,8 @@ pre tt::after {
     display: flex;
 
     #profile-container {
+      flex: 1 0 15%;
+      border-right: 1px solid black;
       background-color: $profile-background-color;
     }
 
@@ -776,11 +778,6 @@ pre tt::after {
     #profile-content,
     #portfolio-content {
       margin: 1em;
-    }
-
-    #profile-container {
-      flex: 1 0 15%;
-      border-right: 1px solid black;
     }
 
     @media (width <= 600px) {

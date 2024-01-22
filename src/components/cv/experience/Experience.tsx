@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import './JobExperience.scss';
+import './Experience.scss';
 
 import { IExperience } from '../../../model/IExperience';
 import { format } from 'date-fns/format';
 
 import { fr } from 'date-fns/locale/fr';
 
-export default function JobExperience(props: Readonly<IExperience>): React.ReactElement {
+export default function Experience(props: Readonly<IExperience>): React.ReactElement {
   function displayPeriod(dateDebut: Date, dateFin?: Date): string {
     if (dateFin) {
       return `${formatDate(dateDebut)} -> ${formatDate(dateFin)}`;
