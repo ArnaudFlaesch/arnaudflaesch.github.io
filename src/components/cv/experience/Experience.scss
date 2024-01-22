@@ -15,6 +15,7 @@
     flex-direction: column;
     text-align: center;
     background-color: #96c5d4;
+    border-right: 1px solid #1f5099;
 
     .job-name {
       margin: auto;
@@ -23,6 +24,6 @@
 
   .job-details {
     flex-basis: 80%;
-    background-color: #3a6099;
+    background-color: #a8c9d4;
   }
 }
