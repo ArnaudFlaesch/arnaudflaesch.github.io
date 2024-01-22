@@ -10,7 +10,8 @@ export const formationData: IExperience[] = [
     Réalisations de projets en Android, C++ ou encore Spring.`,
     dateDebut: new Date(2015, 9, 1),
     dateFin: new Date(2017, 8, 31),
-    skills: ['C#', 'Java', 'Spring Boot', 'C++']
+    skills: ['C#', 'Java', 'Spring Boot', 'C++'],
+    website: 'https://www.esgi.fr'
   },
   {
     title: 'Bachelor Architecture des Logiciels',
@@ -22,7 +23,8 @@ export const formationData: IExperience[] = [
     `,
     dateDebut: new Date(2014, 9, 1),
     dateFin: new Date(2015, 5, 31),
-    skills: ['Bases de données', 'Java', 'PHP', 'Langage de modélisation unifié (UML)', 'SQL']
+    skills: ['Bases de données', 'Java', 'PHP', 'Langage de modélisation unifié (UML)', 'SQL'],
+    website: 'https://www.esgi.fr'
   },
   {
     title: 'Brevet de Technicien Supérieur',
@@ -34,7 +36,8 @@ export const formationData: IExperience[] = [
     `,
     dateDebut: new Date(2012, 9, 1),
     dateFin: new Date(2014, 5, 31),
-    skills: []
+    skills: [],
+    website: 'https://www.saint-michel-de-saint-mande.fr/'
   },
   {
     title: 'Licence Mathématiques - Informatique',
@@ -46,7 +49,8 @@ export const formationData: IExperience[] = [
     `,
     dateDebut: new Date(2015, 9, 18),
     dateFin: new Date(2015, 9, 18),
-    skills: []
+    skills: [],
+    website: 'https://u-paris.fr/'
   },
   {
     title: 'Baccalauréat Économique et Social',
@@ -55,7 +59,8 @@ export const formationData: IExperience[] = [
     description: `Activités extra-scolaires : Cours d'improvisation pendant un an.`,
     dateDebut: new Date(2015, 9, 1),
     dateFin: new Date(2015, 9, 18),
-    skills: []
+    skills: [],
+    website: 'https://ecolemassillon.com/'
   }
 ];
 
