@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import './JobExperience.scss';
+import './Experience.scss';
 
 import { IExperience } from '../../../model/IExperience';
 import { format } from 'date-fns/format';
 
 import { fr } from 'date-fns/locale/fr';
 
-export default function JobExperience(props: Readonly<IExperience>): React.ReactElement {
+export default function Experience(props: Readonly<IExperience>): React.ReactElement {
   function displayPeriod(dateDebut: Date, dateFin?: Date): string {
     if (dateFin) {
       return `${formatDate(dateDebut)} -> ${formatDate(dateFin)}`;
@@ -24,20 +24,24 @@ export default function JobExperience(props: Readonly<IExperience>): React.React
   return (
     <div className="job">
       <div className="job-title">
-        <div className="job-period">{displayPeriod(props.dateDebut, props.dateFin)}</div>
-        <div className="job-name">
-          {props.website && (
-            <a href={props.website}>
-              <h3>{props.name}</h3>
-            </a>
-          )}
-          {!props.website && <h3>{props.name}</h3>}
+        <div className="job-content">
+          <div className="job-period">{displayPeriod(props.dateDebut, props.dateFin)}</div>
+          <div className="job-name">
+            {props.website && (
+              <a href={props.website}>
+                <h3>{props.name}</h3>
+              </a>
+            )}
+            {!props.website && <h3>{props.name}</h3>}
+          </div>
+          <div>{props.location}</div>
         </div>
-        {props.location}
       </div>
       <div className="job-details">
-        <h3>{props.title}</h3>
-        <div>{props.description}</div>
+        <div className="job-details-content">
+          <h3>{props.title}</h3>
+          <div className="job-description">{props.description}</div>
+        </div>
       </div>
     </div>
   );

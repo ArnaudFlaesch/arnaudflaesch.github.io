@@ -10,6 +10,6 @@ describe('Portfolio tests', () => {
       .should('equals', 'Arnaud Flaesch, Développeur Web')
       .get('h1')
       .first()
-      .should('have.text', 'Arnaud Flaesch, Développeur Web');
+      .should('have.text', 'Arnaud Flaesch');
   });
 });

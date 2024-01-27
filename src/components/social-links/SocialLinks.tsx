@@ -26,17 +26,6 @@ export default function SocialLinks(): React.ReactElement {
         </IconButton>
       </Tooltip>
 
-      <Tooltip title="Profil WeLoveDevs" className="social-link">
-        <IconButton href="https://arnaud-flaesch.welovedevs.com/">
-          <StaticImage
-            height={IMG_HEIGHT}
-            width={IMG_WIDTH}
-            src="../../images/icons/welovedevs-icon.jpg"
-            alt="welovedevs"
-          />
-        </IconButton>
-      </Tooltip>
-
       <Tooltip title="Profil Scrum.org" className="social-link">
         <IconButton href="https://www.scrum.org/user/1355891">
           <StaticImage
@@ -44,6 +33,17 @@ export default function SocialLinks(): React.ReactElement {
             width={IMG_WIDTH}
             src="../../images/icons/scrum-org-icon.png"
             alt="scrum-org"
+          />
+        </IconButton>
+      </Tooltip>
+
+      <Tooltip title="Profil WeLoveDevs" className="social-link">
+        <IconButton href="https://arnaud-flaesch.welovedevs.com/">
+          <StaticImage
+            height={IMG_HEIGHT}
+            width={IMG_WIDTH}
+            src="../../images/icons/welovedevs-icon.jpg"
+            alt="welovedevs"
           />
         </IconButton>
       </Tooltip>

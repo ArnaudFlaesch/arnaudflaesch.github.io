@@ -7,7 +7,7 @@ import { LocationOn, Person, Work } from '@mui/icons-material';
 
 export default function Profile(): React.ReactElement {
   return (
-    <div id="profile-container">
+    <div id="profile">
       <Avatar id="bio-avatar" alt="Arnaud Flaesch" sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
 
       <div id="bio">
@@ -24,8 +24,8 @@ export default function Profile(): React.ReactElement {
           <LocationOn />
           Paris
         </div>
+        <SocialLinks />
       </div>
-      <SocialLinks />
     </div>
   );
 }

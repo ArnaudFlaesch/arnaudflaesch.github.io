@@ -15,9 +15,15 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
         </h1>
       </div>
       <div id="url-list">
-        <a href="#cv">Curriculum Vitae</a>
-        <a href="#technos">Langages et outils utilisés</a>
-        <a href="#contact">Contact</a>
+        <a href="#cv">
+          <span>Curriculum Vitae</span>
+        </a>
+        <a href="#technos">
+          <span>Langages et outils utilisés</span>
+        </a>
+        <a href="#contact">
+          <span>Contact</span>
+        </a>
       </div>
     </header>
   );

@@ -1,3 +1,5 @@
+@import '../styles/colors';
+
 /* stylelint-disable */
 
 html {
@@ -746,33 +748,40 @@ pre tt::after {
   }
 }
 
+/* stylelint-enable */
+
 #page-container {
+  > * {
+    width: 100%;
+  }
+
   #fixed-header {
     position: sticky;
     top: 0;
+    z-index: 9999;
+    background-color: $header-background-color;
   }
 
   #site-container {
-    position: absolute;
     display: flex;
 
-    @media (width <= 600px) {
-      flex-direction: column;
-
-      #portfolio-body {
-        margin-top: 20px;
-      }
-    }
-
     #profile-container {
-      margin: 0 auto;
+      flex: 1 0 15%;
+      border-right: 1px solid black;
+      background-color: $profile-background-color;
     }
 
     #portfolio-body {
-      width: 85%;
-      padding: 0 1.0875rem 1.45rem;
+      background-color: $body-background-color;
+    }
+
+    #profile-content,
+    #portfolio-content {
+      margin: 1em 12% 0;
+    }
+
+    @media (width <= 600px) {
+      flex-direction: column;
     }
   }
 }
-
-/* stylelint-enable */

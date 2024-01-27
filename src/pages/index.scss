@@ -1,10 +1,11 @@
+@import '../styles/colors';
+
 #home {
   > *:not(:last-child) {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
   }
 
   ol {
     list-style-type: none;
   }
 }
-

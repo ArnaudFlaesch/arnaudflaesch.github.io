@@ -1,8 +1,7 @@
-#job-list > *:not(:first-child) {
-  margin-top: 20px;
-}
+.experience-container {
+  margin-top: 1em;
 
-#cv-grid {
-  display: flex;
-  flex-direction: row;
+  > *:not(:first-child) {
+    margin-top: 0.5em;
+  }
 }
