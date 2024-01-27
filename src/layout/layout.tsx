@@ -9,7 +9,6 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
 
 import './layout.scss';
 import Profile from '../components/profile/Profile';
@@ -43,8 +42,13 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <main id="portfolio-body">
           <div id="portfolio-content">
             <div>{props.children}</div>
-            <Footer />
           </div>
+          <footer>
+            <div>
+              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Favicon par{' '}
+              <a href="https://icons8.com/">Icons8</a>
+            </div>
+          </footer>
         </main>
       </div>
     </div>

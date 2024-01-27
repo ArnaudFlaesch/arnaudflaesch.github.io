@@ -16,52 +16,50 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
 
   return (
-    <div>
-      <Layout>
-        <Seo title="Home" />
+    <Layout>
+      <Seo title="Home" />
 
-        <div id="home">
-          <div id="presentation">
-            <h1>Bonjour !</h1>
-            <p>
-              Je m'appelle Arnaud et je suis développeur fullstack.
-              <br />
-              Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels
-              je travaille.
-            </p>
-          </div>
+      <div id="home">
+        <div id="presentation">
+          <h1>Bonjour !</h1>
+          <p>
+            Je m'appelle Arnaud et je suis développeur fullstack.
+            <br />
+            Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je
+            travaille.
+          </p>
+        </div>
 
-          <div id="cv">
-            <h2>Curriculum Vitae</h2>
-            <CV />
-          </div>
+        <div id="cv">
+          <h2>Curriculum Vitae</h2>
+          <CV />
+        </div>
 
-          <div id="technos">
-            <h2>Langages et technologies</h2>
-            <Skills />
-          </div>
+        <div id="technos">
+          <h2>Langages et technologies</h2>
+          <Skills />
+        </div>
 
-          <div id="contact">
-            <h2>Formulaire de contact</h2>
-            <Contact />
-          </div>
+        <div id="contact">
+          <h2>Formulaire de contact</h2>
+          <Contact />
+        </div>
 
-          <div id="blog">
-            <h2>Blog</h2>
-            <ol>
-              {posts.map((post: IPost) => (
-                <Post key={post.frontmatter.title} {...post} />
-              ))}
-            </ol>
-          </div>
+        <div id="blog">
+          <h2>Blog</h2>
+          <ol>
+            {posts.map((post: IPost) => (
+              <Post key={post.frontmatter.title} {...post} />
+            ))}
+          </ol>
+        </div>
 
-          {/**
+        {/**
         <h3>Projets en cours</h3>
         <Projects />
            */}
-        </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }
 

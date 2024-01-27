@@ -1,11 +1,12 @@
 .blog-post {
-  .header-container {
+  .blog-post-footer {
     display: flex;
     flex-direction: row;
 
     .share-buttons {
       display: flex;
       flex-direction: row;
+      margin: 0 1em 0 auto;
     }
   }
 }

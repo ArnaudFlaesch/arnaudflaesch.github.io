@@ -47,6 +47,14 @@
 
     @media (width <= 500px) {
       flex-direction: column;
+
+      a {
+        place-content: baseline;
+
+        span {
+          place-content: baseline;
+        }
+      }
     }
   }
 }

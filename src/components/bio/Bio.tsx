@@ -24,7 +24,7 @@ export default function Bio(): React.ReactElement {
 
       {author && job && (
         <p>
-          Écrit par <strong>{author}</strong>, {job}
+          Écrit par <strong>{author}</strong>
         </p>
       )}
     </div>

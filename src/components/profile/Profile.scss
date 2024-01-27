@@ -21,5 +21,24 @@
         margin-bottom: 10px;
       }
     }
+
+    #social-links {
+      display: flex;
+      flex-direction: row;
+
+      @media (width >= 600px) and (width <= 1250px) {
+        flex-wrap: wrap;
+
+        > * {
+          flex: 1 1 50%;
+        }
+      }
+
+      .social-link {
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
   }
 }
