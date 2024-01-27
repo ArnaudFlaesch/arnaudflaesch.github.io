@@ -24,20 +24,24 @@ export default function Experience(props: Readonly<IExperience>): React.ReactEle
   return (
     <div className="job">
       <div className="job-title">
-        <div className="job-period">{displayPeriod(props.dateDebut, props.dateFin)}</div>
-        <div className="job-name">
-          {props.website && (
-            <a href={props.website}>
-              <h3>{props.name}</h3>
-            </a>
-          )}
-          {!props.website && <h3>{props.name}</h3>}
+        <div className="job-content">
+          <div className="job-period">{displayPeriod(props.dateDebut, props.dateFin)}</div>
+          <div className="job-name">
+            {props.website && (
+              <a href={props.website}>
+                <h3>{props.name}</h3>
+              </a>
+            )}
+            {!props.website && <h3>{props.name}</h3>}
+          </div>
+          <div>{props.location}</div>
         </div>
-        {props.location}
       </div>
       <div className="job-details">
-        <h3>{props.title}</h3>
-        <div>{props.description}</div>
+        <div className="job-details-content">
+          <h3>{props.title}</h3>
+          <div className="job-description">{props.description}</div>
+        </div>
       </div>
     </div>
   );

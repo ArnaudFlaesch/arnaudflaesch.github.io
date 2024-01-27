@@ -6,11 +6,8 @@ export const jobData: IExperience[] = [
     dateDebut: new Date(Date.parse('2021-08-02')),
     name: 'Publicis Sapient France',
     location: 'Paris 20, France',
-    description: `Développement sur la partie backend d'une application e-commerce dans une équipe agile d'une dizaine
-    de personnes avec le framework SAFe.
-• Développement de nouveaux endpoints permettant de récupérer la liste des produits déjà achetés
-par un utilisateur, les commandes et la liste des bons de livraisons associés aux différentes
-commandes.
+    description: `Développement sur la partie backend d'une application e-commerce dans une équipe agile d'une dizaine de personnes avec le framework SAFe.
+• Développement de nouveaux endpoints permettant de récupérer la liste des produits déjà achetés par un utilisateur, les commandes et la liste des bons de livraisons associés aux différentes commandes.
 • Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
 Environnement technique : Spring Boot, Java 11, Kafka, microservices et MongoDB.
 Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureurs de l'entreprise.`,
@@ -23,16 +20,11 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     dateFin: new Date(Date.parse('2021-04-30')),
     name: 'tbMaestro',
     location: 'Montréal, Canada',
-    description: `Volontariat International en Entreprise dans une équipe agile (Scrum) de 6 développeurs et un Product
-    Owner. Réalisation de développements sur l'application SaaS de l'entreprise.Création du module de
-    gestion des contrôles liés aux actifs.
-    • Création du module de génération d'un compte rendu envoyé par mail contenant les différentes
-    actions effectuées par les utilisateurs (création, modification et suppression d'un actif par exemple)
-    durant une période configurable.
+    description: `Volontariat International en Entreprise dans une équipe agile (Scrum) de 6 développeurs et un Product Owner. Réalisation de développements sur l'application SaaS de l'entreprise.Création du module de gestion des contrôles liés aux actifs.
+    • Création du module de génération d'un compte rendu envoyé par mail contenant les différentes actions effectuées par les utilisateurs (création, modification et suppression d'un actif par exemple) durant une période configurable.
     • Module de gestion des espaces liés à un actif.
     • Migration des tests End-to-End de l'application de Selenium vers Cypress.
-    Environnement technique : Angular 10, Kotlin, Sass, Spring Boot, PostgreSQL, MongoDB, Docker et
-    Jenkins.`,
+    Environnement technique : Angular 10, Kotlin, Sass, Spring Boot, PostgreSQL, MongoDB, Docker et Jenkins.`,
     skills: ['Angular 2', 'Java 8', 'SQL', 'Spring Boot'],
     website: 'https://www.tbmaestro.com/'
   },

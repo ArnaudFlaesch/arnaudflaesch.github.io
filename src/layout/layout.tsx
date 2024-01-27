@@ -43,7 +43,6 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <main id="portfolio-body">
           <div id="portfolio-content">
             <div>{props.children}</div>
-
             <Footer />
           </div>
         </main>

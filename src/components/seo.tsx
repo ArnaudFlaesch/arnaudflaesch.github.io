@@ -65,6 +65,10 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
         {
           name: 'keywords',
           content: site.siteMetadata.keywords
+        },
+        {
+          property: 'google-site-verification',
+          content: 'LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU'
         }
       ].concat(meta)}
     />

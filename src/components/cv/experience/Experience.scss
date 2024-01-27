@@ -10,20 +10,30 @@
   }
 
   .job-title {
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     background-color: #96c5d4;
     border-right: 1px solid #1f5099;
+    flex-basis: 20%;
 
-    .job-name {
-      margin: auto;
+    .job-content {
+      margin: 0.5em;
+      display: flex;
+      height: 97%; // FIXME
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
     }
   }
 
   .job-details {
     flex-basis: 80%;
     background-color: #a8c9d4;
+
+    .job-details-content {
+      margin: 0.5em;
+    }
+
+    .job-description {
+      white-space: pre-line;
+    }
   }
 }
