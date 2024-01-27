@@ -76,6 +76,13 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  flex: 1 0 100%;
+}
+
 html {
   line-height: var(--lineHeight-normal);
   font-size: var(--fontSize-root);

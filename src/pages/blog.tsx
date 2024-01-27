@@ -1,8 +1,11 @@
+import './blog.scss';
+
 import { graphql } from 'gatsby';
 import React from 'react';
-import Layout from '../layout/layout';
+
 import Post from '../components/post/Post';
 import Seo from '../components/seo';
+import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 
@@ -21,7 +24,7 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
       nodes {
         excerpt
         fields {
