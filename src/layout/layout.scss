@@ -764,14 +764,16 @@ pre tt::after {
 
   #site-container {
     display: flex;
+    height: 100vh;
 
     #profile-container {
-      flex: 1 0 15%;
+      flex: 0 0 15%;
       border-right: 1px solid black;
       background-color: $profile-background-color;
     }
 
     #portfolio-body {
+      flex: 0 1 85%;
       background-color: $body-background-color;
     }
 
