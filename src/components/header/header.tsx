@@ -5,8 +5,7 @@ import * as React from 'react';
 
 interface IProps {
   siteTitle: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  location: any;
+  location: Location;
 }
 
 interface IUrl {
@@ -34,7 +33,6 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
     if (props.location.pathname !== '/') {
       navigate(`/${link}`);
     }
-    return undefined;
   }
 
   return (

@@ -14,8 +14,7 @@ import Profile from '../components/profile/Profile';
 
 interface IProps {
   children: React.ReactElement[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  location: any;
+  location: Location;
 }
 
 export default function Layout(props: Readonly<IProps>): React.ReactElement {

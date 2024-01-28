@@ -12,8 +12,7 @@ import Tooltip from '@mui/material/Tooltip/Tooltip';
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  location: any;
+  location: Location;
 }
 
 export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactElement {

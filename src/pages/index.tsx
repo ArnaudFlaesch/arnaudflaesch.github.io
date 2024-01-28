@@ -4,13 +4,13 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import Contact from '../components/contact/Contact';
-import Layout from '../layout/layout';
+import Cv from '../components/cv/Cv';
 import Post from '../components/post/Post';
 import Seo from '../components/seo';
+import Skills from '../components/skills/Skills';
+import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
-import Skills from '../components/skills/Skills';
-import Cv from '../components/cv/Cv';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
