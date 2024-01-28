@@ -782,7 +782,6 @@ pre tt::after {
 
   #site-container {
     display: flex;
-    flex: 1 0 100%;
 
     #profile-container {
       flex: 0 1 15%;
@@ -800,10 +799,6 @@ pre tt::after {
     #profile-content,
     #portfolio-content {
       margin: 1em 12% 0;
-    }
-
-    #portfolio-content {
-      flex: 1 1 100%;
     }
 
     @media (width <= 600px) {
