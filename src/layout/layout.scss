@@ -3,7 +3,7 @@
 /* stylelint-disable */
 
 $header-height-small: 4.5rem;
-$header-height-large: 7rem;
+$header-height-large: 6rem;
 
 html {
   -ms-text-size-adjust: 100%;
@@ -13,8 +13,6 @@ html {
     serif,
     sans-serif;
   box-sizing: border-box;
-  overflow-y: scroll;
-
   scroll-padding-top: calc($header-height-small + 0.5rem);
 
   @media (width <= 700px) {
@@ -761,6 +759,7 @@ pre tt::after {
 
 #page-container {
   width: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -769,6 +768,7 @@ pre tt::after {
   }
 
   #fixed-header {
+    flex-grow: 0;
     position: sticky;
     top: 0;
     height: $header-height-small;
@@ -782,6 +782,7 @@ pre tt::after {
 
   #site-container {
     display: flex;
+    flex-grow: 1;
 
     #profile-container {
       flex: 0 1 15%;
@@ -799,6 +800,10 @@ pre tt::after {
     #profile-content,
     #portfolio-content {
       margin: 1em 12% 0;
+    }
+
+    #portfolio-content {
+      flex-grow: 1;
     }
 
     @media (width <= 600px) {

@@ -77,23 +77,14 @@
 }
 
 html,
-body,
-#___gatsby,
-#gatsby-focus-wrapper {
+body {
+  width: 100%;
   height: 100%;
 }
 
-html,
-body,
 #___gatsby,
 #gatsby-focus-wrapper {
-  width: 100%;
-  flex: 1 0 100%;
-}
-
-#___gatsby,
-#gatsby-focus-wrapper {
-  display: flex;
+  height: 100%;
 }
 
 html {
