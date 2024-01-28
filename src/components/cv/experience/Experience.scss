@@ -5,6 +5,10 @@
   flex-direction: row;
   border: 2px solid #1f5099;
 
+  @media (width <= 850px) {
+    flex-direction: column;
+  }
+
   a {
     text-decoration: none;
   }
@@ -13,11 +17,17 @@
     background-color: #96c5d4;
     border-right: 1px solid #1f5099;
     flex-basis: 20%;
+    display: flex;
+
+    @media (width <= 850px) {
+      border-bottom: 1px solid #1f5099;
+      border-right: none;
+    }
 
     .job-content {
       margin: 0.5em;
       display: flex;
-      height: 97%; // FIXME
+      flex: 1;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;

@@ -10,6 +10,7 @@ module.exports = {
     description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
     author: 'Arnaud Flaesch',
     job: 'Développeur Web',
+    company: 'Publicis Sapient France',
     keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
     siteUrl: siteUrl
   },

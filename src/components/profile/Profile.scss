@@ -7,6 +7,7 @@
 
   #bio {
     margin-bottom: 1.5em;
+    text-align: center;
 
     svg {
       margin-right: 0.2em;
@@ -21,23 +22,24 @@
         margin-bottom: 10px;
       }
     }
+  }
 
-    #social-links {
-      display: flex;
-      flex-direction: row;
+  #social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-      @media (width >= 600px) and (width <= 1250px) {
-        flex-wrap: wrap;
+    @media (width >= 600px) and (width <= 1250px) {
+      flex-wrap: wrap;
 
-        > * {
-          flex: 1 1 50%;
-        }
+      > * {
+        flex: 1 1 50%;
       }
+    }
 
-      .social-link {
-        img {
-          border-radius: 50%;
-        }
+    .social-link {
+      img {
+        border-radius: 50%;
       }
     }
   }

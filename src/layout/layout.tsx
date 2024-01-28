@@ -9,12 +9,13 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../components/header/header';
-
 import './layout.scss';
 import Profile from '../components/profile/Profile';
 
 interface IProps {
   children: React.ReactElement[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  location: any;
 }
 
 export default function Layout(props: Readonly<IProps>): React.ReactElement {
@@ -31,7 +32,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   return (
     <div id="page-container">
       <div id="fixed-header">
-        <Header siteTitle={data.site.siteMetadata?.author || 'Title'} />
+        <Header location={props.location} siteTitle={data.site.siteMetadata?.author || 'Title'} />
       </div>
       <div id="site-container">
         <div id="profile-container">

@@ -80,7 +80,13 @@ html,
 body,
 #___gatsby,
 #gatsby-focus-wrapper {
+  width: 100%;
   flex: 1 0 100%;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  display: flex;
 }
 
 html {

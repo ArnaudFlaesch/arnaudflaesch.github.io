@@ -20,12 +20,14 @@ export default function Bio(): React.ReactElement {
 
   return (
     <div className="bio">
-      <Avatar className="bio-avatar" alt="Arnaud Flaesch" sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
-
       {author && job && (
-        <p>
-          Écrit par <strong>{author}</strong>
-        </p>
+        <div>
+          <Avatar className="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
+
+          <p>
+            Écrit par <strong>{author}</strong>
+          </p>
+        </div>
       )}
     </div>
   );

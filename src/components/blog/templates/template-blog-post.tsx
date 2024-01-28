@@ -18,7 +18,6 @@ interface IProps {
 
 export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactElement {
   const post = props.data.markdownRemark;
-  const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const { previous, next } = props.data;
 
   function handleShare(url: string): void {
@@ -26,7 +25,7 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
   }
 
   return (
-    <Layout {...(props.location, siteTitle)}>
+    <Layout location={props.location}>
       <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">

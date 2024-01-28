@@ -1,12 +1,42 @@
 import './header.scss';
 
+import { navigate } from 'gatsby';
 import * as React from 'react';
 
 interface IProps {
   siteTitle: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  location: any;
+}
+
+interface IUrl {
+  link: string;
+  name: string;
 }
 
 export default function Header(props: Readonly<IProps>): React.ReactElement {
+  const urls: IUrl[] = [
+    {
+      link: '#cv',
+      name: 'Curriculum Vitae'
+    },
+    {
+      link: '#technos',
+      name: 'Langages et outils utilisés'
+    },
+    {
+      link: '#contact',
+      name: 'Contact'
+    }
+  ];
+
+  function redirectIfNeeded(link: string): void {
+    if (props.location.pathname !== '/') {
+      navigate(`/${link}`);
+    }
+    return undefined;
+  }
+
   return (
     <header id="portfolio-header">
       <div id="header-title">
@@ -15,15 +45,11 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
         </h1>
       </div>
       <div id="url-list">
-        <a href="#cv">
-          <span>Curriculum Vitae</span>
-        </a>
-        <a href="#technos">
-          <span>Langages et outils utilisés</span>
-        </a>
-        <a href="#contact">
-          <span>Contact</span>
-        </a>
+        {urls.map((url: IUrl) => (
+          <a key={url.link} onClick={() => redirectIfNeeded(url.link)} href={url.link}>
+            <span>{url.name}</span>
+          </a>
+        ))}
       </div>
     </header>
   );

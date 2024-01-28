@@ -760,6 +760,7 @@ pre tt::after {
 /* stylelint-enable */
 
 #page-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -781,7 +782,7 @@ pre tt::after {
 
   #site-container {
     display: flex;
-    flex: 1 1 100%;
+    flex: 1 0 100%;
 
     #profile-container {
       flex: 0 1 15%;
