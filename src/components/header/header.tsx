@@ -20,8 +20,8 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
       name: 'Curriculum Vitae'
     },
     {
-      link: '#technos',
-      name: 'Langages et outils utilisés'
+      link: '#projets',
+      name: 'Projets personnels'
     },
     {
       link: '#contact',

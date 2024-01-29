@@ -7,10 +7,11 @@ import Contact from '../components/contact/Contact';
 import Cv from '../components/cv/Cv';
 import Post from '../components/post/Post';
 import Seo from '../components/seo';
-import Skills from '../components/skills/Skills';
 import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
+import Projects from '../components/projects/projects';
+import Skills from '../components/skills/Skills';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
@@ -40,6 +41,11 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           <Skills />
         </div>
 
+        <div id="projets">
+          <h2>Projets en cours</h2>
+          <Projects />
+        </div>
+
         <div id="contact">
           <h2>Formulaire de contact</h2>
           <Contact />
@@ -55,11 +61,6 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
             ))}
           </ol>
         </div>
-
-        {/**
-        <h3>Projets en cours</h3>
-        <Projects />
-           */}
       </div>
     </Layout>
   );

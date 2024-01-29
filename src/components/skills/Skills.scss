@@ -1,3 +1,20 @@
+.skill-block {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #1f5099;
+
+  .skill-title {
+    flex-basis: 20%;
+    border-right: 1px solid #1f5099;
+    background-color: #96c5d4;
+  }
+
+  .skills-list {
+    flex-basis: 80%;
+    background-color: #a8c9d4;
+  }
+}
+
 #techno-grid {
   display: flex;
   flex-direction: row;
