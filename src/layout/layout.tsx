@@ -45,7 +45,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
           </div>
           <footer>
             <div>
-              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Favicon par{' '}
+              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
               <a href="https://icons8.com/">Icons8</a>
             </div>
           </footer>

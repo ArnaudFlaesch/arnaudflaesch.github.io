@@ -1,4 +1,4 @@
-export const skillsList: ICVElement[] = [
+/*export const skillsList: ICVElement[] = [
   {
     title: 'Tests',
     description: 'JUnit et Mockito (Java), Cypress et Jest (NodeJS).'
@@ -23,4 +23,4 @@ export const skillsList: ICVElement[] = [
     title: 'Langues',
     description: 'Français (langue maternelle) et anglais (905 au TOEIC).'
   }
-];
+];*/
