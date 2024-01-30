@@ -18,7 +18,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 
   return (
     <Layout location={props.location}>
-      <Seo title="Home" />
+      <Seo title="Home" location={''} description={''} image={''} />
 
       <div id="home">
         <div id="presentation">
@@ -78,6 +78,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          image
         }
       }
     }

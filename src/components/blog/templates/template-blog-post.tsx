@@ -25,7 +25,11 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
 
   return (
     <Layout location={props.location}>
-      <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
+      <Seo
+        title={post.frontmatter.title}
+        location={location.pathname}
+        description={post.frontmatter.description || post.excerpt}
+      />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <div>
@@ -33,6 +37,7 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
               <h1 itemProp="headline">{post.frontmatter.title}</h1>
               <p>{post.frontmatter.date}</p>
             </header>
+            <img src={`/blog/${post.frontmatter.image}`} width={80} height={80} alt="Illustration article" />
           </div>
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
@@ -108,6 +113,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD MMMM, YYYY", locale: "fr")
         description
+        image
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

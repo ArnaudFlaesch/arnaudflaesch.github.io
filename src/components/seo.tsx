@@ -12,8 +12,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 interface IProps {
   title: string;
   location: string;
-  description: string;
-  image: string;
+  description?: string;
+  image?: string;
   lang?: string;
   meta?: [];
 }
