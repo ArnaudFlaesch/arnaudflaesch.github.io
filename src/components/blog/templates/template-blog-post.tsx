@@ -27,8 +27,8 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
     <Layout location={props.location}>
       <Seo
         title={post.frontmatter.title}
-        location={location.pathname}
         description={post.frontmatter.description || post.excerpt}
+        location={props.location.pathname}
       />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
