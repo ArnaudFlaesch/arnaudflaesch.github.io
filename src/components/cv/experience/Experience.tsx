@@ -6,6 +6,7 @@ import { IExperience } from '../../../model/IExperience';
 import { format } from 'date-fns/format';
 
 import { fr } from 'date-fns/locale/fr';
+import DetailBlock from '../../detailBlock/DetailBlock';
 
 export default function Experience(props: Readonly<IExperience>): React.ReactElement {
   function displayPeriod(dateDebut: Date, dateFin?: Date): string {
@@ -22,8 +23,8 @@ export default function Experience(props: Readonly<IExperience>): React.ReactEle
   }
 
   return (
-    <div className="job">
-      <div className="job-title">
+    <DetailBlock
+      titleComponent={
         <div className="job-content">
           <div className="job-period">{displayPeriod(props.dateDebut, props.dateFin)}</div>
           <div className="job-name">
@@ -36,13 +37,13 @@ export default function Experience(props: Readonly<IExperience>): React.ReactEle
           </div>
           <div>{props.location}</div>
         </div>
-      </div>
-      <div className="job-details">
+      }
+      detailComponent={
         <div className="job-details-content">
           <h3>{props.title}</h3>
           <div className="job-description">{props.description}</div>
         </div>
-      </div>
-    </div>
+      }
+    />
   );
 }

@@ -1,4 +1,4 @@
-import './CV.scss';
+import './Cv.scss';
 
 import { Button } from '@mui/material';
 import * as React from 'react';
@@ -7,7 +7,7 @@ import jobData from '../../data/JobData';
 import formationData from '../../data/FormationData';
 import Experience from './experience/Experience';
 
-export default function CV(): React.ReactElement {
+export default function Cv(): React.ReactElement {
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
 
   const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
@@ -50,7 +50,7 @@ export default function CV(): React.ReactElement {
 
       <div id="experience-list" className="experience-container">
         {formationData.map((formation) => (
-          <Experience key={formation.name} {...formation} />
+          <Experience key={formation.title} {...formation} />
         ))}
       </div>
       {/**

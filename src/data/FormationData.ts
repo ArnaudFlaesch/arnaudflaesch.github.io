@@ -38,7 +38,7 @@ export const formationData: IExperience[] = [
   {
     title: 'Licence Mathématiques - Informatique',
     name: 'Université Paris Descartes - Paris 5',
-    location: 'Paris 07ème',
+    location: 'Paris 7ème',
     description: `Emploi étudiant durant le second semestre : enregistrement vidéo de certains cours pour les mettre en ligne sur la médiathèque de l'université.
     Course à pieds avec le service des sports de l'université.`,
     dateDebut: new Date(2015, 9, 18),

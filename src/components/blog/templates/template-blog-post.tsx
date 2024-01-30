@@ -8,33 +8,56 @@ import Bio from '../../bio/Bio';
 import './template-blog-post.scss';
 import { Facebook, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale/fr';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  location: any;
+  location: Location;
 }
 
 export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactElement {
   const post = props.data.markdownRemark;
-  const siteTitle = props.data.site.siteMetadata?.title || 'Title';
   const { previous, next } = props.data;
+
+  const siteUrl = props.data.site.siteMetadata.siteUrl;
+  const blogUrlPrefix = '/blog/';
+  const pubDate = post.frontmatter.date;
+  const ogTagPubDate = {
+    property: 'og:pubdate',
+    content: pubDate
+  };
+  const ogTagPubDate2 = {
+    property: 'article:published_time',
+    content: pubDate
+  };
+  const ogTagType = {
+    property: 'og:type',
+    content: 'article'
+  };
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
   }
 
   return (
-    <Layout {...(props.location, siteTitle)}>
-      <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
+    <Layout location={props.location}>
+      <Seo
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+        image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
+        location={props.location.pathname}
+        meta={[ogTagPubDate, ogTagType, ogTagPubDate2]}
+      />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <div>
             <header>
               <h1 itemProp="headline">{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.date}</p>
+              <p>{format(pubDate, 'dd MMMM, yyyy', { locale: fr })}</p>
             </header>
+            <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
           </div>
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
@@ -100,6 +123,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -108,8 +132,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        date
         description
+        image
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

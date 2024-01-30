@@ -1,6 +1,7 @@
 import React from 'react';
 import { IEdge, IRepository } from '../../../model/IRepository';
 import './RepositoryWidget.scss';
+import Tooltip from '@mui/material/Tooltip/Tooltip';
 
 interface IProps {
   repoIcons?: React.JSX.Element[];
@@ -32,14 +33,15 @@ export default function RepositoryWidget(props: IProps): React.ReactElement {
         {props.repositoryData.languages &&
           sortEdgesBySize(props.repositoryData.languages.edges).map((edge) => {
             return (
-              <div
-                key={edge.node.name}
-                style={{
-                  height: '1.5rem',
-                  backgroundColor: edge.node.color,
-                  width: `${Math.round((edge.size / props.repositoryData.languages.totalSize) * 100)}%`
-                }}
-              />
+              <Tooltip key={edge.node.name} title={edge.node.name}>
+                <div
+                  style={{
+                    height: '1.5rem',
+                    backgroundColor: edge.node.color,
+                    width: `${Math.fround((edge.size / props.repositoryData.languages.totalSize) * 100)}%`
+                  }}
+                />
+              </Tooltip>
             );
           })}
       </div>

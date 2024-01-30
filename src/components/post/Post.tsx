@@ -18,6 +18,7 @@ export default function Post(post: Readonly<IPost>): React.ReactElement {
           </h2>
           <small>{post.frontmatter.date}</small>
         </header>
+        <img src={`/blog/${post.frontmatter.image}`} className="blog-thumbnail" alt="Illustration article" />
         <section>
           <p
             dangerouslySetInnerHTML={{

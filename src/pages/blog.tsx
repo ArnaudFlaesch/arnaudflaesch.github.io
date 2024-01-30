@@ -13,7 +13,7 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <Seo title="Blog" location="/blog" />
       <h1>Blog</h1>
 
@@ -34,6 +34,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          image
         }
       }
     }

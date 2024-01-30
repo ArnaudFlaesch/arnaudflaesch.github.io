@@ -3,20 +3,23 @@ require('dotenv').config({
 });
 
 const siteUrl = 'https://arnaudflaesch.github.io/';
+const defaultImageUrl = 'profile-picture.jpg';
 
 module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
-    description: "Site Web professionnel d'Arnaud Flaesch, développeur Web",
+    description: 'Site web, CV et blog.',
     author: 'Arnaud Flaesch',
+    imageUrl: `${siteUrl}${defaultImageUrl}`,
     job: 'Développeur Web',
+    company: 'Publicis Sapient France',
     keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
+    siteName: 'arnaudflaesch.github.io',
     siteUrl: siteUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
-    'gatsby-plugin-postcss',
     'gatsby-plugin-sass',
     'gatsby-plugin-sitemap',
     {

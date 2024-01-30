@@ -10,11 +10,13 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface IProps {
-  description?: string;
-  lang?: string;
-  meta?: [];
   title: string;
-  location?: string;
+  location: string;
+  description?: string;
+  image?: string;
+  lang?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  meta?: any[];
 }
 
 export default function Seo(props: Readonly<IProps>): React.ReactElement {
@@ -26,25 +28,35 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
           description
           author
           job
+          imageUrl
+          keywords
+          siteName
           siteUrl
         }
       }
     }
   `);
 
+  const defaultTitle = site.siteMetadata.title;
   const metaDescription = props.description ?? site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const metaAuthor = site.siteMetadata.author;
+  const metaSiteName = site.siteMetadata.siteName;
   const meta = props.meta ?? [];
+  const metaImage = props.image ?? site.siteMetadata.imageUrl;
 
   return (
     <Helmet
       htmlAttributes={{ lang: props.lang }}
       title={props.title}
-      titleTemplate={defaultTitle ? `${defaultTitle}` : ''}
+      titleTemplate={defaultTitle}
       meta={[
         {
           name: 'description',
           content: metaDescription
+        },
+        {
+          name: 'author',
+          content: metaAuthor
         },
         {
           property: 'og:title',
@@ -55,8 +67,16 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
           content: metaDescription
         },
         {
+          property: 'og:image',
+          content: metaImage
+        },
+        {
+          property: 'og:site_name',
+          content: metaSiteName
+        },
+        {
           property: 'og:url',
-          content: `https://arnaudflaesch.github.io/${props.location}`
+          content: `${site.siteMetadata.siteUrl}${props.location}`
         },
         {
           property: 'og:type',

@@ -9,12 +9,12 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../components/header/header';
-
 import './layout.scss';
 import Profile from '../components/profile/Profile';
 
 interface IProps {
   children: React.ReactElement[];
+  location: Location;
 }
 
 export default function Layout(props: Readonly<IProps>): React.ReactElement {
@@ -31,7 +31,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   return (
     <div id="page-container">
       <div id="fixed-header">
-        <Header siteTitle={data.site.siteMetadata?.author || 'Title'} />
+        <Header location={props.location} siteTitle={data.site.siteMetadata?.author || 'Title'} />
       </div>
       <div id="site-container">
         <div id="profile-container">
@@ -45,7 +45,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
           </div>
           <footer>
             <div>
-              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Favicon par{' '}
+              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
               <a href="https://icons8.com/">Icons8</a>
             </div>
           </footer>

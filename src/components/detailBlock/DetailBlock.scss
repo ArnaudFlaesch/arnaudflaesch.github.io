@@ -1,0 +1,33 @@
+.detail-block {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #1f5099;
+
+  @media (width <= 850px) {
+    flex-direction: column;
+  }
+
+  .block-title {
+    flex-basis: 25%;
+    border-right: 1px solid #1f5099;
+    background-color: #96c5d4;
+    display: flex;
+
+    .block-title-content {
+      display: flex;
+      margin: 0.5em;
+      text-align: center;
+      width: 100%;
+    }
+
+    @media (width <= 850px) {
+      border-bottom: 1px solid #1f5099;
+      border-right: none;
+    }
+  }
+
+  .detail-info {
+    flex-basis: 75%;
+    background-color: #a8c9d4;
+  }
+}
