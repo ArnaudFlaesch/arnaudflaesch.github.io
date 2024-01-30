@@ -19,6 +19,8 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
 
+  const imgUrlPrefix = props.data.site.siteMetadata.siteUrl + '/blog/';
+
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
   }
@@ -28,6 +30,7 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={`${imgUrlPrefix}${post.frontmatter.image}`}
         location={props.location.pathname}
       />
       <div>
@@ -103,6 +106,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
