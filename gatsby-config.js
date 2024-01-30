@@ -8,7 +8,7 @@ const defaultImageUrl = 'profile-picture.jpg';
 module.exports = {
   siteMetadata: {
     title: 'Arnaud Flaesch, Développeur Web',
-    description: "Site Web personnel d'Arnaud Flaesch, développeur Web",
+    description: 'Site web, CV et blog.',
     author: 'Arnaud Flaesch',
     imageUrl: `${siteUrl}${defaultImageUrl}`,
     job: 'Développeur Web',
