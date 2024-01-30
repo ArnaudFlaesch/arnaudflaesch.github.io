@@ -122,6 +122,10 @@ export default function Skills(): React.ReactElement {
           />
         ),
         createIcon(
+          'MongoDB',
+          <StaticImage src="../../images/icons/tools/mongodb.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="MongoDB" />
+        ),
+        createIcon(
           'Scrum',
           <StaticImage src="../../images/icons/tools/scrum.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Scrum" />
         ),
