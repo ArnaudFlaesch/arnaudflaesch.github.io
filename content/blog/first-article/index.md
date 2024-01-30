@@ -2,7 +2,7 @@
 title: Bienvenue sur ce blog
 date: '2023-12-04T15:18'
 description: A venir...
-image: blog1.png
+image: test-blog.jpg
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

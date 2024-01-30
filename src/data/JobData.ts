@@ -5,7 +5,7 @@ export const jobData: IExperience[] = [
     title: 'Développeur backend Java',
     dateDebut: new Date(Date.parse('2021-08-02')),
     name: 'Publicis Sapient France',
-    location: 'Paris 20, France',
+    location: 'Paris 20ème, France',
     description: `Développement sur la partie backend d'une application e-commerce dans une équipe agile d'une dizaine de personnes avec le framework SAFe.
 • Développement de nouveaux endpoints permettant de récupérer la liste des produits déjà achetés par un utilisateur, les commandes et la liste des bons de livraisons associés aux différentes commandes.
 • Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
@@ -65,7 +65,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     name: 'Franprix - Leader Price',
     dateDebut: new Date(Date.parse('2015-10-01')),
     dateFin: new Date(Date.parse('2017-08-31')),
-    location: 'Chennevières sur Marne France',
+    location: 'Chennevières sur Marne, France',
     description: `Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.Contrat de professionnalisation en alternance au sein du service dédié au portail magasin et à l'intranet du siège.
     Développement et maintenance d'outils à destination des services RH (entretiens annuels) ou encore du personnel chargé de la sécurité des magasins (gestion des incidents).
     Environnement technique : Java J2EE (JSF 2, Vaadin, Liferay, Tomcat Server).
@@ -102,7 +102,7 @@ Réalisation d’un outil de gestion des produits pour les laboratoires pharmace
     name: 'La Réserve Paris',
     dateDebut: new Date(Date.parse('2014-06-02')),
     dateFin: new Date(Date.parse('2014-07-31')),
-    location: 'Paris 08',
+    location: 'Paris 8ème, France',
     description: `Stage de deux mois : développement d'une application web en PHP, SQL et JavaScript dont l'objectif est d'enregistrer des événements concernant les clients d'un hôtel ainsi que la gestion automatique d'un fichier permettant d'actualiser la liste des clients.`,
     skills: ['PHP', 'SQL', 'JavaScript', 'JQuery', 'CSS'],
     website: 'https://www.lareserve-paris.com/'

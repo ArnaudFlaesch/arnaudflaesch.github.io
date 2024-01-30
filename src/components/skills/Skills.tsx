@@ -12,7 +12,16 @@ export default function Skills(): React.ReactElement {
   const MAX_WIDTH = 40;
 
   function createSkillBlock(skillName: string, icons: ReactElement[]): ReactElement {
-    return <DetailBlock titleComponent={<h2>{skillName}</h2>} detailComponent={<>{icons}</>} />;
+    return (
+      <DetailBlock
+        titleComponent={
+          <div className="skill-category">
+            <h2>{skillName}</h2>
+          </div>
+        }
+        detailComponent={<>{icons}</>}
+      />
+    );
   }
 
   function createIcon(key: string, image: ReactElement): ReactElement {
@@ -111,6 +120,10 @@ export default function Skills(): React.ReactElement {
             height={MAX_HEIGHT}
             alt="PostgreSQL"
           />
+        ),
+        createIcon(
+          'Scrum',
+          <StaticImage src="../../images/icons/tools/scrum.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Scrum" />
         ),
         createIcon(
           'Node.JS',

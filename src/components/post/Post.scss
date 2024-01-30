@@ -18,4 +18,9 @@
   header {
     margin-bottom: var(--spacing-4);
   }
+
+  .blog-thumbnail {
+    max-height: 300px;
+    max-width: 300px;
+  }
 }

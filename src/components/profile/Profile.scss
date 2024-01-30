@@ -1,46 +1,52 @@
 #profile {
-  justify-content: center;
+  display: grid;
+  justify-items: center;
 
-  #bio-avatar {
-    margin: 0 auto;
+  @media (width <= 700px) {
+    display: flex;
+    flex-direction: row;
   }
 
   #bio {
-    margin-bottom: 1.5em;
-    text-align: center;
+    margin: 1em auto;
+
+    @media (width <= 700px) {
+      margin: 0 auto;
+    }
 
     svg {
-      margin-right: 0.2em;
-      width: 20px;
+      margin-right: 1.5rem;
+      width: 25px;
     }
 
     > * {
       display: flex;
-      justify-content: center;
 
       &:not(:last-child) {
         margin-bottom: 10px;
       }
     }
   }
+}
 
-  #social-links {
+#social-links {
+  display: flex;
+  flex-direction: column;
+
+  > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-link {
     display: flex;
     flex-direction: row;
-    justify-content: center;
 
-    @media (width >= 600px) and (width <= 1250px) {
-      flex-wrap: wrap;
-
-      > * {
-        flex: 1 1 50%;
-      }
+    img {
+      border-radius: 50%;
     }
 
-    .social-link {
-      img {
-        border-radius: 50%;
-      }
+    a {
+      margin-left: 1rem;
     }
   }
 }

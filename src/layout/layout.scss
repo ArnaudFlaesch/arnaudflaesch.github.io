@@ -797,16 +797,16 @@ pre tt::after {
       background-color: $body-background-color;
     }
 
-    #profile-content,
-    #portfolio-content {
-      margin: 1em 12% 0;
+    #profile-content {
+      margin: 1em 1.5em;
     }
 
     #portfolio-content {
       flex-grow: 1;
+      margin: 1em 12% 0;
     }
 
-    @media (width <= 600px) {
+    @media (width <= 700px) {
       flex-direction: column;
     }
 

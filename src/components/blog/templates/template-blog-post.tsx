@@ -19,7 +19,8 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
 
-  const imgUrlPrefix = props.data.site.siteMetadata.siteUrl + '/blog/';
+  const siteUrl = props.data.site.siteMetadata.siteUrl;
+  const blogUrlPrefix = '/blog/';
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
@@ -30,7 +31,7 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        image={`${imgUrlPrefix}${post.frontmatter.image}`}
+        image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
         location={props.location.pathname}
       />
       <div>
@@ -40,7 +41,7 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
               <h1 itemProp="headline">{post.frontmatter.title}</h1>
               <p>{post.frontmatter.date}</p>
             </header>
-            <img src={`/blog/${post.frontmatter.image}`} width={80} height={80} alt="Illustration article" />
+            <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
           </div>
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
