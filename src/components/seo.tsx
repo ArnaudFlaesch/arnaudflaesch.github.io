@@ -35,6 +35,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
 
   const defaultTitle = site.siteMetadata?.title ?? 'Arnaud Flaesch, Développeur Web';
   const metaDescription = props.description ?? site.siteMetadata.description;
+  const metaAuthor = site.siteMetadata.author;
   const meta = props.meta ?? [];
   const metaImage = props.image ?? site.siteMetadata.imageUrl;
 
@@ -47,6 +48,10 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
         {
           name: 'description',
           content: metaDescription
+        },
+        {
+          name: 'author',
+          content: metaAuthor
         },
         {
           property: 'og:title',
