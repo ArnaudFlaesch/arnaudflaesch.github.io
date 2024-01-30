@@ -1,3 +1,25 @@
+#social-links {
+  display: flex;
+  flex-direction: column;
+
+  > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-link {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      border-radius: 50%;
+    }
+
+    a {
+      margin-left: 1rem;
+    }
+  }
+}
+
 #profile {
   display: grid;
   justify-items: center;
@@ -25,28 +47,6 @@
       &:not(:last-child) {
         margin-bottom: 10px;
       }
-    }
-  }
-}
-
-#social-links {
-  display: flex;
-  flex-direction: column;
-
-  > *:not(:last-child) {
-    margin-bottom: 0.5rem;
-  }
-
-  .social-link {
-    display: flex;
-    flex-direction: row;
-
-    img {
-      border-radius: 50%;
-    }
-
-    a {
-      margin-left: 1rem;
     }
   }
 }
