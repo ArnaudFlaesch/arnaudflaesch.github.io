@@ -14,7 +14,7 @@ module.exports = {
     job: 'Développeur Web',
     company: 'Publicis Sapient France',
     keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
-    siteName: 'Arnaud Flaesch',
+    siteName: 'arnaudflaesch.github.io',
     siteUrl: siteUrl
   },
   plugins: [
