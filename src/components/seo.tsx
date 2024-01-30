@@ -15,7 +15,8 @@ interface IProps {
   description?: string;
   image?: string;
   lang?: string;
-  meta?: [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  meta?: any[];
 }
 
 export default function Seo(props: Readonly<IProps>): React.ReactElement {
@@ -27,15 +28,17 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
           description
           author
           job
+          siteName
           siteUrl
         }
       }
     }
   `);
 
-  const defaultTitle = site.siteMetadata?.title ?? 'Arnaud Flaesch, Développeur Web';
+  const defaultTitle = site.siteMetadata.title;
   const metaDescription = props.description ?? site.siteMetadata.description;
   const metaAuthor = site.siteMetadata.author;
+  const metaSiteName = site.siteMetadata.siteName;
   const meta = props.meta ?? [];
   const metaImage = props.image ?? site.siteMetadata.imageUrl;
 
@@ -64,6 +67,10 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
         {
           property: 'og:image',
           content: metaImage
+        },
+        {
+          property: 'og:site_name',
+          content: metaSiteName
         },
         {
           property: 'og:url',

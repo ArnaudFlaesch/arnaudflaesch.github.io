@@ -8,6 +8,8 @@ import Bio from '../../bio/Bio';
 import './template-blog-post.scss';
 import { Facebook, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale/fr';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,6 +23,15 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
 
   const siteUrl = props.data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
+  const pubDate = post.frontmatter.date;
+  const ogTagPubDate = {
+    property: 'og:pubdate',
+    content: pubDate
+  };
+  const ogTagType = {
+    property: 'og:type',
+    content: 'article'
+  };
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
@@ -33,13 +44,14 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
         description={post.frontmatter.description || post.excerpt}
         image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
         location={props.location.pathname}
+        meta={[ogTagPubDate, ogTagType]}
       />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <div>
             <header>
               <h1 itemProp="headline">{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.date}</p>
+              <p>{format(pubDate, 'dd MMMM, yyyy', { locale: fr })}</p>
             </header>
             <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
           </div>
@@ -116,7 +128,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "DD MMMM, YYYY", locale: "fr")
+        date
         description
         image
       }

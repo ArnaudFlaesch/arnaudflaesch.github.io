@@ -85,6 +85,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         description: String
         author: String
         job: String
+        siteName: String
         siteUrl: String
         keywords: String
      }
