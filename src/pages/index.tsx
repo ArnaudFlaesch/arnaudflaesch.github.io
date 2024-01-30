@@ -18,7 +18,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 
   return (
     <Layout location={props.location}>
-      <Seo title="Home" location={'/'} />
+      <Seo title="Home" location={''} />
 
       <div id="home">
         <div id="presentation">

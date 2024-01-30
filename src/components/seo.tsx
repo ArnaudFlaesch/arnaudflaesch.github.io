@@ -28,6 +28,8 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
           description
           author
           job
+          imageUrl
+          keywords
           siteName
           siteUrl
         }
