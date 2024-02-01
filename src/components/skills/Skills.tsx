@@ -45,12 +45,39 @@ export default function Skills(): React.ReactElement {
           />
         ),
         createIcon(
+          'ReactJS',
+          <StaticImage
+            src="../../images/icons/frontend/reactjs.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="ReactJS"
+          />
+        ),
+        createIcon(
           'Sass',
           <StaticImage src="../../images/icons/frontend/sass.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Sass" />
         ),
         createIcon(
           'Jest',
           <StaticImage src="../../images/icons/frontend/jest.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Jest" />
+        ),
+        createIcon(
+          'JQuery',
+          <StaticImage
+            src="../../images/icons/frontend/jquery.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="JQuery"
+          />
+        ),
+        createIcon(
+          'Javascript',
+          <StaticImage
+            src="../../images/icons/frontend/javascript.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="Javascript"
+          />
         ),
         createIcon(
           'Typescript',
@@ -62,8 +89,30 @@ export default function Skills(): React.ReactElement {
           />
         ),
         createIcon(
+          'Cypress',
+          <StaticImage
+            src="../../images/icons/frontend/cypress.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="Cypress"
+          />
+        ),
+        createIcon(
+          'HTML 5',
+          <StaticImage src="../../images/icons/frontend/html.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="HTML 5" />
+        ),
+        createIcon(
           'CSS 3',
           <StaticImage src="../../images/icons/frontend/css3.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="CSS 3" />
+        ),
+        createIcon(
+          'TailwindCSS',
+          <StaticImage
+            src="../../images/icons/frontend/tailwindCSS.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="TailwindCSS"
+          />
         )
       ])}
 
@@ -79,11 +128,19 @@ export default function Skills(): React.ReactElement {
         createIcon(
           'Spring Boot',
           <StaticImage
-            src="../../images/icons/backend/spring-boot.png"
+            src="../../images/icons/backend/springboot.png"
             width={MAX_WIDTH}
             height={MAX_HEIGHT}
             alt="Spring Boot"
           />
+        ),
+        createIcon(
+          'JUnit 5',
+          <StaticImage src="../../images/icons/backend/junit.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="JUnit 5" />
+        ),
+        createIcon(
+          'Gradle',
+          <StaticImage src="../../images/icons/backend/gradle.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Gradle" />
         )
       ])}
 
@@ -132,124 +189,34 @@ export default function Skills(): React.ReactElement {
         createIcon(
           'Node.JS',
           <StaticImage src="../../images/icons/tools/nodejs.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Node.js" />
+        ),
+        createIcon(
+          'Github Actions',
+          <StaticImage
+            src="../../images/icons/tools/githubactions.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="Github Actions"
+          />
+        ),
+        createIcon(
+          'Linux',
+          <StaticImage src="../../images/icons/tools/linux.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Linux" />
+        ),
+        createIcon(
+          'Snyk',
+          <StaticImage src="../../images/icons/tools/snyk.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Snyk" />
+        ),
+        createIcon(
+          'Sonarcloud',
+          <StaticImage
+            src="../../images/icons/tools/sonarcloud.png"
+            width={MAX_WIDTH}
+            height={MAX_HEIGHT}
+            alt="Sonarcloud"
+          />
         )
       ])}
-
-      {/* <div id="techno-grid">
-        <div className="language-list-container">
-          <h4>Frontend</h4>
-          <span>
-            <a href="#"></a>
-            <a href="#">
-              <img
-                src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-            <a href="https://www.javascript.com/">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-           
-            <a href="#">
-              <img
-                src="https://www.vectorlogo.zone/logos/jquery/jquery-icon.svg"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">
-              <img
-                src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-            <a href="https://www.cypress.io" target="_blank">
-              <img
-                src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg"
-                alt="cypress"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-
-            <a href="https://tailwindcss.com/" target="_blank">
-              <img
-                src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
-                alt="tailwind"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-          </span>
-        </div>
-
-        <div className="language-list-container">
-          <h4>Backend</h4>
-          <span>Spring Boot, Spring Security</span>
-          <span>
-           
-
-            <a href="https://gradle.org/" target="_blank">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gradle/gradle-plain-wordmark.svg"
-                alt="gradle"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-            <a href="https://www.junit.org/" target="_blank">
-              <StaticImage src="../../images/logos/backend/junit.svg" height={MAX_HEIGHT} alt={'junit'} />
-            </a>
-            <a href="https://www.Mockito.org/" target="_blank">
-              Mockito
-            </a>
-          </span>
-        </div>
-
-        <div className="language-list-container">
-          <h4>Outils</h4>
-          <span>Github Actions, Sonarcloud, Snyk</span>
-          <span>
-
-            <a href="https://www.mongodb.com/" target="_blank">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
-                alt="mongodb"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-
-            <a href="https://www.sonarsource.com/" target="_blank">
-              <img
-                src="https://raw.githubusercontent.com/detain/svg-logos/master/svg/s/sonarqube.svg"
-                alt="sonarqube"
-                width={MAX_WIDTH}
-                height={MAX_HEIGHT}
-              />
-            </a>
-            <a href="https://www.linux.org/" target="_blank">
-              <StaticImage src="../../images/logos/tools/linux.svg" height={MAX_HEIGHT} alt={'linux'} />
-            </a>
-            <a href="https://www.debian.org/" target="_blank">
-              <StaticImage src="../../images/logos/tools/debian.svg" width={MAX_WIDTH} alt={'debian'} />
-            </a>
-            <a href="https://snyk.io/" target="_blank">
-              <StaticImage src="../../images/logos/tools/snyk.svg" height={MAX_HEIGHT} alt={'snyk'} />
-            </a>
-            <a href="https://www.sonarsource.com/" target="_blank">
-              <StaticImage src="../../images/logos/tools/sonarcloud.svg" height={MAX_HEIGHT} alt={'sonarcloud'} />
-            </a>
-          </span>
-        </div>
-    
-      </div>*/}
     </>
   );
 }
