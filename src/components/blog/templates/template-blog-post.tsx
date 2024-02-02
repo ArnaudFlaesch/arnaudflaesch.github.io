@@ -28,10 +28,6 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
     property: 'og:pubdate',
     content: pubDate
   };
-  const ogTagPubDate2 = {
-    property: 'article:published_time',
-    content: pubDate
-  };
   const ogTagType = {
     property: 'og:type',
     content: 'article'
@@ -42,13 +38,13 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
   }
 
   return (
-    <Layout location={props.location}>
+    <Layout blogView={true} location={props.location}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
         location={props.location.pathname}
-        meta={[ogTagPubDate, ogTagType, ogTagPubDate2]}
+        meta={[ogTagPubDate, ogTagType]}
       />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">

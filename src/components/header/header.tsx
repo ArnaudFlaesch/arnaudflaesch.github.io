@@ -48,6 +48,7 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
             <span>{url.name}</span>
           </a>
         ))}
+        <a href="/blog">Blog</a>
       </div>
     </header>
   );

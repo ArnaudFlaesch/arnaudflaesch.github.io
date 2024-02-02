@@ -51,7 +51,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           <Contact />
         </div>
 
-        <div id="blog">
+        <div>
           <h2>
             <a href="/blog">Blog</a>
           </h2>

@@ -15,6 +15,7 @@ import Profile from '../components/profile/Profile';
 interface IProps {
   children: React.ReactElement[];
   location: Location;
+  blogView?: boolean;
 }
 
 export default function Layout(props: Readonly<IProps>): React.ReactElement {
@@ -34,7 +35,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <Header location={props.location} siteTitle={data.site.siteMetadata?.author || 'Title'} />
       </div>
       <div id="site-container">
-        <div id="profile-container">
+        <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
           <div id="profile-content">
             <Profile />
           </div>

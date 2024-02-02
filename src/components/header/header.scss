@@ -22,12 +22,12 @@
   }
 
   #url-list {
-    flex: 1 0 50%;
     height: 100%;
+    flex: 1 1 50%;
     display: flex;
     flex-direction: row;
     justify-content: right;
-    margin: auto 1em auto -1em;
+    margin: auto 1em;
 
     > *:not(:last-child) {
       margin-right: 0.5em;
