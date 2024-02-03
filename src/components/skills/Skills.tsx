@@ -202,9 +202,14 @@ export default function Skills(): React.ReactElement {
           )
         }),
         TooltipIcon({
-          tooltip: 'Heroku',
+          tooltip: 'Github Actions',
           image: (
-            <StaticImage src="../../images/icons/tools/heroku.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Heroku" />
+            <StaticImage
+              src="../../images/icons/tools/github-actions.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Github Actions"
+            />
           )
         }),
         TooltipIcon({
@@ -216,6 +221,12 @@ export default function Skills(): React.ReactElement {
               height={MAX_HEIGHT}
               alt="Jenkins"
             />
+          )
+        }),
+        TooltipIcon({
+          tooltip: 'Heroku',
+          image: (
+            <StaticImage src="../../images/icons/tools/heroku.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Heroku" />
           )
         }),
         TooltipIcon({
@@ -260,17 +271,6 @@ export default function Skills(): React.ReactElement {
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Node.js"
-            />
-          )
-        }),
-        TooltipIcon({
-          tooltip: 'Github Actions',
-          image: (
-            <StaticImage
-              src="../../images/icons/tools/github-actions.png"
-              width={MAX_WIDTH}
-              height={MAX_HEIGHT}
-              alt="Github Actions"
             />
           )
         }),
