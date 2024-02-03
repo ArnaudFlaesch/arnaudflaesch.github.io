@@ -18,6 +18,10 @@
       margin: 0.5em;
       text-align: center;
       width: 100%;
+
+      div {
+        margin: auto;
+      }
     }
 
     @media (width <= 850px) {
@@ -29,5 +33,9 @@
   .detail-info {
     flex-basis: 75%;
     background-color: #a8c9d4;
+
+    > * {
+      margin: 0 0.2rem;
+    }
   }
 }

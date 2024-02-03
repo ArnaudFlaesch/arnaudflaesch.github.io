@@ -1,7 +1,7 @@
 import './Profile.scss';
 
 import { LocationOn, Person, Work } from '@mui/icons-material';
-import { Icon, Tooltip } from '@mui/material';
+import { Tooltip } from '@mui/material';
 import Avatar from '@mui/material/Avatar/Avatar';
 import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -15,6 +15,12 @@ export default function Profile(): React.ReactElement {
           author
           job
           company
+          socials {
+            linkedin
+            github
+            scrumOrg
+            weLoveDevs
+          }
         }
       }
     }
@@ -24,13 +30,14 @@ export default function Profile(): React.ReactElement {
   const job = data.site.siteMetadata?.job;
   const company = data.site.siteMetadata?.company;
 
-  const IMG_HEIGHT = 34;
-  const IMG_WIDTH = 34;
+  const socials = data.site.siteMetadata.socials;
+  const linkedinLink = socials.linkedin;
+  const githubLink = socials.github;
+  const scrumOrgLink = socials.scrumOrg;
+  const welovedevsLink = socials.weLoveDevs;
 
-  const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
-  const githubLink = 'https://github.com/ArnaudFlaesch';
-  const scrumOrgLink = 'https://www.scrum.org/user/1355891';
-  const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
+  const IMG_HEIGHT = 40;
+  const IMG_WIDTH = 40;
 
   return (
     <>
@@ -59,56 +66,56 @@ export default function Profile(): React.ReactElement {
       <div id="social-links">
         <div id="linkedinLink" className="social-link">
           <Tooltip title="LinkedIn">
-            <Icon>
+            <div>
               <StaticImage
                 height={IMG_HEIGHT}
                 width={IMG_WIDTH}
                 src="../../images/icons/linkedin-icon.png"
                 alt="linkedin"
               />
-            </Icon>
+            </div>
           </Tooltip>
           <a href={linkedinLink}>{linkedinLink}</a>
         </div>
 
         <div id="githubLink" className="social-link">
           <Tooltip title="Github">
-            <Icon>
+            <div>
               <StaticImage
                 height={IMG_HEIGHT}
                 width={IMG_WIDTH}
                 src="../../images/icons/github-icon.png"
                 alt="github"
               />
-            </Icon>
+            </div>
           </Tooltip>
           <a href={githubLink}>{githubLink}</a>
         </div>
 
         <div id="scrumOrgLink" className="social-link">
           <Tooltip title="Profil Scrum.org">
-            <Icon>
+            <div>
               <StaticImage
                 height={IMG_HEIGHT}
                 width={IMG_WIDTH}
                 src="../../images/icons/scrum-org-icon.png"
                 alt="scrum.org"
               />
-            </Icon>
+            </div>
           </Tooltip>
           <a href={scrumOrgLink}>{scrumOrgLink}</a>
         </div>
 
         <div id="welovedevsLink" className="social-link">
           <Tooltip title="Profil WeLoveDevs">
-            <Icon>
+            <div>
               <StaticImage
                 height={IMG_HEIGHT}
                 width={IMG_WIDTH}
                 src="../../images/icons/welovedevs-icon.jpg"
                 alt="welovedevs"
               />
-            </Icon>
+            </div>
           </Tooltip>
           <a href={welovedevsLink}>{welovedevsLink}</a>
         </div>

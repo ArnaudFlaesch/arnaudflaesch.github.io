@@ -12,16 +12,7 @@ export default function Skills(): React.ReactElement {
   const MAX_WIDTH = 40;
 
   function createSkillBlock(skillName: string, icons: ReactElement[]): ReactElement {
-    return (
-      <DetailBlock
-        titleComponent={
-          <div className="skill-category">
-            <h2>{skillName}</h2>
-          </div>
-        }
-        detailComponent={<>{icons}</>}
-      />
-    );
+    return <DetailBlock titleComponent={<h2>{skillName}</h2>} detailComponent={<>{icons}</>} />;
   }
 
   function createIcon(key: string, image: ReactElement): ReactElement {

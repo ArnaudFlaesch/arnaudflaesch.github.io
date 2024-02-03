@@ -1,25 +1,35 @@
 import './Cv.scss';
 
-import { Button } from '@mui/material';
+import { Button, Tooltip } from '@mui/material';
 import * as React from 'react';
 
 import jobData from '../../data/JobData';
 import formationData from '../../data/FormationData';
 import Experience from './experience/Experience';
+import DetailBlock from '../detailBlock/DetailBlock';
+import { StaticImage } from 'gatsby-plugin-image';
+import { useStaticQuery, graphql } from 'gatsby';
 
 export default function Cv(): React.ReactElement {
+  const data = useStaticQuery(graphql`
+    query CVQuery {
+      site {
+        siteMetadata {
+          socials {
+            scrumOrg
+          }
+        }
+      }
+    }
+  `);
+
+  const scrumOrgLink = data.site.siteMetadata.socials.scrumOrg;
+
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
+  const IMG_HEIGHT = 60;
+  const IMG_WIDTH = 60;
 
   const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
-  /*
-  function createCVElement(element: ICVElement) {
-    return (
-      <div>
-        <h6>{element.title} : </h6>
-        {element.description}
-      </div>
-    );
-  }*/
 
   function showMoreJobs() {
     setJobIndexEnd(undefined);
@@ -48,11 +58,42 @@ export default function Cv(): React.ReactElement {
         )}
       </div>
 
-      <div id="experience-list" className="experience-container">
+      <div id="formation-list" className="experience-container">
         {formationData.map((formation) => (
           <Experience key={formation.title} {...formation} />
         ))}
       </div>
+
+      <div id="certifications-list">
+        <DetailBlock
+          titleComponent={<h2>{'Certifications'}</h2>}
+          detailComponent={
+            <>
+              <Tooltip title="PSM 1">
+                <a href={scrumOrgLink}>
+                  <StaticImage
+                    height={IMG_HEIGHT}
+                    width={IMG_WIDTH}
+                    src="../../images/certifications/psm1.png"
+                    alt={'PSM 1'}
+                  />
+                </a>
+              </Tooltip>
+              <Tooltip title="PSM 2">
+                <a href={scrumOrgLink}>
+                  <StaticImage
+                    height={IMG_HEIGHT}
+                    width={IMG_WIDTH}
+                    src="../../images/certifications/psm2.png"
+                    alt={'PSM 2'}
+                  />
+                </a>
+              </Tooltip>
+            </>
+          }
+        />
+      </div>
+
       {/**
         <div >
           <div>

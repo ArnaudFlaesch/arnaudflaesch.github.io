@@ -89,7 +89,14 @@ exports.createSchemaCustomization = ({ actions }) => {
         siteName: String
         siteUrl: String
         keywords: String
+        socials: Socials
      }
+     type Socials {
+      linkedin: String
+      github: String
+      scrumOrg: String
+      weLoveDevs: String
+    }
      type MarkdownRemark implements Node {
        frontmatter: Frontmatter
        fields: Fields
