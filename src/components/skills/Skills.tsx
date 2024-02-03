@@ -122,7 +122,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'TailwindCSS',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/tailwindCSS.png"
+              src="../../images/icons/frontend/tailwindcss.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="TailwindCSS"
