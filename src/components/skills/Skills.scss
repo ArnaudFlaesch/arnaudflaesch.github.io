@@ -1,32 +1,3 @@
-#techno-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 2px solid black;
-
-  @media (width <= 700px) {
-    flex-direction: column;
-  }
-
-  > * {
-    width: 100%;
-    border: 2px solid black;
-  }
-
-  h4 {
-    text-align: center;
-
-    @media (width <= 700px) {
-      text-align: left;
-    }
-  }
-
-  .language-list-container > span {
-    display: flex;
-    flex-wrap: wrap;
-
-    > * {
-      margin: 0 5px;
-    }
-  }
+.skill-category-title {
+  margin: auto;
 }

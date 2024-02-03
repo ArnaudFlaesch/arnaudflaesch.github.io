@@ -5,6 +5,16 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
+  height: 100%;
+
+  .job-name {
+    margin: auto;
+
+    img {
+      max-height: 100px;
+      max-width: 130px;
+    }
+  }
 
   a {
     text-decoration: none;

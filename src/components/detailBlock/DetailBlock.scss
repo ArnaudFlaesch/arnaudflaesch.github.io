@@ -19,8 +19,8 @@
       text-align: center;
       width: 100%;
 
-      div {
-        margin: auto;
+      > * {
+        width: 100%;
       }
     }
 

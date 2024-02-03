@@ -30,7 +30,8 @@ export default function Experience(props: Readonly<IExperience>): React.ReactEle
           <div className="job-name">
             {props.website && (
               <a href={props.website}>
-                <h3>{props.name}</h3>
+                {props.logoPath && <img src={props.logoPath} alt={props.name} />}
+                {!props.logoPath && <h3>{props.name}</h3>}
               </a>
             )}
             {!props.website && <h3>{props.name}</h3>}

@@ -111,9 +111,7 @@ export default function Cv(): React.ReactElement {
             </div>
           </div>
           <div>
-            <div id="experience-block">
-              <h4>Formation</h4>
-            </div>
+            
 
             <div id="hobbies-block">
               <h4>Centres d'intérêts</h4>
