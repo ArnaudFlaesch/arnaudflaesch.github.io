@@ -56,6 +56,19 @@ export default function PortfolioProject(): React.ReactElement {
         <StaticImage src="../../../images/icons/frontend/sass.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
       }
     />,
+
+    <TooltipIcon
+      key={'Gatsby'}
+      tooltip="Gatsby"
+      image={
+        <StaticImage
+          src="../../../images/icons/frontend/gatsby.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Gatsby"
+        />
+      }
+    />,
     <TooltipIcon
       key={'TypeScript'}
       tooltip="TypeScript"
@@ -65,18 +78,6 @@ export default function PortfolioProject(): React.ReactElement {
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="TypeScript"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'Github'}
-      tooltip="Github"
-      image={
-        <StaticImage
-          src="../../../images/icons/tools/github.png"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="Github"
         />
       }
     />,
