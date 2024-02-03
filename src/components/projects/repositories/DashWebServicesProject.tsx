@@ -3,6 +3,8 @@ import React from 'react';
 import { IRepository } from '../../../model/IRepository';
 import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
+import { ICON_WIDTH, ICON_HEIGHT } from '../../../utils/Constants';
+import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function DashWebServicesProject(): React.ReactElement {
   const QUERY = graphql`
@@ -17,9 +19,6 @@ export default function DashWebServicesProject(): React.ReactElement {
           }
           pushedAt
           url
-          primaryLanguage {
-            name
-          }
           languages(first: 3) {
             edges {
               node {
@@ -37,11 +36,17 @@ export default function DashWebServicesProject(): React.ReactElement {
 
   const dashWebServicesRepo: IRepository = useStaticQuery(QUERY).github.repository;
   const repositoryIcons = [
-    <StaticImage
-      key="kotlin"
-      style={{ height: '2.5rem', width: '2.5rem' }}
-      src="../../../images/programming-logos/kotlin-logo.png"
-      alt="kotlin-logo"
+    <TooltipIcon
+      key={'Kotlin'}
+      tooltip="Kotlin"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/kotlin.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Kotlin"
+        />
+      }
     />
   ];
 

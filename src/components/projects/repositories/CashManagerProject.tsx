@@ -3,14 +3,14 @@ import React from 'react';
 import { IRepository } from '../../../model/IRepository';
 import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
-import { ICON_HEIGHT, ICON_WIDTH } from '../../../utils/Constants';
+import { ICON_WIDTH, ICON_HEIGHT } from '../../../utils/Constants';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
-export default function PortfolioProject(): React.ReactElement {
-  const QUERY = graphql`
+export default function CashManagerProject(): React.ReactElement {
+  const QUERY_CASH_MANAGER = graphql`
     {
       github {
-        repository(name: "arnaudflaesch.github.io", owner: "ArnaudFlaesch") {
+        repository(name: "CashManager", owner: "ArnaudFlaesch") {
           createdAt
           description
           name
@@ -34,17 +34,17 @@ export default function PortfolioProject(): React.ReactElement {
     }
   `;
 
-  const portfolioRepo: IRepository = useStaticQuery(QUERY).github.repository;
+  const cashManagerRepo: IRepository = useStaticQuery(QUERY_CASH_MANAGER).github.repository;
   const repositoryIcons = [
     <TooltipIcon
-      key={'ReactJS'}
-      tooltip="ReactJS"
+      key={'Angular 2'}
+      tooltip="Angular 2"
       image={
         <StaticImage
-          src="../../../images/icons/frontend/reactjs.png"
+          src="../../../images/icons/frontend/angular2.png"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
-          alt="ReactJS"
+          alt="Angular 2"
         />
       }
     />
@@ -52,7 +52,7 @@ export default function PortfolioProject(): React.ReactElement {
 
   return (
     <div>
-      {<RepositoryWidget key={portfolioRepo.name} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />}
+      {<RepositoryWidget key={cashManagerRepo.name} repoIcons={repositoryIcons} repositoryData={cashManagerRepo} />}
     </div>
   );
 }

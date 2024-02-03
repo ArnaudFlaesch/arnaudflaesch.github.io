@@ -1,14 +1,14 @@
+import Tooltip from '@mui/material/Tooltip/Tooltip';
 import React from 'react';
 import { IEdge, IRepository } from '../../../model/IRepository';
 import './RepositoryWidget.scss';
-import Tooltip from '@mui/material/Tooltip/Tooltip';
 
 interface IProps {
   repoIcons?: React.JSX.Element[];
   repositoryData: IRepository;
 }
 
-export default function RepositoryWidget(props: IProps): React.ReactElement {
+export default function RepositoryWidget(props: Readonly<IProps>): React.ReactElement {
   function sortEdgesBySize(edges: IEdge[]): IEdge[] {
     return edges.sort((edgeA: IEdge, edgeB: IEdge) => {
       if (edgeA.size > edgeB.size) {

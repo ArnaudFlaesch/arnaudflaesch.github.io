@@ -3,6 +3,8 @@ import React from 'react';
 import { IRepository } from '../../../model/IRepository';
 import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
+import TooltipIcon from '../../tooltip-icon/TooltipIcon';
+import { ICON_HEIGHT, ICON_WIDTH } from '../../../utils/Constants';
 
 export default function DashWebProject(): React.ReactElement {
   const QUERY_DASH_WEB = graphql`
@@ -17,9 +19,6 @@ export default function DashWebProject(): React.ReactElement {
           }
           pushedAt
           url
-          primaryLanguage {
-            name
-          }
           languages(first: 3) {
             edges {
               node {
@@ -37,11 +36,17 @@ export default function DashWebProject(): React.ReactElement {
 
   const dashWebRepo: IRepository = useStaticQuery(QUERY_DASH_WEB).github.repository;
   const repositoryIcons = [
-    <StaticImage
-      key="angular"
-      style={{ height: '2.5rem', width: '2.5rem' }}
-      src="../../../images/programming-logos/angular-logo.png"
-      alt="angular-logo"
+    <TooltipIcon
+      key={'Angular 2'}
+      tooltip="Angular 2"
+      image={
+        <StaticImage
+          src="../../../images/icons/frontend/angular2.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Angular 2"
+        />
+      }
     />
   ];
 
