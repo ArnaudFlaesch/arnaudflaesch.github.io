@@ -267,7 +267,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Github Actions',
           image: (
             <StaticImage
-              src="../../images/icons/tools/githubactions.png"
+              src="../../images/icons/tools/github-actions.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Github Actions"
