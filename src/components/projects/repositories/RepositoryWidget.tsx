@@ -28,7 +28,10 @@ export default function RepositoryWidget(props: Readonly<IProps>): React.ReactEl
       </h3>
       <div>{props.repositoryData.description}</div>
       <div>{props.repositoryData.primaryLanguage?.name}</div>
-      <div className="repository-icons-container">Stack technique : {props.repoIcons}</div>
+      <div className="repository-icons-container">
+        <div>Stack technique :</div>
+        <div className="repository-icons">{props.repoIcons}</div>
+      </div>
       <div className="languages-container">
         {props.repositoryData.languages &&
           sortEdgesBySize(props.repositoryData.languages.edges).map((edge) => {

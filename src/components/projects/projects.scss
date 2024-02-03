@@ -1,8 +1,15 @@
 #projects-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2em;
 
   > * {
-    margin: 1em;
+    flex-basis: calc(50% - 1.5em);
+
+    @media (width <=850px) {
+      flex-basis: 100%;
+    }
   }
 }

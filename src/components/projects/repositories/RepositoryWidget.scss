@@ -1,7 +1,12 @@
 .repository-widget-container {
   .repository-icons-container {
-    display: flex;
-    flex-direction: row;
+    margin-top: 1em;
+
+    .repository-icons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 
   .languages-container {

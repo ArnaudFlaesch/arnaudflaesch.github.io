@@ -131,14 +131,6 @@ export default function DashWebServicesProject(): React.ReactElement {
   ];
 
   return (
-    <div>
-      {
-        <RepositoryWidget
-          key={dashWebServicesRepo.name}
-          repoIcons={repositoryIcons}
-          repositoryData={dashWebServicesRepo}
-        />
-      }
-    </div>
+    <RepositoryWidget key={dashWebServicesRepo.name} repoIcons={repositoryIcons} repositoryData={dashWebServicesRepo} />
   );
 }

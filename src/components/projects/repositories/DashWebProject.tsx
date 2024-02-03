@@ -77,7 +77,5 @@ export default function DashWebProject(): React.ReactElement {
     />
   ];
 
-  return (
-    <div>{<RepositoryWidget key={dashWebRepo.name} repoIcons={repositoryIcons} repositoryData={dashWebRepo} />}</div>
-  );
+  return <RepositoryWidget key={dashWebRepo.name} repoIcons={repositoryIcons} repositoryData={dashWebRepo} />;
 }

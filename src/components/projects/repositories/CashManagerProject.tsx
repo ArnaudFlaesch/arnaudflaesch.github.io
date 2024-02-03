@@ -77,9 +77,5 @@ export default function CashManagerProject(): React.ReactElement {
     />
   ];
 
-  return (
-    <div>
-      {<RepositoryWidget key={cashManagerRepo.name} repoIcons={repositoryIcons} repositoryData={cashManagerRepo} />}
-    </div>
-  );
+  return <RepositoryWidget key={cashManagerRepo.name} repoIcons={repositoryIcons} repositoryData={cashManagerRepo} />;
 }

@@ -94,9 +94,5 @@ export default function PortfolioProject(): React.ReactElement {
     />
   ];
 
-  return (
-    <div>
-      {<RepositoryWidget key={portfolioRepo.name} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />}
-    </div>
-  );
+  return <RepositoryWidget key={portfolioRepo.name} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />;
 }
