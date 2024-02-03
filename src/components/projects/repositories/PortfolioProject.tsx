@@ -48,6 +48,49 @@ export default function PortfolioProject(): React.ReactElement {
           alt="ReactJS"
         />
       }
+    />,
+    <TooltipIcon
+      key={'Sass'}
+      tooltip="Sass"
+      image={
+        <StaticImage src="../../../images/icons/frontend/sass.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
+      }
+    />,
+    <TooltipIcon
+      key={'TypeScript'}
+      tooltip="TypeScript"
+      image={
+        <StaticImage
+          src="../../../images/icons/frontend/typescript.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="TypeScript"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Github'}
+      tooltip="Github"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/github.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Github"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Github Actions'}
+      tooltip="Github Actions"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/github-actions.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Github Actions"
+        />
+      }
     />
   ];
 

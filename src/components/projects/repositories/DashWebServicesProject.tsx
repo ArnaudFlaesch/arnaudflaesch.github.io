@@ -48,6 +48,85 @@ export default function DashWebServicesProject(): React.ReactElement {
           alt="Kotlin"
         />
       }
+    />,
+    <TooltipIcon
+      key={'Spring Boot'}
+      tooltip="Spring Boot"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/springboot.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Spring Boot"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'JUnit 5'}
+      tooltip="JUnit 5"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/junit.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="JUnit 5"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Gradle'}
+      tooltip="Gradle"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/gradle.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Gradle"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Docker'}
+      tooltip="Docker"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/docker.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Docker"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'PostgreSQL'}
+      tooltip="PostgreSQL"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/postgresql.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="PostgreSQL"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Snyk'}
+      tooltip="Snyk"
+      image={
+        <StaticImage src="../../../images/icons/tools/snyk.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Snyk" />
+      }
+    />,
+    <TooltipIcon
+      key={'Heroku'}
+      tooltip="Heroku"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/heroku.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Heroku"
+        />
+      }
     />
   ];
 

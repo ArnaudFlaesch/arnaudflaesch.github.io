@@ -48,6 +48,32 @@ export default function CashManagerProject(): React.ReactElement {
           alt="Angular 2"
         />
       }
+    />,
+    <TooltipIcon
+      key={'Jest'}
+      tooltip="Jest"
+      image={
+        <StaticImage src="../../../images/icons/frontend/jest.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Jest" />
+      }
+    />,
+    <TooltipIcon
+      key={'Sass'}
+      tooltip="Sass"
+      image={
+        <StaticImage src="../../../images/icons/frontend/sass.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
+      }
+    />,
+    <TooltipIcon
+      key={'Cypress'}
+      tooltip="Cypress"
+      image={
+        <StaticImage
+          src="../../../images/icons/frontend/cypress.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Cypress"
+        />
+      }
     />
   ];
 
