@@ -7,6 +7,15 @@
     flex-direction: column;
   }
 
+  .detail-info {
+    flex-basis: 75%;
+    background-color: #a8c9d4;
+
+    > * {
+      margin: 0 0.2rem;
+    }
+  }
+
   .block-title {
     flex-basis: 25%;
     border-right: 1px solid #1f5099;
@@ -27,15 +36,6 @@
     @media (width <= 850px) {
       border-bottom: 1px solid #1f5099;
       border-right: none;
-    }
-  }
-
-  .detail-info {
-    flex-basis: 75%;
-    background-color: #a8c9d4;
-
-    > * {
-      margin: 0 0.2rem;
     }
   }
 }
