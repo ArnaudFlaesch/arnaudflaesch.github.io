@@ -1,6 +1,6 @@
 import './Profile.scss';
 
-import { LocationOn, Person, Work } from '@mui/icons-material';
+import { LocationOn, Work } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 import Avatar from '@mui/material/Avatar/Avatar';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -44,14 +44,8 @@ export default function Profile(): React.ReactElement {
       {author && job && (
         <div id="profile">
           <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
-
           <div id="bio">
             <div>
-              <Person />
-              {author}
-            </div>
-            <div>
-              {' '}
               <Work />
               {job} <br /> chez {company}
             </div>
