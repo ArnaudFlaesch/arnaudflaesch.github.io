@@ -14,6 +14,7 @@ const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 module.exports = {
   siteMetadata: {
     title: title,
+    pwaShortName: 'AF',
     description: `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
     sur lesquels je travaille.`,
     author: fullName,
@@ -88,7 +89,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: title,
-        short_name: title,
+        short_name: pwaShortName,
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
