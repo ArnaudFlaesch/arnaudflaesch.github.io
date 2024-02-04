@@ -9,7 +9,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface IProps {
-  title: string;
+  title?: string;
   location: string;
   description?: string;
   image?: string;
@@ -37,6 +37,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
   `);
 
   const defaultTitle = site.siteMetadata.title;
+  const title = props.title ? `${props.title} - ${defaultTitle}` : defaultTitle;
   const metaDescription = props.description ?? site.siteMetadata.description;
   const metaAuthor = site.siteMetadata.author;
   const metaSiteName = site.siteMetadata.siteName;
@@ -54,7 +55,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
       <meta charSet="utf-8" />
       <meta name="description" content={metaDescription} />
       <meta name="author" content={metaAuthor} />
-      <meta property="og:title" content={`${props.title} - ${defaultTitle}`} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:image" content={metaImage} />
       <meta property="og:site_name" content={metaSiteName} />

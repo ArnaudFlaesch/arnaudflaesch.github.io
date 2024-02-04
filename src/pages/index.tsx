@@ -15,18 +15,14 @@ import { IPost } from '../model/IPost';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
+  const description = props.data.site.siteMetadata.description;
 
   return (
     <Layout location={props.location}>
       <div id="home">
         <div id="presentation">
           <h1>Bonjour !</h1>
-          <p>
-            Je m'appelle Arnaud et je suis développeur web.
-            <br />
-            Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je
-            travaille.
-          </p>
+          <div>{description}</div>
         </div>
 
         <div id="cv">
@@ -65,10 +61,15 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   );
 }
 
-export const Head = () => <Seo title="Accueil" location={''} />;
+export const Head = () => <Seo location={''} />;
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        description
+      }
+    }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         excerpt

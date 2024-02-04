@@ -17,11 +17,11 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
   const urls: IUrl[] = [
     {
       link: '#cv',
-      name: 'Curriculum Vitae'
+      name: 'CV'
     },
     {
       link: '#projets',
-      name: 'Projets personnels'
+      name: 'Projets'
     },
     {
       link: '#contact',

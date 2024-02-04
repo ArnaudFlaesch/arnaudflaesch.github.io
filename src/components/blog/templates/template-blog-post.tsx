@@ -110,7 +110,6 @@ export const Head = ({ location, data }) => {
     property: 'og:pubdate',
     content: pubDate
   };
-  console.log(location.pathname);
   return (
     <Seo
       title={post.frontmatter.title}
