@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../../../layout/layout';
-import Seo from '../../seo';
+import Seo from '../../Seo';
 import Bio from '../../bio/Bio';
 
 import './template-blog-post.scss';
@@ -21,17 +21,8 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
 
-  const siteUrl = props.data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
   const pubDate = post.frontmatter.date;
-  const ogTagPubDate = {
-    property: 'og:pubdate',
-    content: pubDate
-  };
-  const ogTagType = {
-    property: 'og:type',
-    content: 'article'
-  };
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
@@ -39,13 +30,6 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
 
   return (
     <Layout blogView={true} location={props.location}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-        image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
-        location={props.location.pathname}
-        meta={[ogTagPubDate, ogTagType]}
-      />
       <div>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <div>
@@ -110,9 +94,34 @@ export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactEl
           </ul>
         </nav>
       </div>
+      <span id="blank"></span>
     </Layout>
   );
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const Head = ({ location, data }) => {
+  const post = data.markdownRemark;
+  const pubDate = post.frontmatter.date;
+  const siteUrl = data.site.siteMetadata.siteUrl;
+  const blogUrlPrefix = '/blog/';
+
+  const ogTagPubDate = {
+    property: 'og:pubdate',
+    content: pubDate
+  };
+  console.log(location.pathname);
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+      image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
+      location={location.pathname}
+      type="article"
+      meta={[ogTagPubDate]}
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
