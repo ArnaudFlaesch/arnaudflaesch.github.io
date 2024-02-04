@@ -3,23 +3,21 @@ import './index.scss';
 import { graphql } from 'gatsby';
 import React from 'react';
 
+import Seo from '../components/Seo';
 import Contact from '../components/contact/Contact';
 import Cv from '../components/cv/Cv';
 import Post from '../components/post/Post';
-import Seo from '../components/seo';
+import Projects from '../components/projects/projects';
+import Skills from '../components/skills/Skills';
 import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
-import Projects from '../components/projects/projects';
-import Skills from '../components/skills/Skills';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
 
   return (
     <Layout location={props.location}>
-      <Seo title="Accueil" location={''} />
-
       <div id="home">
         <div id="presentation">
           <h1>Bonjour !</h1>
@@ -62,9 +60,12 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           </ol>
         </div>
       </div>
+      <span id="blank"></span>
     </Layout>
   );
 }
+
+export const Head = () => <Seo title="Accueil" location={''} />;
 
 export const pageQuery = graphql`
   query {

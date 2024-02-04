@@ -2,8 +2,10 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
-const siteUrl = 'https://arnaudflaesch.github.io/';
-const defaultImageUrl = 'profile-picture.jpg';
+const fullName = 'Arnaud Flaesch';
+const title = 'Arnaud Flaesch, Développeur Web';
+const siteUrl = 'https://arnaudflaesch.github.io';
+const defaultImageUrl = '/profile-picture.jpg';
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
 const scrumOrgLink = 'https://www.scrum.org/user/1355891';
@@ -11,9 +13,9 @@ const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 
 module.exports = {
   siteMetadata: {
-    title: 'Arnaud Flaesch, Développeur Web',
+    title: title,
     description: 'Site web, CV et blog.',
-    author: 'Arnaud Flaesch',
+    author: fullName,
     imageUrl: `${siteUrl}${defaultImageUrl}`,
     job: 'Développeur Web',
     company: 'Publicis Sapient France',
@@ -28,7 +30,6 @@ module.exports = {
     }
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
     'gatsby-plugin-sitemap',
@@ -85,8 +86,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Blog d'Arnaud Flaesch",
-        short_name: "Blog d'Arnaud Flaesch",
+        name: title,
+        short_name: title,
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
@@ -98,7 +99,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteUrl,
-        sitemap: `${siteUrl}sitemap-index.xml`,
+        sitemap: `${siteUrl}/sitemap-index.xml`,
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
