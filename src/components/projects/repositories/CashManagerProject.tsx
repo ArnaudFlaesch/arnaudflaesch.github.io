@@ -5,13 +5,13 @@ import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
-export default function DashWebProject(): React.ReactElement {
+export default function CashManagerProject(): React.ReactElement {
   const ICON_HEIGHT = 40;
   const ICON_WIDTH = 40;
-  const QUERY_DASH_WEB = graphql`
+  const QUERY_CASH_MANAGER = graphql`
     {
       github {
-        repository(name: "Dash-Web", owner: "ArnaudFlaesch") {
+        repository(name: "CashManager", owner: "ArnaudFlaesch") {
           createdAt
           description
           name
@@ -35,7 +35,7 @@ export default function DashWebProject(): React.ReactElement {
     }
   `;
 
-  const dashWebRepo: IRepository = useStaticQuery(QUERY_DASH_WEB).github.repository;
+  const cashManagerRepo: IRepository = useStaticQuery(QUERY_CASH_MANAGER).github.repository;
   const repositoryIcons = [
     <TooltipIcon
       key={'Angular 2'}
@@ -77,5 +77,5 @@ export default function DashWebProject(): React.ReactElement {
     />
   ];
 
-  return <RepositoryWidget key={dashWebRepo.name} repoIcons={repositoryIcons} repositoryData={dashWebRepo} />;
+  return <RepositoryWidget key={cashManagerRepo.name} repoIcons={repositoryIcons} repositoryData={cashManagerRepo} />;
 }

@@ -5,6 +5,7 @@ export const formationData: IExperience[] = [
     title: 'Mastère Architecture des Logiciels',
     name: 'ESGI - École Supérieure de Génie Informatique',
     location: 'Paris 12ème',
+    logoPath: './school-logos/esgi.png',
     description: `Activités et associations : J'ai participé à des associations ludiques et également assisté à des conférences organisées par l'école concernant par exemple le domaine du Web, la question de la sécurité des applications ou encore l'évolution des langages utilisés pour les développer.
     Réalisations de projets en Android, C++ ou encore Spring.`,
     dateDebut: new Date(2015, 9, 1),
@@ -16,6 +17,7 @@ export const formationData: IExperience[] = [
     title: 'Bachelor Architecture des Logiciels',
     name: 'ESGI - École Supérieure de Génie Informatique',
     location: 'Paris 12ème',
+    logoPath: './school-logos/esgi.png',
     description: `Réalisations de projets en Python, C, Java ou encore SQL (Conception Bases de données).
     Membre de l'association sportive de Crossfit de l'école.`,
     dateDebut: new Date(2014, 9, 1),
@@ -25,7 +27,7 @@ export const formationData: IExperience[] = [
   },
   {
     title: 'Brevet de Technicien Supérieur',
-    name: 'Lycée Privé Saint Michel de Picpus',
+    name: 'Lycée privé Saint Michel de Picpus',
     location: 'Saint Mandé',
     description: `BTS Services Informatiques aux Organisations, Solutions Logicielles et Applications Métiers.
     Stages en entreprise (deux fois cinq semaines); développement d'applications Web interagissant avec une base de données dans le cadre des projets à  présenter pour l'épreuve E4 (Conception et Maintenance de Solutions Informatiques).
@@ -39,6 +41,7 @@ export const formationData: IExperience[] = [
     title: 'Licence Mathématiques - Informatique',
     name: 'Université Paris Descartes - Paris 5',
     location: 'Paris 7ème',
+    logoPath: './school-logos/paris-5-descartes.png',
     description: `Emploi étudiant durant le second semestre : enregistrement vidéo de certains cours pour les mettre en ligne sur la médiathèque de l'université.
     Course à pieds avec le service des sports de l'université.`,
     dateDebut: new Date(2015, 9, 18),

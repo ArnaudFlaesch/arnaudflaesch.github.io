@@ -3,8 +3,11 @@ import React from 'react';
 import { IRepository } from '../../../model/IRepository';
 import RepositoryWidget from './RepositoryWidget';
 import { StaticImage } from 'gatsby-plugin-image';
+import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function DashWebServicesProject(): React.ReactElement {
+  const ICON_HEIGHT = 40;
+  const ICON_WIDTH = 40;
   const QUERY = graphql`
     {
       github {
@@ -17,9 +20,6 @@ export default function DashWebServicesProject(): React.ReactElement {
           }
           pushedAt
           url
-          primaryLanguage {
-            name
-          }
           languages(first: 3) {
             edges {
               node {
@@ -37,23 +37,100 @@ export default function DashWebServicesProject(): React.ReactElement {
 
   const dashWebServicesRepo: IRepository = useStaticQuery(QUERY).github.repository;
   const repositoryIcons = [
-    <StaticImage
-      key="kotlin"
-      style={{ height: '2.5rem', width: '2.5rem' }}
-      src="../../../images/programming-logos/kotlin-logo.png"
-      alt="kotlin-logo"
+    <TooltipIcon
+      key={'Kotlin'}
+      tooltip="Kotlin"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/kotlin.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Kotlin"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Spring Boot'}
+      tooltip="Spring Boot"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/springboot.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Spring Boot"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'JUnit 5'}
+      tooltip="JUnit 5"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/junit.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="JUnit 5"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Gradle'}
+      tooltip="Gradle"
+      image={
+        <StaticImage
+          src="../../../images/icons/backend/gradle.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Gradle"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Docker'}
+      tooltip="Docker"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/docker.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Docker"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'PostgreSQL'}
+      tooltip="PostgreSQL"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/postgresql.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="PostgreSQL"
+        />
+      }
+    />,
+    <TooltipIcon
+      key={'Snyk'}
+      tooltip="Snyk"
+      image={
+        <StaticImage src="../../../images/icons/tools/snyk.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Snyk" />
+      }
+    />,
+    <TooltipIcon
+      key={'Heroku'}
+      tooltip="Heroku"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/heroku.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="Heroku"
+        />
+      }
     />
   ];
 
   return (
-    <div>
-      {
-        <RepositoryWidget
-          key={dashWebServicesRepo.name}
-          repoIcons={repositoryIcons}
-          repositoryData={dashWebServicesRepo}
-        />
-      }
-    </div>
+    <RepositoryWidget key={dashWebServicesRepo.name} repoIcons={repositoryIcons} repositoryData={dashWebServicesRepo} />
   );
 }

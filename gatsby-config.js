@@ -4,6 +4,10 @@ require('dotenv').config({
 
 const siteUrl = 'https://arnaudflaesch.github.io/';
 const defaultImageUrl = 'profile-picture.jpg';
+const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
+const githubLink = 'https://github.com/ArnaudFlaesch';
+const scrumOrgLink = 'https://www.scrum.org/user/1355891';
+const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 
 module.exports = {
   siteMetadata: {
@@ -15,7 +19,13 @@ module.exports = {
     company: 'Publicis Sapient France',
     keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
     siteName: 'arnaudflaesch.github.io',
-    siteUrl: siteUrl
+    siteUrl: siteUrl,
+    socials: {
+      linkedin: linkedinLink,
+      github: githubLink,
+      scrumOrg: scrumOrgLink,
+      weLoveDevs: welovedevsLink
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',

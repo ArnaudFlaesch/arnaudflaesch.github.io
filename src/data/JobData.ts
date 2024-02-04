@@ -6,6 +6,7 @@ export const jobData: IExperience[] = [
     dateDebut: new Date(Date.parse('2021-08-02')),
     name: 'Publicis Sapient France',
     location: 'Paris 20ème, France',
+    logoPath: './company-logos/publicis-sapient.png',
     description: `Développement sur la partie backend d'une application e-commerce dans une équipe agile d'une dizaine de personnes avec le framework SAFe.
 • Développement de nouveaux endpoints permettant de récupérer la liste des produits déjà achetés par un utilisateur, les commandes et la liste des bons de livraisons associés aux différentes commandes.
 • Écriture des tests unitaires et des tests d'intégrations associés aux différents développements.
@@ -20,6 +21,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     dateFin: new Date(Date.parse('2021-04-30')),
     name: 'tbMaestro',
     location: 'Montréal, Canada',
+    logoPath: './company-logos/tbmaestro.png',
     description: `Volontariat International en Entreprise dans une équipe agile (Scrum) de 6 développeurs et un Product Owner. Réalisation de développements sur l'application SaaS de l'entreprise.Création du module de gestion des contrôles liés aux actifs.
     • Création du module de génération d'un compte rendu envoyé par mail contenant les différentes actions effectuées par les utilisateurs (création, modification et suppression d'un actif par exemple) durant une période configurable.
     • Module de gestion des espaces liés à un actif.
@@ -34,6 +36,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     dateFin: new Date(Date.parse('2018-04-12')),
     name: 'Sopra Steria',
     location: 'Montreuil, France',
+    logoPath: './company-logos/sopra-steria.png',
     description: `Développement d'une application Web permettant de répertorier et gérer les limitations de vitesses sur les
     tronçons des routes de France. Équipe de 4 développeurs, une Scrum Master et un Product Owner.
     • Création d'IHM, affichage et gestion des données cartographiques côté front-end.

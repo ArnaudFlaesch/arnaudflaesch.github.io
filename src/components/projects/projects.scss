@@ -1,5 +1,14 @@
 #projects-list {
-  > *:not(:first-child) {
-    margin-top: 2.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 2em;
+
+  > * {
+    flex-basis: calc(50% - 1.5em);
+
+    @media (width <=850px) {
+      flex-basis: 100%;
+    }
   }
 }
