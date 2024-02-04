@@ -14,7 +14,6 @@ interface IProps {
   location: string;
   description?: string;
   image?: string;
-  lang?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta?: any[];
 }
@@ -46,7 +45,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
 
   return (
     <Helmet
-      htmlAttributes={{ lang: props.lang }}
+      htmlAttributes={{ lang: 'fr' }}
       title={props.title}
       titleTemplate={defaultTitle}
       meta={[
