@@ -91,8 +91,8 @@ module.exports = {
         name: title,
         short_name: pwaShortName,
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fafafa',
+        theme_color: '#1976d2',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }
