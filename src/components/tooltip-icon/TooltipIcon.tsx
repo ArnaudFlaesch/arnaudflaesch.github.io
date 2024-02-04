@@ -9,7 +9,7 @@ interface IProps {
 
 export default function TooltipIcon(props: Readonly<IProps>): ReactElement {
   return (
-    <Tooltip title={props.tooltip}>
+    <Tooltip key={props.tooltip} title={props.tooltip}>
       <Icon fontSize="large">{props.image}</Icon>
     </Tooltip>
   );
