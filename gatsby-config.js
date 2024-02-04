@@ -3,6 +3,7 @@ require('dotenv').config({
 });
 
 const fullName = 'Arnaud Flaesch';
+const pwaShortName = 'AF';
 const title = 'Arnaud Flaesch, Développeur Web';
 const siteUrl = 'https://arnaudflaesch.github.io';
 const defaultImageUrl = '/profile-picture.jpg';
@@ -14,7 +15,6 @@ const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 module.exports = {
   siteMetadata: {
     title: title,
-    pwaShortName: 'AF',
     description: `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
     sur lesquels je travaille.`,
     author: fullName,
