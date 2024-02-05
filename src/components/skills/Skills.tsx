@@ -230,6 +230,17 @@ export default function Skills(): React.ReactElement {
           )
         }),
         TooltipIcon({
+          tooltip: 'GraphQL',
+          image: (
+            <StaticImage
+              src="../../images/icons/tools/graphql.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="GraphQL"
+            />
+          )
+        }),
+        TooltipIcon({
           tooltip: 'MySQL',
           image: (
             <StaticImage src="../../images/icons/tools/mysql.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="MySQL" />
