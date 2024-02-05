@@ -1,15 +1,15 @@
-import * as React from 'react';
 import { Link, graphql } from 'gatsby';
+import * as React from 'react';
 
 import Layout from '../../../layout/layout';
 import Seo from '../../Seo';
 import Bio from '../../bio/Bio';
 
-import './template-blog-post.scss';
 import { Facebook, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
+import './TemplateBlogPost.scss';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,7 +17,7 @@ interface IProps {
   location: Location;
 }
 
-export default function BlogPostTemplate(props: Readonly<IProps>): React.ReactElement {
+export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactElement {
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
 

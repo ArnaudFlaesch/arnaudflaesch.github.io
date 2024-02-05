@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Layout from '../layout/layout';
 import Seo from '../components/Seo';
+import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
 
 export default function NotFoundPage(props: Readonly<IPageProps>): React.ReactElement {

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import Seo from '../components/Seo';
-import Post from '../components/post/Post';
+import Post from '../components/blog/post/Post';
 import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';

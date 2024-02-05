@@ -8,7 +8,7 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from '../components/header/header';
+import Header from '../components/header/Header';
 import './layout.scss';
 import Profile from '../components/profile/Profile';
 

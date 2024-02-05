@@ -4,10 +4,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box/Box';
 import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
-import './page-styles/contact.scss';
 import Seo from '../components/Seo';
-import { IPageProps } from '../model/IPageProps';
 import Layout from '../layout/layout';
+import { IPageProps } from '../model/IPageProps';
+import './page-styles/contact.scss';
 
 export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');

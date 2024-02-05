@@ -22,44 +22,17 @@
   }
 
   #url-list {
-    height: 100%;
     flex: 1 1 50%;
+    justify-content: right;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    margin: auto 1em;
-
-    > *:not(:last-child) {
-      margin-right: 0.5em;
-    }
-
-    @media (width <= 700px) {
-      margin: auto;
-    }
+    flex-wrap: wrap;
+    margin: auto 2em auto 0;
+    gap: 0.5em;
 
     a {
-      height: 100%;
-      place-content: center;
-      display: inline-grid;
-
-      span {
-        place-content: center;
-      }
-
       &:hover {
         background-color: white;
-      }
-    }
-
-    @media (width <= 500px) {
-      flex-direction: column;
-
-      a {
-        place-content: baseline;
-
-        span {
-          place-content: baseline;
-        }
       }
     }
   }

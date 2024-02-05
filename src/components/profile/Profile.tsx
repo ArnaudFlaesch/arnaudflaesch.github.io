@@ -26,9 +26,9 @@ export default function Profile(): React.ReactElement {
     }
   `);
 
-  const author = data.site.siteMetadata?.author;
-  const job = data.site.siteMetadata?.job;
-  const company = data.site.siteMetadata?.company;
+  const author = data.site.siteMetadata.author;
+  const job = data.site.siteMetadata.job;
+  const company = data.site.siteMetadata.company;
 
   const socials = data.site.siteMetadata.socials;
   const linkedinLink = socials.linkedin;
@@ -40,23 +40,18 @@ export default function Profile(): React.ReactElement {
   const IMG_WIDTH = 40;
 
   return (
-    <>
-      {author && job && (
-        <div id="profile">
-          <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
-          <div id="bio">
-            <div>
-              <Work />
-              {job} <br /> chez {company}
-            </div>
-            <div>
-              <LocationOn />
-              Paris
-            </div>
-          </div>
+    <div id="profile">
+      <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
+      <div id="bio">
+        <div id="work">
+          <Work />
+          {job} <br /> chez {company}
         </div>
-      )}
-
+        <div id="location">
+          <LocationOn />
+          Paris
+        </div>
+      </div>
       <div id="social-links">
         <div id="linkedinLink" className="social-link">
           <Tooltip title="LinkedIn">
@@ -114,6 +109,6 @@ export default function Profile(): React.ReactElement {
           <a href={welovedevsLink}>{welovedevsLink}</a>
         </div>
       </div>
-    </>
+    </div>
   );
 }

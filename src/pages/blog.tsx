@@ -3,7 +3,7 @@ import './page-styles/blog.scss';
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Post from '../components/post/Post';
+import Post from '../components/blog/post/Post';
 import Seo from '../components/Seo';
 import Layout from '../layout/layout';
 import { IPageProps } from '../model/IPageProps';
