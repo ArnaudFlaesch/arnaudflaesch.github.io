@@ -20,16 +20,14 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
         <div>{description}</div>
       </div>
 
-      <div>
-        <h2>
-          <a href="/blog">Blog</a>
-        </h2>
-        <ol>
-          {posts.map((post: IPost) => (
-            <Post key={post.frontmatter.title} {...post} />
-          ))}
-        </ol>
-      </div>
+      <h2 id="blog-title">
+        <a href="/blog">Blog</a>
+      </h2>
+      <ol>
+        {posts.map((post: IPost) => (
+          <Post key={post.frontmatter.title} {...post} />
+        ))}
+      </ol>
     </Layout>
   );
 }
