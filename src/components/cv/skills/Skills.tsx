@@ -4,8 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 
 import { ReactElement } from 'react';
-import DetailBlock from '../detailBlock/DetailBlock';
-import TooltipIcon from '../tooltip-icon/TooltipIcon';
+import DetailBlock from '../../detailBlock/DetailBlock';
+import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function Skills(): React.ReactElement {
   const MAX_HEIGHT = 40;
@@ -21,13 +21,13 @@ export default function Skills(): React.ReactElement {
   }
 
   return (
-    <>
+    <div id="skills-list">
       {createSkillBlock('Frontend', [
         TooltipIcon({
           tooltip: 'Angular 2',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/angular2.png"
+              src="../../../images/icons/frontend/angular2.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Angular 2"
@@ -38,7 +38,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'ReactJS',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/reactjs.png"
+              src="../../../images/icons/frontend/reactjs.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="ReactJS"
@@ -48,20 +48,30 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'Sass',
           image: (
-            <StaticImage src="../../images/icons/frontend/sass.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Sass" />
+            <StaticImage
+              src="../../../images/icons/frontend/sass.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Sass"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'Jest',
           image: (
-            <StaticImage src="../../images/icons/frontend/jest.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Jest" />
+            <StaticImage
+              src="../../../images/icons/frontend/jest.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Jest"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'JQuery',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/jquery.png"
+              src="../../../images/icons/frontend/jquery.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="JQuery"
@@ -72,7 +82,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Javascript',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/javascript.png"
+              src="../../../images/icons/frontend/javascript.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Javascript"
@@ -83,7 +93,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Typescript',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/typescript.png"
+              src="../../../images/icons/frontend/typescript.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Typescript"
@@ -94,7 +104,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Cypress',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/cypress.png"
+              src="../../../images/icons/frontend/cypress.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Cypress"
@@ -105,7 +115,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'HTML 5',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/html.png"
+              src="../../../images/icons/frontend/html.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="HTML 5"
@@ -115,14 +125,19 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'CSS 3',
           image: (
-            <StaticImage src="../../images/icons/frontend/css3.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="CSS 3" />
+            <StaticImage
+              src="../../../images/icons/frontend/css3.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="CSS 3"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'TailwindCSS',
           image: (
             <StaticImage
-              src="../../images/icons/frontend/tailwindcss.png"
+              src="../../../images/icons/frontend/tailwindcss.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="TailwindCSS"
@@ -135,14 +150,19 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'Java',
           image: (
-            <StaticImage src="../../images/icons/backend/java.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Java" />
+            <StaticImage
+              src="../../../images/icons/backend/java.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Java"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'Kotlin',
           image: (
             <StaticImage
-              src="../../images/icons/backend/kotlin.png"
+              src="../../../images/icons/backend/kotlin.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Kotlin"
@@ -153,7 +173,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Spring Boot',
           image: (
             <StaticImage
-              src="../../images/icons/backend/springboot.png"
+              src="../../../images/icons/backend/springboot.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Spring Boot"
@@ -164,7 +184,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'JUnit 5',
           image: (
             <StaticImage
-              src="../../images/icons/backend/junit.png"
+              src="../../../images/icons/backend/junit.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="JUnit 5"
@@ -175,7 +195,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Gradle',
           image: (
             <StaticImage
-              src="../../images/icons/backend/gradle.png"
+              src="../../../images/icons/backend/gradle.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Gradle"
@@ -188,24 +208,36 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'Docker',
           image: (
-            <StaticImage src="../../images/icons/tools/docker.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Docker" />
+            <StaticImage
+              src="../../../images/icons/tools/docker.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Docker"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'Git',
-          image: <StaticImage src="../../images/icons/tools/git.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Git" />
+          image: (
+            <StaticImage src="../../../images/icons/tools/git.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Git" />
+          )
         }),
         TooltipIcon({
           tooltip: 'GitHub',
           image: (
-            <StaticImage src="../../images/icons/tools/github.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="GitHub" />
+            <StaticImage
+              src="../../../images/icons/tools/github.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="GitHub"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'Github Actions',
           image: (
             <StaticImage
-              src="../../images/icons/tools/github-actions.png"
+              src="../../../images/icons/tools/github-actions.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Github Actions"
@@ -216,7 +248,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'Jenkins',
           image: (
             <StaticImage
-              src="../../images/icons/tools/jenkins.png"
+              src="../../../images/icons/tools/jenkins.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Jenkins"
@@ -226,20 +258,41 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'Heroku',
           image: (
-            <StaticImage src="../../images/icons/tools/heroku.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Heroku" />
+            <StaticImage
+              src="../../../images/icons/tools/heroku.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Heroku"
+            />
+          )
+        }),
+        TooltipIcon({
+          tooltip: 'GraphQL',
+          image: (
+            <StaticImage
+              src="../../../images/icons/tools/graphql.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="GraphQL"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'MySQL',
           image: (
-            <StaticImage src="../../images/icons/tools/mysql.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="MySQL" />
+            <StaticImage
+              src="../../../images/icons/tools/mysql.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="MySQL"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'PostgreSQL',
           image: (
             <StaticImage
-              src="../../images/icons/tools/postgresql.png"
+              src="../../../images/icons/tools/postgresql.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="PostgreSQL"
@@ -250,7 +303,7 @@ export default function Skills(): React.ReactElement {
           tooltip: 'MongoDB',
           image: (
             <StaticImage
-              src="../../images/icons/tools/mongodb.png"
+              src="../../../images/icons/tools/mongodb.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="MongoDB"
@@ -260,14 +313,19 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'Scrum',
           image: (
-            <StaticImage src="../../images/icons/tools/scrum.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Scrum" />
+            <StaticImage
+              src="../../../images/icons/tools/scrum.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Scrum"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'Node.JS',
           image: (
             <StaticImage
-              src="../../images/icons/tools/nodejs.png"
+              src="../../../images/icons/tools/nodejs.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Node.js"
@@ -277,20 +335,25 @@ export default function Skills(): React.ReactElement {
         TooltipIcon({
           tooltip: 'Linux',
           image: (
-            <StaticImage src="../../images/icons/tools/linux.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Linux" />
+            <StaticImage
+              src="../../../images/icons/tools/linux.png"
+              width={MAX_WIDTH}
+              height={MAX_HEIGHT}
+              alt="Linux"
+            />
           )
         }),
         TooltipIcon({
           tooltip: 'Snyk',
           image: (
-            <StaticImage src="../../images/icons/tools/snyk.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Snyk" />
+            <StaticImage src="../../../images/icons/tools/snyk.png" width={MAX_WIDTH} height={MAX_HEIGHT} alt="Snyk" />
           )
         }),
         TooltipIcon({
           tooltip: 'Sonarcloud',
           image: (
             <StaticImage
-              src="../../images/icons/tools/sonarcloud.png"
+              src="../../../images/icons/tools/sonarcloud.png"
               width={MAX_WIDTH}
               height={MAX_HEIGHT}
               alt="Sonarcloud"
@@ -298,6 +361,6 @@ export default function Skills(): React.ReactElement {
           )
         })
       ])}
-    </>
+    </div>
   );
 }

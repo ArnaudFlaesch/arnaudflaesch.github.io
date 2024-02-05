@@ -8,8 +8,8 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from '../components/header/header';
-import './layout.scss';
+import Header from '../components/header/Header';
+import './Layout.scss';
 import Profile from '../components/profile/Profile';
 
 interface IProps {
@@ -32,7 +32,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   return (
     <div id="page-container">
       <div id="fixed-header">
-        <Header location={props.location} siteTitle={data.site.siteMetadata?.author || 'Title'} />
+        <Header location={props.location} siteTitle={data.site.siteMetadata.author} />
       </div>
       <div id="site-container">
         <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
@@ -47,7 +47,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
           <footer>
             <div>
               © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
-              <a href="https://icons8.com/">Icons8</a>
+              <a href="https://icons8.com/">Icons8</a>.
             </div>
           </footer>
         </main>

@@ -3,6 +3,7 @@ export interface IPageProps {
     site: {
       siteMetadata: {
         title: string;
+        description: string;
       };
     };
     allMarkdownRemark: {

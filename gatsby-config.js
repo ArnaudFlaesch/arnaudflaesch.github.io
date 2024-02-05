@@ -3,6 +3,7 @@ require('dotenv').config({
 });
 
 const fullName = 'Arnaud Flaesch';
+const pwaShortName = 'AF';
 const title = 'Arnaud Flaesch, Développeur Web';
 const siteUrl = 'https://arnaudflaesch.github.io';
 const defaultImageUrl = '/profile-picture.jpg';
@@ -14,7 +15,8 @@ const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 module.exports = {
   siteMetadata: {
     title: title,
-    description: 'Site web, CV et blog.',
+    description: `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
+    sur lesquels je travaille.`,
     author: fullName,
     imageUrl: `${siteUrl}${defaultImageUrl}`,
     job: 'Développeur Web',
@@ -87,10 +89,10 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: title,
-        short_name: title,
+        short_name: pwaShortName,
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fafafa',
+        theme_color: '#1976d2',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }
@@ -108,7 +110,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/blog/*']
+        precachePages: ['/', '/cv', '/blog/*', '/projets', '/contact']
       }
     }
   ]

@@ -1,16 +1,20 @@
-import './Cv.scss';
+import './page-styles/cv.scss';
 
 import { Button, Tooltip } from '@mui/material';
 import * as React from 'react';
 
-import jobData from '../../data/JobData';
-import formationData from '../../data/FormationData';
-import Experience from './experience/Experience';
-import DetailBlock from '../detailBlock/DetailBlock';
+import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import Seo from '../components/Seo';
+import Experience from '../components/cv/experience/Experience';
+import Skills from '../components/cv/skills/Skills';
+import DetailBlock from '../components/detailBlock/DetailBlock';
+import formationData from '../data/FormationData';
+import jobData from '../data/JobData';
+import Layout from '../layout/Layout';
+import { IPageProps } from '../model/IPageProps';
 
-export default function Cv(): React.ReactElement {
+export default function CV(props: Readonly<IPageProps>): React.ReactElement {
   const data = useStaticQuery(graphql`
     query CVQuery {
       site {
@@ -40,12 +44,13 @@ export default function Cv(): React.ReactElement {
   }
 
   return (
-    <>
+    <Layout location={props.location}>
+      <h2>Curriculum Vitae</h2>
       <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
         Télécharger mon CV
       </Button>
 
-      <div id="job-list" className="experience-container">
+      <div id="job-list">
         {jobData.slice(0, jobIndexEnd).map((job) => (
           <Experience key={job.name} {...job} />
         ))}
@@ -58,7 +63,7 @@ export default function Cv(): React.ReactElement {
         )}
       </div>
 
-      <div id="formation-list" className="experience-container">
+      <div id="formation-list">
         {formationData.map((formation) => (
           <Experience key={formation.title} {...formation} />
         ))}
@@ -74,7 +79,7 @@ export default function Cv(): React.ReactElement {
                   <StaticImage
                     height={IMG_HEIGHT}
                     width={IMG_WIDTH}
-                    src="../../images/certifications/psm1.png"
+                    src="../images/certifications/psm1.png"
                     alt={'PSM 1'}
                   />
                 </a>
@@ -84,7 +89,7 @@ export default function Cv(): React.ReactElement {
                   <StaticImage
                     height={IMG_HEIGHT}
                     width={IMG_WIDTH}
-                    src="../../images/certifications/psm2.png"
+                    src="../images/certifications/psm2.png"
                     alt={'PSM 2'}
                   />
                 </a>
@@ -93,6 +98,9 @@ export default function Cv(): React.ReactElement {
           }
         />
       </div>
+
+      <h2 id="skills-title">Langages et technologies</h2>
+      <Skills />
 
       {/**
         <div >
@@ -119,6 +127,8 @@ export default function Cv(): React.ReactElement {
             </div>
           </div>
         </div> */}
-    </>
+    </Layout>
   );
 }
+
+export const Head = () => <Seo location={'/cv'} title="CV" />;

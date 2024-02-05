@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { IPost } from '../../model/IPost';
+import { IPost } from '../../../model/IPost';
 
 import './Post.scss';
 

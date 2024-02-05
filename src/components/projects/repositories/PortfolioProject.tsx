@@ -92,6 +92,18 @@ export default function PortfolioProject(): React.ReactElement {
           alt="Github Actions"
         />
       }
+    />,
+    <TooltipIcon
+      key={'GraphQL'}
+      tooltip="GraphQL"
+      image={
+        <StaticImage
+          src="../../../images/icons/tools/graphql.png"
+          width={ICON_WIDTH}
+          height={ICON_HEIGHT}
+          alt="GraphQL"
+        />
+      }
     />
   ];
 
