@@ -11,7 +11,7 @@
   }
 
   #header-title {
-    flex: 1 0 50%;
+    flex: 60%;
     display: flex;
 
     h1 {
@@ -21,16 +21,16 @@
   }
 
   #url-list {
-    flex: 1 1 50%;
+    flex: 40%;
     justify-content: right;
     display: flex;
     flex-flow: row wrap;
     margin: auto 2em auto 0;
     gap: 0.5em;
 
-    @media (width <=450px) {
+    @media (width <=500px) {
       display: grid;
-      grid-template-columns: 35% 35%;
+      grid-template-columns: 50% 50%;
     }
 
     a {

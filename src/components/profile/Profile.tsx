@@ -36,9 +36,6 @@ export default function Profile(): React.ReactElement {
   const scrumOrgLink = socials.scrumOrg;
   const welovedevsLink = socials.weLoveDevs;
 
-  const IMG_HEIGHT = 40;
-  const IMG_WIDTH = 40;
-
   return (
     <div id="profile">
       <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
@@ -54,28 +51,18 @@ export default function Profile(): React.ReactElement {
       </div>
       <div id="social-links">
         <div id="linkedinLink" className="social-link">
-          <Tooltip title="LinkedIn">
-            <div>
-              <StaticImage
-                height={IMG_HEIGHT}
-                width={IMG_WIDTH}
-                src="../../images/icons/linkedin-icon.png"
-                alt="linkedin"
-              />
-            </div>
-          </Tooltip>
-          <a href={linkedinLink}>{linkedinLink}</a>
+          <a href={linkedinLink}>
+            <Tooltip title="LinkedIn">
+              <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
+            </Tooltip>
+            <span>{linkedinLink}</span>
+          </a>
         </div>
 
         <div id="githubLink" className="social-link">
           <Tooltip title="Github">
             <div>
-              <StaticImage
-                height={IMG_HEIGHT}
-                width={IMG_WIDTH}
-                src="../../images/icons/github-icon.png"
-                alt="github"
-              />
+              <StaticImage src="../../images/icons/github-icon.png" alt="github" />
             </div>
           </Tooltip>
           <a href={githubLink}>{githubLink}</a>
@@ -84,12 +71,7 @@ export default function Profile(): React.ReactElement {
         <div id="scrumOrgLink" className="social-link">
           <Tooltip title="Profil Scrum.org">
             <div>
-              <StaticImage
-                height={IMG_HEIGHT}
-                width={IMG_WIDTH}
-                src="../../images/icons/scrum-org-icon.png"
-                alt="scrum.org"
-              />
+              <StaticImage src="../../images/icons/scrum-org-icon.png" alt="scrum.org" />
             </div>
           </Tooltip>
           <a href={scrumOrgLink}>{scrumOrgLink}</a>
@@ -98,12 +80,7 @@ export default function Profile(): React.ReactElement {
         <div id="welovedevsLink" className="social-link">
           <Tooltip title="Profil WeLoveDevs">
             <div>
-              <StaticImage
-                height={IMG_HEIGHT}
-                width={IMG_WIDTH}
-                src="../../images/icons/welovedevs-icon.jpg"
-                alt="welovedevs"
-              />
+              <StaticImage src="../../images/icons/welovedevs-icon.jpg" alt="welovedevs" />
             </div>
           </Tooltip>
           <a href={welovedevsLink}>{welovedevsLink}</a>

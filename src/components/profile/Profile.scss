@@ -4,7 +4,9 @@
   gap: 1em;
 
   @media (width <= 700px) {
+    display: grid;
     gap: 0.5em;
+    justify-items: center;
   }
 
   #bio-avatar {
@@ -15,19 +17,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-
-    @media (width <= 700px) {
-      flex-direction: row;
-      margin: auto 1em;
-
-      #work {
-        flex: 1 0 65%;
-      }
-
-      #location {
-        flex: 0 1 35%;
-      }
-    }
 
     svg {
       margin-right: 1rem;
@@ -51,7 +40,7 @@
       justify-content: center;
       gap: 1em;
 
-      .social-link > a {
+      .social-link > span {
         display: none;
       }
     }
