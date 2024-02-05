@@ -47,7 +47,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
           <footer>
             <div>
               © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
-              <a href="https://icons8.com/">Icons8</a>
+              <a href="https://icons8.com/">Icons8</a>.
             </div>
           </footer>
         </main>
