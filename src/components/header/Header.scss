@@ -15,8 +15,7 @@
     display: flex;
 
     h1 {
-      place-self: center;
-      margin: 0 auto;
+      margin: auto 2em;
       font-size: x-large;
     }
   }
@@ -28,6 +27,11 @@
     flex-flow: row wrap;
     margin: auto 2em auto 0;
     gap: 0.5em;
+
+    @media (width <=450px) {
+      display: grid;
+      grid-template-columns: 35% 35%;
+    }
 
     a {
       &:hover {
