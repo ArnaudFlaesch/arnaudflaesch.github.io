@@ -786,8 +786,7 @@ pre tt::after {
 
     #profile-container {
       flex: 0 1 15%;
-      border-right: 1px solid black;
-      background-color: $profile-background-color;
+      background-color: $body-background-color;
 
       &.blog-view {
         @media (width <= 700px) {

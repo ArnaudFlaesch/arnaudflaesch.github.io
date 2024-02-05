@@ -50,7 +50,7 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
         Télécharger mon CV
       </Button>
 
-      <div id="job-list" className="experience-container">
+      <div id="job-list">
         {jobData.slice(0, jobIndexEnd).map((job) => (
           <Experience key={job.name} {...job} />
         ))}
@@ -63,7 +63,7 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
         )}
       </div>
 
-      <div id="formation-list" className="experience-container">
+      <div id="formation-list">
         {formationData.map((formation) => (
           <Experience key={formation.title} {...formation} />
         ))}
@@ -99,7 +99,7 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
         />
       </div>
 
-      <h2>Langages et technologies</h2>
+      <h2 id="skills-title">Langages et technologies</h2>
       <Skills />
 
       {/**

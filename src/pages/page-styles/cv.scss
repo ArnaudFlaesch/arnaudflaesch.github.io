@@ -1,11 +1,12 @@
-.experience-container {
+#job-list,
+#formation-list {
   margin-top: 1em;
-
-  > *:not(:first-child) {
-    margin-top: 0.5em;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-#certifications-list {
-  margin-top: 0.5em;
+#certifications-list,
+#skills-title {
+  margin-top: 1em;
 }

@@ -21,7 +21,7 @@ export default function Skills(): React.ReactElement {
   }
 
   return (
-    <>
+    <div id="skills-list">
       {createSkillBlock('Frontend', [
         TooltipIcon({
           tooltip: 'Angular 2',
@@ -361,6 +361,6 @@ export default function Skills(): React.ReactElement {
           )
         })
       ])}
-    </>
+    </div>
   );
 }
