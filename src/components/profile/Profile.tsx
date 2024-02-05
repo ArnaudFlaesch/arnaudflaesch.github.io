@@ -50,43 +50,48 @@ export default function Profile(): React.ReactElement {
         </div>
       </div>
       <div id="social-links">
-        <div id="linkedinLink" className="social-link">
-          <a href={linkedinLink}>
+        <div id="linkedinLink">
+          <a href={linkedinLink} className="social-link">
             <Tooltip title="LinkedIn">
               <div>
                 <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
               </div>
             </Tooltip>
-
             <span>{linkedinLink}</span>
           </a>
         </div>
 
-        <div id="githubLink" className="social-link">
-          <Tooltip title="Github">
-            <div>
-              <StaticImage src="../../images/icons/github-icon.png" alt="github" />
-            </div>
-          </Tooltip>
-          <a href={githubLink}>{githubLink}</a>
+        <div id="githubLink">
+          <a href={githubLink} className="social-link">
+            <Tooltip title="Github">
+              <div>
+                <StaticImage src="../../images/icons/github-icon.png" alt="github" />
+              </div>
+            </Tooltip>
+            <span>{githubLink}</span>
+          </a>
         </div>
 
-        <div id="scrumOrgLink" className="social-link">
-          <Tooltip title="Profil Scrum.org">
-            <div>
-              <StaticImage src="../../images/icons/scrum-org-icon.png" alt="scrum.org" />
-            </div>
-          </Tooltip>
-          <a href={scrumOrgLink}>{scrumOrgLink}</a>
+        <div id="scrumOrgLink">
+          <a href={scrumOrgLink} className="social-link">
+            <Tooltip title="Profil Scrum.org">
+              <div>
+                <StaticImage src="../../images/icons/scrum-org-icon.png" alt="scrum.org" />
+              </div>
+            </Tooltip>
+            <span>{scrumOrgLink}</span>
+          </a>
         </div>
 
-        <div id="welovedevsLink" className="social-link">
-          <Tooltip title="Profil WeLoveDevs">
-            <div>
-              <StaticImage src="../../images/icons/welovedevs-icon.jpg" alt="welovedevs" />
-            </div>
-          </Tooltip>
-          <a href={welovedevsLink}>{welovedevsLink}</a>
+        <div id="welovedevsLink">
+          <a href={welovedevsLink} className="social-link">
+            <Tooltip title="Profil WeLoveDevs">
+              <div>
+                <StaticImage src="../../images/icons/welovedevs-icon.jpg" alt="welovedevs" />
+              </div>
+            </Tooltip>
+            <span>{welovedevsLink}</span>
+          </a>
         </div>
       </div>
     </div>
