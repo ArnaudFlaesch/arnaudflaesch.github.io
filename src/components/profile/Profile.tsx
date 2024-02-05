@@ -53,8 +53,11 @@ export default function Profile(): React.ReactElement {
         <div id="linkedinLink" className="social-link">
           <a href={linkedinLink}>
             <Tooltip title="LinkedIn">
-              <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
+              <div>
+                <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
+              </div>
             </Tooltip>
+
             <span>{linkedinLink}</span>
           </a>
         </div>

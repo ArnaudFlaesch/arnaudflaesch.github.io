@@ -34,6 +34,7 @@ jobs:
 
       - name: Tests
         uses: cypress-io/github-action@v6
+        if: success() && github.ref == 'refs/heads/master'
         with:
           browser: firefox
           config-file: cypress-test.config.ts
