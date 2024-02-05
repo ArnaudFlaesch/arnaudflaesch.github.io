@@ -1,4 +1,4 @@
-import './blog.scss';
+import './page-styles/blog.scss';
 
 import { graphql } from 'gatsby';
 import React from 'react';
@@ -14,7 +14,7 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
 
   return (
     <Layout location={props.location}>
-      <h1>Blog</h1>
+      <h2>Blog</h2>
 
       <ol>{posts?.map((post: IPost) => <Post key={post.frontmatter.title} {...post} />)}</ol>
     </Layout>

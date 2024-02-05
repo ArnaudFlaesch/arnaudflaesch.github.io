@@ -1,16 +1,20 @@
-import './Cv.scss';
+import './page-styles/cv.scss';
 
 import { Button, Tooltip } from '@mui/material';
 import * as React from 'react';
 
-import jobData from '../../data/JobData';
-import formationData from '../../data/FormationData';
-import Experience from './experience/Experience';
-import DetailBlock from '../detailBlock/DetailBlock';
+import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import Seo from '../components/Seo';
+import Experience from '../components/cv/experience/Experience';
+import DetailBlock from '../components/detailBlock/DetailBlock';
+import Skills from '../components/skills/Skills';
+import formationData from '../data/FormationData';
+import jobData from '../data/JobData';
+import Layout from '../layout/layout';
+import { IPageProps } from '../model/IPageProps';
 
-export default function Cv(): React.ReactElement {
+export default function CV(props: Readonly<IPageProps>): React.ReactElement {
   const data = useStaticQuery(graphql`
     query CVQuery {
       site {
@@ -40,7 +44,8 @@ export default function Cv(): React.ReactElement {
   }
 
   return (
-    <>
+    <Layout location={props.location}>
+      <h2>Curriculum Vitae</h2>
       <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
         Télécharger mon CV
       </Button>
@@ -74,7 +79,7 @@ export default function Cv(): React.ReactElement {
                   <StaticImage
                     height={IMG_HEIGHT}
                     width={IMG_WIDTH}
-                    src="../../images/certifications/psm1.png"
+                    src="../images/certifications/psm1.png"
                     alt={'PSM 1'}
                   />
                 </a>
@@ -84,7 +89,7 @@ export default function Cv(): React.ReactElement {
                   <StaticImage
                     height={IMG_HEIGHT}
                     width={IMG_WIDTH}
-                    src="../../images/certifications/psm2.png"
+                    src="../images/certifications/psm2.png"
                     alt={'PSM 2'}
                   />
                 </a>
@@ -93,6 +98,9 @@ export default function Cv(): React.ReactElement {
           }
         />
       </div>
+
+      <h2>Langages et technologies</h2>
+      <Skills />
 
       {/**
         <div >
@@ -119,6 +127,8 @@ export default function Cv(): React.ReactElement {
             </div>
           </div>
         </div> */}
-    </>
+    </Layout>
   );
 }
+
+export const Head = () => <Seo location={'/cv'} title="CV" />;

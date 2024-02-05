@@ -51,7 +51,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
   return (
     <>
       <html lang="fr" />
-      <title>{defaultTitle}</title>
+      <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="description" content={metaDescription} />
       <meta name="author" content={metaAuthor} />

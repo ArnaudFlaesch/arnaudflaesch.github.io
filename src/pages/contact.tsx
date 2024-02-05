@@ -1,12 +1,15 @@
 import { useForm, ValidationError } from '@formspree/react';
 import * as React from 'react';
 
-import './Contact.scss';
-import TextField from '@mui/material/TextField/TextField';
-import Button from '@mui/material/Button/Button';
 import Box from '@mui/material/Box/Box';
+import Button from '@mui/material/Button/Button';
+import TextField from '@mui/material/TextField/TextField';
+import './page-styles/contact.scss';
+import Seo from '../components/Seo';
+import { IPageProps } from '../model/IPageProps';
+import Layout from '../layout/layout';
 
-export default function Contact(): React.ReactElement {
+export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');
 
   function isFormInvalid(): boolean {
@@ -14,14 +17,15 @@ export default function Contact(): React.ReactElement {
   }
 
   return (
-    <div>
-      {state.succeeded && (
+    <Layout location={props.location}>
+      <h2>Contactez-moi</h2>
+
+      {state.succeeded ? (
         <div>
           <p>Votre email a bien été envoyé !</p>
           <Button onClick={reset}>Envoyer un nouveau mail</Button>
         </div>
-      )}
-      {!state.succeeded && (
+      ) : (
         <form onSubmit={handleSubmit}>
           <Box id="contact-form" component={'section'} gap={4}>
             <div id="contact-informations">
@@ -62,6 +66,8 @@ export default function Contact(): React.ReactElement {
           </Box>
         </form>
       )}
-    </div>
+    </Layout>
   );
 }
+
+export const Head = () => <Seo location={'/contact'} title="Contactez-moi" />;
