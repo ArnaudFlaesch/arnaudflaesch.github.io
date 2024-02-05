@@ -11,7 +11,7 @@ import Skills from '../components/cv/skills/Skills';
 import DetailBlock from '../components/detailBlock/DetailBlock';
 import formationData from '../data/FormationData';
 import jobData from '../data/JobData';
-import Layout from '../layout/layout';
+import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 
 export default function CV(props: Readonly<IPageProps>): React.ReactElement {

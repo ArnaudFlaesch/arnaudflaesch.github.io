@@ -5,7 +5,7 @@ import React from 'react';
 
 import Post from '../components/blog/post/Post';
 import Seo from '../components/Seo';
-import Layout from '../layout/layout';
+import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 

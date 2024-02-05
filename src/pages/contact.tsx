@@ -5,7 +5,7 @@ import Box from '@mui/material/Box/Box';
 import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
 import Seo from '../components/Seo';
-import Layout from '../layout/layout';
+import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import './page-styles/contact.scss';
 

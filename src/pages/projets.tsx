@@ -7,7 +7,7 @@ import DashWebProject from '../components/projects/repositories/DashWebProject';
 import DashWebServicesProject from '../components/projects/repositories/DashWebServicesProject';
 import PortfolioProject from '../components/projects/repositories/PortfolioProject';
 import Seo from '../components/Seo';
-import Layout from '../layout/layout';
+import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 
 export default function Projets(props: Readonly<IPageProps>): React.ReactElement {

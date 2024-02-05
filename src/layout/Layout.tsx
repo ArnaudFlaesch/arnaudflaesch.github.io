@@ -9,7 +9,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../components/header/Header';
-import './layout.scss';
+import './Layout.scss';
 import Profile from '../components/profile/Profile';
 
 interface IProps {
