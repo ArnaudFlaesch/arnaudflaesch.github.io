@@ -110,7 +110,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['', '/cv', '/contact', '/blog/*']
+        precachePages: ['/cv', '/contact', '/blog/*']
       }
     }
   ]
