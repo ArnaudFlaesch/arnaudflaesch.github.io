@@ -75,5 +75,5 @@ yarn-error.log
 .vscode/
 
 styleLintReport.json
-
+archives/
 .dccache
