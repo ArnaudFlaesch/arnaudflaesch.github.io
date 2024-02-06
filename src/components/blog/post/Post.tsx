@@ -3,9 +3,12 @@ import React from 'react';
 import { IPost } from '../../../model/IPost';
 
 import './Post.scss';
+import { format } from 'date-fns/format';
+import { fr } from 'date-fns/locale/fr';
 
 export default function Post(post: Readonly<IPost>): React.ReactElement {
   const title = post.frontmatter.title || post.fields.slug;
+  const publicationDate = format(post.frontmatter.date, 'eeee dd MMMM, yyyy', { locale: fr });
 
   return (
     <li key={post.fields.slug}>
@@ -16,7 +19,7 @@ export default function Post(post: Readonly<IPost>): React.ReactElement {
               <span itemProp="headline">{title}</span>
             </Link>
           </h2>
-          <small>{post.frontmatter.date}</small>
+          <small>{publicationDate}</small>
         </header>
         <img src={`/blog/${post.frontmatter.image}`} className="blog-thumbnail" alt="Illustration article" />
         <section>

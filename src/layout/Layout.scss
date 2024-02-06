@@ -785,7 +785,7 @@ pre tt::after {
     flex-grow: 1;
 
     #profile-container {
-      flex: 1 0 20%;
+      flex: 20%;
       background-color: $body-background-color;
 
       &.blog-view {
@@ -798,21 +798,23 @@ pre tt::after {
     #portfolio-body {
       display: flex;
       flex-direction: column;
-      flex: 1 0 80%;
+      flex: 80%;
       background-color: $body-background-color;
     }
 
     #profile-content {
-      margin: 1em 0 0 2em;
-
-      @media (width <= 700px) {
-        margin-left: 0;
+      @media (width >= 700px) {
+        margin: 1em 2em 0 2em;
       }
     }
 
     #portfolio-content {
       flex-grow: 1;
-      margin: 1em 7%;
+      margin: 1em 25% 0 5%;
+
+      @media (width <= 700px) {
+        margin: 1em 5%;
+      }
     }
 
     @media (width <= 700px) {

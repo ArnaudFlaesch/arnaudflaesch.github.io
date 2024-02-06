@@ -11,29 +11,43 @@
   }
 
   #header-title {
-    flex: 60%;
     display: flex;
+    flex: 1 1 50%;
 
     h1 {
-      margin: auto 2em;
+      margin: auto 0 auto 5em;
       font-size: x-large;
+
+      @media (width <=500px) {
+        margin-left: 2em;
+      }
     }
   }
 
   #url-list {
-    flex: 40%;
+    flex: 1 1 50%;
     justify-content: right;
     display: flex;
     flex-flow: row wrap;
-    margin: auto 2em auto 0;
-    gap: 0.5em 2em;
+    margin: auto 10% auto 0;
+    gap: 0.5em 0;
+    height: 100%;
 
     @media (width <=500px) {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: 33% 33% 33%;
+      margin-right: 0;
     }
 
-    a {
+    > * {
+      display: flex;
+      align-items: center;
+      padding: 0 1em;
+
+      &.active {
+        background-color: #8bb3cc;
+      }
+
       &:hover {
         background-color: white;
       }
