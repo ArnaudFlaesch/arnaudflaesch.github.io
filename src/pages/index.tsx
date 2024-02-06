@@ -27,7 +27,6 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
         button.addEventListener('mouseover', () => moveButtonRandomly(button));
       }
       setTimeout(() => setButtonClicked(true), 250);
-    }
     });
     return () => {
       button?.removeEventListener('click', () => moveButtonRandomly);
@@ -57,7 +56,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
         <p>
           Je suis actuellement à l'écoute de nouvelles opportunités professionnelles. Si vous êtes une ESN et que vous
           souhaitez me contacter pour discuter d'un emploi, vous pouvez utiliser ce lien vers un formulaire de contact :
-          <Link to={buttonClicked ? '404' : '#'}>
+          <Link to={buttonClicked && !isMobile() ? '404' : '#'}>
             <Button id={sneakyButtonId} variant={buttonClicked && 'contained'}>
               Contact
             </Button>
