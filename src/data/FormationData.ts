@@ -32,7 +32,7 @@ export const formationData: IExperience[] = [
     description: `BTS Services Informatiques aux Organisations, Solutions Logicielles et Applications Métiers.
     Stages en entreprise (deux fois cinq semaines); développement d'applications Web interagissant avec une base de données dans le cadre des projets à  présenter pour l'épreuve E4 (Conception et Maintenance de Solutions Informatiques).
     Ces deux années en BTS m'ont permis d'acquérir beaucoup de connaissances en matière de développement Web (PHP, SQL, HTML) notamment grâce aux deux stages  faisant partie de la formation, mais aussi en développement logiciel (Java, C++).`,
-    dateDebut: new Date(2012, 9, 1),
+    dateDebut: new Date(2012, 8, 1),
     dateFin: new Date(2014, 5, 31),
     skills: [],
     website: 'https://www.saint-michel-de-saint-mande.fr/'
@@ -44,8 +44,8 @@ export const formationData: IExperience[] = [
     logoPath: '/school-logos/paris-5-descartes.png',
     description: `Emploi étudiant durant le second semestre : enregistrement vidéo de certains cours pour les mettre en ligne sur la médiathèque de l'université.
     Course à pieds avec le service des sports de l'université.`,
-    dateDebut: new Date(2015, 9, 18),
-    dateFin: new Date(2015, 9, 18),
+    dateDebut: new Date(2012, 4, 31),
+    dateFin: new Date(2011, 8, 1),
     skills: [],
     website: 'https://u-paris.fr/'
   },
@@ -54,8 +54,8 @@ export const formationData: IExperience[] = [
     name: 'Lycée privé Massillon',
     location: 'Paris 4ème',
     description: `Activités extra-scolaires : Cours d'improvisation pendant un an.`,
-    dateDebut: new Date(2015, 9, 1),
-    dateFin: new Date(2015, 9, 18),
+    dateDebut: new Date(2011, 6, 1),
+    dateFin: new Date(2008, 8, 1),
     skills: [],
     website: 'https://ecolemassillon.com/'
   }
