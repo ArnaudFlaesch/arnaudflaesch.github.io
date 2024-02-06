@@ -8,8 +8,8 @@ export const formationData: IExperience[] = [
     logoPath: '/school-logos/esgi.png',
     description: `Activités et associations : J'ai participé à des associations ludiques et également assisté à des conférences organisées par l'école concernant par exemple le domaine du Web, la question de la sécurité des applications ou encore l'évolution des langages utilisés pour les développer.
     Réalisations de projets en Android, C++ ou encore Spring.`,
-    dateDebut: new Date(2015, 9, 1),
-    dateFin: new Date(2017, 8, 31),
+    dateDebut: new Date(2015, 8, 1),
+    dateFin: new Date(2017, 6, 31),
     skills: ['C#', 'Java', 'Spring Boot', 'C++'],
     website: 'https://www.esgi.fr'
   },
@@ -20,7 +20,7 @@ export const formationData: IExperience[] = [
     logoPath: '/school-logos/esgi.png',
     description: `Réalisations de projets en Python, C, Java ou encore SQL (Conception Bases de données).
     Membre de l'association sportive de Crossfit de l'école.`,
-    dateDebut: new Date(2014, 9, 1),
+    dateDebut: new Date(2014, 8, 1),
     dateFin: new Date(2015, 5, 31),
     skills: ['Bases de données', 'Java', 'PHP', 'Langage de modélisation unifié (UML)', 'SQL'],
     website: 'https://www.esgi.fr'
@@ -44,8 +44,8 @@ export const formationData: IExperience[] = [
     logoPath: '/school-logos/paris-5-descartes.png',
     description: `Emploi étudiant durant le second semestre : enregistrement vidéo de certains cours pour les mettre en ligne sur la médiathèque de l'université.
     Course à pieds avec le service des sports de l'université.`,
-    dateDebut: new Date(2012, 4, 31),
-    dateFin: new Date(2011, 8, 1),
+    dateDebut: new Date(2011, 8, 1),
+    dateFin: new Date(2012, 4, 31),
     skills: [],
     website: 'https://u-paris.fr/'
   },
@@ -54,8 +54,8 @@ export const formationData: IExperience[] = [
     name: 'Lycée privé Massillon',
     location: 'Paris 4ème',
     description: `Activités extra-scolaires : Cours d'improvisation pendant un an.`,
-    dateDebut: new Date(2011, 6, 1),
-    dateFin: new Date(2008, 8, 1),
+    dateDebut: new Date(2008, 8, 1),
+    dateFin: new Date(2011, 6, 1),
     skills: [],
     website: 'https://ecolemassillon.com/'
   }
