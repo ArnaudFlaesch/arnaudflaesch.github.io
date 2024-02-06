@@ -20,12 +20,15 @@ ol {
   a {
     text-decoration: none;
   }
+
   position: absolute;
   transition: 0.3s;
+  z-index: 999999;
 }
 
 #site-content {
   margin-top: 4em;
+
   a {
     color: black;
   }
