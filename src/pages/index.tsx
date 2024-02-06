@@ -25,8 +25,9 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
       if (!isMobile()) {
         button.removeEventListener('click', () => moveButtonRandomly);
         button.addEventListener('mouseover', () => moveButtonRandomly(button));
-        setTimeout(() => setButtonClicked(true), 250);
       }
+      setTimeout(() => setButtonClicked(true), 250);
+    }
     });
     return () => {
       button?.removeEventListener('click', () => moveButtonRandomly);
