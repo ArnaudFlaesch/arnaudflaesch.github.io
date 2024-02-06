@@ -34,6 +34,7 @@ jobs:
 
       - name: Tests
         uses: cypress-io/github-action@v6
+        if: success() && github.ref == 'refs/heads/master'
         with:
           browser: firefox
           config-file: cypress-test.config.ts
@@ -42,6 +43,7 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        if: success() && github.ref == 'refs/heads/master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
