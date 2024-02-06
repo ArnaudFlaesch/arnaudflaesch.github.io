@@ -30,7 +30,7 @@
     display: flex;
     flex-flow: row wrap;
     margin: auto 10% auto 0;
-    gap: 0.5em 0;
+    gap: 0.5em;
     height: 100%;
 
     @media (width <=500px) {
@@ -43,7 +43,6 @@
       display: flex;
       align-items: center;
       padding: 0 1em;
-      margin: 0 auto;
 
       &.active {
         background-color: #8bb3cc;
