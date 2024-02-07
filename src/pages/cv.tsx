@@ -13,8 +13,10 @@ import formationData from '../data/FormationData';
 import jobData from '../data/JobData';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
+import { ReactElement } from 'react';
+import { hobbiesList } from '../data/HobbiesData';
 
-export default function CV(props: Readonly<IPageProps>): React.ReactElement {
+export default function CV(props: Readonly<IPageProps>): ReactElement {
   const data = useStaticQuery(graphql`
     query CVQuery {
       site {
@@ -41,6 +43,15 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
 
   function showLessJobs() {
     setJobIndexEnd(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
+  }
+
+  function createDetailBlock(title: string, detail: string): ReactElement {
+    return (
+      <DetailBlock
+        titleComponent={<h3 className="detail-block-title">{title}</h3>}
+        detailComponent={<div>{detail}</div>}
+      />
+    );
   }
 
   return (
@@ -74,6 +85,7 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
           titleComponent={<h2>{'Certifications'}</h2>}
           detailComponent={
             <>
+              <h4>Professional Scrum Master 1 et 2 (décembre 2023)</h4>
               <Tooltip title="PSM 1">
                 <a href={scrumOrgLink}>
                   <StaticImage
@@ -102,31 +114,9 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
       <h2 id="skills-title">Langages et technologies</h2>
       <Skills />
 
-      {/**
-        <div >
-          <div>
-            <div id="skills-block">
-              <h4>Compétences</h4>
-              {skillsList.map((skill) => createCVElement(skill))}
-            </div>
-            <div id="certifications-block">
-              <h4>Certifications</h4>
-              {certificationsList.map((certification) => createCVElement(certification))}
-            </div>
-            <div id="personal-projects-block">
-              <h4>Projets personnels</h4>
-              {projectList.map((project) => createCVElement(project))}
-            </div>
-          </div>
-          <div>
-            
+      <h2 id="hobbies-title">Centres d'intérêts</h2>
 
-            <div id="hobbies-block">
-              <h4>Centres d'intérêts</h4>
-              {hobbiesList.map((hobby) => createCVElement(hobby))}
-            </div>
-          </div>
-        </div> */}
+      <div id="hobbies-list">{hobbiesList.map((hobby) => createDetailBlock(hobby.title, hobby.description))}</div>
     </Layout>
   );
 }
