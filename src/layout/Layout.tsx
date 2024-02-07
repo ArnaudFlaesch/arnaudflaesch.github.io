@@ -13,7 +13,8 @@ import './Layout.scss';
 import Profile from '../components/profile/Profile';
 
 interface IProps {
-  children: React.ReactElement[];
+  title?: string;
+  children: React.ReactElement;
   location: Location;
   blogView?: boolean;
 }
@@ -42,6 +43,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         </div>
         <main id="portfolio-body">
           <div id="portfolio-content">
+            {props.title && <h1>{props.title}</h1>}
             <div>{props.children}</div>
           </div>
           <footer>

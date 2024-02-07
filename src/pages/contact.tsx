@@ -17,9 +17,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   }
 
   return (
-    <Layout location={props.location}>
-      <h1>Contactez-moi</h1>
-
+    <Layout title="Contactez-moi" location={props.location}>
       {state.succeeded ? (
         <div>
           <p>Votre email a bien été envoyé !</p>

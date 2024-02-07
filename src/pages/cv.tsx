@@ -55,8 +55,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   }
 
   return (
-    <Layout location={props.location}>
-      <h1>Curriculum Vitae</h1>
+    <Layout title="Curriculum Vitae" location={props.location}>
       <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
         Télécharger mon CV
       </Button>

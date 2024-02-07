@@ -12,8 +12,7 @@ import { IPageProps } from '../model/IPageProps';
 
 export default function Projets(props: Readonly<IPageProps>): React.ReactElement {
   return (
-    <Layout location={props.location}>
-      <h1>Projets personnels</h1>
+    <Layout title="Projets personnels" location={props.location}>
       <div id="projects-list">
         <DashWebProject />
         <DashWebServicesProject />
