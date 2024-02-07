@@ -26,7 +26,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
         button.removeEventListener('click', () => moveButtonRandomly);
         button.addEventListener('mouseover', () => moveButtonRandomly(button));
       }
-      setTimeout(() => setButtonClicked(true), 250);
+      setTimeout(() => setButtonClicked(true), 350);
     });
     return () => {
       button?.removeEventListener('click', () => moveButtonRandomly);
@@ -62,12 +62,10 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
             </Button>
           </Link>
         </p>
-        {buttonClicked && (
-          <p>
-            Pour les autres structures, vous pouvez utiliser le formulaire de contact en cliquant sur le lien en haut à
-            droite de la page.
-          </p>
-        )}
+        <p>
+          Pour les autres structures, vous pouvez utiliser le formulaire de contact en cliquant sur le lien en haut à
+          droite de la page.
+        </p>
       </div>
 
       <div id="site-content">
