@@ -7,7 +7,7 @@ import { IPageProps } from '../model/IPageProps';
 export default function NotFoundPage(props: Readonly<IPageProps>): React.ReactElement {
   return (
     <Layout location={props.location}>
-      <h2>404</h2>
+      <h1>404</h1>
       <p>La page que vous cherchez n'existe pas.</p>
     </Layout>
   );

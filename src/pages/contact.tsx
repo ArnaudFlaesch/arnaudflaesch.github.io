@@ -18,7 +18,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
 
   return (
     <Layout location={props.location}>
-      <h2>Contactez-moi</h2>
+      <h1>Contactez-moi</h1>
 
       {state.succeeded ? (
         <div>

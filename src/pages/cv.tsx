@@ -56,12 +56,13 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
 
   return (
     <Layout location={props.location}>
-      <h2>Curriculum Vitae</h2>
+      <h1>Curriculum Vitae</h1>
       <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
         Télécharger mon CV
       </Button>
 
       <div id="job-list">
+        <h2>Expériences professionnelles</h2>
         {jobData.slice(0, jobIndexEnd).map((job) => (
           <Experience key={job.name} {...job} />
         ))}
@@ -75,6 +76,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
       </div>
 
       <div id="formation-list">
+        <h2>Formation</h2>
         {formationData.map((formation) => (
           <Experience key={formation.title} {...formation} />
         ))}
@@ -82,7 +84,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
 
       <div id="certifications-list">
         <DetailBlock
-          titleComponent={<h2>{'Certifications'}</h2>}
+          titleComponent={<h3>{'Certifications'}</h3>}
           detailComponent={
             <>
               <h4>Professional Scrum Master 1 et 2 (décembre 2023)</h4>
