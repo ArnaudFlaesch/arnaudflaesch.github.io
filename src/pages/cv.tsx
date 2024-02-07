@@ -56,68 +56,75 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
 
   return (
     <Layout title="Curriculum Vitae" location={props.location}>
-      <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
-        Télécharger mon CV
-      </Button>
+      <div>
+        <Button
+          id="cv-download-button"
+          href="/CV.pdf"
+          variant="contained"
+          download="Curriculum Vitae Arnaud Flaesch.pdf"
+        >
+          Télécharger mon CV
+        </Button>
 
-      <div id="job-list">
-        <h2>Expériences professionnelles</h2>
-        {jobData.slice(0, jobIndexEnd).map((job) => (
-          <Experience key={job.name} {...job} />
-        ))}
+        <div id="job-list">
+          <h2>Expériences professionnelles</h2>
+          {jobData.slice(0, jobIndexEnd).map((job) => (
+            <Experience key={job.name} {...job} />
+          ))}
 
-        {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
-          <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>
-        )}
-        {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
-          <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
-        )}
+          {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+            <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>
+          )}
+          {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+            <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
+          )}
+        </div>
+
+        <div id="formation-list">
+          <h2>Formation</h2>
+          {formationData.map((formation) => (
+            <Experience key={formation.title} {...formation} />
+          ))}
+        </div>
+
+        <div id="certifications-list">
+          <DetailBlock
+            titleComponent={<h3>{'Certifications'}</h3>}
+            detailComponent={
+              <>
+                <h4>Professional Scrum Master 1 et 2 (décembre 2023)</h4>
+                <Tooltip title="PSM 1">
+                  <a href={scrumOrgLink}>
+                    <StaticImage
+                      height={IMG_HEIGHT}
+                      width={IMG_WIDTH}
+                      src="../images/certifications/psm1.png"
+                      alt={'PSM 1'}
+                    />
+                  </a>
+                </Tooltip>
+                <Tooltip title="PSM 2">
+                  <a href={scrumOrgLink}>
+                    <StaticImage
+                      height={IMG_HEIGHT}
+                      width={IMG_WIDTH}
+                      src="../images/certifications/psm2.png"
+                      alt={'PSM 2'}
+                    />
+                  </a>
+                </Tooltip>
+              </>
+            }
+          />
+        </div>
+
+        <h2 id="skills-title">Langages et technologies</h2>
+        <Skills />
+
+        <h2 id="hobbies-title">Centres d'intérêts</h2>
+
+        <div id="hobbies-list">{hobbiesList.map((hobby) => createDetailBlock(hobby.title, hobby.description))}</div>
       </div>
-
-      <div id="formation-list">
-        <h2>Formation</h2>
-        {formationData.map((formation) => (
-          <Experience key={formation.title} {...formation} />
-        ))}
-      </div>
-
-      <div id="certifications-list">
-        <DetailBlock
-          titleComponent={<h3>{'Certifications'}</h3>}
-          detailComponent={
-            <>
-              <h4>Professional Scrum Master 1 et 2 (décembre 2023)</h4>
-              <Tooltip title="PSM 1">
-                <a href={scrumOrgLink}>
-                  <StaticImage
-                    height={IMG_HEIGHT}
-                    width={IMG_WIDTH}
-                    src="../images/certifications/psm1.png"
-                    alt={'PSM 1'}
-                  />
-                </a>
-              </Tooltip>
-              <Tooltip title="PSM 2">
-                <a href={scrumOrgLink}>
-                  <StaticImage
-                    height={IMG_HEIGHT}
-                    width={IMG_WIDTH}
-                    src="../images/certifications/psm2.png"
-                    alt={'PSM 2'}
-                  />
-                </a>
-              </Tooltip>
-            </>
-          }
-        />
-      </div>
-
-      <h2 id="skills-title">Langages et technologies</h2>
-      <Skills />
-
-      <h2 id="hobbies-title">Centres d'intérêts</h2>
-
-      <div id="hobbies-list">{hobbiesList.map((hobby) => createDetailBlock(hobby.title, hobby.description))}</div>
     </Layout>
   );
 }

@@ -43,8 +43,8 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         </div>
         <main id="portfolio-body">
           <div id="portfolio-content">
-            {props.title && <h1>{props.title}</h1>}
-            <div>{props.children}</div>
+            {props.title && <h1 id="page-title">{props.title}</h1>}
+            <div id="page-content">{props.children}</div>
           </div>
           <footer>
             <div>

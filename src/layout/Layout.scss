@@ -812,6 +812,14 @@ pre tt::after {
       flex-grow: 1;
       margin: 1em 25% 0 5%;
 
+      #page-title {
+        margin-top: 1em;
+      }
+
+      #page-content {
+        margin-top: 3em;
+      }
+
       @media (width <= 700px) {
         margin: 1em 5%;
       }
