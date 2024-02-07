@@ -17,11 +17,8 @@ export default function Presentation(props: Readonly<IPageProps>): ReactElement 
   }
 
   return (
-    <Layout location={props.location}>
-      <h2>Présentation</h2>
-
+    <Layout title="Présentation" location={props.location}>
       <p>Je m'appelle Arnaud, j'ai {calculateAge()} ans et je travaille en tant que développeur en CDI depuis 2017.</p>
-      <p></p>
     </Layout>
   );
 }
