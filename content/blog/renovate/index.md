@@ -15,7 +15,7 @@ Présentation de l’outil
 Comment l’installer
 Conclusion
 
-- Le problème
+* Le problème
 
 Au fil du temps, certaines dependances ne sont plus maintenues, peuvent contenir des failles de securite et peuvent vous bloquer dans l’ajout de nouvelles fonctionnalités, par exemple lorsqu’un nouvel outil est incompatible avec une version trop vieille d’un autre outil.
 
