@@ -7,6 +7,9 @@
 
   .repository-icons-container {
     margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
 
     .repository-icons {
       display: flex;

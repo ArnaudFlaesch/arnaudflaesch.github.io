@@ -30,71 +30,74 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
 
   return (
     <Layout blogView={true} location={props.location}>
-      <article className="blog-post" itemScope itemType="https://schema.org/Article">
-        <div>
+      <>
+        <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <header>
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
             <p>{format(pubDate, 'dd MMMM, yyyy', { locale: fr })}</p>
           </header>
           <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
-        </div>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
-        <hr />
-        <footer className="blog-post-footer">
-          <Bio />
-          <div className="share-buttons">
-            Partager ce billet de blog :
-            <div>
-              <Tooltip title="Partager sur Facebook">
-                <a href="#" onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}>
-                  <Facebook />
-                </a>
-              </Tooltip>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
+          <hr />
+          <footer className="blog-post-footer">
+            <Bio />
+            <div className="share-buttons">
+              Partager ce billet de blog :
+              <div>
+                <Tooltip title="Partager sur Facebook">
+                  <a
+                    href="#"
+                    onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}
+                  >
+                    <Facebook />
+                  </a>
+                </Tooltip>
+              </div>
+              <div>
+                <Tooltip title="Partager sur X">
+                  <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
+                    <X />
+                  </a>
+                </Tooltip>
+              </div>
+              <div>
+                <Tooltip title="Partager sur LinkedIn">
+                  <a
+                    href="#"
+                    onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
+                  >
+                    <LinkedIn />
+                  </a>
+                </Tooltip>
+              </div>
             </div>
-            <div>
-              <Tooltip title="Partager sur X">
-                <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
-                  <X />
-                </a>
-              </Tooltip>
-            </div>
-            <div>
-              <Tooltip title="Partager sur LinkedIn">
-                <a
-                  href="#"
-                  onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
-                >
-                  <LinkedIn />
-                </a>
-              </Tooltip>
-            </div>
-          </div>
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+          </footer>
+        </article>
+        <nav className="blog-post-nav">
+          <ul>
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+      </>
     </Layout>
   );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const Head = ({ location, data }) => {
+export const Head = ({ location, data }: { location: Location; data: any }) => {
   const post = data.markdownRemark;
   const pubDate = post.frontmatter.date;
   const siteUrl = data.site.siteMetadata.siteUrl;

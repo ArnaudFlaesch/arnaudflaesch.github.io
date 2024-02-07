@@ -19,6 +19,15 @@
       width: 25vw;
     }
   }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+
+    .error-message {
+      color: red;
+    }
+  }
 }
 
 @media (width <= 700px) {

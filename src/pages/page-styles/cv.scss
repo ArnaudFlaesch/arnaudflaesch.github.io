@@ -1,12 +1,18 @@
 #job-list,
-#formation-list {
+#formation-list,
+#hobbies-list {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  row-gap: 0.5em;
 }
 
 #certifications-list,
-#skills-title {
+#skills-title,
+#hobbies-title {
   margin-top: 1em;
+}
+
+.detail-block-title {
+  margin: auto;
 }
