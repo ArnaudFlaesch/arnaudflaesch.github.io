@@ -8,7 +8,6 @@ import Seo from '../components/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import './page-styles/contact.scss';
-import { useEffect } from 'react';
 
 export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');
