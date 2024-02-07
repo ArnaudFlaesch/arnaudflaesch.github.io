@@ -1,4 +1,4 @@
-# Portfolio
+# arnaudflaesch.github.io
 
 [![CI](https://github.com/ArnaudFlaesch/arnaudflaesch.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/ArnaudFlaesch/arnaudflaesch.github.io/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ArnaudFlaesch_arnaudflaesch.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ArnaudFlaesch_arnaudflaesch.github.io)

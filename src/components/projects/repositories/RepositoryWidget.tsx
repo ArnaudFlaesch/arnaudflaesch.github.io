@@ -53,22 +53,22 @@ export default function RepositoryWidget(props: Readonly<IProps>): React.ReactEl
       <div className="repository-icons-container">
         <div>Stack technique :</div>
         <div className="repository-icons">{props.repoIcons}</div>
-      </div>
-      <div className="languages-container">
-        {props.repositoryData.languages &&
-          sortEdgesBySize(props.repositoryData.languages.edges).map((edge) => {
-            return (
-              <Tooltip key={edge.node.name} title={edge.node.name}>
-                <div
-                  style={{
-                    height: '1.5rem',
-                    backgroundColor: edge.node.color,
-                    width: `${Math.fround((edge.size / props.repositoryData.languages.totalSize) * 100)}%`
-                  }}
-                />
-              </Tooltip>
-            );
-          })}
+        <div className="languages-container">
+          {props.repositoryData.languages &&
+            sortEdgesBySize(props.repositoryData.languages.edges).map((edge) => {
+              return (
+                <Tooltip key={edge.node.name} title={edge.node.name}>
+                  <div
+                    style={{
+                      height: '1.5rem',
+                      backgroundColor: edge.node.color,
+                      width: `${Math.fround((edge.size / props.repositoryData.languages.totalSize) * 100)}%`
+                    }}
+                  />
+                </Tooltip>
+              );
+            })}
+        </div>
       </div>
     </div>
   );

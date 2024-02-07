@@ -33,7 +33,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
   {
     title: 'Développeur fullstack',
     dateDebut: new Date(Date.parse('2017-09-18')),
-    dateFin: new Date(Date.parse('2018-04-12')),
+    dateFin: new Date(Date.parse('2019-04-12')),
     name: 'Sopra Steria',
     location: 'Montreuil, France',
     logoPath: '/company-logos/sopra-steria.png',
@@ -66,7 +66,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
   {
     title: 'Développeur Java',
     name: 'Franprix - Leader Price',
-    dateDebut: new Date(Date.parse('2015-10-01')),
+    dateDebut: new Date(Date.parse('2016-9-01')),
     dateFin: new Date(Date.parse('2017-08-31')),
     location: 'Chennevières sur Marne, France',
     description: `Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.Contrat de professionnalisation en alternance au sein du service dédié au portail magasin et à l'intranet du siège.
@@ -79,7 +79,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     title: 'Développeur Web',
     name: 'AB Cube',
     dateDebut: new Date(Date.parse('2015-10-01')),
-    dateFin: new Date(Date.parse('2015-08-31')),
+    dateFin: new Date(Date.parse('2016-08-31')),
     location: 'Montreuil, France',
     description: `Alternance dans le cadre de ma première année de mastère à l'ESGI.
     Contrat de professionnalisation dans le cadre de ma quatrième année à l'ESGI.

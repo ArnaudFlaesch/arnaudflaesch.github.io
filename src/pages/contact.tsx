@@ -12,14 +12,16 @@ import './page-styles/contact.scss';
 export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');
 
+  const [nameText, setNameText] = React.useState('');
+  const [emailText, setEmailText] = React.useState('');
+  const [messageText, setMessageText] = React.useState('');
+
   function isFormInvalid(): boolean {
-    return state.submitting;
+    return state.submitting || !nameText.length || !emailText.length || !messageText.length;
   }
 
   return (
-    <Layout location={props.location}>
-      <h2>Contactez-moi</h2>
-
+    <Layout title="Contactez-moi" location={props.location}>
       {state.succeeded ? (
         <div>
           <p>Votre email a bien été envoyé !</p>
@@ -29,36 +31,52 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
         <form onSubmit={handleSubmit}>
           <Box id="contact-form" component={'section'} gap={4}>
             <div id="contact-informations">
-              <TextField
-                id="name"
-                type="text"
-                name="name"
-                className="contact-field"
-                label="Votre nom et prénom"
-                variant="outlined"
-              />
-              <ValidationError prefix="Name" field="name" errors={state.errors} />
+              <div className="form-field">
+                <TextField
+                  id="name"
+                  type="text"
+                  name="name"
+                  className="contact-field"
+                  label="Votre nom et prénom"
+                  variant="outlined"
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setNameText(event.target.value);
+                  }}
+                />
+                <ValidationError className="error-message" prefix="Name" field="name" errors={state.errors} />
+              </div>
 
-              <TextField
-                id="email"
-                type="email"
-                name="email"
-                className="contact-field"
-                label="Votre adresse mail"
-                variant="outlined"
-              />
-              <ValidationError prefix="Email" field="email" errors={state.errors} />
+              <div className="form-field">
+                <TextField
+                  id="email"
+                  type="email"
+                  name="email"
+                  className="contact-field"
+                  label="Votre adresse mail"
+                  variant="outlined"
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setEmailText(event.target.value);
+                  }}
+                />
+                <ValidationError className="error-message" prefix="Email" field="email" errors={state.errors} />
+              </div>
             </div>
-            <TextField
-              id="message"
-              type="message"
-              name="message"
-              className="contact-field"
-              label="Message"
-              multiline
-              rows={8}
-            />
-            <ValidationError prefix="Message" field="message" errors={state.errors} />
+
+            <div className="form-field">
+              <TextField
+                id="message"
+                type="message"
+                name="message"
+                className="contact-field"
+                label="Message"
+                multiline
+                rows={8}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  setMessageText(event.target.value);
+                }}
+              />
+              <ValidationError className="error-message" prefix="Message" field="message" errors={state.errors} />
+            </div>
 
             <Button id="submit-button" type="submit" disabled={isFormInvalid()} variant="contained">
               Envoyer

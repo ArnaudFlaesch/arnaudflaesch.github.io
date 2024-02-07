@@ -14,7 +14,7 @@ export default function Skills(): React.ReactElement {
   function createSkillBlock(skillName: string, icons: ReactElement[]): ReactElement {
     return (
       <DetailBlock
-        titleComponent={<h2 className="skill-category-title">{skillName}</h2>}
+        titleComponent={<h3 className="skill-category-title">{skillName}</h3>}
         detailComponent={<>{icons}</>}
       />
     );

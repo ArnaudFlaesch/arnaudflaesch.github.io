@@ -13,8 +13,10 @@ import formationData from '../data/FormationData';
 import jobData from '../data/JobData';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
+import { ReactElement } from 'react';
+import { hobbiesList } from '../data/HobbiesData';
 
-export default function CV(props: Readonly<IPageProps>): React.ReactElement {
+export default function CV(props: Readonly<IPageProps>): ReactElement {
   const data = useStaticQuery(graphql`
     query CVQuery {
       site {
@@ -43,90 +45,86 @@ export default function CV(props: Readonly<IPageProps>): React.ReactElement {
     setJobIndexEnd(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
   }
 
+  function createDetailBlock(title: string, detail: string): ReactElement {
+    return (
+      <DetailBlock
+        titleComponent={<h3 className="detail-block-title">{title}</h3>}
+        detailComponent={<div>{detail}</div>}
+      />
+    );
+  }
+
   return (
-    <Layout location={props.location}>
-      <h2>Curriculum Vitae</h2>
-      <Button id="cv-download-button" href="/CV.pdf" variant="contained" download="Curriculum Vitae Arnaud Flaesch.pdf">
-        Télécharger mon CV
-      </Button>
+    <Layout title="Curriculum Vitae" location={props.location}>
+      <div>
+        <Button
+          id="cv-download-button"
+          href="/CV.pdf"
+          variant="contained"
+          download="Curriculum Vitae Arnaud Flaesch.pdf"
+        >
+          Télécharger mon CV
+        </Button>
 
-      <div id="job-list">
-        {jobData.slice(0, jobIndexEnd).map((job) => (
-          <Experience key={job.name} {...job} />
-        ))}
+        <div id="job-list">
+          <h2>Expériences professionnelles</h2>
+          {jobData.slice(0, jobIndexEnd).map((job) => (
+            <Experience key={job.name} {...job} />
+          ))}
 
-        {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
-          <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>
-        )}
-        {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
-          <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
-        )}
+          {jobIndexEnd === DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+            <Button onClick={showMoreJobs}>Voir plus d'expériences</Button>
+          )}
+          {jobIndexEnd !== DEFAUL_NUMBER_OF_JOBS_TO_SHOW && (
+            <Button onClick={showLessJobs}>Voir moins d'expériences</Button>
+          )}
+        </div>
+
+        <div id="formation-list">
+          <h2>Formation</h2>
+          {formationData.map((formation) => (
+            <Experience key={formation.title} {...formation} />
+          ))}
+        </div>
+
+        <div id="certifications-list">
+          <DetailBlock
+            titleComponent={<h3>{'Certifications'}</h3>}
+            detailComponent={
+              <>
+                <h4>Professional Scrum Master 1 et 2 (décembre 2023)</h4>
+                <Tooltip title="PSM 1">
+                  <a href={scrumOrgLink}>
+                    <StaticImage
+                      height={IMG_HEIGHT}
+                      width={IMG_WIDTH}
+                      src="../images/certifications/psm1.png"
+                      alt={'PSM 1'}
+                    />
+                  </a>
+                </Tooltip>
+                <Tooltip title="PSM 2">
+                  <a href={scrumOrgLink}>
+                    <StaticImage
+                      height={IMG_HEIGHT}
+                      width={IMG_WIDTH}
+                      src="../images/certifications/psm2.png"
+                      alt={'PSM 2'}
+                    />
+                  </a>
+                </Tooltip>
+              </>
+            }
+          />
+        </div>
+
+        <h2 id="skills-title">Langages et technologies</h2>
+        <Skills />
+
+        <h2 id="hobbies-title">Centres d'intérêts</h2>
+
+        <div id="hobbies-list">{hobbiesList.map((hobby) => createDetailBlock(hobby.title, hobby.description))}</div>
       </div>
-
-      <div id="formation-list">
-        {formationData.map((formation) => (
-          <Experience key={formation.title} {...formation} />
-        ))}
-      </div>
-
-      <div id="certifications-list">
-        <DetailBlock
-          titleComponent={<h2>{'Certifications'}</h2>}
-          detailComponent={
-            <>
-              <Tooltip title="PSM 1">
-                <a href={scrumOrgLink}>
-                  <StaticImage
-                    height={IMG_HEIGHT}
-                    width={IMG_WIDTH}
-                    src="../images/certifications/psm1.png"
-                    alt={'PSM 1'}
-                  />
-                </a>
-              </Tooltip>
-              <Tooltip title="PSM 2">
-                <a href={scrumOrgLink}>
-                  <StaticImage
-                    height={IMG_HEIGHT}
-                    width={IMG_WIDTH}
-                    src="../images/certifications/psm2.png"
-                    alt={'PSM 2'}
-                  />
-                </a>
-              </Tooltip>
-            </>
-          }
-        />
-      </div>
-
-      <h2 id="skills-title">Langages et technologies</h2>
-      <Skills />
-
-      {/**
-        <div >
-          <div>
-            <div id="skills-block">
-              <h4>Compétences</h4>
-              {skillsList.map((skill) => createCVElement(skill))}
-            </div>
-            <div id="certifications-block">
-              <h4>Certifications</h4>
-              {certificationsList.map((certification) => createCVElement(certification))}
-            </div>
-            <div id="personal-projects-block">
-              <h4>Projets personnels</h4>
-              {projectList.map((project) => createCVElement(project))}
-            </div>
-          </div>
-          <div>
-            
-
-            <div id="hobbies-block">
-              <h4>Centres d'intérêts</h4>
-              {hobbiesList.map((hobby) => createCVElement(hobby))}
-            </div>
-          </div>
-        </div> */}
     </Layout>
   );
 }
