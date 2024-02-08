@@ -106,7 +106,7 @@ module.exports = {
               return allMarkdownRemark.nodes.map((node) => {
                 return {
                   ...node.frontmatter,
-                  description: node.excerpt,
+                  description: node.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -116,11 +116,9 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] }
-                ) {
+                allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
                   nodes {
-                    excerpt
+                    description
                     html
                     fields {
                       slug
@@ -133,6 +131,7 @@ module.exports = {
                 }
               }
             `,
+            match: '^/blog/',
             output: '/rss.xml',
             title: 'Flux RSS - Arnaud Flaesch'
           }
