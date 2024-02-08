@@ -14,6 +14,7 @@ html {
     sans-serif;
   box-sizing: border-box;
   scroll-padding-top: calc($header-height-small + 0.5rem);
+  background-color: $body-background-color;
 
   @media (width <= 700px) {
     scroll-padding-top: calc($header-height-large + 0.5rem);
@@ -33,7 +34,6 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  background-color: $body-background-color;
 }
 
 article,
