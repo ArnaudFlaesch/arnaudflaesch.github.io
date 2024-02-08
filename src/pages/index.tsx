@@ -56,7 +56,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
             souhaitez me contacter pour discuter d'un emploi, vous pouvez utiliser ce lien vers un formulaire de contact
             :
             <Link to={buttonClicked && !isMobile() ? '404' : '#'}>
-              <Button id={sneakyButtonId} variant={buttonClicked && 'contained'}>
+              <Button id={sneakyButtonId} variant={buttonClicked ? 'contained' : 'text'}>
                 Contact
               </Button>
             </Link>
