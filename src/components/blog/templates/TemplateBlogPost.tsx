@@ -5,7 +5,7 @@ import Layout from '../../../layout/Layout';
 import Seo from '../../Seo';
 import Bio from '../../bio/Bio';
 
-import { Facebook, LinkedIn, X } from '@mui/icons-material';
+import { Facebook, Folder, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
@@ -21,11 +21,20 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
 
+  const siteUrl = props.data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
   const pubDate = post.frontmatter.date;
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
+  }
+
+  function createTagRef(tagName: string) {
+    return (
+      <span key={tagName} className="article-tag">
+        <a href={`${siteUrl}${blogUrlPrefix}tag/${tagName}`}>#{tagName}</a>
+      </span>
+    );
   }
 
   return (
@@ -34,7 +43,17 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <header>
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
-            <p>{format(pubDate, 'dd MMMM, yyyy', { locale: fr })}</p>
+            <div className="article-data">
+              <p>{format(pubDate, 'd MMMM yyyy', { locale: fr })}</p>
+              <div className="article-metadata">
+                <div className="article-category">
+                  <a href={`${siteUrl}${blogUrlPrefix}category/${post.frontmatter.category}`}>
+                    <Folder /> {post.frontmatter.category}
+                  </a>
+                </div>
+                <div className="article-tags">{post.frontmatter.tags.map(createTagRef)}</div>
+              </div>
+            </div>
           </header>
           <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
@@ -43,33 +62,24 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
             <Bio />
             <div className="share-buttons">
               Partager ce billet de blog :
-              <div>
-                <Tooltip title="Partager sur Facebook">
-                  <a
-                    href="#"
-                    onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}
-                  >
-                    <Facebook />
-                  </a>
-                </Tooltip>
-              </div>
-              <div>
-                <Tooltip title="Partager sur X">
-                  <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
-                    <X />
-                  </a>
-                </Tooltip>
-              </div>
-              <div>
-                <Tooltip title="Partager sur LinkedIn">
-                  <a
-                    href="#"
-                    onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
-                  >
-                    <LinkedIn />
-                  </a>
-                </Tooltip>
-              </div>
+              <Tooltip title="Partager sur Facebook">
+                <a href="#" onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}>
+                  <Facebook />
+                </a>
+              </Tooltip>
+              <Tooltip title="Partager sur X">
+                <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
+                  <X />
+                </a>
+              </Tooltip>
+              <Tooltip title="Partager sur LinkedIn">
+                <a
+                  href="#"
+                  onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
+                >
+                  <LinkedIn />
+                </a>
+              </Tooltip>
             </div>
           </footer>
         </article>
@@ -136,6 +146,8 @@ export const pageQuery = graphql`
         date
         description
         image
+        category
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

@@ -1,8 +1,10 @@
 ---
 title: Renovate, un allié dans vos projets
-date: '2024-02-02T15:18'
+date: '2024-02-02T16:00'
 description: Comment maintenir l'arbre de dépendances d'un projet de manière sûre et rapide grâce à un outil automatisé.
 image: renovate-logo.png
+category: Tech
+tags: ['dépendances', 'intégration continue']
 ---
 
 Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, a développer beaucoup de factures et à negliger les dependances.
