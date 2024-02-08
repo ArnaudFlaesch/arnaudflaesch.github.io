@@ -106,7 +106,7 @@ module.exports = {
               return allMarkdownRemark.nodes.map((node) => {
                 return {
                   ...node.frontmatter,
-                  description: node.description,
+                  description: node.frontmatter.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -118,7 +118,7 @@ module.exports = {
               {
                 allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
                   nodes {
-                    description
+                    excerpt
                     html
                     fields {
                       slug
@@ -126,6 +126,7 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      description
                     }
                   }
                 }
