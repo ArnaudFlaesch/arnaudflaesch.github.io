@@ -14,6 +14,7 @@ html {
     sans-serif;
   box-sizing: border-box;
   scroll-padding-top: calc($header-height-small + 0.5rem);
+  background-color: $header-background-color;
 
   @media (width <= 700px) {
     scroll-padding-top: calc($header-height-large + 0.5rem);
