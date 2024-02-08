@@ -1,7 +1,6 @@
 ---
 title: Art3
 date: '2024-02-05T15:18'
-description: Comment maintenir l'arbre de dépendances d'un projet de manière sûre et rapide grâce à un outil automatisé.
 image: renovate-logo.png
 ---
 
