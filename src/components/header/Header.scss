@@ -34,9 +34,10 @@
     height: 100%;
 
     @media (width <=500px) {
-      display: grid;
-      grid-template-columns: 33% 33% 33%;
+      display: flex;
+      flex-flow: row wrap;
       margin-right: 0;
+      flex: 1 0 60%;
     }
 
     > * {
