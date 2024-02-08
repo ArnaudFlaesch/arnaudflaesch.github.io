@@ -106,7 +106,7 @@ module.exports = {
               return allMarkdownRemark.nodes.map((node) => {
                 return {
                   ...node.frontmatter,
-                  description: node.frontmatter.description || post.excerpt,
+                  description: node.frontmatter.description || node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
