@@ -1,4 +1,4 @@
-import { Book, BookTwoTone, Code, Email, Home, Laptop, Work } from '@mui/icons-material';
+import { BookTwoTone, Code, Email, Home, Work } from '@mui/icons-material';
 import './Header.scss';
 
 import { Link } from 'gatsby';
