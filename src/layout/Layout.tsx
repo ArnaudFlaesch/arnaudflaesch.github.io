@@ -32,9 +32,9 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
 
   return (
     <div id="page-container">
-      <div id="fixed-header">
+      <header id="fixed-header">
         <Header location={props.location} siteTitle={data.site.siteMetadata.author} />
-      </div>
+      </header>
       <div id="site-container">
         <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
           <div id="profile-content">
