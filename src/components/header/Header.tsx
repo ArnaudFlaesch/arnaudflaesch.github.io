@@ -1,7 +1,9 @@
+import { BookTwoTone, Code, Email, Home, Work } from '@mui/icons-material';
 import './Header.scss';
 
 import { Link } from 'gatsby';
 import * as React from 'react';
+import { ReactElement } from 'react';
 
 interface IProps {
   siteTitle: string;
@@ -9,31 +11,37 @@ interface IProps {
 }
 
 interface IUrl {
+  icon: ReactElement;
   path: string;
   label: string;
 }
 
-export default function Header(props: Readonly<IProps>): React.ReactElement {
+export default function Header(props: Readonly<IProps>): ReactElement {
   const urls: IUrl[] = [
     {
       path: '/',
-      label: 'Accueil'
+      label: 'Accueil',
+      icon: <Home />
     },
     {
       path: '/cv/',
-      label: 'CV'
+      label: 'CV',
+      icon: <Work />
     },
     {
       path: '/blog/',
-      label: 'Blog'
+      label: 'Blog',
+      icon: <BookTwoTone />
     },
     {
       path: '/projets/',
-      label: 'Projets'
+      label: 'Projets',
+      icon: <Code />
     },
     {
       path: '/contact/',
-      label: 'Contact'
+      label: 'Contact',
+      icon: <Email />
     }
   ];
 
@@ -47,6 +55,7 @@ export default function Header(props: Readonly<IProps>): React.ReactElement {
       <div id="url-list">
         {urls.map((url) => (
           <Link key={url.path} className={props.location.pathname === url.path ? 'active' : ''} to={url.path}>
+            {url.icon}
             {url.label}
           </Link>
         ))}
