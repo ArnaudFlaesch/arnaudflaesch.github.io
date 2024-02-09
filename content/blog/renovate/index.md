@@ -6,7 +6,8 @@ image: renovate-logo.png
 tags: ['dépendances', 'intégration continue']
 ---
 
-Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, a développer beaucoup de factures et à negliger les dependances.
+Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, a développer beaucoup de factures et à negliger
+les dependances.
 
 Pourtant celles ci sont aussi importantes que le code dune application, et constituent meme la colonne vertébrale de celle ci.
 
@@ -18,7 +19,9 @@ Conclusion
 
 - Le problème
 
-Au fil du temps, certaines dependances ne sont plus maintenues, peuvent contenir des failles de securite et peuvent vous bloquer dans l’ajout de nouvelles fonctionnalités, par exemple lorsqu’un nouvel outil est incompatible avec une version trop vieille d’un autre outil.
+Au fil du temps, certaines dependances ne sont plus maintenues, peuvent contenir des failles de securite et peuvent vous
+bloquer dans l’ajout de nouvelles fonctionnalités, par exemple lorsqu’un nouvel outil est incompatible avec une version
+trop vieille d’un autre outil.
 
 Cest la qu’intervient Renovate, un outil créée par Mend (article non remunere) pour aider les développeurs a maintenir larbre de Dépendances d’un projet, de manière incrementale et configurable.
 
