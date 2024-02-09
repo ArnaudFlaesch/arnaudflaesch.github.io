@@ -51,7 +51,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
           <div id="portfolio-content">
             <div id="page-header">
               {props.title && <h1 id="page-title">{props.title}</h1>}{' '}
-              {location.pathname === '/blog/' && (
+              {props.location.pathname === '/blog/' && (
                 <a href={rss}>
                   <Tooltip title="Flux RSS">
                     <RssFeed id="rss-feed-icon" />
