@@ -24,6 +24,8 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   const siteUrl = props.data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
   const pubDate = post.frontmatter.date;
+  const category = post.frontmatter.category;
+  const tags = post.frontmatter.tags ?? [];
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
@@ -46,12 +48,14 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
             <div className="article-data">
               <p>{format(pubDate, 'd MMMM yyyy', { locale: fr })}</p>
               <div className="article-metadata">
-                <div className="article-category">
-                  <a href={`${siteUrl}${blogUrlPrefix}category/${post.frontmatter.category}`}>
-                    <Folder /> {post.frontmatter.category}
-                  </a>
-                </div>
-                <div className="article-tags">{post.frontmatter.tags.map(createTagRef)}</div>
+                {category && (
+                  <div className="article-category">
+                    <a href={`${siteUrl}${blogUrlPrefix}category/${category}`}>
+                      <Folder /> {category}
+                    </a>
+                  </div>
+                )}
+                <div className="article-tags">{tags.map(createTagRef)}</div>
               </div>
             </div>
           </header>
