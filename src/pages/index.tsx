@@ -13,6 +13,7 @@ import { Button } from '@mui/material';
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   const description = props.data.site.siteMetadata.description;
   const posts = props.data.allMarkdownRemark.nodes;
+  const rssFeedFile = props.data.site.siteMetadata.rss;
 
   const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -79,7 +80,8 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
               </Link>
             </li>
             <li>
-              <Link to="/blog/">Des articles de blog (quand ils seront rédigés &#128521;)</Link>
+              <Link to="/blog/">Des articles de blog (quand ils seront rédigés &#128521;)</Link>{' '}
+              <a href={rssFeedFile}>flux RSS</a>
             </li>
             <li>
               <Link to="/contact/">Un formulaire de contact pour m'envoyer un email</Link>
@@ -107,6 +109,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         description
+        rss
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

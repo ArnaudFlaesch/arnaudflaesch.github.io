@@ -7,10 +7,13 @@ const pwaShortName = 'AF';
 const title = 'Arnaud Flaesch, Développeur Web';
 const siteUrl = 'https://arnaudflaesch.github.io';
 const defaultImageUrl = '/profile-picture.jpg';
+
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
 const scrumOrgLink = 'https://www.scrum.org/user/1355891';
 const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
+
+const rssFeedFile = '/rss.xml';
 
 module.exports = {
   siteMetadata: {
@@ -29,7 +32,8 @@ module.exports = {
       github: githubLink,
       scrumOrg: scrumOrgLink,
       weLoveDevs: welovedevsLink
-    }
+    },
+    rss: rssFeedFile
   },
   plugins: [
     'gatsby-plugin-image',
@@ -133,7 +137,7 @@ module.exports = {
               }
             `,
             match: '^/blog/',
-            output: '/rss.xml',
+            output: rssFeedFile,
             title: 'Flux RSS - Arnaud Flaesch'
           }
         ]

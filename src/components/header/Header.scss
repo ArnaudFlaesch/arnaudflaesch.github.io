@@ -28,19 +28,21 @@
     height: 100%;
     display: flex;
     flex-flow: row wrap;
-    margin: auto 5% auto 0;
+    margin: auto 2em auto 0;
     gap: 0.5em;
     place-content: center;
 
-    @media (width <=500px) {
-      display: flex;
-      flex-flow: row wrap;
-      margin-right: 0;
-      height: initial;
+    @media (width <=950px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2.5fr;
     }
 
-    @media (width <=750px) {
-      height: initial;
+    @media (750px <= width <= 950px) {
+      margin-left: 10em;
+    }
+
+    @media (width <=600px) {
+      margin-right: 0;
     }
 
     > * {
@@ -50,7 +52,15 @@
       padding: 0 0.5em;
       height: 100%;
 
-      @media (width <=950px) {
+      @media (width <=600px) {
+        padding: 0;
+      }
+
+      @media (width <=450px) {
+        margin: 0;
+      }
+
+      @media (width <= 950px) {
         height: initial;
       }
 

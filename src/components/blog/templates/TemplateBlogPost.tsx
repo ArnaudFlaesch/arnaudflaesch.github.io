@@ -20,12 +20,16 @@ interface IProps {
 export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactElement {
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
-
+  const href = props.location.href;
   const siteUrl = props.data.site.siteMetadata.siteUrl;
-  const blogUrlPrefix = '/blog/';
+
+  const postTitle = post.frontmatter.title;
   const pubDate = post.frontmatter.date;
   const category = post.frontmatter.category;
   const tags = post.frontmatter.tags ?? [];
+  const imageUrl = post.frontmatter.image;
+
+  const blogUrlPrefix = '/blog/';
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
@@ -44,46 +48,44 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
       <>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <h1 itemProp="headline">{postTitle}</h1>
             <div className="article-data">
-              <p>{format(pubDate, 'd MMMM yyyy', { locale: fr })}</p>
-              <div className="article-metadata">
-                {category && (
-                  <div className="article-category">
-                    <a href={`${siteUrl}${blogUrlPrefix}category/${category}`}>
-                      <Folder /> {category}
-                    </a>
-                  </div>
-                )}
-                <div className="article-tags">{tags.map(createTagRef)}</div>
-              </div>
+              <p>{format(pubDate, 'dd MMMM yyyy', { locale: fr })}</p>
+              {category && (
+                <div className="article-category">
+                  <a href={`${siteUrl}${blogUrlPrefix}category/${category}`}>
+                    <Folder /> {category}
+                  </a>
+                </div>
+              )}
             </div>
           </header>
-          <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
+          <img src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
           <footer className="blog-post-footer">
             <Bio />
-            <div className="share-buttons">
-              Partager ce billet de blog :
-              <Tooltip title="Partager sur Facebook">
-                <a href="#" onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}>
-                  <Facebook />
-                </a>
-              </Tooltip>
-              <Tooltip title="Partager sur X">
-                <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
-                  <X />
-                </a>
-              </Tooltip>
-              <Tooltip title="Partager sur LinkedIn">
-                <a
-                  href="#"
-                  onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
-                >
-                  <LinkedIn />
-                </a>
-              </Tooltip>
+            <div className="footer-links">
+              <div className="share-buttons">
+                Partager ce billet de blog :
+                <Tooltip title="Partager sur Facebook">
+                  <a href="#" onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${href}`)}>
+                    <Facebook />
+                  </a>
+                </Tooltip>
+                <Tooltip title="Partager sur X">
+                  <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${href}`)}>
+                    <X />
+                  </a>
+                </Tooltip>
+                <Tooltip title="Partager sur LinkedIn">
+                  <a href="#" onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${href}`)}>
+                    <LinkedIn />
+                  </a>
+                </Tooltip>
+              </div>
+
+              <div className="article-tags">{tags.map(createTagRef)}</div>
             </div>
           </footer>
         </article>

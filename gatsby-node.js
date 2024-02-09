@@ -90,6 +90,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         siteUrl: String
         keywords: String
         socials: Socials
+        rss: String
      }
      type Socials {
       linkedin: String
