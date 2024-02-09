@@ -25,7 +25,6 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   const postTitle = post.frontmatter.title;
   const pubDate = post.frontmatter.date;
   const category = post.frontmatter.category;
-  const tags = post.frontmatter.tags ?? [];
   const imageUrl = post.frontmatter.image;
 
   const blogUrlPrefix = '/blog/';
@@ -36,14 +35,6 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
-  }
-
-  function createTagRef(tagName: string) {
-    return (
-      <span key={tagName} className="article-tag">
-        <a href={`${blogUrlPrefix}?tag=${tagName}`}>#{tagName}</a>
-      </span>
-    );
   }
 
   return (
@@ -109,7 +100,7 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
   const siteUrl = data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
 
-  const ogTagPubDate = {
+  const ogPubDate = {
     property: 'og:pubdate',
     content: pubDate
   };
@@ -120,7 +111,7 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
       image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
       location={location.pathname}
       type="article"
-      meta={[ogTagPubDate]}
+      meta={[ogPubDate]}
     />
   );
 };
@@ -142,7 +133,6 @@ export const pageQuery = graphql`
         date
         description
         image
-        category
         tags
       }
     }
