@@ -6,6 +6,7 @@
 
   @media (width <= 700px) {
     margin-top: 1em;
+    gap: 0.5em;
     display: grid;
     justify-items: center;
   }
@@ -42,6 +43,7 @@
     @media (width <= 700px) {
       flex-direction: row;
       justify-content: center;
+      margin-top: 0.5em;
       gap: 1em;
 
       .social-link > span {
