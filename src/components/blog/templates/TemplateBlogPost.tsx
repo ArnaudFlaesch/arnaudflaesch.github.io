@@ -5,7 +5,7 @@ import Layout from '../../../layout/Layout';
 import Seo from '../../Seo';
 import Bio from '../../bio/Bio';
 
-import { Facebook, Folder, LinkedIn, X } from '@mui/icons-material';
+import { Facebook, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
@@ -24,7 +24,6 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
 
   const postTitle = post.frontmatter.title;
   const pubDate = post.frontmatter.date;
-  const category = post.frontmatter.category;
   const imageUrl = post.frontmatter.image;
 
   const blogUrlPrefix = '/blog/';
