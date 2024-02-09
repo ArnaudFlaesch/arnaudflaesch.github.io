@@ -813,12 +813,23 @@ pre tt::after {
       flex-grow: 1;
       margin: 1em 25% 0 5%;
 
-      #page-title {
-        margin-top: 1em;
+      #page-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 2em;
+
+        #rss-feed-icon {
+          color: white;
+          background-color: orange;
+          height: 35px;
+          width: 35px;
+          border-radius: 5px;
+        }
       }
 
       #page-content {
-        margin-top: 3em;
+        margin-top: 2em;
       }
 
       @media (width <= 700px) {

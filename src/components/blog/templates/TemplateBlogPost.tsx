@@ -21,7 +21,6 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
   const href = props.location.href;
-  const siteUrl = props.data.site.siteMetadata.siteUrl;
 
   const postTitle = post.frontmatter.title;
   const pubDate = post.frontmatter.date;
@@ -31,6 +30,10 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
 
   const blogUrlPrefix = '/blog/';
 
+  const facebookShareUrl = 'https://www.facebook.com/sharer.php?u=';
+  const twitterShareUrl = 'https://twitter.com/share?url=';
+  const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
+
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
   }
@@ -38,7 +41,7 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   function createTagRef(tagName: string) {
     return (
       <span key={tagName} className="article-tag">
-        <a href={`${siteUrl}${blogUrlPrefix}tag/${tagName}`}>#{tagName}</a>
+        <a href={`${blogUrlPrefix}?tag=${tagName}`}>#{tagName}</a>
       </span>
     );
   }
@@ -49,43 +52,30 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <header>
             <h1 itemProp="headline">{postTitle}</h1>
-            <div className="article-data">
-              <p>{format(pubDate, 'dd MMMM yyyy', { locale: fr })}</p>
-              {category && (
-                <div className="article-category">
-                  <a href={`${siteUrl}${blogUrlPrefix}category/${category}`}>
-                    <Folder /> {category}
-                  </a>
-                </div>
-              )}
-            </div>
+            <p>{format(pubDate, 'dd MMMM yyyy', { locale: fr })}</p>
           </header>
           <img src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
           <footer className="blog-post-footer">
             <Bio />
-            <div className="footer-links">
-              <div className="share-buttons">
-                Partager ce billet de blog :
-                <Tooltip title="Partager sur Facebook">
-                  <a href="#" onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${href}`)}>
-                    <Facebook />
-                  </a>
-                </Tooltip>
-                <Tooltip title="Partager sur X">
-                  <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${href}`)}>
-                    <X />
-                  </a>
-                </Tooltip>
-                <Tooltip title="Partager sur LinkedIn">
-                  <a href="#" onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${href}`)}>
-                    <LinkedIn />
-                  </a>
-                </Tooltip>
-              </div>
-
-              <div className="article-tags">{tags.map(createTagRef)}</div>
+            <div className="share-buttons">
+              Partager ce billet de blog :
+              <Tooltip title="Partager sur Facebook">
+                <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
+                  <Facebook />
+                </a>
+              </Tooltip>
+              <Tooltip title="Partager sur X">
+                <a href="#" onClick={() => handleShare(`${twitterShareUrl}${href}`)}>
+                  <X />
+                </a>
+              </Tooltip>
+              <Tooltip title="Partager sur LinkedIn">
+                <a href="#" onClick={() => handleShare(`${linkedinShareUrl}${href}`)}>
+                  <LinkedIn />
+                </a>
+              </Tooltip>
             </div>
           </footer>
         </article>

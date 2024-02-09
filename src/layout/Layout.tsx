@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from '../components/header/Header';
 import './Layout.scss';
 import Profile from '../components/profile/Profile';
+import { RssFeed } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 
 interface IProps {
   title?: string;
@@ -25,15 +27,19 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
       site {
         siteMetadata {
           author
+          rss
         }
       }
     }
   `);
 
+  const author = data.site.siteMetadata.author;
+  const rss = data.site.siteMetadata.rss;
+
   return (
     <div id="page-container">
       <header id="fixed-header">
-        <Header location={props.location} siteTitle={data.site.siteMetadata.author} />
+        <Header location={props.location} siteTitle={author} />
       </header>
       <div id="site-container">
         <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
@@ -43,7 +49,16 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         </div>
         <main id="portfolio-body">
           <div id="portfolio-content">
-            {props.title && <h1 id="page-title">{props.title}</h1>}
+            <div id="page-header">
+              {props.title && <h1 id="page-title">{props.title}</h1>}{' '}
+              {location.pathname === '/blog/' && (
+                <a href={rss}>
+                  <Tooltip title="Flux RSS">
+                    <RssFeed id="rss-feed-icon" />
+                  </Tooltip>
+                </a>
+              )}
+            </div>
             <div id="page-content">{props.children}</div>
           </div>
           <footer>
