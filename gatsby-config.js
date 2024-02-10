@@ -5,8 +5,13 @@ require('dotenv').config({
 const fullName = 'Arnaud Flaesch';
 const pwaShortName = 'AF';
 const title = 'Arnaud Flaesch, Développeur Web';
-const siteUrl = 'https://arnaudflaesch.github.io';
+const siteName = 'arnaudflaesch.github.io';
+const siteUrl = `https://${siteName}`;
 const defaultImageUrl = '/profile-picture.jpg';
+const description = `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
+sur lesquels je travaille.`;
+const jobName = 'Développeur Web';
+const company = 'Publicis Sapient France';
 
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
@@ -18,14 +23,13 @@ const rssFeedFile = '/rss.xml';
 module.exports = {
   siteMetadata: {
     title: title,
-    description: `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
-    sur lesquels je travaille.`,
+    description: description,
     author: fullName,
     imageUrl: `${siteUrl}${defaultImageUrl}`,
-    job: 'Développeur Web',
-    company: 'Publicis Sapient France',
-    keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
-    siteName: 'arnaudflaesch.github.io',
+    job: jobName,
+    company: company,
+    keywords: `arnaud flaesch, web developer, fullstack developer, software engineer`,
+    siteName: siteName,
     siteUrl: siteUrl,
     socials: {
       linkedin: linkedinLink,

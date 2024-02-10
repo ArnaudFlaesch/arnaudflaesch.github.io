@@ -43,8 +43,9 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
           <header>
             <h1 itemProp="headline">{postTitle}</h1>
             <p>{format(pubDate, 'dd MMMM yyyy', { locale: fr })}</p>
+            {post.frontmatter.description}
           </header>
-          <img src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
+          <img className="article-illustration" src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
           <footer className="blog-post-footer">
