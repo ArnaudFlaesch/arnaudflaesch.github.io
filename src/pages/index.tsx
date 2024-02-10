@@ -49,24 +49,24 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
       <div>
         <div id="description">{description}</div>
 
-        <br />
-
-        <div>
-          <p>
-            Je suis actuellement à l'écoute de nouvelles opportunités professionnelles. Si vous êtes une ESN et que vous
-            souhaitez me contacter pour discuter d'un emploi, vous pouvez utiliser ce lien vers un formulaire de contact
-            :{' '}
-            <Link to={buttonClicked && !isMobile() ? '404' : '#'}>
-              <Button id={sneakyButtonId} variant={buttonClicked ? 'contained' : 'text'}>
-                Contact
-              </Button>
-            </Link>
-          </p>
-          <p>
-            Pour les autres structures, vous pouvez utiliser le formulaire de contact en cliquant sur le lien en haut à
-            droite de la page.
-          </p>
-        </div>
+        {false && (
+          <div>
+            <p>
+              Je suis actuellement à l'écoute de nouvelles opportunités professionnelles. Si vous êtes une ESN et que
+              vous souhaitez me contacter pour discuter d'un emploi, vous pouvez utiliser ce lien vers un formulaire de
+              contact :{' '}
+              <Link to={buttonClicked && !isMobile() ? '404' : '#'}>
+                <Button id={sneakyButtonId} variant={buttonClicked ? 'contained' : 'text'}>
+                  Contact
+                </Button>
+              </Link>
+            </p>
+            <p>
+              Pour les autres structures, vous pouvez utiliser le formulaire de contact en cliquant sur le lien en haut
+              à droite de la page.
+            </p>
+          </div>
+        )}
 
         <div id="site-content">
           <h3>Contenu du site :</h3>
@@ -80,8 +80,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
               </Link>
             </li>
             <li>
-              <Link to="/blog/">Des articles de blog (quand ils seront rédigés &#128521;)</Link>{' '}
-              <a href={rssFeedFile}>flux RSS</a>
+              <Link to="/blog/">Des articles de blog</Link> <a href={rssFeedFile}>(flux RSS)</a>
             </li>
             <li>
               <Link to="/contact/">Un formulaire de contact pour m'envoyer un email</Link>

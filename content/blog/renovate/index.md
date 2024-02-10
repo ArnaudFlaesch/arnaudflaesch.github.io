@@ -1,8 +1,8 @@
 ---
 title: Gérer ses dépendances logicielles facilement avec Renovate
-date: '2024-02-02T16:00'
+date: '2024-02-10T16:00'
 description: Comment maintenir les dépendances d'un projet logiciel de manière sûre et rapide grâce à un outil automatisé.
-image: 2024/1-renovate-article/jenga.jpg
+image: 2024/1-renovate/renovate-logo.png
 tags: ['dépendances', 'renovate']
 ---
 
@@ -23,11 +23,14 @@ s'en occupe, avec parfois des incidences sur le projet.
 Le problème, c'est que ces dépendances, même si elles viennent d'une tierce partie font partie intégrante du projet, et
 peuvent même poser des risques de sécurité si elles ne sont pas maintenues correctement.
 
-Aussi lors de l'ajout d'une
-nouvelle fonctionnalité nécessitant par exemple une librairie externe, un développeur pourra se rendre compte que cette
-librairie n'est pas compatible avec un composant déjà installé, mais trop vieux, et soit être bloqué dans son travail,
-soit ralenti par une montée de version nécessaire mais non prévue initialement, nécessitant des tests de non régression
-qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
+Aussi lors de l'ajout d'une nouvelle fonctionnalité nécessitant par exemple une librairie externe, un développeur pourra
+se rendre compte que cette librairie n'est pas compatible avec un composant déjà installé, mais trop vieux, et soit être
+bloqué dans son travail, soit ralenti par une montée de version nécessaire mais non prévue initialement, nécessitant
+des tests de non régression qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
+
+| ![Développeur frontend essayant de mettre à jour un package.json vieux de 2 ans.](/blog/2024/1-renovate/jenga.jpg) | 
+|:--:| 
+| *Développeur frontend essayant de mettre à jour un package.json vieux de 2 ans.* |
 
 Généralement, c'est au dernier moment que les librairies ou autres composants logiciels sont mis à jour sur un projet.
 Par exemple, lorsque a été détectée la faille de sécurité associée à Log4J fin 2021, son caractère critique a nécessité
@@ -48,15 +51,15 @@ L'outil scannant régulièrement le dépôt, vous n'aurez pas à chercher manuel
 à jour disponibles à un moment donné, il le fera à votre place en vous fournissant des statistiques
 (taux d'adoption par exemple) de manière configurable.
 
-| [![Une pull request proposée par Renovate pour mettre à jour Angular Material](/blog/2024/1-renovate-article/update-pr-angular.png)](<https://github.com/ArnaudFlaesch/Dash-Web/pull/1038>) | 
-|:--:| 
-| *Une pull request proposée par Renovate pour mettre à jour Angular Material* |
-
 Les forces de Renovate sont sa facilité de prise en main, ne nécessitant que peu de temps d'installation et ses multiples
 options de configuration,vous permettant de le faire fonctionner à votre guise. Sur ce deuxième point, l'outil n'a pas
 pour but de complètement remplacer un développeur, mais de faciliter son travail en proposant des modifications au code
 via une pull request, mais en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
 que l'outil merge sans validation).
+
+| [![Une pull request proposée par Renovate pour mettre à jour Angular Material.](/blog/2024/1-renovate/update-pr-angular.png)](<https://github.com/ArnaudFlaesch/Dash-Web/pull/1038>) | 
+|:--:| 
+| *Une pull request proposée par Renovate pour mettre à jour Angular Material.* |
 
 Votre projet a sûrement un processus d'intégration continue que vous allez pouvoir utiliser avec cet outil. À chaque
 pull request de créée par Renovate et à chaque modification apportée à celle-ci, vos tests vont pouvoir s'exécuter
@@ -87,15 +90,58 @@ parmi lesquelles :
 ## Installation et utilisation ##
 
 Si vous utilisez Github, vous pouvez l'installer facilement en tant qu'application en vous rendant dans <https://github.com/settings/installations>.
-À partir de là, vous pouvez choisir les projets auxquels vous souhaitez ajouter l'outil.
+À partir de là, vous pouvez sélectionner les projets à analyser.
 
-Sur les autres plateformes, cela demandera un tout petit peu plus de configuration :
+Sur les autres plateformes, cela demandera un tout petit peu plus de configuration. Sans faire un tutoriel détaillé
+pour chacune d'entre elles, il vous faudra :
 
-* Sur Gitlab, ajouter gitlab ci, fichier config.js et token gitlab + github pour avoir les releases notes indiquées dans la PR
-* Sur bitbucket,
-* sur Azure
-* En entreprise, il existe une solution auto hébergée ? (on premise) ?
-* Il est également possible d'utiliser une chart helm avec un token, un fichier config avec la liste des projets
+* Un fichier config.js définissant entre autre la plateforme que vous utilisez
+* Un fichier .yml servant à la configuration d'un pipeline (.gitlab-ci.yml, azure-pipelines.yml, etc.)
+* Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accèder à vos dépôts
+* Un token Github, optionnel mais servant à récupérer les releases notes vous indiquant ce qui a changé entre deux versions
+
+Les différentes façons d'utiliser Renovate sont détaillées ici :
+<https://docs.renovatebot.com/getting-started/running/> et ici <https://docs.renovatebot.com/examples/self-hosting/>.
+
+Pour vous donner quand même un exemple, voici la configuration nécessaire pour Azure Devops :
+
+```
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+      checkLatest: true
+      displayName: 'Node Installation'
+
+  - bash: export GITHUB_COM_TOKEN=$(GITHUB_TOKEN) && npx renovate --endpoint https://dev.azure.com/$(PROJECT_GROUP_NAME) --token=$(AZURE_TOKEN)
+    displayName: 'Run renovate'
+```
+
+*Fichier azure-pipelines.yml*
+
+```
+module.exports = {
+  platform: 'azure',
+  logFileLevel: 'warn',
+  logLevel: 'info',
+  printConfig: true,
+  onboarding: true,
+  onboardingConfig: {
+    extends: ['config:base'],
+  }
+  gitAuthor: "Renovate Bot bot@renovateapp.com",
+
+  repositories: [
+    'HelloWorld',
+    'BonjourMonde'
+  ]
+}
+```
+
+*Fichier config.js*
 
 Une fois Renovate ajouté à un projet, une *onboarding pull request* sera créée sous peu pour ajouter un fichier
 de configuration basique et dès que celle-ci sera merge, le projet sera scanné régulièrement.
@@ -125,7 +171,6 @@ s'avèrera nécessaire pour comprendre ce qui doit être modifié.
 Côté frontend, cela peut être un peu plus complexe, car certains changements peuvent ne pas causer de
 problème de compilation mais effectuer des modifications visuelles, attention donc suivant les
 dépendances à potentiellement checkout la branche associée et tester correctement.
-
 
 Renovate peut être comparé à Snyk de par son fonctionnement et son utilité. Cependant, Renovate
 a pour but de vous proposer une nouvelle version dès que celle-ci est disponible alors que Snyk
