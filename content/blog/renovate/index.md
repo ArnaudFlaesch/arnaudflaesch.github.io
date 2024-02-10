@@ -15,7 +15,7 @@ logicielles associées au projet.
 Lorsqu'un projet logiciel démarre, il est créé par défaut avec un certains nombres de dépendances, surtout lorsqu'il s'agit
 par exemple d'un projet Node.JS qui va contenir une liste assez longue dans son fichier package.json.
 Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des dépendances supplémentaires, et cela peut entraîner
-des problèmes qui ne se déclareront qu'au dernier moment si celles-ci ne sont pas maintenues régulèrement.
+des problèmes qui ne se déclareront qu'au dernier moment si celles-ci ne sont pas maintenues régulièrement.
 
 Si le code *legacy* (code rédigé au début d'un projet devenu difficile à maintenir, nécessitant du refactoring) est
 généralement considéré comme de la dette technique et finit par être traité, il en est autre chose des nombreuses dépendances
@@ -28,9 +28,9 @@ Aussi lors de l'ajout d'une
 nouvelle fonctionnalité nécessitant par exemple une librairie externe, un développeur pourra se rendre compte que cette
 librairie n'est pas compatible avec un composant déjà installé, mais trop vieux, et soit être bloqué dans son travail,
 soit ralenti par une montée de version nécessaire mais non prévue initialement, nécessitant des tests de non régression
-qui, si ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
+qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
 
-Généralement, c'est au dernier moment que les librairies ou autres composants logiciels sont mises à jour sur un projet.
+Généralement, c'est au dernier moment que les librairies ou autres composants logiciels sont mis à jour sur un projet.
 Par exemple, lorsque a été détectée la faille de sécurité associée à Log4J fin 2021, son caractère critique a nécessité
 une mise à jour rapide sur le projet sur lequel je travaillais. Le problème c'est que cette mise à jour demandait d'autres
 montées de versions, notamment Spring, qui elle-même imposait plusieurs modifications dans le code et la configuration
@@ -55,7 +55,7 @@ L'outil scannant régulièrement le dépôt, vous n'aurez pas à chercher manuel
 
 Les forces de Renovate sont sa facilité de prise en main, ne nécessitant que peu de temps d'installation et ses multiples
 options de configuration,vous permettant de le faire fonctionner à votre guise. Sur ce deuxième point, l'outil n'a pas
-pour but de complétement remplacer un développeur, mais de facilier son travail en proposant des modifications au code
+pour but de complètement remplacer un développeur, mais de faciliter son travail en proposant des modifications au code
 via une pull request, mais en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
 que l'outil merge sans validation).
 
@@ -88,7 +88,7 @@ parmi lesquelles :
 ## Installation et utilisation ##
 
 Si vous utilisez Github, vous pouvez l'installer facilement en tant qu'application en vous rendant dans <https://github.com/settings/installations>.
-À partir de là, vous pouvez choisir les projets auxquels vous souhaitez rajouter l'outil.
+À partir de là, vous pouvez choisir les projets auxquels vous souhaitez ajouter l'outil.
 
 Sur les autres plateformes, cela demandera un tout petit peu plus de configuration :
 
@@ -99,20 +99,20 @@ Sur les autres plateformes, cela demandera un tout petit peu plus de configurati
 * Il est également possible d'utiliser une chart helm avec un token, un fichier config avec la liste des projets
 
 Une fois Renovate ajouté à un projet, une *onboarding pull request* sera créée sous peu pour ajouter un fichier
-de configuration minimal et dès que celle-ci sera merge, le projet sera scanné régulièrement.
+de configuration basique et dès que celle-ci sera merge, le projet sera scanné régulièrement.
 
 ## Quelques points importants ##
 
 Avec cet outil, on serait vite tenté dans un premier temps de merge dès qu'une pull request se présente
-pour avoir la dernière version en tout instant. En soi, il n'est jamais nécessaire d'avoir systèmatiquement
-les dernières fonctionnalités d'une libairie, mais surtout une version mineure qui n'ait pas trop de retard
-sur la dernière version disponible, pour anticiper une éventuelle montée de version nécessaire.
+pour avoir la dernière version en tout instant. En soi, il n'est jamais nécessaire d'avoir systématiquement
+les dernières fonctionnalités d'une librairie, mais surtout une version mineure qui n'ait pas trop de retard
+sur la dernière version disponible, pour anticiper une éventuelle mise à jour nécessaire.
 
 Intégrer la dernière version d'un composant dès sa sortie vous expose à des risques, comme par exemple
 celui d'être au final le beta-testeur de l'outil, car de nombreuses fois vous verrez qu'un correctif est
 déployé dans les heures ou jours qui suivent la livraison d'une nouvelle version majeure. De plus,
 vous risquez de vous rendre compte plus tard que d'autres composants que vous utilisez ne sont pas encore
-compatibles avec cette nouvelle version (surtout dans le cas d'une nouvelle version majeure) et risquez
+compatibles avec cette nouvelle version (surtout dans le cas d'une majeure) et risquez
 de devoir revenir en arrière.
 
 Le plus important est surtout d'avoir une suite de tests exécutés à chaque changement (comme lorsque vous
@@ -133,7 +133,7 @@ a pour but de vous proposer une nouvelle version dès que celle-ci est disponibl
 attendra qu'une faille de sécurité se présente pour vous proposer une mise à jour. Pour ma part
 je pense que les deux outils devraient être utilisés en même temps car ils se complètent, ainsi
 vous aurez des alertes de sécurité de Snyk plus facile à corriger car vous aurez déjà des dépendances
-suffisament à jour.
+suffisamment à jour.
 
 ## Conclusion ##
 
