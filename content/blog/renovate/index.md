@@ -3,19 +3,18 @@ title: Gérer ses dépendances logicielles facilement avec Renovate
 date: '2024-02-02T16:00'
 description: Comment maintenir les dépendances d'un projet logiciel de manière sûre et rapide grâce à un outil automatisé.
 image: 2024/1-renovate-article/jenga.jpg
-tags: ['dépendances', 'intégration continue']
+tags: ['dépendances', 'renovate']
 ---
 
 Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, concentré sur l'ajout de nouvelles fonctionnalités,
-de tests, de corrections de bugs, mais en négligeant de maintenir à jour fréquemment les dépendances
-logicielles associées au projet.
+de tests, de corrections de bugs, mais en négligeant de maintenir à jour fréquemment les dépendances associées au projet.
 
 ## La situation ##
 
 Lorsqu'un projet logiciel démarre, il est créé par défaut avec un certains nombres de dépendances, surtout lorsqu'il s'agit
 par exemple d'un projet Node.JS qui va contenir une liste assez longue dans son fichier package.json.
-Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des dépendances supplémentaires, et cela peut entraîner
-des problèmes qui ne se déclareront qu'au dernier moment si celles-ci ne sont pas maintenues régulièrement.
+Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des composants supplémentaires, et cela peut entraîner
+des problèmes qui ne se déclareront qu'au dernier moment si ils ne sont pas maintenus régulièrement.
 
 Si le code *legacy* (code rédigé au début d'un projet devenu difficile à maintenir, nécessitant du refactoring) est
 généralement considéré comme de la dette technique et finit par être traité, il en est autre chose des nombreuses dépendances
@@ -41,7 +40,7 @@ Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être 
 
 C'est là qu'intervient Renovate, un outil créé par Mend (article non sponsorisé) pour aider les développeurs à maintenir
 les dépendances d'un projet, de manière incrémentale et configurable.
-Renovate va analyser le dépôt dans lequel se trouve le code source, détecter les fichiers de configuration de dépendances
+L'outil va analyser le dépôt dans lequel se trouve le code source, détecter les fichiers de configuration de dépendances
 (package.json, pom.xml, etc.) ainsi que les autres outils intégrant des versions (Dockerfile, Gradle wrapper,
 configuration Yaml d'une Action Github, etc.) et proposer des mise à jour sous la forme de *pull requests*, avec
 au passage des notes de releases indiquant les modifications apportées par la nouvelle version.
