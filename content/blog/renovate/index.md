@@ -22,7 +22,9 @@ généralement considéré comme de la dette technique et finit par être trait�
 car les développeurs ont tendance à les oublier une fois installées et elles peuvent mettre des années avant que quelqu'un
 s'en occupe, avec parfois des incidences sur le projet.
 Le problème, c'est que ces dépendances, même si elles viennent d'une tierce partie font partie intégrante du projet, et
-peuvent même poser des risques de sécurité si elles ne sont pas maintenues correctement. Aussi lors de l'ajout d'une
+peuvent même poser des risques de sécurité si elles ne sont pas maintenues correctement.
+
+Aussi lors de l'ajout d'une
 nouvelle fonctionnalité nécessitant par exemple une librairie externe, un développeur pourra se rendre compte que cette
 librairie n'est pas compatible avec un composant déjà installé, mais trop vieux, et soit être bloqué dans son travail,
 soit ralenti par une montée de version nécessaire mais non prévue initialement, nécessitant des tests de non régression
@@ -34,7 +36,6 @@ une mise à jour rapide sur le projet sur lequel je travaillais. Le problème c'
 montées de versions, notamment Spring, qui elle-même imposait plusieurs modifications dans le code et la configuration
 du projet de part le décalage entre la version que nous utilisions et la version compatible avec le correctif Log4J.
 Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être évité avec des mises à jour régulières.
-
 
 ## Renovate ##
 
@@ -57,6 +58,7 @@ options de configuration,vous permettant de le faire fonctionner à votre guise.
 pour but de complétement remplacer un développeur, mais de facilier son travail en proposant des modifications au code
 via une pull request, mais en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
 que l'outil merge sans validation).
+
 Votre projet a sûrement un processus d'intégration continue que vous allez pouvoir utiliser avec cet outil. À chaque
 pull request de créée par Renovate et à chaque modification apportée à celle-ci, vos tests vont pouvoir s'exécuter
 sur cette nouvelle version et vérifier qu'il n'y a aucune régression dans le code. Ils vont aussi pouvoir détecter en avance
@@ -66,7 +68,8 @@ la pull request pour intégrer les changements.
 
 ## La gestion sémantique de version ##
 
-La version d'un composant logiciel est généralement constituée de trois numéros formés de telle sorte: x.y.z (exemple : 4.2.30).
+La version d'un composant logiciel est généralement constituée de trois numéros formés de telle sorte: majeur.mineur.correctif
+(exemple : 4.2.30).
 Dans cet exemple, 4 désigne la version majeure, 2 la version mineure et 30 la version de correctif
 (respectivement major, minor et patch en anglais). Si un composant logiciel veut respecter la gestion sémantique de version,
 notamment pour aider d'éventuels utilisateurs à mieux gérer leurs dépendances, il doit respecter un certain nombre de règles,
@@ -104,6 +107,7 @@ Avec cet outil, on serait vite tenté dans un premier temps de merge dès qu'une
 pour avoir la dernière version en tout instant. En soi, il n'est jamais nécessaire d'avoir systèmatiquement
 les dernières fonctionnalités d'une libairie, mais surtout une version mineure qui n'ait pas trop de retard
 sur la dernière version disponible, pour anticiper une éventuelle montée de version nécessaire.
+
 Intégrer la dernière version d'un composant dès sa sortie vous expose à des risques, comme par exemple
 celui d'être au final le beta-testeur de l'outil, car de nombreuses fois vous verrez qu'un correctif est
 déployé dans les heures ou jours qui suivent la livraison d'une nouvelle version majeure. De plus,
@@ -115,6 +119,7 @@ Le plus important est surtout d'avoir une suite de tests exécutés à chaque ch
 ajoutez une nouvelle fonctionnalité) qui valide le bon fonctionnement de votre application. Si les tests passent,
 vous pouvez considérer que la pull request peut être merge sans problème. Si vous vous rendez compte qu'il y a un
 bug après le merge, c'est qu'il manquait un test :).
+
 Dans le cas des dépendances backend, un changement dans l'API du composant mis à jour se traduira souvent par un test
 en erreur ou une compilation du projet en échec. Une lecture des *release notes* affichée dans la pull request
 s'avèrera nécessaire pour comprendre ce qui doit être modifié.
