@@ -95,17 +95,17 @@ Si vous utilisez Github, vous pouvez l'installer facilement en tant qu'applicati
 Sur les autres plateformes, cela demandera un tout petit peu plus de configuration. Sans faire un tutoriel détaillé
 pour chacune d'entre elles, il vous faudra :
 
-* Un fichier config.js définissant entre autre la plateforme que vous utilisez
-* Un fichier .yml servant à la configuration d'un pipeline (.gitlab-ci.yml, azure-pipelines.yml, etc.)
-* Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accèder à vos dépôts
-* Un token Github, optionnel mais servant à récupérer les releases notes vous indiquant ce qui a changé entre deux versions
+* Un fichier config.js définissant entre autre la plateforme que vous utilisez.
+* Un fichier .yml servant à la configuration d'un pipeline (.gitlab-ci.yml, azure-pipelines.yml, etc.).
+* Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accèder à vos dépôts.
+* Un token Github, optionnel mais servant à récupérer les releases notes vous indiquant ce qui a changé entre deux versions.
 
 Les différentes façons d'utiliser Renovate sont détaillées ici :
 <https://docs.renovatebot.com/getting-started/running/> et ici <https://docs.renovatebot.com/examples/self-hosting/>.
 
 Pour vous donner quand même un exemple, voici la configuration nécessaire pour Azure Devops :
 
-```
+```yml
 pool:
   vmImage: ubuntu-latest
 
@@ -122,7 +122,7 @@ steps:
 
 *Fichier azure-pipelines.yml*
 
-```
+```js
 module.exports = {
   platform: 'azure',
   logFileLevel: 'warn',
@@ -143,8 +143,10 @@ module.exports = {
 
 *Fichier config.js*
 
-Une fois Renovate ajouté à un projet, une *onboarding pull request* sera créée sous peu pour ajouter un fichier
-de configuration basique et dès que celle-ci sera merge, le projet sera scanné régulièrement.
+Vous pouvez créer ces deux fichiers dans un dépôt à part, créer les variables d'environnement nécessaires,
+lancer le pipeline et Renovate analysera les dépôts définits dans *repositories*. Ensuite vous pourrez ajouter
+par exemple un schedule dans le fichier azure-pipelines.yml pour que le pipeline se lance régulièrement.
+
 
 ## Quelques points importants ##
 
