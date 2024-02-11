@@ -3,50 +3,46 @@ title: Gérer ses dépendances logicielles facilement avec Renovate
 date: '2024-02-10T16:00'
 description: Comment maintenir les dépendances d'un projet logiciel de manière sûre et rapide grâce à un outil automatisé.
 image: 2024/1-renovate/renovate-logo.png
-tags: ['dépendances', 'renovate']
+tags: ['Dépendances', 'Renovate', 'Sécurité logicielle']
 ---
 
 Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, concentré sur l'ajout de nouvelles fonctionnalités,
-de tests, de corrections de bugs, mais en négligeant de maintenir à jour fréquemment les dépendances associées au projet.
+de tests, de corrections de bugs, mais en négligeant de maintenir à jour régulièrement les dépendances associées au projet.
 
-## La situation ##
+## Le contexte ##
 
 Lorsqu'un projet logiciel démarre, il est créé par défaut avec un certains nombres de dépendances, surtout lorsqu'il s'agit
 par exemple d'un projet Node.JS qui va contenir une liste assez longue dans son fichier package.json.
-Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des composants supplémentaires, et cela peut entraîner
-des problèmes qui ne se déclareront qu'au dernier moment si ils ne sont pas maintenus régulièrement.
+Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des dépendances supplémentaires, et cela peut entraîner
+des problèmes qui ne se déclareront qu'au dernier moment si elles ne sont pas maintenues régulièrement, tels que des
+failles de sécurité.
 
-Si le code *legacy* (code rédigé au début d'un projet devenu difficile à maintenir, nécessitant du refactoring) est
-généralement considéré comme de la dette technique et finit par être traité, il en est autre chose des nombreuses dépendances
-car les développeurs ont tendance à les oublier une fois installées et elles peuvent mettre des années avant que quelqu'un
-s'en occupe, avec parfois des incidences sur le projet.
-Le problème, c'est que ces dépendances, même si elles viennent d'une tierce partie font partie intégrante du projet, et
-peuvent même poser des risques de sécurité si elles ne sont pas maintenues correctement.
+Par exemple, lorsque la faille de sécurité associée à Log4J a été détectée fin 2021, son caractère critique a nécessité
+une mise à jour rapide sur le projet sur lequel je travaillais. Le problème c'est que cette mise à jour demandait d'autres
+montées de versions, notamment Spring, qui elle-même imposait plusieurs modifications dans notre code et la configuration
+du projet à cause du décalage entre la version que nous utilisions et la version compatible avec le correctif Log4J.
+Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être évité avec des mises à jour régulières.
 
-Aussi lors de l'ajout d'une nouvelle fonctionnalité nécessitant par exemple une librairie externe, un développeur pourra
+Les dépendances font au final partie intégrante d'un projet, même si elles proviennent d'une tierce partie, et peuvent
+devenir avec le temps similaires à du code legacy.
+Aussi lors de l'ajout d'une nouvelle fonctionnalité pouvant nécessiter une librairie externe, un développeur pourra
 se rendre compte que cette librairie n'est pas compatible avec un composant déjà installé, mais trop vieux, et soit être
 bloqué dans son travail, soit ralenti par une montée de version nécessaire mais non prévue initialement, nécessitant
 des tests de non régression qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
 
-| ![Développeur frontend essayant de mettre à jour un package.json vieux de 2 ans.](/blog/2024/1-renovate/jenga.jpg) | 
+| ![Personne en train de jouer à Jenga.](/blog/2024/1-renovate/jenga.jpg) | 
 |:--:| 
 | *Développeur frontend essayant de mettre à jour un package.json vieux de 2 ans.* |
 
-Généralement, c'est au dernier moment que les librairies ou autres composants logiciels sont mis à jour sur un projet.
-Par exemple, lorsque a été détectée la faille de sécurité associée à Log4J fin 2021, son caractère critique a nécessité
-une mise à jour rapide sur le projet sur lequel je travaillais. Le problème c'est que cette mise à jour demandait d'autres
-montées de versions, notamment Spring, qui elle-même imposait plusieurs modifications dans le code et la configuration
-du projet de part le décalage entre la version que nous utilisions et la version compatible avec le correctif Log4J.
-Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être évité avec des mises à jour régulières.
 
-## Renovate ##
+## Présentation de Renovate ##
 
-C'est là qu'intervient Renovate, un outil créé par Mend (article non sponsorisé) pour aider les développeurs à maintenir
-les dépendances d'un projet, de manière incrémentale et configurable.
+C'est sur le maintien de ces dépendances qu'intervient Renovate, un outil créé par Mend (article non sponsorisé)
+pour aider les développeurs à maintenir leurs projets à jour, de manière incrémentale et configurable.
 L'outil va analyser le dépôt dans lequel se trouve le code source, détecter les fichiers de configuration de dépendances
 (package.json, pom.xml, etc.) ainsi que les autres outils intégrant des versions (Dockerfile, Gradle wrapper,
-configuration Yaml d'une Action Github, etc.) et proposer des mise à jour sous la forme de *pull requests*, avec
-au passage des notes de releases indiquant les modifications apportées par la nouvelle version.
+configuration Yaml d'une Action Github, etc.) et proposer des mise à jour sous la forme de pull requests, avec
+au passage des releases notes indiquant les modifications apportées par la nouvelle version.
 L'outil scannant régulièrement le dépôt, vous n'aurez pas à chercher manuellement et régulièrement quelles sont les mise
 à jour disponibles à un moment donné, il le fera à votre place en vous fournissant des statistiques
 (taux d'adoption par exemple) de manière configurable.
@@ -54,56 +50,57 @@ L'outil scannant régulièrement le dépôt, vous n'aurez pas à chercher manuel
 Les forces de Renovate sont sa facilité de prise en main, ne nécessitant que peu de temps d'installation et ses multiples
 options de configuration,vous permettant de le faire fonctionner à votre guise. Sur ce deuxième point, l'outil n'a pas
 pour but de complètement remplacer un développeur, mais de faciliter son travail en proposant des modifications au code
-via une pull request, mais en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
-que l'outil merge sans validation).
+via une pull request, tout en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
+que l'outil merge sans approbation).
 
-| [![Une pull request proposée par Renovate pour mettre à jour Angular Material.](/blog/2024/1-renovate/update-pr-angular.png)](<https://github.com/ArnaudFlaesch/Dash-Web/pull/1038>) | 
+| [![Pull request de Renovate sur Github.](/blog/2024/1-renovate/update-pr-angular.png)](<https://github.com/ArnaudFlaesch/Dash-Web/pull/1038>) | 
 |:--:| 
 | *Une pull request proposée par Renovate pour mettre à jour Angular Material.* |
 
 Votre projet a sûrement un processus d'intégration continue que vous allez pouvoir utiliser avec cet outil. À chaque
-pull request de créée par Renovate et à chaque modification apportée à celle-ci, vos tests vont pouvoir s'exécuter
-sur cette nouvelle version et vérifier qu'il n'y a aucune régression dans le code. Ils vont aussi pouvoir détecter en avance
-les changements dans l'API de la librairie mise à jour, suite à quoi un développeur pourra faire les modifications nécessaires.
+pull request créée par Renovate, vos tests vont pouvoir s'exécuter sur cette nouvelle version et vérifier que
+le projet fonctionne toujours correctement. Si ce n'est pas le cas, c'est sans doute qu'il y a eu un ou plusieurs
+changements dans l'API de la librairie mise à jour et un développeur pourra faire les modifications nécessaires en s'appuyant
+sur les releases notes affichées dans la PR.
 Ensuite, une fois les changements validés par l'intégration continue et les développeurs, il ne vous restera plus qu'à valider
-la pull request pour intégrer les changements.
+la pull request pour intégrer la nouvelle version.
 
 ## La gestion sémantique de version ##
 
+Pour comprendre la façon avec laquelle sont versionnés les logiciels, voici une brève explication de la gestion sémantique
+de version (*SemVer* en anglais).
 La version d'un composant logiciel est généralement constituée de trois numéros formés de telle sorte: majeur.mineur.correctif
 (exemple : 4.2.30).
-Dans cet exemple, 4 désigne la version majeure, 2 la version mineure et 30 la version de correctif
-(respectivement major, minor et patch en anglais). Si un composant logiciel veut respecter la gestion sémantique de version,
-notamment pour aider d'éventuels utilisateurs à mieux gérer leurs dépendances, il doit respecter un certain nombre de règles,
-parmi lesquelles :
+Dans cet exemple, 4 désigne la version majeure, 2 la version mineure et 30 la version de correctif (respectivement *major*,
+*minor* et *patch* en anglais). Si un composant logiciel veut respecter *SemVer*, notamment pour aider d'éventuels
+utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nombre de règles, parmi lesquelles :
 
 * Déclarer une API publique.
 * Respecter le format majeur.mineur.correctif.
-* Incrémenter le nombre associé au correctif lorsqu'un correctif rétrocompatible est introduit.
-
+* Incrémenter le nombre associé au correctif lorsqu'une correction rétrocompatible est introduite.
 * Incrémenter le nombre associé à la version mineure lorsqu'une nouvelle fonctionnalité rétrocompatible est introduite dans l'API publique. Le nombre associé au correctif est remis à 0.
-
 * Incrémenter le nombre associé à la version majeure lorsqu'une nouvelle fonctionnalité non rétrocompatible est introduite dans l'API publique. Les nombres associés à la version mineure et au correctif sont remis à 0.
+* Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les nombres correctement incrémentés.
 
-* Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les numéros de versions correctement incrémentés.
-
-## Installation et utilisation ##
+## Installation et utilisation de Renovate ##
 
 Si vous utilisez Github, vous pouvez l'installer facilement en tant qu'application en vous rendant dans <https://github.com/settings/installations>.
-À partir de là, vous pouvez sélectionner les projets à analyser.
+À partir de là, vous pourrez sélectionner les projets à analyser.
 
 Sur les autres plateformes, cela demandera un tout petit peu plus de configuration. Sans faire un tutoriel détaillé
 pour chacune d'entre elles, il vous faudra :
 
 * Un fichier config.js définissant entre autre la plateforme que vous utilisez.
 * Un fichier .yml servant à la configuration d'un pipeline (.gitlab-ci.yml, azure-pipelines.yml, etc.).
-* Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accèder à vos dépôts.
+* Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accéder à vos dépôts.
 * Un token Github, optionnel mais servant à récupérer les releases notes vous indiquant ce qui a changé entre deux versions.
 
 Les différentes façons d'utiliser Renovate sont détaillées ici :
 <https://docs.renovatebot.com/getting-started/running/> et ici <https://docs.renovatebot.com/examples/self-hosting/>.
 
-Pour vous donner quand même un exemple, voici la configuration nécessaire pour Azure Devops :
+Pour vous donner un exemple, voici la configuration nécessaire pour Azure Devops :
+
+#### **`azure-pipelines.yml`**
 
 ```yml
 pool:
@@ -120,7 +117,7 @@ steps:
     displayName: 'Run renovate'
 ```
 
-*Fichier azure-pipelines.yml*
+#### **`config.js`**
 
 ```js
 module.exports = {
@@ -141,57 +138,55 @@ module.exports = {
 }
 ```
 
-*Fichier config.js*
-
 Vous pouvez créer ces deux fichiers dans un dépôt à part, créer les variables d'environnement nécessaires,
-lancer le pipeline et Renovate analysera les dépôts définits dans *repositories*. Ensuite vous pourrez ajouter
-par exemple un schedule dans le fichier azure-pipelines.yml pour que le pipeline se lance régulièrement.
+lancer le pipeline et Renovate analysera les dépôts définis dans *repositories*. Ensuite vous pourrez ajouter
+un schedule dans le fichier azure-pipelines.yml pour que le pipeline se lance régulièrement.
+
+Pour aller plus loin, vous pouvez modifier la configuration par défaut en modifiant le fichier renovate.json
+présent dans chaque projet analysé en ajoutant des options telles que :
+
+* *reviewers* pour renseigner les utilisateurs assignés aux PR créées.
+* *packageRules* pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne pas créer des PR séparées à chaque fois.
+* *automerge* pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des dépendances, mais associée à *packageRules* par exemple, cela vous permet de merge automatiquement certains outils mineurs comme les *types* des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
 
 
 ## Quelques points importants ##
 
 Avec cet outil, on serait vite tenté dans un premier temps de merge dès qu'une pull request se présente
-pour avoir la dernière version en tout instant. En soi, il n'est jamais nécessaire d'avoir systématiquement
-les dernières fonctionnalités d'une librairie, mais surtout une version mineure qui n'ait pas trop de retard
+pour avoir tout le temps la dernière version des frameworks et librairies. En soi, il n'est jamais nécessaire d'avoir systématiquement
+les dernières fonctionnalités, mais surtout une version mineure qui n'ait pas trop de retard
 sur la dernière version disponible, pour anticiper une éventuelle mise à jour nécessaire.
 
 Intégrer la dernière version d'un composant dès sa sortie vous expose à des risques, comme par exemple
 celui d'être au final le beta-testeur de l'outil, car de nombreuses fois vous verrez qu'un correctif est
 déployé dans les heures ou jours qui suivent la livraison d'une nouvelle version majeure. De plus,
-vous risquez de vous rendre compte plus tard que d'autres composants que vous utilisez ne sont pas encore
+vous pourriez vous rendre compte plus tard que d'autres dépendances que vous utilisez ne sont pas encore
 compatibles avec cette nouvelle version (surtout dans le cas d'une majeure) et risquez
 de devoir revenir en arrière.
 
 Le plus important est surtout d'avoir une suite de tests exécutés à chaque changement (comme lorsque vous
 ajoutez une nouvelle fonctionnalité) qui valide le bon fonctionnement de votre application. Si les tests passent,
-vous pouvez considérer que la pull request peut être merge sans problème. Si vous vous rendez compte qu'il y a un
+vous pouvez considérer que la pull request peut être validée sans problème. Si vous vous rendez compte qu'il y a un
 bug après le merge, c'est qu'il manquait un test :).
 
-Dans le cas des dépendances backend, un changement dans l'API du composant mis à jour se traduira souvent par un test
-en erreur ou une compilation du projet en échec. Une lecture des *release notes* affichée dans la pull request
-s'avèrera nécessaire pour comprendre ce qui doit être modifié.
-Côté frontend, cela peut être un peu plus complexe, car certains changements peuvent ne pas causer de
-problème de compilation mais effectuer des modifications visuelles, attention donc suivant les
-dépendances à potentiellement checkout la branche associée et tester correctement.
-
-Renovate peut être comparé à Snyk de par son fonctionnement et son utilité. Cependant, Renovate
+Renovate peut être comparé à Snyk de par son fonctionnement et son utilité. Cependant il
 a pour but de vous proposer une nouvelle version dès que celle-ci est disponible alors que Snyk
 attendra qu'une faille de sécurité se présente pour vous proposer une mise à jour. Pour ma part
 je pense que les deux outils devraient être utilisés en même temps car ils se complètent, ainsi
 vous aurez des alertes de sécurité de Snyk plus facile à corriger car vous aurez déjà des dépendances
-suffisamment à jour.
+suffisamment récentes.
 
 ## Conclusion ##
 
-Renovate est un outil facile à utiliser, ne demandant pas beaucoup de configuration
-et permettant d'enlever une charge de travail laborieuse mais nécessaire aux développeurs.
-Utilisé avec une intégration continue robuste, il vous permettra de maintenir vos
-dépendances à jour sereinement pour éviter les rushs de dernière minute quand il n'y
-a plus d'autres solutions que de faire une montée de version. // @TODO
-Pour ma part, je l'utilise sur mes projets personnels car cela me permet de ne pas avoir
-à faire toutes les mises à jour d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;).
-J'incite également les équipes avec lesquelles je travaille à l'installer, ayant fait face
-à des situations professionnelles où ce genre d'outil aurait fait gagner du temps.
+Renovate est un outil facile à utiliser, ne demandant pas beaucoup de configuration et permettant d'enlever une
+ charge de travail laborieuse mais nécessaire aux développeurs.
+Utilisé avec une intégration continue fiable, il vous permettra de maintenir vos dépendances sereinement pour éviter
+d'accumuler les retards de version et devoir tout mettre à jour au dernier moment.
+Pour ma part, je l'utilise sur mes projets personnels car cela me permet de ne pas avoir à faire toutes les mises
+à jour d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;).
+J'incite également les équipes avec lesquelles je travaille à l'installer, ayant fait face à des situations
+professionnelles où ce genre d'outil aurait fait gagner du temps, et je vous invite à l'essayer pour que les montées
+de versions ne soient plus un évènement pour vous !
 
 ## Liens utiles ##
 
