@@ -13,7 +13,7 @@ de tests, de corrections de bugs, mais en négligeant de maintenir à jour régu
 
 Lorsqu'un projet logiciel démarre, il est créé par défaut avec un certains nombres de dépendances, surtout lorsqu'il s'agit
 par exemple d'une application Node.JS qui va contenir une liste assez longue dans son fichier package.json.
-Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des dépendances supplémentaires, et cela peut entraîner
+Au fil du temps les fonctionnalités ajoutées au projet vont nécessiter des dépendances supplémentaires, et cela peut entraîner
 des problèmes qui ne se déclareront qu'au dernier moment si elles ne sont pas maintenues régulièrement.
 
 Par exemple, lorsque la faille de sécurité associée à Log4J a été détectée fin 2021, son caractère critique a nécessité
@@ -22,11 +22,11 @@ montées de versions, notamment Spring, qui elle-même imposait plusieurs modifi
 du projet à cause du décalage entre la version que nous utilisions et celle compatible avec le correctif Log4J.
 Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être évité avec des mises à jour régulières.
 
-Les dépendances font au final partie intégrante d'un projet, même si elles proviennent d'une tierce partie, et peuvent
+Les dépendances font au final partie intégrante d'un projet même si elles proviennent d'une tierce partie, et peuvent
 devenir avec le temps similaires à du code legacy.
 Aussi lors de l'ajout d'une nouvelle fonctionnalité pouvant nécessiter une librairie externe, un développeur pourra
-se rendre compte que cette librairie n'est pas compatible avec un composant déjà installé, mais trop vieux, et soit être
-bloqué dans son travail, soit ralenti par une montée de version nécessaire mais non prévue initialement, nécessitant
+se rendre compte que cette librairie n'est pas compatible avec un composant déjà installé, mais trop vieux. À ce moment là,
+il sera soit bloqué dans son travail, soit ralenti par une montée de version nécessaire mais non prévue initialement nécessitant
 des tests de non régression qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
 
 | ![Personne en train de jouer à Jenga.](/blog/2024/1-renovate/jenga.jpg) | 
@@ -37,7 +37,7 @@ des tests de non régression qui, s'ils ne sont pas fait, pourront laisser passe
 ## Présentation de Renovate ##
 
 C'est sur le maintien de ces dépendances qu'intervient Renovate, un outil créé par Mend (article non sponsorisé)
-pour aider les développeurs à maintenir leurs projets à jour, de manière incrémentale et configurable.
+pour aider les développeurs à maintenir leurs projets à jour de manière incrémentale et configurable.
 L'outil va analyser le dépôt dans lequel se trouve le code source, détecter les fichiers de configuration de dépendances
 (package.json, pom.xml, etc.) ainsi que les autres outils intégrant des versions (Dockerfile, Gradle wrapper,
 configuration Yaml d'une Action Github, etc.) et proposer des mise à jour sous la forme de pull requests, avec
@@ -47,9 +47,9 @@ L'outil scannant régulièrement le dépôt, vous n'aurez pas à chercher manuel
 (taux d'adoption par exemple) de manière configurable.
 
 Les forces de Renovate sont sa facilité de prise en main, ne nécessitant que peu de temps d'installation et ses multiples
-options de configuration,vous permettant de le faire fonctionner à votre guise. Sur ce deuxième point, l'outil n'a pas
+options de configuration, vous permettant de le faire fonctionner à votre guise. Sur ce deuxième point, l'outil n'a pas
 pour but de complètement remplacer un développeur, mais de faciliter son travail en proposant des modifications au code
-via une pull request, tout en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
+via une pull request tout en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
 que l'outil merge sans approbation).
 
 | [![Pull request de Renovate sur Github.](/blog/2024/1-renovate/update-pr-angular.png)](<https://github.com/ArnaudFlaesch/Dash-Web/pull/1038>) | 
@@ -71,7 +71,7 @@ de version (*SemVer* en anglais).
 La version d'un composant logiciel est généralement constituée de trois numéros formés de telle sorte: majeur.mineur.correctif
 (exemple : 4.2.30).
 Si un composant logiciel veut respecter *SemVer*, notamment pour aider d'éventuels
-utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nombre de règles, parmi lesquelles :
+utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nombre de règles parmi lesquelles :
 
 * Déclarer une API publique.
 * Respecter le format majeur.mineur.correctif.
@@ -139,6 +139,8 @@ module.exports = {
 Vous pouvez créer ces deux fichiers dans un dépôt à part, créer les variables d'environnement nécessaires,
 lancer le pipeline et Renovate analysera les dépôts définis dans *repositories*. Ensuite vous pourrez ajouter
 un schedule dans le fichier azure-pipelines.yml pour que le pipeline se lance régulièrement.
+Sur Gitlab, le processus sera assez similaire et vous devrez créer un fichier *.gitlab-ci.yml* à la place
+de celui pour le pipeline Azure.
 
 Pour aller plus loin, vous pouvez modifier la configuration par défaut en modifiant le fichier renovate.json
 présent dans chaque projet analysé en ajoutant des options telles que :
@@ -152,17 +154,17 @@ présent dans chaque projet analysé en ajoutant des options telles que :
 
 Avec cet outil, on serait vite tenté dans un premier temps de merge dès qu'une pull request se présente
 pour avoir tout le temps la dernière version des frameworks et librairies. En soi, il n'est jamais nécessaire d'avoir systématiquement
-les dernières fonctionnalités, mais surtout une version mineure qui n'ait pas trop de retard
-sur la dernière disponible, pour anticiper une éventuelle mise à jour nécessaire.
+les dernières fonctionnalités, mais plutôt une version mineure qui n'ait pas trop de retard
+sur la dernière disponible pour anticiper une éventuelle mise à jour nécessaire.
 
 Intégrer la dernière version majeure d'un composant dès sa sortie vous expose à des risques, comme par exemple
-celui d'être au final le beta-testeur de l'outil, car de nombreuses fois vous verrez qu'un correctif est
+celui d'être au final le beta-testeur de l'outil. De nombreuses fois vous verrez qu'un correctif est
 déployé dans les heures ou jours qui suivent sa release. De plus, vous pourriez vous rendre compte plus tard que
 d'autres dépendances que vous utilisez ne sont pas encore compatibles avec cette nouvelle
 release et risquez de devoir revenir en arrière.
 
 Le plus important est surtout d'avoir une suite de tests exécutés à chaque changement (comme lorsque vous
-ajoutez une nouvelle fonctionnalité) qui valide le bon fonctionnement de votre application. Si les tests passent,
+ajoutez une nouvelle fonctionnalité à votre application) qui valide le bon fonctionnement de celle-ci. Si les tests passent,
 vous pouvez considérer que la pull request peut être validée sans problème. Si vous vous rendez compte qu'il y a un
 bug après le merge, c'est qu'il manquait un test :).
 
@@ -175,14 +177,14 @@ suffisamment récentes.
 
 ## Conclusion ##
 
-Renovate est un outil facile à utiliser, ne demandant pas beaucoup de configuration et permettant d'enlever une
- charge de travail laborieuse mais nécessaire aux développeurs.
+Renovate est un outil facile à mettre en place, ne demandant pas beaucoup de configuration et permettant d'enlever une
+partie de la charge de travail des développeurs.
 Utilisé avec une intégration continue fiable, il vous permettra de maintenir vos dépendances sereinement pour éviter
 d'accumuler les retards de version et devoir tout mettre à jour au dernier moment.
 
 Pour ma part je l'utilise sur mes projets personnels car cela me permet de ne pas avoir à faire toutes les mises
-à jour d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;).
-Je vous invite à l'essayer pour que les montées de versions ne soient plus un évènement pour vous !
+à jour d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;) et je vous
+invite à l'essayer pour que les montées de versions ne soient plus un évènement pour vous !
 
 ## Liens utiles ##
 
