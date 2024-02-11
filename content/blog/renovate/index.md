@@ -1,7 +1,7 @@
 ---
 title: Gérer ses dépendances logicielles facilement avec Renovate
 date: '2024-02-10T16:00'
-description: Comment maintenir les dépendances d'un projet logiciel de manière sûre et rapide grâce à un outil automatisé.
+description: Comment maintenir les dépendances d'un logiciel de manière sûre et rapide grâce à un outil automatisé.
 image: 2024/1-renovate/renovate-logo.png
 tags: ['Dépendances', 'Renovate', 'Sécurité logicielle']
 ---
@@ -12,15 +12,14 @@ de tests, de corrections de bugs, mais en négligeant de maintenir à jour régu
 ## Le contexte ##
 
 Lorsqu'un projet logiciel démarre, il est créé par défaut avec un certains nombres de dépendances, surtout lorsqu'il s'agit
-par exemple d'un projet Node.JS qui va contenir une liste assez longue dans son fichier package.json.
+par exemple d'une application Node.JS qui va contenir une liste assez longue dans son fichier package.json.
 Au fil du temps, les fonctionnalités ajoutées au projet vont nécessiter des dépendances supplémentaires, et cela peut entraîner
-des problèmes qui ne se déclareront qu'au dernier moment si elles ne sont pas maintenues régulièrement, tels que des
-failles de sécurité.
+des problèmes qui ne se déclareront qu'au dernier moment si elles ne sont pas maintenues régulièrement.
 
 Par exemple, lorsque la faille de sécurité associée à Log4J a été détectée fin 2021, son caractère critique a nécessité
-une mise à jour rapide sur le projet sur lequel je travaillais. Le problème c'est que cette mise à jour demandait d'autres
+une mise à jour rapide sur l'application sur laquelle je travaillais. Le problème c'est que cette mise à jour demandait d'autres
 montées de versions, notamment Spring, qui elle-même imposait plusieurs modifications dans notre code et la configuration
-du projet à cause du décalage entre la version que nous utilisions et la version compatible avec le correctif Log4J.
+du projet à cause du décalage entre la version que nous utilisions et celle compatible avec le correctif Log4J.
 Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être évité avec des mises à jour régulières.
 
 Les dépendances font au final partie intégrante d'un projet, même si elles proviennent d'une tierce partie, et peuvent
@@ -63,7 +62,7 @@ le projet fonctionne toujours correctement. Si ce n'est pas le cas, c'est sans d
 changements dans l'API de la librairie mise à jour et un développeur pourra faire les modifications nécessaires en s'appuyant
 sur les releases notes affichées dans la PR.
 Ensuite, une fois les changements validés par l'intégration continue et les développeurs, il ne vous restera plus qu'à valider
-la pull request pour intégrer la nouvelle version.
+la pull request pour mettre à jour la dépendance.
 
 ## La gestion sémantique de version ##
 
@@ -71,8 +70,7 @@ Pour comprendre la façon avec laquelle sont versionnés les logiciels, voici un
 de version (*SemVer* en anglais).
 La version d'un composant logiciel est généralement constituée de trois numéros formés de telle sorte: majeur.mineur.correctif
 (exemple : 4.2.30).
-Dans cet exemple, 4 désigne la version majeure, 2 la version mineure et 30 la version de correctif (respectivement *major*,
-*minor* et *patch* en anglais). Si un composant logiciel veut respecter *SemVer*, notamment pour aider d'éventuels
+Si un composant logiciel veut respecter *SemVer*, notamment pour aider d'éventuels
 utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nombre de règles, parmi lesquelles :
 
 * Déclarer une API publique.
@@ -155,14 +153,13 @@ présent dans chaque projet analysé en ajoutant des options telles que :
 Avec cet outil, on serait vite tenté dans un premier temps de merge dès qu'une pull request se présente
 pour avoir tout le temps la dernière version des frameworks et librairies. En soi, il n'est jamais nécessaire d'avoir systématiquement
 les dernières fonctionnalités, mais surtout une version mineure qui n'ait pas trop de retard
-sur la dernière version disponible, pour anticiper une éventuelle mise à jour nécessaire.
+sur la dernière disponible, pour anticiper une éventuelle mise à jour nécessaire.
 
-Intégrer la dernière version d'un composant dès sa sortie vous expose à des risques, comme par exemple
+Intégrer la dernière version majeure d'un composant dès sa sortie vous expose à des risques, comme par exemple
 celui d'être au final le beta-testeur de l'outil, car de nombreuses fois vous verrez qu'un correctif est
-déployé dans les heures ou jours qui suivent la livraison d'une nouvelle version majeure. De plus,
-vous pourriez vous rendre compte plus tard que d'autres dépendances que vous utilisez ne sont pas encore
-compatibles avec cette nouvelle version (surtout dans le cas d'une majeure) et risquez
-de devoir revenir en arrière.
+déployé dans les heures ou jours qui suivent sa release. De plus, vous pourriez vous rendre compte plus tard que
+d'autres dépendances que vous utilisez ne sont pas encore compatibles avec cette nouvelle
+release et risquez de devoir revenir en arrière.
 
 Le plus important est surtout d'avoir une suite de tests exécutés à chaque changement (comme lorsque vous
 ajoutez une nouvelle fonctionnalité) qui valide le bon fonctionnement de votre application. Si les tests passent,
@@ -182,11 +179,10 @@ Renovate est un outil facile à utiliser, ne demandant pas beaucoup de configura
  charge de travail laborieuse mais nécessaire aux développeurs.
 Utilisé avec une intégration continue fiable, il vous permettra de maintenir vos dépendances sereinement pour éviter
 d'accumuler les retards de version et devoir tout mettre à jour au dernier moment.
-Pour ma part, je l'utilise sur mes projets personnels car cela me permet de ne pas avoir à faire toutes les mises
+
+Pour ma part je l'utilise sur mes projets personnels car cela me permet de ne pas avoir à faire toutes les mises
 à jour d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;).
-J'incite également les équipes avec lesquelles je travaille à l'installer, ayant fait face à des situations
-professionnelles où ce genre d'outil aurait fait gagner du temps, et je vous invite à l'essayer pour que les montées
-de versions ne soient plus un évènement pour vous !
+Je vous invite à l'essayer pour que les montées de versions ne soient plus un évènement pour vous !
 
 ## Liens utiles ##
 
