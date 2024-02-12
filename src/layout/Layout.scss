@@ -785,9 +785,9 @@ pre tt::after {
       flex: 20%;
       background-color: $body-background-color;
 
-      &.blog-view {
-        @media (width <= 700px) {
-          display: none;
+      @media (width >= 700px) {
+        > * {
+          margin: 1em 2em 0;
         }
       }
     }
@@ -797,12 +797,6 @@ pre tt::after {
       flex-direction: column;
       flex: 80%;
       background-color: $body-background-color;
-    }
-
-    #profile-content {
-      @media (width >= 700px) {
-        margin: 1em 2em 0;
-      }
     }
 
     #portfolio-content {

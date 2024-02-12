@@ -43,9 +43,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
       </header>
       <div id="site-container">
         <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
-          <div id="profile-content">
-            <Profile />
-          </div>
+          <Profile />
         </div>
         <main id="portfolio-body">
           <div id="portfolio-content">
