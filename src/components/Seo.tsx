@@ -31,6 +31,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
           keywords
           siteName
           siteUrl
+          rss
         }
       }
     }
@@ -43,6 +44,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
   const metaSiteName = site.siteMetadata.siteName;
   const metaImage = props.image ?? site.siteMetadata.imageUrl;
   const type = props.type ?? 'website';
+  const rssFeed = site.siteMetadata.rss;
 
   const metaTags = props.meta?.map((meta) => (
     <meta key={meta.property} property={meta.property} content={meta.content} />
@@ -64,6 +66,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
       <meta name="keywords" content={site.siteMetadata.keywords} />
       {metaTags}
       <meta name="google-site-verification" content="LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU" />
+      <link rel="alternate" type="application/rss+xml" title="Flux RSS pour les articles de blog" href={rssFeed}></link>
     </>
   );
 }

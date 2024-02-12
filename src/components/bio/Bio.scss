@@ -1,0 +1,25 @@
+#bio {
+  display: flex;
+  flex-direction: column;
+
+  #author-info {
+    display: flex;
+    flex-direction: column;
+
+    .gatsby-image-wrapper {
+      height: 35px;
+      width: 35px;
+      overflow: unset;
+    }
+  }
+}
+
+#social-links-bio {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+
+  img {
+    border-radius: 50%;
+  }
+}

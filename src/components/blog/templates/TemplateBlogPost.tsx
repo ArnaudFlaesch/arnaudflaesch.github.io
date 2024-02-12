@@ -100,10 +100,20 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
   const siteUrl = data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
 
-  const ogPubDate = {
-    property: 'og:pubdate',
-    content: pubDate
-  };
+  const tags = [
+    {
+      property: 'article:published_time',
+      content: pubDate
+    },
+    {
+      property: 'article:modified_time',
+      content: pubDate
+    },
+    {
+      property: 'og:pubdate',
+      content: pubDate
+    }
+  ];
   return (
     <Seo
       title={post.frontmatter.title}
@@ -111,7 +121,7 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
       image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
       location={location.pathname}
       type="article"
-      meta={[ogPubDate]}
+      meta={tags}
     />
   );
 };

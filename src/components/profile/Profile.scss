@@ -9,6 +9,11 @@
     gap: 0.5em;
     display: grid;
     justify-items: center;
+
+    #bio,
+    .social-link > span {
+      display: none;
+    }
   }
 
   #bio-avatar {
@@ -16,11 +21,10 @@
   }
 
   #bio {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5em;
-
     @media (width > 700px) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5em;
       margin-left: 0.3em;
     }
 
@@ -45,10 +49,6 @@
       justify-content: center;
       margin-top: 0.5em;
       gap: 1em;
-
-      .social-link > span {
-        display: none;
-      }
     }
 
     .social-link {

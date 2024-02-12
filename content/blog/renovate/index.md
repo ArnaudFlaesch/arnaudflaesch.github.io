@@ -20,7 +20,7 @@ Par exemple, lorsque la faille de sécurité associée à Log4J a été détect�
 une mise à jour rapide sur l'application sur laquelle je travaillais. Le problème c'est que cette mise à jour demandait d'autres
 montées de versions, notamment Spring, qui elle-même imposait plusieurs modifications dans notre code et la configuration
 du projet à cause du décalage entre la version que nous utilisions et celle compatible avec le correctif Log4J.
-Cela a donc rajouté du temps au déploiement du correctif, et aurait pû être évité avec des mises à jour régulières.
+Cela a donc rajouté du temps au déploiement du correctif, et aurait pu être évité avec des mises à jour régulières.
 
 Les dépendances font au final partie intégrante d'un projet même si elles proviennent d'une tierce partie, et peuvent
 devenir avec le temps similaires à du code legacy.
