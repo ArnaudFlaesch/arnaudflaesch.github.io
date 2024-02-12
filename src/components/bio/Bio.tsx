@@ -31,28 +31,24 @@ export default function Bio(): React.ReactElement {
   return (
     <div id="bio">
       <Avatar className="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
-      <span id="author-info">
-        <span>
-          Écrit par <strong>{author}</strong>
-        </span>
-        <div id="social-links-bio">
-          <a href={linkedinLink}>
-            <Tooltip title="LinkedIn">
-              <div>
-                <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
-              </div>
-            </Tooltip>
-          </a>
-
-          <a href={githubLink}>
-            <Tooltip title="Github">
-              <div>
-                <StaticImage src="../../images/icons/github-icon.png" alt="github" />
-              </div>
-            </Tooltip>
-          </a>
-        </div>
+      <span>
+        Écrit par <strong>{author}</strong>
       </span>
+      <div id="social-links-bio">
+        <Tooltip title="LinkedIn">
+          <a href={linkedinLink}>
+            <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
+          </a>
+        </Tooltip>
+
+        <a href={githubLink}>
+          <Tooltip title="Github">
+            <div>
+              <StaticImage src="../../images/icons/github-icon.png" alt="github" />
+            </div>
+          </Tooltip>
+        </a>
+      </div>
     </div>
   );
 }

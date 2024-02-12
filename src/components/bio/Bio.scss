@@ -1,25 +1,15 @@
 #bio {
   display: flex;
   flex-direction: column;
+  row-gap: 0.2em;
 
-  #author-info {
+  #social-links-bio {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    column-gap: 0.5em;
 
-    .gatsby-image-wrapper {
+    img {
       height: 35px;
-      width: 35px;
-      overflow: unset;
     }
-  }
-}
-
-#social-links-bio {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-
-  img {
-    border-radius: 50%;
   }
 }

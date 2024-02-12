@@ -18,7 +18,8 @@
     .share-buttons {
       display: flex;
       flex-direction: row;
-      margin: 0 1em 0 auto;
+      align-items: baseline;
+      margin-right: 1em;
     }
   }
 }

@@ -10,6 +10,7 @@ import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
 import './TemplateBlogPost.scss';
+import { IconButton } from '@mui/material';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -51,22 +52,28 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
           <footer className="blog-post-footer">
             <Bio />
             <div className="share-buttons">
-              Partager ce billet de blog :
-              <Tooltip title="Partager sur Facebook">
-                <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
-                  <Facebook />
-                </a>
-              </Tooltip>
-              <Tooltip title="Partager sur X">
-                <a href="#" onClick={() => handleShare(`${twitterShareUrl}${href}`)}>
-                  <X />
-                </a>
-              </Tooltip>
-              <Tooltip title="Partager sur LinkedIn">
-                <a href="#" onClick={() => handleShare(`${linkedinShareUrl}${href}`)}>
-                  <LinkedIn />
-                </a>
-              </Tooltip>
+              <p>Partager ce billet de blog :</p>
+              <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
+                <Tooltip title="Partager sur Facebook">
+                  <IconButton color="primary">
+                    <Facebook />
+                  </IconButton>
+                </Tooltip>
+              </a>
+              <a href="#" onClick={() => handleShare(`${twitterShareUrl}${href}`)}>
+                <Tooltip title="Partager sur X">
+                  <IconButton color="primary">
+                    <X />
+                  </IconButton>
+                </Tooltip>
+              </a>
+              <a href="#" onClick={() => handleShare(`${linkedinShareUrl}${href}`)}>
+                <Tooltip title="Partager sur LinkedIn">
+                  <IconButton color="primary">
+                    <LinkedIn />
+                  </IconButton>
+                </Tooltip>
+              </a>
             </div>
           </footer>
         </article>

@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from '../components/header/Header';
-import './Layout.scss';
-import Profile from '../components/profile/Profile';
 import { RssFeed } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
+import Header from '../components/header/Header';
+import Profile from '../components/profile/Profile';
+import './Layout.scss';
 
 interface IProps {
   title?: string;

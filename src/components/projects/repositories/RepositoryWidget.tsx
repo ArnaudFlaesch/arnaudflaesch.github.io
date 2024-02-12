@@ -59,8 +59,8 @@ export default function RepositoryWidget(props: Readonly<IProps>): React.ReactEl
               return (
                 <Tooltip key={edge.node.name} title={edge.node.name}>
                   <div
+                    className="language-edge"
                     style={{
-                      height: '1.5rem',
                       backgroundColor: edge.node.color,
                       width: `${Math.fround((edge.size / props.repositoryData.languages.totalSize) * 100)}%`
                     }}

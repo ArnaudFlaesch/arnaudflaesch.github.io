@@ -46,7 +46,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 
   return (
     <Layout title="Bonjour !" location={props.location}>
-      <div>
+      <div id="home-page">
         <div id="description">{description}</div>
 
         {false && (
