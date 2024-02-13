@@ -797,32 +797,26 @@ pre tt::after {
       flex-direction: column;
       flex: 80%;
       background-color: $body-background-color;
-    }
 
-    #portfolio-content {
-      flex-grow: 1;
-      margin: 1em 25% 0 5%;
+      #portfolio-content {
+        flex-grow: 1;
+        margin: 2em 20% 0 5%;
 
-      #page-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 2em;
+        #page-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
 
-        #rss-feed-icon {
-          color: white;
-          background-color: orange;
-          height: 35px;
-          width: 35px;
-          border-radius: 5px;
+          #rss-feed-icon {
+            color: white;
+            background-color: orange;
+            height: 35px;
+            width: 35px;
+            border-radius: 5px;
+          }
         }
       }
-
-      #page-content {
-        margin-top: 2em;
-      }
     }
-
     footer {
       margin-left: 1em;
     }
@@ -830,21 +824,23 @@ pre tt::after {
 }
 
 @media (width <= 700px) {
-  #fixed-header {
-    height: $header-height-large;
-  }
+  #page-container {
+    #fixed-header {
+      height: $header-height-large;
+    }
 
-  #site-container {
-    flex-direction: column;
-
-    #profile-container {
-      &.blog-view {
-        display: none;
+    #site-container {
+      flex-direction: column;
+      #portfolio-body {
+        #portfolio-content {
+          margin: 2em 5%;
+        }
+      }
+      #profile-container {
+        &.blog-view {
+          display: none;
+        }
       }
     }
-  }
-
-  #portfolio-content {
-    margin: 1em 5%;
   }
 }

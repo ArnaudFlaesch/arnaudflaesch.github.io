@@ -34,7 +34,8 @@
     @media (width <=950px) {
       display: grid;
       gap: 0.5em;
-      grid-template-columns: 1fr 1fr 2.5fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
     }
 
     @media (750px <= width <= 950px) {
@@ -43,6 +44,7 @@
 
     @media (width <=600px) {
       margin-right: 0;
+      grid-template-columns: 1fr 1fr 2.5fr;
     }
 
     > * {
@@ -51,16 +53,12 @@
       padding: 0 1em;
       height: 100%;
 
-      @media (width <=600px) {
+      @media (width <=650px) {
         padding: 0;
       }
 
       @media (width <=450px) {
         margin: 0;
-      }
-
-      @media (width <= 950px) {
-        height: initial;
       }
 
       svg {
