@@ -817,6 +817,7 @@ pre tt::after {
         }
       }
     }
+
     footer {
       margin-left: 1em;
     }
@@ -831,11 +832,13 @@ pre tt::after {
 
     #site-container {
       flex-direction: column;
+
       #portfolio-body {
         #portfolio-content {
           margin: 2em 5%;
         }
       }
+
       #profile-container {
         &.blog-view {
           display: none;
