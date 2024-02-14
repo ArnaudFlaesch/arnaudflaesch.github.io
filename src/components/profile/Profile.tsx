@@ -3,7 +3,7 @@ import './Profile.scss';
 import { LocationOn, Work } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 import Avatar from '@mui/material/Avatar/Avatar';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
@@ -38,7 +38,9 @@ export default function Profile(): React.ReactElement {
 
   return (
     <div id="profile">
-      <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
+      <Link to="/">
+        <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
+      </Link>
       <div id="bio">
         <div id="work">
           <Work />
