@@ -1,5 +1,5 @@
 ---
-title: Gérer ses dépendances logicielles facilement avec Renovate
+title: Maintenir ses dépendances logicielles facilement avec Renovate
 date: '2024-02-10T16:00'
 description: Comment maintenir les dépendances d'un logiciel de manière sûre et rapide grâce à un outil automatisé.
 image: 2024/1-renovate/renovate-logo.png
