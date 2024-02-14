@@ -1,18 +1,21 @@
-#job-list,
-#formation-list,
-#hobbies-list {
-  margin-top: 1em;
+#cv-page {
   display: flex;
   flex-direction: column;
-  row-gap: 0.5em;
-}
+  row-gap: 1em;
 
-#certifications-list,
-#skills-title,
-#hobbies-title {
-  margin-top: 1em;
-}
+  #cv-download-button {
+    width: fit-content;
+  }
 
-.detail-block-title {
-  margin: auto;
+  #job-list,
+  #formation-list,
+  #hobbies-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+
+  .detail-block-title {
+    margin: auto;
+  }
 }

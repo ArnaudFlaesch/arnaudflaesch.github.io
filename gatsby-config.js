@@ -5,31 +5,39 @@ require('dotenv').config({
 const fullName = 'Arnaud Flaesch';
 const pwaShortName = 'AF';
 const title = 'Arnaud Flaesch, Développeur Web';
-const siteUrl = 'https://arnaudflaesch.github.io';
+const siteName = 'arnaudflaesch.github.io';
+const siteUrl = `https://${siteName}`;
 const defaultImageUrl = '/profile-picture.jpg';
+const description = `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
+sur lesquels je travaille.`;
+const jobName = 'Développeur Web';
+const company = 'Publicis Sapient France';
+
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
 const scrumOrgLink = 'https://www.scrum.org/user/1355891';
 const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 
+const rssFeedFile = '/rss.xml';
+
 module.exports = {
   siteMetadata: {
     title: title,
-    description: `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
-    sur lesquels je travaille.`,
+    description: description,
     author: fullName,
     imageUrl: `${siteUrl}${defaultImageUrl}`,
-    job: 'Développeur Web',
-    company: 'Publicis Sapient France',
-    keywords: `arnaud flaesch, frontend, backend portfolio, web portfolio, gatsby portfolio, web developer, fullstack developer, software engineer`,
-    siteName: 'arnaudflaesch.github.io',
+    job: jobName,
+    company: company,
+    keywords: `arnaud flaesch, web developer, fullstack developer, software engineer`,
+    siteName: siteName,
     siteUrl: siteUrl,
     socials: {
       linkedin: linkedinLink,
       github: githubLink,
       scrumOrg: scrumOrgLink,
       weLoveDevs: welovedevsLink
-    }
+    },
+    rss: rssFeedFile
   },
   plugins: [
     'gatsby-plugin-image',
@@ -95,6 +103,48 @@ module.exports = {
         theme_color: '#1976d2',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map((node) => {
+                return {
+                  ...node.frontmatter,
+                  description: node.frontmatter.description || node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ 'content:encoded': node.html }]
+                };
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                      description
+                    }
+                  }
+                }
+              }
+            `,
+            match: '^/blog/',
+            output: rssFeedFile,
+            title: 'Flux RSS - Arnaud Flaesch'
+          }
+        ]
       }
     },
     {

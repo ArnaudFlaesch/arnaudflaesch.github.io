@@ -16,6 +16,10 @@ import { IPageProps } from '../model/IPageProps';
 import { ReactElement } from 'react';
 import { hobbiesList } from '../data/HobbiesData';
 
+const title = 'Curriculum Vitae';
+const description =
+  "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.";
+
 export default function CV(props: Readonly<IPageProps>): ReactElement {
   const data = useStaticQuery(graphql`
     query CVQuery {
@@ -56,8 +60,8 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   }
 
   return (
-    <Layout title="Curriculum Vitae" location={props.location}>
-      <div>
+    <Layout title={title} location={props.location}>
+      <div id="cv-page">
         <Button
           id="cv-download-button"
           href="/CV.pdf"
@@ -130,4 +134,4 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   );
 }
 
-export const Head = () => <Seo location={'/cv'} title="CV" />;
+export const Head = () => <Seo location={'/cv'} title={title} description={description} />;

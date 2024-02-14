@@ -1,11 +1,9 @@
+@import '../../styles/colors';
+
 .detail-block {
   display: flex;
   flex-direction: row;
-  border: 2px solid #1f5099;
-
-  @media (width <= 850px) {
-    flex-direction: column;
-  }
+  border: 2px solid $detail-block-border-color;
 
   .detail-info {
     flex-basis: 75%;
@@ -18,7 +16,7 @@
 
   .block-title {
     flex-basis: 25%;
-    border-right: 1px solid #1f5099;
+    border-right: 1px solid $detail-block-border-color;
     background-color: #96c5d4;
     display: flex;
 
@@ -32,10 +30,16 @@
         width: 100%;
       }
     }
+  }
+}
 
-    @media (width <= 850px) {
-      border-bottom: 1px solid #1f5099;
-      border-right: none;
-    }
+@media (width <= 850px) {
+  .detail-block {
+    flex-direction: column;
+  }
+
+  .block-title {
+    border-bottom: 1px solid $detail-block-border-color;
+    border-right: none;
   }
 }

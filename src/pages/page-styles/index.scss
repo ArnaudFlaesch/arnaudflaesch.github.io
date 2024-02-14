@@ -1,31 +1,33 @@
 @import '../../styles/colors';
 
-#description {
-  margin-top: 2em;
-}
-
-#blog-title {
-  margin-top: 2em;
-}
-
-ol {
-  list-style-type: none;
-}
-
-#sneaky-button {
-  a {
-    text-decoration: none;
+#home-page {
+  #description {
+    margin-top: 1em;
   }
 
-  position: absolute;
-  transition: 0.3s;
-  z-index: 999999;
-}
+  #site-content {
+    margin-top: 3em;
 
-#site-content {
-  margin-top: 4em;
+    a {
+      color: black;
+    }
+  }
 
-  a {
-    color: black;
+  #sneaky-button {
+    a {
+      text-decoration: none;
+    }
+
+    position: absolute;
+    transition: 0.3s;
+    z-index: 999999;
+  }
+
+  #blog-title {
+    margin-top: 2em;
+  }
+
+  ol {
+    list-style-type: none;
   }
 }

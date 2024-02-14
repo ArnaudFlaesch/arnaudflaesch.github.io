@@ -775,10 +775,6 @@ pre tt::after {
     height: $header-height-small;
     z-index: 9999;
     background-color: $header-background-color;
-
-    @media (width <= 700px) {
-      height: $header-height-large;
-    }
   }
 
   #site-container {
@@ -789,9 +785,9 @@ pre tt::after {
       flex: 20%;
       background-color: $body-background-color;
 
-      &.blog-view {
-        @media (width <= 700px) {
-          display: none;
+      @media (width >= 700px) {
+        > * {
+          margin: 1em 2em 0;
         }
       }
     }
@@ -801,37 +797,53 @@ pre tt::after {
       flex-direction: column;
       flex: 80%;
       background-color: $body-background-color;
-    }
 
-    #profile-content {
-      @media (width >= 700px) {
-        margin: 1em 2em 0;
+      #portfolio-content {
+        flex-grow: 1;
+        margin: 2em 20% 0 5%;
+
+        #page-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          #rss-feed-icon {
+            color: white;
+            background-color: orange;
+            height: 35px;
+            width: 35px;
+            border-radius: 5px;
+          }
+        }
       }
-    }
-
-    #portfolio-content {
-      flex-grow: 1;
-      margin: 1em 25% 0 5%;
-
-      #page-title {
-        margin-top: 1em;
-      }
-
-      #page-content {
-        margin-top: 3em;
-      }
-
-      @media (width <= 700px) {
-        margin: 1em 5%;
-      }
-    }
-
-    @media (width <= 700px) {
-      flex-direction: column;
     }
 
     footer {
       margin-left: 1em;
+    }
+  }
+}
+
+@media (width <= 700px) {
+  #page-container {
+    #fixed-header {
+      height: $header-height-large;
+    }
+
+    #site-container {
+      flex-direction: column;
+
+      #portfolio-body {
+        #portfolio-content {
+          margin: 2em 5%;
+        }
+      }
+
+      #profile-container {
+        &.blog-view {
+          display: none;
+        }
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { BookTwoTone, Code, Email, Home, Work } from '@mui/icons-material';
+import { BookTwoTone, CodeTwoTone, EmailTwoTone, HomeTwoTone, WorkTwoTone } from '@mui/icons-material';
 import './Header.scss';
 
 import { Link } from 'gatsby';
@@ -21,12 +21,12 @@ export default function Header(props: Readonly<IProps>): ReactElement {
     {
       path: '/',
       label: 'Accueil',
-      icon: <Home />
+      icon: <HomeTwoTone />
     },
     {
       path: '/cv/',
       label: 'CV',
-      icon: <Work />
+      icon: <WorkTwoTone />
     },
     {
       path: '/blog/',
@@ -36,12 +36,12 @@ export default function Header(props: Readonly<IProps>): ReactElement {
     {
       path: '/projets/',
       label: 'Projets',
-      icon: <Code />
+      icon: <CodeTwoTone />
     },
     {
       path: '/contact/',
       label: 'Contact',
-      icon: <Email />
+      icon: <EmailTwoTone />
     }
   ];
 
