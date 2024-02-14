@@ -130,4 +130,10 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   );
 }
 
-export const Head = () => <Seo location={'/cv'} title="CV" />;
+export const Head = () => (
+  <Seo
+    location={'/cv'}
+    title="CV"
+    description="Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
+  />
+);

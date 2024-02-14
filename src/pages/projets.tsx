@@ -23,4 +23,6 @@ export default function Projets(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = () => <Seo location={'/projets'} title="Mes projets" />;
+export const Head = () => (
+  <Seo location={'/projets'} title="Mes projets" description="Les projets personnels sur lesquels je travaille." />
+);

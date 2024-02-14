@@ -19,7 +19,13 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   );
 }
 
-export const Head = () => <Seo title="Blog" location={'/blog'} />;
+export const Head = () => (
+  <Seo
+    title="Blog"
+    location={'/blog'}
+    description="Mon blog sur lequel vous trouverez des articles techniques sur divers sujets."
+  />
+);
 
 export const pageQuery = graphql`
   query {

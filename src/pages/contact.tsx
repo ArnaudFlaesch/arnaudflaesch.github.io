@@ -88,4 +88,10 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = () => <Seo location={'/contact'} title="Contactez-moi" />;
+export const Head = () => (
+  <Seo
+    location={'/contact'}
+    title="Contactez-moi"
+    description="Formulaire de contact si vous souhaitez me proposer une offre d'emploi ou juste discuter."
+  />
+);
