@@ -7,7 +7,7 @@ tags: ['Dépendances', 'Renovate', 'Sécurité logicielle']
 ---
 
 Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, concentré sur l'ajout de nouvelles fonctionnalités,
-de tests, de corrections de bugs, mais en négligeant de maintenir à jour régulièrement les dépendances associées au projet.
+de tests, de corrections de bugs, mais en négligeant de garder à jour régulièrement les dépendances associées au projet.
 
 ## Le contexte ##
 

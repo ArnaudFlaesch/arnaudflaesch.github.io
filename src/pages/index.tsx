@@ -80,7 +80,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
               </Link>
             </li>
             <li>
-              <Link to="/blog/">Des articles de blog</Link> <a href={rssFeedFile}>(flux RSS)</a>
+              <Link to="/blog/">Des articles de blog</Link> (<a href={rssFeedFile}>flux RSS</a>)
             </li>
             <li>
               <Link to="/contact/">Un formulaire de contact pour m'envoyer un email</Link>
