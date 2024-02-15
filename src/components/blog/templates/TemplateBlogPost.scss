@@ -18,9 +18,15 @@
     .share-article-container {
       display: flex;
       flex-direction: row;
-      flex: 0 1 50%;
+      align-content: center;
+      flex: 0 1 60%;
       align-items: baseline;
       margin-right: 1em;
+
+      svg {
+        height: 37px;
+        width: 37px;
+      }
     }
   }
 }
