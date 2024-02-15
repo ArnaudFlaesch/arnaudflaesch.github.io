@@ -48,13 +48,10 @@
       align-items: center;
       padding: 0 1em;
       height: 100%;
+      border-radius: 5%;
 
       @media (width <= 650px) {
         padding: 0;
-      }
-
-      @media (width <= 450px) {
-        margin: 0;
       }
 
       svg {

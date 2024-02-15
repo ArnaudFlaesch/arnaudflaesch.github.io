@@ -2,9 +2,6 @@
 
 /* stylelint-disable */
 
-$header-height-small: 4.5rem;
-$header-height-large: 6rem;
-
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -13,12 +10,7 @@ html {
     serif,
     sans-serif;
   box-sizing: border-box;
-  scroll-padding-top: calc($header-height-small + 0.5rem);
   background-color: $header-background-color;
-
-  @media (width <= 700px) {
-    scroll-padding-top: calc($header-height-large + 0.5rem);
-  }
 }
 
 body {
@@ -769,10 +761,9 @@ pre tt::after {
   }
 
   #fixed-header {
-    flex-grow: 0;
     position: sticky;
     top: 0;
-    height: $header-height-small;
+    height: 4.5rem;
     z-index: 9999;
     background-color: $header-background-color;
   }
@@ -827,7 +818,7 @@ pre tt::after {
 @media (width <= 700px) {
   #page-container {
     #fixed-header {
-      height: $header-height-large;
+      height: 5rem;
     }
 
     #site-container {
