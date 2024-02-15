@@ -59,7 +59,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
               )}
             </div>
             <div id="page-content">
-              <div id="page-description">{props.description}</div>
+              {props.description && <div id="page-description">{props.description}</div>}
               {props.children}
             </div>
           </div>

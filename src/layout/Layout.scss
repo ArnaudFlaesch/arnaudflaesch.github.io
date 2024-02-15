@@ -791,12 +791,13 @@ pre tt::after {
 
       #portfolio-content {
         flex-grow: 1;
-        margin: 2em 20% 0 5%;
+        margin: 0 20% 0 5%;
 
         #page-header {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          margin-top: 2em;
 
           #rss-feed-icon {
             color: white;
