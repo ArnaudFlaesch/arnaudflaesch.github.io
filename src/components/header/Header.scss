@@ -30,8 +30,7 @@
 
     @media (width <= 950px) {
       display: grid;
-      row-gap: 0.2em;
-      column-gap: 0.5em;
+      gap: 0.2em 0.5em;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
     }
