@@ -15,7 +15,7 @@ const description = 'Les projets personnels sur lesquels je travaille.';
 
 export default function Projets(props: Readonly<IPageProps>): React.ReactElement {
   return (
-    <Layout title={title} location={props.location}>
+    <Layout title={title} description={description} location={props.location}>
       <div id="projects-list">
         <DashWebProject />
         <DashWebServicesProject />

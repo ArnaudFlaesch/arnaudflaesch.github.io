@@ -16,6 +16,7 @@ import './Layout.scss';
 
 interface IProps {
   title?: string;
+  description?: string;
   children: React.ReactElement;
   location: Location;
   blogView?: boolean;
@@ -48,7 +49,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <main id="portfolio-body">
           <div id="portfolio-content">
             <div id="page-header">
-              {props.title && <h1 id="page-title">{props.title}</h1>}{' '}
+              {props.title && <h1 id="page-title">{props.title}</h1>}
               {props.location.pathname === '/blog/' && (
                 <a href={rss}>
                   <Tooltip title="Flux RSS">
@@ -57,7 +58,10 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
                 </a>
               )}
             </div>
-            <div id="page-content">{props.children}</div>
+            <div id="page-content">
+              {props.description && <div id="page-description">{props.description}</div>}
+              {props.children}
+            </div>
           </div>
           <footer>
             <div>

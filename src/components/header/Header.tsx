@@ -47,11 +47,9 @@ export default function Header(props: Readonly<IProps>): ReactElement {
 
   return (
     <div id="portfolio-header">
-      <div id="header-title">
-        <h1>
-          <Link to="/">{props.siteTitle}</Link>
-        </h1>
-      </div>
+      <h1>
+        <Link to="/">{props.siteTitle}</Link>
+      </h1>
       <div id="url-list">
         {urls.map((url) => (
           <Link key={url.path} className={props.location.pathname === url.path ? 'active' : ''} to={url.path}>

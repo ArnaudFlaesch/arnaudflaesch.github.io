@@ -1,7 +1,7 @@
 #bio {
   display: flex;
   flex-direction: column;
-  row-gap: 0.2em;
+  row-gap: 0.8em;
 
   #social-links-bio {
     display: flex;
@@ -9,7 +9,7 @@
     column-gap: 0.5em;
 
     img {
-      height: 35px;
+      height: 30px;
     }
   }
 }

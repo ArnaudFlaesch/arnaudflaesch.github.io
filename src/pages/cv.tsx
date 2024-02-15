@@ -60,7 +60,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   }
 
   return (
-    <Layout title={title} location={props.location}>
+    <Layout title={title} description={description} location={props.location}>
       <div id="cv-page">
         <Button
           id="cv-download-button"

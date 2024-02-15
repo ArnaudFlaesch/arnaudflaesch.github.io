@@ -16,7 +16,7 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
 
   return (
-    <Layout title={title} location={props.location}>
+    <Layout title={title} description={description} location={props.location}>
       <ol>{posts?.map((post: IPost) => <Post key={post.frontmatter.title} {...post} />)}</ol>
     </Layout>
   );
