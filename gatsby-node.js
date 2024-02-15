@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `);
 
   if (result.errors) {
-    reporter.panicOnBuild('There was an error loading your blog posts', result.errors);
+    reporter.panicOnBuild('Erreur lors de la récupération des articles de blog.', result.errors);
     return;
   }
 
@@ -90,6 +90,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         siteUrl: String
         keywords: String
         socials: Socials
+        rss: String
      }
      type Socials {
       linkedin: String
@@ -106,6 +107,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        description: String
        date: Date @dateformat
        image: String
+       tags: [String]
      }
      type Fields {
        slug: String

@@ -8,7 +8,7 @@ import { fr } from 'date-fns/locale/fr';
 
 export default function Post(post: Readonly<IPost>): React.ReactElement {
   const title = post.frontmatter.title || post.fields.slug;
-  const publicationDate = format(post.frontmatter.date, 'eeee dd MMMM, yyyy', { locale: fr });
+  const publicationDate = format(post.frontmatter.date, 'dd MMMM, yyyy', { locale: fr });
 
   return (
     <li key={post.fields.slug}>

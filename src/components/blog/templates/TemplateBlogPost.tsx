@@ -3,13 +3,14 @@ import * as React from 'react';
 
 import Layout from '../../../layout/Layout';
 import Seo from '../../Seo';
-import Bio from '../../bio/Bio';
+import Bio from '../bio/Bio';
 
 import { Facebook, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
 import './TemplateBlogPost.scss';
+import { IconButton } from '@mui/material';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,9 +21,17 @@ interface IProps {
 export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactElement {
   const post = props.data.markdownRemark;
   const { previous, next } = props.data;
+  const href = props.location.href;
+
+  const postTitle = post.frontmatter.title;
+  const pubDate = post.frontmatter.date;
+  const imageUrl = post.frontmatter.image;
 
   const blogUrlPrefix = '/blog/';
-  const pubDate = post.frontmatter.date;
+
+  const facebookShareUrl = 'https://www.facebook.com/sharer.php?u=';
+  const twitterShareUrl = 'https://twitter.com/share?url=';
+  const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
 
   function handleShare(url: string): void {
     window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
@@ -33,42 +42,39 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
       <>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
-            <p>{format(pubDate, 'dd MMMM, yyyy', { locale: fr })}</p>
+            <h1 itemProp="headline">{postTitle}</h1>
+            <p>{format(pubDate, 'dd MMMM yyyy', { locale: fr })}</p>
+            {post.frontmatter.description}
           </header>
-          <img src={`${blogUrlPrefix}${post.frontmatter.image}`} alt="Illustration article" />
+          <img className="article-illustration" src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
           <footer className="blog-post-footer">
             <Bio />
-            <div className="share-buttons">
-              Partager ce billet de blog :
-              <div>
-                <Tooltip title="Partager sur Facebook">
-                  <a
-                    href="#"
-                    onClick={() => handleShare(`https://www.facebook.com/sharer.php?u=${props.location.href}`)}
-                  >
-                    <Facebook />
-                  </a>
-                </Tooltip>
-              </div>
-              <div>
-                <Tooltip title="Partager sur X">
-                  <a href="#" onClick={() => handleShare(`https://twitter.com/share?url=${props.location.href}`)}>
-                    <X />
-                  </a>
-                </Tooltip>
-              </div>
-              <div>
-                <Tooltip title="Partager sur LinkedIn">
-                  <a
-                    href="#"
-                    onClick={() => handleShare(`https://www.linkedin.com/shareArticle?url=${props.location.href}`)}
-                  >
-                    <LinkedIn />
-                  </a>
-                </Tooltip>
+            <div className="share-article-container">
+              <span>Partager cet article :</span>
+              <div className="share-buttons">
+                <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
+                  <Tooltip title="Partager sur Facebook">
+                    <IconButton color="primary">
+                      <Facebook />
+                    </IconButton>
+                  </Tooltip>
+                </a>
+                <a href="#" onClick={() => handleShare(`${twitterShareUrl}${href}`)}>
+                  <Tooltip title="Partager sur X">
+                    <IconButton color="primary">
+                      <X />
+                    </IconButton>
+                  </Tooltip>
+                </a>
+                <a href="#" onClick={() => handleShare(`${linkedinShareUrl}${href}`)}>
+                  <Tooltip title="Partager sur LinkedIn">
+                    <IconButton color="primary">
+                      <LinkedIn />
+                    </IconButton>
+                  </Tooltip>
+                </a>
               </div>
             </div>
           </footer>
@@ -103,10 +109,20 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
   const siteUrl = data.site.siteMetadata.siteUrl;
   const blogUrlPrefix = '/blog/';
 
-  const ogTagPubDate = {
-    property: 'og:pubdate',
-    content: pubDate
-  };
+  const tags = [
+    {
+      property: 'article:published_time',
+      content: pubDate
+    },
+    {
+      property: 'article:modified_time',
+      content: pubDate
+    },
+    {
+      property: 'og:pubdate',
+      content: pubDate
+    }
+  ];
   return (
     <Seo
       title={post.frontmatter.title}
@@ -114,7 +130,7 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
       image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
       location={location.pathname}
       type="article"
-      meta={[ogTagPubDate]}
+      meta={tags}
     />
   );
 };
@@ -136,6 +152,7 @@ export const pageQuery = graphql`
         date
         description
         image
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

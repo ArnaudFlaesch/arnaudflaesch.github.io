@@ -1,14 +1,25 @@
 .blog-post {
-  margin-top: -1em;
+  img {
+    margin: 1em 0;
+  }
 
   .blog-post-footer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
-    .share-buttons {
+    .share-article-container {
       display: flex;
       flex-direction: row;
-      margin: 0 1em 0 auto;
+      align-content: center;
+      flex: 0 1 60%;
+      align-items: baseline;
+      margin-right: 1em;
+
+      svg {
+        height: 37px;
+        width: 37px;
+      }
     }
   }
 }
@@ -20,5 +31,22 @@
     justify-content: space-between;
     list-style: none;
     padding: 0;
+  }
+}
+
+@media (width >= 950px) {
+  img {
+    max-width: 600px;
+    max-height: 500px;
+  }
+}
+
+@media (width<= 600px) {
+  .blog-post {
+    .blog-post-footer {
+      .share-article-container {
+        flex-direction: column;
+      }
+    }
   }
 }

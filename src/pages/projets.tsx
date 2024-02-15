@@ -10,9 +10,12 @@ import Seo from '../components/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 
+const title = 'Projets personnels';
+const description = 'Les projets personnels sur lesquels je travaille.';
+
 export default function Projets(props: Readonly<IPageProps>): React.ReactElement {
   return (
-    <Layout title="Projets personnels" location={props.location}>
+    <Layout title={title} description={description} location={props.location}>
       <div id="projects-list">
         <DashWebProject />
         <DashWebServicesProject />
@@ -23,4 +26,4 @@ export default function Projets(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = () => <Seo location={'/projets'} title="Mes projets" />;
+export const Head = () => <Seo location={'/projets'} title={title} description={description} />;

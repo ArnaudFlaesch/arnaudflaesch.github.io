@@ -30,6 +30,10 @@
   }
 }
 
+#submit-button {
+  margin: 0 auto;
+}
+
 @media (width <= 700px) {
   #contact-form {
     width: 100%;
@@ -47,8 +51,4 @@
       }
     }
   }
-}
-
-#submit-button {
-  margin: 0 auto;
 }

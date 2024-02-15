@@ -5,15 +5,18 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
+import { RssFeed } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 import Header from '../components/header/Header';
-import './Layout.scss';
 import Profile from '../components/profile/Profile';
+import './Layout.scss';
 
 interface IProps {
   title?: string;
+  description?: string;
   children: React.ReactElement;
   location: Location;
   blogView?: boolean;
@@ -25,26 +28,40 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
       site {
         siteMetadata {
           author
+          rss
         }
       }
     }
   `);
 
+  const author = data.site.siteMetadata.author;
+  const rss = data.site.siteMetadata.rss;
+
   return (
     <div id="page-container">
       <header id="fixed-header">
-        <Header location={props.location} siteTitle={data.site.siteMetadata.author} />
+        <Header location={props.location} siteTitle={author} />
       </header>
       <div id="site-container">
         <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
-          <div id="profile-content">
-            <Profile />
-          </div>
+          <Profile />
         </div>
         <main id="portfolio-body">
           <div id="portfolio-content">
-            {props.title && <h1 id="page-title">{props.title}</h1>}
-            <div id="page-content">{props.children}</div>
+            <div id="page-header">
+              {props.title && <h1 id="page-title">{props.title}</h1>}
+              {props.location.pathname === '/blog/' && (
+                <a href={rss}>
+                  <Tooltip title="Flux RSS">
+                    <RssFeed id="rss-feed-icon" />
+                  </Tooltip>
+                </a>
+              )}
+            </div>
+            <div id="page-content">
+              {props.description && <div id="page-description">{props.description}</div>}
+              {props.children}
+            </div>
           </div>
           <footer>
             <div>

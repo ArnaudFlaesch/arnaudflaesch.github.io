@@ -6,10 +6,10 @@
   }
 
   .repository-icons-container {
-    margin-top: 1em;
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
+    margin-top: 1em;
 
     .repository-icons {
       display: flex;
@@ -20,6 +20,10 @@
   .languages-container {
     display: flex;
     flex-direction: row;
+
+    .language-edge {
+      height: 1.5em;
+    }
 
     :first-child {
       border-top-left-radius: 0.5rem;

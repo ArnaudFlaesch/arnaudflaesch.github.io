@@ -4,25 +4,11 @@
   margin-top: 2em;
   gap: 1.5em;
 
-  @media (width <= 700px) {
-    margin-top: 1em;
-    display: grid;
-    justify-items: center;
-  }
-
   #bio-avatar {
     margin: 0 auto;
   }
 
   #bio {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5em;
-
-    @media (width > 700px) {
-      margin-left: 0.3em;
-    }
-
     svg {
       margin-right: 1rem;
       width: 25px;
@@ -32,26 +18,25 @@
       display: flex;
       flex-direction: row;
     }
+
+    @media (width > 700px) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5em;
+      margin-left: 0.3em;
+    }
   }
 
   #social-links {
     display: flex;
     flex-direction: column;
     gap: 1em 0.5em;
-
-    @media (width <= 700px) {
-      flex-direction: row;
-      justify-content: center;
-      gap: 1em;
-
-      .social-link > span {
-        display: none;
-      }
-    }
+    font-size: 0.9rem;
 
     .social-link {
       display: flex;
       flex-direction: row;
+      align-items: center;
 
       div {
         height: 35px;
@@ -64,6 +49,29 @@
 
       span {
         margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@media (width <= 700px) {
+  #profile {
+    margin-top: 1em;
+    gap: 0.5em;
+    display: grid;
+    justify-items: center;
+
+    #bio,
+    .social-link > span {
+      display: none;
+    }
+
+    #social-links {
+      @media (width <= 700px) {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 0.5em;
+        gap: 1em;
       }
     }
   }

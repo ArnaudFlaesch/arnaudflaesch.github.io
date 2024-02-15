@@ -1,4 +1,5 @@
-import { BookTwoTone, Code, Email, Home, Person, Work } from '@mui/icons-material';
+import { BookTwoTone, CodeTwoTone, EmailTwoTone, HomeTwoTone, Person, WorkTwoTone } from '@mui/icons-material';
+
 import './Header.scss';
 
 import { Link } from 'gatsby';
@@ -21,12 +22,12 @@ export default function Header(props: Readonly<IProps>): ReactElement {
     {
       path: '/',
       label: 'Accueil',
-      icon: <Home />
+      icon: <HomeTwoTone />
     },
     {
       path: '/cv/',
       label: 'CV',
-      icon: <Work />
+      icon: <WorkTwoTone />
     },
 
     {
@@ -42,22 +43,20 @@ export default function Header(props: Readonly<IProps>): ReactElement {
     {
       path: '/projets/',
       label: 'Projets',
-      icon: <Code />
+      icon: <CodeTwoTone />
     },
     {
       path: '/contact/',
       label: 'Contact',
-      icon: <Email />
+      icon: <EmailTwoTone />
     }
   ];
 
   return (
     <div id="portfolio-header">
-      <div id="header-title">
-        <h1>
-          <Link to="/">{props.siteTitle}</Link>
-        </h1>
-      </div>
+      <h1>
+        <Link to="/">{props.siteTitle}</Link>
+      </h1>
       <div id="url-list">
         {urls.map((url) => (
           <Link key={url.path} className={props.location.pathname === url.path ? 'active' : ''} to={url.path}>

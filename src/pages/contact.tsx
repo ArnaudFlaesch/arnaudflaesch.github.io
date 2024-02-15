@@ -9,6 +9,9 @@ import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import './page-styles/contact.scss';
 
+const title = 'Contactez-moi';
+const description = "Formulaire de contact si vous souhaitez me proposer une offre d'emploi ou juste discuter.";
+
 export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');
 
@@ -21,7 +24,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   }
 
   return (
-    <Layout title="Contactez-moi" location={props.location}>
+    <Layout title={title} description={description} location={props.location}>
       {state.succeeded ? (
         <div>
           <p>Votre email a bien été envoyé !</p>
@@ -88,4 +91,4 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = () => <Seo location={'/contact'} title="Contactez-moi" />;
+export const Head = () => <Seo location={'/contact'} title={title} description={description} />;

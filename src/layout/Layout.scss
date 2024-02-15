@@ -2,9 +2,6 @@
 
 /* stylelint-disable */
 
-$header-height-small: 4.5rem;
-$header-height-large: 6rem;
-
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -13,12 +10,7 @@ html {
     serif,
     sans-serif;
   box-sizing: border-box;
-  scroll-padding-top: calc($header-height-small + 0.5rem);
   background-color: $header-background-color;
-
-  @media (width <= 700px) {
-    scroll-padding-top: calc($header-height-large + 0.5rem);
-  }
 }
 
 body {
@@ -769,16 +761,11 @@ pre tt::after {
   }
 
   #fixed-header {
-    flex-grow: 0;
     position: sticky;
     top: 0;
-    height: $header-height-small;
+    height: 4.5rem;
     z-index: 9999;
     background-color: $header-background-color;
-
-    @media (width <= 700px) {
-      height: $header-height-large;
-    }
   }
 
   #site-container {
@@ -789,9 +776,9 @@ pre tt::after {
       flex: 20%;
       background-color: $body-background-color;
 
-      &.blog-view {
-        @media (width <= 700px) {
-          display: none;
+      @media (width >= 700px) {
+        > * {
+          margin: 1.5em 2em 0;
         }
       }
     }
@@ -801,37 +788,70 @@ pre tt::after {
       flex-direction: column;
       flex: 80%;
       background-color: $body-background-color;
-    }
 
-    #profile-content {
-      @media (width >= 700px) {
-        margin: 1em 2em 0;
+      #portfolio-content {
+        flex-grow: 1;
+        margin: 0 20% 0 5%;
+
+        #page-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 2em;
+
+          #rss-feed-icon {
+            color: white;
+            background-color: orange;
+            height: 35px;
+            width: 35px;
+            border-radius: 5px;
+          }
+        }
+
+        #page-content {
+          #page-description {
+            margin: 1em 0 3em;
+          }
+        }
       }
-    }
-
-    #portfolio-content {
-      flex-grow: 1;
-      margin: 1em 25% 0 5%;
-
-      #page-title {
-        margin-top: 1em;
-      }
-
-      #page-content {
-        margin-top: 3em;
-      }
-
-      @media (width <= 700px) {
-        margin: 1em 5%;
-      }
-    }
-
-    @media (width <= 700px) {
-      flex-direction: column;
     }
 
     footer {
       margin-left: 1em;
+    }
+  }
+}
+
+@media (width <= 700px) {
+  #page-container {
+    #fixed-header {
+      height: 5rem;
+    }
+
+    #site-container {
+      flex-direction: column;
+
+      #portfolio-body {
+        #portfolio-content {
+          margin: 2em 5%;
+
+          #page-header {
+            margin-top: 0;
+          }
+
+          #page-content {
+            #page-description {
+              margin: 0.5em 0 2em;
+            }
+          }
+        }
+      }
+
+      #profile-container {
+        &.blog-view {
+          display: none;
+        }
+      }
     }
   }
 }
