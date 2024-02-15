@@ -52,7 +52,7 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
           <footer className="blog-post-footer">
             <Bio />
             <div className="share-article-container">
-              <span>Partager ce billet de blog :</span>
+              <span>Partager cet article :</span>
               <div className="share-buttons">
                 <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
                   <Tooltip title="Partager sur Facebook">
