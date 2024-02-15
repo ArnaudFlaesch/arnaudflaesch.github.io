@@ -3,11 +3,6 @@
 
   img {
     margin: 1em 0;
-
-    @media (width >= 950px) {
-      max-width: 600px;
-      max-height: 500px;
-    }
   }
 
   .blog-post-footer {
@@ -31,16 +26,6 @@
   }
 }
 
-@media (width<= 600px) {
-  .blog-post {
-    .blog-post-footer {
-      .share-article-container {
-        flex-direction: column;
-      }
-    }
-  }
-}
-
 .blog-post-nav {
   ul {
     display: flex;
@@ -48,5 +33,22 @@
     justify-content: space-between;
     list-style: none;
     padding: 0;
+  }
+}
+
+@media (width >= 950px) {
+  img {
+    max-width: 600px;
+    max-height: 500px;
+  }
+}
+
+@media (width<= 600px) {
+  .blog-post {
+    .blog-post-footer {
+      .share-article-container {
+        flex-direction: column;
+      }
+    }
   }
 }

@@ -27,7 +27,7 @@
     margin: auto 2em auto 0;
     place-content: center;
 
-    @media (width <=950px) {
+    @media (width <= 950px) {
       display: grid;
       gap: 0.5em;
       grid-template-columns: 1fr 1fr 1fr;
@@ -38,7 +38,7 @@
       margin-left: 10em;
     }
 
-    @media (width <=600px) {
+    @media (width <= 600px) {
       margin-right: 0;
       grid-template-columns: 1fr 1fr 2.5fr;
     }
