@@ -24,7 +24,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   }
 
   return (
-    <Layout title={title} location={props.location}>
+    <Layout title={title} description={description} location={props.location}>
       {state.succeeded ? (
         <div>
           <p>Votre email a bien été envoyé !</p>

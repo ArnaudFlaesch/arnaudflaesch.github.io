@@ -73,12 +73,12 @@ La version d'un composant logiciel est généralement constituée de trois numé
 Si un composant logiciel veut respecter *SemVer*, notamment pour aider d'éventuels
 utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nombre de règles parmi lesquelles :
 
-* Déclarer une API publique.
-* Respecter le format majeur.mineur.correctif.
-* Incrémenter le nombre associé au correctif lorsqu'une correction rétrocompatible est introduite.
-* Incrémenter le nombre associé à la version mineure lorsqu'une nouvelle fonctionnalité rétrocompatible est introduite dans l'API publique. Le nombre associé au correctif est remis à 0.
-* Incrémenter le nombre associé à la version majeure lorsqu'une nouvelle fonctionnalité non rétrocompatible est introduite dans l'API publique. Les nombres associés à la version mineure et au correctif sont remis à 0.
-* Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les nombres correctement incrémentés.
+- Déclarer une API publique.
+- Respecter le format majeur.mineur.correctif.
+- Incrémenter le nombre associé au correctif lorsqu'une correction rétrocompatible est introduite.
+- Incrémenter le nombre associé à la version mineure lorsqu'une nouvelle fonctionnalité rétrocompatible est introduite dans l'API publique. Le nombre associé au correctif est remis à 0.
+- Incrémenter le nombre associé à la version majeure lorsqu'une nouvelle fonctionnalité non rétrocompatible est introduite dans l'API publique. Les nombres associés à la version mineure et au correctif sont remis à 0.
+- Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les nombres correctement incrémentés.
 
 ## Installation et utilisation de Renovate ##
 
@@ -88,10 +88,10 @@ Si vous utilisez Github, vous pouvez l'installer facilement en tant qu'applicati
 Sur les autres plateformes, cela demandera un tout petit peu plus de configuration. Sans faire un tutoriel détaillé
 pour chacune d'entre elles, il vous faudra :
 
-* Un fichier config.js définissant entre autre la plateforme que vous utilisez.
-* Un fichier .yml servant à la configuration d'un pipeline (.gitlab-ci.yml, azure-pipelines.yml, etc.).
-* Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accéder à vos dépôts.
-* Un token Github, optionnel mais servant à récupérer les releases notes vous indiquant ce qui a changé entre deux versions.
+- Un fichier config.js définissant entre autre la plateforme que vous utilisez.
+- Un fichier .yml servant à la configuration d'un pipeline (.gitlab-ci.yml, azure-pipelines.yml, etc.).
+- Un token utilisateur propre à votre plateforme ayant les droits de créer une PR et d'accéder à vos dépôts.
+- Un token Github, optionnel mais servant à récupérer les releases notes vous indiquant ce qui a changé entre deux versions.
 
 Les différentes façons d'utiliser Renovate sont détaillées ici :
 <https://docs.renovatebot.com/getting-started/running/> et ici <https://docs.renovatebot.com/examples/self-hosting/>.
@@ -145,9 +145,9 @@ de celui pour le pipeline Azure.
 Pour aller plus loin, vous pouvez modifier la configuration par défaut en modifiant le fichier renovate.json
 présent dans chaque projet analysé en ajoutant des options telles que :
 
-* *reviewers* pour renseigner les utilisateurs assignés aux PR créées.
-* *packageRules* pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne pas créer des PR séparées à chaque fois.
-* *automerge* pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des dépendances, mais associée à *packageRules* par exemple, cela vous permet de merge automatiquement certains outils mineurs comme les *types* des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
+- *reviewers* pour renseigner les utilisateurs assignés aux PR créées.
+- *packageRules* pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne pas créer des PR séparées à chaque fois.
+- *automerge* pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des dépendances, mais associée à *packageRules* par exemple, cela vous permet de merge automatiquement certains outils mineurs comme les *types* des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
 
 
 ## Quelques points importants ##
@@ -188,6 +188,6 @@ invite à l'essayer pour que les montées de versions ne soient plus un évènem
 
 ## Liens utiles ##
 
-* Site officiel de Renovate : <https://docs.renovatebot.com/>
-* Documentation sur la configuration : <https://docs.renovatebot.com/configuration-options/>
-* Gestion sémantique de version : <https://semver.org/lang/fr/>
+- Site officiel de Renovate : <https://docs.renovatebot.com/>
+- Documentation sur la configuration : <https://docs.renovatebot.com/configuration-options/>
+- Gestion sémantique de version : <https://semver.org/lang/fr/>

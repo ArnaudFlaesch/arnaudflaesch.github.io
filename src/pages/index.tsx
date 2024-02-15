@@ -19,6 +19,8 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 
   const sneakyButtonId = 'sneaky-button';
 
+  const pageTitle = 'Bonjour !';
+
   useEffect(() => {
     const button = document.getElementById(sneakyButtonId);
     button?.addEventListener('click', () => {
@@ -45,10 +47,8 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
   }
 
   return (
-    <Layout title="Bonjour !" location={props.location}>
+    <Layout title={pageTitle} description={description} location={props.location}>
       <div id="home-page">
-        <div id="description">{description}</div>
-
         {false && (
           <div>
             <p>
