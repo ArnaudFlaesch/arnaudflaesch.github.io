@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import Layout from '../../../layout/Layout';
 import Seo from '../../Seo';
-import Bio from '../../bio/Bio';
+import Bio from '../bio/Bio';
 
 import { Facebook, LinkedIn, X } from '@mui/icons-material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
@@ -51,29 +51,31 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
           <hr />
           <footer className="blog-post-footer">
             <Bio />
-            <div className="share-buttons">
-              <p>Partager ce billet de blog :</p>
-              <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
-                <Tooltip title="Partager sur Facebook">
-                  <IconButton color="primary">
-                    <Facebook />
-                  </IconButton>
-                </Tooltip>
-              </a>
-              <a href="#" onClick={() => handleShare(`${twitterShareUrl}${href}`)}>
-                <Tooltip title="Partager sur X">
-                  <IconButton color="primary">
-                    <X />
-                  </IconButton>
-                </Tooltip>
-              </a>
-              <a href="#" onClick={() => handleShare(`${linkedinShareUrl}${href}`)}>
-                <Tooltip title="Partager sur LinkedIn">
-                  <IconButton color="primary">
-                    <LinkedIn />
-                  </IconButton>
-                </Tooltip>
-              </a>
+            <div className="share-article-container">
+              <span>Partager ce billet de blog :</span>
+              <div className="share-buttons">
+                <a href="#" onClick={() => handleShare(`${facebookShareUrl}${href}`)}>
+                  <Tooltip title="Partager sur Facebook">
+                    <IconButton color="primary">
+                      <Facebook />
+                    </IconButton>
+                  </Tooltip>
+                </a>
+                <a href="#" onClick={() => handleShare(`${twitterShareUrl}${href}`)}>
+                  <Tooltip title="Partager sur X">
+                    <IconButton color="primary">
+                      <X />
+                    </IconButton>
+                  </Tooltip>
+                </a>
+                <a href="#" onClick={() => handleShare(`${linkedinShareUrl}${href}`)}>
+                  <Tooltip title="Partager sur LinkedIn">
+                    <IconButton color="primary">
+                      <LinkedIn />
+                    </IconButton>
+                  </Tooltip>
+                </a>
+              </div>
             </div>
           </footer>
         </article>

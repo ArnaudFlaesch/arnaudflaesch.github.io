@@ -15,11 +15,20 @@
     flex-direction: row;
     justify-content: space-between;
 
-    .share-buttons {
+    .share-article-container {
       display: flex;
       flex-direction: row;
       align-items: baseline;
       margin-right: 1em;
+    }
+  }
+}
+@media (width<= 600px) {
+  .blog-post {
+    .blog-post-footer {
+      .share-article-container {
+        flex-direction: column;
+      }
     }
   }
 }
