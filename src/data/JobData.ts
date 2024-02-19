@@ -95,9 +95,7 @@ Réalisation d’un outil de gestion des produits pour les laboratoires pharmace
     location: 'Levallois',
     description: `Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.
      Stage de trois mois dans le cadre de ma troisième année à l'ESGI : participation à la refonte graphique d'une application web d'entreprise dans une équipe de 10 personnes.
-        Le but était de changer les pages web en respectant les nouvelles normes graphiques et de remplacer le code de l'ancien framework utilisé (Struts 1) par celui du framework JSF 2.
-
-    `,
+        Le but était de changer les pages web en respectant les nouvelles normes graphiques et de remplacer le code de l'ancien framework utilisé (Struts 1) par celui du framework JSF 2.`,
     skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git']
   },
   {
