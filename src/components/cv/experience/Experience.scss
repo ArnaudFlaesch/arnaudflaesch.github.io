@@ -8,11 +8,19 @@
   height: 100%;
   width: 100%;
 
+  .job-period {
+    font-weight: bold;
+  }
+
   .job-name {
     img {
       max-height: 100px;
       max-width: 130px;
     }
+  }
+
+  .job-location {
+    font-weight: bold;
   }
 
   a {
@@ -23,5 +31,22 @@
 .job-details-content {
   .job-description {
     white-space: pre-line;
+  }
+}
+
+@media (width < 850px) {
+  .job-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .job-period {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    .job-name,
+    .job-location {
+      grid-column: span 2;
+    }
   }
 }

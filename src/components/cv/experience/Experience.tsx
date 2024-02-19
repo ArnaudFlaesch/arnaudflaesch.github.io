@@ -36,7 +36,7 @@ export default function Experience(props: Readonly<IExperience>): React.ReactEle
             )}
             {!props.website && <h3>{props.name}</h3>}
           </div>
-          <div>{props.location}</div>
+          <div className="job-location">{props.location}</div>
         </div>
       }
       detailComponent={

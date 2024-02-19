@@ -33,10 +33,10 @@
 @media (width <= 850px) {
   .detail-block {
     flex-direction: column;
-  }
 
-  .block-title {
-    border-bottom: 1px solid $detail-block-border-color;
-    border-right: none;
+    .block-title {
+      border-bottom: 1px solid $detail-block-border-color;
+      border-right: none;
+    }
   }
 }
