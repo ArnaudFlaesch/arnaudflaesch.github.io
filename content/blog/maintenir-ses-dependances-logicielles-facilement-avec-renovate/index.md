@@ -24,10 +24,10 @@ Cela a donc rajouté du temps au déploiement du correctif, et aurait pu être �
 
 Les dépendances font au final partie intégrante d'un projet même si elles proviennent d'une tierce partie, et peuvent
 devenir avec le temps similaires à du code legacy.
-Aussi lors de l'ajout d'une nouvelle fonctionnalité pouvant nécessiter une librairie externe, un développeur pourra
-se rendre compte que cette librairie n'est pas compatible avec un composant déjà installé, mais trop vieux. À ce moment là,
-il sera soit bloqué dans son travail, soit ralenti par une montée de version nécessaire mais non prévue initialement nécessitant
-des tests de non régression qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
+Aussi lors de l’ajout d’une nouvelle fonctionnalité pouvant nécessiter une librairie externe, un développeur pourra se
+rendre compte que cette librairie n’est pas compatible avec un composant déjà installé, mais trop vieux.
+Dans ce cas il pourra soit être bloqué dans son travail, soit être ralenti par une montée de version nécessaire
+mais non prévue initialement.
 
 |     ![Personne en train de jouer à Jenga.](/blog/2024/1-renovate/jenga.jpg)      |
 | :------------------------------------------------------------------------------: |
