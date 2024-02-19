@@ -50,13 +50,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   }
 
   function createDetailBlock(title: string, detail: string): ReactElement {
-    return (
-      <DetailBlock
-        key={title}
-        titleComponent={<h3 className="detail-block-title">{title}</h3>}
-        detailComponent={<div>{detail}</div>}
-      />
-    );
+    return <DetailBlock key={title} titleComponent={<h3>{title}</h3>} detailComponent={<div>{detail}</div>} />;
   }
 
   return (
