@@ -9,7 +9,7 @@ tags: ['Dépendances', 'Renovate', 'Sécurité logicielle']
 Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, concentré sur l'ajout de nouvelles fonctionnalités,
 de tests, de corrections de bugs, mais en négligeant de garder à jour régulièrement les dépendances associées au projet.
 
-## Le contexte ##
+## Le contexte
 
 Lorsqu'un projet logiciel démarre, il est créé par défaut avec un certains nombres de dépendances, surtout lorsqu'il s'agit
 par exemple d'une application Node.JS qui va contenir une liste assez longue dans son fichier package.json.
@@ -29,12 +29,11 @@ se rendre compte que cette librairie n'est pas compatible avec un composant déj
 il sera soit bloqué dans son travail, soit ralenti par une montée de version nécessaire mais non prévue initialement nécessitant
 des tests de non régression qui, s'ils ne sont pas fait, pourront laisser passer de nouveaux problèmes.
 
-| ![Personne en train de jouer à Jenga.](/blog/2024/1-renovate/jenga.jpg) | 
-|:--:| 
-| *Développeur frontend essayant de mettre à jour un package.json vieux de 2 ans.* |
+|     ![Personne en train de jouer à Jenga.](/blog/2024/1-renovate/jenga.jpg)      |
+| :------------------------------------------------------------------------------: |
+| _Développeur frontend essayant de mettre à jour un package.json vieux de 2 ans._ |
 
-
-## Présentation de Renovate ##
+## Présentation de Renovate
 
 C'est sur le maintien de ces dépendances qu'intervient Renovate, un outil créé par Mend (article non sponsorisé)
 pour aider les développeurs à maintenir leurs projets à jour de manière incrémentale et configurable.
@@ -52,9 +51,9 @@ pour but de complètement remplacer un développeur, mais de faciliter son trava
 via une pull request tout en nécessitant toujours une validation (sauf si vous modifiez la configuration manuellement
 que l'outil merge sans approbation).
 
-| [![Pull request de Renovate sur Github.](/blog/2024/1-renovate/update-pr-angular.png)](<https://github.com/ArnaudFlaesch/Dash-Web/pull/1038>) | 
-|:--:| 
-| *Une pull request proposée par Renovate pour mettre à jour Angular Material.* |
+| [![Pull request de Renovate sur Github.](/blog/2024/1-renovate/update-pr-angular.png)](https://github.com/ArnaudFlaesch/Dash-Web/pull/1038) |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: |
+|                                _Une pull request proposée par Renovate pour mettre à jour Angular Material._                                |
 
 Votre projet a sûrement un processus d'intégration continue que vous allez pouvoir utiliser avec cet outil. À chaque
 pull request créée par Renovate, vos tests vont pouvoir s'exécuter sur cette nouvelle version et vérifier que
@@ -64,13 +63,13 @@ sur les releases notes affichées dans la PR.
 Ensuite, une fois les changements validés par l'intégration continue et les développeurs, il ne vous restera plus qu'à valider
 la pull request pour mettre à jour la dépendance.
 
-## La gestion sémantique de version ##
+## La gestion sémantique de version
 
 Pour comprendre la façon avec laquelle sont versionnés les logiciels, voici une brève explication de la gestion sémantique
-de version (*SemVer* en anglais).
+de version (_SemVer_ en anglais).
 La version d'un composant logiciel est généralement constituée de trois numéros formés de telle sorte: majeur.mineur.correctif
 (exemple : 4.2.30).
-Si un composant logiciel veut respecter *SemVer*, notamment pour aider d'éventuels
+Si un composant logiciel veut respecter _SemVer_, notamment pour aider d'éventuels
 utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nombre de règles parmi lesquelles :
 
 - Déclarer une API publique.
@@ -80,7 +79,7 @@ utilisateurs à s'y retrouver plus facilement, il doit respecter un certain nomb
 - Incrémenter le nombre associé à la version majeure lorsqu'une nouvelle fonctionnalité non rétrocompatible est introduite dans l'API publique. Les nombres associés à la version mineure et au correctif sont remis à 0.
 - Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les nombres correctement incrémentés.
 
-## Installation et utilisation de Renovate ##
+## Installation et utilisation de Renovate
 
 Si vous utilisez Github, vous pouvez l'installer facilement en tant qu'application en vous rendant dans <https://github.com/settings/installations>.
 À partir de là, vous pourrez sélectionner les projets à analyser.
@@ -137,20 +136,19 @@ module.exports = {
 ```
 
 Vous pouvez créer ces deux fichiers dans un dépôt à part, créer les variables d'environnement nécessaires,
-lancer le pipeline et Renovate analysera les dépôts définis dans *repositories*. Ensuite vous pourrez ajouter
+lancer le pipeline et Renovate analysera les dépôts définis dans _repositories_. Ensuite vous pourrez ajouter
 un schedule dans le fichier azure-pipelines.yml pour que le pipeline se lance régulièrement.
-Sur Gitlab, le processus sera assez similaire et vous devrez créer un fichier *.gitlab-ci.yml* à la place
+Sur Gitlab, le processus sera assez similaire et vous devrez créer un fichier _.gitlab-ci.yml_ à la place
 de celui pour le pipeline Azure.
 
 Pour aller plus loin, vous pouvez modifier la configuration par défaut en modifiant le fichier renovate.json
 présent dans chaque projet analysé en ajoutant des options telles que :
 
-- *reviewers* pour renseigner les utilisateurs assignés aux PR créées.
-- *packageRules* pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne pas créer des PR séparées à chaque fois.
-- *automerge* pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des dépendances, mais associée à *packageRules* par exemple, cela vous permet de merge automatiquement certains outils mineurs comme les *types* des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
+- _reviewers_ pour renseigner les utilisateurs assignés aux PR créées.
+- _packageRules_ pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne pas créer des PR séparées à chaque fois.
+- _automerge_ pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des dépendances, mais associée à _packageRules_ par exemple, cela vous permet de merge automatiquement certains outils mineurs comme les _types_ des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
 
-
-## Quelques points importants ##
+## Quelques points importants
 
 Avec cet outil, on serait vite tenté dans un premier temps de merge dès qu'une pull request se présente
 pour avoir tout le temps la dernière version des frameworks et librairies. En soi, il n'est jamais nécessaire d'avoir systématiquement
@@ -175,7 +173,7 @@ je pense que les deux outils devraient être utilisés en même temps car ils se
 vous aurez des alertes de sécurité de Snyk plus facile à corriger car vous aurez déjà des dépendances
 suffisamment récentes.
 
-## Conclusion ##
+## Conclusion
 
 Renovate est un outil facile à mettre en place, ne demandant pas beaucoup de configuration et permettant d'enlever une
 partie de la charge de travail des développeurs.
@@ -186,7 +184,7 @@ Pour ma part je l'utilise sur mes projets personnels car cela me permet de ne pa
 à jour d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;) et je vous
 invite à l'essayer pour que les montées de versions ne soient plus un évènement pour vous !
 
-## Liens utiles ##
+## Liens utiles
 
 - Site officiel de Renovate : <https://docs.renovatebot.com/>
 - Documentation sur la configuration : <https://docs.renovatebot.com/configuration-options/>
