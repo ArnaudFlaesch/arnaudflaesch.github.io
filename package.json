@@ -35,7 +35,7 @@
     "@mui/icons-material": "5.15.10",
     "@mui/material": "5.15.10",
     "date-fns": "3.3.1",
-    "dotenv": "16.4.4",
+    "dotenv": "16.4.5",
     "gatsby": "5.13.3",
     "gatsby-plugin-feed": "5.13.1",
     "gatsby-plugin-image": "3.13.1",
