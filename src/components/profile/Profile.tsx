@@ -56,7 +56,7 @@ export default function Profile(): React.ReactElement {
           <a href={linkedinLink} className="social-link">
             <Tooltip title="LinkedIn">
               <div>
-                <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
+                <StaticImage src="../../images/icons/socials/linkedin-icon.png" alt="linkedin" />
               </div>
             </Tooltip>
             <span>{linkedinLink}</span>
@@ -67,7 +67,7 @@ export default function Profile(): React.ReactElement {
           <a href={githubLink} className="social-link">
             <Tooltip title="Github">
               <div>
-                <StaticImage src="../../images/icons/github-icon.png" alt="github" />
+                <StaticImage src="../../images/icons/socials/github-icon.png" alt="github" />
               </div>
             </Tooltip>
             <span>{githubLink}</span>
@@ -78,7 +78,7 @@ export default function Profile(): React.ReactElement {
           <a href={scrumOrgLink} className="social-link">
             <Tooltip title="Profil Scrum.org">
               <div>
-                <StaticImage src="../../images/icons/scrum-org-icon.png" alt="scrum.org" />
+                <StaticImage src="../../images/icons/socials/scrum-org-icon.png" alt="scrum.org" />
               </div>
             </Tooltip>
             <span>{scrumOrgLink}</span>
@@ -90,7 +90,7 @@ export default function Profile(): React.ReactElement {
           <a href={welovedevsLink} className="social-link">
             <Tooltip title="Profil WeLoveDevs">
               <div>
-                <StaticImage src="../../images/icons/welovedevs-icon.jpg" alt="welovedevs" />
+                <StaticImage src="../../images/socials/icons/welovedevs-icon.jpg" alt="welovedevs" />
               </div>
             </Tooltip>
             <span>{welovedevsLink}</span>
