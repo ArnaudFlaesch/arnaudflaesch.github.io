@@ -59,7 +59,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/linkedin-icon.png" alt="linkedin" />
               </div>
             </Tooltip>
-            <span>{linkedinLink}</span>
+            <span>Profil LinkedIn</span>
           </a>
         </div>
 
@@ -70,7 +70,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/github-icon.png" alt="github" />
               </div>
             </Tooltip>
-            <span>{githubLink}</span>
+            <span>Profil GitHub</span>
           </a>
         </div>
 
@@ -81,7 +81,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/scrum-org-icon.png" alt="scrum.org" />
               </div>
             </Tooltip>
-            <span>{scrumOrgLink}</span>
+            <span>Certifications Scrum.org</span>
           </a>
         </div>
 
