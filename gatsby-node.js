@@ -97,6 +97,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       github: String
       scrumOrg: String
       weLoveDevs: String
+      medium: String
     }
      type MarkdownRemark implements Node {
        frontmatter: Frontmatter

@@ -34,7 +34,7 @@ export default function Profile(): React.ReactElement {
   const linkedinLink = socials.linkedin;
   const githubLink = socials.github;
   const scrumOrgLink = socials.scrumOrg;
-  const welovedevsLink = socials.weLoveDevs;
+  // const welovedevsLink = socials.weLoveDevs;
 
   return (
     <div id="profile">
