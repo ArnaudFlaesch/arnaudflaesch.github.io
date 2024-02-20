@@ -85,6 +85,7 @@ export default function Profile(): React.ReactElement {
           </a>
         </div>
 
+        {/*
         <div id="welovedevsLink">
           <a href={welovedevsLink} className="social-link">
             <Tooltip title="Profil WeLoveDevs">
@@ -95,6 +96,7 @@ export default function Profile(): React.ReactElement {
             <span>{welovedevsLink}</span>
           </a>
         </div>
+  */}
       </div>
     </div>
   );
