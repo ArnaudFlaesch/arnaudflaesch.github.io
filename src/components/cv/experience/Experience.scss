@@ -5,10 +5,13 @@
   flex-direction: column;
   justify-content: space-between;
   place-items: center;
+  row-gap: 1.5em;
   height: 100%;
   width: 100%;
 
   .job-period {
+    display: flex;
+    align-items: center;
     font-weight: bold;
   }
 
@@ -37,16 +40,11 @@
 @media (width < 850px) {
   .job-content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr;
 
     .job-period {
       grid-column: span 1;
       grid-row: span 2;
-    }
-
-    .job-name,
-    .job-location {
-      grid-column: span 2;
     }
   }
 }

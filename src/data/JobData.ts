@@ -69,6 +69,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     dateDebut: new Date(Date.parse('2016-9-01')),
     dateFin: new Date(Date.parse('2017-08-31')),
     location: 'Chennevières sur Marne, France',
+    logoPath: '/company-logos/franprix.png',
     description: `Alternance dans le cadre de ma deuxième année de mastère à l'ESGI.Contrat de professionnalisation en alternance au sein du service dédié au portail magasin et à l'intranet du siège.
     Développement et maintenance d'outils à destination des services RH (entretiens annuels) ou encore du personnel chargé de la sécurité des magasins (gestion des incidents).
     Environnement technique : Java J2EE (JSF 2, Vaadin, Liferay, Tomcat Server).
@@ -81,6 +82,7 @@ Participation à l'édition 2023 de la No Finish Line Paris avec d'autres coureu
     dateDebut: new Date(Date.parse('2015-10-01')),
     dateFin: new Date(Date.parse('2016-08-31')),
     location: 'Montreuil, France',
+    logoPath: '/company-logos/ab-cube.png',
     description: `Alternance dans le cadre de ma première année de mastère à l'ESGI.
     Contrat de professionnalisation dans le cadre de ma quatrième année à l'ESGI.
 Réalisation d’un outil de gestion des produits pour les laboratoires pharmaceutiques : ajout, import et export au format XML pour envoi aux autorités pharmaceutiques (EMA).
@@ -93,6 +95,7 @@ Réalisation d’un outil de gestion des produits pour les laboratoires pharmace
     dateDebut: new Date(Date.parse('2015-05-15')),
     dateFin: new Date(Date.parse('2015-07-31')),
     location: 'Levallois-Perret, France',
+    logoPath: '/company-logos/gmf.jpg',
     description: `Stage de trois mois dans le cadre de ma troisième année de bachelor à l'ESGI.
      Stage de trois mois dans le cadre de ma troisième année à l'ESGI : participation à la refonte graphique d'une application web d'entreprise dans une équipe de 10 personnes.
         Le but était de changer les pages web en respectant les nouvelles normes graphiques et de remplacer le code de l'ancien framework utilisé (Struts 1) par celui du framework JSF 2.`,
@@ -104,6 +107,7 @@ Réalisation d’un outil de gestion des produits pour les laboratoires pharmace
     dateDebut: new Date(Date.parse('2014-06-02')),
     dateFin: new Date(Date.parse('2014-07-31')),
     location: 'Paris 8ème, France',
+    logoPath: '/company-logos/la-reserve-paris.jpg',
     description: `Stage de deux mois : développement d'une application web en PHP, SQL et JavaScript dont l'objectif est d'enregistrer des événements concernant les clients d'un hôtel ainsi que la gestion automatique d'un fichier permettant d'actualiser la liste des clients.`,
     skills: ['PHP', 'SQL', 'JavaScript', 'JQuery', 'CSS'],
     website: 'https://www.lareserve-paris.com/'
