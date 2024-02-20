@@ -40,7 +40,8 @@
 @media (width < 850px) {
   .job-content {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
 
     .job-period {
       grid-column: span 1;
