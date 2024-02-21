@@ -12,9 +12,6 @@
   "scripts": {
     "start": "gatsby develop -o",
     "build": "export NODE_ENV=production && gatsby build",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run --headless --browser chrome",
-    "cy:verify": "npx cypress verify",
     "lint:md": "markdownlint **/*.md",
     "lint:md:fix": "npm run lint:md -- --fix",
     "eslint": "eslint src/",
@@ -23,6 +20,9 @@
     "lint:styles:fix": "npm run lint:styles -- --fix ",
     "lint:styles:report": "npm run lint:styles -- --formatter json --output-file ./styleLintReport.json",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --headless --browser chrome",
+    "cy:verify": "npx cypress verify",
     "test": "npm run cy:run",
     "clean": "gatsby clean",
     "serve": "gatsby serve"
@@ -59,6 +59,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/node": "20.11.19",
     "@typescript-eslint/eslint-plugin": "7.0.2",
     "@typescript-eslint/parser": "7.0.2",
     "cypress": "13.6.5",
