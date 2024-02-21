@@ -83,6 +83,7 @@ export const jobData: IExperience[] = [
       'Environnement technique : Java J2EE (JSF 2, Vaadin, Liferay, Tomcat Server).',
       'Équipe agile de 6 personnes.'
     ],
+    website: 'https://www.franprix.fr/',
     skills: ['Java 7', 'Vaadin 7', 'Liferay', 'JSF 2', 'Tomcat 7', 'SVN']
   },
   {
@@ -96,6 +97,7 @@ export const jobData: IExperience[] = [
       "Alternance dans le cadre de ma première année de mastère à l'ESGI.",
       'Réalisation d’un outil de gestion des produits pour les laboratoires pharmaceutiques : ajout, import et export au format XML pour envoi aux autorités pharmaceutiques (EMA).'
     ],
+    website: 'https://www.ab-cube.com/',
     skills: ['PHP', 'SQL', 'JavaScript', 'Git']
   },
   {
@@ -109,6 +111,7 @@ export const jobData: IExperience[] = [
       "Stage de trois mois dans le cadre de ma troisième année à l'ESGI : participation à la refonte graphique d'une application web d'entreprise dans une équipe de 10 personnes.",
       "Le but était de changer les pages web en respectant les nouvelles normes graphiques et de remplacer le code de l'ancien framework utilisé (Struts 1) par celui du framework JSF 2."
     ],
+    website: 'https://www.gmf.fr/',
     skills: ['Java 7', 'JSF 2', 'Struts 1', 'Git']
   },
   {
