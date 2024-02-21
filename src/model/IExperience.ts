@@ -3,7 +3,7 @@ export interface IExperience {
   name: string;
   logoPath?: string;
   location: string;
-  description: string;
+  description: string[];
   dateDebut: Date;
   dateFin?: Date;
   skills: string[];

@@ -53,7 +53,11 @@ export default function Experience(props: Readonly<IExperience>): ReactElement {
       detailComponent={
         <div className="job-details-content">
           <h3>{props.title}</h3>
-          <div className="job-description">{props.description}</div>
+          <div className="job-description">
+            {props.description.map((description) => (
+              <div>{description}</div>
+            ))}
+          </div>
         </div>
       }
     />
