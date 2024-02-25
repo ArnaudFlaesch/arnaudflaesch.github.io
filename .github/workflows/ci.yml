@@ -33,7 +33,6 @@ jobs:
 
       - name: Tests
         uses: cypress-io/github-action@v6
-        if: success() && github.ref == 'refs/heads/master'
         with:
           browser: firefox
           config-file: cypress-test.config.ts
@@ -48,6 +47,7 @@ jobs:
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
+        if: success() && github.ref == 'refs/heads/master'
         with:
           path: ./public
 
