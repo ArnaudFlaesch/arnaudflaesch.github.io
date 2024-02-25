@@ -14,7 +14,7 @@
   h1 {
     margin: auto 0 auto 5em;
     font-size: x-large;
-    flex: 1 1 30%;
+    flex: 1 1 25%;
 
     @media (width <=550px) {
       margin-left: 1em;
@@ -27,7 +27,11 @@
     flex-flow: row wrap;
     margin: auto 2em auto 0;
     place-content: center;
-    flex: 1 1 50%;
+    flex: 1 1 35%;
+
+    @media (width <= 1250px) {
+      flex-basis: 55%;
+    }
 
     @media (width <= 950px) {
       display: grid;
@@ -36,13 +40,10 @@
       grid-template-rows: 1fr 1fr;
     }
 
-    @media (750px <= width <= 950px) {
-      margin-left: 10em;
-    }
-
     @media (width <= 600px) {
       margin-right: 0;
-      grid-template-columns: 1fr 1fr 2.5fr;
+      column-gap: 0.5em;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     > * {
@@ -51,11 +52,6 @@
       padding: 0 0.5em;
       height: 100%;
       border-radius: 4%;
-
-      @media (width >= 950px) {
-        flex: 1;
-        justify-content: center;
-      }
 
       svg {
         margin-right: 0.5em;
@@ -67,6 +63,19 @@
 
       &:hover {
         background-color: white;
+      }
+
+      @media (width >= 950px) {
+        flex: 1;
+        justify-content: center;
+      }
+
+      @media (width <= 600px) {
+        padding: 0 0.3em;
+
+        svg {
+          margin-right: 0.2em;
+        }
       }
     }
   }
