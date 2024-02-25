@@ -37,14 +37,14 @@ export default function Bio(): React.ReactElement {
       <div id="social-links-bio">
         <Tooltip title="LinkedIn">
           <a href={linkedinLink}>
-            <StaticImage src="../../../images/icons/linkedin-icon.png" alt="linkedin" />
+            <StaticImage src="../../../images/icons/socials/linkedin-icon.png" alt="linkedin" />
           </a>
         </Tooltip>
 
         <a href={githubLink}>
           <Tooltip title="Github">
             <div>
-              <StaticImage src="../../../images/icons/github-icon.png" alt="github" />
+              <StaticImage src="../../../images/icons/socials/github-icon.png" alt="github" />
             </div>
           </Tooltip>
         </a>

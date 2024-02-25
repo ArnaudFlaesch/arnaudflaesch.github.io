@@ -798,6 +798,7 @@ pre tt::after {
           flex-direction: row;
           justify-content: space-between;
           margin-top: 2em;
+          align-items: first baseline;
 
           #rss-feed-icon {
             color: white;

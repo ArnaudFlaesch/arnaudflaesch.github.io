@@ -20,7 +20,7 @@ export default function DashWebProject(): React.ReactElement {
           }
           pushedAt
           url
-          languages(first: 4) {
+          languages(first: 5) {
             edges {
               node {
                 name

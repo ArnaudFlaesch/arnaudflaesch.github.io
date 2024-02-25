@@ -10,7 +10,8 @@ import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
 
 const title = 'Blog';
-const description = 'Mon blog sur lequel vous trouverez des articles techniques sur divers sujets.';
+const description =
+  "Mon blog sur lequel vous trouverez des articles aussi bien sur des sujets techniques que sur d'autres sujets.";
 
 export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;

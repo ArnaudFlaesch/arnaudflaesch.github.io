@@ -4,16 +4,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 auto;
+  place-items: center;
+  row-gap: 1.5em;
   height: 100%;
+  width: 100%;
+
+  .job-period {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
 
   .job-name {
-    margin: auto;
-
     img {
-      max-height: 100px;
+      max-height: 80px;
       max-width: 130px;
     }
+  }
+
+  .job-location {
+    font-weight: bold;
   }
 
   a {
@@ -22,9 +32,24 @@
 }
 
 .job-details-content {
-  margin: 0.5em;
-
   .job-description {
     white-space: pre-line;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+@media (width < 850px) {
+  .job-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
+
+    .job-period {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
   }
 }

@@ -1,22 +1,21 @@
 @import '../../styles/colors';
 
 #contact-form {
-  padding: 10px;
-  width: 60vw;
   display: flex;
   flex-direction: column;
 
   .contact-field {
-    background-color: white;
+    background-color: #fff;
   }
 
   #contact-informations {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 3em;
 
     > * {
-      width: 25vw;
+      flex: 1;
     }
   }
 
@@ -25,7 +24,7 @@
     flex-direction: column;
 
     .error-message {
-      color: red;
+      color: #f00;
     }
   }
 }
@@ -41,13 +40,10 @@
     #contact-informations {
       display: flex;
       flex-direction: column;
+      row-gap: 1em;
 
       > * {
-        width: 100%;
-
-        &:not(:last-child) {
-          margin-bottom: 1em;
-        }
+        flex: 1;
       }
     }
   }

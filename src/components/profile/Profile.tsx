@@ -19,6 +19,7 @@ export default function Profile(): React.ReactElement {
             linkedin
             github
             scrumOrg
+            medium
             weLoveDevs
           }
         }
@@ -34,7 +35,8 @@ export default function Profile(): React.ReactElement {
   const linkedinLink = socials.linkedin;
   const githubLink = socials.github;
   const scrumOrgLink = socials.scrumOrg;
-  const welovedevsLink = socials.weLoveDevs;
+  const mediumLink = socials.medium;
+  // const welovedevsLink = socials.weLoveDevs;
 
   return (
     <div id="profile">
@@ -56,10 +58,10 @@ export default function Profile(): React.ReactElement {
           <a href={linkedinLink} className="social-link">
             <Tooltip title="LinkedIn">
               <div>
-                <StaticImage src="../../images/icons/linkedin-icon.png" alt="linkedin" />
+                <StaticImage src="../../images/icons/socials/linkedin-icon.png" alt="linkedin" />
               </div>
             </Tooltip>
-            <span>{linkedinLink}</span>
+            <span>Profil LinkedIn</span>
           </a>
         </div>
 
@@ -67,34 +69,47 @@ export default function Profile(): React.ReactElement {
           <a href={githubLink} className="social-link">
             <Tooltip title="Github">
               <div>
-                <StaticImage src="../../images/icons/github-icon.png" alt="github" />
+                <StaticImage src="../../images/icons/socials/github-icon.png" alt="github" />
               </div>
             </Tooltip>
-            <span>{githubLink}</span>
+            <span>Profil GitHub</span>
           </a>
         </div>
 
         <div id="scrumOrgLink">
           <a href={scrumOrgLink} className="social-link">
-            <Tooltip title="Profil Scrum.org">
+            <Tooltip title="Certifications Scrum.org">
               <div>
-                <StaticImage src="../../images/icons/scrum-org-icon.png" alt="scrum.org" />
+                <StaticImage src="../../images/icons/socials/scrum-org-icon.png" alt="scrum.org" />
               </div>
             </Tooltip>
-            <span>{scrumOrgLink}</span>
+            <span>Certifications Scrum.org</span>
           </a>
         </div>
 
+        <div id="mediumLink">
+          <a href={mediumLink} className="social-link">
+            <Tooltip title="Medium">
+              <div>
+                <StaticImage src="../../images/icons/socials/medium-icon.png" alt="medium" />
+              </div>
+            </Tooltip>
+            <span>Profil Medium</span>
+          </a>
+        </div>
+
+        {/*
         <div id="welovedevsLink">
           <a href={welovedevsLink} className="social-link">
             <Tooltip title="Profil WeLoveDevs">
               <div>
-                <StaticImage src="../../images/icons/welovedevs-icon.jpg" alt="welovedevs" />
+                <StaticImage src="../../images/socials/icons/welovedevs-icon.jpg" alt="welovedevs" />
               </div>
             </Tooltip>
             <span>{welovedevsLink}</span>
           </a>
         </div>
+  */}
       </div>
     </div>
   );

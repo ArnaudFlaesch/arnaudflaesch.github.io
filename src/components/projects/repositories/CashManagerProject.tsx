@@ -20,7 +20,7 @@ export default function CashManagerProject(): React.ReactElement {
           }
           pushedAt
           url
-          languages(first: 3) {
+          languages(first: 5) {
             edges {
               node {
                 name

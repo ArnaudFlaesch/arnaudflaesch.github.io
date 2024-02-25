@@ -17,6 +17,7 @@ const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
 const scrumOrgLink = 'https://www.scrum.org/user/1355891';
 const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
+const mediumLink = 'https://medium.com/@arnaudflaesch';
 
 const rssFeedFile = '/rss.xml';
 
@@ -35,7 +36,8 @@ module.exports = {
       linkedin: linkedinLink,
       github: githubLink,
       scrumOrg: scrumOrgLink,
-      weLoveDevs: welovedevsLink
+      weLoveDevs: welovedevsLink,
+      medium: mediumLink
     },
     rss: rssFeedFile
   },

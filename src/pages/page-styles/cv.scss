@@ -1,11 +1,12 @@
 #cv-page {
   display: flex;
   flex-direction: column;
-  row-gap: 1em;
+  row-gap: 2em;
 
-  #cv-download-button {
-    width: fit-content;
-    margin-bottom: 1em;
+  #jobs-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   #job-list,
@@ -14,9 +15,5 @@
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-  }
-
-  .detail-block-title {
-    margin: auto;
   }
 }
