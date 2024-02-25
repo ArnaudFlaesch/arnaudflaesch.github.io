@@ -3,9 +3,10 @@
   flex-direction: column;
   row-gap: 2em;
 
-  #cv-download-button {
-    width: fit-content;
-    margin-bottom: 1em;
+  #jobs-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   #job-list,

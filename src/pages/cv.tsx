@@ -56,17 +56,18 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   return (
     <Layout title={title} description={description} location={props.location}>
       <div id="cv-page">
-        <Button
-          id="cv-download-button"
-          href="/CV.pdf"
-          variant="contained"
-          download="Curriculum Vitae Arnaud Flaesch.pdf"
-        >
-          Télécharger mon CV
-        </Button>
-
         <div id="job-list">
-          <h2>Expériences professionnelles</h2>
+          <div id="jobs-header">
+            <h2>Expériences professionnelles</h2>
+            <Button
+              id="cv-download-button"
+              href="/CV.pdf"
+              variant="contained"
+              download="Curriculum Vitae Arnaud Flaesch.pdf"
+            >
+              Télécharger mon CV
+            </Button>
+          </div>
           {jobData.slice(0, jobIndexEnd).map((job) => (
             <Experience key={job.name} {...job} />
           ))}
