@@ -24,14 +24,14 @@ export default function Header(props: Readonly<IProps>): ReactElement {
       icon: <HomeTwoTone />
     },
     {
-      path: '/cv/',
-      label: 'CV',
-      icon: <WorkTwoTone />
-    },
-    {
       path: '/blog/',
       label: 'Blog',
       icon: <BookTwoTone />
+    },
+    {
+      path: '/cv/',
+      label: 'CV',
+      icon: <WorkTwoTone />
     },
     {
       path: '/projets/',
