@@ -38,16 +38,16 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   const rss = data.site.siteMetadata.rss;
 
   return (
-    <div id="page-container">
+    <div id="site-container">
       <header id="fixed-header">
         <Header location={props.location} siteTitle={author} />
       </header>
-      <div id="site-container">
+      <div id="site-body">
         <div id="profile-container">
           <Profile blogView={props.blogView} />
         </div>
-        <div id="portfolio-body">
-          <main id="portfolio-content">
+        <div id="site-page">
+          <main id="site-content">
             <div id="page-header">
               {props.title && <h1 id="page-title">{props.title}</h1>}
               {props.location.pathname === '/blog/' && (
@@ -58,10 +58,8 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
                 </a>
               )}
             </div>
-            <div id="page-content">
-              {props.description && <div id="page-description">{props.description}</div>}
-              {props.children}
-            </div>
+            {props.description && <div id="page-description">{props.description}</div>}
+            {props.children}
           </main>
           <footer>
             © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
