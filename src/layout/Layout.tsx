@@ -43,11 +43,11 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <Header location={props.location} siteTitle={author} />
       </header>
       <div id="site-container">
-        <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
-          <Profile />
+        <div id="profile-container">
+          <Profile blogView={props.blogView} />
         </div>
-        <main id="portfolio-body">
-          <div id="portfolio-content">
+        <div id="portfolio-body">
+          <main id="portfolio-content">
             <div id="page-header">
               {props.title && <h1 id="page-title">{props.title}</h1>}
               {props.location.pathname === '/blog/' && (
@@ -58,18 +58,16 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
                 </a>
               )}
             </div>
-            <div id="page-content">
+            <div id="page-container">
               {props.description && <div id="page-description">{props.description}</div>}
               {props.children}
             </div>
-          </div>
+          </main>
           <footer>
-            <div>
-              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
-              <a href="https://icons8.com/">Icons8</a>.
-            </div>
+            © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
+            <a href="https://icons8.com/">Icons8</a>.
           </footer>
-        </main>
+        </div>
       </div>
     </div>
   );

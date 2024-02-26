@@ -752,52 +752,43 @@ pre tt::after {
 
 #page-container {
   width: 100%;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
-
-  > * {
-    width: 100%;
-  }
 
   #fixed-header {
     position: sticky;
     top: 0;
-    height: 4.5rem;
+    flex: 0 0 4.5rem;
     z-index: 9999;
     background-color: $header-background-color;
   }
 
   #site-container {
     display: flex;
-    flex-grow: 1;
+    flex: 0 1 calc(100% - 4.5rem);
+    background-color: $body-background-color;
+    padding: 2em;
 
     #profile-container {
-      flex: 20%;
-      background-color: $body-background-color;
-
-      @media (width >= 700px) {
-        > * {
-          margin: 1.5em 2em 0;
-        }
-      }
+      flex: 15%;
     }
 
     #portfolio-body {
       display: flex;
       flex-direction: column;
-      flex: 80%;
-      background-color: $body-background-color;
+      flex: 85%;
+      justify-content: space-between;
 
       #portfolio-content {
-        flex-grow: 1;
-        margin: 0 20% 0 5%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 15% 0 10%;
 
+        flex-grow: 1;
         #page-header {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          margin-top: 2em;
           align-items: first baseline;
 
           #rss-feed-icon {
@@ -809,32 +800,34 @@ pre tt::after {
           }
         }
 
-        #page-content {
+        #page-container {
           #page-description {
-            margin: 1em 0 3em;
+            margin-top: 1em;
+            margin-bottom: 3em;
           }
         }
       }
-    }
 
-    footer {
-      margin-left: 1em;
+      footer {
+        margin-top: 2em;
+        padding: 0 5%;
+      }
     }
   }
 }
 
 @media (width <= 700px) {
   #page-container {
-    #fixed-header {
-      height: 5rem;
-    }
-
     #site-container {
       flex-direction: column;
+      padding: 0.2em;
 
       #portfolio-body {
+        margin-top: 2em;
+        padding: 0.2em;
+
         #portfolio-content {
-          margin: 2em 5%;
+          padding: 0 1em;
 
           #page-header {
             margin-top: 0;
@@ -845,12 +838,6 @@ pre tt::after {
               margin: 0.5em 0 2em;
             }
           }
-        }
-      }
-
-      #profile-container {
-        &.blog-view {
-          display: none;
         }
       }
     }

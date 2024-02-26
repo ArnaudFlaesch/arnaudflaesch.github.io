@@ -38,13 +38,8 @@
     width: 100%;
 
     #contact-informations {
-      display: flex;
       flex-direction: column;
       row-gap: 1em;
-
-      > * {
-        flex: 1;
-      }
     }
   }
 }

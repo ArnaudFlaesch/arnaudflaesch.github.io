@@ -6,27 +6,22 @@
   border: 2px solid $detail-block-border-color;
   background-color: #a8c9d4;
 
+  > * {
+    padding: 10px;
+  }
+
   .block-title {
     flex-basis: 25%;
     border-right: 1px solid $detail-block-border-color;
     background-color: #96c5d4;
-    display: flex;
 
-    .block-title-content {
-      display: flex;
-      margin: 10px;
+    > * {
       text-align: center;
-      width: 100%;
-
-      > * {
-        margin: auto;
-      }
     }
   }
 
   .detail-info {
     flex-basis: 75%;
-    margin: 10px;
   }
 }
 
