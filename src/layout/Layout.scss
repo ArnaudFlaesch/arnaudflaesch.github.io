@@ -751,6 +751,7 @@ pre tt::after {
 /* stylelint-enable */
 
 #page-container {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -765,7 +766,7 @@ pre tt::after {
 
   #site-container {
     display: flex;
-    flex: 0 1 calc(100% - 4.5rem);
+    flex: 1 1 calc(100% - 4.5rem);
     background-color: $body-background-color;
     padding: 2em;
 
@@ -800,11 +801,9 @@ pre tt::after {
           }
         }
 
-        #page-container {
-          #page-description {
-            margin-top: 1em;
-            margin-bottom: 3em;
-          }
+        #page-description {
+          margin-top: 1em;
+          margin-bottom: 3em;
         }
       }
 
