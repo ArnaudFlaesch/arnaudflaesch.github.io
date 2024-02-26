@@ -7,6 +7,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    #cv-download-button {
+      height: min-content;
+    }
   }
 
   #job-list,

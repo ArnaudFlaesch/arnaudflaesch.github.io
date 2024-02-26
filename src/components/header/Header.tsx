@@ -52,7 +52,7 @@ export default function Header(props: Readonly<IProps>): ReactElement {
       </h1>
       <div id="url-list">
         {urls.map((url) => (
-          <Link key={url.path} className={props.location.pathname === url.path ? 'active' : ''} to={url.path}>
+          <Link key={url.path} activeClassName="active" to={url.path}>
             {url.icon}
             {url.label}
           </Link>
