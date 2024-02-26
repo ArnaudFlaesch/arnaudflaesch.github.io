@@ -816,26 +816,24 @@ pre tt::after {
 }
 
 @media (width <= 700px) {
-  #page-container {
-    #site-container {
+  #site-container {
+    #site-body {
       flex-direction: column;
       padding: 0.2em;
 
-      #portfolio-body {
+      #site-page {
         margin-top: 2em;
         padding: 0.2em;
 
-        #portfolio-content {
+        #site-content {
           padding: 0 1em;
 
           #page-header {
             margin-top: 0;
           }
-
-          #page-content {
-            #page-description {
+          
+          #page-description {
               margin: 0.5em 0 2em;
-            }
           }
         }
       }
