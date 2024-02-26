@@ -750,7 +750,8 @@ pre tt::after {
 
 /* stylelint-enable */
 
-#page-container {
+#site-container {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -763,26 +764,26 @@ pre tt::after {
     background-color: $header-background-color;
   }
 
-  #site-container {
+  #site-body {
     display: flex;
-    flex: 0 1 calc(100% - 4.5rem);
+    flex: 1 1 calc(100% - 4.5rem);
     background-color: $body-background-color;
-    padding: 2em;
+    padding: 2em 3em;
 
     #profile-container {
       flex: 15%;
     }
 
-    #portfolio-body {
+    #site-page {
       display: flex;
       flex-direction: column;
       flex: 85%;
+      padding: 0 15% 0 8%;
       justify-content: space-between;
 
-      #portfolio-content {
+      #site-content {
         display: flex;
         flex-direction: column;
-        padding: 0 15% 0 10%;
         flex-grow: 1;
 
         #page-header {
@@ -800,11 +801,9 @@ pre tt::after {
           }
         }
 
-        #page-container {
-          #page-description {
-            margin-top: 1em;
-            margin-bottom: 3em;
-          }
+        #page-description {
+          margin-top: 1em;
+          margin-bottom: 3em;
         }
       }
 
