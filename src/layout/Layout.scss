@@ -771,20 +771,19 @@ pre tt::after {
     padding: 2em 3em;
 
     #profile-container {
-      flex: 15%;
+      flex: 1 0 15%;
     }
 
     #site-page {
       display: flex;
       flex-direction: column;
-      flex: 85%;
+      flex: 0 1 85%;
+      max-width: 85%;
       padding: 0 15% 0 8%;
-      justify-content: space-between;
 
       #site-content {
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
 
         #page-header {
           display: flex;
@@ -809,7 +808,6 @@ pre tt::after {
 
       footer {
         margin-top: 2em;
-        padding: 0 5%;
       }
     }
   }
@@ -831,9 +829,9 @@ pre tt::after {
           #page-header {
             margin-top: 0;
           }
-          
+
           #page-description {
-              margin: 0.5em 0 2em;
+            margin: 0.5em 0 2em;
           }
         }
       }

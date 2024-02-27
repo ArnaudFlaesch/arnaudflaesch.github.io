@@ -54,7 +54,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
             <p>
               Je suis actuellement à l'écoute de nouvelles opportunités professionnelles. Si vous êtes une ESN et que
               vous souhaitez me contacter pour discuter d'un emploi, vous pouvez utiliser ce lien vers un formulaire de
-              contact :{' '}
+              contact :
               <Link to={buttonClicked && !isMobile() ? '404' : '#'}>
                 <Button id={sneakyButtonId} variant={buttonClicked ? 'contained' : 'text'}>
                   Contact
@@ -68,8 +68,8 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
           </div>
         )}
 
-        <div id="site-content">
-          <h3>Contenu du site :</h3>
+        <div id="site-links">
+          <h2>Contenu du site :</h2>
           <ul>
             <li>
               <Link to="/cv/">Mon parcours détaillé et mon CV téléchargeable</Link>
