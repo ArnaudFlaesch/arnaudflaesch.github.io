@@ -52,28 +52,3 @@
     }
   }
 }
-
-@media (width <= 700px) {
-  #profile {
-    margin-top: 1em;
-    gap: 0.5em;
-    display: grid;
-    justify-items: center;
-
-    &.blog-view {
-      display: none;
-    }
-
-    #bio,
-    .social-link > span {
-      display: none;
-    }
-
-    #social-links {
-      flex-direction: row;
-      justify-content: center;
-      margin-top: 0.5em;
-      gap: 1em;
-    }
-  }
-}

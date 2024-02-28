@@ -10,7 +10,7 @@ html {
     serif,
     sans-serif;
   box-sizing: border-box;
-  background-color: $header-background-color;
+  background-color: $body-background-color;
 }
 
 body {
@@ -766,20 +766,20 @@ pre tt::after {
 
   #site-body {
     display: flex;
-    flex: 1 1 calc(100% - 4.5rem);
-    background-color: $body-background-color;
+    flex: 0 1 calc(100% - 4.5rem);
     padding: 2em 3em;
 
     #profile-container {
-      flex: 1 0 15%;
+      padding: 0 2em;
     }
 
     #site-page {
       display: flex;
       flex-direction: column;
-      flex: 0 1 85%;
-      max-width: 85%;
-      padding: 0 15% 0 8%;
+      flex: 0 0 80%;
+      max-width: 80%;
+      padding: 0 14% 0 5%;
+      justify-content: space-between;
 
       #site-content {
         display: flex;
@@ -819,9 +819,35 @@ pre tt::after {
       flex-direction: column;
       padding: 0.2em;
 
+      #profile-container {
+        &.blog-view {
+          display: none;
+        }
+      }
+
+      #profile {
+        margin-top: 1em;
+        gap: 0.5em;
+        display: grid;
+        justify-items: center;
+
+        #bio,
+        .social-link > span {
+          display: none;
+        }
+
+        #social-links {
+          flex-direction: row;
+          justify-content: center;
+          margin-top: 0.5em;
+          gap: 1em;
+        }
+      }
+
       #site-page {
         margin-top: 2em;
         padding: 0.2em;
+        max-width: 100%;
 
         #site-content {
           padding: 0 1em;

@@ -7,11 +7,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-interface IProps {
-  blogView?: boolean;
-}
-
-export default function Profile(props: Readonly<IProps>): React.ReactElement {
+export default function Profile(): React.ReactElement {
   const data = useStaticQuery(graphql`
     query ProfileQuery {
       site {
@@ -43,7 +39,7 @@ export default function Profile(props: Readonly<IProps>): React.ReactElement {
   // const welovedevsLink = socials.weLoveDevs;
 
   return (
-    <div id="profile" className={props.blogView ? 'blog-view' : ''}>
+    <div id="profile">
       <Link to="/">
         <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
       </Link>
