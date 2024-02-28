@@ -43,8 +43,8 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
         <Header location={props.location} siteTitle={author} />
       </header>
       <div id="site-body">
-        <div id="profile-container">
-          <Profile blogView={props.blogView} />
+        <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
+          <Profile />
         </div>
         <div id="site-page">
           <main id="site-content">

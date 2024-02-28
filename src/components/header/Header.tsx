@@ -46,7 +46,7 @@ export default function Header(props: Readonly<IProps>): ReactElement {
   ];
 
   return (
-    <div id="portfolio-header">
+    <span id="portfolio-header">
       <h1>
         <Link to="/">{props.siteTitle}</Link>
       </h1>
@@ -58,6 +58,6 @@ export default function Header(props: Readonly<IProps>): ReactElement {
           </Link>
         ))}
       </div>
-    </div>
+    </span>
   );
 }

@@ -14,11 +14,11 @@ export default function Post(post: Readonly<IPost>): React.ReactElement {
     <li key={post.fields.slug}>
       <article className="post-list-item" itemScope itemType="https://schema.org/Article">
         <header>
-          <h2>
+          <h3>
             <Link to={post.fields.slug} itemProp="url">
               <span itemProp="headline">{title}</span>
             </Link>
-          </h2>
+          </h3>
           <small>{publicationDate}</small>
         </header>
         <img src={`/blog/${post.frontmatter.image}`} className="blog-thumbnail" alt="Illustration article" />
