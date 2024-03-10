@@ -1,6 +1,6 @@
 name: Node.js CI
 
-on: ['push']
+on: ['push', 'workflow_dispatch']
 
 jobs:
   test:
@@ -17,6 +17,18 @@ jobs:
         with:
           node-version: 20.8.1
           cache: 'npm'
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: Install dependencies
         run: npm ci
@@ -47,7 +59,7 @@ jobs:
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
-        if: success() && github.ref == 'refs/heads/master'
+        if: success() && github.ref_name == 'master'
         with:
           path: ./public
 
@@ -62,7 +74,7 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: test
-    if: success() && github.ref == 'refs/heads/master'
+    if: success() && github.ref_name == 'master'
 
     steps:
       - name: Deploy to GitHub Pages
