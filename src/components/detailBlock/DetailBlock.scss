@@ -14,9 +14,11 @@
     flex-basis: 25%;
     border-right: 1px solid $detail-block-border-color;
     background-color: #96c5d4;
+    display: flex;
 
     > * {
       text-align: center;
+      margin: auto;
     }
   }
 

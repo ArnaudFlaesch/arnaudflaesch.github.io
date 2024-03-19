@@ -16,6 +16,7 @@ const company = 'Publicis Sapient France';
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
 const scrumOrgLink = 'https://www.scrum.org/user/1355891';
+const credlyLink = 'https://www.credly.com/users/arnaud-flaesch/badges';
 const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 const mediumLink = 'https://medium.com/@arnaudflaesch';
 
@@ -36,6 +37,7 @@ module.exports = {
       linkedin: linkedinLink,
       github: githubLink,
       scrumOrg: scrumOrgLink,
+      credly: credlyLink,
       weLoveDevs: welovedevsLink,
       medium: mediumLink
     },

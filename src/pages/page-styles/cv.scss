@@ -20,4 +20,21 @@
     flex-direction: column;
     row-gap: 0.5em;
   }
+
+  #certifications-detail-list {
+    display: grid;
+    column-gap: 2em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    > * {
+      margin: auto 0;
+    }
+
+    .certifications-logos {
+      display: flex;
+      flex-direction: row;
+      column-gap: 1em;
+    }
+  }
 }

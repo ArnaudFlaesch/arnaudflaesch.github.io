@@ -96,6 +96,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       linkedin: String
       github: String
       scrumOrg: String
+      credly: String
       weLoveDevs: String
       medium: String
     }
