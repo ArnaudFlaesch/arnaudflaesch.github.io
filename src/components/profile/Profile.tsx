@@ -19,6 +19,7 @@ export default function Profile(): React.ReactElement {
             linkedin
             github
             scrumOrg
+            credly
             medium
             weLoveDevs
           }
@@ -35,6 +36,7 @@ export default function Profile(): React.ReactElement {
   const linkedinLink = socials.linkedin;
   const githubLink = socials.github;
   const scrumOrgLink = socials.scrumOrg;
+  const credlyLink = socials.credly;
   const mediumLink = socials.medium;
   // const welovedevsLink = socials.weLoveDevs;
 
@@ -78,12 +80,23 @@ export default function Profile(): React.ReactElement {
 
         <div id="scrumOrgLink">
           <a href={scrumOrgLink} className="social-link">
-            <Tooltip title="Certifications Scrum.org">
+            <Tooltip title="Scrum.org">
               <div>
                 <StaticImage src="../../images/icons/socials/scrum-org-icon.png" alt="scrum.org" />
               </div>
             </Tooltip>
-            <span>Certifications Scrum.org</span>
+            <span>Profil Scrum.org</span>
+          </a>
+        </div>
+
+        <div id="credlyLink">
+          <a href={credlyLink} className="social-link">
+            <Tooltip title="Certifications">
+              <div>
+                <StaticImage src="../../images/icons/socials/credly-icon.png" alt="credly" />
+              </div>
+            </Tooltip>
+            <span>Certifications</span>
           </a>
         </div>
 

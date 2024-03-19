@@ -34,10 +34,10 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   `);
 
   const scrumOrgLink = data.site.siteMetadata.socials.scrumOrg;
+  const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
+  const githubAdvancedSecurityBadgeLink = 'https://www.credly.com/badges/a20775eb-8713-4013-b0fe-d5e359a543e8';
 
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
-  const IMG_HEIGHT = 60;
-  const IMG_WIDTH = 60;
 
   const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
 
@@ -91,29 +91,45 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
           <DetailBlock
             titleComponent={<h3>{'Certifications'}</h3>}
             detailComponent={
-              <>
+              <div id="certifications-detail-list">
                 <h4>Professional Scrum Master 1 et 2 (décembre 2023)</h4>
-                <Tooltip title="PSM 1">
-                  <a href={scrumOrgLink}>
-                    <StaticImage
-                      height={IMG_HEIGHT}
-                      width={IMG_WIDTH}
-                      src="../images/certifications/psm1.png"
-                      alt={'PSM 1'}
-                    />
-                  </a>
-                </Tooltip>
-                <Tooltip title="PSM 2">
-                  <a href={scrumOrgLink}>
-                    <StaticImage
-                      height={IMG_HEIGHT}
-                      width={IMG_WIDTH}
-                      src="../images/certifications/psm2.png"
-                      alt={'PSM 2'}
-                    />
-                  </a>
-                </Tooltip>
-              </>
+                <div className="certifications-logos">
+                  <Tooltip title="PSM 1">
+                    <a href={scrumOrgLink}>
+                      <StaticImage height={80} width={80} src="../images/certifications/psm1.png" alt={'PSM 1'} />
+                    </a>
+                  </Tooltip>
+                  <Tooltip title="PSM 2">
+                    <a href={scrumOrgLink}>
+                      <StaticImage height={80} width={80} src="../images/certifications/psm2.png" alt={'PSM 2'} />
+                    </a>
+                  </Tooltip>
+                </div>
+
+                <h4>GitHub (mars 2024)</h4>
+                <div className="certifications-logos">
+                  <Tooltip title="GitHub Actions">
+                    <a href={githubActionsBadgeLink}>
+                      <StaticImage
+                        height={90}
+                        width={90}
+                        src="../images/certifications/github-actions.png"
+                        alt={'GitHub Actions'}
+                      />
+                    </a>
+                  </Tooltip>
+                  <Tooltip title="GitHub Advanced Security">
+                    <a href={githubAdvancedSecurityBadgeLink}>
+                      <StaticImage
+                        height={90}
+                        width={90}
+                        src="../images/certifications/github-advanced-security.png"
+                        alt={'GitHub Advanced Security'}
+                      />
+                    </a>
+                  </Tooltip>
+                </div>
+              </div>
             }
           />
         </div>
