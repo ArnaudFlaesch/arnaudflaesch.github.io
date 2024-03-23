@@ -93,7 +93,9 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
         </h2>
         <ol>
           {posts.map((post: IPost) => (
-            <Post key={post.frontmatter.title} {...post} />
+            <li key={post.fields.slug}>
+              <Post {...post} />
+            </li>
           ))}
         </ol>
       </div>

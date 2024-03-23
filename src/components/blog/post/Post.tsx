@@ -11,26 +11,27 @@ export default function Post(post: Readonly<IPost>): React.ReactElement {
   const publicationDate = format(post.frontmatter.date, 'dd MMMM, yyyy', { locale: fr });
 
   return (
-    <li key={post.fields.slug}>
-      <article className="post-list-item" itemScope itemType="https://schema.org/Article">
+    <article className="post-list-item" itemScope itemType="https://schema.org/Article">
+      <Link to={post.fields.slug} itemProp="url">
         <header>
           <h3>
-            <Link to={post.fields.slug} itemProp="url">
-              <span itemProp="headline">{title}</span>
-            </Link>
+            <span itemProp="headline">{title}</span>
           </h3>
           <small>{publicationDate}</small>
         </header>
-        <img src={`/blog/${post.frontmatter.image}`} className="blog-thumbnail" alt="Illustration article" />
-        <section>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: post.frontmatter.description || post.excerpt
-            }}
-            itemProp="description"
-          />
-        </section>
-      </article>
-    </li>
+        <div className="article-preview">
+          <img src={`/blog/${post.frontmatter.image}`} className="blog-thumbnail" alt="Illustration article" />
+          <section>
+            <p
+              className="description"
+              dangerouslySetInnerHTML={{
+                __html: post.frontmatter.description || post.excerpt
+              }}
+              itemProp="description"
+            />
+          </section>
+        </div>
+      </Link>
+    </article>
   );
 }
