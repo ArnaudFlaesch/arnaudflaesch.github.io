@@ -32,6 +32,10 @@
     gap: 1em 0.5em;
     font-size: 0.9rem;
 
+    a {
+      color: unset;
+    }
+
     .social-link {
       display: flex;
       flex-direction: row;

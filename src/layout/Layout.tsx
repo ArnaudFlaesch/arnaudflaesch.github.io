@@ -51,11 +51,9 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
             <div id="page-header">
               {props.title && <h1 id="page-title">{props.title}</h1>}
               {props.location.pathname === '/blog/' && (
-                <a href={rss}>
-                  <Tooltip title="Flux RSS">
-                    <RssFeed id="rss-feed-icon" />
-                  </Tooltip>
-                </a>
+                <Tooltip title="Flux RSS">
+                  <RssFeed href={rss} id="rss-feed-icon" />
+                </Tooltip>
               )}
             </div>
             {props.description && <div id="page-description">{props.description}</div>}
