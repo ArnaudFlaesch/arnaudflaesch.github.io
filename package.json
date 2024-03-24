@@ -27,6 +27,9 @@
     "clean": "gatsby clean",
     "serve": "gatsby serve"
   },
+  "overrides": {
+    "webpack-dev-middleware": "6.1.2"
+  },
   "dependencies": {
     "@emotion/react": "11.11.4",
     "@emotion/styled": "11.11.0",
