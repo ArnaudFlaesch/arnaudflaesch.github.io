@@ -1,20 +1,21 @@
 .blog-post {
   .article-illustration {
-    margin: 1em 0;
+    margin: 1em auto 0.5em;
   }
 
-  img:not(.article-illustration) {
+  img {
     display: flex;
     margin: 0.2em auto;
   }
 
-  p {
-    img + em {
-      display: flex;
-      font-size: 0.8rem;
-      color: #4b4545;
-      justify-content: center;
-    }
+  img + em {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #4b4545;
+    margin-top: 0.2em;
+    width: 100%;
+    text-align: center;
+    white-space: pre-line;
   }
 
   .blog-post-footer {

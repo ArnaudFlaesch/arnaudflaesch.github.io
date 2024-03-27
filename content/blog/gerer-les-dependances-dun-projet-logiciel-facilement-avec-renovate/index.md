@@ -1,8 +1,9 @@
 ---
-title: Gérer ses dépendances logicielles facilement avec Renovate
+title: Gérer les dépendances d'un projet logiciel facilement avec Renovate
 date: '2024-02-10T16:00'
 description: Comment maintenir les dépendances d'un logiciel de manière sûre et rapide grâce à un outil automatisé.
 image: 2024/1-renovate/renovate-logo.png
+imageSubtitle: "Logo de Renovate. Source photo :&nbsp<a href='https://github.com/mend/renovate-ce-ee'>dépôt GitHub du projet</a>."
 tags: ['Dépendances', 'Renovate', 'Sécurité logicielle']
 ---
 
@@ -17,7 +18,8 @@ package.json. Au fil du temps les fonctionnalités ajoutées au projet vont néc
 supplémentaires et cela peut entraîner des problèmes, notamment liés à la sécurité, si elles ne sont pas maintenues régulièrement.
 
 ![Liste de pull requests sur un projet Node.JS](/blog/2024/1-renovate/nodejs-pr-list.gif)
-_Les mises à jour sont fréquentes, particulièrement sur les projets frontend NodeJS._
+_Les mises à jour sont fréquentes, particulièrement sur les projets frontend NodeJS.
+Source photo : pull requests  [d'un de mes projets sur GitHub](https://github.com/ArnaudFlaesch/Dash-Web/pulls?q=is%3Apr+is%3Aclosed)._
 
 Par exemple, lorsque la faille de sécurité associée à Log4J a été détectée fin 2021, son caractère critique a nécessité
 une mise à jour rapide sur le projet sur lequel je travaillais. Le problème c'est que cette mise à jour demandait
@@ -36,7 +38,8 @@ Dans ce cas il pourra soit être bloqué dans son travail, soit être ralenti pa
 nécessaire mais non prévue initialement.
 
 ![Personne en train de jouer à Jenga.](/blog/2024/1-renovate/jenga.jpg)
-_Développeur frontend essayant de mettre à jour un package.json non maintenu depuis 2 ans._
+_Développeur frontend essayant de mettre à jour un package.json non maintenu depuis 2 ans.
+Source photo : [Amazon](https://www.amazon.fr/D-Y-Republic-traditionnel-bois/dp/B093WZC8Q2?th=1)._
 
 ## Présentation de Renovate
 
@@ -67,7 +70,8 @@ des modifications au code via une pull request tout en nécessitant toujours une
 intègre la pull request sans nécessiter votre approbation).
 
 ![Pull request de Renovate sur Github.](/blog/2024/1-renovate/update-pr-angular.png)
-_Une pull request proposée par Renovate pour mettre à jour Angular Material._
+_Une pull request proposée par Renovate pour mettre à jour Angular Material.
+Source photo : Un de mes [projets sur GitHub](https://github.com/ArnaudFlaesch/Dash-Web/pull/1038)._
 
 Votre projet a sûrement un processus d'intégration continue que vous allez pouvoir utiliser avec cet outil.
 À chaque pull request créée par Renovate, vos tests vont pouvoir s'exécuter sur cette nouvelle version et vérifier
@@ -149,15 +153,16 @@ module.exports = {
 }
 ```
 
-Vous pouvez créer ces deux fichiers dans un dépôt à part, créer les variables d’environnement nécessaires, lancer le pipeline
+Vous pouvez créer ces deux fichiers dans un dépôt à part, créer les variables d'environnement nécessaires, lancer le pipeline
 et Renovate analysera les dépôts définis dans repositories. Ensuite vous pourrez ajouter le paramètre de configuration
 schedule dans le fichier azure-pipelines.yml pour que le pipeline se lance régulièrement. Sur Gitlab,
 le processus sera assez similaire et vous devrez créer un fichier .gitlab-ci.yml à la place de celui pour le pipeline Azure.
 
 Une fois Renovate exécuté sur un projet, une onboarding pull request sera créée :
 
-![Exemple d’une PR de configuration initiale de Renovate.](/blog/2024/1-renovate/onboarding-pr.png)
-_Exemple d’une PR de configuration initiale de Renovate._
+![Exemple d'une PR de configuration initiale de Renovate.](/blog/2024/1-renovate/onboarding-pr.png)
+_Exemple d'une PR de configuration initiale de Renovate.
+Source photo : PR sur [GitHub](https://github.com/ArnaudFlaesch/Dash-Web/pull/2)._
 
 Pour aller plus loin, vous pouvez modifier la configuration par défaut en modifiant le fichier renovate.json
 présent dans chaque projet analysé en ajoutant des options telles que :
