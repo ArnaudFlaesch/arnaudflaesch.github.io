@@ -26,6 +26,7 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   const postTitle = post.frontmatter.title;
   const pubDate = post.frontmatter.date;
   const imageUrl = post.frontmatter.image;
+  const imageSubtitle = post.frontmatter.imageSubtitle;
 
   const blogUrlPrefix = '/blog/';
 
@@ -46,7 +47,10 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
             <p>{format(pubDate, 'dd MMMM yyyy', { locale: fr })}</p>
             {post.frontmatter.description}
           </header>
-          <img className="article-illustration" src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
+          <p>
+            <img className="article-illustration" src={`${blogUrlPrefix}${imageUrl}`} alt="Illustration article" />
+            <em dangerouslySetInnerHTML={{ __html: imageSubtitle }} />
+          </p>
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <hr />
           <footer className="blog-post-footer">
@@ -152,6 +156,7 @@ export const pageQuery = graphql`
         date
         description
         image
+        imageSubtitle
         tags
       }
     }
