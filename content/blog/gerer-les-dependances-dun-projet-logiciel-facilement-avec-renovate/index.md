@@ -206,7 +206,7 @@ Pour ma part je l'utilise sur mes projets personnels car cela me permet de ne pa
 d'un coup quand je les laisse en stand-by pendant plusieurs semaines/mois ;) et je vous invite à l'essayer
 pour que les montées de versions ne soient plus un évènement pour vous !
 
-## Liens utiles
+### Liens utiles
 
 - Site officiel de Renovate : <https://docs.renovatebot.com/>
 - Documentation sur la configuration : <https://docs.renovatebot.com/configuration-options/>

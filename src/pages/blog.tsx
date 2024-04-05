@@ -18,7 +18,7 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
 
   return (
     <Layout title={title} description={description} location={props.location}>
-      <ol>
+      <ol id="articles-list">
         {posts?.map((post: IPost) => (
           <li key={post.fields.slug}>
             <Post {...post} />
