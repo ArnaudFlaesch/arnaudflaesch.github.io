@@ -36,7 +36,7 @@ qu'elles sont rendues publiques.
 Pour cela GitHub met à disposition des développeurs Dependabot, un outil permettant d'analyser vos dépendances
 et d'avertir les développeurs quand une faille de sécurité est détectée.
 
-Dans l'onglet "Sécurité" d'un dépôt, vous pouvez cliquer sur “Dependabot” et ainsi trouver
+Dans l'onglet "Sécurité" d'un dépôt, vous pouvez cliquer sur "Dependabot" et ainsi trouver
 la liste des alertes qui requièrent votre attention.
 
 ![Un exemple d'alertes remontée par Dependabot sur un de mes projets personnels.](/blog/2024/2-ghas/dependabot.png)
@@ -52,8 +52,8 @@ via une Action GitHub que vous pouvez ajouter à votre intégration continue et 
 
 Aussi, de manière similaire à Renovate, vous pouvez configurer l'outil via le fichier de configuration _dependabot.yml_
 pour qu'il analyse régulièrement votre liste de dépendances et propose des pulls requests pour les mettre à jour.
-Pour cela, il suffit de se rendre dans “Paramètres” -> “Sécurité et analyse du code” puis “Dependabot version updates”
-et cliquer sur “Activer”. Cela vous amènera sur une page où vous pourrez créer le fichier dependabot.yml
+Pour cela, il suffit de se rendre dans "Paramètres" -> "Sécurité et analyse du code" puis "Dependabot version updates"
+et cliquer sur "Activer". Cela vous amènera sur une page où vous pourrez créer le fichier dependabot.yml
 et l'ajouter au dépôt.
 
 #### **`dependabot.yml`**
@@ -96,10 +96,10 @@ est un sujet qui doit être traité immédiatement pour limiter les risques.
 GitHub propose la fonctionnalité _secret scanning_ qui permet donc de détecter les secrets présents dans un dépôt.
 
 ![L'écran de détection des secrets dans un de mes projets sur GitHub.](/blog/2024/2-ghas/secret_scanning.png)
-_L'écran de détection des secrets dans [un de mes projets](https://github.com/ArnaudFlaesch/arnaudflaesch.github.io/security/secret-scanning) sur GitHub._
+_L'écran de détection des secrets dans un de mes [projets](https://github.com/ArnaudFlaesch/arnaudflaesch.github.io/security/secret-scanning) sur GitHub._
 
 La fonctionnalité doit tout d'abord être activée via les paramètres du dépôt GitHub en allant dans le menu
-“Sécurité et analyse du code”. Il est également possible au même endroit d'activer la “Push protection”
+"Sécurité et analyse du code". Il est également possible au même endroit d'activer la "Push protection"
 qui scannera les commits envoyés sur les branches du dépôt par un développeur et empêchera que des
 secrets soient rendus publics.
 
@@ -120,8 +120,8 @@ base de données contenant les différentes lignes de code pour ensuite permettr
 quelles lignes comportent des problèmes. Il peut s'agir de simples avertissements liés à des erreurs
 de styles (conventions de nommage non respectées, formatage incorrect, etc.) ou bien d'alertes de sécurité.
 
-Pour ajouter un scan CodeQL à un de vos projets, il suffit d'aller dans l'onglet “Actions”, puis de cliquer
-sur “New workflow”, de chercher “CodeQL” et de configurer l'action “CodeQL Analysis.” Cela vous guidera
+Pour ajouter un scan CodeQL à un de vos projets, il suffit d'aller dans l'onglet "Actions", puis de cliquer
+sur "New workflow", de chercher "CodeQL" et de configurer l'action "CodeQL Analysis." Cela vous guidera
 dans la création d'un nouveau workflow et il ne restera qu'à choisir le ou les langages à analyser.
 
 ![Exemple d'alertes remontées (entre autres) par CodeQL sur un de mes projets GitHub.](/blog/2024/2-ghas/code_scanning.png)
@@ -131,7 +131,7 @@ Comme vous pouvez le voir sur l'image juste dessus, il y a des alertes remontée
 [Snyk](https://github.com/marketplace/actions/snyk) et [Codacy](https://github.com/marketplace/actions/codacy-analysis-cli)
 car ces outils sont utilisés ici via des Actions GitHub pour respectivement analyser l'image Docker
 du projet et les styles de code (d'où le nombre élevé dû à beaucoup d'erreurs de styles remontées par Codacy).
-Les alertes et informations recueillies dans l'onglet “Sécurité” d'un projet GitHub sont des informations reçues
+Les alertes et informations recueillies dans l'onglet "Sécurité" d'un projet GitHub sont des informations reçues
 en utilisant le format SARIF, et donc toute Action GitHub produisant un fichier de ce format peut les intégrer
 dans l'onglet, ce qui vous permet d'avoir au même endroit tous les résultats d'analyses de votre code, qu'il
 s'agisse d'erreurs de style ou de problèmes de sécurité, le tout triable bien sûr en fonction de la sévérité.
@@ -158,7 +158,7 @@ Dans un fichier de pipeline, il est possible de rajouter une tâche dédiée au 
 ```
 
 Après chaque analyse, la liste des dépendances contenant une vulnérabilité sera mise à jour et visible dans l'onglet
-“Advanced Security -> Dependencies” depuis la page du dépôt sélectionné.
+"Advanced Security -> Dependencies" depuis la page du dépôt sélectionné.
 
 Documentation sur l'analyse de dépendances : <https://learn.microsoft.com/fr-fr/azure/devops/repos/security/github-advanced-security-dependency-scanning?view=azure-devops>
 
@@ -166,8 +166,8 @@ Documentation sur l'analyse de dépendances : <https://learn.microsoft.com/fr-fr
 
 La détection de secrets démarre automatiquement lorsque Advanced Security est activée pour un dépôt.
 L'analyse va dans un premier temps s'exécuter sur tous les commits existant déjà dans le dépôt et
-afficher les secrets détectés dans l'onglet “Secrets” via Repos > Advanced Security.
-La “Push protection” est également activée par défaut en même temps qu'Advanced Security.
+afficher les secrets détectés dans l'onglet "Secrets" via Repos > Advanced Security.
+La "Push protection" est également activée par défaut en même temps qu'Advanced Security.
 
 ![L'écran de détection des secrets sur Azure DevOps.](/blog/2024/2-ghas/azure-secret-scanning.png)
 _Source image : <https://learn.microsoft.com/fr-fr/azure/devops/repos/security/media/secret-scanning-alerts.png?view=azure-devops>._
