@@ -58,8 +58,8 @@
     "gatsby-transformer-remark": "6.13.1",
     "gatsby-transformer-sharp": "5.13.1",
     "prismjs": "1.29.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "18.3.0",
+    "react-dom": "18.3.0"
   },
   "devDependencies": {
     "@types/node": "20.12.7",
