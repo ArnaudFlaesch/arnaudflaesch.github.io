@@ -6,4 +6,10 @@
   .skill-category-title {
     margin: auto;
   }
+
+  .detail-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
 }

@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import './Experience.scss';
 
-import { IExperience } from '../../../model/IExperience';
 import { format } from 'date-fns/format';
+import { IExperience } from '../../../model/IExperience';
 
-import { fr } from 'date-fns/locale/fr';
-import DetailBlock from '../../detailBlock/DetailBlock';
 import { ArrowForward } from '@mui/icons-material';
+import { fr } from 'date-fns/locale/fr';
 import { ReactElement } from 'react';
+import DetailBlock from '../../detailBlock/DetailBlock';
 
 export default function Experience(props: Readonly<IExperience>): ReactElement {
   function displayPeriod(dateDebut: Date, dateFin?: Date): ReactElement {
@@ -54,8 +54,8 @@ export default function Experience(props: Readonly<IExperience>): ReactElement {
         <div className="job-details-content">
           <h3>{props.title}</h3>
           <div className="job-description">
-            {props.description.map((description) => (
-              <div>{description}</div>
+            {props.description.map((description, index) => (
+              <div key={index}>{description}</div>
             ))}
           </div>
         </div>
