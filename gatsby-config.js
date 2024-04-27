@@ -4,13 +4,13 @@ require('dotenv').config({
 
 const fullName = 'Arnaud Flaesch';
 const pwaShortName = 'AF';
-const title = 'Arnaud Flaesch, Développeur Web';
+const title = 'Arnaud Flaesch, Développeur Fullstack';
 const siteName = 'arnaudflaesch.github.io';
 const siteUrl = `https://${siteName}`;
 const defaultImageUrl = '/profile-picture.jpg';
-const description = `Je m'appelle Arnaud et je suis développeur web. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
+const description = `Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
 sur lesquels je travaille.`;
-const jobName = 'Développeur Web';
+const jobName = 'Développeur Fullstack';
 const company = 'Publicis Sapient France';
 
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';

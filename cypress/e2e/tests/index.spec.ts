@@ -7,7 +7,7 @@ describe('Portfolio tests', () => {
 
   it('Should get the home page', () => {
     cy.title()
-      .should('equals', 'Arnaud Flaesch, Développeur Web')
+      .should('equals', 'Arnaud Flaesch, Développeur Fullstack')
       .get('h1')
       .first()
       .should('have.text', 'Arnaud Flaesch')
