@@ -42,7 +42,7 @@ export default function DashWebServicesProject(): React.ReactElement {
       tooltip="Kotlin"
       image={
         <StaticImage
-          src="../../../images/icons/backend/kotlin.png"
+          src="../../../images/icons/backend/kotlin.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="Kotlin"
@@ -54,7 +54,7 @@ export default function DashWebServicesProject(): React.ReactElement {
       tooltip="Spring Boot"
       image={
         <StaticImage
-          src="../../../images/icons/backend/springboot.png"
+          src="../../../images/icons/backend/spring.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="Spring Boot"
@@ -90,7 +90,7 @@ export default function DashWebServicesProject(): React.ReactElement {
       tooltip="Docker"
       image={
         <StaticImage
-          src="../../../images/icons/tools/docker.png"
+          src="../../../images/icons/tools/docker.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="Docker"
@@ -102,7 +102,7 @@ export default function DashWebServicesProject(): React.ReactElement {
       tooltip="PostgreSQL"
       image={
         <StaticImage
-          src="../../../images/icons/tools/postgresql.png"
+          src="../../../images/icons/tools/postgresql.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="PostgreSQL"
@@ -113,7 +113,7 @@ export default function DashWebServicesProject(): React.ReactElement {
       key={'Snyk'}
       tooltip="Snyk"
       image={
-        <StaticImage src="../../../images/icons/tools/snyk.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Snyk" />
+        <StaticImage src="../../../images/icons/tools/snyk.svg" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Snyk" />
       }
     />,
     <TooltipIcon
@@ -121,7 +121,7 @@ export default function DashWebServicesProject(): React.ReactElement {
       tooltip="Heroku"
       image={
         <StaticImage
-          src="../../../images/icons/tools/heroku.png"
+          src="../../../images/icons/tools/heroku.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="Heroku"

@@ -42,7 +42,7 @@ export default function CashManagerProject(): React.ReactElement {
       tooltip="Angular 2"
       image={
         <StaticImage
-          src="../../../images/icons/frontend/angular2.png"
+          src="../../../images/icons/frontend/angular2.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="Angular 2"
@@ -53,14 +53,14 @@ export default function CashManagerProject(): React.ReactElement {
       key={'Jest'}
       tooltip="Jest"
       image={
-        <StaticImage src="../../../images/icons/frontend/jest.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Jest" />
+        <StaticImage src="../../../images/icons/frontend/jest.svg" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Jest" />
       }
     />,
     <TooltipIcon
       key={'Sass'}
       tooltip="Sass"
       image={
-        <StaticImage src="../../../images/icons/frontend/sass.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
+        <StaticImage src="../../../images/icons/frontend/sass.svg" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
       }
     />,
     <TooltipIcon
