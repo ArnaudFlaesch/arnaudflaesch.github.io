@@ -53,7 +53,7 @@ export default function PortfolioProject(): React.ReactElement {
       key={'Sass'}
       tooltip="Sass"
       image={
-        <StaticImage src="../../../images/icons/frontend/sass.png" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
+        <StaticImage src="../../../images/icons/frontend/sass.svg" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Sass" />
       }
     />,
 
@@ -62,7 +62,7 @@ export default function PortfolioProject(): React.ReactElement {
       tooltip="Gatsby"
       image={
         <StaticImage
-          src="../../../images/icons/frontend/gatsby.png"
+          src="../../../images/icons/frontend/gatsby.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="Gatsby"
@@ -74,7 +74,7 @@ export default function PortfolioProject(): React.ReactElement {
       tooltip="TypeScript"
       image={
         <StaticImage
-          src="../../../images/icons/frontend/typescript.png"
+          src="../../../images/icons/frontend/typescript.svg"
           width={ICON_WIDTH}
           height={ICON_HEIGHT}
           alt="TypeScript"
