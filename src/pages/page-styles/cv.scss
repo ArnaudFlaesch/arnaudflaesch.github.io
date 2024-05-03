@@ -22,19 +22,23 @@
   }
 
   #certifications-detail-list {
-    display: grid;
-    column-gap: 2em;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-
-    > * {
-      margin: auto 0;
-    }
-
-    .certifications-logos {
+    > div {
       display: flex;
       flex-direction: row;
-      column-gap: 1em;
-    }
+      column-gap: 2em;
+      margin : auto 0;
+      padding: 0.5em 0;
+
+      > * {
+        flex-basis: 50%;
+        margin: auto 0;
+      }
+  
+      .certifications-logos {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1em;
+      }
+    }    
   }
 }

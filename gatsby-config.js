@@ -17,8 +17,9 @@ const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
 const scrumOrgLink = 'https://www.scrum.org/user/1355891';
 const credlyLink = 'https://www.credly.com/users/arnaud-flaesch/badges';
-const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 const mediumLink = 'https://medium.com/@arnaudflaesch';
+const stackOverflowLink = 'https://stackoverflow.com/users/12927815/arnaud-flaesch';
+const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 
 const rssFeedFile = '/rss.xml';
 
@@ -39,6 +40,7 @@ module.exports = {
       scrumOrg: scrumOrgLink,
       credly: credlyLink,
       weLoveDevs: welovedevsLink,
+      stackOverflow: stackOverflowLink,
       medium: mediumLink
     },
     rss: rssFeedFile

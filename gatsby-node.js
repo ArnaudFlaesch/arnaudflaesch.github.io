@@ -98,6 +98,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       scrumOrg: String
       credly: String
       weLoveDevs: String
+      stackOverflow: String
       medium: String
     }
      type MarkdownRemark implements Node {
