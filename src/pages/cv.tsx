@@ -36,7 +36,6 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   const scrumOrgLink = data.site.siteMetadata.socials.scrumOrg;
   const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
   const githubAdvancedSecurityBadgeLink = 'https://www.credly.com/badges/a20775eb-8713-4013-b0fe-d5e359a543e8';
-  const certificatNumeriqueResponsableLink = 'https://numerique-responsable.univ-lr.fr/ecocertifications/';
 
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
 
@@ -91,12 +90,12 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                   <div className="certifications-logos">
                     <Tooltip title="PSM 1">
                       <a href={scrumOrgLink}>
-                        <StaticImage height={80} width={80} src="../images/certifications/psm1.png" alt={'PSM 1'} />
+                        <StaticImage width={80} src="../images/certifications/psm1.png" alt={'PSM 1'} />
                       </a>
                     </Tooltip>
                     <Tooltip title="PSM 2">
                       <a href={scrumOrgLink}>
-                        <StaticImage height={80} width={80} src="../images/certifications/psm2.png" alt={'PSM 2'} />
+                        <StaticImage width={80} src="../images/certifications/psm2.png" alt={'PSM 2'} />
                       </a>
                     </Tooltip>
                   </div>
@@ -110,7 +109,6 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                     <Tooltip title="GitHub Actions">
                       <a href={githubActionsBadgeLink}>
                         <StaticImage
-                          height={100}
                           width={100}
                           src="../images/certifications/github-actions.png"
                           alt={'GitHub Actions'}
@@ -120,7 +118,6 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                     <Tooltip title="GitHub Advanced Security">
                       <a href={githubAdvancedSecurityBadgeLink}>
                         <StaticImage
-                          height={100}
                           width={100}
                           src="../images/certifications/github-advanced-security.png"
                           alt={'GitHub Advanced Security'}
@@ -134,13 +131,11 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
 
                 <div>
                   <h4>Certificat de connaissances Numérique Responsable - Avril 2024</h4>
-                  <a href={certificatNumeriqueResponsableLink}>
-                    <img
-                      width={240}
-                      src="/certifications/numerique-responsable.png"
-                      alt={'Certificat de connaissances Numérique Responsable'}
-                    />
-                  </a>
+                  <img
+                    width={240}
+                    src="/certifications/numerique-responsable.png"
+                    alt={'Certificat de connaissances Numérique Responsable'}
+                  />
                 </div>
               </div>
             }
