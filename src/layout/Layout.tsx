@@ -38,33 +38,35 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
   const rss = data.site.siteMetadata.rss;
 
   return (
-    <div id="site-container">
-      <header id="fixed-header">
-        <Header location={props.location} siteTitle={author} />
-      </header>
-      <div id="site-body">
-        <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
-          <Profile />
-        </div>
-        <div id="site-page">
-          <main id="site-content">
-            <div id="page-header">
-              {props.title && <h1 id="page-title">{props.title}</h1>}
-              {props.location.pathname === '/blog/' && (
-                <Tooltip title="Flux RSS">
-                  <a href={rss}><RssFeed id="rss-feed-icon" /></a>
-                </Tooltip>
-              )}
-            </div>
-            {props.description && <div id="page-description">{props.description}</div>}
-            {props.children}
-          </main>
-          <footer>
-            © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
-            <a href="https://icons8.com/">Icons8</a>.
-          </footer>
+      <div id="site-container">
+        <header id="fixed-header">
+          <Header location={props.location} siteTitle={author} />
+        </header>
+        <div id="site-body">
+          <div id="profile-container" className={props.blogView ? 'blog-view' : ''}>
+            <Profile />
+          </div>
+          <div id="site-page">
+            <main id="site-content">
+              <div id="page-header">
+                {props.title && <h1 id="page-title">{props.title}</h1>}
+                {props.location.pathname === '/blog/' && (
+                  <Tooltip title="Flux RSS">
+                    <a href={rss}>
+                      <RssFeed id="rss-feed-icon" />
+                    </a>
+                  </Tooltip>
+                )}
+              </div>
+              {props.description && <div id="page-description">{props.description}</div>}
+              {props.children}
+            </main>
+            <footer>
+              © 2024, Développé avec <a href="https://www.gatsbyjs.com/">Gatsby</a>. Icons by{' '}
+              <a href="https://icons8.com/">Icons8</a>.
+            </footer>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
