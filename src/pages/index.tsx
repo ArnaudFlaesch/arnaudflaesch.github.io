@@ -1,6 +1,6 @@
 import './page-styles/index.scss';
 
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 
 import Seo from '../components/Seo';
@@ -8,39 +8,42 @@ import Post from '../components/blog/post/Post';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 
 export default function Index(props: Readonly<IPageProps>): React.ReactElement {
-  const description = props.data.site.siteMetadata.description;
   const posts = props.data.allMarkdownRemark.nodes;
   const rssFeedFile = props.data.site.siteMetadata.rss;
 
-  const pageTitle = 'Bonjour !';
+  const { t } = useTranslation();
+
+  const pageTitle = t("WELCOME.MESSAGE");
+  const description = t(props.data.site.siteMetadata.description)
 
   return (
     <Layout title={pageTitle} description={description} location={props.location}>
       <div id="home-page">
         <div id="site-links">
-          <h2>Contenu du site :</h2>
+          <h2>{t('SITE.CONTENT')} :</h2>
           <ul>
             <li>
-              <Link to="/cv/">Mon parcours détaillé et mon CV téléchargeable</Link>
+              <Link to="/cv/">{t("CV.MESSAGE")}</Link>
             </li>
             <li>
               <Link to="/projets/">
-                Les projets personnels sur lesquels je travaille occasionnellement, hébergés sur GitHub
+              {t("PROJECTS.MESSAGE")}
               </Link>
             </li>
             <li>
-              <Link to="/blog/">Des articles de blog</Link> (<a href={rssFeedFile}>flux RSS</a>)
+              <Link to="/blog/">{t("BLOG.MESSAGE")}</Link> (<a href={rssFeedFile}>{t("RSS.FEED")}</a>)
             </li>
             <li>
-              <Link to="/contact/">Un formulaire de contact pour m'envoyer un email</Link>
+              <Link to="/contact/">{t("CONTACT.MESSAGE")}</Link>
             </li>
           </ul>
         </div>
 
         <h2 id="blog-title">
-          <a href="/blog">Articles récents</a>
+          <a href="/blog">{t("RECENT.ARTICLES")}</a>
         </h2>
         <ol>
           {posts.map((post: IPost) => (
@@ -57,7 +60,7 @@ export default function Index(props: Readonly<IPageProps>): React.ReactElement {
 export const Head = () => <Seo location={''} />;
 
 export const pageQuery = graphql`
-  query {
+  query ($language: String!) {
     site {
       siteMetadata {
         description
@@ -75,6 +78,15 @@ export const pageQuery = graphql`
           title
           description
           image
+        }
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

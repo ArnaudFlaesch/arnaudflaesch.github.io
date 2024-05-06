@@ -5,8 +5,8 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
 interface IProps {
   title?: string;
@@ -19,6 +19,7 @@ interface IProps {
 }
 
 export default function Seo(props: Readonly<IProps>): React.ReactElement {
+
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -36,7 +37,6 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
       }
     }
   `);
-
   const defaultTitle = site.siteMetadata.title;
   const title = props.title ? `${props.title} - ${defaultTitle}` : defaultTitle;
   const metaDescription = props.description ?? site.siteMetadata.description;
@@ -51,7 +51,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
   ));
 
   return (
-    <>
+    <>{/*FIXME */}
       <html lang="fr" />
       <title>{title}</title>
       <meta charSet="utf-8" />

@@ -32,7 +32,7 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
 export const Head = () => <Seo title={title} location={'/blog'} description={description} />;
 
 export const pageQuery = graphql`
-  query {
+  query ($language: String!) {
     site {
       siteMetadata {
         rss
@@ -49,6 +49,15 @@ export const pageQuery = graphql`
           title
           description
           image
+        }
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

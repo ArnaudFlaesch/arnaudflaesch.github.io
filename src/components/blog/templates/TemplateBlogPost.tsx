@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import Layout from '../../../layout/Layout';
@@ -11,6 +11,7 @@ import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
 import './TemplateBlogPost.scss';
 import { IconButton } from '@mui/material';
+import { Link } from 'gatsby-plugin-react-i18next';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

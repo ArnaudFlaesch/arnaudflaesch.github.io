@@ -2,7 +2,7 @@
 
 describe('Portfolio tests', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy;
   });
 
   it('Should get the home page', () => {

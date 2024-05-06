@@ -29,6 +29,10 @@
       margin : auto 0;
       padding: 0.5em 0;
 
+      img {
+        max-width: 400px;
+      }
+
       > * {
         margin: auto 0;
 
@@ -39,8 +43,6 @@
         &:last-child {
           flex-basis: 60%;
         }
-        
-        
       }
   
       .certifications-logos {

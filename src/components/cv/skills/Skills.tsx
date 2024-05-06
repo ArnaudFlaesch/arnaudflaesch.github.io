@@ -6,10 +6,13 @@ import * as React from 'react';
 import { ReactElement } from 'react';
 import DetailBlock from '../../detailBlock/DetailBlock';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
+import { useTranslation } from 'react-i18next';
 
 export default function Skills(): React.ReactElement {
   const MAX_HEIGHT = 40;
   const MAX_WIDTH = 40;
+
+  const {t} = useTranslation()
 
   function createSkillBlock(skillName: string, icons: ReactElement[]): ReactElement {
     return (
@@ -225,7 +228,7 @@ export default function Skills(): React.ReactElement {
         })
       ])}
 
-      {createSkillBlock('Outils', [
+      {createSkillBlock(t('TOOLS'), [
         TooltipIcon({
           tooltip: 'Docker',
           image: (

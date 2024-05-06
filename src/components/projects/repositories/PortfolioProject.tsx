@@ -6,19 +6,15 @@ import { StaticImage } from 'gatsby-plugin-image';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function PortfolioProject(): React.ReactElement {
+
+  const description = "PORTFOLIO.PROJECT.DESCRIPTION"
   const ICON_HEIGHT = 40;
   const ICON_WIDTH = 40;
   const QUERY = graphql`
     {
       github {
         repository(name: "arnaudflaesch.github.io", owner: "ArnaudFlaesch") {
-          createdAt
-          description
           name
-          owner {
-            id
-          }
-          pushedAt
           url
           languages(first: 5) {
             edges {
@@ -107,5 +103,5 @@ export default function PortfolioProject(): React.ReactElement {
     />
   ];
 
-  return <RepositoryWidget key={portfolioRepo.name} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />;
+  return <RepositoryWidget key={portfolioRepo.name} description={description} repoIcons={repositoryIcons} repositoryData={portfolioRepo} />;
 }

@@ -9,6 +9,7 @@ import PortfolioProject from '../components/projects/repositories/PortfolioProje
 import Seo from '../components/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
+import { graphql } from 'gatsby';
 
 const title = 'Projets personnels';
 const description = 'Les projets personnels sur lesquels je travaille.';
@@ -27,3 +28,17 @@ export default function Projets(props: Readonly<IPageProps>): React.ReactElement
 }
 
 export const Head = () => <Seo location={'/projets'} title={title} description={description} />;
+
+export const pageQuery = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

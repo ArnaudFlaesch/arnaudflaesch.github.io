@@ -8,8 +8,7 @@ const title = 'Arnaud Flaesch, Développeur Fullstack';
 const siteName = 'arnaudflaesch.github.io';
 const siteUrl = `https://${siteName}`;
 const defaultImageUrl = '/profile-picture.jpg';
-const description = `Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels
-sur lesquels je travaille.`;
+const description = `Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille.`;
 const jobName = 'Développeur Fullstack';
 const company = 'Publicis Sapient France';
 
@@ -97,6 +96,38 @@ module.exports = {
           Authorization: `bearer ${process.env.GATSBY_PORTFOLIO_GITHUB_TOKEN}`
         },
         fetchOptions: {}
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: ["en", "fr"],
+        defaultLanguage: `fr`,
+        siteUrl: siteUrl,
+        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
+        trailingSlash: 'always',
+        // you can pass any i18next options
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false
+        },
+        pages: [
+          {
+            matchPath: '/:lang?/404',
+            getLanguageFromPath: false
+          }
+        ]
       }
     },
     {

@@ -15,10 +15,19 @@ export default function NotFoundPage(props: Readonly<IPageProps>): React.ReactEl
 export const Head = () => <Seo title="404: Not found" location={'/404'} />;
 
 export const pageQuery = graphql`
-  query {
+  query ($language: String!) {
     site {
       siteMetadata {
         title
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
       }
     }
   }

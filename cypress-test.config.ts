@@ -8,6 +8,10 @@ export default defineConfig({
   screenshotOnRunFailure: true,
   video: false,
   videoCompression: false,
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-e2e-config.json'
+  },
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.

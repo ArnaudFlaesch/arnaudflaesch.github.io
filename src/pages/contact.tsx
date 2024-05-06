@@ -8,9 +8,11 @@ import Seo from '../components/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import './page-styles/contact.scss';
+import { graphql } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
 const title = 'Contactez-moi';
-const description = "Formulaire de contact si vous souhaitez me proposer une offre d'emploi ou juste discuter.";
+const description = "Formulaire de contact si vous souhaitez discuter.";
 
 export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');
@@ -18,6 +20,8 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   const [nameText, setNameText] = React.useState('');
   const [emailText, setEmailText] = React.useState('');
   const [messageText, setMessageText] = React.useState('');
+
+  const {t} = useTranslation()
 
   function isFormInvalid(): boolean {
     return state.submitting || !nameText.length || !emailText.length || !messageText.length;
@@ -27,8 +31,8 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
     <Layout title={title} description={description} location={props.location}>
       {state.succeeded ? (
         <div>
-          <p>Votre email a bien été envoyé !</p>
-          <Button onClick={reset}>Envoyer un nouveau mail</Button>
+          <p>{t("EMAIL.SENT")}</p>
+          <Button onClick={reset}>{t("SENT.ANOTHER.MAIL")}</Button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -40,7 +44,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                   type="text"
                   name="name"
                   className="contact-field"
-                  label="Votre nom et prénom"
+                  label={t("NAME.FIRSTNAME")}
                   variant="outlined"
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setNameText(event.target.value);
@@ -55,7 +59,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                   type="email"
                   name="email"
                   className="contact-field"
-                  label="Votre adresse mail"
+                  label={t("YOUR.EMAIL.ADDRESS")}
                   variant="outlined"
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setEmailText(event.target.value);
@@ -71,7 +75,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                 type="message"
                 name="message"
                 className="contact-field"
-                label="Message"
+                label={t("MESSAGE")}
                 multiline
                 rows={8}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +86,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
             </div>
 
             <Button id="submit-button" type="submit" disabled={isFormInvalid()} variant="contained">
-              Envoyer
+              {t("SEND")}
             </Button>
           </Box>
         </form>
@@ -92,3 +96,17 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
 }
 
 export const Head = () => <Seo location={'/contact'} title={title} description={description} />;
+
+export const pageQuery = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

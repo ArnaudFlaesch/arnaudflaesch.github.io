@@ -1,10 +1,10 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import { IPost } from '../../../model/IPost';
 
 import './Post.scss';
 import { format } from 'date-fns/format';
 import { fr } from 'date-fns/locale/fr';
+import { Link } from 'gatsby-plugin-react-i18next';
 
 export default function Post(post: Readonly<IPost>): React.ReactElement {
   const title = post.frontmatter.title || post.fields.slug;
