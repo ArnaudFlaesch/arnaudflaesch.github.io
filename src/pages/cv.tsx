@@ -139,7 +139,8 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                   <PhotoProvider>
                     <PhotoView src="/certifications/numerique-responsable.png">
                       <Tooltip title={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')}>
-                        <img className="large-image"
+                        <img
+                          className="large-image"
                           src="/certifications/numerique-responsable.png"
                           alt={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE') ?? ''}
                         />

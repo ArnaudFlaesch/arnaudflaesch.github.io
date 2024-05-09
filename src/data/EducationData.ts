@@ -51,7 +51,7 @@ export const formationData: IExperience[] = [
     ],
     description_en: [
       'High Level Technician degree in IT Services for Organizations, with a specialization in software solutions.',
-      "Internships (two times five weeks), development of web applications interacting with a database to present for the final exam.",
+      'Internships (two times five weeks), development of web applications interacting with a database to present for the final exam.',
       'Those two years allowed me to gain knowledge related to web development (PHP, SQL, HTML) thanks to two internships that were part of the program, but also in software development (Java, C++).'
     ],
     dateDebut: new Date(2012, 8, 1),
@@ -66,12 +66,12 @@ export const formationData: IExperience[] = [
     location: 'Paris 7ème',
     logoPath: '/school-logos/paris-5-descartes.png',
     description_fr: [
-      "Première année de licence.",
+      'Première année de licence.',
       "Emploi étudiant durant le second semestre : enregistrement vidéo de certains cours pour les mettre en ligne sur la médiathèque de l'université.",
       "Course à pieds avec le service des sports de l'université."
     ],
     description_en: [
-      "First year of bachelor.",
+      'First year of bachelor.',
       'Student job during the second semester : video recording of certain classes in order to upload them to the university online library.',
       'Running with the university sports service.'
     ],

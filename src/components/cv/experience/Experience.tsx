@@ -60,7 +60,12 @@ export default function Experience(props: Readonly<IExperience>): ReactElement {
         <div className="job-details-content">
           <h3>{title}</h3>
           <div className="job-description">
-            {descriptionList?.map((description, index) => <div key={index}>{description}<br/ ></div>)}
+            {descriptionList?.map((description, index) => (
+              <div key={index}>
+                {description}
+                <br />
+              </div>
+            ))}
           </div>
         </div>
       }
