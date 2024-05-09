@@ -5,6 +5,7 @@ export interface IPageProps {
         title: string;
         description: string;
         rss: string;
+        socials: Socials;
       };
     };
     allMarkdownRemark: {
@@ -13,4 +14,8 @@ export interface IPageProps {
     };
   };
   location: Location;
+}
+
+interface Socials {
+  scrumOrg: string;
 }

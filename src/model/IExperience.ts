@@ -1,9 +1,11 @@
 export interface IExperience {
-  title: string;
+  title_fr: string;
+  title_en?: string;
   name: string;
   logoPath?: string;
   location: string;
-  description: string[];
+  description_fr: string[];
+  description_en?: string[];
   dateDebut: Date;
   dateFin?: Date;
   skills: string[];

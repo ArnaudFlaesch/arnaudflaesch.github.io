@@ -1,0 +1,11 @@
+{
+  "INDEX.PAGE.TITLE": "Bonjour !",
+  "INDEX.PAGE.DESCRIPTION": "Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille.",
+  "SITE.CONTENT": "Contenu du site",
+  "CV.MESSAGE": "Mon parcours détaillé et mon CV téléchargeable",
+  "PROJECTS.MESSAGE": "Les projets personnels sur lesquels je travaille occasionnellement, hébergés sur GitHub",
+  "BLOG.MESSAGE": "Des articles de blog",
+  "RSS.FEED": "flux RSS",
+  "CONTACT.MESSAGE": "Un formulaire de contact pour m'envoyer un email",
+  "RECENT.ARTICLES": "Articles récents"
+}

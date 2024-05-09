@@ -1,11 +1,7 @@
-export function formatDateEndFromExperience(date?: Date): string {
-  if (!date) {
-    return "Aujourd'hui";
-  } else {
-    return formatDateFromExperience(date);
-  }
-}
+import { Locale } from 'date-fns';
+import { enUS } from 'date-fns/locale/en-US';
+import { fr } from 'date-fns/locale/fr';
 
-export function formatDateFromExperience(date: Date): string {
-  return date.getMonth() + ' ' + date.getFullYear();
+export function getLocaleFromLanguage(language: string): Locale {
+  return language === 'fr' ? fr : enUS;
 }

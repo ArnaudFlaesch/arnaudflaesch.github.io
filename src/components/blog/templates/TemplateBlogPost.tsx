@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import Layout from '../../../layout/Layout';
@@ -11,6 +11,7 @@ import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
 import './TemplateBlogPost.scss';
 import { IconButton } from '@mui/material';
+import { Link } from 'gatsby-plugin-react-i18next';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -107,7 +108,7 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const Head = ({ location, data }: { location: Location; data: any }) => {
+export const Head = ({ location, data, pageContext }: { location: Location; data: any; pageContext: any }) => {
   const post = data.markdownRemark;
   const pubDate = post.frontmatter.date;
   const siteUrl = data.site.siteMetadata.siteUrl;
@@ -129,8 +130,9 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
   ];
   return (
     <Seo
-      title={post.frontmatter.title}
-      description={post.frontmatter.description || post.excerpt}
+      translatedTitle={post.frontmatter.title}
+      translatedDescription={post.frontmatter.description || post.excerpt}
+      language={pageContext.language}
       image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
       location={location.pathname}
       type="article"
@@ -140,10 +142,9 @@ export const Head = ({ location, data }: { location: Location; data: any }) => {
 };
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
+  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String, $language: String!) {
     site {
       siteMetadata {
-        title
         siteUrl
       }
     }
@@ -174,6 +175,15 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
       }
     }
   }

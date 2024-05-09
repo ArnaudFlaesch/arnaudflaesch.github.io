@@ -6,19 +6,14 @@ import { StaticImage } from 'gatsby-plugin-image';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function CashManagerProject(): React.ReactElement {
+  const description = 'CASHMANAGER.PROJECT.DESCRIPTION';
   const ICON_HEIGHT = 40;
   const ICON_WIDTH = 40;
   const QUERY_CASH_MANAGER = graphql`
     {
       github {
         repository(name: "CashManager", owner: "ArnaudFlaesch") {
-          createdAt
-          description
           name
-          owner {
-            id
-          }
-          pushedAt
           url
           languages(first: 5) {
             edges {
@@ -77,5 +72,12 @@ export default function CashManagerProject(): React.ReactElement {
     />
   ];
 
-  return <RepositoryWidget key={cashManagerRepo.name} repoIcons={repositoryIcons} repositoryData={cashManagerRepo} />;
+  return (
+    <RepositoryWidget
+      key={cashManagerRepo.name}
+      description={description}
+      repoIcons={repositoryIcons}
+      repositoryData={cashManagerRepo}
+    />
+  );
 }

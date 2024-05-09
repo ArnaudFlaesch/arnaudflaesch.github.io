@@ -5,13 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
 interface IProps {
-  title?: string;
+  translatedTitle?: string;
+  translatedDescription?: string;
+  language: string;
   location: string;
-  description?: string;
   image?: string;
   type?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,8 +24,6 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
     query {
       site {
         siteMetadata {
-          title
-          description
           author
           job
           imageUrl
@@ -36,11 +35,11 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
       }
     }
   `);
-
-  const defaultTitle = site.siteMetadata.title;
-  const title = props.title ? `${props.title} - ${defaultTitle}` : defaultTitle;
-  const metaDescription = props.description ?? site.siteMetadata.description;
   const metaAuthor = site.siteMetadata.author;
+  const jobTitle = site.siteMetadata.job;
+  const defaultTitle = `${metaAuthor}, ${props.language === 'fr' ? jobTitle : 'Software developer'}`;
+  const title = props.translatedTitle ? `${props.translatedTitle} - ${defaultTitle}` : defaultTitle;
+  const metaDescription = props.translatedDescription;
   const metaSiteName = site.siteMetadata.siteName;
   const metaImage = props.image ?? site.siteMetadata.imageUrl;
   const type = props.type ?? 'website';
@@ -52,7 +51,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
 
   return (
     <>
-      <html lang="fr" />
+      <html lang={props.language} />
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="description" content={metaDescription} />
@@ -66,7 +65,12 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
       <meta name="keywords" content={site.siteMetadata.keywords} />
       {metaTags}
       <meta name="google-site-verification" content="LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU" />
-      <link rel="alternate" type="application/rss+xml" title="Flux RSS pour les articles de blog" href={rssFeed}></link>
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={props.language === 'fr' ? 'Flux RSS pour les articles de blog' : 'RSS feed for blog articles'}
+        href={rssFeed}
+      ></link>
     </>
   );
 }

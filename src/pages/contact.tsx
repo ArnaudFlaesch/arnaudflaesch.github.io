@@ -4,13 +4,17 @@ import * as React from 'react';
 import Box from '@mui/material/Box/Box';
 import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
+import { graphql } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 import Seo from '../components/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
+import { getTranslation } from '../utils/TranslationUtils';
 import './page-styles/contact.scss';
 
-const title = 'Contactez-moi';
-const description = "Formulaire de contact si vous souhaitez me proposer une offre d'emploi ou juste discuter.";
+const titleCode = 'CONTACT.PAGE.TITLE';
+const descriptionCode = 'CONTACT.PAGE.DESCRIPTION';
+const namespaceCode = 'contact';
 
 export default function Contact(props: Readonly<IPageProps>): React.ReactElement {
   const [state, handleSubmit, reset] = useForm('mkndgrkd');
@@ -19,16 +23,18 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   const [emailText, setEmailText] = React.useState('');
   const [messageText, setMessageText] = React.useState('');
 
+  const { t } = useTranslation();
+
   function isFormInvalid(): boolean {
     return state.submitting || !nameText.length || !emailText.length || !messageText.length;
   }
 
   return (
-    <Layout title={title} description={description} location={props.location}>
+    <Layout titleCode={titleCode} descriptionCode={descriptionCode} location={props.location}>
       {state.succeeded ? (
         <div>
-          <p>Votre email a bien été envoyé !</p>
-          <Button onClick={reset}>Envoyer un nouveau mail</Button>
+          <p>{t('EMAIL.SENT')}</p>
+          <Button onClick={reset}>{t('SENT.ANOTHER.MAIL')}</Button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -40,7 +46,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                   type="text"
                   name="name"
                   className="contact-field"
-                  label="Votre nom et prénom"
+                  label={t('NAME.FIRSTNAME')}
                   variant="outlined"
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setNameText(event.target.value);
@@ -55,7 +61,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                   type="email"
                   name="email"
                   className="contact-field"
-                  label="Votre adresse mail"
+                  label={t('YOUR.EMAIL.ADDRESS')}
                   variant="outlined"
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                     setEmailText(event.target.value);
@@ -71,7 +77,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                 type="message"
                 name="message"
                 className="contact-field"
-                label="Message"
+                label={t('MESSAGE')}
                 multiline
                 rows={8}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +88,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
             </div>
 
             <Button id="submit-button" type="submit" disabled={isFormInvalid()} variant="contained">
-              Envoyer
+              {t('SEND')}
             </Button>
           </Box>
         </form>
@@ -91,4 +97,34 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = () => <Seo location={'/contact'} title={title} description={description} />;
+export const Head = ({ location, data, pageContext }) => {
+  const translatedTitle = getTranslation(titleCode, pageContext.language, namespaceCode, data.locales.edges);
+  const translatedDescription = getTranslation(
+    descriptionCode,
+    pageContext.language,
+    namespaceCode,
+    data.locales.edges
+  );
+  return (
+    <Seo
+      location={location.pathname}
+      translatedTitle={translatedTitle}
+      translatedDescription={translatedDescription}
+      language={pageContext.language}
+    />
+  );
+};
+
+export const pageQuery = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

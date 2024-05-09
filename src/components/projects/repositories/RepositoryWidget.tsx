@@ -4,8 +4,10 @@ import { IEdge, IRepository } from '../../../model/IRepository';
 import './RepositoryWidget.scss';
 import { StaticImage } from 'gatsby-plugin-image';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
+  description: string;
   repoIcons?: React.JSX.Element[];
   repositoryData: IRepository;
 }
@@ -13,6 +15,8 @@ interface IProps {
 export default function RepositoryWidget(props: Readonly<IProps>): React.ReactElement {
   const ICON_HEIGHT = 40;
   const ICON_WIDTH = 40;
+
+  const { t } = useTranslation();
 
   function sortEdgesBySize(edges: IEdge[]): IEdge[] {
     return edges.sort((edgeA: IEdge, edgeB: IEdge) => {
@@ -48,10 +52,9 @@ export default function RepositoryWidget(props: Readonly<IProps>): React.ReactEl
           </a>
         </div>
       </div>
-      <div>{props.repositoryData.description}</div>
-      <div>{props.repositoryData.primaryLanguage?.name}</div>
+      <div>{t(props.description)}</div>
       <div className="repository-icons-container">
-        <div>Stack technique :</div>
+        <div>{t('TECHNICAL.STACK')} :</div>
         <div className="repository-icons">{props.repoIcons}</div>
         <div className="languages-container">
           {props.repositoryData.languages &&

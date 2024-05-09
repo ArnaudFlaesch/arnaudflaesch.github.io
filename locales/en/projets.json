@@ -1,0 +1,9 @@
+{
+  "PROJECTS.PAGE.TITLE": "Personal projects",
+  "PROJECTS.PAGE.DESCRIPTION": "Personal projects that I work on.",
+  "TECHNICAL.STACK": "Technical stack",
+  "DASH.WEB.PROJECT.DESCRIPTION": "Frontend of Dash project : dashboard displaying multiple widgets on a same page such as a RSS feed, the weather or an agenda.",
+  "DASH.WEBSERVICES.PROJECT.DESCRIPTION": "Backend of Dash project : dashboard displaying multiple widgets on a same page such as a RSS feed, the weather or an agenda.",
+  "CASHMANAGER.PROJECT.DESCRIPTION": "Personal website.",
+  "PORTFOLIO.PROJECT.DESCRIPTION": "Budget-managing application."
+}
