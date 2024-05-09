@@ -12,12 +12,11 @@ import { getLocaleFromLanguage } from '../../../utils/DateUtils';
 import DetailBlock from '../../detailBlock/DetailBlock';
 
 export default function Experience(props: Readonly<IExperience>): ReactElement {
-
   const { language } = useI18next();
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
-  const title : string | undefined = props[`title_${language}` as keyof IExperience] as string
-  const descriptionList: string[] | undefined = props[`description_${language}` as keyof IExperience] as string[]
+  const title: string | undefined = props[`title_${language}` as keyof IExperience] as string;
+  const descriptionList: string[] | undefined = props[`description_${language}` as keyof IExperience] as string[];
 
   function displayPeriod(dateDebut: Date, dateFin?: Date): ReactElement {
     if (dateFin) {
@@ -31,15 +30,14 @@ export default function Experience(props: Readonly<IExperience>): ReactElement {
       return (
         <>
           {formatDate(dateDebut)}
-          <ArrowForward /> {t("TODAY")}
+          <ArrowForward /> {t('TODAY')}
         </>
       );
     }
   }
 
   function formatDate(date: Date): string {
-    const formattedDate = format(date, 'LLLL yyyy', { locale: getLocaleFromLanguage(language) });
-    return formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
+    return format(date, 'LLLL yyyy', { locale: getLocaleFromLanguage(language) });
   }
 
   function createExperienceData(jobName: string, website?: string, logoPath?: string): ReactElement {
@@ -62,11 +60,7 @@ export default function Experience(props: Readonly<IExperience>): ReactElement {
         <div className="job-details-content">
           <h3>{title}</h3>
           <div className="job-description">
-            {
-            descriptionList?.map((description, index) => (
-              <div key={index}>{description}</div>
-            ))
-            }
+            {descriptionList?.map((description, index) => <div key={index}>{description}<br/ ></div>)}
           </div>
         </div>
       }

@@ -20,5 +20,5 @@ import './commands';
 // require('./commands')
 
 beforeEach(() => {
-  cy.visit("/en").get("#switch-language").click()
-})
+  cy.visit('/en').get('#switch-language').click();
+});

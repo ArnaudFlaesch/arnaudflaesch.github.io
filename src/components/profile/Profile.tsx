@@ -17,6 +17,7 @@ export default function Profile(): React.ReactElement {
           author
           job
           company
+          city
           socials {
             linkedin
             github
@@ -34,6 +35,7 @@ export default function Profile(): React.ReactElement {
   const author = data.site.siteMetadata.author;
   const job = data.site.siteMetadata.job;
   const company = data.site.siteMetadata.company;
+  const city = data.site.siteMetadata.city;
 
   const socials = data.site.siteMetadata.socials;
   const linkedinLink = socials.linkedin;
@@ -44,7 +46,7 @@ export default function Profile(): React.ReactElement {
   const stackOverflowLink = socials.stackOverflow;
   // const welovedevsLink = socials.weLoveDevs;
 
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <div id="profile">
@@ -54,11 +56,11 @@ export default function Profile(): React.ReactElement {
       <div id="bio">
         <div id="work">
           <Work />
-          {t(job)} <br /> {t("AT")} {company}
+          {t(job)} <br /> {t('AT')} {company}
         </div>
         <div id="location">
           <LocationOn />
-          Paris
+          {city}
         </div>
       </div>
       <div id="social-links">
@@ -69,7 +71,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/linkedin-icon.png" alt="linkedin" />
               </div>
             </Tooltip>
-            <span>{t("LINKEDIN.PROFILE")}</span>
+            <span>{t('LINKEDIN.PROFILE')}</span>
           </a>
         </div>
 
@@ -80,7 +82,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/github-icon.png" alt="github" />
               </div>
             </Tooltip>
-            <span>{t("GITHUB.PROFILE")}</span>
+            <span>{t('GITHUB.PROFILE')}</span>
           </a>
         </div>
 
@@ -91,7 +93,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/scrum-org-icon.png" alt="scrum.org" />
               </div>
             </Tooltip>
-            <span>{t("SCRUM.ORG.PROFILE")}</span>
+            <span>{t('SCRUM.ORG.PROFILE')}</span>
           </a>
         </div>
 
@@ -102,7 +104,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/credly-icon.png" alt="credly" />
               </div>
             </Tooltip>
-            <span>{t("CERTIFICATIONS")}</span>
+            <span>{t('CERTIFICATIONS')}</span>
           </a>
         </div>
 
@@ -113,7 +115,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/medium-icon.png" alt="medium" />
               </div>
             </Tooltip>
-            <span>{t("MEDIUM.PROFILE")}</span>
+            <span>{t('MEDIUM.PROFILE')}</span>
           </a>
         </div>
 
@@ -124,7 +126,7 @@ export default function Profile(): React.ReactElement {
                 <StaticImage src="../../images/icons/socials/stackoverflow-icon.png" alt="stackoverflow" />
               </div>
             </Tooltip>
-            <span>{t("STACK.OVERFLOW.PROFILE")}</span>
+            <span>{t('STACK.OVERFLOW.PROFILE')}</span>
           </a>
         </div>
 

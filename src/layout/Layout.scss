@@ -768,6 +768,7 @@ pre tt::after {
     display: flex;
     flex: 0 1 calc(100% - 4.5rem);
     padding: 2em 3em;
+    overflow-y: scroll;
 
     #profile-container {
       padding: 0 2em;

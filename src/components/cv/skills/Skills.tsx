@@ -12,7 +12,7 @@ export default function Skills(): React.ReactElement {
   const MAX_HEIGHT = 40;
   const MAX_WIDTH = 40;
 
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   function createSkillBlock(skillName: string, icons: ReactElement[]): ReactElement {
     return (
@@ -105,13 +105,7 @@ export default function Skills(): React.ReactElement {
         }),
         TooltipIcon({
           tooltip: 'Cypress',
-          image: (
-            <StaticImage
-              src="../../../images/icons/frontend/cypress.png"
-              height={MAX_HEIGHT}
-              alt="Cypress"
-            />
-          )
+          image: <StaticImage src="../../../images/icons/frontend/cypress.png" height={MAX_HEIGHT} alt="Cypress" />
         }),
         TooltipIcon({
           tooltip: 'Gatsby',

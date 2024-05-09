@@ -4,13 +4,13 @@ require('dotenv').config({
 
 const fullName = 'Arnaud Flaesch';
 const pwaShortName = 'AF';
-const title = 'Arnaud Flaesch, Développeur Fullstack';
+const company = 'Publicis Sapient France';
 const siteName = 'arnaudflaesch.github.io';
 const siteUrl = `https://${siteName}`;
 const defaultImageUrl = '/profile-picture.jpg';
-const description = `Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille.`;
-const jobName = 'Développeur Fullstack';
-const company = 'Publicis Sapient France';
+const jobName = 'Développeur logiciel';
+const city = 'Paris';
+const title = `${fullName}, ${jobName}`;
 
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';
@@ -24,13 +24,12 @@ const rssFeedFile = '/rss.xml';
 
 module.exports = {
   siteMetadata: {
-    title: title,
-    description: description,
     author: fullName,
     imageUrl: `${siteUrl}${defaultImageUrl}`,
     job: jobName,
     company: company,
-    keywords: `arnaud flaesch, web developer, fullstack developer, software engineer`,
+    city: city,
+    keywords: 'arnaud flaesch, web developer, fullstack developer, software engineer',
     siteName: siteName,
     siteUrl: siteUrl,
     socials: {
@@ -99,18 +98,18 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/locales`,
-        name: `locale`
+        name: 'locale'
       }
     },
     {
-      resolve: `gatsby-plugin-react-i18next`,
+      resolve: 'gatsby-plugin-react-i18next',
       options: {
-        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: ["en", "fr"],
-        defaultLanguage: `fr`,
+        localeJsonSourceName: 'locale', // name given to `gatsby-source-filesystem` plugin.
+        languages: ['en', 'fr'],
+        defaultLanguage: 'fr',
         siteUrl: siteUrl,
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         trailingSlash: 'always',
@@ -143,7 +142,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: 'gatsby-plugin-feed',
       options: {
         feeds: [
           {

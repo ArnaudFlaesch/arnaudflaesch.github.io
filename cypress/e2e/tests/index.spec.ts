@@ -7,7 +7,7 @@ describe('Portfolio tests', () => {
 
   it('Should get the home page', () => {
     cy.title()
-      .should('equals', 'Arnaud Flaesch, Développeur Fullstack')
+      .should('equals', 'Arnaud Flaesch, Développeur logiciel')
       .get('h1')
       .first()
       .should('have.text', 'Arnaud Flaesch')
@@ -15,6 +15,6 @@ describe('Portfolio tests', () => {
       .should('have.css', 'height', '100px')
       .and('have.css', 'width', '100px');
 
-    cy.get('footer').should('have.text', '© 2024, Développé avec Gatsby. Icons by Icons8.');
+    cy.get('footer').should('have.text', '© 2024, Développé avec Gatsby. Icônes de : Icons8.');
   });
 });

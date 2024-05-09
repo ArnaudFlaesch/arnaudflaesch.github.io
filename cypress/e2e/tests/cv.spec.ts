@@ -4,7 +4,7 @@ import path = require('path');
 describe('CV page tests', () => {
   it('Should display the CV page', () => {
     cy.get('#portfolio-header > #url-list > a').contains('CV').click();
-    cy.title().should('equals', 'Curriculum Vitae - Arnaud Flaesch, Développeur Fullstack');
+    cy.title().should('equals', 'Curriculum Vitae - Arnaud Flaesch, Développeur logiciel');
 
     // Download CV
     const cvFilename = 'Curriculum Vitae Arnaud Flaesch.pdf';

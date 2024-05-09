@@ -1,17 +1,18 @@
 {
-    "DEVELOPED.WITH": "Developed with",
-    "AT": "at",
-    "Accueil": "Home",
-    "CV": "Resume",
-    "Blog": "Blog",
-    "Projets": "Projects",
-    "Contact": "Contact",
-    "Développeur Fullstack": "Fullstack Developer",
-    "LINKEDIN.PROFILE": "LinkedIn profile",
-    "GITHUB.PROFILE": "GitHub profile",
-    "SCRUM.ORG.PROFILE": "Scrum.org profile",
-    "CERTIFICATIONS": "Certifications",
-    "MEDIUM.PROFILE": "Medium profile",
-    "STACK.OVERFLOW.PROFILE": "Stack Overflow profile"
-
+  "DEVELOPED.WITH": "Developed with",
+  "ICONS.BY": "Icons by",
+  "AT": "at",
+  "HOME.LABEL": "Home",
+  "RESUME.LABEL": "Resume",
+  "BLOG.LABEL": "Blog",
+  "PROJECTS.LABEL": "Projects",
+  "CONTACT.LABEL": "Contact",
+  "LINKEDIN.PROFILE": "LinkedIn profile",
+  "GITHUB.PROFILE": "GitHub profile",
+  "SCRUM.ORG.PROFILE": "Scrum.org profile",
+  "CERTIFICATIONS": "Certifications",
+  "MEDIUM.PROFILE": "Medium profile",
+  "STACK.OVERFLOW.PROFILE": "Stack Overflow profile",
+  "PAGE.NOT.FOUND.MESSAGE": "The page you're looking for doesn't exist.",
+  "Développeur logiciel": "Software developer"
 }

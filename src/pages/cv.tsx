@@ -1,28 +1,29 @@
 import './page-styles/cv.scss';
 
 import { Button, Tooltip } from '@mui/material';
-import * as React from 'react';
-
+import { format } from 'date-fns';
 import { graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+import * as React from 'react';
 import { ReactElement } from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Seo from '../components/Seo';
 import Experience from '../components/cv/experience/Experience';
 import Skills from '../components/cv/skills/Skills';
 import DetailBlock from '../components/detailBlock/DetailBlock';
-import formationData from '../data/FormationData';
+import formationData from '../data/EducationData';
 import { hobbiesList } from '../data/HobbiesData';
-import jobData from '../data/JobData';
+import jobData from '../data/WorkData';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { ITranslatableElement } from '../model/ITranslatableElement';
-import { format } from 'date-fns';
 import { getLocaleFromLanguage } from '../utils/DateUtils';
+import { getTranslation } from '../utils/TranslationUtils';
 
-const title = 'Curriculum Vitae';
-const description =
-  "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.";
+const titleCode = 'CV.PAGE.TITLE';
+const descriptionCode = 'CV.PAGE.DESCRIPTION';
+const namespaceCode = 'cv';
 
 export default function CV(props: Readonly<IPageProps>): ReactElement {
   const scrumOrgLink = props.data.site.siteMetadata.socials.scrumOrg;
@@ -49,16 +50,16 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   }
 
   return (
-    <Layout title={title} description={description} location={props.location}>
+    <Layout titleCode={titleCode} descriptionCode={descriptionCode} location={props.location}>
       <div id="cv-page">
         <div id="job-list">
           <div id="jobs-header">
-            <h2>{t('WORKING.EXPERIENCE')}</h2>
+            <h2>{t('WORK.EXPERIENCE')}</h2>
             <Button
               id="cv-download-button"
-              href="/CV.pdf"
+              href={language === 'fr' ? '/CV.pdf' : '/Resume.pdf'}
               variant="contained"
-              download={`${t("Curriculum Vitae")} Arnaud Flaesch.pdf`}
+              download={`${t('RESUME')} Arnaud Flaesch.pdf`}
             >
               {t('DOWNLOAD.RESUME')}
             </Button>
@@ -132,15 +133,19 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
 
                 <div>
                   <h4>
-                    {t('RESPONSIBLE.DIGITAL.KNOWLEDGE.CERTIFICATE')} -{' '}
+                    {t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')} -{' '}
                     {format(new Date(2024, 3, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
                   </h4>
-                  <Tooltip title={t('RESPONSIBLE.DIGITAL.KNOWLEDGE.CERTIFICATE')}>
-                    <img
-                      src="/certifications/numerique-responsable.png"
-                      alt={t('RESPONSIBLE.DIGITAL.KNOWLEDGE.CERTIFICATE') ?? ''}
-                    />
-                  </Tooltip>
+                  <PhotoProvider>
+                    <PhotoView src="/certifications/numerique-responsable.png">
+                      <Tooltip title={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')}>
+                        <img className="large-image"
+                          src="/certifications/numerique-responsable.png"
+                          alt={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE') ?? ''}
+                        />
+                      </Tooltip>
+                    </PhotoView>
+                  </PhotoProvider>
                 </div>
               </div>
             }
@@ -148,7 +153,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
         </div>
 
         <div id="formation-list">
-          <h2>Formation</h2>
+          <h2>{t('EDUCATION')}</h2>
           {formationData.map((formation) => (
             <Experience key={formation.title_fr} {...formation} />
           ))}
@@ -172,7 +177,23 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   );
 }
 
-export const Head = () => <Seo location={'/cv'} title={title} description={description} />;
+export const Head = ({ location, data, pageContext }) => {
+  const translatedTitle = getTranslation(titleCode, pageContext.language, namespaceCode, data.locales.edges);
+  const translatedDescription = getTranslation(
+    descriptionCode,
+    pageContext.language,
+    namespaceCode,
+    data.locales.edges
+  );
+  return (
+    <Seo
+      location={location.pathname}
+      translatedTitle={translatedTitle}
+      translatedDescription={translatedDescription}
+      language={pageContext.language}
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query ($language: String!) {

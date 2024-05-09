@@ -6,8 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function DashWebServicesProject(): React.ReactElement {
-
-  const description = "DASH.WEBSERVICES.PROJECT.DESCRIPTION"
+  const description = 'DASH.WEBSERVICES.PROJECT.DESCRIPTION';
   const ICON_HEIGHT = 40;
   const ICON_WIDTH = 40;
   const QUERY = graphql`
@@ -127,6 +126,11 @@ export default function DashWebServicesProject(): React.ReactElement {
   ];
 
   return (
-    <RepositoryWidget key={dashWebServicesRepo.name} description={description} repoIcons={repositoryIcons} repositoryData={dashWebServicesRepo} />
+    <RepositoryWidget
+      key={dashWebServicesRepo.name}
+      description={description}
+      repoIcons={repositoryIcons}
+      repositoryData={dashWebServicesRepo}
+    />
   );
 }

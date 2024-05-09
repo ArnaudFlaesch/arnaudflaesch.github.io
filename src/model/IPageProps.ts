@@ -17,5 +17,5 @@ export interface IPageProps {
 }
 
 interface Socials {
-  scrumOrg: string
+  scrumOrg: string;
 }

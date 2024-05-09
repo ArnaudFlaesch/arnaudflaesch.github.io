@@ -21,32 +21,32 @@ export default function Header(props: Readonly<IProps>): ReactElement {
   const urls: IUrl[] = [
     {
       path: '/',
-      label: 'Accueil',
+      label: 'HOME.LABEL',
       icon: <HomeTwoTone />
     },
     {
       path: '/cv/',
-      label: 'CV',
+      label: 'RESUME.LABEL',
       icon: <WorkTwoTone />
     },
     {
       path: '/blog/',
-      label: 'Blog',
+      label: 'BLOG.LABEL',
       icon: <BookTwoTone />
     },
     {
       path: '/projets/',
-      label: 'Projets',
+      label: 'PROJECTS.LABEL',
       icon: <CodeTwoTone />
     },
     {
       path: '/contact/',
-      label: 'Contact',
+      label: 'CONTACT.LABEL',
       icon: <EmailTwoTone />
     }
   ];
 
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const { originalPath, language } = useI18next();
 
   return (

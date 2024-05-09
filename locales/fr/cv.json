@@ -1,14 +1,16 @@
 {
-  "WORKING.EXPERIENCE": "Expériences professionnelles",
+  "CV.PAGE.TITLE": "Curriculum Vitae",
+  "CV.PAGE.DESCRIPTION": "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.",
+  "RESUME": "Curriculum Vitae",
+  "WORK.EXPERIENCE": "Expériences professionnelles",
   "DOWNLOAD.RESUME": "Télécharger mon CV",
-  "Curriculum Vitae": "Curriculum Vitae",
-  "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.": "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.",
   "SEE.MORE.EXPERIENCES": "Voir plus d'expériences",
   "SEE.LESS.EXPERIENCES": "Voir moins d'expériences",
   "AND": "et",
   "TODAY": "Aujourd'hui",
-  "TOOLS":"Outils",
-  "RESPONSIBLE.DIGITAL.KNOWLEDGE.CERTIFICATE": "Certificat de connaissances Numérique Responsable",
+  "TOOLS": "Outils",
+  "EDUCATION": "Formation",
+  "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE": "Certificat de connaissances Numérique Responsable",
   "LANGUAGES.TOOLS": "Langages et technologies",
-  "HOBBIES":"Centres d'intérêts"
+  "HOBBIES": "Centres d'intérêts"
 }

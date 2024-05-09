@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import { Suite, Test } from "mocha";
+import { Suite, Test } from 'mocha';
 
 // https://medium.com/egnyte-engineering/3-steps-to-awesome-test-reports-with-cypress-f4fe915bc246
 Cypress.on('test:after:run', (test, runnable) => {
