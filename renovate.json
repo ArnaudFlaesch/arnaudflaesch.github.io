@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "assignees": ["ArnaudFlaesch"]
+  "assignees": ["ArnaudFlaesch"],
+  "schedule": ["at 2:00 pm on Fri"]
 }
