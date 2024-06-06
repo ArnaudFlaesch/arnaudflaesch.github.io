@@ -29,6 +29,8 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   const scrumOrgLink = props.data.site.siteMetadata.socials.scrumOrg;
   const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
   const githubAdvancedSecurityBadgeLink = 'https://www.credly.com/badges/a20775eb-8713-4013-b0fe-d5e359a543e8';
+  const leadingSafeBadgeLink = 'https://www.credly.com/badges/73047751-ef1f-47b9-a0d1-6c4f24319c61';
+  const googleCloudDigitalLeaderBadgeLink = 'https://www.credly.com/badges/b849f990-e002-40ac-b8dd-ac3f5f9fa211';
 
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
 
@@ -147,6 +149,46 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                       </Tooltip>
                     </PhotoView>
                   </PhotoProvider>
+                </div>
+
+                <hr />
+
+                <div>
+                  <h4>
+                    SAFe 6 Agilist -{' '}
+                    {format(new Date(2024, 4, 16), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
+                  </h4>
+                  <div className="certifications-logos">
+                    <Tooltip title="SAFe 6 Agilist">
+                      <a href={leadingSafeBadgeLink}>
+                        <StaticImage
+                          width={100}
+                          src="../images/certifications/certified-safe-6-agilist.png"
+                          alt={'SAFe 6 Agilist'}
+                        />
+                      </a>
+                    </Tooltip>
+                  </div>
+                </div>
+
+                <hr />
+
+                <div>
+                  <h4>
+                    Google Cloud Digital Leader -{' '}
+                    {format(new Date(2024, 5, 4), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
+                  </h4>
+                  <div className="certifications-logos">
+                    <Tooltip title="Google Cloud Digital Leader">
+                      <a href={googleCloudDigitalLeaderBadgeLink}>
+                        <StaticImage
+                          width={100}
+                          src="../images/certifications/cloud-digital-leader-certification.png"
+                          alt={'Google Cloud Digital Leader'}
+                        />
+                      </a>
+                    </Tooltip>
+                  </div>
                 </div>
               </div>
             }
