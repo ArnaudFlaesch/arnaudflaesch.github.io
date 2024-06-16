@@ -4,13 +4,13 @@ require('dotenv').config({
 
 const fullName = 'Arnaud Flaesch';
 const pwaShortName = 'AF';
-const company = 'Publicis Sapient France';
+const city = 'Paris';
+const jobName = "Développeur d'applications";
+const company = 'Institut Pasteur';
+const title = `${fullName}, ${jobName}`;
 const siteName = 'arnaudflaesch.github.io';
 const siteUrl = `https://${siteName}`;
 const defaultImageUrl = '/profile-picture.jpg';
-const jobName = 'Développeur logiciel';
-const city = 'Paris';
-const title = `${fullName}, ${jobName}`;
 
 const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 const githubLink = 'https://github.com/ArnaudFlaesch';

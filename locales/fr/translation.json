@@ -1,7 +1,7 @@
 {
   "DEVELOPED.WITH": "Développé avec",
   "ICONS.BY": "Icônes de",
-  "AT": "chez",
+  "AT": "chez l'",
   "HOME.LABEL": "Accueil",
   "RESUME.LABEL": "CV",
   "BLOG.LABEL": "Blog",
@@ -14,5 +14,5 @@
   "MEDIUM.PROFILE": "Profil Medium",
   "STACK.OVERFLOW.PROFILE": "Profil Stack Overflow",
   "PAGE.NOT.FOUND.MESSAGE": "La page que vous cherchez n'existe pas.",
-  "Développeur logiciel": "Développeur logiciel"
+  "Développeur d'applications": "Développeur d'applications"
 }

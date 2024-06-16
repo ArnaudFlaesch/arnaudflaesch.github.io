@@ -56,7 +56,8 @@ export default function Profile(): React.ReactElement {
       <div id="bio">
         <div id="work">
           <Work />
-          {t(job)} <br /> {t('AT')} {company}
+          {t(job)} <br /> {t('AT')}
+          {company}
         </div>
         <div id="location">
           <LocationOn />

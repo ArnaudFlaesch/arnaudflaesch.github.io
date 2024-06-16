@@ -2,9 +2,22 @@ import { IExperience } from '../model/IExperience';
 
 export const jobData: IExperience[] = [
   {
+    title_fr: "Développeur d'applications",
+    title_en: 'Software Developer',
+    dateDebut: new Date(Date.parse('2024-06-17')),
+    name: 'Institut Pasteur',
+    location: 'Paris 15ème, France',
+    logoPath: '/company-logos/institut-pasteur.svg',
+    description_fr: ["Développeur d'applications chez l'Institut Pasteur à Paris."],
+    description_en: ['Software Developer at Institut Pasteur in Paris.'],
+    skills: [],
+    website: 'https://www.pasteur.fr'
+  },
+  {
     title_fr: 'Développeur backend Java',
     title_en: 'Java backend developer',
     dateDebut: new Date(Date.parse('2021-08-02')),
+    dateFin: new Date(Date.parse('2024-05-24')),
     name: 'Publicis Sapient France',
     location: 'Paris 20ème, France',
     logoPath: '/company-logos/publicis-sapient.png',

@@ -4,7 +4,7 @@ import path = require('path');
 describe('CV page tests', () => {
   it('Should display the CV page', () => {
     cy.get('#portfolio-header > #url-list > a').contains('CV').click();
-    cy.title().should('equals', 'Curriculum Vitae - Arnaud Flaesch, Développeur logiciel');
+    cy.title().should('equals', "Curriculum Vitae - Arnaud Flaesch, Développeur d'applications");
 
     // Download CV
     const cvFilename = 'Curriculum Vitae Arnaud Flaesch.pdf';
@@ -13,8 +13,8 @@ describe('CV page tests', () => {
     cy.readFile(path.join(Cypress.config('downloadsFolder'), cvFilename));
 
     const blockTitles = [
+      "Développeur d'applications",
       'Développeur backend Java',
-      'Développeur fullstack',
       'Développeur fullstack',
       'Certifications',
       'Mastère Architecture des Logiciels',
