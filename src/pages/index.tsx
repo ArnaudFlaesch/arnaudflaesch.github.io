@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
-import Seo from '../components/Seo';
+import Seo from '../components/head/Seo';
 import Post from '../components/blog/post/Post';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';

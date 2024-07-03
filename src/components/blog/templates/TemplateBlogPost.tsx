@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 
 import Layout from '../../../layout/Layout';
-import Seo from '../../Seo';
+import Seo from '../../head/Seo';
 import Bio from '../bio/Bio';
 
 import { Facebook, LinkedIn, X } from '@mui/icons-material';

@@ -8,7 +8,6 @@ import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import * as React from 'react';
 import { ReactElement } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import Seo from '../components/Seo';
 import Experience from '../components/cv/experience/Experience';
 import Skills from '../components/cv/skills/Skills';
 import DetailBlock from '../components/detailBlock/DetailBlock';
@@ -19,7 +18,7 @@ import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { ITranslatableElement } from '../model/ITranslatableElement';
 import { getLocaleFromLanguage } from '../utils/DateUtils';
-import { getTranslation } from '../utils/TranslationUtils';
+import { HeadComponent } from '../components/head/head';
 
 const titleCode = 'CV.PAGE.TITLE';
 const descriptionCode = 'CV.PAGE.DESCRIPTION';
@@ -238,23 +237,8 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   );
 }
 
-export const Head = ({ location, data, pageContext }) => {
-  const translatedTitle = getTranslation(titleCode, pageContext.language, namespaceCode, data.locales.edges);
-  const translatedDescription = getTranslation(
-    descriptionCode,
-    pageContext.language,
-    namespaceCode,
-    data.locales.edges
-  );
-  return (
-    <Seo
-      location={location.pathname}
-      translatedTitle={translatedTitle}
-      translatedDescription={translatedDescription}
-      language={pageContext.language}
-    />
-  );
-};
+export const Head = ({ location, data, pageContext }) =>
+  HeadComponent(location, data, pageContext, titleCode, descriptionCode, namespaceCode);
 
 export const pageQuery = graphql`
   query ($language: String!) {
