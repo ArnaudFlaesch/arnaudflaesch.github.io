@@ -3,12 +3,11 @@ import './page-styles/blog.scss';
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Seo from '../components/Seo';
 import Post from '../components/blog/post/Post';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
-import { getTranslation } from '../utils/TranslationUtils';
+import { HeadComponent } from '../components/head/head';
 
 const titleCode = 'BLOG.PAGE.TITLE';
 const descriptionCode = 'BLOG.PAGE.DESCRIPTION';
@@ -30,23 +29,8 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   );
 }
 
-export const Head = ({ location, data, pageContext }) => {
-  const translatedTitle = getTranslation(titleCode, pageContext.language, namespaceCode, data.locales.edges);
-  const translatedDescription = getTranslation(
-    descriptionCode,
-    pageContext.language,
-    namespaceCode,
-    data.locales.edges
-  );
-  return (
-    <Seo
-      location={location.pathname}
-      translatedTitle={translatedTitle}
-      translatedDescription={translatedDescription}
-      language={pageContext.language}
-    />
-  );
-};
+export const Head = ({ location, data, pageContext }) =>
+  HeadComponent(location, data, pageContext, titleCode, descriptionCode, namespaceCode);
 
 export const pageQuery = graphql`
   query ($language: String!) {

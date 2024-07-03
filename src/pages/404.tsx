@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Seo from '../components/Seo';
+import Seo from '../components/head/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { useTranslation } from 'react-i18next';

@@ -6,10 +6,9 @@ import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'react-i18next';
-import Seo from '../components/Seo';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
-import { getTranslation } from '../utils/TranslationUtils';
+import { HeadComponent } from '../components/head/head';
 import './page-styles/contact.scss';
 
 const titleCode = 'CONTACT.PAGE.TITLE';
@@ -97,23 +96,8 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = ({ location, data, pageContext }) => {
-  const translatedTitle = getTranslation(titleCode, pageContext.language, namespaceCode, data.locales.edges);
-  const translatedDescription = getTranslation(
-    descriptionCode,
-    pageContext.language,
-    namespaceCode,
-    data.locales.edges
-  );
-  return (
-    <Seo
-      location={location.pathname}
-      translatedTitle={translatedTitle}
-      translatedDescription={translatedDescription}
-      language={pageContext.language}
-    />
-  );
-};
+export const Head = ({ location, data, pageContext }) =>
+  HeadComponent(location, data, pageContext, titleCode, descriptionCode, namespaceCode);
 
 export const pageQuery = graphql`
   query ($language: String!) {
