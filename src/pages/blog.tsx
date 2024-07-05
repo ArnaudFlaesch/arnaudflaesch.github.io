@@ -4,10 +4,10 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import Post from '../components/blog/post/Post';
+import { HeadComponent } from '../components/head/head';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { IPost } from '../model/IPost';
-import { HeadComponent } from '../components/head/head';
 
 const titleCode = 'BLOG.PAGE.TITLE';
 const descriptionCode = 'BLOG.PAGE.DESCRIPTION';

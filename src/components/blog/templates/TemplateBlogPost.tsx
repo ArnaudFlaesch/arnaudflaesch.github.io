@@ -6,12 +6,12 @@ import Seo from '../../head/Seo';
 import Bio from '../bio/Bio';
 
 import { Facebook, LinkedIn, X } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
-import './TemplateBlogPost.scss';
-import { IconButton } from '@mui/material';
 import { Link } from 'gatsby-plugin-react-i18next';
+import './TemplateBlogPost.scss';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

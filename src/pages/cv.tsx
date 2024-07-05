@@ -11,6 +11,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Experience from '../components/cv/experience/Experience';
 import Skills from '../components/cv/skills/Skills';
 import DetailBlock from '../components/detailBlock/DetailBlock';
+import { HeadComponent } from '../components/head/head';
 import formationData from '../data/EducationData';
 import { hobbiesList } from '../data/HobbiesData';
 import jobData from '../data/WorkData';
@@ -18,7 +19,6 @@ import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
 import { ITranslatableElement } from '../model/ITranslatableElement';
 import { getLocaleFromLanguage } from '../utils/DateUtils';
-import { HeadComponent } from '../components/head/head';
 
 const titleCode = 'CV.PAGE.TITLE';
 const descriptionCode = 'CV.PAGE.DESCRIPTION';
@@ -28,6 +28,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   const scrumOrgLink = props.data.site.siteMetadata.socials.scrumOrg;
   const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
   const githubAdvancedSecurityBadgeLink = 'https://www.credly.com/badges/a20775eb-8713-4013-b0fe-d5e359a543e8';
+  const githubFoundationsBadgeLink = 'https://www.credly.com/badges/85ef131c-c299-4bd5-aa55-77141c16c822';
   const leadingSafeBadgeLink = 'https://www.credly.com/badges/73047751-ef1f-47b9-a0d1-6c4f24319c61';
   const googleCloudDigitalLeaderBadgeLink = 'https://www.credly.com/badges/b849f990-e002-40ac-b8dd-ac3f5f9fa211';
   const googleCloudProfessionalDeveloperBadgeLink =
@@ -117,6 +118,10 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                   <h4>
                     GitHub Advanced Security {t('AND')} Actions -{' '}
                     {format(new Date(2024, 2, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
+                    <br />
+                    <br />
+                    GitHub Foundations -{' '}
+                    {format(new Date(2024, 6, 5), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
                   </h4>
                   <div className="certifications-logos">
                     <Tooltip title="GitHub Actions">
@@ -134,6 +139,15 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                           width={100}
                           src="../images/certifications/github-advanced-security.png"
                           alt={'GitHub Advanced Security'}
+                        />
+                      </a>
+                    </Tooltip>
+                    <Tooltip title="GitHub Foundations">
+                      <a href={githubFoundationsBadgeLink}>
+                        <StaticImage
+                          width={100}
+                          src="../images/certifications/github-foundations.png"
+                          alt={'GitHub Foundations'}
                         />
                       </a>
                     </Tooltip>
