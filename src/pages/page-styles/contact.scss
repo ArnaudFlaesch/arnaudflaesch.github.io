@@ -13,10 +13,11 @@
     flex-direction: row;
     justify-content: space-between;
     column-gap: 3em;
+  }
 
-    > * {
-      flex: 1;
-    }
+  .form-field,
+  #submit-button {
+    flex: 1;
   }
 
   .form-field {
@@ -27,10 +28,10 @@
       color: #f00;
     }
   }
-}
 
-#submit-button {
-  margin: 0 auto;
+  #submit-button {
+    margin: 0 auto;
+  }
 }
 
 @media (width <= 700px) {

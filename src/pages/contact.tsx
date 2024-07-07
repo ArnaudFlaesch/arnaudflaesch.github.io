@@ -1,15 +1,15 @@
-import { useForm, ValidationError } from '@formspree/react';
-import * as React from 'react';
+import './page-styles/contact.scss';
 
+import { useForm, ValidationError } from '@formspree/react';
 import Box from '@mui/material/Box/Box';
 import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
 import { graphql } from 'gatsby';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import { HeadComponent } from '../components/head/head';
 import Layout from '../layout/Layout';
 import { IPageProps } from '../model/IPageProps';
-import { HeadComponent } from '../components/head/head';
-import './page-styles/contact.scss';
 
 const titleCode = 'CONTACT.PAGE.TITLE';
 const descriptionCode = 'CONTACT.PAGE.DESCRIPTION';
@@ -26,6 +26,16 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
 
   function isFormInvalid(): boolean {
     return state.submitting || !nameText.length || !emailText.length || !messageText.length;
+  }
+
+  function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setNameText(event.target.value);
+  }
+  function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmailText(event.target.value);
+  }
+  function handleMessageChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setMessageText(event.target.value);
   }
 
   return (
@@ -47,9 +57,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                   className="contact-field"
                   label={t('NAME.FIRSTNAME')}
                   variant="outlined"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                    setNameText(event.target.value);
-                  }}
+                  onChange={handleNameChange}
                 />
                 <ValidationError className="error-message" prefix="Name" field="name" errors={state.errors} />
               </div>
@@ -62,9 +70,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                   className="contact-field"
                   label={t('YOUR.EMAIL.ADDRESS')}
                   variant="outlined"
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                    setEmailText(event.target.value);
-                  }}
+                  onChange={handleEmailChange}
                 />
                 <ValidationError className="error-message" prefix="Email" field="email" errors={state.errors} />
               </div>
@@ -79,9 +85,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
                 label={t('MESSAGE')}
                 multiline
                 rows={8}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  setMessageText(event.target.value);
-                }}
+                onChange={handleMessageChange}
               />
               <ValidationError className="error-message" prefix="Message" field="message" errors={state.errors} />
             </div>

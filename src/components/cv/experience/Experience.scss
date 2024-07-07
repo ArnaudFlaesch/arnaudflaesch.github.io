@@ -17,8 +17,8 @@
 
   .job-name {
     img {
-      max-height: 80px;
-      max-width: 130px;
+      max-height: 100px;
+      max-width: 190px;
     }
   }
 
@@ -39,13 +39,22 @@
 
 @media (width < 850px) {
   .job-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 0;
+    display: flex;
+    flex-direction: row;
+
+    .job-name {
+      flex: 1;
+      flex-basis: 40%;
+    }
 
     .job-period {
-      grid-column: span 1;
-      grid-row: span 2;
+      flex-direction: column;
+    }
+
+    .job-period,
+    .job-location {
+      flex: 1;
+      flex-basis: 30%;
     }
   }
 }

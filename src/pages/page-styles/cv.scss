@@ -15,44 +15,24 @@
 
   #job-list,
   #formation-list,
-  #hobbies-list {
+  #hobbies-list,
+  #certifications-list {
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
   }
 
-  #certifications-detail-list {
-    > div {
-      display: flex;
-      flex-direction: row;
-      column-gap: 2em;
-      margin: auto 0;
-      padding: 0.5em 0;
+  .certifications-logos {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 1em;
+    justify-content: space-evenly;
+  }
 
-      img {
-        &.large-image {
-          max-width: 35%;
-          cursor: pointer;
-        }
-      }
-
-      > * {
-        margin: auto 0;
-
-        &:first-child {
-          flex-basis: 40%;
-        }
-
-        &:last-child {
-          flex-basis: 60%;
-        }
-      }
-
-      .certifications-logos {
-        display: flex;
-        flex-direction: row;
-        column-gap: 1em;
-      }
+  img {
+    &.large-image {
+      max-width: 35%;
+      cursor: pointer;
     }
   }
 }
