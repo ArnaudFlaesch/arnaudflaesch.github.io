@@ -12,22 +12,24 @@
   .job-period {
     display: flex;
     align-items: center;
-    font-weight: bold;
   }
 
   .job-name {
+    a {
+      display: flex;
+      text-decoration: none;
+    }
+
     img {
-      max-height: 100px;
-      max-width: 190px;
+      max-height: 80px;
+      max-width: 160px;
     }
   }
 
+  .job-period,
   .job-location {
+    font-size: small;
     font-weight: bold;
-  }
-
-  a {
-    text-decoration: none;
   }
 }
 
@@ -39,22 +41,12 @@
 
 @media (width < 850px) {
   .job-content {
-    display: flex;
-    flex-direction: row;
-
-    .job-name {
-      flex: 1;
-      flex-basis: 40%;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.4em;
 
     .job-period {
       flex-direction: column;
-    }
-
-    .job-period,
-    .job-location {
-      flex: 1;
-      flex-basis: 30%;
     }
   }
 }

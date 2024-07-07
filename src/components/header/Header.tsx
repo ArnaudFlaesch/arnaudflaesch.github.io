@@ -54,24 +54,26 @@ export default function Header(props: Readonly<IProps>): ReactElement {
       <h1>
         <Link to="/">{props.siteTitle}</Link>
       </h1>
-      <div id="url-list">
-        {urls.map((url) => (
-          <Link key={url.path} activeClassName="active" to={url.path}>
-            {url.icon}
-            {t(url.label)}
-          </Link>
-        ))}
-      </div>
-      <div id="switch-language">
-        {language === 'fr' ? (
-          <Link to={originalPath} language={'en'}>
-            <StaticImage height={30} src="../../images/icons/languages/us-flag.png" alt={'en'}></StaticImage>
-          </Link>
-        ) : (
-          <Link to={originalPath} language={'fr'}>
-            <StaticImage height={30} src="../../images/icons/languages/french-flag.png" alt={'fr'}></StaticImage>
-          </Link>
-        )}
+      <div id="right-navbar">
+        <div id="url-list">
+          {urls.map((url) => (
+            <Link key={url.path} activeClassName="active" to={url.path}>
+              {url.icon}
+              {t(url.label)}
+            </Link>
+          ))}
+        </div>
+        <div id="switch-language">
+          {language === 'fr' ? (
+            <Link to={originalPath} language={'en'}>
+              <StaticImage height={30} src="../../images/icons/languages/us-flag.png" alt={'en'}></StaticImage>
+            </Link>
+          ) : (
+            <Link to={originalPath} language={'fr'}>
+              <StaticImage height={30} src="../../images/icons/languages/french-flag.png" alt={'fr'}></StaticImage>
+            </Link>
+          )}
+        </div>
       </div>
     </span>
   );
