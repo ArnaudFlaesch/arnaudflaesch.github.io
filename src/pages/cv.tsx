@@ -81,146 +81,141 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
         </div>
 
         <div id="certifications-list">
+          <h2>Certifications</h2>
           <DetailBlock
-            titleComponent={<h3>{'Certifications'}</h3>}
+            titleComponent={
+              <h4>{`Google Cloud Professional Cloud Developer ${t('AND')} Digital Leader - ${format(new Date(2024, 5, 4), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+            }
             detailComponent={
-              <div id="certifications-detail-list">
-                <div>
-                  <h4>
-                    Google Cloud Professional Cloud Developer & Digital Leader -{' '}
-                    {format(new Date(2024, 5, 4), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
-                  </h4>
-                  <div className="certifications-logos">
-                    <Tooltip title="Google Cloud Professional Cloud Developer">
-                      <a href={googleCloudProfessionalDeveloperBadgeLink}>
-                        <StaticImage
-                          width={100}
-                          src="../images/certifications/professional-cloud-developer-certification.png"
-                          alt={'Google Cloud Professional Cloud Developer'}
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip title="Google Cloud Digital Leader">
-                      <a href={googleCloudDigitalLeaderBadgeLink}>
-                        <StaticImage
-                          width={100}
-                          src="../images/certifications/cloud-digital-leader-certification.png"
-                          alt={'Google Cloud Digital Leader'}
-                        />
-                      </a>
-                    </Tooltip>
-                  </div>
-                </div>
+              <div className="certifications-logos">
+                <Tooltip title="Google Cloud Professional Cloud Developer">
+                  <a href={googleCloudProfessionalDeveloperBadgeLink}>
+                    <StaticImage
+                      width={105}
+                      src="../images/certifications/professional-cloud-developer-certification.png"
+                      alt={'Google Cloud Professional Cloud Developer'}
+                    />
+                  </a>
+                </Tooltip>
+                <Tooltip title="Google Cloud Digital Leader">
+                  <a href={googleCloudDigitalLeaderBadgeLink}>
+                    <StaticImage
+                      width={105}
+                      src="../images/certifications/cloud-digital-leader-certification.png"
+                      alt={'Google Cloud Digital Leader'}
+                    />
+                  </a>
+                </Tooltip>
+              </div>
+            }
+          />
 
-                <hr />
+          <DetailBlock
+            titleComponent={
+              <>
+                <h4>{`GitHub Actions ${t('AND')} Advanced Security -
+                    ${format(new Date(2024, 2, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+                <br />
+                <h4>{`GitHub Foundations -
+                    ${format(new Date(2024, 6, 5), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+              </>
+            }
+            detailComponent={
+              <div className="certifications-logos">
+                <Tooltip title="GitHub Actions">
+                  <a href={githubActionsBadgeLink}>
+                    <StaticImage width={105} src="../images/certifications/github-actions.png" alt={'GitHub Actions'} />
+                  </a>
+                </Tooltip>
+                <Tooltip title="GitHub Advanced Security">
+                  <a href={githubAdvancedSecurityBadgeLink}>
+                    <StaticImage
+                      width={105}
+                      src="../images/certifications/github-advanced-security.png"
+                      alt={'GitHub Advanced Security'}
+                    />
+                  </a>
+                </Tooltip>
+                <Tooltip title="GitHub Foundations">
+                  <a href={githubFoundationsBadgeLink}>
+                    <StaticImage
+                      width={105}
+                      src="../images/certifications/github-foundations.png"
+                      alt={'GitHub Foundations'}
+                    />
+                  </a>
+                </Tooltip>
+              </div>
+            }
+          />
 
-                <div>
-                  <h4>
-                    GitHub Advanced Security {t('AND')} Actions -{' '}
-                    {format(new Date(2024, 2, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
-                    <br />
-                    <br />
-                    GitHub Foundations -{' '}
-                    {format(new Date(2024, 6, 5), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
-                  </h4>
-                  <div className="certifications-logos">
-                    <Tooltip title="GitHub Actions">
-                      <a href={githubActionsBadgeLink}>
-                        <StaticImage
-                          width={100}
-                          src="../images/certifications/github-actions.png"
-                          alt={'GitHub Actions'}
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip title="GitHub Advanced Security">
-                      <a href={githubAdvancedSecurityBadgeLink}>
-                        <StaticImage
-                          width={100}
-                          src="../images/certifications/github-advanced-security.png"
-                          alt={'GitHub Advanced Security'}
-                        />
-                      </a>
-                    </Tooltip>
-                    <Tooltip title="GitHub Foundations">
-                      <a href={githubFoundationsBadgeLink}>
-                        <StaticImage
-                          width={100}
-                          src="../images/certifications/github-foundations.png"
-                          alt={'GitHub Foundations'}
-                        />
-                      </a>
-                    </Tooltip>
-                  </div>
-                </div>
+          <DetailBlock
+            titleComponent={
+              <h4>{`Professional Scrum Master 1 ${t('AND')} 2 -
+                    ${format(new Date(2023, 11, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+            }
+            detailComponent={
+              <div className="certifications-logos">
+                <Tooltip title="PSM 1">
+                  <a href={scrumOrgLink}>
+                    <StaticImage
+                      width={100}
+                      src="../images/certifications/professional-scrum-master-i-psm-i.png"
+                      alt={'PSM 1'}
+                    />
+                  </a>
+                </Tooltip>
+                <Tooltip title="PSM 2">
+                  <a href={scrumOrgLink}>
+                    <StaticImage
+                      width={100}
+                      src="../images/certifications/professional-scrum-master-ii-psm-ii.png"
+                      alt={'PSM 2'}
+                    />
+                  </a>
+                </Tooltip>
+              </div>
+            }
+          />
 
-                <hr />
+          <DetailBlock
+            titleComponent={
+              <h4>{`SAFe 6 Agilist -
+                    ${format(new Date(2024, 4, 16), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+            }
+            detailComponent={
+              <div className="certifications-logos">
+                <Tooltip title="SAFe 6 Agilist">
+                  <a href={leadingSafeBadgeLink}>
+                    <StaticImage
+                      width={95}
+                      src="../images/certifications/certified-safe-6-agilist.png"
+                      alt={'SAFe 6 Agilist'}
+                    />
+                  </a>
+                </Tooltip>
+              </div>
+            }
+          />
 
-                <div>
-                  <h4>
-                    Professional Scrum Master 1 {t('AND')} 2 -{' '}
-                    {format(new Date(2023, 11, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
-                  </h4>
-                  <div className="certifications-logos">
-                    <Tooltip title="PSM 1">
-                      <a href={scrumOrgLink}>
-                        <StaticImage
-                          width={95}
-                          src="../images/certifications/professional-scrum-master-i-psm-i.png"
-                          alt={'PSM 1'}
-                        />
-                      </a>
+          <DetailBlock
+            titleComponent={
+              <h4>{`${t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')} - 
+                    ${format(new Date(2024, 3, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+            }
+            detailComponent={
+              <div className="certifications-logos">
+                <PhotoProvider>
+                  <PhotoView src="/certifications/numerique-responsable.png">
+                    <Tooltip title={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')}>
+                      <img
+                        className="large-image"
+                        src="/certifications/numerique-responsable.png"
+                        alt={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE') ?? ''}
+                      />
                     </Tooltip>
-                    <Tooltip title="PSM 2">
-                      <a href={scrumOrgLink}>
-                        <StaticImage
-                          width={95}
-                          src="../images/certifications/professional-scrum-master-ii-psm-ii.png"
-                          alt={'PSM 2'}
-                        />
-                      </a>
-                    </Tooltip>
-                  </div>
-                </div>
-                <hr />
-
-                <div>
-                  <h4>
-                    SAFe 6 Agilist -{' '}
-                    {format(new Date(2024, 4, 16), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
-                  </h4>
-                  <div className="certifications-logos">
-                    <Tooltip title="SAFe 6 Agilist">
-                      <a href={leadingSafeBadgeLink}>
-                        <StaticImage
-                          width={90}
-                          src="../images/certifications/certified-safe-6-agilist.png"
-                          alt={'SAFe 6 Agilist'}
-                        />
-                      </a>
-                    </Tooltip>
-                  </div>
-                </div>
-
-                <hr />
-
-                <div>
-                  <h4>
-                    {t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')} -{' '}
-                    {format(new Date(2024, 3, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}
-                  </h4>
-                  <PhotoProvider>
-                    <PhotoView src="/certifications/numerique-responsable.png">
-                      <Tooltip title={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')}>
-                        <img
-                          className="large-image"
-                          src="/certifications/numerique-responsable.png"
-                          alt={t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE') ?? ''}
-                        />
-                      </Tooltip>
-                    </PhotoView>
-                  </PhotoProvider>
-                </div>
+                  </PhotoView>
+                </PhotoProvider>
               </div>
             }
           />

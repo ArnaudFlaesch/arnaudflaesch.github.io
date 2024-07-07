@@ -16,7 +16,6 @@ describe('CV page tests', () => {
       "Développeur d'applications",
       'Développeur backend Java',
       'Développeur fullstack',
-      'Certifications',
       'Mastère Architecture des Logiciels',
       'Bachelor Architecture des Logiciels',
       'Lycée privé Saint Michel de Picpus',
