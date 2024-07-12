@@ -37,7 +37,7 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
   `);
   const metaAuthor = site.siteMetadata.author;
   const jobTitle = site.siteMetadata.job;
-  const defaultTitle = `${metaAuthor}, ${props.language === 'fr' ? jobTitle : 'Software developer'}`;
+  const defaultTitle = `${metaAuthor} - ${props.language === 'fr' ? jobTitle : 'Software developer'}`;
   const title = props.translatedTitle ? `${props.translatedTitle} - ${defaultTitle}` : defaultTitle;
   const metaDescription = props.translatedDescription;
   const metaSiteName = site.siteMetadata.siteName;
