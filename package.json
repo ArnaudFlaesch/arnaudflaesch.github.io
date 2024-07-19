@@ -28,7 +28,7 @@
     "serve": "gatsby serve"
   },
   "overrides": {
-    "webpack-dev-middleware": "7.2.1"
+    "webpack-dev-middleware": "7.3.0"
   },
   "dependencies": {
     "@emotion/react": "11.12.0",
