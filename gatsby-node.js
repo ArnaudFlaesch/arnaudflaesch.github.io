@@ -7,6 +7,7 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const BLOG_URL_PREFIX = '/blog';
+const locales = ['en'];
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
@@ -50,11 +51,50 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: {
           id: post.id,
           previousPostId,
-          nextPostId
+          nextPostId,
+          language: 'fr'
         }
+      });
+
+      //Also create pages for other locales
+      locales.forEach((locale) => {
+        createPage({
+          path: `/${locale}${post.fields.slug}`,
+          component: blogPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+            language: locale
+          }
+        });
       });
     });
   }
+};
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+
+  deletePage(page);
+
+  createPage({
+    path: `${page.path}`,
+    component: page.componentPath,
+    context: {
+      language: 'fr'
+    }
+  });
+
+  locales.forEach((locale) => {
+    createPage({
+      path: `/${locale}${page.path}`,
+      component: page.componentPath,
+      context: {
+        language: locale
+      }
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -96,7 +136,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       github: String
       scrumOrg: String
       credly: String
-      weLoveDevs: String
       stackOverflow: String
       medium: String
     }

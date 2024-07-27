@@ -16,7 +16,7 @@ export default function RepositoryWidget(props: Readonly<IProps>): React.ReactEl
   const ICON_HEIGHT = 40;
   const ICON_WIDTH = 40;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('projets');
 
   function sortEdgesBySize(edges: IEdge[]): IEdge[] {
     return edges.sort((edgeA: IEdge, edgeB: IEdge) => {

@@ -1,29 +1,17 @@
 import React from 'react';
-import { getTranslation } from '../../utils/TranslationUtils';
 import Seo from './Seo';
+import { useTranslation } from 'react-i18next';
 
-export const HeadComponent = (
-  location,
-  data,
-  pageContext,
-  titleCode: string,
-  descriptionCode: string,
-  namespaceCode: string
-) => {
-  const translatedTitle = getTranslation(titleCode, pageContext.language, namespaceCode, data.locales.edges);
-  const translatedDescription = getTranslation(
-    descriptionCode,
-    pageContext.language,
-    namespaceCode,
-    data.locales.edges
-  );
-
+export function HeadComponent(titleCode: string, descriptionCode: string, namespaceCode: string, location: Location) {
+  const { t, i18n } = useTranslation(namespaceCode);
+  const translatedTitle = t(titleCode);
+  const translatedDescription = t(descriptionCode);
   return (
     <Seo
-      location={location.pathname}
       translatedTitle={translatedTitle}
       translatedDescription={translatedDescription}
-      language={pageContext.language}
+      location={location.pathname}
+      language={i18n.language}
     />
   );
-};
+}

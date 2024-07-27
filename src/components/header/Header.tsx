@@ -1,10 +1,12 @@
 import { BookTwoTone, CodeTwoTone, EmailTwoTone, HomeTwoTone, WorkTwoTone } from '@mui/icons-material';
 import './Header.scss';
 
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import * as React from 'react';
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
+import { getAlternativePathFromCurrentPath, getUrlPath } from '../../utils/TranslationUtils';
 
 interface IProps {
   siteTitle: string;
@@ -46,30 +48,39 @@ export default function Header(props: Readonly<IProps>): ReactElement {
     }
   ];
 
-  const { t } = useTranslation();
-  const { originalPath, language } = useI18next();
+  const { t, i18n } = useTranslation('common');
 
   return (
     <span id="portfolio-header">
       <h1>
-        <Link to="/">{props.siteTitle}</Link>
+        <Link to={getUrlPath('/', i18n.language)}>{props.siteTitle}</Link>
       </h1>
       <div id="right-navbar">
         <div id="url-list">
           {urls.map((url) => (
-            <Link key={url.path} activeClassName="active" to={url.path}>
+            <Link
+              key={url.path}
+              activeClassName="active"
+              to={i18n.language === 'fr' ? url.path : `/${i18n.language}${url.path}`}
+            >
               {url.icon}
               {t(url.label)}
             </Link>
           ))}
         </div>
         <div id="switch-language">
-          {language === 'fr' ? (
-            <Link to={originalPath} language={'en'}>
+          {i18n.language === 'fr' ? (
+            <Link
+              to={getAlternativePathFromCurrentPath('en', i18n.language, props.location.pathname)}
+              onClick={() => i18n.changeLanguage('en')}
+            >
               <StaticImage height={30} src="../../images/icons/languages/us-flag.png" alt={'en'}></StaticImage>
             </Link>
           ) : (
-            <Link to={originalPath} language={'fr'}>
+            <Link
+              to={getAlternativePathFromCurrentPath('fr', i18n.language, props.location.pathname)}
+              onClick={() => i18n.changeLanguage('fr')}
+            >
               <StaticImage height={30} src="../../images/icons/languages/french-flag.png" alt={'fr'}></StaticImage>
             </Link>
           )}

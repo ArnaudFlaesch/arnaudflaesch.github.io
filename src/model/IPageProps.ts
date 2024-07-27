@@ -14,6 +14,9 @@ export interface IPageProps {
     };
   };
   location: Location;
+  pageContext: {
+    language?: string;
+  };
 }
 
 interface Socials {

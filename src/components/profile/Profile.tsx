@@ -3,11 +3,11 @@ import './Profile.scss';
 import { LocationOn, Work } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 import Avatar from '@mui/material/Avatar/Avatar';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { getUrlPath } from '../../utils/TranslationUtils';
 
 export default function Profile(): React.ReactElement {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,6 @@ export default function Profile(): React.ReactElement {
             credly
             medium
             stackOverflow
-            weLoveDevs
           }
         }
       }
@@ -44,13 +43,12 @@ export default function Profile(): React.ReactElement {
   const credlyLink = socials.credly;
   const mediumLink = socials.medium;
   const stackOverflowLink = socials.stackOverflow;
-  // const welovedevsLink = socials.weLoveDevs;
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div id="profile">
-      <Link to="/">
+      <Link to={getUrlPath('/', i18n.language)}>
         <Avatar id="bio-avatar" alt={author} sx={{ width: 100, height: 100 }} src="/profile-picture.jpg" />
       </Link>
       <div id="bio">
@@ -130,19 +128,6 @@ export default function Profile(): React.ReactElement {
             <span>{t('STACK.OVERFLOW.PROFILE')}</span>
           </a>
         </div>
-
-        {/*
-        <div id="welovedevsLink">
-          <a href={welovedevsLink} className="social-link">
-            <Tooltip title="Profil WeLoveDevs">
-              <div>
-                <StaticImage src="../../images/socials/icons/welovedevs-icon.jpg" alt="welovedevs" />
-              </div>
-            </Tooltip>
-            <span>{welovedevsLink}</span>
-          </a>
-        </div>
-  */}
       </div>
     </div>
   );

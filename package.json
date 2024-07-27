@@ -10,6 +10,7 @@
     "npm": "10.x"
   },
   "scripts": {
+    "prestart": "npm run clean",
     "start": "gatsby develop -o",
     "build": "export NODE_ENV=production && gatsby build",
     "lint:md": "markdownlint **/*.md",
@@ -44,7 +45,6 @@
     "gatsby-plugin-image": "3.13.1",
     "gatsby-plugin-manifest": "5.13.1",
     "gatsby-plugin-offline": "6.13.2",
-    "gatsby-plugin-react-i18next": "3.0.1",
     "gatsby-plugin-robots-txt": "1.8.0",
     "gatsby-plugin-sass": "6.13.1",
     "gatsby-plugin-sharp": "5.13.1",
@@ -58,7 +58,8 @@
     "gatsby-source-graphql": "5.13.1",
     "gatsby-transformer-remark": "6.13.1",
     "gatsby-transformer-sharp": "5.13.1",
-    "i18next": "23.11.3",
+    "i18next": "23.12.2",
+    "i18next-browser-languagedetector": "8.0.0",
     "prismjs": "1.29.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

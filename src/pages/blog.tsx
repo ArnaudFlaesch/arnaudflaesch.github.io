@@ -17,7 +17,12 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   const posts = props.data.allMarkdownRemark.nodes;
 
   return (
-    <Layout titleCode={titleCode} descriptionCode={descriptionCode} location={props.location}>
+    <Layout
+      titleCode={titleCode}
+      descriptionCode={descriptionCode}
+      i18nNamespace={namespaceCode}
+      location={props.location}
+    >
       <ol id="articles-list">
         {posts?.map((post: IPost) => (
           <li key={post.fields.slug}>
@@ -29,11 +34,11 @@ export default function Blog(props: Readonly<IPageProps>): React.ReactElement {
   );
 }
 
-export const Head = ({ location, data, pageContext }) =>
-  HeadComponent(location, data, pageContext, titleCode, descriptionCode, namespaceCode);
+export const Head = ({ location }: { location: Location }) =>
+  HeadComponent(titleCode, descriptionCode, namespaceCode, location);
 
 export const pageQuery = graphql`
-  query ($language: String!) {
+  query {
     site {
       siteMetadata {
         rss
@@ -50,15 +55,6 @@ export const pageQuery = graphql`
           title
           description
           image
-        }
-      }
-    }
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
         }
       }
     }
