@@ -27,7 +27,7 @@ i18n.use(LanguageDetector);
 i18n.init({
   resources,
   defaultLng: 'fr',
-  fallbackLng: 'en',
+  fallbackLng: 'fr',
   defaultNS: 'common',
   fallbackNS: 'common',
   supportedLngs: ['fr', 'en'],
