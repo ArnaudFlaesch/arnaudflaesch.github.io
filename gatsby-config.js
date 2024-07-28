@@ -18,7 +18,6 @@ const scrumOrgLink = 'https://www.scrum.org/user/1355891';
 const credlyLink = 'https://www.credly.com/users/arnaud-flaesch/badges';
 const mediumLink = 'https://medium.com/@arnaudflaesch';
 const stackOverflowLink = 'https://stackoverflow.com/users/12927815/arnaud-flaesch';
-const welovedevsLink = 'https://arnaud-flaesch.welovedevs.com/';
 
 const rssFeedFile = '/rss.xml';
 
@@ -37,7 +36,6 @@ module.exports = {
       github: githubLink,
       scrumOrg: scrumOrgLink,
       credly: credlyLink,
-      weLoveDevs: welovedevsLink,
       stackOverflow: stackOverflowLink,
       medium: mediumLink
     },
@@ -46,7 +44,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/**/404', '/**/404.html', '/**/offline-plugin-app-shell-fallback*']
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -95,38 +98,6 @@ module.exports = {
           Authorization: `bearer ${process.env.GATSBY_PORTFOLIO_GITHUB_TOKEN}`
         },
         fetchOptions: {}
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/locales`,
-        name: 'locale'
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-react-i18next',
-      options: {
-        localeJsonSourceName: 'locale', // name given to `gatsby-source-filesystem` plugin.
-        languages: ['en', 'fr'],
-        defaultLanguage: 'fr',
-        siteUrl: siteUrl,
-        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
-        trailingSlash: 'always',
-        // you can pass any i18next options
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false // not needed for react as it escapes by default
-          },
-          keySeparator: false,
-          nsSeparator: false
-        },
-        pages: [
-          {
-            matchPath: '/:lang?/404',
-            getLanguageFromPath: false
-          }
-        ]
       }
     },
     {

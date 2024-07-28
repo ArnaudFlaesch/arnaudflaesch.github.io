@@ -12,7 +12,7 @@ export default function Skills(): React.ReactElement {
   const MAX_HEIGHT = 40;
   const MAX_WIDTH = 40;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('cv');
 
   function createSkillBlock(skillName: string, icons: ReactElement[]): ReactElement {
     return (

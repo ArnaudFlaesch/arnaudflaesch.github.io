@@ -4,7 +4,6 @@ import { useForm, ValidationError } from '@formspree/react';
 import Box from '@mui/material/Box/Box';
 import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
-import { graphql } from 'gatsby';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { HeadComponent } from '../components/head/head';
@@ -22,7 +21,7 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   const [emailText, setEmailText] = React.useState('');
   const [messageText, setMessageText] = React.useState('');
 
-  const { t } = useTranslation();
+  const { t } = useTranslation(namespaceCode);
 
   function isFormInvalid(): boolean {
     return state.submitting || !nameText.length || !emailText.length || !messageText.length;
@@ -39,7 +38,12 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   }
 
   return (
-    <Layout titleCode={titleCode} descriptionCode={descriptionCode} location={props.location}>
+    <Layout
+      titleCode={titleCode}
+      descriptionCode={descriptionCode}
+      i18nNamespace={namespaceCode}
+      location={props.location}
+    >
       {state.succeeded ? (
         <div>
           <p>{t('EMAIL.SENT')}</p>
@@ -100,19 +104,5 @@ export default function Contact(props: Readonly<IPageProps>): React.ReactElement
   );
 }
 
-export const Head = ({ location, data, pageContext }) =>
-  HeadComponent(location, data, pageContext, titleCode, descriptionCode, namespaceCode);
-
-export const pageQuery = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
+export const Head = ({ location }: { location: Location }) =>
+  HeadComponent(titleCode, descriptionCode, namespaceCode, location);

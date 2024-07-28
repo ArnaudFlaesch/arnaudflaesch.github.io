@@ -10,14 +10,16 @@ import * as React from 'react';
 
 import { RssFeed } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useTranslation } from 'react-i18next';
 import Header from '../components/header/Header';
 import Profile from '../components/profile/Profile';
+import './i18n.js';
 import './Layout.scss';
 
 interface IProps {
   titleCode?: string;
   descriptionCode?: string;
+  i18nNamespace: string;
   children: React.ReactElement;
   location: Location;
   blogView?: boolean;
@@ -37,7 +39,7 @@ export default function Layout(props: Readonly<IProps>): React.ReactElement {
 
   const author = data.site.siteMetadata.author;
   const rss = data.site.siteMetadata.rss;
-  const { t } = useTranslation();
+  const { t } = useTranslation(props.i18nNamespace);
 
   return (
     <div id="site-container">

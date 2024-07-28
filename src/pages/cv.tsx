@@ -4,9 +4,10 @@ import { Button, Tooltip } from '@mui/material';
 import { format } from 'date-fns';
 import { graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+
 import * as React from 'react';
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Experience from '../components/cv/experience/Experience';
 import Skills from '../components/cv/skills/Skills';
@@ -36,8 +37,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
 
   const DEFAUL_NUMBER_OF_JOBS_TO_SHOW = 3;
 
-  const { t } = useTranslation();
-  const { language } = useI18next();
+  const { t, i18n } = useTranslation(namespaceCode);
 
   const [jobIndexEnd, setJobIndexEnd] = React.useState<number | undefined>(DEFAUL_NUMBER_OF_JOBS_TO_SHOW);
 
@@ -54,14 +54,19 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   }
 
   return (
-    <Layout titleCode={titleCode} descriptionCode={descriptionCode} location={props.location}>
+    <Layout
+      titleCode={titleCode}
+      descriptionCode={descriptionCode}
+      i18nNamespace={namespaceCode}
+      location={props.location}
+    >
       <div id="cv-page">
         <div id="job-list">
           <div id="jobs-header">
             <h2>{t('WORK.EXPERIENCE')}</h2>
             <Button
               id="cv-download-button"
-              href={language === 'fr' ? '/CV.pdf' : '/Resume.pdf'}
+              href={i18n.language === 'fr' ? '/CV.pdf' : '/Resume.pdf'}
               variant="contained"
               download={`${t('RESUME')} Arnaud Flaesch.pdf`}
             >
@@ -84,7 +89,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
           <h2>Certifications</h2>
           <DetailBlock
             titleComponent={
-              <h4>{`Google Cloud Professional Cloud Developer ${t('AND')} Digital Leader - ${format(new Date(2024, 5, 4), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+              <h4>{`Google Cloud Professional Cloud Developer ${t('AND')} Digital Leader - ${format(new Date(2024, 5, 4), 'MMMM yyyy', { locale: getLocaleFromLanguage(i18n.language) })}`}</h4>
             }
             detailComponent={
               <div className="certifications-logos">
@@ -114,10 +119,10 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
             titleComponent={
               <>
                 <h4>{`GitHub Actions ${t('AND')} Advanced Security -
-                    ${format(new Date(2024, 2, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+                    ${format(new Date(2024, 2, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(i18n.language) })}`}</h4>
                 <br />
                 <h4>{`GitHub Foundations -
-                    ${format(new Date(2024, 6, 5), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+                    ${format(new Date(2024, 6, 5), 'MMMM yyyy', { locale: getLocaleFromLanguage(i18n.language) })}`}</h4>
               </>
             }
             detailComponent={
@@ -152,7 +157,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
           <DetailBlock
             titleComponent={
               <h4>{`Professional Scrum Master 1 ${t('AND')} 2 -
-                    ${format(new Date(2023, 11, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+                    ${format(new Date(2023, 11, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(i18n.language) })}`}</h4>
             }
             detailComponent={
               <div className="certifications-logos">
@@ -181,7 +186,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
           <DetailBlock
             titleComponent={
               <h4>{`SAFe 6 Agilist -
-                    ${format(new Date(2024, 4, 16), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+                    ${format(new Date(2024, 4, 16), 'MMMM yyyy', { locale: getLocaleFromLanguage(i18n.language) })}`}</h4>
             }
             detailComponent={
               <div className="certifications-logos">
@@ -201,7 +206,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
           <DetailBlock
             titleComponent={
               <h4>{`${t('SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE')} - 
-                    ${format(new Date(2024, 3, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(language) })}`}</h4>
+                    ${format(new Date(2024, 3, 1), 'MMMM yyyy', { locale: getLocaleFromLanguage(i18n.language) })}`}</h4>
             }
             detailComponent={
               <div className="certifications-logos">
@@ -236,8 +241,8 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
         <div id="hobbies-list">
           {hobbiesList.map((hobby) =>
             createDetailBlock(
-              hobby[language as keyof ITranslatableElement].title,
-              hobby[language as keyof ITranslatableElement].description
+              hobby[i18n.language as keyof ITranslatableElement].title,
+              hobby[i18n.language as keyof ITranslatableElement].description
             )
           )}
         </div>
@@ -246,24 +251,15 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   );
 }
 
-export const Head = ({ location, data, pageContext }) =>
-  HeadComponent(location, data, pageContext, titleCode, descriptionCode, namespaceCode);
+export const Head = ({ location }: { location: Location }) =>
+  HeadComponent(titleCode, descriptionCode, namespaceCode, location);
 
 export const pageQuery = graphql`
-  query ($language: String!) {
+  query {
     site {
       siteMetadata {
         socials {
           scrumOrg
-        }
-      }
-    }
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
         }
       }
     }

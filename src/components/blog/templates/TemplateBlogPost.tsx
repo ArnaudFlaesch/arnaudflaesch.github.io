@@ -1,4 +1,6 @@
-import { graphql } from 'gatsby';
+import './TemplateBlogPost.scss';
+
+import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 
 import Layout from '../../../layout/Layout';
@@ -10,8 +12,6 @@ import { IconButton } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale/fr';
-import { Link } from 'gatsby-plugin-react-i18next';
-import './TemplateBlogPost.scss';
 
 interface IProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,7 +40,7 @@ export default function TemplateBlogPost(props: Readonly<IProps>): React.ReactEl
   }
 
   return (
-    <Layout blogView={true} location={props.location}>
+    <Layout blogView={true} i18nNamespace="blog" location={props.location}>
       <>
         <article className="blog-post" itemScope itemType="https://schema.org/Article">
           <header>
@@ -142,7 +142,7 @@ export const Head = ({ location, data, pageContext }: { location: Location; data
 };
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String, $language: String!) {
+  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         siteUrl
@@ -175,15 +175,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-      }
-    }
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
       }
     }
   }

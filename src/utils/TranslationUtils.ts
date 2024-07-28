@@ -1,18 +1,14 @@
-export function getTranslation(
-  textCode: string,
-  language: string,
-  namespaceCode: string,
-  nameSpaceDatas: { node: { ns: string; data: string; language: string } }[]
-) {
-  const DEFAULT_NAMESPACE = 'translation';
-  let translationData;
-  translationData = nameSpaceDatas.filter(
-    (nameSpaceData) => nameSpaceData.node.ns === namespaceCode && nameSpaceData.node.language === language
-  );
-  if (!translationData.length) {
-    translationData = nameSpaceDatas.filter(
-      (nameSpaceData) => nameSpaceData.node.ns === DEFAULT_NAMESPACE && nameSpaceData.node.language === language
-    );
+export function getUrlPath(path: string, language: string): string {
+  const DEFAULT_LANGUAGE = 'fr';
+  return language === DEFAULT_LANGUAGE ? path : `/${language}${path}`;
+}
+
+export function getAlternativePathFromCurrentPath(locale: string, currentLanguage: string, path: string): string {
+  const DEFAULT_LANGUAGE = 'fr';
+
+  if (locale === DEFAULT_LANGUAGE) {
+    return path.replace(`/${currentLanguage}`, '');
+  } else {
+    return `/${locale}${path}`;
   }
-  return JSON.parse(translationData[0].node.data)[textCode];
 }

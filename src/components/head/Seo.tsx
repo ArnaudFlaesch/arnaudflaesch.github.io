@@ -7,6 +7,7 @@
 
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
+import { getAlternativePathFromCurrentPath } from '../../utils/TranslationUtils';
 
 interface IProps {
   translatedTitle?: string;
@@ -15,8 +16,7 @@ interface IProps {
   location: string;
   image?: string;
   type?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  meta?: any[];
+  meta?: { property: string; content: string }[];
 }
 
 export default function Seo(props: Readonly<IProps>): React.ReactElement {
@@ -65,6 +65,25 @@ export default function Seo(props: Readonly<IProps>): React.ReactElement {
       <meta name="keywords" content={site.siteMetadata.keywords} />
       {metaTags}
       <meta name="google-site-verification" content="LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU" />
+      {props.language === 'fr' ? (
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${site.siteMetadata.siteUrl}${getAlternativePathFromCurrentPath('en', props.language, props.location)}`}
+        />
+      ) : (
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href={`${site.siteMetadata.siteUrl}${getAlternativePathFromCurrentPath('fr', props.language, props.location)}`}
+        />
+      )}
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={`${site.siteMetadata.siteUrl}${getAlternativePathFromCurrentPath('fr', props.language, props.location)}`}
+      />
+
       <link
         rel="alternate"
         type="application/rss+xml"

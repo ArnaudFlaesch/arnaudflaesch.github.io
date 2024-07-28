@@ -1,22 +1,22 @@
-import * as React from 'react';
-
 import './Experience.scss';
+
+import * as React from 'react';
 
 import { format } from 'date-fns/format';
 import { IExperience } from '../../../model/IExperience';
 
 import { ArrowForward } from '@mui/icons-material';
-import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getLocaleFromLanguage } from '../../../utils/DateUtils';
 import DetailBlock from '../../detailBlock/DetailBlock';
 
 export default function Experience(props: Readonly<IExperience>): ReactElement {
-  const { language } = useI18next();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation('cv');
 
-  const title: string | undefined = props[`title_${language}` as keyof IExperience] as string;
-  const descriptionList: string[] | undefined = props[`description_${language}` as keyof IExperience] as string[];
+  const title: string | undefined = props[`title_${i18n.language}` as keyof IExperience] as string;
+  const descriptionList: string[] | undefined = props[`description_${i18n.language}` as keyof IExperience] as string[];
 
   function displayPeriod(dateDebut: Date, dateFin?: Date): ReactElement {
     if (dateFin) {
@@ -37,7 +37,7 @@ export default function Experience(props: Readonly<IExperience>): ReactElement {
   }
 
   function formatDate(date: Date): string {
-    return format(date, 'LLLL yyyy', { locale: getLocaleFromLanguage(language) });
+    return format(date, 'LLLL yyyy', { locale: getLocaleFromLanguage(i18n.language) });
   }
 
   function createExperienceData(jobName: string, website?: string, logoPath?: string): ReactElement {
