@@ -10,7 +10,6 @@
     "npm": "10.x"
   },
   "scripts": {
-    "prestart": "npm run clean",
     "start": "gatsby develop -o",
     "build": "export NODE_ENV=production && gatsby build",
     "lint:md": "markdownlint **/*.md",
@@ -67,7 +66,7 @@
     "react-photo-view": "1.2.6"
   },
   "devDependencies": {
-    "@types/node": "20.14.12",
+    "@types/node": "20.14.13",
     "@typescript-eslint/eslint-plugin": "7.17.0",
     "@typescript-eslint/parser": "7.17.0",
     "cypress": "13.13.1",
