@@ -1,6 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "assignees": ["ArnaudFlaesch"],
-  "schedule": ["at 2:00 pm on Fri"]
+  "extends": [
+    "config:base"
+  ],
+  "assignees": [
+    "ArnaudFlaesch"
+  ],
+  "packageRules": [
+    {
+      "groupName": "eslint-tslint",
+      "matchPackagePatterns": [
+        "^eslint",
+        "typescript-eslint"
+      ]
+    }
+  ],
+  "schedule": [
+    "on wednesday and friday at 2:00 pm"
+  ]
 }
