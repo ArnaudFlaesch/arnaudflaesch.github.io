@@ -1,15 +1,20 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { IRepository } from '../../../model/IRepository';
+import {
+  DockerIcon,
+  GradleIcon,
+  JUnitIcon,
+  KotlinIcon,
+  PostgreSQLIcon,
+  SnykIcon,
+  SpringBootIcon
+} from './LanguagesIcons';
 import RepositoryWidget from './RepositoryWidget';
-import { StaticImage } from 'gatsby-plugin-image';
-import TooltipIcon from '../../tooltip-icon/TooltipIcon';
 
 export default function DashWebServicesProject(): React.ReactElement {
   const description = 'DASH.WEBSERVICES.PROJECT.DESCRIPTION';
-  const ICON_HEIGHT = 40;
-  const ICON_WIDTH = 40;
-  const QUERY = graphql`
+  const QUERY_DASH_WEBSERVICES = graphql`
     {
       github {
         repository(name: "Dash-WebServices", owner: "ArnaudFlaesch") {
@@ -30,99 +35,15 @@ export default function DashWebServicesProject(): React.ReactElement {
     }
   `;
 
-  const dashWebServicesRepo: IRepository = useStaticQuery(QUERY).github.repository;
+  const dashWebServicesRepo: IRepository = useStaticQuery(QUERY_DASH_WEBSERVICES).github.repository;
   const repositoryIcons = [
-    <TooltipIcon
-      key={'Kotlin'}
-      tooltip="Kotlin"
-      image={
-        <StaticImage
-          src="../../../images/icons/backend/kotlin.svg"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="Kotlin"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'Spring Boot'}
-      tooltip="Spring Boot"
-      image={
-        <StaticImage
-          src="../../../images/icons/backend/spring.svg"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="Spring Boot"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'JUnit 5'}
-      tooltip="JUnit 5"
-      image={
-        <StaticImage
-          src="../../../images/icons/backend/junit.png"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="JUnit 5"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'Gradle'}
-      tooltip="Gradle"
-      image={
-        <StaticImage
-          src="../../../images/icons/backend/gradle.png"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="Gradle"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'Docker'}
-      tooltip="Docker"
-      image={
-        <StaticImage
-          src="../../../images/icons/tools/docker.svg"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="Docker"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'PostgreSQL'}
-      tooltip="PostgreSQL"
-      image={
-        <StaticImage
-          src="../../../images/icons/tools/postgresql.svg"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="PostgreSQL"
-        />
-      }
-    />,
-    <TooltipIcon
-      key={'Snyk'}
-      tooltip="Snyk"
-      image={
-        <StaticImage src="../../../images/icons/tools/snyk.svg" width={ICON_WIDTH} height={ICON_HEIGHT} alt="Snyk" />
-      }
-    />,
-    <TooltipIcon
-      key={'Heroku'}
-      tooltip="Heroku"
-      image={
-        <StaticImage
-          src="../../../images/icons/tools/heroku.svg"
-          width={ICON_WIDTH}
-          height={ICON_HEIGHT}
-          alt="Heroku"
-        />
-      }
-    />
+    <KotlinIcon key={'Kotlin'} />,
+    <SpringBootIcon key={'Spring Boot'} />,
+    <JUnitIcon key={'JUnit 5'} />,
+    <GradleIcon key={'Gradle'} />,
+    <DockerIcon key={'Docker'} />,
+    <PostgreSQLIcon key={'PostgreSQL'} />,
+    <SnykIcon key={'Snyk'} />
   ];
 
   return (
