@@ -37,7 +37,7 @@
     "@formspree/react": "2.5.1",
     "@mui/icons-material": "6.1.0",
     "@mui/material": "6.1.0",
-    "date-fns": "4.0.0",
+    "date-fns": "4.1.0",
     "dotenv": "16.4.5",
     "gatsby": "5.13.7",
     "gatsby-plugin-feed": "5.13.1",
