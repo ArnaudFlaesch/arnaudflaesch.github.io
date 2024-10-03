@@ -30,6 +30,7 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
   const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
   const githubAdvancedSecurityBadgeLink = 'https://www.credly.com/badges/a20775eb-8713-4013-b0fe-d5e359a543e8';
   const githubFoundationsBadgeLink = 'https://www.credly.com/badges/85ef131c-c299-4bd5-aa55-77141c16c822';
+  const githubCopilotBadgeLink = 'https://www.credly.com/badges/e8fd9833-c41b-40b9-8af6-7c7105b7f5c2';
   const leadingSafeBadgeLink = 'https://www.credly.com/badges/73047751-ef1f-47b9-a0d1-6c4f24319c61';
   const googleCloudDigitalLeaderBadgeLink = 'https://www.credly.com/badges/b849f990-e002-40ac-b8dd-ac3f5f9fa211';
   const googleCloudProfessionalDeveloperBadgeLink =
@@ -148,6 +149,11 @@ export default function CV(props: Readonly<IPageProps>): ReactElement {
                       src="../images/certifications/github-foundations.png"
                       alt={'GitHub Foundations'}
                     />
+                  </a>
+                </Tooltip>
+                <Tooltip title="GitHub Copilot">
+                  <a href={githubCopilotBadgeLink}>
+                    <StaticImage width={94} src="../images/certifications/github-copilot.png" alt={'GitHub Copilot'} />
                   </a>
                 </Tooltip>
               </div>
