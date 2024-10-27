@@ -36,7 +36,7 @@ export const certificationsData = [
     ]
   },
   {
-    title: "GitHub Actions et Advanced Security - mars 2024 GitHub Foundations - juillet 2024",
+    title: 'GitHub Actions et Advanced Security - mars 2024 GitHub Foundations - juillet 2024',
     certifications: [
       {
         name: 'GitHub Actions',
@@ -57,11 +57,11 @@ export const certificationsData = [
         name: 'GitHub Copilot',
         badgeLink: githubCopilotBadgeLink,
         imagePath: '/certifications/github-copilot.png'
-      },
+      }
     ]
   },
   {
-    title: "Professional Scrum Master 1 et 2 - décembre 2023",
+    title: 'Professional Scrum Master 1 et 2 - décembre 2023',
     certifications: [
       {
         name: 'Professional Scrum Master 1',
@@ -76,7 +76,7 @@ export const certificationsData = [
     ]
   },
   {
-    title: "SAFe 6 Agilist - mai 2024",
+    title: 'SAFe 6 Agilist - mai 2024',
     certifications: [
       {
         name: 'SAFe 6 Agilist',

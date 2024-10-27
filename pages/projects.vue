@@ -14,22 +14,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import { projectsInfo } from '~/data/ProjectsData';
 import type { IRepository } from '~/model/IRepository';
-export default defineComponent({
-  async setup() {
-    const projectsData = await Promise.all(projectsInfo.map((projectInfo) => getProjectData(projectInfo.name)));
-
-    return {
-      projectsInfo,
-      projectsData,
-      titleCode: 'PROJECTS.PAGE.TITLE',
-      descriptionCode: 'PROJECTS.PAGE.DESCRIPTION'
-    };
-  }
-});
+const titleCode='PROJECTS.PAGE.TITLE';
+const descriptionCode= 'PROJECTS.PAGE.DESCRIPTION';
+const projectsData = await Promise.all(projectsInfo.map((projectInfo) => getProjectData(projectInfo.name)))
 
 async function getProjectData(projectName: string): Promise<IRepository> {
   const { data } = await useAsyncGql({

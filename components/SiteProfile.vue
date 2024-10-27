@@ -15,98 +15,26 @@
       </div>
     </div>
     <div id="social-links">
-      <div id="linkedinLink">
-        <a :href="linkedinLink" class="social-link">
-          <TooltipIcon tooltip="LinkedIn">
-            <template v-slot:icon
-              ><NuxtImg
-                src="/icons/socials/linkedin-icon.png"
-                :width="IMAGE_HEIGHT"
-                :height="IMAGE_WIDTH"
-                alt="linkedin"
-            /></template>
-          </TooltipIcon>
-          <span>{{ $t('LINKEDIN.PROFILE') }}</span>
-        </a>
-      </div>
-
-      <div id="githubLink">
-        <a :href="githubLink" class="social-link">
-          <TooltipIcon tooltip="GitHub">
-            <template v-slot:icon
-              ><NuxtImg src="/icons/socials/github-icon.png" :width="IMAGE_HEIGHT" :height="IMAGE_WIDTH" alt="github"
-            /></template>
-          </TooltipIcon>
-          <span>{{ $t('GITHUB.PROFILE') }}</span>
-        </a>
-      </div>
-
-      <div id="scrumOrgLink">
-        <a :href="scrumOrgLink" class="social-link">
-          <TooltipIcon tooltip="Scrum.org">
-            <template v-slot:icon
-              ><NuxtImg
-                src="/icons/socials/scrum-org-icon.png"
-                :width="IMAGE_HEIGHT"
-                :height="IMAGE_WIDTH"
-                alt="scrum.org"
-            /></template>
-          </TooltipIcon>
-          <span>{{ $t('SCRUM.ORG.PROFILE') }}</span>
-        </a>
-      </div>
-
-      <div id="credlyLink">
-        <a :href="credlyLink" class="social-link">
-          <TooltipIcon tooltip="Certifications">
-            <template v-slot:icon
-              ><NuxtImg src="/icons/socials/credly-icon.png" :width="IMAGE_HEIGHT" :height="IMAGE_WIDTH" alt="credly"
-            /></template>
-          </TooltipIcon>
-          <span>{{ $t('CERTIFICATIONS') }}</span>
-        </a>
-      </div>
-
-      <div id="mediumLink">
-        <a :href="mediumLink" class="social-link">
-          <TooltipIcon tooltip="Medium">
-            <template v-slot:icon
-              ><NuxtImg src="/icons/socials/medium-icon.png" :width="IMAGE_HEIGHT" :height="IMAGE_WIDTH" alt="medium"
-            /></template>
-          </TooltipIcon>
-          <span>{{ $t('MEDIUM.PROFILE') }}</span>
-        </a>
-      </div>
-
-      <div id="stackoverflowLink">
-        <a :href="stackOverflowLink" class="social-link">
-          <TooltipIcon tooltip="Stack Overflow">
-            <template v-slot:icon
-              ><NuxtImg src="/icons/socials/stackoverflow-icon.png" :width="IMAGE_WIDTH" alt="stackoverflow"
-            /></template>
-          </TooltipIcon>
-          <span>{{ $t('STACK.OVERFLOW.PROFILE') }}</span>
-        </a>
-      </div>
+      <a :href="socialLink.link" v-bind:key="socialLink.name" v-for="socialLink in profileSocialLinks" class="social-link">
+        <TooltipIcon :tooltip="socialLink.name">
+          <template v-slot:icon
+            ><NuxtImg
+              :src="socialLink.imgPath"
+              :width="IMAGE_HEIGHT"
+              :height="IMAGE_WIDTH"
+              :alt="socialLink.name.toLowerCase()"
+          /></template>
+        </TooltipIcon>
+        <span>{{ $t(socialLink.labelI18nCode) }}</span>
+      </a>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { mdiBriefcase, mdiMapMarker } from '@mdi/js';
-import {
-  fullName,
-  credlyLink,
-  scrumOrgLink,
-  mediumLink,
-  linkedinLink,
-  stackOverflowLink,
-  jobName,
-  githubLink,
-  company,
-  city
-} from '~/data/SiteData';
-
+import { fullName, jobName, company, city } from '~/data/SiteData';
+import {profileSocialLinks}from '~/data/ProfileSocialsData';
 const IMAGE_HEIGHT = 35;
 const IMAGE_WIDTH = 35;
 

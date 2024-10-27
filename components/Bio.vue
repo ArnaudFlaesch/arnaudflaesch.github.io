@@ -7,19 +7,17 @@
 
     <div id="social-links-bio">
       <NuxtLink :to="linkedinLink">
-        <v-tooltip text="LinkedIn" location="top">
-          <template v-slot:activator="{ props }">
-            <NuxtImg v-bind="props" width="40" src="/icons/socials/linkedin-icon.png" alt="linkedin" />
-          </template>
-        </v-tooltip>
+        <NuxtImg  width="40" src="/icons/socials/linkedin-icon.png" alt="linkedin" />
+        <v-no-ssr>
+          <v-tooltip :id="id" activator="parent" location="top">LinkedIn</v-tooltip>
+        </v-no-ssr>
       </NuxtLink>
 
       <NuxtLink :to="githubLink">
-        <v-tooltip text="Github" location="top">
-          <template v-slot:activator="{ props }">
-            <NuxtImg v-bind="props" width="40" src="/icons/socials/github-icon.png" alt="github" />
-          </template>
-        </v-tooltip>
+        <NuxtImg  width="40" src="/icons/socials/github-icon.png" alt="github" />
+        <v-no-ssr>
+          <v-tooltip :id="id" activator="parent" location="top">Github</v-tooltip>
+        </v-no-ssr>
       </NuxtLink>
     </div>
   </div>
