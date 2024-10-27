@@ -11,7 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      GATSBY_PORTFOLIO_GITHUB_TOKEN: ${{ secrets.GATSBY_PORTFOLIO_GITHUB_TOKEN }}
+      PORTFOLIO_GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - uses: actions/checkout@v4
@@ -37,6 +45,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - run: NUXT_APP_BASE_URL=/newblog/ npx nuxt generate --preset github_pages
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./.output/public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
       - name: Lint
         run: |
           npm run lint:styles
@@ -55,7 +74,7 @@ jobs:
           browser: firefox
           config-file: cypress-test.config.ts
           start: npm start
-          wait-on: 'http://localhost:8000'
+          wait-on: 'http://localhost:3000'
 
       - name: Generate test report
         id: generate-e2e-report

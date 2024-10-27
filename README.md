@@ -5,3 +5,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2b43b4cf025046198a6d333eb2a4c346)](https://app.codacy.com/gh/ArnaudFlaesch/arnaudflaesch.github.io/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Known Vulnerabilities](https://snyk.io/test/github/ArnaudFlaesch/arnaudflaesch.github.io/badge.svg)](https://snyk.io/test/github/ArnaudFlaesch/arnaudflaesch.github.io)
 [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

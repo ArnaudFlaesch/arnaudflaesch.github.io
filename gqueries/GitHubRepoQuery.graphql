@@ -1,0 +1,16 @@
+query GetGitHubRepositoryDataQuery($repository: String!) {
+  repository(name: $repository, owner: "ArnaudFlaesch") {
+    name
+    url
+    languages(first: 5) {
+      edges {
+        node {
+          name
+          color
+        }
+        size
+      }
+      totalSize
+    }
+  }
+}
