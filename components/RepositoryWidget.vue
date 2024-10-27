@@ -5,11 +5,7 @@
         <a :href="repoWidgetProps.repositoryData.url">{{ repoWidgetProps.repositoryData.name }}</a>
       </h3>
       <a :href="repoWidgetProps.repositoryData.url">
-        <TooltipIcon tooltip="Lien GitHub">
-          <template v-slot:icon
-            ><NuxtImg src="/icons/tools/github.png" :width="ICON_WIDTH" :height="ICON_HEIGHT" alt="Lien GitHub"
-          /></template>
-        </TooltipIcon>
+        <TooltipIcon tooltip="Lien GitHub" iconPath="/icons/tools/github.png" alt="Lien GitHub" />
       </a>
     </div>
 
@@ -38,15 +34,9 @@
             v-bind:key="index"
             v-for="(languageIcon, index) in repoWidgetProps.repoIcons"
             :tooltip="languageIcon.name"
-          >
-            <template v-slot:icon
-              ><NuxtImg
-                :src="`${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, '').toLowerCase()}.${languageIcon.extension ? languageIcon.extension : 'svg'}`"
-                :width="MAX_WIDTH"
-                :height="MAX_HEIGHT"
-                :alt="languageIcon.name"
-            /></template>
-          </TooltipIcon>
+            iconPath="`${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, '').toLowerCase()}.${languageIcon.extension ? languageIcon.extension : 'svg'}`"
+            :alt="languageIcon.name"
+          />
         </div>
       </div>
     </div>
@@ -56,10 +46,6 @@
 <script lang="ts" setup>
 import type { IGitHubRepoLanguage } from '~/model/IGitHubRepoLanguage';
 import type { IEdge, IRepository } from '~/model/IRepository';
-const ICON_HEIGHT = 40;
-const ICON_WIDTH = 40;
-const MAX_HEIGHT = 40;
-const MAX_WIDTH = 40;
 
 const ICONS_PATH = '/icons/';
 const repoWidgetProps = defineProps({

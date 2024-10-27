@@ -1,10 +1,5 @@
-$header-background-color: #2c77a8;
-$header-text-color: black;
-$body-background-color: #dfdddd;
-$detail-block-border-color: #1f5099;
-
 /* stylelint-disable */
-
+@import '../styles/colors.scss';
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

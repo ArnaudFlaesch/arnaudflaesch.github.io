@@ -15,16 +15,19 @@
       </div>
     </div>
     <div id="social-links">
-      <a :href="socialLink.link" v-bind:key="socialLink.name" v-for="socialLink in profileSocialLinks" class="social-link">
-        <TooltipIcon :tooltip="socialLink.name">
-          <template v-slot:icon
-            ><NuxtImg
-              :src="socialLink.imgPath"
-              :width="IMAGE_HEIGHT"
-              :height="IMAGE_WIDTH"
-              :alt="socialLink.name.toLowerCase()"
-          /></template>
-        </TooltipIcon>
+      <a
+        :href="socialLink.link"
+        v-bind:key="socialLink.name"
+        v-for="socialLink in profileSocialLinks"
+        class="social-link"
+      >
+        <TooltipIcon
+          :tooltip="socialLink.name"
+          :iconWidth="IMAGE_WIDTH"
+          :iconHeight="IMAGE_HEIGHT"
+          :iconPath="socialLink.imgPath"
+          :alt="socialLink.name.toLowerCase()"
+        />
         <span>{{ $t(socialLink.labelI18nCode) }}</span>
       </a>
     </div>
@@ -34,7 +37,7 @@
 <script lang="ts" setup>
 import { mdiBriefcase, mdiMapMarker } from '@mdi/js';
 import { fullName, jobName, company, city } from '~/data/SiteData';
-import {profileSocialLinks}from '~/data/ProfileSocialsData';
+import { profileSocialLinks } from '~/data/ProfileSocialsData';
 const IMAGE_HEIGHT = 35;
 const IMAGE_WIDTH = 35;
 

@@ -81,7 +81,8 @@
 <script lang="ts" setup>
 import { format } from 'date-fns';
 import { mdiFacebook, mdiTwitter, mdiLinkedin } from '@mdi/js';
-const { locale } = useI18n();import { getLocaleFromLanguage } from '~/utils/DateUtils';
+const { locale } = useI18n();
+import { getLocaleFromLanguage } from '~/utils/DateUtils';
 
 const href = 'doc.path';
 
@@ -94,10 +95,9 @@ const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
 function handleShare(url: string): void {
   window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
 }
-
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .blog-post {
   .article-illustration {
     margin: 1em auto 0.5em;

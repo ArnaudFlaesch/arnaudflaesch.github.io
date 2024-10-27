@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { mdiHomeOutline , mdiBriefcaseVariantOutline , mdiBookOutline , mdiCodeBraces , mdiEmailOutline } from '@mdi/js';
+import { mdiHomeOutline, mdiBriefcaseVariantOutline, mdiBookOutline, mdiCodeBraces, mdiEmailOutline } from '@mdi/js';
 import { fullName, DEFAULT_LOCALE } from '~/data/SiteData';
 interface IUrl {
   icon: string;
@@ -40,17 +40,17 @@ const urls: IUrl[] = [
   {
     path: 'cv',
     label: 'RESUME.LABEL',
-    icon: mdiBriefcaseVariantOutline 
+    icon: mdiBriefcaseVariantOutline
   },
   {
     path: 'blog',
     label: 'BLOG.LABEL',
-    icon: mdiBookOutline 
+    icon: mdiBookOutline
   },
   {
     path: 'projects',
     label: 'PROJECTS.LABEL',
-    icon: mdiCodeBraces 
+    icon: mdiCodeBraces
   },
   {
     path: 'contact',
@@ -64,10 +64,7 @@ const { locale, setLocale } = useI18n();
 </script>
 
 <style lang="scss" scoped>
-$header-background-color: #2c77a8;
-$header-text-color: black;
-$body-background-color: #dfdddd;
-$detail-block-border-color: #1f5099;
+@import '../styles/colors.scss';
 
 #portfolio-header {
   height: 100%;

@@ -17,8 +17,8 @@
             <v-no-ssr>
               <v-tooltip activator="parent" location="top">
                 {{ certification.name }}
-              </v-tooltip></v-no-ssr
-            >
+              </v-tooltip>
+            </v-no-ssr>
           </a>
         </div>
       </template>
