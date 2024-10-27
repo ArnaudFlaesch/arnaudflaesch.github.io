@@ -2,6 +2,7 @@ import globals from 'globals';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginCypress from 'eslint-plugin-cypress/flat';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
@@ -9,6 +10,7 @@ export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   pluginCypress.configs.recommended,
+  eslintConfigPrettier,
   {
     ignores: [
       'cypress/**',

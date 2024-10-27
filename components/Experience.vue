@@ -44,7 +44,6 @@ import { format, Locale } from 'date-fns';
 import { enUS } from 'date-fns/locale/en-US';
 import { fr } from 'date-fns/locale/fr';
 import type { IExperience } from '~/model/IExperience';
-import { computed } from 'vue';
 import { mdiArrowRightThin } from '@mdi/js';
 
 const { locale } = useI18n();
@@ -58,10 +57,8 @@ const props = defineProps({
 
 const { t } = useI18n({ useScope: 'global' });
 
-const title = computed(() => props.experience[`title_${locale.value}` as keyof IExperience] as string);
-const descriptionList = computed(
-  () => props.experience[`description_${locale.value}` as keyof IExperience] as string[]
-);
+const title = props.experience[`title_${locale.value}` as keyof IExperience] as string;
+const descriptionList = props.experience[`description_${locale.value}` as keyof IExperience] as string[];
 
 function formatDate(date: Date): string {
   return format(date, 'LLLL yyyy', { locale: locale.value === 'fr' ? fr : enUS });

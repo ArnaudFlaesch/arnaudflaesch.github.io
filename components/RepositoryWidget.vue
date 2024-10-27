@@ -25,7 +25,7 @@
               width: `${Math.fround((edge.size / repoWidgetProps.repositoryData.languages.totalSize) * 100)}%`
             }"
           >
-            <v-tooltip activator="parent" :text="edge.node.name" location="top"> </v-tooltip>
+            <v-no-ssr> <v-tooltip activator="parent" :text="edge.node.name" location="top"> </v-tooltip></v-no-ssr>
           </div>
         </div>
 

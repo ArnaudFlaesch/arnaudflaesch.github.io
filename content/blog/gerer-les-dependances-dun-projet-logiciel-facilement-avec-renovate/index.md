@@ -17,7 +17,7 @@ lorsqu'il s'agit par exemple d'un projet Node.JS qui va en contenir une liste as
 package.json. Au fil du temps les fonctionnalités ajoutées au projet vont nécessiter des dépendances
 supplémentaires et cela peut entraîner des problèmes, notamment liés à la sécurité, si elles ne sont pas maintenues régulièrement.
 
-![Liste de pull requests sur un projet Node.JS](/blog/blog/2024/1-renovate/nodejs-pr-list.gif)
+![Liste de pull requests sur un projet Node.JS](/blog/2024/1-renovate/nodejs-pr-list.gif)
 _Les mises à jour sont fréquentes, particulièrement sur les projets frontend NodeJS.
 Source photo : pull requests  [d'un de mes projets sur GitHub](https://github.com/ArnaudFlaesch/Dash-Web/pulls?q=is%3Apr+is%3Aclosed)._
 
