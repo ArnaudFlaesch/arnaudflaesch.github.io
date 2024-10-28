@@ -51,7 +51,6 @@ export const cvFR = {
   'DOWNLOAD.RESUME': 'Télécharger mon CV',
   'SEE.MORE.EXPERIENCES': "Voir plus d'expériences",
   'SEE.LESS.EXPERIENCES': "Voir moins d'expériences",
-  AND: 'et',
   TODAY: "Aujourd'hui",
   Frontend: 'Frontend',
   Backend: 'Backend',

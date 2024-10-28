@@ -50,7 +50,6 @@ export const cvEN = {
   'DOWNLOAD.RESUME': 'Download my resume',
   'SEE.MORE.EXPERIENCES': 'See more experiences',
   'SEE.LESS.EXPERIENCES': 'See less experiences',
-  AND: 'and',
   TODAY: 'Today',
   Frontend: 'Frontend',
   Backend: 'Backend',

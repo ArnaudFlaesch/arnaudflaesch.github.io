@@ -13,41 +13,31 @@
       </template>
       <template #detailComponent>
         <div class="certifications-logos">
-          <a
-            v-for="certification in certificationGroup.certifications"
-            :key="certification.name"
-            :href="certification.badgeLink"
-          >
-            <NuxtImg
-              :width="certification.imageWidth ?? '120'"
-              :src="certification.imagePath"
-              :alt="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
-            />
-            <v-no-ssr>
-              <v-tooltip activator="parent" location="top">
-                {{ certification.isNameTranslatableCode ? $t(certification.name) : certification.name }}
-              </v-tooltip>
-            </v-no-ssr>
-          </a>
+          <div v-for="certification in certificationGroup.certifications" :key="certification.name">
+            <NuxtLink :to="certification.badgeLink">
+              <NuxtImg
+                :width="certificationGroup.imageWidth ?? '120'"
+                :src="certification.imagePath"
+                :alt="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
+              />
+              <v-no-ssr>
+                <v-tooltip activator="parent" location="top">
+                  {{ certification.isNameTranslatableCode ? $t(certification.name) : certification.name }}
+                </v-tooltip>
+              </v-no-ssr>
+            </NuxtLink>
+          </div>
         </div>
       </template>
     </DetailBlock>
-
-    <!--
-{{ $t('AND')
-   
--->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { certificationsData } from '~/data/CertificationData';
 import { format } from 'date-fns';
-import { useI18n } from 'vue-i18n';
 import { getLocaleFromLanguage } from '~/utils/DateUtils';
-
-const { locale, t } = useI18n();
-//t();
+const { locale } = useI18n();
 </script>
 
 <style lang="scss" scoped>
@@ -58,10 +48,18 @@ const { locale, t } = useI18n();
 }
 
 .certifications-logos {
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
   column-gap: 1em;
   justify-content: space-evenly;
+
+  > * {
+    flex: 1 0 32%;
+    place-content: center;
+    align-items: center;
+    display: flex;
+  }
 }
 
 img {

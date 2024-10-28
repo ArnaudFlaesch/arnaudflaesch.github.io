@@ -5,7 +5,6 @@ interface ICertificationData {
   isNameTranslatableCode?: boolean;
   badgeLink: string;
   imagePath: string;
-  imageWidth?: number;
 }
 
 interface ICertificationGroup {
@@ -15,6 +14,7 @@ interface ICertificationGroup {
     date: Date;
   }[];
   certifications: ICertificationData[];
+  imageWidth?: number;
 }
 
 const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
@@ -28,7 +28,7 @@ const inrCertificateLink = 'https://numerique-responsable.univ-lr.fr/ecocertific
 
 export const certificationsData = [
   {
-    title: [{ label: 'Google Cloud Professional Cloud Developer et Digital Leader', date: new Date(2024, 5, 4) }],
+    title: [{ label: 'Google Cloud Professional Cloud Developer & Digital Leader', date: new Date(2024, 5, 4) }],
     certifications: [
       {
         name: 'Google Cloud Professional Cloud Developer',
@@ -44,39 +44,36 @@ export const certificationsData = [
   },
   {
     title: [
-      { label: 'GitHub Actions et Advanced Security', date: new Date(2024, 2, 1) },
+      { label: 'GitHub Actions & Advanced Security', date: new Date(2024, 2, 1) },
       { label: 'GitHub Foundations', date: new Date(2024, 6, 5) },
       { label: 'GitHub Copilot', date: new Date(2024, 7, 16) }
     ],
+    imageWidth: 140,
     certifications: [
       {
         name: 'GitHub Actions',
         badgeLink: githubActionsBadgeLink,
-        imagePath: '/certifications/github-advanced-security.png',
-        imageWidth: 130
+        imagePath: '/certifications/github-advanced-security.png'
       },
       {
         name: 'GitHub Advanced Security',
         badgeLink: githubAdvancedSecurityBadgeLink,
-        imagePath: '/certifications/github-actions.png',
-        imageWidth: 130
+        imagePath: '/certifications/github-actions.png'
       },
       {
         name: 'GitHub Foundations',
         badgeLink: githubFoundationsBadgeLink,
-        imagePath: '/certifications/github-foundations.png',
-        imageWidth: 130
+        imagePath: '/certifications/github-foundations.png'
       },
       {
         name: 'GitHub Copilot',
         badgeLink: githubCopilotBadgeLink,
-        imagePath: '/certifications/github-copilot.png',
-        imageWidth: 130
+        imagePath: '/certifications/github-copilot.png'
       }
     ]
   },
   {
-    title: [{ label: 'Professional Scrum Master 1 et 2', date: new Date(2023, 11, 1) }],
+    title: [{ label: 'Professional Scrum Master 1 & 2', date: new Date(2023, 11, 1) }],
     certifications: [
       {
         name: 'Professional Scrum Master 1',
@@ -104,13 +101,13 @@ export const certificationsData = [
     title: [
       { label: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE', isNameTranslatableCode: true, date: new Date(2024, 3, 1) }
     ],
+    imageWidth: 450,
     certifications: [
       {
         name: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE',
         isNameTranslatableCode: true,
         badgeLink: inrCertificateLink,
-        imagePath: '/certifications/numerique-responsable.png',
-        imageWidth: 450
+        imagePath: '/certifications/numerique-responsable.png'
       }
     ]
   }
