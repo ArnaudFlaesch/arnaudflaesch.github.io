@@ -9,7 +9,7 @@
       </div>
       <div id="site-page">
         <main id="site-content">
-          <div id="page-header">
+          <div v-if="titleCode" id="page-header">
             <h1 id="page-title">{{ $t(titleCode) }}</h1>
             <!--<Tooltip title="Flux RSS" v-if="route.fullPath.endsWith('/blog/')">
               <a href="{rss}"> 
@@ -17,13 +17,13 @@
               </a>
             </Tooltip>-->
           </div>
-          <div id="page-description">
+          <div v-if="descriptionCode" id="page-description">
             {{ $t(descriptionCode) }}
           </div>
           <slot />
         </main>
         <footer>
-          © 2024, {{ $t('DEVELOPED.WITH') }} <a href="https://www.gatsbyjs.com/">Gatsby</a>. {{ $t('ICONS.BY') }} :
+          © 2024, {{ $t('DEVELOPED.WITH') }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t('ICONS.BY') }} :
           <a href="https://icons8.com/">Icons8</a>.
         </footer>
       </div>
@@ -37,6 +37,13 @@ import { useRoute } from 'vue-router';
 const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode }: { titleCode: string; descriptionCode: string } = useAttrs();
+const { t } = useI18n();
+useSeoMeta({
+  title: titleCode !== 'INDEX.PAGE.TITLE' ? t(titleCode) : '',
+  ogTitle: t(titleCode),
+  description: t(descriptionCode),
+  ogDescription: t(descriptionCode)
+});
 </script>
 
 <style lang="scss">
