@@ -5,7 +5,7 @@
     </h1>
     <div id="right-navbar">
       <div id="url-list">
-        <NuxtLink :key="url.path" v-for="url in urls" exactActiveClass="active" :to="localePath(url.path)">
+        <NuxtLink v-for="url in urls" :key="url.path" exact-active-class="active" :to="localePath(url.path)">
           <v-icon :aria-label="$t(url.label)" aria-hidden="false"> {{ url.icon }} </v-icon>{{ $t(url.label) }}
         </NuxtLink>
       </div>
@@ -25,6 +25,8 @@
 <script lang="ts" setup>
 import { mdiHomeOutline, mdiBriefcaseVariantOutline, mdiBookOutline, mdiCodeBraces, mdiEmailOutline } from '@mdi/js';
 import { fullName, DEFAULT_LOCALE } from '~/data/SiteData';
+import { useI18n } from 'vue-i18n';
+
 interface IUrl {
   icon: string;
   path: string;

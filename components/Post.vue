@@ -18,6 +18,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
 import { format } from 'date-fns';
 import type { ParsedContent } from '@nuxt/content';
 import { getLocaleFromLanguage } from '~/utils/DateUtils';

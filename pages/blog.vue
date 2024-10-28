@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
-      <ContentList :query="query" v-slot="{ list }">
+      <ContentList v-slot="{ list }" :query="query">
         <ol id="articles-list">
           <li v-for="article in list" :key="article._path">
             <Post :post="article" />

@@ -24,7 +24,7 @@
         <a href="/blog">{{ $t('RECENT.ARTICLES') }}</a>
       </h2>
 
-      <ContentList :query="query" v-slot="{ list }">
+      <ContentList v-slot="{ list }" :query="query">
         <ol>
           <li v-for="article in list" :key="article._path">
             <Post :post="article" />

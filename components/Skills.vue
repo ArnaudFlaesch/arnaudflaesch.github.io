@@ -1,15 +1,15 @@
 <template>
   <div id="skills-list">
-    <DetailBlock :key="index" v-for="(block, index) in skills">
-      <template v-slot:titleComponent
+    <DetailBlock v-for="(block, index) in skills" :key="index">
+      <template #titleComponent
         ><h3 class="skill-category-title">{{ $t(block.label) }}</h3></template
       >
-      <template v-slot:detailComponent>
+      <template #detailComponent>
         <TooltipIcon
-          v-bind:key="skill.name"
           v-for="skill in block.skills"
+          :key="skill.name"
           :tooltip="skill.name"
-          :iconPath="`${ICONS_PATH}${block.label.toLowerCase()}/${skill.name.replace(/\s/g, '').toLowerCase()}.${skill.extension ? skill.extension : 'svg'}`"
+          :icon-path="`${ICONS_PATH}${block.label.toLowerCase()}/${skill.name.replace(/\s/g, '').toLowerCase()}.${skill.extension ? skill.extension : 'svg'}`"
           :alt="skill.name"
         />
       </template>

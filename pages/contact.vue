@@ -9,34 +9,34 @@
         <div id="contact-informations">
           <v-text-field
             id="name"
-            class="form-field"
             v-model="name"
+            class="form-field"
             :rules="[rules.length(5)]"
             :label="$t('NAME.FIRSTNAME')"
-            hideDetails="auto"
+            hide-details="auto"
             variant="outlined"
           ></v-text-field>
 
           <v-text-field
             id="email"
+            v-model="email"
             type="email"
             class="form-field"
-            v-model="email"
             :rules="[rules.email]"
             :label="$t('YOUR.EMAIL.ADDRESS')"
-            hideDetails="auto"
+            hide-details="auto"
             variant="outlined"
           ></v-text-field>
         </div>
 
         <v-textarea
           id="message"
-          class="form-field"
           v-model="message"
+          class="form-field"
           rows="8"
           :rules="[rules.length(10)]"
           :label="$t('MESSAGE')"
-          hideDetails="auto"
+          hide-details="auto"
           variant="outlined"
         ></v-textarea>
 
@@ -49,6 +49,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 const titleCode = 'CONTACT.PAGE.TITLE';
 const descriptionCode = 'CONTACT.PAGE.DESCRIPTION';
 const isMailSent = ref(false);
@@ -64,6 +65,7 @@ const rules = {
   length: (len: number) => (value: string) => (value || '').length >= len || `Invalid character length, required ${len}`
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function handleSubmit(e: any) {
   e.preventDefault();
   const data = new FormData(e.target);

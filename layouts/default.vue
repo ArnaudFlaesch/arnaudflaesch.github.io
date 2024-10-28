@@ -10,14 +10,14 @@
       <div id="site-page">
         <main id="site-content">
           <div id="page-header">
-            <h1 id="page-title" v-if="titleCode">{{ $t(titleCode) }}</h1>
+            <h1 id="page-title">{{ $t(titleCode) }}</h1>
             <!--<Tooltip title="Flux RSS" v-if="route.fullPath.endsWith('/blog/')">
               <a href="{rss}"> 
                 <RssFeed id="rss-feed-icon" />
               </a>
             </Tooltip>-->
           </div>
-          <div id="page-description" v-if="descriptionCode">
+          <div id="page-description">
             {{ $t(descriptionCode) }}
           </div>
           <slot />
@@ -32,6 +32,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useRoute } from 'vue-router';
+
 const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode }: { titleCode: string; descriptionCode: string } = useAttrs();

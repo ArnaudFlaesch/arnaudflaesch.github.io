@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <main>
     <NuxtLayout>
@@ -26,25 +27,25 @@
             <div class="share-article-container">
               <span>Partager cet article :</span>
               <div id="share-buttons">
-                <a href="#" v-on:click="handleShare(`${facebookShareUrl}${href}`)">
+                <a href="#" @click="handleShare(`${facebookShareUrl}${href}`)">
                   <v-tooltip text="Partager sur Facebook" location="top">
-                    <template v-slot:activator="{ props }">
+                    <template #activator="{ props }">
                       <v-icon v-bind="props">{{ mdiFacebook }}</v-icon>
                     </template>
                   </v-tooltip>
                 </a>
 
-                <a href="#" v-on:click="handleShare(`${twitterShareUrl}${href}`)">
+                <a href="#" @click="handleShare(`${twitterShareUrl}${href}`)">
                   <v-tooltip text="Partager sur X" location="top">
-                    <template v-slot:activator="{ props }">
+                    <template #activator="{ props }">
                       <v-icon v-bind="props">{{ mdiTwitter }}</v-icon>
                     </template>
                   </v-tooltip>
                 </a>
 
-                <a href="#" v-on:click="handleShare(`${linkedinShareUrl}${href}`)">
+                <a href="#" @click="handleShare(`${linkedinShareUrl}${href}`)">
                   <v-tooltip text="Partager sur LinkedIn" location="top">
-                    <template v-slot:activator="{ props }">
+                    <template #activator="{ props }">
                       <v-icon v-bind="props">{{ mdiLinkedin }}</v-icon>
                     </template>
                   </v-tooltip>
@@ -81,8 +82,9 @@
 <script lang="ts" setup>
 import { format } from 'date-fns';
 import { mdiFacebook, mdiTwitter, mdiLinkedin } from '@mdi/js';
-const { locale } = useI18n();
+import { useI18n } from 'vue-i18n';
 import { getLocaleFromLanguage } from '~/utils/DateUtils';
+const { locale } = useI18n();
 
 const href = 'doc.path';
 

@@ -16,16 +16,16 @@
     </div>
     <div id="social-links">
       <a
-        :href="socialLink.link"
-        v-bind:key="socialLink.name"
         v-for="socialLink in profileSocialLinks"
+        :key="socialLink.name"
+        :href="socialLink.link"
         class="social-link"
       >
         <TooltipIcon
           :tooltip="socialLink.name"
-          :iconWidth="IMAGE_WIDTH"
-          :iconHeight="IMAGE_HEIGHT"
-          :iconPath="socialLink.imgPath"
+          :icon-width="IMAGE_WIDTH"
+          :icon-height="IMAGE_HEIGHT"
+          :icon-path="socialLink.imgPath"
           :alt="socialLink.name.toLowerCase()"
         />
         <span>{{ $t(socialLink.labelI18nCode) }}</span>

@@ -1,5 +1,5 @@
-query GetGitHubRepositoryDataQuery($repository: String!) {
-  repository(name: $repository, owner: "ArnaudFlaesch") {
+query GetGitHubRepositoryDataQuery($repository: String!, $owner: String!) {
+  repository(name: $repository, owner: $owner) {
     name
     url
     languages(first: 5) {

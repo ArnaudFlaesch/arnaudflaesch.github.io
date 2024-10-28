@@ -7,17 +7,10 @@
 
     <div id="social-links-bio">
       <NuxtLink :to="linkedinLink">
-        <NuxtImg :height="IMG_HEIGHT" :width="IMG_WIDTH" src="/icons/socials/linkedin-icon.png" alt="linkedin" />
-        <v-no-ssr>
-          <v-tooltip :id="id" activator="parent" location="top">LinkedIn</v-tooltip>
-        </v-no-ssr>
+        <TooltipIcon tooltip="LinkedIn" icon-path="/icons/socials/linkedin-icon.png" alt="linkedin" />
       </NuxtLink>
-
       <NuxtLink :to="githubLink">
-        <NuxtImg :height="IMG_HEIGHT" :width="IMG_WIDTH" src="/icons/socials/github-icon.png" alt="github" />
-        <v-no-ssr>
-          <v-tooltip :id="id" activator="parent" location="top">Github</v-tooltip>
-        </v-no-ssr>
+        <TooltipIcon tooltip="Github" icon-path="/icons/socials/github-icon.png" alt="github" />
       </NuxtLink>
     </div>
   </div>
@@ -26,8 +19,6 @@
 <script lang="ts" setup>
 import { fullName, linkedinLink, githubLink } from '~/data/SiteData';
 const author = fullName;
-const ICON_HEIGHT = 40;
-const ICON_WIDTH = 40;
 </script>
 
 <style lang="scss" scoped>

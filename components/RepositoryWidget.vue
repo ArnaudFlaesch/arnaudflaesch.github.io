@@ -5,7 +5,7 @@
         <a :href="repoWidgetProps.repositoryData.url">{{ repoWidgetProps.repositoryData.name }}</a>
       </h3>
       <a :href="repoWidgetProps.repositoryData.url">
-        <TooltipIcon tooltip="Lien GitHub" iconPath="/icons/tools/github.png" alt="Lien GitHub" />
+        <TooltipIcon tooltip="Lien GitHub" icon-path="/icons/tools/github.png" alt="Lien GitHub" />
       </a>
     </div>
 
@@ -17,8 +17,8 @@
 
         <div class="languages-container">
           <div
-            :key="index"
             v-for="(edge, index) in [...repoWidgetProps.repositoryData.languages.edges].sort(sortEdgesBySize)"
+            :key="index"
             class="language-edge"
             :style="{
               backgroundColor: edge.node.color,
@@ -31,10 +31,10 @@
 
         <div class="repository-icons">
           <TooltipIcon
-            v-bind:key="index"
             v-for="(languageIcon, index) in repoWidgetProps.repoIcons"
+            :key="index"
             :tooltip="languageIcon.name"
-            iconPath="`${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, '').toLowerCase()}.${languageIcon.extension ? languageIcon.extension : 'svg'}`"
+            :icon-path="`${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, '').toLowerCase()}.${languageIcon.extension ? languageIcon.extension : 'svg'}`"
             :alt="languageIcon.name"
           />
         </div>

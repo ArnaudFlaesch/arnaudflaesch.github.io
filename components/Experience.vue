@@ -1,6 +1,6 @@
 <template>
   <DetailBlock>
-    <template v-slot:titleComponent>
+    <template #titleComponent>
       <div class="job-content">
         <div class="job-period">
           <span v-if="props.experience.dateFin"
@@ -13,7 +13,7 @@
           >
         </div>
         <div class="job-name">
-          <a :href="props.experience.website" v-if="props.experience.website">
+          <a v-if="props.experience.website" :href="props.experience.website">
             <NuxtImg v-if="props.experience.logoPath" :src="props.experience.logoPath" :alt="props.experience.name" />
             <h3 v-else>{{ props.experience.name }}</h3>
           </a>
@@ -25,11 +25,11 @@
         <div class="job-location">{{ props.experience.location }}</div>
       </div>
     </template>
-    <template v-slot:detailComponent>
+    <template #detailComponent>
       <div class="job-details-content">
         <h3>{{ title }}</h3>
         <div class="job-description">
-          <div :key="index" v-for="(description, index) in descriptionList">
+          <div v-for="(description, index) in descriptionList" :key="index">
             {{ description }}
             <br />
           </div>
@@ -40,7 +40,8 @@
 </template>
 
 <script lang="ts" setup>
-import { format, Locale } from 'date-fns';
+import { useI18n } from 'vue-i18n';
+import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale/en-US';
 import { fr } from 'date-fns/locale/fr';
 import type { IExperience } from '~/model/IExperience';
@@ -54,8 +55,6 @@ const props = defineProps({
     required: true
   }
 });
-
-const { t } = useI18n({ useScope: 'global' });
 
 const title = props.experience[`title_${locale.value}` as keyof IExperience] as string;
 const descriptionList = props.experience[`description_${locale.value}` as keyof IExperience] as string[];
