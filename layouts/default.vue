@@ -38,12 +38,14 @@ const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode }: { titleCode: string; descriptionCode: string } = useAttrs();
 const { t } = useI18n();
-useSeoMeta({
-  title: titleCode !== 'INDEX.PAGE.TITLE' ? t(titleCode) : '',
-  ogTitle: t(titleCode),
-  description: t(descriptionCode),
-  ogDescription: t(descriptionCode)
-});
+if (titleCode && descriptionCode) {
+  useSeoMeta({
+    title: titleCode !== 'INDEX.PAGE.TITLE' ? t(titleCode) : '',
+    ogTitle: t(titleCode),
+    description: t(descriptionCode),
+    ogDescription: t(descriptionCode)
+  });
+}
 </script>
 
 <style lang="scss">

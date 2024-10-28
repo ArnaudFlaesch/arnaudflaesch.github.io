@@ -91,10 +91,44 @@ const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
 const route = useRoute();
 
 const [previous, next] = await queryContent().only(['_path', 'title']).sort({ date: -1 }).findSurround(route.path);
-
+/** 
+useSeoMeta({
+    title: titleCode !== 'INDEX.PAGE.TITLE' ? t(titleCode) : '',
+    ogTitle: t(titleCode),
+    description: t(descriptionCode),
+    ogDescription: t(descriptionCode)
+  });
+  */
 function handleShare(url: string): void {
   window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
 }
+
+/**
+ * {
+      property: 'article:published_time',
+      content: pubDate
+    },
+    {
+      property: 'article:modified_time',
+      content: pubDate
+    },
+    {
+      property: 'og:pubdate',
+      content: pubDate
+    }
+  ];
+  return (
+    <Seo
+      translatedTitle={post.frontmatter.title}
+      translatedDescription={post.frontmatter.description || post.excerpt}
+      language={pageContext.language}
+      image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
+      location={location.pathname}
+      type="article"
+      meta={tags}
+    />
+  );
+ */
 </script>
 
 <style lang="scss">
