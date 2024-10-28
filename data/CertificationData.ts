@@ -53,25 +53,25 @@ export const certificationsData = [
         name: 'GitHub Actions',
         badgeLink: githubActionsBadgeLink,
         imagePath: '/certifications/github-advanced-security.png',
-        imageWidth: 150
+        imageWidth: 130
       },
       {
         name: 'GitHub Advanced Security',
         badgeLink: githubAdvancedSecurityBadgeLink,
         imagePath: '/certifications/github-actions.png',
-        imageWidth: 150
+        imageWidth: 130
       },
       {
         name: 'GitHub Foundations',
         badgeLink: githubFoundationsBadgeLink,
         imagePath: '/certifications/github-foundations.png',
-        imageWidth: 150
+        imageWidth: 130
       },
       {
         name: 'GitHub Copilot',
         badgeLink: githubCopilotBadgeLink,
         imagePath: '/certifications/github-copilot.png',
-        imageWidth: 150
+        imageWidth: 130
       }
     ]
   },
