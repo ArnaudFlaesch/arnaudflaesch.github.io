@@ -2,6 +2,7 @@ import { scrumOrgLink } from '../data/SiteData';
 
 interface ICertificationData {
   name: string;
+  isNameTranslatableCode?: boolean;
   badgeLink: string;
   imagePath: string;
   imageWidth?: number;
@@ -10,6 +11,7 @@ interface ICertificationData {
 interface ICertificationGroup {
   title: {
     label: string;
+    isNameTranslatableCode?: boolean;
     date: Date;
   }[];
   certifications: ICertificationData[];
@@ -99,10 +101,13 @@ export const certificationsData = [
     ]
   },
   {
-    title: [{ label: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE', date: new Date(2024, 3, 1) }],
+    title: [
+      { label: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE', isNameTranslatableCode: true, date: new Date(2024, 3, 1) }
+    ],
     certifications: [
       {
         name: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE',
+        isNameTranslatableCode: true,
         badgeLink: inrCertificateLink,
         imagePath: '/certifications/numerique-responsable.png',
         imageWidth: 450

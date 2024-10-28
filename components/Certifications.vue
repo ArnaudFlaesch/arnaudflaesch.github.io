@@ -6,7 +6,8 @@
       <template #titleComponent>
         <span v-for="title in certificationGroup.title" :key="title.label">
           <h4>
-            {{ $t(title.label) }} - {{ format(title.date, 'MMMM yyyy', { locale: getLocaleFromLanguage(locale) }) }}
+            {{ title.isNameTranslatableCode ? $t(title.label) : title.label }} -
+            {{ format(title.date, 'MMMM yyyy', { locale: getLocaleFromLanguage(locale) }) }}
           </h4></span
         >
       </template>
@@ -20,11 +21,11 @@
             <NuxtImg
               :width="certification.imageWidth ?? '120'"
               :src="certification.imagePath"
-              :alt="$t(certification.name)"
+              :alt="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
             />
             <v-no-ssr>
               <v-tooltip activator="parent" location="top">
-                {{ $t(certification.name) }}
+                {{ certification.isNameTranslatableCode ? $t(certification.name) : certification.name }}
               </v-tooltip>
             </v-no-ssr>
           </a>
