@@ -2,78 +2,75 @@
 <template>
   <main>
     <NuxtLayout>
-      <ContentDoc v-slot="{ doc }">
-        <article class="blog-post" itemScope itemType="https://schema.org/Article">
-          <header>
-            <h1 itemProp="headline">{{ doc.title }}</h1>
-            <p>{{ format(doc.date, 'dd MMMM yyyy', { locale: getLocaleFromLanguage(locale) }) }}</p>
-            {{ doc.description }}
-          </header>
-          <p>
-            <NuxtImg
-              class="article-illustration"
-              :src="blogUrlPrefix + doc.image"
-              width="600"
-              alt="Illustration article"
-            />
-            <em v-html="doc.imageSubtitle" />
-          </p>
-          <section itemProp="articleBody">
-            <ContentRenderer :value="doc" />
-          </section>
-          <hr />
-          <footer class="blog-post-footer">
-            <Bio />
-            <div class="share-article-container">
-              <span>Partager cet article :</span>
-              <div id="share-buttons">
-                <a href="#" @click="handleShare(`${facebookShareUrl}${href}`)">
-                  <v-tooltip text="Partager sur Facebook" location="top">
-                    <template #activator="{ props }">
-                      <v-icon v-bind="props">{{ mdiFacebook }}</v-icon>
-                    </template>
-                  </v-tooltip>
-                </a>
+      <ContentDoc>
+        <template v-slot="{ doc }">
+          <article class="blog-post" itemScope itemType="https://schema.org/Article">
+            <header>
+              <h1 itemProp="headline">{{ doc.title }}</h1>
+              <p>{{ format(doc.date, 'dd MMMM yyyy', { locale: getLocaleFromLanguage(locale) }) }}</p>
+              {{ doc.description }}
+            </header>
+            <p>
+              <NuxtImg
+                class="article-illustration"
+                :src="blogUrlPrefix + doc.image"
+                width="600"
+                alt="Illustration article"
+              />
+              <em v-html="doc.imageSubtitle" />
+            </p>
+            <section itemProp="articleBody">
+              <ContentRenderer :value="doc" />
+            </section>
+            <hr />
+            <footer class="blog-post-footer">
+              <Bio />
+              <div class="share-article-container">
+                <span>Partager cet article :</span>
+                <div id="share-buttons">
+                  <a href="#" @click="handleShare(`${facebookShareUrl}${doc.path}`)">
+                    <v-tooltip text="Partager sur Facebook" location="top">
+                      <template #activator="{ props }">
+                        <v-icon v-bind="props">{{ mdiFacebook }}</v-icon>
+                      </template>
+                    </v-tooltip>
+                  </a>
 
-                <a href="#" @click="handleShare(`${twitterShareUrl}${href}`)">
-                  <v-tooltip text="Partager sur X" location="top">
-                    <template #activator="{ props }">
-                      <v-icon v-bind="props">{{ mdiTwitter }}</v-icon>
-                    </template>
-                  </v-tooltip>
-                </a>
+                  <a href="#" @click="handleShare(`${twitterShareUrl}${doc.path}`)">
+                    <v-tooltip text="Partager sur X" location="top">
+                      <template #activator="{ props }">
+                        <v-icon v-bind="props">{{ mdiTwitter }}</v-icon>
+                      </template>
+                    </v-tooltip>
+                  </a>
 
-                <a href="#" @click="handleShare(`${linkedinShareUrl}${href}`)">
-                  <v-tooltip text="Partager sur LinkedIn" location="top">
-                    <template #activator="{ props }">
-                      <v-icon v-bind="props">{{ mdiLinkedin }}</v-icon>
-                    </template>
-                  </v-tooltip>
-                </a>
+                  <a href="#" @click="handleShare(`${linkedinShareUrl}${doc.path}`)">
+                    <v-tooltip text="Partager sur LinkedIn" location="top">
+                      <template #activator="{ props }">
+                        <v-icon v-bind="props">{{ mdiLinkedin }}</v-icon>
+                      </template>
+                    </v-tooltip>
+                  </a>
+                </div>
               </div>
-            </div>
-          </footer>
-        </article>
-        <!--
-        <nav className="blog-post-nav">
-          <ul>
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
-        -->
+            </footer>
+          </article>
+
+          <nav className="blog-post-nav">
+            <ul>
+              <li>
+                <NuxtLink v-if="previous" :to="previous._path" rel="prev"> ← {{ previous.title }} </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink v-if="next" :to="next._path" rel="next"> {{ next.title }} → </NuxtLink>
+              </li>
+            </ul>
+          </nav>
+        </template>
+
+        <template #not-found>
+          <h1>Document not found</h1>
+        </template>
       </ContentDoc>
     </NuxtLayout>
   </main>
@@ -86,13 +83,14 @@ import { useI18n } from 'vue-i18n';
 import { getLocaleFromLanguage } from '~/utils/DateUtils';
 const { locale } = useI18n();
 
-const href = 'doc.path';
-
 const blogUrlPrefix = '/blog/';
 
 const facebookShareUrl = 'https://www.facebook.com/sharer.php?u=';
 const twitterShareUrl = 'https://twitter.com/share?url=';
 const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
+const route = useRoute();
+
+const [previous, next] = await queryContent().only(['_path', 'title']).sort({ date: -1 }).findSurround(route.path);
 
 function handleShare(url: string): void {
   window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
