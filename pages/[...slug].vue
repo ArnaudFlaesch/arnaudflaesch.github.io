@@ -91,14 +91,25 @@ const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
 const route = useRoute();
 
 const [previous, next] = await queryContent().only(['_path', 'title']).sort({ date: -1 }).findSurround(route.path);
-/** 
+const { data } = await useAsyncData('home', () => queryContent(route.path).findOne());
+console.log(data.value?.title);
+console.log(data.value?.date);
+console.log(data.value?.image);
+const title = data.value?.title;
+const description = data.value?.description;
+const date = data.value?.date;
+const image = data.value?.image;
 useSeoMeta({
-    title: titleCode !== 'INDEX.PAGE.TITLE' ? t(titleCode) : '',
-    ogTitle: t(titleCode),
-    description: t(descriptionCode),
-    ogDescription: t(descriptionCode)
-  });
-  */
+  title: title,
+  ogTitle: title,
+  description: description,
+  ogDescription: description,
+  articlePublishedTime: date,
+  articleModifiedTime: date,
+  articleAuthor: ['Arnaud Flaesch'],
+  ogImage: 'https://arnaudflaesch.github.io/blog/2024/2-ghas/ghas-logo.png' // @TODO FIXME
+});
+
 function handleShare(url: string): void {
   window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
 }
