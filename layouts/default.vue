@@ -35,12 +35,35 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
-import { author, defaultImageUrl, fullName, jobName, siteName, siteUrl } from '~/data/SiteData';
+import { DEFAULT_LOCALE, defaultImageUrl, fullName, jobName, siteUrl } from '~/data/SiteData';
 
 const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode }: { titleCode: string; descriptionCode: string } = useAttrs();
 const { t, locale } = useI18n();
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true
+});
+
+const links = head.value.link.map((link) => {
+  return { id: link.id, rel: 'alternate', ref: link.href, href: link.href, hreflang: link.hreflang };
+});
+
+const hrefLangDefaultLink = links.filter((link) => link.hreflang === DEFAULT_LOCALE)[0] ?? {};
+
+useHead({
+  htmlAttrs: {
+    lang: locale
+  },
+  link: [
+    { id: hrefLangDefaultLink['id'] + '-canonical', rel: 'canonical', href: hrefLangDefaultLink.href },
+    { ...hrefLangDefaultLink, id: hrefLangDefaultLink['id'] + '-x-default', hreflang: 'x-default' },
+    ...links
+  ]
+});
 
 if (titleCode && descriptionCode) {
   const defaultTitle = `${fullName} - ${t(jobName)}`;
@@ -48,20 +71,15 @@ if (titleCode && descriptionCode) {
   const ogImage = `${siteUrl}${defaultImageUrl}`;
 
   useSeoMeta({
-    author: author,
-    creator: author,
-    ogLocale: locale,
-    ogSiteName: siteName,
-
     title: title,
     ogTitle: title,
     ogUrl: `${siteUrl}${route.fullPath}`,
     ogType: 'website',
+    ogLocale: locale,
     description: t(descriptionCode),
     ogDescription: t(descriptionCode),
-
-    ogImageUrl: ogImage,
-    ogImage: ogImage
+    ogImage: ogImage,
+    ogImageUrl: ogImage
     //   twitterCard: 'summary' | 'summary_large_image' | 'app' | 'player'
     //twitterTitle: string
     //   twitterDescription: string

@@ -1,5 +1,5 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
-import { DEFAULT_LOCALE, locales, siteUrl, title } from './data/SiteData';
+import { DEFAULT_LOCALE, locales, author, siteName, siteUrl, title } from './data/SiteData';
 import { defineNuxtConfig } from 'nuxt/config';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
@@ -15,7 +15,14 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'author', content: author },
+        { name: 'creator', content: author },
+        { name: 'og:site_name', content: siteName },
+        { name: 'google-site-verification', content: 'LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU' }
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
         { rel: 'manifest', href: '/manifest.webmanifest' }
@@ -62,7 +69,17 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: './i18n.config.ts',
-    locales: [DEFAULT_LOCALE, ...locales],
+    baseUrl: siteUrl,
+    locales: [
+      {
+        code: 'fr',
+        language: 'fr-FR'
+      },
+      {
+        code: 'en',
+        language: 'en-US'
+      }
+    ],
     defaultLocale: DEFAULT_LOCALE,
     strategy: 'prefix_except_default'
   },

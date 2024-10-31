@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
-import { author, fullName, jobName, siteName, siteUrl } from '~/data/SiteData';
+import { author, fullName, jobName, siteUrl } from '~/data/SiteData';
 const { t, locale } = useI18n();
 
 const route = useRoute();
@@ -39,7 +39,8 @@ useSeoMeta({
   ogUrl: `${siteUrl}${route.fullPath}`,
   ogType: 'article',
   ogLocale: locale,
-  ogSiteName: siteName,
+  ogImage: imageUrl,
+  ogImageUrl: imageUrl,
   //   twitterCard: 'summary' | 'summary_large_image' | 'app' | 'player'
   //twitterTitle: string
   //   twitterDescription: string
@@ -48,10 +49,6 @@ useSeoMeta({
   ogDescription: description,
   articlePublishedTime: date,
   articleModifiedTime: date,
-  articleAuthor: [author],
-  author: author,
-  creator: author,
-  ogImageUrl: imageUrl,
-  ogImage: imageUrl
+  articleAuthor: [author]
 });
 </script>

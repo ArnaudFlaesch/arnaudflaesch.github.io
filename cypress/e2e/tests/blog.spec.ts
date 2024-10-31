@@ -34,9 +34,7 @@ describe('Blog page tests', () => {
       .get('meta[property="og:image"]')
       .should('have.attr', 'content', 'https://arnaudflaesch.github.io/profile-picture.jpg');
     cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
-    cy.document()
-      .get('meta[property="og:url"]')
-      .should('have.attr', 'content', 'https://arnaudflaesch.github.io/blog/');
+    cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/blog');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
   });
 
