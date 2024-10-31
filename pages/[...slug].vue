@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-v-html -->
 <template>
   <main>
     <NuxtLayout>
@@ -55,31 +54,4 @@ useSeoMeta({
   ogImageUrl: imageUrl,
   ogImage: imageUrl
 });
-
-/**
- * {
-      property: 'article:published_time',
-      content: pubDate
-    },
-    {
-      property: 'article:modified_time',
-      content: pubDate
-    },
-    {
-      property: 'og:pubdate',
-      content: pubDate
-    }
-  ];
-  return (
-    <Seo
-      translatedTitle={post.frontmatter.title}
-      translatedDescription={post.frontmatter.description || post.excerpt}
-      language={pageContext.language}
-      image={`${siteUrl}${blogUrlPrefix}${post.frontmatter.image}`}
-      location={location.pathname}
-      type="article"
-      meta={tags}
-    />
-  );
- */
 </script>

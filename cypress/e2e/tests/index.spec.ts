@@ -46,4 +46,34 @@ describe('Portfolio tests', () => {
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
     //cy.document().get('meta[property="og:keywords"]').should('have.attr', 'content', 'arnaud flaesch, web developer, fullstack developer, software engineer');
   });
+
+  it('Home SEO english locale test', () => {
+    cy.wait(1500);
+    cy.get('#switch-language > button').click();
+    cy.title().should('equal', 'Arnaud Flaesch - Software developer');
+    cy.document()
+      .get('meta[name="description"]')
+      .should(
+        'have.attr',
+        'content',
+        "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on."
+      );
+    cy.document()
+      .get('meta[property="og:description"]')
+      .should(
+        'have.attr',
+        'content',
+        "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on."
+      );
+    cy.document().get('meta[name="author"]').should('have.attr', 'content', 'Arnaud Flaesch');
+    cy.document()
+      .get('meta[property="og:title"]')
+      .should('have.attr', 'content', 'Arnaud Flaesch - Software developer');
+    cy.document()
+      .get('meta[property="og:image"]')
+      .should('have.attr', 'content', 'https://arnaudflaesch.github.io/profile-picture.jpg');
+    cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
+    cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/en');
+    cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
+  });
 });

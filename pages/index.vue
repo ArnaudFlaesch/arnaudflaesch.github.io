@@ -8,7 +8,7 @@
             <NuxtLink :to="localePath('cv')">{{ $t('CV.MESSAGE') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="localePath('projects')">{{ $t('PROJECTS.MESSAGE') }}</NuxtLink>
+            <NuxtLink :to="localePath('projets')">{{ $t('PROJECTS.MESSAGE') }}</NuxtLink>
           </li>
           <li>
             <NuxtLink :to="localePath('blog')">{{ $t('BLOG.MESSAGE') }}</NuxtLink

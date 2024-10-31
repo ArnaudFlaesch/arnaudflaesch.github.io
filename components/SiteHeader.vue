@@ -50,7 +50,7 @@ const urls: IUrl[] = [
     icon: mdiBookOutline
   },
   {
-    path: 'projects',
+    path: 'projets',
     label: 'PROJECTS.LABEL',
     icon: mdiCodeBraces
   },
