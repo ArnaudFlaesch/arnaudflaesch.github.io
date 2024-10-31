@@ -94,8 +94,6 @@ function handleSubmit(e: any) {
 </script>
 
 <style lang="scss">
-@import '../styles/colors.scss';
-
 #contact-form {
   display: flex;
   flex-direction: column;

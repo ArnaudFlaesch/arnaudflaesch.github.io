@@ -6,12 +6,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {
-    enabled: false,
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler'
-      }
-    }
+    enabled: false
   },
   css: ['~/assets/styles.scss', '~/assets/global.scss'],
   site: {
@@ -28,6 +23,7 @@ export default defineNuxtConfig({
     }
   },
   content: {
+    contentHead: false,
     locales: locales,
     defaultLocale: DEFAULT_LOCALE
   },
@@ -41,7 +37,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-graphql-client',
-    '@nuxtjs/seo',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -82,6 +77,14 @@ export default defineNuxtConfig({
     vue: {
       template: {
         transformAssetUrls
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+          additionalData: '@use "~/assets/colors.scss" as *;'
+        }
       }
     }
   }

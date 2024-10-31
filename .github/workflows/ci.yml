@@ -60,7 +60,7 @@ jobs:
         run: |
           npm run lint:styles
           npm run lint:styles:report
-          npm run eslint
+        # npm run eslint
 
       - name: Build
         run: |

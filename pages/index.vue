@@ -47,8 +47,6 @@ const query: QueryBuilderParams = { path: '/blog', limit: 5, sort: [{ date: -1 }
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/colors.scss';
-
 #home-page {
   #site-links {
     ul {

@@ -23,8 +23,10 @@
           <slot />
         </main>
         <footer>
-          © 2024, {{ $t('DEVELOPED.WITH') }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t('ICONS.BY') }} :
-          <a href="https://icons8.com/">Icons8</a>.
+          <span
+            >© 2024, {{ $t('DEVELOPED.WITH') }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t('ICONS.BY') }} :
+            <a href="https://icons8.com/">Icons8</a>.</span
+          >
         </footer>
       </div>
     </div>
@@ -33,24 +35,42 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
+import { author, defaultImageUrl, fullName, jobName, siteName, siteUrl } from '~/data/SiteData';
 
 const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode }: { titleCode: string; descriptionCode: string } = useAttrs();
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
 if (titleCode && descriptionCode) {
+  const defaultTitle = `${fullName} - ${t(jobName)}`;
+  const title = titleCode !== 'INDEX.PAGE.TITLE' ? [t(titleCode), defaultTitle].join(' | ') : defaultTitle;
+  const ogImage = `${siteUrl}${defaultImageUrl}`;
+
   useSeoMeta({
-    title: titleCode !== 'INDEX.PAGE.TITLE' ? t(titleCode) : '',
-    ogTitle: t(titleCode),
+    author: author,
+    creator: author,
+    ogLocale: locale,
+    ogSiteName: siteName,
+
+    title: title,
+    ogTitle: title,
+    ogUrl: `${siteUrl}${route.fullPath}`,
+    ogType: 'website',
     description: t(descriptionCode),
-    ogDescription: t(descriptionCode)
+    ogDescription: t(descriptionCode),
+
+    ogImageUrl: ogImage,
+    ogImage: ogImage
+    //   twitterCard: 'summary' | 'summary_large_image' | 'app' | 'player'
+    //twitterTitle: string
+    //   twitterDescription: string
+    // twitterImage: string | Array ab
   });
 }
 </script>
 
 <style lang="scss">
-@import '../styles/colors.scss';
-
 #site-container {
   height: 100%;
   width: 100%;

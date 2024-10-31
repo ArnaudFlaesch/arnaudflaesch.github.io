@@ -2,9 +2,13 @@
 import path = require('path');
 
 describe('CV page tests', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('Should display the CV page', () => {
     cy.get('#portfolio-header #url-list > a').contains('CV').click();
-    cy.title().should('equals', "Curriculum Vitae - Arnaud Flaesch - Développeur d'applications");
+    cy.title().should('equals', "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
 
     // Download CV
     const cvFilename = 'Curriculum Vitae Arnaud Flaesch.pdf';
@@ -16,6 +20,11 @@ describe('CV page tests', () => {
       "Développeur d'applications",
       'Développeur backend Java',
       'Développeur fullstack',
+      'Développeur fullstack',
+      'Développeur Java',
+      'Développeur Web',
+      'Développeur Java',
+      'Développeur Java / JS',
       'Mastère Architecture des Logiciels',
       'Bachelor Architecture des Logiciels',
       'Lycée privé Saint Michel de Picpus',

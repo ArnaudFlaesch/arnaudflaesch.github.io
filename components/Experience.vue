@@ -65,8 +65,6 @@ function formatDate(date: Date): string {
 </script>
 
 <style lang="scss">
-@import '../styles/colors.scss';
-
 .detail-info {
   margin: 0 !important;
 }

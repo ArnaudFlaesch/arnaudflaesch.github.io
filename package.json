@@ -10,7 +10,7 @@
     "npm": "10.x"
   },
   "scripts": {
-    "start": "nuxt dev",
+    "start": "nuxt start",
     "dev": "nuxt dev -o",
     "build": "nuxt build",
     "clean": "nuxi cleanup",

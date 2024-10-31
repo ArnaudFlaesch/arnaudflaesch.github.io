@@ -6,7 +6,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../styles/colors.scss';
 .detail-block {
   display: flex;
   flex-direction: row;

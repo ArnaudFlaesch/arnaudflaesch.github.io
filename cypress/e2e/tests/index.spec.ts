@@ -2,7 +2,7 @@
 
 describe('Portfolio tests', () => {
   beforeEach(() => {
-    cy;
+    cy.visit('/');
   });
 
   it('Should get the home page', () => {
@@ -15,6 +15,6 @@ describe('Portfolio tests', () => {
       .should('have.css', 'height', '100px')
       .and('have.css', 'width', '100px');
 
-    cy.get('footer').should('have.text', '© 2024, Développé avec Gatsby. Icônes de : Icons8.');
+    cy.get('footer').should('have.text', '© 2024, Développé avec Nuxt. Icônes de : Icons8.');
   });
 });
