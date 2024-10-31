@@ -3,12 +3,12 @@
   <main>
     <NuxtLayout>
       <ContentDoc>
-        <template v-slot="{ doc }">
+        <template #default="{ doc }">
           <TemplateBlogPost :doc="doc" :previous="previous" :next="next" />
         </template>
         <template #not-found>
           <ContentDoc :path="route.path.replace('/en', '')">
-            <template v-slot="{ doc }"><TemplateBlogPost :doc="doc" :previous="previous" :next="next" /></template>
+            <template #default="{ doc }"><TemplateBlogPost :doc="doc" :previous="previous" :next="next" /></template>
           </ContentDoc>
         </template>
       </ContentDoc>

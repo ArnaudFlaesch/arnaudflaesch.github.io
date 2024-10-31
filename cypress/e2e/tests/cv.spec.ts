@@ -4,10 +4,10 @@ import path = require('path');
 describe('CV page tests', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.get('#portfolio-header #url-list > a').contains('CV').click();
   });
 
   it('Should display the CV page', () => {
-    cy.get('#portfolio-header #url-list > a').contains('CV').click();
     cy.title().should('equals', "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
 
     // Download CV
@@ -42,5 +42,33 @@ describe('CV page tests', () => {
     cy.get('h3').each((blockTitle, index) => {
       expect(blockTitle.text()).to.eq(blockTitles[index]);
     });
+  });
+
+  it('CV SEO test', () => {
+    cy.title().should('equal', "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
+    cy.document()
+      .get('meta[name="description"]')
+      .should(
+        'have.attr',
+        'content',
+        "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
+      );
+    cy.document()
+      .get('meta[property="og:description"]')
+      .should(
+        'have.attr',
+        'content',
+        "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
+      );
+    cy.document().get('meta[name="author"]').should('have.attr', 'content', 'Arnaud Flaesch');
+    cy.document()
+      .get('meta[property="og:title"]')
+      .should('have.attr', 'content', "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
+    cy.document()
+      .get('meta[property="og:image"]')
+      .should('have.attr', 'content', 'https://arnaudflaesch.github.io/profile-picture.jpg');
+    cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
+    cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/cv');
+    cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
   });
 });

@@ -90,12 +90,16 @@ if (titleCode && descriptionCode) {
     flex: 0 1 calc(100% - 4.5rem);
     padding: 2em 6em;
 
+    #profile-container {
+      flex: 0 0 15%;
+    }
+
     #site-page {
       display: flex;
       flex-direction: column;
       flex: 0 0 80%;
-      max-width: 80%;
-      padding: 0 8%;
+      max-width: 85%;
+      padding: 0 10%;
       justify-content: space-between;
 
       #site-content {
@@ -140,24 +144,24 @@ if (titleCode && descriptionCode) {
         &.blog-view {
           display: none;
         }
-      }
 
-      #profile {
-        margin-top: 1em;
-        gap: 0.5em;
-        display: grid;
-        justify-items: center;
+        #profile {
+          margin-top: 1em;
+          gap: 0.5em;
+          display: grid;
+          justify-items: center;
 
-        #bio,
-        .social-link > span {
-          display: none;
-        }
+          #bio,
+          .social-link > span {
+            display: none;
+          }
 
-        #social-links {
-          flex-direction: row;
-          justify-content: center;
-          margin-top: 0.5em;
-          gap: 1em;
+          #social-links {
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 0.5em;
+            gap: 1em;
+          }
         }
       }
 
