@@ -34,7 +34,7 @@
     "@nuxt/image": "1.8.1",
     "@nuxt/ui": "2.18.7",
     "@nuxtjs/i18n": "8.5.5",
-    "@nuxtjs/robots": "4.1.9",
+    "@nuxtjs/robots": "4.1.10",
     "@nuxtjs/seo": "2.0.0-rc.23",
     "@nuxtjs/sitemap": "6.1.2",
     "date-fns": "^4.1.0",

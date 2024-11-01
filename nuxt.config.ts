@@ -51,6 +51,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-graphql-client',
+    '@nuxtjs/robots',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -70,9 +71,6 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  robots: {
-    robotsTxt: false
   },
   i18n: {
     vueI18n: './i18n.config.ts',
