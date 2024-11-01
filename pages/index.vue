@@ -1,39 +1,41 @@
 <template>
-  <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
-    <div id="home-page">
-      <div id="site-links">
-        <h2>{{ $t('SITE.CONTENT') }} :</h2>
-        <ul>
-          <li>
-            <NuxtLink :to="localePath('cv')">{{ $t('CV.MESSAGE') }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink :to="localePath('projets')">{{ $t('PROJECTS.MESSAGE') }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink :to="localePath('blog')">{{ $t('BLOG.MESSAGE') }}</NuxtLink
-            ><span>&nbsp;</span>(<NuxtLink :to="rssFeedFile">{{ $t('RSS.FEED') }}</NuxtLink
-            >)
-          </li>
-          <li>
-            <NuxtLink :to="localePath('contact')">{{ $t('CONTACT.MESSAGE') }}</NuxtLink>
-          </li>
-        </ul>
+  <div class="layout-container">
+    <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
+      <div id="home-page">
+        <div id="site-links">
+          <h2>{{ $t('SITE.CONTENT') }} :</h2>
+          <ul>
+            <li>
+              <NuxtLink :to="localePath('cv')">{{ $t('CV.MESSAGE') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('projets')">{{ $t('PROJECTS.MESSAGE') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('blog')">{{ $t('BLOG.MESSAGE') }}</NuxtLink
+              ><span>&nbsp;</span>(<NuxtLink :to="rssFeedFile">{{ $t('RSS.FEED') }}</NuxtLink
+              >)
+            </li>
+            <li>
+              <NuxtLink :to="localePath('contact')">{{ $t('CONTACT.MESSAGE') }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <h2 id="blog-title">
+          <a href="/blog">{{ $t('RECENT.ARTICLES') }}</a>
+        </h2>
+
+        <ContentList v-slot="{ list }" :query="query">
+          <ol>
+            <li v-for="article in list" :key="article._path">
+              <Post :post="article" />
+            </li>
+          </ol>
+        </ContentList>
       </div>
-
-      <h2 id="blog-title">
-        <a href="/blog">{{ $t('RECENT.ARTICLES') }}</a>
-      </h2>
-
-      <ContentList v-slot="{ list }" :query="query">
-        <ol>
-          <li v-for="article in list" :key="article._path">
-            <Post :post="article" />
-          </li>
-        </ol>
-      </ContentList>
-    </div>
-  </NuxtLayout>
+    </NuxtLayout>
+  </div>
 </template>
 
 <script lang="ts" setup>

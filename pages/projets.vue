@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container">
     <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
       <div id="projects-list">
         <RepositoryWidget

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container">
     <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
       <ContentList v-slot="{ list }" :query="query">
         <ol id="articles-list">

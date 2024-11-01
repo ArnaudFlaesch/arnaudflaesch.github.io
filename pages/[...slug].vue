@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div class="layout-container">
     <NuxtLayout :blogView="true">
       <ContentDoc>
         <template #default="{ doc }">
@@ -8,11 +8,12 @@
         <template #not-found>
           <ContentDoc :path="route.path.replace('/en', '')">
             <template #default="{ doc }"><TemplateBlogPost :doc="doc" :previous="previous" :next="next" /></template>
+            <template #not-found> {{ notFoundError() }} </template>
           </ContentDoc>
         </template>
       </ContentDoc>
     </NuxtLayout>
-  </main>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -32,6 +33,14 @@ const image = data.value?.image;
 const defaultTitle = `${fullName} - ${t(jobName)}`;
 const title = data.value?.title ? [data.value?.title, defaultTitle].join(' | ') : defaultTitle;
 const imageUrl = `${siteUrl}/blog/${image}`;
+
+function notFoundError() {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page not found',
+    fatal: true
+  });
+}
 
 useSeoMeta({
   title: title,

@@ -8,7 +8,7 @@ html {
     serif,
     sans-serif;
   box-sizing: border-box;
-  background-color: $body-background-color !important;
+  background-color: $body-background-color;
 }
 
 body {
@@ -24,6 +24,30 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
+
+.layout-container {
+  height: 100%;
+
+  #site-container {
+    height: 100%;
+
+    #site-body {
+      height: 100%;
+      #site-page {
+        height: 100%;
+        main {
+          height: 100%;
+        }
+      }
+    }
+  }
 }
 
 article,

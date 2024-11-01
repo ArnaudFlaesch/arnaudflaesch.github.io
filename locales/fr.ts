@@ -74,8 +74,8 @@ export const contactFR = {
   'SENT.ANOTHER.MAIL': 'Envoyer un nouveau mail',
   'NAME.FIRSTNAME': 'Votre nom et prénom',
   'YOUR.EMAIL.ADDRESS': 'Votre adresse mail',
-  'EMAIL.NOT.VALID.MESSAGE': 'Veuillez saisir une adresse email valide',
-  'MESSAGE.NOT.VALID.WARNING': 'Minimum de charactères requis :',
+  'EMAIL.NOT.VALID.MESSAGE': 'Veuillez saisir une adresse email valide.',
+  'REQUIRED.FIELD.MESSAGE': 'Ce champ est obligatoire.',
   MESSAGE: 'Message',
   SEND: 'Envoyer'
 };

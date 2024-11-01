@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container">
     <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
       <div v-if="isMailSent">
         <p>{{ $t('EMAIL.SENT') }}</p>
@@ -11,7 +11,7 @@
             id="name"
             v-model="name"
             class="form-field"
-            :rules="[rules.length(5)]"
+            :rules="[rules.required]"
             :label="$t('NAME.FIRSTNAME')"
             hide-details="auto"
             variant="outlined"
@@ -33,8 +33,8 @@
           id="message"
           v-model="message"
           class="form-field"
-          rows="8"
-          :rules="[rules.length(10)]"
+          rows="10"
+          :rules="[rules.required]"
           :label="$t('MESSAGE')"
           hide-details="auto"
           variant="outlined"
@@ -64,7 +64,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const rules = {
   email: (value: string) => !!(value || '').match(emailRegex) || t('EMAIL.NOT.VALID.MESSAGE'),
-  length: (len: number) => (value: string) => (value || '').length >= len || `${t('MESSAGE.NOT.VALID.WARNING')} ${len}`
+  required: (value: string) => (value || '').length >= 1 || `${t('REQUIRED.FIELD.MESSAGE')}`
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -99,7 +99,7 @@ function handleSubmit(e: any) {
 #contact-form {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 2em;
 
   .v-field {
     background-color: #fff;
