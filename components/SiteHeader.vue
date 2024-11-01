@@ -33,7 +33,7 @@ import MdiCode from '~/components/icons/MdiCode.vue';
 import MdiEmailOutline from '~/components/icons/MdiEmailOutline.vue';
 
 interface IUrl {
-  icon: any;
+  icon: unknown;
   path: string;
   label: string;
 }
@@ -78,11 +78,7 @@ const { locale, setLocale } = useI18n();
   place-items: center;
   justify-content: space-between;
   padding: 0 3em;
-
-  @media (width <= 600px) {
-    display: grid;
-    grid-template-columns: 1fr 3.5fr;
-  }
+  column-gap: 1em;
 
   svg {
     width: 30px;
@@ -104,8 +100,10 @@ const { locale, setLocale } = useI18n();
 
   @media (width <= 600px) {
     padding: 0 0.5em;
+    column-gap: 0.5em;
 
     h1 {
+      flex: 1 2 20%;
       margin-left: 0.5em;
     }
   }
@@ -120,6 +118,10 @@ const { locale, setLocale } = useI18n();
       column-gap: 2.2em;
     }
 
+    @media (width <= 600px) {
+      flex: 2 1 80%;
+    }
+
     #url-list {
       height: 100%;
       display: flex;
@@ -127,12 +129,12 @@ const { locale, setLocale } = useI18n();
       flex: 1 1 50%;
       flex-wrap: wrap;
 
-      @media (width <= 950px) {
-        // row-gap: 0.2em;
-      }
-
       @media (width <= 600px) {
         column-gap: 0.2em;
+        svg {
+          height: 2em;
+          width: 1.5em;
+        }
       }
 
       > a {
@@ -173,6 +175,7 @@ const { locale, setLocale } = useI18n();
 
       img {
         min-width: 100%;
+        min-height: 2em;
       }
     }
   }

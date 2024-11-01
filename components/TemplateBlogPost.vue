@@ -103,6 +103,10 @@ function handleShare(url: string): void {
     margin: 1em auto 0.5em;
   }
 
+  ul {
+    list-style: disc;
+  }
+
   img {
     display: flex;
     margin: 0.2em auto;

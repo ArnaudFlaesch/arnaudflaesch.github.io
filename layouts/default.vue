@@ -110,13 +110,13 @@ if (titleCode && descriptionCode) {
     padding: 2em 6em;
 
     #profile-container {
-      flex: 0 0 15%;
+      flex: 0 1 15%;
     }
 
     #site-page {
       display: flex;
       flex-direction: column;
-      flex: 0 0 80%;
+      flex: 1 0 80%;
       max-width: 85%;
       padding: 0 7%;
       justify-content: space-between;

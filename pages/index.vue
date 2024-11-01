@@ -12,7 +12,8 @@
           </li>
           <li>
             <NuxtLink :to="localePath('blog')">{{ $t('BLOG.MESSAGE') }}</NuxtLink
-            ><span>&nbsp;</span><NuxtLink :to="rssFeedFile">({{ $t('RSS.FEED') }})</NuxtLink>
+            ><span>&nbsp;</span>(<NuxtLink :to="rssFeedFile">{{ $t('RSS.FEED') }}</NuxtLink
+            >)
           </li>
           <li>
             <NuxtLink :to="localePath('contact')">{{ $t('CONTACT.MESSAGE') }}</NuxtLink>
