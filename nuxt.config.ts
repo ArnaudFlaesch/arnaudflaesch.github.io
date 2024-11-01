@@ -1,6 +1,6 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
-import { DEFAULT_LOCALE, locales, author, siteName, siteUrl, title } from './data/SiteData';
 import { defineNuxtConfig } from 'nuxt/config';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
+import { author, DEFAULT_LOCALE, locales, rssFeedFile, siteName, siteUrl, title } from './data/SiteData';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: false
   },
-  css: ['~/assets/styles.scss', '~/assets/global.scss'],
+  css: ['~/assets/global.scss', '~/assets/styles.scss'],
   site: {
     url: siteUrl,
     name: title
@@ -20,11 +20,18 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'author', content: author },
         { name: 'creator', content: author },
-        { name: 'og:site_name', content: siteName },
+        { property: 'og:site_name', content: siteName },
         { name: 'google-site-verification', content: 'LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'Flux RSS pour les articles de blog',
+          href: rssFeedFile
+        },
+        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' },
         { rel: 'manifest', href: '/manifest.webmanifest' }
       ]
     }
@@ -87,7 +94,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       failOnError: false,
-      routes: ['/sitemap.xml']
+      routes: ['/sitemap.xml', rssFeedFile]
     }
   },
   vite: {

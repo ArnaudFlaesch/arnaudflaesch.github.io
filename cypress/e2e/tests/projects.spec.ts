@@ -6,10 +6,6 @@ describe('Projects page tests', () => {
     cy.get('#portfolio-header #url-list > a').contains('Projets').click();
   });
 
-  it('Should display the projects page', () => {
-    cy.title().should('equals', "Projets personnels | Arnaud Flaesch - Développeur d'applications");
-  });
-
   it('Projects SEO test', () => {
     cy.title().should('equal', "Projets personnels | Arnaud Flaesch - Développeur d'applications");
     cy.document()
@@ -30,10 +26,7 @@ describe('Projects page tests', () => {
       .get('meta[property="og:url"]')
       .should('have.attr', 'content', 'https://arnaudflaesch.github.io/projets');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
-  });
 
-  it('Projects SEO english locale test', () => {
-    cy.wait(1500);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Personal projects | Arnaud Flaesch - Software developer');
     cy.document().get('meta[name="description"]').should('have.attr', 'content', 'Personal projects that I work on.');

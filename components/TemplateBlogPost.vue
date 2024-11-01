@@ -73,11 +73,13 @@ defineProps({
   },
   previous: {
     type: Object as () => Pick<ParsedContent, 'title' | '_path'>,
-    required: false
+    required: false,
+    default: null
   },
   next: {
     type: Object as () => Pick<ParsedContent, 'title' | '_path'>,
-    required: false
+    required: false,
+    default: null
   }
 });
 

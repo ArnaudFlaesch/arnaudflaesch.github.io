@@ -7,6 +7,8 @@ export const title = `${fullName} - ${jobName}`;
 export const siteName = 'arnaudflaesch.github.io';
 export const siteUrl = `https://${siteName}`;
 export const defaultImageUrl = '/profile-picture.jpg';
+export const rssFeedFile = '/rss.xml';
+export const rssFeedUrl = `${siteUrl}${rssFeedFile}`;
 
 export const linkedinLink = 'https://www.linkedin.com/in/arnaudflaesch/';
 export const githubLink = 'https://github.com/ArnaudFlaesch';

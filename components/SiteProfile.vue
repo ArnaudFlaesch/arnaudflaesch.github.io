@@ -15,10 +15,10 @@
       </div>
     </div>
     <div id="social-links">
-      <a
+      <NuxtLink
         v-for="socialLink in profileSocialLinks"
         :key="socialLink.name"
-        :href="socialLink.link"
+        :to="socialLink.link"
         class="social-link"
       >
         <TooltipIcon
@@ -29,7 +29,7 @@
           :alt="socialLink.name.toLowerCase()"
         />
         <span>{{ $t(socialLink.labelI18nCode) }}</span>
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>

@@ -60,8 +60,7 @@ import formationData from '~/data/EducationData';
 import jobData from '~/data/WorkData';
 import { hobbiesList } from '~/data/HobbiesData';
 import type { ITranslatableElement } from '~/model/ITranslatableElement';
-import { ref } from 'vue';
-import type { Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 import { DEFAULT_LOCALE } from '../data/SiteData';
 import { useI18n } from 'vue-i18n';
 

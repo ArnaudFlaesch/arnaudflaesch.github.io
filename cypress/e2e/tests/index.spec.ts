@@ -44,7 +44,6 @@ describe('Portfolio tests', () => {
     cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
     cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
-    //cy.document().get('meta[property="og:keywords"]').should('have.attr', 'content', 'arnaud flaesch, web developer, fullstack developer, software engineer');
   });
 
   it('Home SEO english locale test', () => {

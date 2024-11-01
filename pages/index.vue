@@ -12,7 +12,7 @@
           </li>
           <li>
             <NuxtLink :to="localePath('blog')">{{ $t('BLOG.MESSAGE') }}</NuxtLink
-            ><!--<a href="{rssFeedFile}">{{ $t('RSS.FEED') }}</a>-->
+            ><span>&nbsp;</span><NuxtLink :to="rssFeedFile">({{ $t('RSS.FEED') }})</NuxtLink>
           </li>
           <li>
             <NuxtLink :to="localePath('contact')">{{ $t('CONTACT.MESSAGE') }}</NuxtLink>
@@ -38,6 +38,7 @@
 <script lang="ts" setup>
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
 import Post from '~/components/Post.vue';
+import { rssFeedFile } from '~/data/SiteData';
 
 const localePath = useLocalePath();
 const titleCode = 'INDEX.PAGE.TITLE';

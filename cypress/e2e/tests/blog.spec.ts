@@ -6,10 +6,6 @@ describe('Blog page tests', () => {
     cy.get('#portfolio-header #url-list > a').contains('Blog').click();
   });
 
-  it('Should display the blog page', () => {
-    cy.title().should('equals', "Blog | Arnaud Flaesch - Développeur d'applications");
-  });
-
   it('Blog SEO test', () => {
     cy.title().should('equal', "Blog | Arnaud Flaesch - Développeur d'applications");
     cy.document()
@@ -36,9 +32,8 @@ describe('Blog page tests', () => {
     cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
     cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/blog');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
-  });
 
-  it('Blog SEO english locale test', () => {
+    // Blog SEO english locale test
     cy.wait(1500);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Blog | Arnaud Flaesch - Software developer');

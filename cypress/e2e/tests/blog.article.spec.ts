@@ -49,9 +49,8 @@ describe('Blog article tests', () => {
         'https://arnaudflaesch.github.io/blog/gerer-les-dependances-dun-projet-logiciel-facilement-avec-renovate/'
       );
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'article');
-  });
 
-  it('Blog SEO english locale test', () => {
+    // Blog SEO english locale test
     cy.wait(1500);
     cy.get('#switch-language > button').click();
     cy.title().should(

@@ -1,6 +1,11 @@
 <template>
-  <v-icon>
-    <NuxtImg :src="iconPath" :width="iconWidth ?? ICON_WIDTH" :height="iconHeight ?? ICON_HEIGHT" :alt="alt" />
+  <v-icon :style="{ height: `${iconHeight ?? ICON_DEFAULT_SIZE}px`, width: `${iconWidth ?? ICON_DEFAULT_SIZE}px` }">
+    <NuxtImg
+      :src="iconPath"
+      :width="iconWidth ?? ICON_DEFAULT_SIZE"
+      :height="iconHeight ?? ICON_DEFAULT_SIZE"
+      :alt="alt"
+    />
     <v-no-ssr>
       <v-tooltip :id="id" activator="parent" location="top">
         {{ tooltip }}
@@ -20,12 +25,5 @@ const { tooltip } = defineProps<{
   iconHeight?: number;
   iconWidth?: number;
 }>();
-const ICON_HEIGHT = 40;
-const ICON_WIDTH = 40;
+const ICON_DEFAULT_SIZE = 40;
 </script>
-
-<style lang="scss" scoped>
-.v-icon {
-  width: 40px;
-}
-</style>

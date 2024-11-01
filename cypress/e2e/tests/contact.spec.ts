@@ -6,10 +6,6 @@ describe('Contact page tests', () => {
     cy.get('#portfolio-header #url-list > a').contains('Contact').click();
   });
 
-  it('Should display the contact page', () => {
-    cy.title().should('equals', "Contactez-moi | Arnaud Flaesch - Développeur d'applications");
-  });
-
   it('Contact SEO test', () => {
     cy.title().should('equal', "Contactez-moi | Arnaud Flaesch - Développeur d'applications");
     cy.document()
@@ -30,9 +26,8 @@ describe('Contact page tests', () => {
       .get('meta[property="og:url"]')
       .should('have.attr', 'content', 'https://arnaudflaesch.github.io/contact');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
-  });
 
-  it('Contact SEO english locale test', () => {
+    // Contact SEO english locale test
     cy.wait(1500);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Contact me | Arnaud Flaesch - Software developer');

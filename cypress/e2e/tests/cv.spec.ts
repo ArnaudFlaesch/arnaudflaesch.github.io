@@ -8,8 +8,6 @@ describe('CV page tests', () => {
   });
 
   it('Should display the CV page', () => {
-    cy.title().should('equals', "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
-
     // Download CV
     const cvFilename = 'Curriculum Vitae Arnaud Flaesch.pdf';
     cy.readFile(path.join(Cypress.config('downloadsFolder'), cvFilename)).should('not.exist');
@@ -42,9 +40,8 @@ describe('CV page tests', () => {
     cy.get('h3').each((blockTitle, index) => {
       expect(blockTitle.text()).to.eq(blockTitles[index]);
     });
-  });
 
-  it('CV SEO test', () => {
+    // CV SEO test
     cy.title().should('equal', "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
     cy.document()
       .get('meta[name="description"]')
@@ -70,9 +67,8 @@ describe('CV page tests', () => {
     cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
     cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/cv');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
-  });
 
-  it('CV SEO english locale test', () => {
+    // CV SEO english locale test
     cy.wait(1500);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Resume | Arnaud Flaesch - Software developer');

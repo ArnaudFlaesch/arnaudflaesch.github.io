@@ -14,7 +14,8 @@ interface ICertificationGroup {
     date: Date;
   }[];
   certifications: ICertificationData[];
-  imageWidth?: number;
+  imageSize?: number;
+  imageHeight?: number;
 }
 
 const githubActionsBadgeLink = 'https://www.credly.com/badges/bcc83162-8396-4e95-b73d-b89ad2658027';
@@ -29,6 +30,7 @@ const inrCertificateLink = 'https://numerique-responsable.univ-lr.fr/ecocertific
 export const certificationsData = [
   {
     title: [{ label: 'Google Cloud Professional Cloud Developer & Digital Leader', date: new Date(2024, 5, 4) }],
+    imageSize: 130,
     certifications: [
       {
         name: 'Google Cloud Professional Cloud Developer',
@@ -48,7 +50,7 @@ export const certificationsData = [
       { label: 'GitHub Foundations', date: new Date(2024, 6, 5) },
       { label: 'GitHub Copilot', date: new Date(2024, 7, 16) }
     ],
-    imageWidth: 140,
+    imageSize: 135,
     certifications: [
       {
         name: 'GitHub Actions',
@@ -89,6 +91,8 @@ export const certificationsData = [
   },
   {
     title: [{ label: 'SAFe 6 Agilist', date: new Date(2024, 4, 16) }],
+    imageSize: 115,
+    imageHeight: 135,
     certifications: [
       {
         name: 'SAFe 6 Agilist',
@@ -101,7 +105,8 @@ export const certificationsData = [
     title: [
       { label: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE', isNameTranslatableCode: true, date: new Date(2024, 3, 1) }
     ],
-    imageWidth: 450,
+    imageSize: 450,
+    imageHeight: 270,
     certifications: [
       {
         name: 'SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE',

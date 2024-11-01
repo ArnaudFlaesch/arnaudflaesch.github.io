@@ -63,6 +63,7 @@
     "nuxt-site-config": "2.2.18",
     "nuxt-site-config-kit": "2.2.18",
     "prettier": "3.3.3",
+    "rss": "1.2.2",
     "sass-embedded": "1.80.4",
     "sitemap": "8.0.0",
     "stylelint": "16.10.0",
