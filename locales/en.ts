@@ -2,6 +2,7 @@ export const translationEN = {
   'DEVELOPED.WITH': 'Developed with',
   'ICONS.BY': 'Icons by',
   AT: 'at ',
+  "Développeur d'applications": 'Software developer',
   'HOME.LABEL': 'Home',
   'RESUME.LABEL': 'Resume',
   'BLOG.LABEL': 'Blog',
@@ -14,7 +15,7 @@ export const translationEN = {
   'MEDIUM.PROFILE': 'Medium profile',
   'STACK.OVERFLOW.PROFILE': 'Stack Overflow profile',
   'PAGE.NOT.FOUND.MESSAGE': "The page you're looking for doesn't exist.",
-  "Développeur d'applications": 'Software developer'
+  '404.NOT.FOUND': '404: Page not found'
 };
 
 export const indexEN = {

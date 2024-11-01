@@ -1,15 +1,9 @@
 <template>
   <div class="layout-container">
-    <NuxtLayout>
-      <h1>404 : Not found</h1>
-    </NuxtLayout>
+    <NuxtLayout titleCode="404.NOT.FOUND" descriptionCode="PAGE.NOT.FOUND.MESSAGE" />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { NuxtError } from '#app';
-
-const props = defineProps({
-  error: Object as () => NuxtError
-});
+const { t } = useI18n();
 </script>
