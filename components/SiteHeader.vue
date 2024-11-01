@@ -81,7 +81,7 @@ const { locale, setLocale } = useI18n();
 
   @media (width <= 600px) {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
+    grid-template-columns: 1fr 3.5fr;
   }
 
   svg {
@@ -125,12 +125,10 @@ const { locale, setLocale } = useI18n();
       display: flex;
       flex-flow: row;
       flex: 1 1 50%;
+      flex-wrap: wrap;
 
       @media (width <= 950px) {
-        display: grid;
-        row-gap: 0.2em;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        // row-gap: 0.2em;
       }
 
       @media (width <= 600px) {
