@@ -96,9 +96,14 @@ const { locale, setLocale } = useI18n();
     font-size: x-large;
     margin: auto 0 auto 2em;
     flex: 2 2 40%;
+
+    @media (width <= 1150px) and (width >= 700px) {
+      flex: 1 2 20%;
+      margin: unset;
+    }
   }
 
-  @media (width <= 600px) {
+  @media (width <= 700px) {
     padding: 0 0.5em;
     column-gap: 0.5em;
 
@@ -111,10 +116,11 @@ const { locale, setLocale } = useI18n();
   #right-navbar {
     display: flex;
     flex-direction: row;
-    flex: 2 1 60%;
+    flex-basis: 70%;
     height: 100%;
 
     @media (width >= 950px) {
+      flex: 2 1 60%;
       column-gap: 2.2em;
     }
 

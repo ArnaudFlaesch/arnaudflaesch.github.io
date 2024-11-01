@@ -11,19 +11,21 @@
       </template>
       <template #detailComponent>
         <div class="certifications-logos">
-          <div v-for="certification in certificationGroup.certifications" :key="certification.name">
-            <NuxtLink :to="certification.badgeLink">
-              <TooltipIcon
-                :tooltip="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
-                :icon-width="certificationGroup.imageSize ?? DEFAULT_CERTIFICATION_BADGE_SIZE"
-                :icon-height="
-                  certificationGroup.imageHeight ?? certificationGroup.imageSize ?? DEFAULT_CERTIFICATION_BADGE_SIZE
-                "
-                :icon-path="certification.imagePath"
-                :alt="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
-              />
-            </NuxtLink>
-          </div>
+          <NuxtLink
+            v-for="certification in certificationGroup.certifications"
+            :key="certification.name"
+            :to="certification.badgeLink"
+          >
+            <TooltipIcon
+              :tooltip="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
+              :icon-width="certificationGroup.imageSize ?? DEFAULT_CERTIFICATION_BADGE_SIZE"
+              :icon-height="
+                certificationGroup.imageHeight ?? certificationGroup.imageSize ?? DEFAULT_CERTIFICATION_BADGE_SIZE
+              "
+              :icon-path="certification.imagePath"
+              :alt="certification.isNameTranslatableCode ? $t(certification.name) : certification.name"
+            />
+          </NuxtLink>
         </div>
       </template>
     </DetailBlock>
@@ -47,14 +49,18 @@ const DEFAULT_CERTIFICATION_BADGE_SIZE = 115;
 }
 
 .certifications-logos {
-  height: 100%;
   display: flex;
   flex-flow: row wrap;
   column-gap: 1em;
   justify-content: space-evenly;
 
+  @media (width <= 1050px) {
+    i {
+      max-width: 330px;
+    }
+  }
+
   > * {
-    flex: 1 0 32%;
     place-content: center;
     align-items: center;
     display: flex;
