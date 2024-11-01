@@ -73,6 +73,8 @@ export const contactEN = {
   'SENT.ANOTHER.MAIL': 'Send another mail',
   'NAME.FIRSTNAME': 'Your name and first name',
   'YOUR.EMAIL.ADDRESS': 'Your email address',
+  'EMAIL.NOT.VALID.MESSAGE': 'Please enter a valid email',
+  'MESSAGE.NOT.VALID.WARNING': 'Minimum character length required :',
   MESSAGE: 'Message',
   SEND: 'Send'
 };

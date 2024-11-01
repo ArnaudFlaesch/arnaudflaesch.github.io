@@ -50,6 +50,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+
+const { t } = useI18n();
 const titleCode = 'CONTACT.PAGE.TITLE';
 const descriptionCode = 'CONTACT.PAGE.DESCRIPTION';
 const isMailSent = ref(false);
@@ -61,8 +63,8 @@ const message = ref('');
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const rules = {
-  email: (value: string) => !!(value || '').match(emailRegex) || 'Please enter a valid email',
-  length: (len: number) => (value: string) => (value || '').length >= len || `Invalid character length, required ${len}`
+  email: (value: string) => !!(value || '').match(emailRegex) || t('EMAIL.NOT.VALID.MESSAGE'),
+  length: (len: number) => (value: string) => (value || '').length >= len || `${t('MESSAGE.NOT.VALID.WARNING')} ${len}`
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

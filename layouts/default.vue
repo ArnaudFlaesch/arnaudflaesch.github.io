@@ -4,7 +4,7 @@
       <SiteHeader />
     </header>
     <div id="site-body">
-      <div id="profile-container">
+      <div id="profile-container" :class="{ 'blog-view': blogView }">
         <SiteProfile />
       </div>
       <div id="site-page">
@@ -39,7 +39,8 @@ import { DEFAULT_LOCALE, defaultImageUrl, fullName, jobName, siteUrl } from '~/d
 
 const localePath = useLocalePath();
 const route = useRoute();
-const { titleCode, descriptionCode }: { titleCode: string; descriptionCode: string } = useAttrs();
+const { titleCode, descriptionCode, blogView }: { titleCode: string; descriptionCode: string; blogView?: string } =
+  useAttrs();
 const { t, locale } = useI18n();
 
 const head = useLocaleHead({
@@ -117,7 +118,7 @@ if (titleCode && descriptionCode) {
       flex-direction: column;
       flex: 0 0 80%;
       max-width: 85%;
-      padding: 0 10%;
+      padding: 0 7%;
       justify-content: space-between;
 
       #site-content {
@@ -159,6 +160,8 @@ if (titleCode && descriptionCode) {
       padding: 0.2em;
 
       #profile-container {
+        flex-basis: 10%;
+
         &.blog-view {
           display: none;
         }
@@ -187,6 +190,7 @@ if (titleCode && descriptionCode) {
         margin-top: 2em;
         padding: 0.2em;
         max-width: 100%;
+        flex-basis: 90%;
 
         #site-content {
           padding: 0 1em;

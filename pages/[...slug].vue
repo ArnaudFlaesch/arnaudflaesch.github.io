@@ -1,6 +1,6 @@
 <template>
   <main>
-    <NuxtLayout>
+    <NuxtLayout :blogView="true">
       <ContentDoc>
         <template #default="{ doc }">
           <TemplateBlogPost :doc="doc" :previous="previous" :next="next" />

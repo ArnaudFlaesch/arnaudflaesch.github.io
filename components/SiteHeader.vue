@@ -6,7 +6,8 @@
     <div id="right-navbar">
       <div id="url-list">
         <NuxtLink v-for="url in urls" :key="url.path" exact-active-class="active" :to="localePath(url.path)">
-          <v-icon :aria-label="$t(url.label)" aria-hidden="false"> {{ url.icon }} </v-icon>{{ $t(url.label) }}
+          <component :is="url.icon"></component>
+          {{ $t(url.label) }}
         </NuxtLink>
       </div>
 
@@ -23,12 +24,16 @@
 </template>
 
 <script lang="ts" setup>
-import { mdiHomeOutline, mdiBriefcaseVariantOutline, mdiBookOutline, mdiCodeBraces, mdiEmailOutline } from '@mdi/js';
 import { fullName, DEFAULT_LOCALE } from '~/data/SiteData';
 import { useI18n } from 'vue-i18n';
+import WorkTwoTone from '~/components/icons/WorkTwoTone.vue';
+import HomeTwoTone from '~/components/icons/HomeTwoTone.vue';
+import BookOutline from '~/components/icons/BookOutline.vue';
+import MdiCode from '~/components/icons/MdiCode.vue';
+import MdiEmailOutline from '~/components/icons/MdiEmailOutline.vue';
 
 interface IUrl {
-  icon: string;
+  icon: any;
   path: string;
   label: string;
 }
@@ -37,27 +42,27 @@ const urls: IUrl[] = [
   {
     path: '/',
     label: 'HOME.LABEL',
-    icon: mdiHomeOutline
+    icon: HomeTwoTone
   },
   {
     path: 'cv',
     label: 'RESUME.LABEL',
-    icon: mdiBriefcaseVariantOutline
+    icon: WorkTwoTone
   },
   {
     path: 'blog',
     label: 'BLOG.LABEL',
-    icon: mdiBookOutline
+    icon: BookOutline
   },
   {
     path: 'projets',
     label: 'PROJECTS.LABEL',
-    icon: mdiCodeBraces
+    icon: MdiCode
   },
   {
     path: 'contact',
     label: 'CONTACT.LABEL',
-    icon: mdiEmailOutline
+    icon: MdiEmailOutline
   }
 ];
 
@@ -77,6 +82,10 @@ const { locale, setLocale } = useI18n();
   @media (width <= 600px) {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
+  }
+
+  svg {
+    width: 30px;
   }
 
   a {

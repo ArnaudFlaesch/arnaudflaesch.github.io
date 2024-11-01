@@ -83,7 +83,7 @@ const author = fullName;
   #social-links {
     display: flex;
     flex-direction: column;
-    gap: 2em 0.5em;
+    gap: 1em 0.5em;
     font-size: 0.9rem;
 
     a {

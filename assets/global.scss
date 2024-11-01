@@ -1,7 +1,5 @@
 /* CSS Custom Properties Definitions */
 
-@use '@fontsource/open-sans';
-
 /* stylelint-disable */
 :root {
   --maxWidth-none: 'none';
@@ -81,7 +79,6 @@ html {
 
 body,
 .v-application {
-  font-family: 'Open Sans', sans-serif;
   font-size: var(--fontSize-1);
   color: var(--color-text);
   background-color: $body-background-color !important;
