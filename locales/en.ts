@@ -64,7 +64,8 @@ export const cvEN = {
 export const blogEN = {
   'BLOG.PAGE.TITLE': 'Blog',
   'BLOG.PAGE.DESCRIPTION':
-    "My blog where you'll find articles on languages and tools that I use as well as other subjects."
+    "My blog where you'll find articles on languages and tools that I use as well as other subjects.",
+  'RSS.FEED.MESSAGE': 'RSS feed'
 };
 
 export const contactEN = {

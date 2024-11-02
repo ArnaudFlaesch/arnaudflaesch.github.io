@@ -1,35 +1,37 @@
 <template>
-  <div id="profile">
+  <div id="profile-bio">
     <NuxtLink id="avatar-link" to="/">
       <NuxtImg id="bio-avatar" :width="400" :height="400" src="/profile-picture.jpg" :alt="author" />
     </NuxtLink>
-    <div id="bio">
-      <div id="work">
-        <v-icon>{{ mdiBriefcase }}</v-icon>
-        {{ $t(jobName) }} <br />
-        {{ $t('AT') }}{{ company }}
+    <div id="profile">
+      <div id="bio">
+        <div id="work">
+          <v-icon>{{ mdiBriefcase }}</v-icon>
+          {{ $t(jobName) }} <br />
+          {{ $t('AT') }}{{ company }}
+        </div>
+        <div id="location">
+          <v-icon>{{ mdiMapMarker }}</v-icon>
+          {{ city }}
+        </div>
       </div>
-      <div id="location">
-        <v-icon>{{ mdiMapMarker }}</v-icon>
-        {{ city }}
+      <div id="social-links">
+        <NuxtLink
+          v-for="socialLink in profileSocialLinks"
+          :key="socialLink.name"
+          :to="socialLink.link"
+          class="social-link"
+        >
+          <TooltipIcon
+            :tooltip="socialLink.name"
+            :icon-width="IMAGE_WIDTH"
+            :icon-height="IMAGE_HEIGHT"
+            :icon-path="socialLink.imgPath"
+            :alt="socialLink.name.toLowerCase()"
+          />
+          <span>{{ $t(socialLink.labelI18nCode) }}</span>
+        </NuxtLink>
       </div>
-    </div>
-    <div id="social-links">
-      <NuxtLink
-        v-for="socialLink in profileSocialLinks"
-        :key="socialLink.name"
-        :to="socialLink.link"
-        class="social-link"
-      >
-        <TooltipIcon
-          :tooltip="socialLink.name"
-          :icon-width="IMAGE_WIDTH"
-          :icon-height="IMAGE_HEIGHT"
-          :icon-path="socialLink.imgPath"
-          :alt="socialLink.name.toLowerCase()"
-        />
-        <span>{{ $t(socialLink.labelI18nCode) }}</span>
-      </NuxtLink>
     </div>
   </div>
 </template>
@@ -45,14 +47,14 @@ const author = fullName;
 </script>
 
 <style lang="scss">
-#profile {
+#profile-bio {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
 
   #avatar-link {
-    justify-content: center;
-    display: flex;
+    margin: 0 auto;
+    width: fit-content;
   }
 
   #bio-avatar {
@@ -62,50 +64,58 @@ const author = fullName;
     margin: 0 auto;
   }
 
-  #bio {
-    .v-icon {
-      margin-right: 1rem;
-    }
-
-    > * {
-      display: flex;
-      flex-direction: row;
-    }
-
-    @media (width > 700px) {
-      display: flex;
-      flex-direction: column;
-      row-gap: 0.5em;
-      margin-left: 0.3em;
-    }
-  }
-
-  #social-links {
+  #profile {
     display: flex;
     flex-direction: column;
-    gap: 1em 0.5em;
-    font-size: 0.9rem;
+    row-gap: 2em;
+    margin: 0 auto;
 
-    a {
-      color: unset;
+    #bio {
+      justify-content: center;
+      .v-icon {
+        margin-right: 1rem;
+      }
+
+      > * {
+        display: flex;
+        flex-direction: row;
+      }
+
+      @media (width > 700px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5em;
+        margin-left: 0.3em;
+      }
     }
 
-    .social-link {
+    #social-links {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
+      gap: 1em 0.5em;
+      font-size: 0.9rem;
 
-      div {
-        height: 35px;
-        width: 35px;
+      a {
+        color: unset;
       }
 
-      img {
-        border-radius: 50%;
-      }
+      .social-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
-      span {
-        margin-left: 1rem;
+        div {
+          height: 35px;
+          width: 35px;
+        }
+
+        img {
+          border-radius: 50%;
+        }
+
+        span {
+          margin-left: 1rem;
+        }
       }
     }
   }

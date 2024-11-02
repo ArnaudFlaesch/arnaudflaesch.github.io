@@ -24,13 +24,13 @@
 </template>
 
 <script lang="ts" setup>
-import { fullName, DEFAULT_LOCALE } from '~/data/SiteData';
 import { useI18n } from 'vue-i18n';
-import WorkTwoTone from '~/components/icons/WorkTwoTone.vue';
-import HomeTwoTone from '~/components/icons/HomeTwoTone.vue';
 import BookOutline from '~/components/icons/BookOutline.vue';
+import HomeTwoTone from '~/components/icons/HomeTwoTone.vue';
 import MdiCode from '~/components/icons/MdiCode.vue';
 import MdiEmailOutline from '~/components/icons/MdiEmailOutline.vue';
+import WorkTwoTone from '~/components/icons/WorkTwoTone.vue';
+import { DEFAULT_LOCALE, fullName } from '~/data/SiteData';
 
 interface IUrl {
   icon: unknown;
@@ -103,16 +103,6 @@ const { locale, setLocale } = useI18n();
     }
   }
 
-  @media (width <= 700px) {
-    padding: 0 0.5em;
-    column-gap: 0.5em;
-
-    h1 {
-      flex: 1 2 20%;
-      margin-left: 0.5em;
-    }
-  }
-
   #right-navbar {
     display: flex;
     flex-direction: row;
@@ -124,24 +114,12 @@ const { locale, setLocale } = useI18n();
       column-gap: 2.2em;
     }
 
-    @media (width <= 600px) {
-      flex: 2 1 80%;
-    }
-
     #url-list {
       height: 100%;
       display: flex;
       flex-flow: row;
       flex: 1 1 50%;
       flex-wrap: wrap;
-
-      @media (width <= 600px) {
-        column-gap: 0.2em;
-        svg {
-          height: 2em;
-          width: 1.5em;
-        }
-      }
 
       > a {
         display: flex;
@@ -165,14 +143,6 @@ const { locale, setLocale } = useI18n();
         &:hover {
           background-color: white;
         }
-
-        @media (width <= 600px) {
-          padding: 0 0.2em;
-
-          svg {
-            margin-right: 0.15em;
-          }
-        }
       }
     }
 
@@ -182,6 +152,38 @@ const { locale, setLocale } = useI18n();
       img {
         min-width: 100%;
         min-height: 2em;
+      }
+    }
+  }
+
+  @media (width <= 700px) {
+    padding: 0 0.5em;
+    column-gap: 0.5em;
+
+    h1 {
+      flex: 1 2 20%;
+      margin-left: 0.5em;
+    }
+
+    #right-navbar {
+      flex: 2 1 80%;
+
+      #url-list {
+        column-gap: 0.2em;
+        svg {
+          height: 2em;
+          width: 1.5em;
+        }
+
+        > a {
+          column-gap: 0.2em;
+          padding: 0;
+
+          svg {
+            height: 2em;
+            width: 1.5em;
+          }
+        }
       }
     }
   }

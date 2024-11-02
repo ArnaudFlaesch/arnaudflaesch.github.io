@@ -11,11 +11,6 @@
         <main id="site-content">
           <div v-if="titleCode" id="page-header">
             <h1 id="page-title">{{ $t(titleCode) }}</h1>
-            <!--<Tooltip title="Flux RSS" v-if="route.fullPath.endsWith('/blog/')">
-              <a href="{rss}"> 
-                <RssFeed id="rss-feed-icon" />
-              </a>
-            </Tooltip>-->
           </div>
           <div v-if="descriptionCode" id="page-description">
             {{ $t(descriptionCode) }}
@@ -36,7 +31,6 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
 import { DEFAULT_LOCALE, defaultImageUrl, fullName, jobName, siteUrl } from '~/data/SiteData';
-
 const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode, blogView }: { titleCode: string; descriptionCode: string; blogView?: string } =
@@ -91,10 +85,9 @@ if (titleCode && descriptionCode) {
 
 <style lang="scss">
 #site-container {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   #fixed-header {
     position: sticky;
@@ -106,19 +99,19 @@ if (titleCode && descriptionCode) {
 
   #site-body {
     display: flex;
-    flex: 0 1 calc(100% - 4.5rem);
-    padding: 2em 6em;
+    padding: 2em 5em;
+    flex: 1 0 calc(100% - 4.5rem);
+    overflow-y: auto;
 
     #profile-container {
-      flex: 0 1 15%;
+      flex: 0 1 20%;
     }
 
     #site-page {
       display: flex;
       flex-direction: column;
       flex: 1 0 80%;
-      max-width: 85%;
-      padding: 0 7%;
+      padding: 0 5%;
       justify-content: space-between;
 
       #site-content {
@@ -130,14 +123,6 @@ if (titleCode && descriptionCode) {
           flex-direction: row;
           justify-content: space-between;
           align-items: first baseline;
-
-          #rss-feed-icon {
-            color: white;
-            background-color: orange;
-            height: 35px;
-            width: 35px;
-            border-radius: 5px;
-          }
         }
 
         #page-description {
@@ -157,7 +142,7 @@ if (titleCode && descriptionCode) {
   #site-container {
     #site-body {
       flex-direction: column;
-      padding: 0.2em;
+      padding: 1em 1em 2em 1em;
 
       #profile-container {
         flex-basis: 10%;
@@ -167,7 +152,6 @@ if (titleCode && descriptionCode) {
         }
 
         #profile {
-          margin-top: 1em;
           gap: 0.5em;
           display: grid;
           justify-items: center;
@@ -180,7 +164,6 @@ if (titleCode && descriptionCode) {
           #social-links {
             flex-direction: row;
             justify-content: center;
-            margin-top: 0.5em;
             gap: 1em;
           }
         }

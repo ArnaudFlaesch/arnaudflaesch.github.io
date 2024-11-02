@@ -28,26 +28,11 @@ body {
 
 html,
 body,
-#__nuxt {
-  height: 100%;
-}
-
+#__nuxt,
+.v-application,
+.v-application__wrap,
 .layout-container {
   height: 100%;
-
-  #site-container {
-    height: 100%;
-
-    #site-body {
-      height: 100%;
-      #site-page {
-        height: 100%;
-        main {
-          height: 100%;
-        }
-      }
-    }
-  }
 }
 
 article,

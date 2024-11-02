@@ -56,8 +56,8 @@
 </template>
 
 <script lang="ts" setup>
-import formationData from '~/data/EducationData';
-import jobData from '~/data/WorkData';
+import { formationData } from '~/data/EducationData';
+import { jobData } from '~/data/WorkData';
 import { hobbiesList } from '~/data/HobbiesData';
 import type { ITranslatableElement } from '~/model/ITranslatableElement';
 import { ref, type Ref } from 'vue';
@@ -92,7 +92,6 @@ function isVisible(index: number) {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center;
   }
 
   .cv-button {

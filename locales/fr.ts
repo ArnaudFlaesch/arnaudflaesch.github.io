@@ -65,7 +65,8 @@ export const cvFR = {
 export const blogFR = {
   'BLOG.PAGE.TITLE': 'Blog',
   'BLOG.PAGE.DESCRIPTION':
-    "Mon blog sur lequel vous trouverez des articles aussi bien sur des sujets techniques que sur d'autres sujets."
+    "Mon blog sur lequel vous trouverez des articles aussi bien sur des sujets techniques que sur d'autres sujets.",
+  'RSS.FEED.MESSAGE': 'Flux RSS des articles'
 };
 
 export const contactFR = {
