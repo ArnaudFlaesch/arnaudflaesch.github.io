@@ -3,14 +3,9 @@
     <template #titleComponent>
       <div class="job-content">
         <div class="job-period">
-          <span v-if="props.experience.dateFin"
-            >{{ formatDate(props.experience.dateDebut) }} <v-icon> {{ mdiArrowRightThin }} </v-icon>
-            {{ formatDate(props.experience.dateFin) }}</span
-          >
-          <span v-else
-            >{{ formatDate(props.experience.dateDebut) }} <v-icon> {{ mdiArrowRightThin }}</v-icon>
-            {{ $t('TODAY') }}</span
-          >
+          {{ formatDate(props.experience.dateDebut) }} <v-icon> {{ mdiArrowRightThin }} </v-icon>
+          <span v-if="props.experience.dateFin"> {{ formatDate(props.experience.dateFin) }}</span>
+          <span v-else>{{ $t('TODAY') }}</span>
         </div>
         <div class="job-name">
           <a v-if="props.experience.website" :href="props.experience.website">

@@ -39,6 +39,9 @@ async function getProjectData(projectName: string): Promise<IRepository> {
 
   > * {
     flex-basis: calc(50% - 1.5em);
+    padding: 10px;
+    box-shadow: 0 0 5px black;
+    border-radius: 1%;
 
     @media (width <= 850px) {
       flex-basis: 100%;

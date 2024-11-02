@@ -44,11 +44,11 @@ export const projectsInfo: IProjectData[] = [
     name: 'arnaudflaesch.github.io',
     description: 'PORTFOLIO.PROJECT.DESCRIPTION',
     repoIcons: [
-      { name: 'ReactJS', label: 'Frontend', extension: 'png' },
+      { name: 'VueJS', label: 'Frontend', path: 'vuejs', extension: 'png' },
+      { name: 'Nuxt', label: 'Frontend', extension: 'png' },
       { name: 'Sass', label: 'Frontend' },
       { name: 'Typescript', label: 'Frontend' },
       { name: 'Github Actions', label: 'Tools', extension: 'png', path: 'github-actions' },
-      { name: 'GraphQL', label: 'Tools', extension: 'png' },
       { name: 'Cypress', label: 'Frontend', extension: 'png' }
     ]
   }

@@ -40,7 +40,8 @@ export const projetsEN = {
   'DASH.WEBSERVICES.PROJECT.DESCRIPTION':
     'Backend of Dash project : dashboard displaying multiple widgets on a same page such as a RSS feed, the weather or an agenda.',
   'CASHMANAGER.PROJECT.DESCRIPTION': 'Personal website.',
-  'PORTFOLIO.PROJECT.DESCRIPTION': 'Budget-managing application.'
+  'PORTFOLIO.PROJECT.DESCRIPTION': 'Budget-managing application.',
+  'LANGUAGES.USED': 'Languages and tools used'
 };
 
 export const cvEN = {

@@ -15,6 +15,18 @@
       <div class="technical-stack">
         <div>{{ $t('TECHNICAL.STACK') }} :</div>
 
+        <div class="repository-icons">
+          <TooltipIcon
+            v-for="(languageIcon, index) in repoWidgetProps.repoIcons"
+            :key="index"
+            :tooltip="languageIcon.name"
+            :icon-path="`${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, '').toLowerCase()}.${languageIcon.extension ? languageIcon.extension : 'svg'}`"
+            :alt="languageIcon.name"
+          />
+        </div>
+
+        <div>{{ $t('LANGUAGES.USED') }} :</div>
+
         <div class="languages-container">
           <div
             v-for="(edge, index) in [...repoWidgetProps.repositoryData.languages.edges].sort(sortEdgesBySize)"
@@ -27,16 +39,6 @@
           >
             <v-no-ssr> <v-tooltip activator="parent" :text="edge.node.name" location="top"> </v-tooltip></v-no-ssr>
           </div>
-        </div>
-
-        <div class="repository-icons">
-          <TooltipIcon
-            v-for="(languageIcon, index) in repoWidgetProps.repoIcons"
-            :key="index"
-            :tooltip="languageIcon.name"
-            :icon-path="`${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, '').toLowerCase()}.${languageIcon.extension ? languageIcon.extension : 'svg'}`"
-            :alt="languageIcon.name"
-          />
         </div>
       </div>
     </div>
@@ -95,7 +97,7 @@ function sortEdgesBySize(edgeA: IEdge, edgeB: IEdge) {
     .technical-stack {
       display: flex;
       flex-direction: column;
-      row-gap: 2em;
+      row-gap: 1em;
 
       .languages-container {
         display: flex;

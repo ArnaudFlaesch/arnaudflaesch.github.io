@@ -40,7 +40,8 @@ export const projetsFR = {
   'DASH.WEBSERVICES.PROJECT.DESCRIPTION':
     "Backend du projet Dash : dashboard permettant d'afficher plusieurs widgets sur une même page comme un flux RSS, la météo ou encore un agenda.",
   'CASHMANAGER.PROJECT.DESCRIPTION': 'Application de gestion de budget.',
-  'PORTFOLIO.PROJECT.DESCRIPTION': 'Site web personnel.'
+  'PORTFOLIO.PROJECT.DESCRIPTION': 'Site web personnel.',
+  'LANGUAGES.USED': 'Langages et outils utilisés'
 };
 
 export const cvFR = {
