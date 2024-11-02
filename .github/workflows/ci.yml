@@ -103,7 +103,7 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: test
-    if: success() && github.ref_name == 'master'
+    # if: success() && github.ref_name == 'master'
 
     steps:
       - name: Deploy to GitHub Pages
