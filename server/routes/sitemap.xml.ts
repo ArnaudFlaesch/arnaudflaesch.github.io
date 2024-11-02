@@ -21,8 +21,7 @@ export default defineEventHandler(async (event) => {
     .where({ _partial: false })
     .find()
     .filter((doc) => doc?._path?.includes('/blog'));
-  console.log('ici');
-  console.log(blogPosts);
+
   for (const post of blogPosts) {
     sitemap.write({
       url: post._path,
