@@ -1,4 +1,4 @@
-export interface IExperience {
+export type IExperience = {
   title_fr: string;
   title_en?: string;
   name: string;
@@ -10,4 +10,4 @@ export interface IExperience {
   dateFin?: Date;
   skills: string[];
   website: string;
-}
+};

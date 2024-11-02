@@ -9,7 +9,13 @@
           v-for="skill in block.skills"
           :key="skill.name"
           :tooltip="skill.name"
-          :icon-path="`${ICONS_PATH}${block.label.toLowerCase()}/${skill.name.replace(/\s/g, '').toLowerCase()}.${skill.extension ? skill.extension : 'svg'}`"
+          :icon-path="
+            getSkillIconPath(
+              block.label.toLowerCase(),
+              skill.path ?? skill.name.replace(/\s/g, '').toLowerCase(),
+              skill.extension ? skill.extension : 'svg'
+            )
+          "
           :alt="skill.name"
         />
       </template>
@@ -21,6 +27,10 @@
 import { skills } from '~/data/SkillsData';
 
 const ICONS_PATH = '/icons/';
+
+function getSkillIconPath(label: string, path: string, extension: string): string {
+  return `${ICONS_PATH}${label}/${path}.${extension}`;
+}
 </script>
 
 <style lang="scss">

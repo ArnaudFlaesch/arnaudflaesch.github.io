@@ -1,4 +1,12 @@
-export const projectsInfo = [
+import type { IRepoIcon } from '~/model/IRepoIcon';
+
+type IProjectData = {
+  name: string;
+  description: string;
+  repoIcons: IRepoIcon[];
+};
+
+export const projectsInfo: IProjectData[] = [
   {
     name: 'Dash-Web',
     description: 'DASH.WEB.PROJECT.DESCRIPTION',

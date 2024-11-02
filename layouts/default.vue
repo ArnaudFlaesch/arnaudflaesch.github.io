@@ -7,7 +7,7 @@
       <div id="profile-container" :class="{ 'blog-view': blogView }">
         <SiteProfile />
       </div>
-      <div id="site-page">
+      <div id="site-page" :class="{ 'blog-view': blogView }">
         <main id="site-content">
           <div v-if="titleCode" id="page-header">
             <h1 id="page-title">{{ $t(titleCode) }}</h1>
@@ -110,9 +110,14 @@ if (titleCode && descriptionCode) {
     #site-page {
       display: flex;
       flex-direction: column;
-      flex: 1 0 80%;
+      flex: 0 0 80%;
+
       padding: 0 5%;
       justify-content: space-between;
+
+      &.blog-view {
+        max-width: 80%;
+      }
 
       #site-content {
         display: flex;
@@ -174,6 +179,10 @@ if (titleCode && descriptionCode) {
         padding: 0.2em;
         max-width: 100%;
         flex-basis: 90%;
+
+        &.blog-view {
+          max-width: 100%;
+        }
 
         #site-content {
           padding: 0 1em;

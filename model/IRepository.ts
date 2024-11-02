@@ -1,4 +1,4 @@
-export interface IRepository {
+export type IRepository = {
   createdAt: Date;
   description: string;
   name: string;
@@ -8,17 +8,17 @@ export interface IRepository {
     name: string;
   };
   languages: ILanguagesData;
-}
+};
 
-export interface IEdge {
+export type IEdge = {
   node: {
     name: string;
     color: string;
   };
   size: number;
-}
+};
 
-interface ILanguagesData {
+type ILanguagesData = {
   edges: IEdge[];
   totalSize: number;
-}
+};

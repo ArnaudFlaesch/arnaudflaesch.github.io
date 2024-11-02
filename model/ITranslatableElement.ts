@@ -1,4 +1,4 @@
-export interface ITranslatableElement {
+export type ITranslatableElement = {
   fr: {
     title: string;
     description: string;
@@ -7,4 +7,4 @@ export interface ITranslatableElement {
     title: string;
     description: string;
   };
-}
+};

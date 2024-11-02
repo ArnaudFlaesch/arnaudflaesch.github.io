@@ -1,6 +1,5 @@
-export type IGitHubRepoLanguage = {
+export type ISkill = {
   name: string;
-  label: string;
   extension?: string;
   path?: string;
 };
