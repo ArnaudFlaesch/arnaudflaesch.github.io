@@ -9,9 +9,7 @@
       </div>
       <div id="site-page" :class="{ 'blog-view': blogView }">
         <main id="site-content">
-          <div v-if="titleCode" id="page-header">
-            <h1 id="page-title">{{ $t(titleCode) }}</h1>
-          </div>
+          <h1 v-if="titleCode" id="page-header">{{ $t(titleCode) }}</h1>
           <div v-if="descriptionCode" id="page-description">
             {{ $t(descriptionCode) }}
           </div>

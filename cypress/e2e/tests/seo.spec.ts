@@ -12,7 +12,7 @@ describe('SEO tests', () => {
 
   it('Should get the robots.txt file', () => {
     const expectedRobotsTxtContent =
-      '# START nuxt-robots (indexable)\nUser-agent: *\n\nSitemap: https://arnaudflaesch.github.io/sitemap_index.xml\n# END nuxt-robots';
+      '# START nuxt-robots (indexable)\nUser-agent: *\nAllow: /\nAllow: /en/\n\nSitemap: https://arnaudflaesch.github.io/sitemap_index.xml\n# END nuxt-robots';
     cy.request({
       url: '/robots.txt'
     }).then((response) => {

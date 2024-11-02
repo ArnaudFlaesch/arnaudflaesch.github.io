@@ -88,6 +88,9 @@ export default defineNuxtConfig({
     defaultLocale: DEFAULT_LOCALE,
     strategy: 'prefix_except_default'
   },
+  robots: {
+    allow: '/'
+  },
   nitro: {
     prerender: {
       crawlLinks: true,

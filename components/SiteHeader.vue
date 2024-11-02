@@ -90,6 +90,7 @@ const { locale, setLocale } = useI18n();
     column-gap: 0.5em;
     color: $header-text-color;
     text-decoration: none;
+    width: fit-content;
   }
 
   h1 {
