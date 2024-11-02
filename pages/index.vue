@@ -13,7 +13,7 @@
             </li>
             <li>
               <NuxtLink :to="localePath('blog')">{{ $t('BLOG.MESSAGE') }}</NuxtLink
-              ><span>&nbsp;</span>(<a :href="rssFeedFile">{{ $t('RSS.FEED') }}</a
+              ><span>&nbsp;</span>(<a id="rss-feed-link" :href="rssFeedFile">{{ $t('RSS.FEED') }}</a
               >)
             </li>
             <li>

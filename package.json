@@ -1,7 +1,7 @@
 {
   "name": "arnaudflaesch.github.io",
   "author": "Arnaud Flaesch",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Site web personnel",
   "homepage": "https://arnaudflaesch.github.io",
   "private": true,
@@ -10,12 +10,12 @@
     "npm": "10.x"
   },
   "scripts": {
-    "start": "nuxt start",
     "dev": "nuxt dev -o",
-    "build": "nuxt build",
     "clean": "nuxi cleanup",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "build": "nuxt build",
+    "start": "nuxt start",
     "lint:md": "markdownlint **/*.md",
     "lint:md:fix": "npm run lint:md -- --fix",
     "eslint": "eslint .",
@@ -37,7 +37,7 @@
     "@nuxtjs/robots": "4.1.10",
     "@nuxtjs/seo": "2.0.0-rc.23",
     "@nuxtjs/sitemap": "6.1.2",
-    "date-fns": "^4.1.0",
+    "date-fns": "4.1.0",
     "nuxt": "3.13.2",
     "nuxt-graphql-client": "0.2.36",
     "vue": "3.5.12",
@@ -68,7 +68,7 @@
     "stylelint": "16.10.0",
     "stylelint-config-standard-scss": "13.1.0",
     "typescript-eslint": "8.11.0",
-    "vite-plugin-vuetify": "^2.0.4",
+    "vite-plugin-vuetify": "2.0.4",
     "vuetify": "3.7.3"
   }
 }
