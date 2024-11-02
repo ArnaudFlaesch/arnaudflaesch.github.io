@@ -69,7 +69,7 @@ describe('CV page tests', () => {
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
 
     // CV SEO english locale test
-    cy.wait(1500);
+    cy.wait(1000);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Resume | Arnaud Flaesch - Software developer');
     cy.document()

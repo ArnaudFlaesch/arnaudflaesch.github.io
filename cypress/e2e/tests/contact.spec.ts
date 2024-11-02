@@ -28,7 +28,7 @@ describe('Contact page tests', () => {
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
 
     // Contact SEO english locale test
-    cy.wait(1500);
+    cy.wait(1000);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Contact me | Arnaud Flaesch - Software developer');
     cy.document()

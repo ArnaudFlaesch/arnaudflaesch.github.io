@@ -28,6 +28,7 @@ describe('Projects page tests', () => {
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
 
     cy.get('#switch-language > button').click();
+    cy.wait(1000);
     cy.title().should('equal', 'Personal projects | Arnaud Flaesch - Software developer');
     cy.document().get('meta[name="description"]').should('have.attr', 'content', 'Personal projects that I work on.');
     cy.document()
@@ -36,7 +37,7 @@ describe('Projects page tests', () => {
     cy.document().get('meta[name="author"]').should('have.attr', 'content', 'Arnaud Flaesch');
     cy.document()
       .get('meta[property="og:title"]')
-      .should('have.attr', 'content', 'Resume | Arnaud Flaesch - Software developer');
+      .should('have.attr', 'content', 'Personal projects | Arnaud Flaesch - Software developer');
     cy.document()
       .get('meta[property="og:image"]')
       .should('have.attr', 'content', 'https://arnaudflaesch.github.io/profile-picture.jpg');

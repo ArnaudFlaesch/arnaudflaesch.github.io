@@ -6,9 +6,7 @@ describe('Portfolio tests', () => {
   });
 
   it('Should get the home page', () => {
-    cy.title()
-      .should('equals', "Arnaud Flaesch - Développeur d'applications")
-      .get('h1')
+    cy.get('h1')
       .first()
       .should('have.text', 'Arnaud Flaesch')
       .get('#bio-avatar')
@@ -16,9 +14,8 @@ describe('Portfolio tests', () => {
       .and('have.css', 'width', '100px');
 
     cy.get('footer').should('have.text', '© 2024, Développé avec Nuxt. Icônes de : Icons8.');
-  });
 
-  it('Home SEO test', () => {
+    // Home SEO test
     cy.title().should('equal', "Arnaud Flaesch - Développeur d'applications");
     cy.document()
       .get('meta[name="description"]')
@@ -44,10 +41,9 @@ describe('Portfolio tests', () => {
     cy.document().get('meta[property="og:site_name"]').should('have.attr', 'content', 'arnaudflaesch.github.io');
     cy.document().get('meta[property="og:url"]').should('have.attr', 'content', 'https://arnaudflaesch.github.io/');
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'website');
-  });
 
-  it('Home SEO english locale test', () => {
-    cy.wait(1500);
+    // Home SEO english locale test
+    cy.wait(1000);
     cy.get('#switch-language > button').click();
     cy.title().should('equal', 'Arnaud Flaesch - Software developer');
     cy.document()

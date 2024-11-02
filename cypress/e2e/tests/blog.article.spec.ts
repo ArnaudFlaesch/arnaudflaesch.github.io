@@ -51,7 +51,7 @@ describe('Blog article tests', () => {
     cy.document().get('meta[property="og:type"]').should('have.attr', 'content', 'article');
 
     // Blog SEO english locale test
-    cy.wait(1500);
+    cy.wait(1000);
     cy.get('#switch-language > button').click();
     cy.title().should(
       'equal',
