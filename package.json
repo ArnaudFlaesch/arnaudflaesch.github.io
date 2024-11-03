@@ -52,7 +52,7 @@
     "cypress-multi-reporters": "2.0.4",
     "eslint": "9.13.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-cypress": "3.6.0",
+    "eslint-plugin-cypress": "4.1.0",
     "eslint-plugin-vue": "9.29.1",
     "globals": "15.11.0",
     "markdownlint-cli": "0.42.0",
