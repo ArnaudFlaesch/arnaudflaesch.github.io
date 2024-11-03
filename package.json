@@ -60,7 +60,7 @@
     "mochawesome-merge": "4.3.0",
     "mochawesome-report-generator": "6.2.0",
     "nuxt-site-config": "2.2.18",
-    "nuxt-site-config-kit": "2.2.18",
+    "nuxt-site-config-kit": "2.2.21",
     "prettier": "3.3.3",
     "rss": "1.2.2",
     "sass-embedded": "1.80.6",
