@@ -49,7 +49,7 @@
     "@mdi/js": "7.4.47",
     "@types/node": "20.17.6",
     "cypress": "13.15.1",
-    "cypress-multi-reporters": "1.6.4",
+    "cypress-multi-reporters": "2.0.4",
     "eslint": "9.13.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-cypress": "3.6.0",
