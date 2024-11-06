@@ -31,8 +31,7 @@ export default defineNuxtConfig({
           title: 'Flux RSS pour les articles de blog',
           href: rssFeedFile
         },
-        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' },
-        { rel: 'manifest', href: '/manifest.webmanifest' }
+        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' }
       ]
     }
   },
@@ -106,9 +105,9 @@ export default defineNuxtConfig({
           sizes: '192x192',
           type: 'image/png'
         },
-        { src: 'profile-picture.jpg', sizes: '48x48', type: 'image/png' },
-        { src: 'profile-picture.jpg', sizes: '72x72', type: 'image/png' },
-        { src: 'profile-picture.jpg', sizes: '96x96', type: 'image/png' }
+        { src: 'favicon.png', sizes: '48x48', type: 'image/png' },
+        { src: 'favicon.png', sizes: '72x72', type: 'image/png' },
+        { src: 'favicon.png', sizes: '96x96', type: 'image/png' }
       ]
     }
   },
