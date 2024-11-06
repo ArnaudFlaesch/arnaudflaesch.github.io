@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
-import { author, DEFAULT_LOCALE, locales, rssFeedFile, siteName, siteUrl, title } from './data/SiteData';
+import { author, DEFAULT_LOCALE, locales, pwaShortName, rssFeedFile, siteName, siteUrl, title } from './data/SiteData';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
@@ -11,7 +11,8 @@ export default defineNuxtConfig({
   css: ['~/assets/global.scss', '~/assets/styles.scss'],
   site: {
     url: siteUrl,
-    name: title
+    name: title,
+    trailingSlash: true
   },
   app: {
     head: {
@@ -24,15 +25,14 @@ export default defineNuxtConfig({
         { name: 'google-site-verification', content: 'LKNW3ns7yC7LiA86Oz56msNTna7-nqN3JiX7IltrMeU' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
           rel: 'alternate',
           type: 'application/rss+xml',
           title: 'Flux RSS pour les articles de blog',
           href: rssFeedFile
         },
-        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' },
-        { rel: 'manifest', href: '/manifest.webmanifest' }
+        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' }
       ]
     }
   },
@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    '@vite-pwa/nuxt',
     'nuxt-graphql-client',
     '@nuxtjs/robots',
     (_options, nuxt) => {
@@ -90,6 +91,21 @@ export default defineNuxtConfig({
   },
   robots: {
     allow: '/'
+  },
+  pwa: {
+    manifest: {
+      name: title,
+      short_name: pwaShortName,
+      start_url: '/',
+      background_color: '#fafafa',
+      theme_color: '#1976d2',
+      display: 'minimal-ui',
+      icons: [
+        { src: 'favicon.ico', sizes: '48x48', type: 'image/ico' },
+        { src: 'favicon.ico', sizes: '72x72', type: 'image/ico' },
+        { src: 'favicon.ico', sizes: '96x96', type: 'image/ico' }
+      ]
+    }
   },
   nitro: {
     prerender: {

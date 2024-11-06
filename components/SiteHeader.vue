@@ -45,22 +45,22 @@ const urls: IUrl[] = [
     icon: HomeTwoTone
   },
   {
-    path: 'cv',
+    path: '/cv/',
     label: 'RESUME.LABEL',
     icon: WorkTwoTone
   },
   {
-    path: 'blog',
+    path: '/blog/',
     label: 'BLOG.LABEL',
     icon: BookOutline
   },
   {
-    path: 'projets',
+    path: '/projets/',
     label: 'PROJECTS.LABEL',
     icon: MdiCode
   },
   {
-    path: 'contact',
+    path: '/contact/',
     label: 'CONTACT.LABEL',
     icon: MdiEmailOutline
   }
