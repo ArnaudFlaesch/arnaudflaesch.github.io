@@ -2,6 +2,7 @@ export const fullName = 'Arnaud Flaesch';
 export const author = fullName;
 export const city = 'Paris';
 export const jobName = "Développeur d'applications";
+export const pwaShortName = 'AF';
 export const company = 'Institut Pasteur';
 export const title = `${fullName} - ${jobName}`;
 export const siteName = 'arnaudflaesch.github.io';

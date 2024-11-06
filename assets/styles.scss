@@ -750,6 +750,11 @@ pre tt::after {
   content: '';
 }
 
+:not(pre) > code,
+pre[class*='language-'] {
+  background: #f5f2f0;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

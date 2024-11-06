@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
-import { author, DEFAULT_LOCALE, locales, rssFeedFile, siteName, siteUrl, title } from './data/SiteData';
+import { author, DEFAULT_LOCALE, locales, pwaShortName, rssFeedFile, siteName, siteUrl, title } from './data/SiteData';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    '@vite-pwa/nuxt',
     'nuxt-graphql-client',
     '@nuxtjs/robots',
     (_options, nuxt) => {
@@ -90,6 +91,26 @@ export default defineNuxtConfig({
   },
   robots: {
     allow: '/'
+  },
+  pwa: {
+    manifest: {
+      name: title,
+      short_name: pwaShortName,
+      start_url: '/',
+      background_color: '#fafafa',
+      theme_color: '#1976d2',
+      display: 'minimal-ui',
+      icons: [
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        { src: 'profile-picture.jpg', sizes: '48x48', type: 'image/png' },
+        { src: 'profile-picture.jpg', sizes: '72x72', type: 'image/png' },
+        { src: 'profile-picture.jpg', sizes: '96x96', type: 'image/png' }
+      ]
+    }
   },
   nitro: {
     prerender: {
