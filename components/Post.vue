@@ -42,8 +42,7 @@ function formatPublicationDate(date: string) {
 
 <style lang="scss" scoped>
 .post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+  margin: 2rem 0;
 
   a {
     text-decoration: none;
@@ -51,20 +50,20 @@ function formatPublicationDate(date: string) {
   }
 
   p {
-    margin-bottom: var(--spacing-0);
+    margin-bottom: 0;
   }
 
   h2 {
     /* stylelint-disable */
-    font-size: var(--fontSize-4);
+    font-size: 1.728rem;
     /* stylelint-enable */
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-2);
-    margin-top: var(--spacing-0);
+    color: #005b99;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   header {
-    margin-bottom: var(--spacing-4);
+    margin-bottom: 1rem;
   }
 
   .article-preview {

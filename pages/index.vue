@@ -64,6 +64,9 @@ const query: QueryBuilderParams = { path: '/blog', limit: 5, sort: [{ date: -1 }
 
   #blog-title {
     margin-top: 2em;
+    a {
+      color: black;
+    }
   }
 
   ol {
