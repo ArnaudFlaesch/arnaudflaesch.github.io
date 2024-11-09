@@ -42,7 +42,7 @@ const head = useLocaleHead({
 });
 
 const links = head.value.link.map((link) => {
-  return { id: link.id, rel: 'alternate', ref: link.href, href: link.href, hreflang: link.hreflang };
+  return { id: link.id, rel: 'alternate', ref: link.href + '/', href: link.href + '/', hreflang: link.hreflang };
 });
 
 const hrefLangDefaultLink = links.filter((link) => link.hreflang === DEFAULT_LOCALE)[0] ?? {};

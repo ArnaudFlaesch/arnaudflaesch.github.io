@@ -107,6 +107,10 @@ function handleShare(url: string): void {
     list-style: disc;
   }
 
+  ol {
+    list-style: decimal;
+  }
+
   img {
     display: flex;
     margin: 0.2em auto;
