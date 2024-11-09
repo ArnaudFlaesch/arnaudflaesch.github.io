@@ -31,13 +31,12 @@ export default [
       'cypress.config.ts',
       'cypress-test.config.ts',
       'nuxt.config.ts',
-      'node_modules',
       'dist',
-      '.nuxt',
-      '.output',
+      '.nuxt/',
+      '.output/',
+      '.unlighthouse/',
       'build',
-      'coverage',
-      'package-lock.json'
+      'coverage'
     ]
   }
 ];

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: false
   },
-  css: ['~/assets/global.scss', '~/assets/styles.scss'],
+  css: ['~/assets/global.scss'],
   site: {
     url: siteUrl,
     name: title,
