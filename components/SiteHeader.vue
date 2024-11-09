@@ -13,10 +13,10 @@
 
       <div id="switch-language">
         <button v-if="locale === DEFAULT_LOCALE" @click="setLocale('en')">
-          <NuxtImg height="{30}" src="/icons/languages/us-flag.png" />
+          <NuxtImg :height="30" alt="us flag" src="/icons/languages/us-flag.png" />
         </button>
         <button v-else @click="setLocale(DEFAULT_LOCALE)">
-          <NuxtImg height="{30}" src="/icons/languages/french-flag.png" />
+          <NuxtImg :height="30" alt="french flag" src="/icons/languages/french-flag.png" />
         </button>
       </div>
     </div>
