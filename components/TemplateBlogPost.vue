@@ -6,7 +6,13 @@
       {{ doc.description }}
     </header>
     <p>
-      <NuxtImg class="article-illustration" :src="blogUrlPrefix + doc.image" width="600" alt="Illustration article" />
+      <NuxtImg
+        class="article-illustration"
+        :src="blogUrlPrefix + doc.image"
+        :width="600"
+        :height="400"
+        alt="Illustration article"
+      />
       <em v-html="doc.imageSubtitle" />
     </p>
     <section itemProp="articleBody">

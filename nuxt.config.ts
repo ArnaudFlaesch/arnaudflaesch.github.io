@@ -32,7 +32,8 @@ export default defineNuxtConfig({
           title: 'Flux RSS pour les articles de blog',
           href: rssFeedFile
         },
-        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' }
+        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml' },
+        { rel: 'manifest', href: '/manifest.webmanifest' }
       ]
     }
   },
@@ -96,7 +97,8 @@ export default defineNuxtConfig({
     manifest: {
       name: title,
       short_name: pwaShortName,
-      start_url: '/',
+      scope: './',
+      start_url: './',
       background_color: '#fafafa',
       theme_color: '#1976d2',
       display: 'minimal-ui',
