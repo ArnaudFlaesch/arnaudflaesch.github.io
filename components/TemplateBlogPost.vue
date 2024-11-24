@@ -2,7 +2,7 @@
   <article class="blog-post" itemScope itemType="https://schema.org/Article">
     <header>
       <h1 itemProp="headline">{{ doc.title }}</h1>
-      <p>{{ format(doc.date, 'dd MMMM yyyy', { locale: getLocaleFromLanguage(locale) }) }}</p>
+      <p>{{ format(doc.date, "dd MMMM yyyy", { locale: getLocaleFromLanguage(locale) }) }}</p>
       {{ doc.description }}
     </header>
     <p>
@@ -61,10 +61,10 @@
 </template>
 
 <script lang="ts" setup>
-import { format } from 'date-fns';
-import { mdiFacebook, mdiTwitter, mdiLinkedin } from '@mdi/js';
-import { getLocaleFromLanguage } from '~/utils/DateUtils';
-import type { ParsedContent } from '@nuxt/content';
+import { format } from "date-fns";
+import { mdiFacebook, mdiTwitter, mdiLinkedin } from "@mdi/js";
+import { getLocaleFromLanguage } from "~/utils/DateUtils";
+import type { ParsedContent } from "@nuxt/content";
 
 defineProps({
   doc: {
@@ -72,12 +72,12 @@ defineProps({
     required: true
   },
   previous: {
-    type: Object as () => Pick<ParsedContent, 'title' | '_path'>,
+    type: Object as () => Pick<ParsedContent, "title" | "_path">,
     required: false,
     default: null
   },
   next: {
-    type: Object as () => Pick<ParsedContent, 'title' | '_path'>,
+    type: Object as () => Pick<ParsedContent, "title" | "_path">,
     required: false,
     default: null
   }
@@ -86,14 +86,14 @@ defineProps({
 const { locale } = useI18n();
 const localePath = useLocalePath();
 
-const blogUrlPrefix = '/blog/';
+const blogUrlPrefix = "/blog/";
 
-const facebookShareUrl = 'https://www.facebook.com/sharer.php?u=';
-const twitterShareUrl = 'https://twitter.com/share?url=';
-const linkedinShareUrl = 'https://www.linkedin.com/shareArticle?url=';
+const facebookShareUrl = "https://www.facebook.com/sharer.php?u=";
+const twitterShareUrl = "https://twitter.com/share?url=";
+const linkedinShareUrl = "https://www.linkedin.com/shareArticle?url=";
 
 function handleShare(url: string): void {
-  window.open(encodeURI(url), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');
+  window.open(encodeURI(url), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700");
 }
 </script>
 

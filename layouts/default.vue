@@ -17,7 +17,7 @@
         </main>
         <footer>
           <span
-            >© 2024, {{ $t('DEVELOPED.WITH') }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t('ICONS.BY') }} :
+            >© 2024, {{ $t("DEVELOPED.WITH") }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t("ICONS.BY") }} :
             <a href="https://icons8.com/">Icons8</a>.</span
           >
         </footer>
@@ -27,8 +27,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router';
-import { DEFAULT_LOCALE, defaultImageUrl, fullName, jobName, siteUrl } from '~/data/SiteData';
+import { useRoute } from "vue-router";
+import { DEFAULT_LOCALE, defaultImageUrl, fullName, jobName, siteUrl } from "~/data/SiteData";
 const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode, blogView }: { titleCode: string; descriptionCode: string; blogView?: string } =
@@ -37,12 +37,12 @@ const { t, locale } = useI18n();
 
 const head = useLocaleHead({
   addDirAttribute: true,
-  identifierAttribute: 'id',
+  identifierAttribute: "id",
   addSeoAttributes: true
 });
 
 const links = head.value.link.map((link) => {
-  return { id: link.id, rel: 'alternate', ref: link.href + '/', href: link.href + '/', hreflang: link.hreflang };
+  return { id: link.id, rel: "alternate", ref: link.href + "/", href: link.href + "/", hreflang: link.hreflang };
 });
 
 const hrefLangDefaultLink = links.filter((link) => link.hreflang === DEFAULT_LOCALE)[0] ?? {};
@@ -52,22 +52,22 @@ useHead({
     lang: locale
   },
   link: [
-    { id: hrefLangDefaultLink['id'] + '-canonical', rel: 'canonical', href: hrefLangDefaultLink.href },
-    { ...hrefLangDefaultLink, id: hrefLangDefaultLink['id'] + '-x-default', hreflang: 'x-default' },
+    { id: hrefLangDefaultLink["id"] + "-canonical", rel: "canonical", href: hrefLangDefaultLink.href },
+    { ...hrefLangDefaultLink, id: hrefLangDefaultLink["id"] + "-x-default", hreflang: "x-default" },
     ...links
   ]
 });
 
 if (titleCode && descriptionCode) {
   const defaultTitle = `${fullName} - ${t(jobName)}`;
-  const title = titleCode !== 'INDEX.PAGE.TITLE' ? [t(titleCode), defaultTitle].join(' | ') : defaultTitle;
+  const title = titleCode !== "INDEX.PAGE.TITLE" ? [t(titleCode), defaultTitle].join(" | ") : defaultTitle;
   const ogImage = `${siteUrl}${defaultImageUrl}`;
 
   useSeoMeta({
     title: title,
     ogTitle: title,
     ogUrl: `${siteUrl}${route.fullPath}`,
-    ogType: 'website',
+    ogType: "website",
     ogLocale: locale,
     description: t(descriptionCode),
     ogDescription: t(descriptionCode),

@@ -23,11 +23,11 @@
     "lint:styles": "stylelint \"./**/*.{css,scss,sass}\" ",
     "lint:styles:fix": "npm run lint:styles -- --fix ",
     "lint:styles:report": "npm run lint:styles -- --formatter json --output-file ./styleLintReport.json",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,json,md,html}\"",
+    "code:check": "prettier . --check",
+    "code:format": "prettier . --write",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",
-    "cy:verify": "npx cypress verify",
-    "test": "npm run cy:run"
+    "cy:verify": "npx cypress verify"
   },
   "dependencies": {
     "@nuxt/content": "2.13.4",

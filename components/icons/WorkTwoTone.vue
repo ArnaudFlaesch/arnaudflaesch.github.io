@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 defineComponent({
-  name: 'WorkTwoTone'
+  name: "WorkTwoTone"
 });
 </script>
 <template>

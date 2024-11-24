@@ -1,10 +1,10 @@
 ---
 title: Gérer les dépendances d'un projet logiciel facilement avec Renovate
-date: '2024-02-10T16:00'
+date: "2024-02-10T16:00"
 description: Comment maintenir les dépendances d'un logiciel de manière sûre et rapide grâce à un outil automatisé.
 image: 2024/1-renovate/renovate-logo.png
 imageSubtitle: "Logo de Renovate. Source photo :&nbsp<a href='https://github.com/mend/renovate-ce-ee'>dépôt GitHub du projet</a>."
-tags: ['Dépendances', 'Renovate', 'Sécurité logicielle']
+tags: ["Dépendances", "Renovate", "Sécurité logicielle"]
 ---
 
 Vous vous êtes sans doute déjà retrouvé dans un projet de longue date, concentré sur l'ajout de nouvelles fonctionnalités,
@@ -124,12 +124,12 @@ pool:
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: '18.x'
+      versionSpec: "18.x"
       checkLatest: true
-      displayName: 'Node Installation'
+      displayName: "Node Installation"
 
   - bash: export GITHUB_COM_TOKEN=$(GITHUB_TOKEN) && npx renovate --endpoint https://dev.azure.com/$(PROJECT_GROUP_NAME) --token=$(AZURE_TOKEN)
-    displayName: 'Run renovate'
+    displayName: "Run renovate"
 ```
 
 #### **`config.js`**

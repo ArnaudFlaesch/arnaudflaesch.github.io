@@ -24,9 +24,9 @@
 </template>
 
 <script lang="ts" setup>
-import { skills } from '~/data/SkillsData';
+import { skills } from "~/data/SkillsData";
 
-const ICONS_PATH = '/icons/';
+const ICONS_PATH = "/icons/";
 
 function getSkillIconPath(label: string, path: string, extension: string): string {
   return `${ICONS_PATH}${label}/${path}.${extension}`;

@@ -5,7 +5,7 @@
         <div class="job-period">
           {{ formatDate(props.experience.dateDebut) }} <v-icon> {{ mdiArrowRightThin }} </v-icon>
           <span v-if="props.experience.dateFin"> {{ formatDate(props.experience.dateFin) }}</span>
-          <span v-else>{{ $t('TODAY') }}</span>
+          <span v-else>{{ $t("TODAY") }}</span>
         </div>
         <div class="job-name">
           <a v-if="props.experience.website" :href="props.experience.website">
@@ -35,12 +35,12 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-import { format } from 'date-fns';
-import { enUS } from 'date-fns/locale/en-US';
-import { fr } from 'date-fns/locale/fr';
-import type { IExperience } from '~/model/IExperience';
-import { mdiArrowRightThin } from '@mdi/js';
+import { useI18n } from "vue-i18n";
+import { format } from "date-fns";
+import { enUS } from "date-fns/locale/en-US";
+import { fr } from "date-fns/locale/fr";
+import type { IExperience } from "~/model/IExperience";
+import { mdiArrowRightThin } from "@mdi/js";
 
 const { locale } = useI18n();
 
@@ -55,7 +55,7 @@ const title = props.experience[`title_${locale.value}` as keyof IExperience] as 
 const descriptionList = props.experience[`description_${locale.value}` as keyof IExperience] as string[];
 
 function formatDate(date: Date): string {
-  return format(date, 'LLLL yyyy', { locale: locale.value === 'fr' ? fr : enUS });
+  return format(date, "LLLL yyyy", { locale: locale.value === "fr" ? fr : enUS });
 }
 </script>
 

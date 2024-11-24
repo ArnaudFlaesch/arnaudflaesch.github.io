@@ -8,7 +8,7 @@
         <div id="work">
           <v-icon>{{ mdiBriefcase }}</v-icon>
           {{ $t(jobName) }} <br />
-          {{ $t('AT') }}{{ company }}
+          {{ $t("AT") }}{{ company }}
         </div>
         <div id="location">
           <v-icon>{{ mdiMapMarker }}</v-icon>
@@ -37,9 +37,9 @@
 </template>
 
 <script lang="ts" setup>
-import { mdiBriefcase, mdiMapMarker } from '@mdi/js';
-import { fullName, jobName, company, city } from '~/data/SiteData';
-import { profileSocialLinks } from '~/data/ProfileSocialsData';
+import { mdiBriefcase, mdiMapMarker } from "@mdi/js";
+import { fullName, jobName, company, city } from "~/data/SiteData";
+import { profileSocialLinks } from "~/data/ProfileSocialsData";
 const IMAGE_HEIGHT = 35;
 const IMAGE_WIDTH = 35;
 

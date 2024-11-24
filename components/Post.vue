@@ -18,10 +18,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-import { format } from 'date-fns';
-import type { ParsedContent } from '@nuxt/content';
-import { getLocaleFromLanguage } from '~/utils/DateUtils';
+import { useI18n } from "vue-i18n";
+import { format } from "date-fns";
+import type { ParsedContent } from "@nuxt/content";
+import { getLocaleFromLanguage } from "~/utils/DateUtils";
 
 const localePath = useLocalePath();
 const { locale } = useI18n();
@@ -34,7 +34,7 @@ const props = defineProps({
 });
 
 function formatPublicationDate(date: string) {
-  return format(date, 'dd MMMM, yyyy', {
+  return format(date, "dd MMMM, yyyy", {
     locale: getLocaleFromLanguage(locale.value)
   });
 }
