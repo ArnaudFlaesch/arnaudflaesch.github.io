@@ -8,7 +8,7 @@
         <small>{{ formatPublicationDate(props.post.date) }}</small>
       </header>
       <div class="article-preview">
-        <NuxtImg :src="`/blog/${props.post.image}`" class="blog-thumbnail" alt="Illustration article" />
+        <NuxtImg :src="`/blog/${props.post.image}`" :width="300" class="blog-thumbnail" alt="Illustration article" />
         <section>
           <p class="description" itemProp="description">{{ props.post.description }}</p>
         </section>
@@ -18,10 +18,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-import { format } from 'date-fns';
-import type { ParsedContent } from '@nuxt/content';
-import { getLocaleFromLanguage } from '~/utils/DateUtils';
+import { useI18n } from "vue-i18n";
+import { format } from "date-fns";
+import type { ParsedContent } from "@nuxt/content";
+import { getLocaleFromLanguage } from "~/utils/DateUtils";
 
 const localePath = useLocalePath();
 const { locale } = useI18n();
@@ -34,7 +34,7 @@ const props = defineProps({
 });
 
 function formatPublicationDate(date: string) {
-  return format(date, 'dd MMMM, yyyy', {
+  return format(date, "dd MMMM, yyyy", {
     locale: getLocaleFromLanguage(locale.value)
   });
 }
@@ -42,8 +42,7 @@ function formatPublicationDate(date: string) {
 
 <style lang="scss" scoped>
 .post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+  margin: 2rem 0;
 
   a {
     text-decoration: none;
@@ -51,20 +50,20 @@ function formatPublicationDate(date: string) {
   }
 
   p {
-    margin-bottom: var(--spacing-0);
+    margin-bottom: 0;
   }
 
   h2 {
     /* stylelint-disable */
-    font-size: var(--fontSize-4);
+    font-size: 1.728rem;
     /* stylelint-enable */
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-2);
-    margin-top: var(--spacing-0);
+    color: #005b99;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   header {
-    margin-bottom: var(--spacing-4);
+    margin-bottom: 1rem;
   }
 
   .article-preview {

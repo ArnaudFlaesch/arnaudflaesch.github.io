@@ -2,7 +2,7 @@
   <div class="layout-container">
     <NuxtLayout :titleCode="titleCode" :descriptionCode="descriptionCode">
       <div v-if="isMailSent">
-        <p>{{ $t('EMAIL.SENT') }}</p>
+        <p>{{ $t("EMAIL.SENT") }}</p>
       </div>
 
       <v-form id="contact-form" ref="contactForm" v-model="isValid" @submit.prevent="handleSubmit">
@@ -41,7 +41,7 @@
         ></v-textarea>
 
         <v-btn id="submit-button" type="submit" variant="flat" :disabled="!isValid">
-          {{ $t('SEND') }}
+          {{ $t("SEND") }}
         </v-btn>
       </v-form>
     </NuxtLayout>
@@ -49,36 +49,36 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const { t } = useI18n();
-const titleCode = 'CONTACT.PAGE.TITLE';
-const descriptionCode = 'CONTACT.PAGE.DESCRIPTION';
+const titleCode = "CONTACT.PAGE.TITLE";
+const descriptionCode = "CONTACT.PAGE.DESCRIPTION";
 const isMailSent = ref(false);
 const isValid = ref(false);
-const name = ref('');
-const email = ref('');
-const message = ref('');
+const name = ref("");
+const email = ref("");
+const message = ref("");
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const rules = {
-  email: (value: string) => !!(value || '').match(emailRegex) || t('EMAIL.NOT.VALID.MESSAGE'),
-  required: (value: string) => (value || '').length >= 1 || `${t('REQUIRED.FIELD.MESSAGE')}`
+  email: (value: string) => !!(value || "").match(emailRegex) || t("EMAIL.NOT.VALID.MESSAGE"),
+  required: (value: string) => (value || "").length >= 1 || `${t("REQUIRED.FIELD.MESSAGE")}`
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function handleSubmit(e: any) {
   e.preventDefault();
   const data = new FormData(e.target);
-  data.append('name', name.value);
-  data.append('email', email.value);
-  data.append('message', message.value);
+  data.append("name", name.value);
+  data.append("email", email.value);
+  data.append("message", message.value);
 
-  fetch('https://formspree.io/f/mkndgrkd', {
-    method: 'POST',
+  fetch("https://formspree.io/f/mkndgrkd", {
+    method: "POST",
     body: data,
-    headers: { Accept: 'application/json' }
+    headers: { Accept: "application/json" }
   })
     .then((response) => {
       if (response.ok) {

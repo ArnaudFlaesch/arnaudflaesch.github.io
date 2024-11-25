@@ -6,7 +6,7 @@
       <template #titleComponent>
         <h4 v-for="title in certificationGroup.title" :key="title.label">
           {{ title.isNameTranslatableCode ? $t(title.label) : title.label }} -
-          {{ format(title.date, 'MMMM yyyy', { locale: getLocaleFromLanguage(locale) }) }}
+          {{ format(title.date, "MMMM yyyy", { locale: getLocaleFromLanguage(locale) }) }}
         </h4>
       </template>
       <template #detailComponent>
@@ -33,9 +33,9 @@
 </template>
 
 <script lang="ts" setup>
-import { certificationsData } from '~/data/CertificationData';
-import { format } from 'date-fns';
-import { getLocaleFromLanguage } from '~/utils/DateUtils';
+import { certificationsData } from "~/data/CertificationData";
+import { format } from "date-fns";
+import { getLocaleFromLanguage } from "~/utils/DateUtils";
 const { locale } = useI18n();
 
 const DEFAULT_CERTIFICATION_BADGE_SIZE = 115;

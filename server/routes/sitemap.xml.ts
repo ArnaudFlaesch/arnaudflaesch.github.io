@@ -1,6 +1,6 @@
-import { serverQueryContent } from '#content/server';
-import { SitemapStream, streamToPromise } from 'sitemap';
-import { siteUrl } from '~/data/SiteData';
+import { serverQueryContent } from "#content/server";
+import { SitemapStream, streamToPromise } from "sitemap";
+import { siteUrl } from "~/data/SiteData";
 
 export default defineEventHandler(async (event) => {
   // Fetch all documents
@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   for (const doc of docs) {
     sitemap.write({
       url: doc._path,
-      changefreq: 'monthly'
+      changefreq: "monthly"
     });
   }
 
@@ -20,12 +20,12 @@ export default defineEventHandler(async (event) => {
     .sort({ date: -1 })
     .where({ _partial: false })
     .find()
-    .filter((doc) => doc?._path?.includes('/blog'));
+    .filter((doc) => doc?._path?.includes("/blog"));
 
   for (const post of blogPosts) {
     sitemap.write({
       url: post._path,
-      changefreq: 'monthly'
+      changefreq: "monthly"
     });
   }
   sitemap.end();

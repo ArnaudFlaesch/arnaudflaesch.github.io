@@ -13,7 +13,7 @@
 
     <div class="technical-stack-container">
       <div class="technical-stack">
-        <div>{{ $t('TECHNICAL.STACK') }} :</div>
+        <div>{{ $t("TECHNICAL.STACK") }} :</div>
 
         <div class="repository-icons">
           <TooltipIcon
@@ -25,7 +25,7 @@
           />
         </div>
 
-        <div>{{ $t('LANGUAGES.USED') }} :</div>
+        <div>{{ $t("LANGUAGES.USED") }} :</div>
 
         <div class="languages-container">
           <div
@@ -46,10 +46,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { IGitHubRepoLanguage } from '~/model/IGitHubRepoLanguage';
-import type { IEdge, IRepository } from '~/model/IRepository';
+import type { IGitHubRepoLanguage } from "~/model/IGitHubRepoLanguage";
+import type { IEdge, IRepository } from "~/model/IRepository";
 
-const ICONS_PATH = '/icons/';
+const ICONS_PATH = "/icons/";
 const repoWidgetProps = defineProps({
   description: {
     type: String,

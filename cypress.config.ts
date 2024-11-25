@@ -1,5 +1,5 @@
-import { defineConfig } from 'cypress';
-import { displayBrowserInFullSize } from './cypress/plugins';
+import { defineConfig } from "cypress";
+import { displayBrowserInFullSize } from "./cypress/plugins";
 
 export default defineConfig({
   watchForFileChanges: false,
@@ -13,9 +13,9 @@ export default defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      on('before:browser:launch', displayBrowserInFullSize);
+      on("before:browser:launch", displayBrowserInFullSize);
     },
-    baseUrl: 'http://localhost:3000/',
-    specPattern: 'cypress/e2e/**/**/*.spec.ts'
+    baseUrl: "http://localhost:3000/",
+    specPattern: "cypress/e2e/**/**/*.spec.ts"
   }
 });

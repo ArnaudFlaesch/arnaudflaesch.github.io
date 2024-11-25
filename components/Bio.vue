@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import { fullName, linkedinLink, githubLink } from '~/data/SiteData';
+import { fullName, linkedinLink, githubLink } from "~/data/SiteData";
 const author = fullName;
 </script>
 

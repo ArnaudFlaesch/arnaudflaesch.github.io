@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useId } from 'vue';
+import { useId } from "vue";
 
 const id = useId();
 const { tooltip } = defineProps<{

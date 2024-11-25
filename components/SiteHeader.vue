@@ -13,10 +13,10 @@
 
       <div id="switch-language">
         <button v-if="locale === DEFAULT_LOCALE" @click="setLocale('en')">
-          <NuxtImg height="{30}" src="/icons/languages/us-flag.png" />
+          <NuxtImg :height="30" alt="us flag" src="/icons/languages/us-flag.png" />
         </button>
         <button v-else @click="setLocale(DEFAULT_LOCALE)">
-          <NuxtImg height="{30}" src="/icons/languages/french-flag.png" />
+          <NuxtImg :height="30" alt="french flag" src="/icons/languages/french-flag.png" />
         </button>
       </div>
     </div>
@@ -24,13 +24,13 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-import BookOutline from '~/components/icons/BookOutline.vue';
-import HomeTwoTone from '~/components/icons/HomeTwoTone.vue';
-import MdiCode from '~/components/icons/MdiCode.vue';
-import MdiEmailOutline from '~/components/icons/MdiEmailOutline.vue';
-import WorkTwoTone from '~/components/icons/WorkTwoTone.vue';
-import { DEFAULT_LOCALE, fullName } from '~/data/SiteData';
+import { useI18n } from "vue-i18n";
+import BookOutline from "~/components/icons/BookOutline.vue";
+import HomeTwoTone from "~/components/icons/HomeTwoTone.vue";
+import MdiCode from "~/components/icons/MdiCode.vue";
+import MdiEmailOutline from "~/components/icons/MdiEmailOutline.vue";
+import WorkTwoTone from "~/components/icons/WorkTwoTone.vue";
+import { DEFAULT_LOCALE, fullName } from "~/data/SiteData";
 
 interface IUrl {
   icon: unknown;
@@ -40,28 +40,28 @@ interface IUrl {
 
 const urls: IUrl[] = [
   {
-    path: '/',
-    label: 'HOME.LABEL',
+    path: "/",
+    label: "HOME.LABEL",
     icon: HomeTwoTone
   },
   {
-    path: '/cv/',
-    label: 'RESUME.LABEL',
+    path: "/cv/",
+    label: "RESUME.LABEL",
     icon: WorkTwoTone
   },
   {
-    path: '/blog/',
-    label: 'BLOG.LABEL',
+    path: "/blog/",
+    label: "BLOG.LABEL",
     icon: BookOutline
   },
   {
-    path: '/projets/',
-    label: 'PROJECTS.LABEL',
+    path: "/projets/",
+    label: "PROJECTS.LABEL",
     icon: MdiCode
   },
   {
-    path: '/contact/',
-    label: 'CONTACT.LABEL',
+    path: "/contact/",
+    label: "CONTACT.LABEL",
     icon: MdiEmailOutline
   }
 ];

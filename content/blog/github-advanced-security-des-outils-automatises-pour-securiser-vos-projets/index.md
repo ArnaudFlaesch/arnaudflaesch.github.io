@@ -1,10 +1,10 @@
 ---
-title: 'GitHub Advanced Security : Des outils automatisés pour sécuriser vos projets'
-date: '2024-04-04T18:00'
+title: "GitHub Advanced Security : Des outils automatisés pour sécuriser vos projets"
+date: "2024-04-04T18:00"
 description: "Présentation d'outils permettant d'améliorer la sécurité d'un projet dès son développement : analyse de secrets, de code et de dépendances."
 image: 2024/2-ghas/ghas-logo.png
 imageSubtitle: 'Logos de GitHub, CodeQL, Dependabot et GitHub Actions. Source images : <a href="https://www.svgrepo.com">https://www.svgrepo.com</a>.'
-tags: ['GitHub', 'DevSecOps', 'Azure DevOps', 'Sécurité logicielle', 'DevOps']
+tags: ["GitHub", "DevSecOps", "Azure DevOps", "Sécurité logicielle", "DevOps"]
 ---
 
 Récemment j'ai étudié plus en profondeur la gestion de la sécurité dans GitHub dans le but de passer la certification
@@ -66,20 +66,20 @@ et l'ajouter au dépôt.
 version: 2
 updates:
   # Enable version updates for npm
-  - package-ecosystem: 'npm'
+  - package-ecosystem: "npm"
     # Look for `package.json` and `lock` files in the `root` directory
-    directory: '/'
+    directory: "/"
     # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: 'daily'
+      interval: "daily"
 
   # Enable version updates for Docker
-  - package-ecosystem: 'docker'
+  - package-ecosystem: "docker"
     # Look for a `Dockerfile` in the `root` directory
-    directory: '/'
+    directory: "/"
     # Check for updates once a week
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
 ```
 
 ## Détection de secrets
@@ -191,15 +191,15 @@ Exemple de configuration yaml :
 - task: AdvancedSecurity-Codeql-Init@1
   inputs:
     language: csharp
-  displayName: 'Advanced Security Initialize CodeQL'
+  displayName: "Advanced Security Initialize CodeQL"
 
 # Build project using Autobuild or your own custom build steps
 - task: AdvancedSecurity-Codeql-Autobuild@1
-  displayName: 'Advanced Security Autobuild'
+  displayName: "Advanced Security Autobuild"
 
 # Run analysis
 - task: AdvancedSecurity-Codeql-Analyze@1
-  displayName: 'Advanced Security Code Scanning'
+  displayName: "Advanced Security Code Scanning"
 ```
 
 Documentation sur l'analyse de code : <https://learn.microsoft.com/fr-fr/azure/devops/repos/security/github-advanced-security-code-scanning?view=azure-devops>

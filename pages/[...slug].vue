@@ -17,27 +17,27 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-import { author, fullName, jobName, siteUrl } from '~/data/SiteData';
+import { useI18n } from "vue-i18n";
+import { author, fullName, jobName, siteUrl } from "~/data/SiteData";
 const { t, locale } = useI18n();
 
 const route = useRoute();
-const currentPath = route.path.startsWith('/en') ? route.path.replace('/en', '') : route.path;
-const [previous, next] = await queryContent().only(['_path', 'title']).sort({ date: -1 }).findSurround(currentPath);
-const { data } = await useAsyncData('home', () => queryContent(currentPath).findOne());
+const currentPath = route.path.startsWith("/en") ? route.path.replace("/en", "") : route.path;
+const [previous, next] = await queryContent().only(["_path", "title"]).sort({ date: -1 }).findSurround(currentPath);
+const { data } = await useAsyncData("home", () => queryContent(currentPath).findOne());
 
 const description = data.value?.description;
 const date = data.value?.date;
 const image = data.value?.image;
 
 const defaultTitle = `${fullName} - ${t(jobName)}`;
-const title = data.value?.title ? [data.value?.title, defaultTitle].join(' | ') : defaultTitle;
+const title = data.value?.title ? [data.value?.title, defaultTitle].join(" | ") : defaultTitle;
 const imageUrl = `${siteUrl}/blog/${image}`;
 
 function notFoundError() {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page not found',
+    statusMessage: "Page not found",
     fatal: true
   });
 }
@@ -46,7 +46,7 @@ useSeoMeta({
   title: title,
   ogTitle: title,
   ogUrl: `${siteUrl}${route.fullPath}`,
-  ogType: 'article',
+  ogType: "article",
   ogLocale: locale,
   ogImage: imageUrl,
   ogImageUrl: imageUrl,
