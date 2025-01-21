@@ -68,7 +68,7 @@
     "sitemap": "8.0.0",
     "stylelint": "16.13.2",
     "stylelint-config-standard-scss": "14.0.0",
-    "typescript-eslint": "8.20.0",
+    "typescript-eslint": "8.21.0",
     "vite-plugin-vuetify": "2.0.4",
     "vuetify": "3.7.6"
   }
