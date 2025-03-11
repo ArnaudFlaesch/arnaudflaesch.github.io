@@ -70,6 +70,6 @@
     "stylelint-config-standard-scss": "14.0.0",
     "typescript-eslint": "8.26.0",
     "vite-plugin-vuetify": "2.1.0",
-    "vuetify": "3.7.15"
+    "vuetify": "3.7.16"
   }
 }
