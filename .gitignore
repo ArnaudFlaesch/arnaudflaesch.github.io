@@ -24,5 +24,4 @@ logs
 !.env.example
 
 .unlighthouse/
-
 cypress/downloads/
