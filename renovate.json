@@ -9,7 +9,7 @@
     },
     {
       "groupName": "nuxt",
-      "matchPackageNames": ["/^nuxt//", "/^@nuxt//","/^@nuxtjs//"]
+      "matchPackageNames": ["/nuxt/", "/^@nuxt//","/^@nuxtjs//"]
     }
   ],
   "schedule": ["on wednesday and friday at 2:00 pm"]
