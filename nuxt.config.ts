@@ -49,11 +49,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/i18n",
     "@nuxt/ui",
-    "@nuxt/content",
     "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+    "@nuxt/content",
     "@vite-pwa/nuxt",
     "nuxt-graphql-client",
-    "@nuxtjs/robots",
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
         // @ts-expect-error
