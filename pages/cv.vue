@@ -61,7 +61,7 @@ import { jobData } from "~/data/WorkData";
 import { hobbiesList } from "~/data/HobbiesData";
 import type { ITranslatableElement } from "~/model/ITranslatableElement";
 import { ref, type Ref } from "vue";
-import { DEFAULT_LOCALE } from "../data/SiteData";
+import { DEFAULT_LOCALE } from "../../PortfolioV2/data/SiteData";
 import { useI18n } from "vue-i18n";
 
 const DEFAULT_NUMBER_OF_JOBS_TO_SHOW = 3;
