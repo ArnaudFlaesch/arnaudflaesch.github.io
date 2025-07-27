@@ -1,7 +1,7 @@
 <template>
   <div id="profile-bio">
     <NuxtLink id="avatar-link" to="/">
-      <NuxtImg id="bio-avatar" :width="400" :height="400" src="/profile-picture.jpg" :alt="author" />
+      <NuxtImg id="bio-avatar" src="/profile-picture.jpg" :alt="author" />
     </NuxtLink>
     <div id="profile">
       <div id="bio">
@@ -59,7 +59,7 @@ const author = fullName;
 
   #bio-avatar {
     height: 100px;
-    width: 100px;
+    width: 105px;
     border-radius: 50%;
     margin: 0 auto;
   }

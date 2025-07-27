@@ -90,6 +90,21 @@ export const certificationsData = [
     ]
   },
   {
+    title: [{ label: "Professional Product Owner 1 & Professional Scrum with Kanban 1", date: new Date(2025, 6, 1) }],
+    certifications: [
+      {
+        name: "Professional Product Owner 1",
+        badgeLink: scrumOrgLink,
+        imagePath: "/certifications/PSPO1.png"
+      },
+      {
+        name: "Professional Scrum with Kanban 1",
+        badgeLink: scrumOrgLink,
+        imagePath: "/certifications/PSK1.png"
+      }
+    ]
+  },
+  {
     title: [{ label: "SAFe 6 Agilist", date: new Date(2024, 4, 16) }],
     imageSize: 115,
     imageHeight: 135,

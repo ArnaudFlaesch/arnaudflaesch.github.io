@@ -17,7 +17,7 @@
         </main>
         <footer>
           <span
-            >© 2024, {{ $t("DEVELOPED.WITH") }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t("ICONS.BY") }} :
+            >© 2025, {{ $t("DEVELOPED.WITH") }} <a href="https://nuxt.com/">Nuxt</a>. {{ $t("ICONS.BY") }} :
             <a href="https://icons8.com/">Icons8</a>.</span
           >
         </footer>
