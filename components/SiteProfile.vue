@@ -1,20 +1,8 @@
 <template>
   <div id="profile-bio">
-    <NuxtLink id="avatar-link" to="/">
-      <NuxtImg id="bio-avatar" :width="400" :height="400" src="/profile-picture.jpg" :alt="author" />
-    </NuxtLink>
+
     <div id="profile">
-      <div id="bio">
-        <div id="work">
-          <v-icon>{{ mdiBriefcase }}</v-icon>
-          {{ $t(jobName) }} <br />
-          {{ $t("AT") }}{{ company }}
-        </div>
-        <div id="location">
-          <v-icon>{{ mdiMapMarker }}</v-icon>
-          {{ city }}
-        </div>
-      </div>
+
       <div id="social-links">
         <NuxtLink
           v-for="socialLink in profileSocialLinks"
@@ -47,77 +35,5 @@ const author = fullName;
 </script>
 
 <style lang="scss">
-#profile-bio {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
 
-  #avatar-link {
-    margin: 0 auto;
-    width: fit-content;
-  }
-
-  #bio-avatar {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-
-  #profile {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2em;
-    margin: 0 auto;
-
-    #bio {
-      justify-content: center;
-      .v-icon {
-        margin-right: 1rem;
-      }
-
-      > * {
-        display: flex;
-        flex-direction: row;
-      }
-
-      @media (width > 700px) {
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.5em;
-        margin-left: 0.3em;
-      }
-    }
-
-    #social-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1em 0.5em;
-      font-size: 0.9rem;
-
-      a {
-        color: unset;
-      }
-
-      .social-link {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        div {
-          height: 35px;
-          width: 35px;
-        }
-
-        img {
-          border-radius: 50%;
-        }
-
-        span {
-          margin-left: 1rem;
-        }
-      }
-    }
-  }
-}
 </style>

@@ -1,4 +1,4 @@
-import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "./../../data/SiteData";
+import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "../../../PortfolioV2/data/SiteData";
 import { serverQueryContent } from "#content/server";
 import RSS from "rss";
 

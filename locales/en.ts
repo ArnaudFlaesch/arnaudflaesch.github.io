@@ -1,22 +1,3 @@
-export const translationEN = {
-  "DEVELOPED.WITH": "Developed with",
-  "ICONS.BY": "Icons by",
-  AT: "at ",
-  "Développeur d'applications": "Software developer",
-  "HOME.LABEL": "Home",
-  "RESUME.LABEL": "Resume",
-  "BLOG.LABEL": "Blog",
-  "PROJECTS.LABEL": "Projects",
-  "CONTACT.LABEL": "Contact",
-  "LINKEDIN.PROFILE": "LinkedIn profile",
-  "GITHUB.PROFILE": "GitHub profile",
-  "SCRUM.ORG.PROFILE": "Scrum.org profile",
-  CERTIFICATIONS: "Certifications",
-  "MEDIUM.PROFILE": "Medium profile",
-  "STACK.OVERFLOW.PROFILE": "Stack Overflow profile",
-  "PAGE.NOT.FOUND.MESSAGE": "The page you're looking for doesn't exist.",
-  "404.NOT.FOUND": "404: Page not found"
-};
 
 export const indexEN = {
   "INDEX.PAGE.TITLE": "Hello !",
@@ -42,24 +23,6 @@ export const projetsEN = {
   "CASHMANAGER.PROJECT.DESCRIPTION": "Personal website.",
   "PORTFOLIO.PROJECT.DESCRIPTION": "Budget-managing application.",
   "LANGUAGES.USED": "Languages and tools used"
-};
-
-export const cvEN = {
-  "CV.PAGE.TITLE": "Resume",
-  "CV.PAGE.DESCRIPTION": "My detailed working experience and education, as well as my technical skills and hobbies.",
-  RESUME: "Resume",
-  "WORK.EXPERIENCE": "Work experience",
-  "DOWNLOAD.RESUME": "Download my resume",
-  "SEE.MORE.EXPERIENCES": "See more experiences",
-  "SEE.LESS.EXPERIENCES": "See less experiences",
-  TODAY: "Today",
-  Frontend: "Frontend",
-  Backend: "Backend",
-  TOOLS: "Tools",
-  EDUCATION: "Education",
-  "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE": "Sustainable IT knowledge certificate",
-  "LANGUAGES.TOOLS": "Languages and tools",
-  HOBBIES: "Hobbies"
 };
 
 export const blogEN = {

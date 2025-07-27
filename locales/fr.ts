@@ -1,23 +1,3 @@
-export const translationFR = {
-  "DEVELOPED.WITH": "Développé avec",
-  "ICONS.BY": "Icônes de",
-  AT: "chez l'",
-  "Développeur d'applications": "Développeur d'applications",
-  "HOME.LABEL": "Accueil",
-  "RESUME.LABEL": "CV",
-  "BLOG.LABEL": "Blog",
-  "PROJECTS.LABEL": "Projets",
-  "CONTACT.LABEL": "Contact",
-  "LINKEDIN.PROFILE": "Profil LinkedIn",
-  "GITHUB.PROFILE": "Profil GitHub",
-  "SCRUM.ORG.PROFILE": "Profil Scrum.org",
-  CERTIFICATIONS: "Certifications",
-  "MEDIUM.PROFILE": "Profil Medium",
-  "STACK.OVERFLOW.PROFILE": "Profil Stack Overflow",
-  "PAGE.NOT.FOUND.MESSAGE": "La page que vous cherchez n'existe pas.",
-  "404.NOT.FOUND": "404: Page non trouvée"
-};
-
 export const indexFR = {
   "INDEX.PAGE.TITLE": "Bonjour !",
   "INDEX.PAGE.DESCRIPTION":
@@ -42,25 +22,6 @@ export const projetsFR = {
   "CASHMANAGER.PROJECT.DESCRIPTION": "Application de gestion de budget.",
   "PORTFOLIO.PROJECT.DESCRIPTION": "Site web personnel.",
   "LANGUAGES.USED": "Langages et outils utilisés"
-};
-
-export const cvFR = {
-  "CV.PAGE.TITLE": "Curriculum Vitae",
-  "CV.PAGE.DESCRIPTION":
-    "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.",
-  RESUME: "Curriculum Vitae",
-  "WORK.EXPERIENCE": "Expériences professionnelles",
-  "DOWNLOAD.RESUME": "Télécharger mon CV",
-  "SEE.MORE.EXPERIENCES": "Voir plus d'expériences",
-  "SEE.LESS.EXPERIENCES": "Voir moins d'expériences",
-  TODAY: "Aujourd'hui",
-  Frontend: "Frontend",
-  Backend: "Backend",
-  TOOLS: "Outils",
-  EDUCATION: "Formation",
-  "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE": "Certificat de connaissances Numérique Responsable",
-  "LANGUAGES.TOOLS": "Langages et technologies",
-  HOBBIES: "Centres d'intérêts"
 };
 
 export const blogFR = {
