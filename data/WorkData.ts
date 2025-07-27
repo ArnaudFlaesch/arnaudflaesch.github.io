@@ -8,9 +8,6 @@ export const jobData: IExperience[] = [
     name: "Institut Pasteur",
     location: "Paris 15ème, France",
     logoPath: "/company-logos/institut-pasteur.svg",
-    description_fr: ["Développeur d'applications chez l'Institut Pasteur à Paris."],
-    description_en: ["Software Developer at Institut Pasteur in Paris."],
-
     description_fr: [
       "Réalisation de projets internes chez la DSI de l'Institut Pasteur.",
       "",
@@ -25,7 +22,7 @@ export const jobData: IExperience[] = [
       "",
       "Participation to the 2024 20km of Paris with the company."
     ],
-    
+
     skills: [],
     website: "https://www.pasteur.fr"
   },

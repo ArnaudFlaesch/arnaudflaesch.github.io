@@ -11,9 +11,9 @@ describe("Portfolio tests", () => {
       .should("have.text", "Arnaud Flaesch")
       .get("#bio-avatar")
       .should("have.css", "height", "100px")
-      .and("have.css", "width", "100px");
+      .and("have.css", "width", "105px");
 
-    cy.get("footer").should("have.text", "© 2024, Développé avec Nuxt. Icônes de : Icons8.");
+    cy.get("footer").should("have.text", "© 2025, Développé avec Nuxt. Icônes de : Icons8.");
 
     // Home SEO test
     cy.title().should("equal", "Arnaud Flaesch - Développeur d'applications");

@@ -6,8 +6,8 @@
   "homepage": "https://arnaudflaesch.github.io",
   "private": true,
   "engines": {
-    "node": "22.x",
-    "npm": "10.x"
+    "node": "24.x",
+    "npm": "11.x"
   },
   "scripts": {
     "dev": "nuxt dev -o",
