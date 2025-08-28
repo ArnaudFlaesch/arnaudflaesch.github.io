@@ -51,7 +51,7 @@
     "@types/node": "22.18.0",
     "cypress": "15.0.0",
     "cypress-multi-reporters": "2.0.5",
-    "eslint": "9.33.0",
+    "eslint": "9.34.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-cypress": "5.1.1",
     "eslint-plugin-vue": "10.4.0",
@@ -68,7 +68,7 @@
     "sitemap": "8.0.0",
     "stylelint": "16.23.1",
     "stylelint-config-standard-scss": "14.0.0",
-    "typescript-eslint": "8.39.1",
+    "typescript-eslint": "8.41.0",
     "vite-plugin-vuetify": "2.1.2",
     "vuetify": "3.9.6"
   }
