@@ -11,14 +11,14 @@ export const jobData: IExperience[] = [
     description_fr: [
       "Réalisation de projets internes chez la DSI de l'Institut Pasteur.",
       "",
-      "Environnement technique : Spring Boot 3, Kotlin, Angular 19 et Postgresql.",
+      "Environnement technique : Spring Boot 3, Kotlin, Angular 20 et Postgresql.",
       "",
       "Participation aux 20km de Paris 2024 avec l'entreprise."
     ],
     description_en: [
       "Development of internal projects at the IT department of the Institut Pasteur.",
       "",
-      "Technical environnement : Spring Boot 3, Kotlin, Angular 19 and Postgresql.",
+      "Technical environnement : Spring Boot 3, Kotlin, Angular 20 and Postgresql.",
       "",
       "Participation to the 2024 20km of Paris with the company."
     ],
