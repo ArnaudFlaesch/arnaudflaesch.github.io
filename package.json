@@ -37,7 +37,7 @@
     "@nuxtjs/robots": "5.5.5",
     "@nuxtjs/seo": "3.2.2",
     "@nuxtjs/sitemap": "7.4.7",
-    "@vite-pwa/nuxt": "1.0.5",
+    "@vite-pwa/nuxt": "1.0.7",
     "date-fns": "4.1.0",
     "nuxt": "3.16.2",
     "nuxt-graphql-client": "0.2.46",
