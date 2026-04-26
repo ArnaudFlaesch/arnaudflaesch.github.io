@@ -58,7 +58,7 @@
     "globals": "17.5.0",
     "markdownlint-cli": "0.47.0",
     "mochawesome": "7.1.4",
-    "mochawesome-merge": "5.1.0",
+    "mochawesome-merge": "5.1.1",
     "mochawesome-report-generator": "6.3.2",
     "nuxt-site-config": "3.2.14",
     "nuxt-site-config-kit": "3.2.14",
