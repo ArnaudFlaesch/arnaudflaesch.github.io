@@ -5,7 +5,7 @@
   "packageRules": [
     {
       "groupName": "eslint-tslint",
-      "matchPackageNames": ["/^eslint/", "/typescript-eslint/"]
+      "matchPackageNames": ["/^eslint/", "/^@eslint/", "/typescript-eslint/"]
     },
     {
       "groupName": "nuxt",
