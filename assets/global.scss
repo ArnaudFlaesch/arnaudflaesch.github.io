@@ -16,7 +16,7 @@ body {
   color: hsl(0deg 0% 0% / 80%);
   font-family: georgia, serif;
   font-weight: normal;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
@@ -214,7 +214,7 @@ select {
 [type="submit"],
 button,
 html [type="button"] {
-  appearance: button;
+  appearance: auto;
 }
 
 [type="button"]::-moz-focus-inner,
@@ -273,7 +273,7 @@ textarea {
 }
 
 ::-webkit-file-upload-button {
-  appearance: button;
+  appearance: auto;
   font: inherit;
 }
 
@@ -357,7 +357,7 @@ pre {
   background: hsl(0deg 0% 0% / 4%);
   border-radius: 3px;
   overflow: auto;
-  word-wrap: normal;
+  overflow-wrap: normal;
   padding: 1.45rem;
 }
 
