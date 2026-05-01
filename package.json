@@ -45,15 +45,15 @@
     "vue-router": "4.6.4"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.4",
+    "@eslint/js": "10.0.1",
     "@mdi/font": "7.4.47",
     "@mdi/js": "7.4.47",
     "@types/node": "24.12.2",
     "cypress": "15.14.2",
     "cypress-multi-reporters": "2.0.5",
-    "eslint": "9.39.4",
+    "eslint": "10.3.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-cypress": "5.3.0",
+    "eslint-plugin-cypress": "6.4.0",
     "eslint-plugin-vue": "10.9.0",
     "globals": "17.6.0",
     "markdownlint-cli": "0.48.0",
