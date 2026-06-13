@@ -32,14 +32,14 @@
   "dependencies": {
     "@nuxt/content": "2.13.4",
     "@nuxt/image": "1.11.0",
-    "@nuxt/ui": "3.3.7",
-    "@nuxtjs/i18n": "9.5.6",
+    "@nuxt/ui": "4.8.2",
+    "@nuxtjs/i18n": "10.4.0",
     "@nuxtjs/robots": "5.7.1",
     "@nuxtjs/seo": "5.2.1",
     "@nuxtjs/sitemap": "7.6.0",
     "@vite-pwa/nuxt": "1.1.1",
     "date-fns": "4.4.0",
-    "nuxt": "3.16.2",
+    "nuxt": "3.21.8",
     "nuxt-graphql-client": "0.2.46",
     "vue": "3.5.35",
     "vue-router": "4.6.4"
