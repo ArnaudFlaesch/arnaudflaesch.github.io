@@ -56,7 +56,7 @@
     "eslint-plugin-cypress": "6.4.2",
     "eslint-plugin-vue": "10.9.2",
     "globals": "17.7.0",
-    "markdownlint-cli": "0.49.0",
+    "markdownlint-cli": "0.49.1",
     "mochawesome": "7.1.4",
     "mochawesome-merge": "5.1.1",
     "mochawesome-report-generator": "6.3.2",
