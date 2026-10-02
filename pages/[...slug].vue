@@ -1,46 +1,52 @@
 <template>
   <div class="layout-container">
     <NuxtLayout :blogView="true">
-      <ContentDoc>
-        <template #default="{ doc }">
-          <TemplateBlogPost :doc="doc" :previous="previous" :next="next" />
-        </template>
-        <template #not-found>
-          <ContentDoc :path="route.path.replace('/en', '')">
-            <template #default="{ doc }"><TemplateBlogPost :doc="doc" :previous="previous" :next="next" /></template>
-            <template #not-found> {{ notFoundError() }} </template>
-          </ContentDoc>
-        </template>
-      </ContentDoc>
+      <TemplateBlogPost v-if="doc" :doc="doc" :previous="previous" :next="next" />
     </NuxtLayout>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from "vue-i18n";
 import { author, fullName, jobName, siteUrl } from "~/data/SiteData";
+
 const { t, locale } = useI18n();
-
 const route = useRoute();
-const currentPath = route.path.startsWith("/en") ? route.path.replace("/en", "") : route.path;
-const [previous, next] = await queryContent().only(["_path", "title"]).sort({ date: -1 }).findSurround(currentPath);
-const { data } = await useAsyncData("home", () => queryContent(currentPath).findOne());
 
-const description = data.value?.description;
-const date = data.value?.date;
-const image = data.value?.image;
+function toContentPath(path: string): string {
+  const withoutLocale = path.replace(/^\/en(?=\/|$)/, "") || "/";
+  return withoutLocale.replace(/\/+$/, "") || "/";
+}
 
-const defaultTitle = `${fullName} - ${t(jobName)}`;
-const title = data.value?.title ? [data.value?.title, defaultTitle].join(" | ") : defaultTitle;
-const imageUrl = `${siteUrl}/blog/${image}`;
+const currentPath = toContentPath(route.path);
 
-function notFoundError() {
+const { data: doc } = await useAsyncData(`blog-${currentPath}`, () =>
+  queryCollection("blog").path(currentPath).first()
+);
+
+if (!doc.value) {
   throw createError({
     statusCode: 404,
     statusMessage: "Page not found",
     fatal: true
   });
 }
+
+const { data: surround } = await useAsyncData(`blog-surround-${currentPath}`, () =>
+  queryCollectionItemSurroundings("blog", currentPath, {
+    fields: ["title", "path"]
+  }).order("date", "DESC")
+);
+
+const previous = computed(() => surround.value?.[0] ?? null);
+const next = computed(() => surround.value?.[1] ?? null);
+
+const description = doc.value.description;
+const date = doc.value.date;
+const image = doc.value.image;
+
+const defaultTitle = `${fullName} - ${t(jobName)}`;
+const title = doc.value.title ? [doc.value.title, defaultTitle].join(" | ") : defaultTitle;
+const imageUrl = `${siteUrl}/blog/${image}`;
 
 useSeoMeta({
   title: title,
@@ -50,10 +56,6 @@ useSeoMeta({
   ogLocale: locale,
   ogImage: imageUrl,
   ogImageUrl: imageUrl,
-  //   twitterCard: 'summary' | 'summary_large_image' | 'app' | 'player'
-  //twitterTitle: string
-  //   twitterDescription: string
-  // twitterImage: string | Array ab
   description: description,
   ogDescription: description,
   articlePublishedTime: date,

@@ -1,15 +1,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
-import {
-  author,
-  DEFAULT_LOCALE,
-  locales,
-  pwaShortName,
-  rssFeedFile,
-  siteName,
-  siteUrl,
-  title
-} from "./data/SiteData";
+import { author, DEFAULT_LOCALE, pwaShortName, rssFeedFile, siteName, siteUrl, title } from "./data/SiteData";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
@@ -45,11 +36,6 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/manifest.webmanifest" }
       ]
     }
-  },
-  content: {
-    contentHead: false,
-    locales: locales,
-    defaultLocale: DEFAULT_LOCALE
   },
   build: {
     transpile: ["vuetify"]

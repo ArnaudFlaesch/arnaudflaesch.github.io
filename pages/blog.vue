@@ -7,19 +7,16 @@
           <v-icon id="rss-feed-icon">{{ mdiRss }}</v-icon></a
         >
       </div>
-      <ContentList v-slot="{ list }" :query="query">
-        <ol id="articles-list">
-          <li v-for="article in list" :key="article._path">
-            <Post :post="article" />
-          </li>
-        </ol>
-      </ContentList>
+      <ol id="articles-list">
+        <li v-for="article in articles ?? []" :key="article.path">
+          <Post :post="article" />
+        </li>
+      </ol>
     </NuxtLayout>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 import Post from "~/components/Post.vue";
 import { mdiRss } from "@mdi/js";
 import { rssFeedFile } from "~/data/SiteData";
@@ -27,7 +24,9 @@ import { rssFeedFile } from "~/data/SiteData";
 const titleCode = "BLOG.PAGE.TITLE";
 const descriptionCode = "BLOG.PAGE.DESCRIPTION";
 
-const query: QueryBuilderParams = { path: "/blog", limit: 5, sort: [{ date: -1 }] };
+const { data: articles } = await useAsyncData("blog-articles", () =>
+  queryCollection("blog").order("date", "DESC").limit(5).all()
+);
 </script>
 
 <style lang="scss" scoped>

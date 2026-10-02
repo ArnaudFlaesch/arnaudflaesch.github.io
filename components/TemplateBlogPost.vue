@@ -48,13 +48,13 @@
     </footer>
   </article>
 
-  <nav className="blog-post-nav">
+  <nav class="blog-post-nav">
     <ul>
       <li>
-        <NuxtLink v-if="previous?._path" :to="localePath(previous._path)" rel="prev"> ← {{ previous.title }} </NuxtLink>
+        <NuxtLink v-if="previous?.path" :to="localePath(previous.path)" rel="prev"> ← {{ previous.title }} </NuxtLink>
       </li>
       <li>
-        <NuxtLink v-if="next?._path" :to="localePath(next._path)" rel="next"> {{ next.title }} → </NuxtLink>
+        <NuxtLink v-if="next?.path" :to="localePath(next.path)" rel="next"> {{ next.title }} → </NuxtLink>
       </li>
     </ul>
   </nav>
@@ -64,24 +64,13 @@
 import { format } from "date-fns";
 import { mdiFacebook, mdiTwitter, mdiLinkedin } from "@mdi/js";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
-import type { ParsedContent } from "@nuxt/content";
+import type { Collections, ContentNavigationItem } from "@nuxt/content";
 
-defineProps({
-  doc: {
-    type: Object as () => ParsedContent,
-    required: true
-  },
-  previous: {
-    type: Object as () => Pick<ParsedContent, "title" | "_path">,
-    required: false,
-    default: null
-  },
-  next: {
-    type: Object as () => Pick<ParsedContent, "title" | "_path">,
-    required: false,
-    default: null
-  }
-});
+defineProps<{
+  doc: Collections["blog"];
+  previous?: ContentNavigationItem | null;
+  next?: ContentNavigationItem | null;
+}>();
 
 const { locale } = useI18n();
 const localePath = useLocalePath();

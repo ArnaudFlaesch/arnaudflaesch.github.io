@@ -26,20 +26,17 @@
           <a href="/blog">{{ $t("RECENT.ARTICLES") }}</a>
         </h2>
 
-        <ContentList v-slot="{ list }" :query="query">
-          <ol>
-            <li v-for="article in list" :key="article._path">
-              <Post :post="article" />
-            </li>
-          </ol>
-        </ContentList>
+        <ol>
+          <li v-for="article in articles ?? []" :key="article.path">
+            <Post :post="article" />
+          </li>
+        </ol>
       </div>
     </NuxtLayout>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 import Post from "~/components/Post.vue";
 import { rssFeedFile } from "~/data/SiteData";
 
@@ -47,7 +44,9 @@ const localePath = useLocalePath();
 const titleCode = "INDEX.PAGE.TITLE";
 const descriptionCode = "INDEX.PAGE.DESCRIPTION";
 
-const query: QueryBuilderParams = { path: "/blog", limit: 5, sort: [{ date: -1 }] };
+const { data: articles } = await useAsyncData("recent-articles", () =>
+  queryCollection("blog").order("date", "DESC").limit(5).all()
+);
 </script>
 
 <style lang="scss" scoped>

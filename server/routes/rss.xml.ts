@@ -1,5 +1,4 @@
 import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "./../../data/SiteData";
-import { serverQueryContent } from "#content/server";
 import RSS from "rss";
 
 export default defineEventHandler(async (event) => {
@@ -11,13 +10,12 @@ export default defineEventHandler(async (event) => {
     feed_url: `${rssFeedUrl}`,
     image_url: `${siteUrl}${defaultImageUrl}`
   });
-  const docs = await serverQueryContent(event).sort({ date: -1 }).where({ _partial: false }).find();
+  const blogPosts = await queryCollection(event, "blog").order("date", "DESC").all();
 
-  const blogPosts = docs.filter((doc) => doc?._path?.includes("/blog"));
   for (const doc of blogPosts) {
     feed.item({
       title: doc.title ?? "-",
-      url: `${siteUrl}${doc._path}`,
+      url: `${siteUrl}${doc.path}`,
       date: doc.date,
       description: doc.description
     });

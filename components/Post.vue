@@ -1,6 +1,6 @@
 <template>
   <article class="post-list-item" itemScope itemType="https://schema.org/Article">
-    <NuxtLink :to="localePath(props.post._path ?? '/')">
+    <NuxtLink :to="localePath(props.post.path ?? '/')">
       <header>
         <h3>
           <span itemProp="headline">{{ props.post.title }}</span>
@@ -20,18 +20,15 @@
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import { format } from "date-fns";
-import type { ParsedContent } from "@nuxt/content";
+import type { Collections } from "@nuxt/content";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
 
 const localePath = useLocalePath();
 const { locale } = useI18n();
 
-const props = defineProps({
-  post: {
-    type: Object as () => ParsedContent,
-    required: true
-  }
-});
+const props = defineProps<{
+  post: Collections["blog"];
+}>();
 
 function formatPublicationDate(date: string) {
   return format(date, "dd MMMM, yyyy", {
