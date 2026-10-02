@@ -48,7 +48,7 @@ jobs:
           npm run build
 
       - name: Tests
-        uses: cypress-io/github-action@v7.4.3
+        uses: cypress-io/github-action@v7.4.6
         id: e2e-tests
         with:
           browser: firefox
@@ -73,7 +73,7 @@ jobs:
           path: cypress/reports/html
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v8.2
+        uses: SonarSource/sonarqube-scan-action@v8.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
