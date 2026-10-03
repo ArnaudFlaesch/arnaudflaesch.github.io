@@ -1,4 +1,6 @@
-# Nuxt dev/build outputs
+# Next.js and build outputs
+.next
+out
 .output
 .data
 .nuxt
@@ -19,9 +21,10 @@ logs
 .idea
 
 # Local env files
-.env
 .env.*
 !.env.example
 
 .unlighthouse/
 cypress/downloads/
+
+styleLintReport.json

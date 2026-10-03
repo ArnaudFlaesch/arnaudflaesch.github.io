@@ -1,3 +1,6 @@
+@use "colors.scss" as *;
+@use "components.scss" as *;
+
 html {
   text-size-adjust: 100%;
   font:
@@ -25,6 +28,7 @@ body {
 
 html,
 body,
+#__next,
 #__nuxt,
 .v-application,
 .v-application__wrap,
