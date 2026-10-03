@@ -4,5 +4,5 @@
     "selector-id-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
   },
-  "ignoreFiles": [".nuxt/**", "dist/**", ".output/**"]
+  "ignoreFiles": [".nuxt/**", ".next/**", "dist/**", "out/**", ".output/**"]
 }

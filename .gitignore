@@ -1,4 +1,6 @@
-# Nuxt dev/build outputs
+# Next.js and build outputs
+.next
+out
 .output
 .data
 .nuxt
@@ -24,3 +26,5 @@ logs
 
 .unlighthouse/
 cypress/downloads/
+
+styleLintReport.json

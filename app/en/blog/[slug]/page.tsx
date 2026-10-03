@@ -1,0 +1,58 @@
+import React from "react";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import DefaultLayout from "~/components/DefaultLayout";
+import TemplateBlogPost from "~/components/TemplateBlogPost";
+import { getAllPosts, getPostBySlug } from "~/utils/content";
+import { buildMetadata } from "~/utils/seo";
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug
+  }));
+}
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { post } = getPostBySlug(slug);
+  if (!post) {
+    return {};
+  }
+
+  return buildMetadata({
+    customTitle: post.title,
+    customDescription: post.description,
+    path: `/en/blog/${post.slug}/`,
+    locale: "en",
+    type: "article",
+    image: `/blog/${post.image}`,
+    publishedTime: post.date,
+    modifiedTime: post.date
+  });
+}
+
+export default async function BlogPostPageEN({
+  params
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const { post, previous, next } = getPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    <div className="layout-container">
+      <DefaultLayout blogView={true} locale="en">
+        <TemplateBlogPost doc={post} previous={previous} next={next} locale="en" />
+      </DefaultLayout>
+    </div>
+  );
+}

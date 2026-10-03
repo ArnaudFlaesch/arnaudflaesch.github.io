@@ -1,0 +1,835 @@
+@use "colors.scss" as *;
+
+/* stylelint-disable no-descending-specificity */
+
+/* ==========================================================================
+   layouts/default.vue
+   ========================================================================== */
+
+#site-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  #fixed-header {
+    position: sticky;
+    top: 0;
+    flex: 0 0 4.5rem;
+    z-index: 9999;
+    background-color: $header-background-color;
+  }
+
+  #site-body {
+    display: flex;
+    padding: 2em 5em;
+    flex: 1 0 calc(100% - 4.5rem);
+    overflow-y: auto;
+
+    #profile-container {
+      flex: 0 1 20%;
+    }
+
+    #site-page {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 80%;
+      padding: 0 5%;
+      justify-content: space-between;
+
+      &.blog-view {
+        max-width: 80%;
+      }
+
+      #site-content {
+        display: flex;
+        flex-direction: column;
+
+        #page-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: first baseline;
+        }
+
+        #page-description {
+          margin-top: 1em;
+          margin-bottom: 3em;
+        }
+      }
+
+      footer {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@media (width <= 700px) {
+  #site-container {
+    #site-body {
+      flex-direction: column;
+      padding: 1em 1em 2em;
+
+      #profile-container {
+        flex-basis: 10%;
+
+        &.blog-view {
+          display: none;
+        }
+
+        #profile {
+          gap: 0.5em;
+          display: grid;
+          justify-items: center;
+
+          #bio,
+          .social-link > span {
+            display: none;
+          }
+
+          #social-links {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1em;
+          }
+        }
+      }
+
+      #site-page {
+        margin-top: 2em;
+        padding: 0.2em;
+        max-width: 100%;
+        flex-basis: 90%;
+
+        &.blog-view {
+          max-width: 100%;
+        }
+
+        #site-content {
+          padding: 0 1em;
+
+          #page-header {
+            margin-top: 0;
+          }
+
+          #page-description {
+            margin: 0.5em 0 2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   components/Bio.vue
+   ========================================================================== */
+
+#bio {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8em;
+
+  #social-links-bio {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+
+    img {
+      height: 30px;
+    }
+  }
+}
+
+/* ==========================================================================
+   components/Certifications.vue
+   ========================================================================== */
+
+#certifications-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+.certifications-logos {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 1em;
+  justify-content: space-evenly;
+
+  @media (width <= 1050px) {
+    i {
+      max-width: 330px;
+    }
+  }
+
+  > * {
+    place-content: center;
+    align-items: center;
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   components/DetailBlock.vue
+   ========================================================================== */
+
+.detail-block {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid $detail-block-border-color;
+  background-color: #a8c9d4;
+
+  .block-title,
+  .detail-info {
+    padding: 10px;
+  }
+
+  .block-title {
+    flex-basis: 25%;
+    border-right: 1px solid $detail-block-border-color;
+    background-color: #96c5d4;
+    display: flex;
+    flex-direction: column;
+
+    h4 + br + h4 {
+      margin-top: 0.5em;
+    }
+
+    > * {
+      text-align: center;
+      margin: auto;
+    }
+  }
+
+  .detail-info {
+    flex-basis: 75%;
+    margin: auto;
+  }
+}
+
+@media (width <= 850px) {
+  .detail-block {
+    flex-direction: column;
+
+    .block-title {
+      border-bottom: 1px solid $detail-block-border-color;
+      border-right: none;
+    }
+  }
+}
+
+/* ==========================================================================
+   components/Experience.vue
+   ========================================================================== */
+
+.detail-info {
+  margin: 0 !important;
+}
+
+.job-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  place-items: center;
+  row-gap: 1.5em;
+  height: 100%;
+  width: 100%;
+
+  .job-period {
+    display: flex;
+    align-items: center;
+  }
+
+  .job-name {
+    a {
+      display: flex;
+      text-decoration: none;
+    }
+
+    img {
+      max-height: 80px;
+      max-width: 160px;
+    }
+  }
+
+  .job-period,
+  .job-location {
+    font-size: small;
+    font-weight: bold;
+  }
+}
+
+.job-details-content {
+  h3 {
+    text-align: center;
+  }
+}
+
+@media (width < 850px) {
+  .job-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.4em;
+
+    .job-period {
+      flex-direction: column;
+    }
+  }
+}
+
+/* ==========================================================================
+   components/Post.vue
+   ========================================================================== */
+
+.post-list-item {
+  margin: 2rem 0;
+
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    /* stylelint-disable */
+    font-size: 1.728rem;
+    /* stylelint-enable */
+    color: #005b99;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  header {
+    margin-bottom: 1rem;
+  }
+
+  .article-preview {
+    .blog-thumbnail {
+      max-height: 300px;
+      max-width: 300px;
+      border-radius: 2%;
+    }
+
+    @media (width > 700px) {
+      display: flex;
+      flex-direction: row;
+      column-gap: 1em;
+
+      .description {
+        max-width: 25em;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   components/RepositoryWidget.vue
+   ========================================================================== */
+
+.repository-widget-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+
+  .repository-widget-title {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .technical-stack-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+    margin: 0.5em 0;
+
+    .technical-stack {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1em;
+
+      .languages-container {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        .language-edge {
+          height: 1.5em;
+        }
+
+        :first-child {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+        }
+
+        :last-child {
+          border-top-right-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+        }
+      }
+
+      .repository-icons {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.2em 0.8em;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   components/SiteHeader.vue
+   ========================================================================== */
+
+#portfolio-header {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+  padding: 0 3em;
+  column-gap: 1em;
+
+  svg {
+    width: 30px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+    color: $header-text-color;
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  h1 {
+    font-size: x-large;
+    margin: auto 0 auto 2em;
+    flex: 2 2 40%;
+
+    @media (width <= 1150px) and (width >= 700px) {
+      flex: 1 2 20%;
+      margin: unset;
+    }
+  }
+
+  #right-navbar {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 70%;
+    height: 100%;
+
+    @media (width >= 950px) {
+      flex: 2 1 60%;
+      column-gap: 2.2em;
+    }
+
+    #url-list {
+      height: 100%;
+      display: flex;
+      flex-flow: row;
+      flex: 1 1 50%;
+      flex-wrap: wrap;
+
+      > a {
+        display: flex;
+        align-items: center;
+        padding: 0 0.5em;
+        flex: 1;
+        border-radius: 2%;
+
+        @media (width >= 950px) {
+          justify-content: center;
+        }
+
+        svg {
+          margin-right: 0.5em;
+        }
+
+        &.active {
+          background-color: #8bb3cc;
+        }
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+
+    #switch-language {
+      margin: auto 0;
+
+      img {
+        min-width: 100%;
+        min-height: 2em;
+      }
+    }
+  }
+
+  @media (width <= 700px) {
+    padding: 0 0.5em;
+    column-gap: 0.5em;
+
+    h1 {
+      flex: 1 2 20%;
+      margin-left: 0.5em;
+    }
+
+    #right-navbar {
+      flex: 2 1 80%;
+
+      #url-list {
+        column-gap: 0.2em;
+
+        svg {
+          height: 2em;
+          width: 1.5em;
+        }
+
+        > a {
+          column-gap: 0.2em;
+          padding: 0;
+
+          svg {
+            height: 2em;
+            width: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   components/SiteProfile.vue
+   ========================================================================== */
+
+#profile-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+
+  #avatar-link {
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  #bio-avatar {
+    height: 100px;
+    width: 105px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  #profile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+    margin: 0 auto;
+
+    #bio {
+      justify-content: center;
+
+      .v-icon {
+        margin-right: 1rem;
+      }
+
+      > * {
+        display: flex;
+        flex-direction: row;
+      }
+
+      @media (width > 700px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5em;
+        margin-left: 0.3em;
+      }
+    }
+
+    #social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1em 0.5em;
+      font-size: 0.9rem;
+
+      a {
+        color: unset;
+      }
+
+      .social-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        div {
+          height: 35px;
+          width: 35px;
+        }
+
+        img {
+          border-radius: 50%;
+        }
+
+        span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   components/Skills.vue
+   ========================================================================== */
+
+#skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  .skill-category-title {
+    margin: auto;
+  }
+
+  .detail-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+}
+
+/* ==========================================================================
+   components/TemplateBlogPost.vue
+   ========================================================================== */
+
+.blog-post {
+  .article-illustration {
+    margin: 1em auto 0.5em;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  img {
+    display: flex;
+    margin: 0.2em auto;
+  }
+
+  img + em {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #4b4545;
+    margin-top: 0.2em;
+    width: 100%;
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  .blog-post-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .share-article-container {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      flex: 0 1 60%;
+      align-items: baseline;
+      margin-right: 1em;
+
+      #share-buttons {
+        display: flex;
+        flex-direction: row;
+      }
+
+      svg {
+        height: 37px;
+        width: 37px;
+      }
+    }
+  }
+}
+
+.blog-post-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+@media (width >= 950px) {
+  article {
+    img {
+      max-width: 600px;
+      max-height: 500px;
+    }
+  }
+}
+
+@media (width<= 600px) {
+  .blog-post {
+    .blog-post-footer {
+      .share-article-container {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   pages/blog.vue
+   ========================================================================== */
+
+#rss-link-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  align-items: center;
+
+  #rss-feed-icon {
+    color: white;
+    background-color: orange;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+  }
+}
+
+#articles-list {
+  list-style-type: none;
+}
+
+/* ==========================================================================
+   pages/contact.vue
+   ========================================================================== */
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  .v-field {
+    background-color: #fff;
+  }
+
+  #contact-informations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 3em;
+  }
+
+  .form-field {
+    flex: 1;
+  }
+
+  #submit-button {
+    margin: 0 auto;
+  }
+}
+
+@media (width <= 700px) {
+  #contact-form {
+    width: 100%;
+
+    #contact-informations {
+      flex-direction: column;
+      row-gap: 1em;
+    }
+  }
+}
+
+/* ==========================================================================
+   pages/cv.vue
+   ========================================================================== */
+
+#cv-page {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+
+  #jobs-header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+
+  .cv-button {
+    margin: 0 auto;
+  }
+
+  #job-list,
+  #formation-list,
+  #hobbies-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+}
+
+/* ==========================================================================
+   pages/index.vue
+   ========================================================================== */
+
+#home-page {
+  #site-links {
+    ul {
+      list-style-type: disc;
+    }
+
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+  }
+
+  #blog-title {
+    margin-top: 2em;
+
+    a {
+      color: black;
+    }
+  }
+
+  ol {
+    list-style-type: none;
+  }
+}
+
+/* ==========================================================================
+   pages/projets.vue
+   ========================================================================== */
+
+#projects-list {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 3em;
+
+  > * {
+    flex-basis: calc(50% - 1.5em);
+    padding: 10px;
+    box-shadow: 0 0 5px black;
+    border-radius: 1%;
+
+    @media (width <= 850px) {
+      flex-basis: 100%;
+    }
+  }
+}
+

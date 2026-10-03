@@ -38,7 +38,7 @@ jobs:
         run: |
           npm run lint:styles
           npm run lint:styles:report
-        # npm run eslint
+          npm run eslint
 
       - name: Build
         env:
@@ -84,13 +84,13 @@ jobs:
         if: success() && github.ref_name == 'master'
         run: |
           npm run clean
-          npx nuxt generate --preset github_pages
+          STATIC_EXPORT=true npm run build
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v5
         if: success() && github.ref_name == 'master'
         with:
-          path: .output/public
+          path: out
 
   deploy:
     permissions:
