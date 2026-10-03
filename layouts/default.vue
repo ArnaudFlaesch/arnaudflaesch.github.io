@@ -29,7 +29,6 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
 import { DEFAULT_LOCALE, defaultImageUrl, fullName, jobName, siteUrl } from "~/data/SiteData";
-const localePath = useLocalePath();
 const route = useRoute();
 const { titleCode, descriptionCode, blogView }: { titleCode: string; descriptionCode: string; blogView?: string } =
   useAttrs();

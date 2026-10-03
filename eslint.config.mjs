@@ -1,7 +1,7 @@
 import globals from "globals";
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
-import pluginCypress from "eslint-plugin-cypress/flat";
+import pluginCypress from "eslint-plugin-cypress";
 import eslintConfigPrettier from "eslint-config-prettier";
 import pluginVue from "eslint-plugin-vue";
 
@@ -13,6 +13,11 @@ export default [
   ...pluginVue.configs["flat/recommended"],
   pluginCypress.configs.recommended,
   eslintConfigPrettier,
+  {
+    rules: {
+      "no-undef": "off"
+    }
+  },
   {
     files: ["*.vue", "**/*.vue"],
     languageOptions: {

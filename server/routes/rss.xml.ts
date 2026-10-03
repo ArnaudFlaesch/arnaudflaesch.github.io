@@ -1,4 +1,4 @@
-import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "./../../data/SiteData";
+import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "~/data/SiteData";
 import RSS from "rss";
 
 export default defineEventHandler(async (event) => {
