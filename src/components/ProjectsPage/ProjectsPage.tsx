@@ -1,9 +1,9 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
 import RepositoryWidget from "~/components/RepositoryWidget/RepositoryWidget";
 import { projectsInfo } from "~/data/ProjectsData";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { IRepository } from "~/model/IRepository";
+import { t } from "~/utils/i18n";
 import "./ProjectsPage.scss";
 
 interface ProjectsPageProps {
@@ -12,11 +12,10 @@ interface ProjectsPageProps {
 }
 
 export default function ProjectsPage({ projectsData, locale = DEFAULT_LOCALE }: ProjectsPageProps) {
-  const titleCode = "PROJECTS.PAGE.TITLE";
-  const descriptionCode = "PROJECTS.PAGE.DESCRIPTION";
-
   return (
-    <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
+    <>
+      <h1 id="page-header">{t("PROJECTS.PAGE.TITLE", locale)}</h1>
+      <div id="page-description">{t("PROJECTS.PAGE.DESCRIPTION", locale)}</div>
       <div id="projects-list">
         {projectsData.map((repository, index) => (
           <RepositoryWidget
@@ -28,6 +27,6 @@ export default function ProjectsPage({ projectsData, locale = DEFAULT_LOCALE }: 
           />
         ))}
       </div>
-    </DefaultLayout>
+    </>
   );
 }

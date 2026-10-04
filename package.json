@@ -32,7 +32,7 @@
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "9.4.0",
     "@mui/material": "9.4.0",
-    "date-fns": "4.1.0",
+    "date-fns": "4.4.0",
     "gray-matter": "4.0.3",
     "marked": "15.0.7",
     "next": "15.2.0",

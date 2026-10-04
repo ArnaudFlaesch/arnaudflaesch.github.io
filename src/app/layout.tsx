@@ -1,4 +1,5 @@
 import React from "react";
+import SiteLayout from "~/components/SiteLayout/SiteLayout";
 import "~/assets/global.scss";
 import { buildMetadata } from "~/utils/seo";
 
@@ -10,7 +11,9 @@ export const metadata = buildMetadata({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <SiteLayout>{children}</SiteLayout>
+      </body>
     </html>
   );
 }

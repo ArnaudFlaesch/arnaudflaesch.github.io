@@ -1,15 +1,14 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
 import ContactForm from "~/components/ContactForm/ContactForm";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
+import { t } from "~/utils/i18n";
 
 export default function ContactPage({ locale = DEFAULT_LOCALE }: { locale?: string }) {
-  const titleCode = "CONTACT.PAGE.TITLE";
-  const descriptionCode = "CONTACT.PAGE.DESCRIPTION";
-
   return (
-    <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
+    <>
+      <h1 id="page-header">{t("CONTACT.PAGE.TITLE", locale)}</h1>
+      <div id="page-description">{t("CONTACT.PAGE.DESCRIPTION", locale)}</div>
       <ContactForm locale={locale} />
-    </DefaultLayout>
+    </>
   );
 }

@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: process.env.STATIC_EXPORT === "true" ? "export" : undefined,
   sassOptions: {
-    includePaths: [path.join(__dirname, "assets")],
+    includePaths: [path.join(__dirname, "src/assets"), path.join(__dirname, "src")],
     additionalData: `@use "colors.scss" as *;`
   }
 };

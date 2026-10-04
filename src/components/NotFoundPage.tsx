@@ -1,5 +1,4 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
 import { DEFAULT_LOCALE, fullName, jobName } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
 
@@ -11,9 +10,9 @@ export default function NotFoundPage({ locale = DEFAULT_LOCALE }: { locale?: str
   return (
     <>
       <title>{pageTitle}</title>
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <div />
-      </DefaultLayout>
+      <h1 id="page-header">{t(titleCode, locale)}</h1>
+      <div id="page-description">{t(descriptionCode, locale)}</div>
+      <div />
     </>
   );
 }

@@ -17,15 +17,9 @@ export async function GET() {
     "/en/contact"
   ];
 
-  const postUrls = posts.flatMap((post) => [
-    `${siteUrl}${post.path}`,
-    `${siteUrl}/en${post.path}`
-  ]);
+  const postUrls = posts.flatMap((post) => [`${siteUrl}${post.path}`, `${siteUrl}/en${post.path}`]);
 
-  const allUrls = [
-    ...staticRoutes.map((route) => `${siteUrl}${route}`),
-    ...postUrls
-  ];
+  const allUrls = [...staticRoutes.map((route) => `${siteUrl}${route}`), ...postUrls];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
