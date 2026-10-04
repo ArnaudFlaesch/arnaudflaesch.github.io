@@ -8,10 +8,8 @@ export default function ContactPage({ locale = DEFAULT_LOCALE }: { locale?: stri
   const descriptionCode = "CONTACT.PAGE.DESCRIPTION";
 
   return (
-    <div className="layout-container">
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <ContactForm locale={locale} />
-      </DefaultLayout>
-    </div>
+    <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
+      <ContactForm locale={locale} />
+    </DefaultLayout>
   );
 }

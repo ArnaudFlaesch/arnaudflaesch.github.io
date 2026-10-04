@@ -15,20 +15,18 @@ export default function ProjectsPage({ projectsData, locale = DEFAULT_LOCALE }: 
   const descriptionCode = "PROJECTS.PAGE.DESCRIPTION";
 
   return (
-    <div className="layout-container">
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <div id="projects-list">
-          {projectsData.map((repository, index) => (
-            <RepositoryWidget
-              key={repository.name}
-              description={projectsInfo[index].description}
-              repoIcons={projectsInfo[index].repoIcons}
-              repositoryData={repository}
-              locale={locale}
-            />
-          ))}
-        </div>
-      </DefaultLayout>
-    </div>
+    <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
+      <div id="projects-list">
+        {projectsData.map((repository, index) => (
+          <RepositoryWidget
+            key={repository.name}
+            description={projectsInfo[index].description}
+            repoIcons={projectsInfo[index].repoIcons}
+            repositoryData={repository}
+            locale={locale}
+          />
+        ))}
+      </div>
+    </DefaultLayout>
   );
 }

@@ -13,10 +13,8 @@ interface BlogPostPageProps {
 
 export default function BlogPostPage({ doc, previous, next, locale = DEFAULT_LOCALE }: BlogPostPageProps) {
   return (
-    <div className="layout-container">
-      <DefaultLayout blogView={true} locale={locale}>
-        <TemplateBlogPost doc={doc} previous={previous} next={next} locale={locale} />
-      </DefaultLayout>
-    </div>
+    <DefaultLayout blogView={true} locale={locale}>
+      <TemplateBlogPost doc={doc} previous={previous} next={next} locale={locale} />
+    </DefaultLayout>
   );
 }

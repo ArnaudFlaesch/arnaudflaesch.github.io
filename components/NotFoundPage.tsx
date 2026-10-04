@@ -9,11 +9,11 @@ export default function NotFoundPage({ locale = DEFAULT_LOCALE }: { locale?: str
   const pageTitle = `${t(titleCode, locale)} | ${fullName} - ${t(jobName, locale)}`;
 
   return (
-    <div className="layout-container">
+    <>
       <title>{pageTitle}</title>
       <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
         <div />
       </DefaultLayout>
-    </div>
+    </>
   );
 }

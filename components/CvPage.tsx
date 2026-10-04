@@ -8,10 +8,8 @@ export default function CvPage({ locale = DEFAULT_LOCALE }: { locale?: string })
   const descriptionCode = "CV.PAGE.DESCRIPTION";
 
   return (
-    <div className="layout-container">
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <CvContent locale={locale} />
-      </DefaultLayout>
-    </div>
+    <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
+      <CvContent locale={locale} />
+    </DefaultLayout>
   );
 }
