@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsPage from "~/components/ProjectsPage";
+import ProjectsPage from "~/components/ProjectsPage/ProjectsPage";
 import { projectsInfo } from "~/data/ProjectsData";
 import { fetchProjectData } from "~/utils/github";
 import { buildMetadata } from "~/utils/seo";

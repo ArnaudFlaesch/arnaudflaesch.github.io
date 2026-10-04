@@ -1,24 +1,25 @@
-import React from "react";
-import SiteHeader from "~/components/SiteHeader";
-import SiteProfile from "~/components/SiteProfile";
+import React, { ReactNode } from "react";
+import SiteHeader from "~/components/SiteHeader/SiteHeader";
+import SiteProfile from "~/components/SiteProfile/SiteProfile";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./DefaultLayout.scss";
 
 interface DefaultLayoutProps {
-  children: React.ReactNode;
+  titleHeader?: string;
   titleCode?: string;
-  titleHeader?: React.ReactNode;
   descriptionCode?: string;
   blogView?: boolean;
+  children: ReactNode;
   locale?: string;
 }
 
 export default function DefaultLayout({
-  children,
-  titleCode,
   titleHeader,
+  titleCode,
   descriptionCode,
   blogView = false,
+  children,
   locale = DEFAULT_LOCALE
 }: DefaultLayoutProps) {
   return (

@@ -1,16 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import Experience from "~/components/Experience";
-import Certifications from "~/components/Certifications";
-import Skills from "~/components/Skills";
-import DetailBlock from "~/components/DetailBlock";
+import Experience from "~/components/Experience/Experience";
+import Certifications from "~/components/Certifications/Certifications";
+import Skills from "~/components/Skills/Skills";
+import DetailBlock from "~/components/DetailBlock/DetailBlock";
 import { formationData } from "~/data/EducationData";
 import { jobData } from "~/data/WorkData";
 import { hobbiesList } from "~/data/HobbiesData";
 import type { ITranslatableElement } from "~/model/ITranslatableElement";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./CvContent.scss";
 
 const DEFAULT_NUMBER_OF_JOBS_TO_SHOW = 3;
 
@@ -40,19 +41,11 @@ export default function CvContent({ locale = DEFAULT_LOCALE }: { locale?: string
         })}
 
         {jobIndexEnd === DEFAULT_NUMBER_OF_JOBS_TO_SHOW ? (
-          <button
-            type="button"
-            className="cv-button"
-            onClick={() => setJobIndexEnd(undefined)}
-          >
+          <button type="button" className="cv-button" onClick={() => setJobIndexEnd(undefined)}>
             {t("SEE.MORE.EXPERIENCES", locale)}
           </button>
         ) : (
-          <button
-            type="button"
-            className="cv-button"
-            onClick={() => setJobIndexEnd(DEFAULT_NUMBER_OF_JOBS_TO_SHOW)}
-          >
+          <button type="button" className="cv-button" onClick={() => setJobIndexEnd(DEFAULT_NUMBER_OF_JOBS_TO_SHOW)}>
             {t("SEE.LESS.EXPERIENCES", locale)}
           </button>
         )}

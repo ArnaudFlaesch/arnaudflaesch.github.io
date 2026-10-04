@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import CvContent from "~/components/CvContent";
+import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
+import CvContent from "~/components/CvContent/CvContent";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 
 export default function CvPage({ locale = DEFAULT_LOCALE }: { locale?: string }) {

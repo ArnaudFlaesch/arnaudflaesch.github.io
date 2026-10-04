@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import DefaultLayout from "~/components/DefaultLayout";
-import Post from "~/components/Post";
+import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
+import Post from "~/components/Post/Post";
 import { DEFAULT_LOCALE, rssFeedFile } from "~/data/SiteData";
 import { getAllPosts } from "~/utils/content";
 import { t, getLocalePath } from "~/utils/i18n";
+import "./HomePage.scss";
 
 export default function HomePage({ locale = DEFAULT_LOCALE }: { locale?: string }) {
   const titleCode = "INDEX.PAGE.TITLE";

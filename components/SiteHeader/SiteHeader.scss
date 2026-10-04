@@ -1,0 +1,121 @@
+@use "assets/colors.scss" as *;
+
+#portfolio-header {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+  padding: 0 3em;
+  column-gap: 1em;
+
+  svg {
+    width: 30px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+    color: $header-text-color;
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  h1 {
+    font-size: x-large;
+    margin: auto 0 auto 2em;
+    flex: 2 2 40%;
+
+    @media (width <= 1150px) and (width >= 700px) {
+      flex: 1 2 20%;
+      margin: unset;
+    }
+  }
+
+  #right-navbar {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 70%;
+    height: 100%;
+
+    @media (width >= 950px) {
+      flex: 2 1 60%;
+      column-gap: 2.2em;
+    }
+
+    #url-list {
+      height: 100%;
+      display: flex;
+      flex-flow: row;
+      flex: 1 1 50%;
+      flex-wrap: wrap;
+
+      > a {
+        display: flex;
+        align-items: center;
+        padding: 0 0.5em;
+        flex: 1;
+        border-radius: 2%;
+
+        @media (width >= 950px) {
+          justify-content: center;
+        }
+
+        svg {
+          margin-right: 0.5em;
+        }
+
+        &.active {
+          background-color: #8bb3cc;
+        }
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+
+    #switch-language {
+      margin: auto 0;
+
+      img {
+        min-width: 100%;
+        min-height: 2em;
+      }
+    }
+  }
+
+  @media (width <= 700px) {
+    padding: 0 0.5em;
+    column-gap: 0.5em;
+
+    h1 {
+      flex: 1 2 20%;
+      margin-left: 0.5em;
+    }
+
+    #right-navbar {
+      flex: 2 1 80%;
+
+      #url-list {
+        column-gap: 0.2em;
+
+        svg {
+          height: 2em;
+          width: 1.5em;
+        }
+
+        > a {
+          column-gap: 0.2em;
+          padding: 0;
+
+          svg {
+            height: 2em;
+            width: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}

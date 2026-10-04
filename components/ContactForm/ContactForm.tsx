@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./ContactForm.scss";
 
 export default function ContactForm({ locale = DEFAULT_LOCALE }: { locale?: string }) {
   const [name, setName] = useState("");

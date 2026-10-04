@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import "./DetailBlock.scss";
 
 interface DetailBlockProps {
-  titleComponent: React.ReactNode;
-  detailComponent: React.ReactNode;
+  titleComponent: ReactNode;
+  detailComponent: ReactNode;
 }
 
 export default function DetailBlock({ titleComponent, detailComponent }: DetailBlockProps) {

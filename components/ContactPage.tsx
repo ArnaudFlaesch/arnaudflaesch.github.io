@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import ContactForm from "~/components/ContactForm";
+import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
+import ContactForm from "~/components/ContactForm/ContactForm";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 
 export default function ContactPage({ locale = DEFAULT_LOCALE }: { locale?: string }) {

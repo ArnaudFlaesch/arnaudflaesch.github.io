@@ -1,10 +1,11 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import Post from "~/components/Post";
+import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
+import Post from "~/components/Post/Post";
 import MdiIcon, { icons } from "~/components/icons/MdiIcon";
 import { DEFAULT_LOCALE, rssFeedFile } from "~/data/SiteData";
 import { getAllPosts } from "~/utils/content";
 import { t } from "~/utils/i18n";
+import "./BlogPage.scss";
 
 export default function BlogPage({ locale = DEFAULT_LOCALE }: { locale?: string }) {
   const titleCode = "BLOG.PAGE.TITLE";

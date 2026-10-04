@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { format } from "date-fns";
-import DetailBlock from "~/components/DetailBlock";
+import DetailBlock from "~/components/DetailBlock/DetailBlock";
 import TooltipIcon from "~/components/TooltipIcon";
 import { certificationsData } from "~/data/CertificationData";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./Certifications.scss";
 
 const DEFAULT_CERTIFICATION_BADGE_SIZE = 115;
 
@@ -31,14 +32,10 @@ export default function Certifications({ locale = DEFAULT_LOCALE }: { locale?: s
           detailComponent={
             <div className="certifications-logos">
               {certificationGroup.certifications.map((certification) => {
-                const label = certification.isNameTranslatableCode
-                  ? t(certification.name, locale)
-                  : certification.name;
+                const label = certification.isNameTranslatableCode ? t(certification.name, locale) : certification.name;
                 const width = certificationGroup.imageSize ?? DEFAULT_CERTIFICATION_BADGE_SIZE;
                 const height =
-                  certificationGroup.imageHeight ??
-                  certificationGroup.imageSize ??
-                  DEFAULT_CERTIFICATION_BADGE_SIZE;
+                  certificationGroup.imageHeight ?? certificationGroup.imageSize ?? DEFAULT_CERTIFICATION_BADGE_SIZE;
 
                 return (
                   <Link

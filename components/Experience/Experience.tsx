@@ -2,11 +2,12 @@ import React from "react";
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale/en-US";
 import { fr } from "date-fns/locale/fr";
-import DetailBlock from "~/components/DetailBlock";
+import DetailBlock from "~/components/DetailBlock/DetailBlock";
 import MdiIcon, { icons } from "~/components/icons/MdiIcon";
 import type { IExperience } from "~/model/IExperience";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./Experience.scss";
 
 interface ExperienceProps {
   experience: IExperience;
@@ -30,11 +31,7 @@ export default function Experience({ experience, locale = DEFAULT_LOCALE }: Expe
         <div className="job-content">
           <div className="job-period">
             {formatDate(experience.dateDebut)} <MdiIcon path={icons.arrowRightThin} />
-            {experience.dateFin ? (
-              <span> {formatDate(experience.dateFin)}</span>
-            ) : (
-              <span>{t("TODAY", locale)}</span>
-            )}
+            {experience.dateFin ? <span> {formatDate(experience.dateFin)}</span> : <span>{t("TODAY", locale)}</span>}
           </div>
           <div className="job-name">
             {experience.website ? (

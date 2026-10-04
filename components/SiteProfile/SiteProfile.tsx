@@ -5,6 +5,7 @@ import MdiIcon, { icons } from "~/components/icons/MdiIcon";
 import { fullName, jobName, company, city, DEFAULT_LOCALE } from "~/data/SiteData";
 import { profileSocialLinks } from "~/data/ProfileSocialsData";
 import { t, getLocalePath } from "~/utils/i18n";
+import "./SiteProfile.scss";
 
 const IMAGE_HEIGHT = 35;
 const IMAGE_WIDTH = 35;

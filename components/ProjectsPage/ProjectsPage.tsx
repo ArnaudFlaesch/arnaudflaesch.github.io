@@ -1,9 +1,10 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import RepositoryWidget from "~/components/RepositoryWidget";
+import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
+import RepositoryWidget from "~/components/RepositoryWidget/RepositoryWidget";
 import { projectsInfo } from "~/data/ProjectsData";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { IRepository } from "~/model/IRepository";
+import "./ProjectsPage.scss";
 
 interface ProjectsPageProps {
   projectsData: IRepository[];

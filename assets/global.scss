@@ -1,5 +1,4 @@
 @use "colors.scss" as *;
-@use "components.scss" as *;
 
 html {
   text-size-adjust: 100%;
@@ -327,8 +326,9 @@ h3 {
   margin: 0 0 1.45rem;
   padding: 0;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   font-weight: bold;
   text-rendering: optimizelegibility;
   line-height: 1.1;

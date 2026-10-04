@@ -10,6 +10,7 @@ import MdiEmailOutline from "~/components/icons/MdiEmailOutline";
 import WorkTwoTone from "~/components/icons/WorkTwoTone";
 import { DEFAULT_LOCALE, fullName } from "~/data/SiteData";
 import { t, getLocalePath } from "~/utils/i18n";
+import "./SiteHeader.scss";
 
 export default function SiteHeader({ locale }: { locale?: string } = {}) {
   const pathname = usePathname() || "/";
@@ -81,11 +82,7 @@ export default function SiteHeader({ locale }: { locale?: string } = {}) {
           {urls.map((url) => {
             const active = isActive(url.path);
             return (
-              <Link
-                key={url.path}
-                className={active ? "active" : ""}
-                href={getLocalePath(url.path, currentLocale)}
-              >
+              <Link key={url.path} className={active ? "active" : ""} href={getLocalePath(url.path, currentLocale)}>
                 {url.icon}
                 {t(url.label, currentLocale)}
               </Link>

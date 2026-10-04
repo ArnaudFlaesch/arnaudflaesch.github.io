@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import TemplateBlogPost from "~/components/TemplateBlogPost";
+import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
+import TemplateBlogPost from "~/components/TemplateBlogPost/TemplateBlogPost";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import type { BlogPost } from "~/utils/content";
 

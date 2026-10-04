@@ -3,12 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import { format } from "date-fns";
-import Bio from "~/components/Bio";
+import Bio from "~/components/Bio/Bio";
 import MdiIcon, { icons } from "~/components/icons/MdiIcon";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
 import { getLocalePath } from "~/utils/i18n";
 import type { BlogPost } from "~/utils/content";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
+import "./TemplateBlogPost.scss";
 
 interface TemplateBlogPostProps {
   doc: BlogPost;
@@ -17,12 +18,7 @@ interface TemplateBlogPostProps {
   locale?: string;
 }
 
-export default function TemplateBlogPost({
-  doc,
-  previous,
-  next,
-  locale = DEFAULT_LOCALE
-}: TemplateBlogPostProps) {
+export default function TemplateBlogPost({ doc, previous, next, locale = DEFAULT_LOCALE }: TemplateBlogPostProps) {
   const blogUrlPrefix = "/blog/";
   const facebookShareUrl = "https://www.facebook.com/sharer.php?u=";
   const twitterShareUrl = "https://twitter.com/share?url=";

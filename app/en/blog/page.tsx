@@ -1,5 +1,5 @@
 import React from "react";
-import BlogPage from "~/components/BlogPage";
+import BlogPage from "~/components/BlogPage/BlogPage";
 import { buildMetadata } from "~/utils/seo";
 
 export const metadata = buildMetadata({

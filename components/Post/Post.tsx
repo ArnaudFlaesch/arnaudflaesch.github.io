@@ -5,6 +5,7 @@ import type { BlogPost } from "~/utils/content";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
 import { getLocalePath } from "~/utils/i18n";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
+import "./Post.scss";
 
 interface PostProps {
   post: BlogPost;

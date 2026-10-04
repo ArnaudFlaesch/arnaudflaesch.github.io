@@ -1,9 +1,10 @@
 import React from "react";
-import DetailBlock from "~/components/DetailBlock";
+import DetailBlock from "~/components/DetailBlock/DetailBlock";
 import TooltipIcon from "~/components/TooltipIcon";
 import { skills } from "~/data/SkillsData";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./Skills.scss";
 
 const ICONS_PATH = "/icons/";
 

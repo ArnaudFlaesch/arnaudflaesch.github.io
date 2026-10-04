@@ -4,6 +4,7 @@ import type { IRepoIcon } from "~/model/IRepoIcon";
 import type { IEdge, IRepository } from "~/model/IRepository";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import "./RepositoryWidget.scss";
 
 const ICONS_PATH = "/icons/";
 
@@ -56,12 +57,7 @@ export default function RepositoryWidget({
             {repoIcons.map((languageIcon, index) => {
               const iconPath = `${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, "").toLowerCase()}.${languageIcon.extension ? languageIcon.extension : "svg"}`;
               return (
-                <TooltipIcon
-                  key={index}
-                  tooltip={languageIcon.name}
-                  iconPath={iconPath}
-                  alt={languageIcon.name}
-                />
+                <TooltipIcon key={index} tooltip={languageIcon.name} iconPath={iconPath} alt={languageIcon.name} />
               );
             })}
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import TooltipIcon from "~/components/TooltipIcon";
 import { fullName, linkedinLink, githubLink } from "~/data/SiteData";
+import "./Bio.scss";
 
 export default function Bio() {
   const author = fullName;
