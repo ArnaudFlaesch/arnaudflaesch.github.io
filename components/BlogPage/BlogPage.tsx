@@ -1,7 +1,7 @@
 import React from "react";
 import DefaultLayout from "~/components/DefaultLayout/DefaultLayout";
 import Post from "~/components/Post/Post";
-import MdiIcon, { icons } from "~/components/icons/MdiIcon";
+import RssFeed from "@mui/icons-material/RssFeed";
 import { DEFAULT_LOCALE, rssFeedFile } from "~/data/SiteData";
 import { getAllPosts } from "~/utils/content";
 import { t } from "~/utils/i18n";
@@ -17,7 +17,7 @@ export default function BlogPage({ locale = DEFAULT_LOCALE }: { locale?: string 
       <div id="rss-link-container">
         <span>{t("RSS.FEED.MESSAGE", locale)} :</span>
         <a href={rssFeedFile}>
-          <MdiIcon id="rss-feed-icon" path={icons.rss} />
+          <RssFeed id="rss-feed-icon" />
         </a>
       </div>
       <ol id="articles-list">

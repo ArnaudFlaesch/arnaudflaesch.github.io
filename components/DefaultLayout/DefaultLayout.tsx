@@ -44,7 +44,7 @@ export default function DefaultLayout({
             </main>
             <footer>
               <span>
-                © 2025, {t("DEVELOPED.WITH", locale)} <a href="https://nuxt.com/">Nuxt</a>. {t("ICONS.BY", locale)} :{" "}
+                © 2026, {t("DEVELOPED.WITH", locale)} <a href="https://nextjs.org/">Nuxt</a>. {t("ICONS.BY", locale)} :{" "}
                 <a href="https://icons8.com/">Icons8</a>.
               </span>
             </footer>

@@ -4,7 +4,9 @@ import React from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 import Bio from "~/components/Bio/Bio";
-import MdiIcon, { icons } from "~/components/icons/MdiIcon";
+import Facebook from "@mui/icons-material/Facebook";
+import Twitter from "@mui/icons-material/Twitter";
+import LinkedIn from "@mui/icons-material/LinkedIn";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
 import { getLocalePath } from "~/utils/i18n";
 import type { BlogPost } from "~/utils/content";
@@ -64,7 +66,7 @@ export default function TemplateBlogPost({ doc, previous, next, locale = DEFAULT
                 title="Partager sur Facebook"
                 onClick={(e) => handleShare(`${facebookShareUrl}https://arnaudflaesch.github.io${doc.path}`, e)}
               >
-                <MdiIcon path={icons.facebook} />
+                <Facebook />
               </a>
 
               <a
@@ -72,7 +74,7 @@ export default function TemplateBlogPost({ doc, previous, next, locale = DEFAULT
                 title="Partager sur X"
                 onClick={(e) => handleShare(`${twitterShareUrl}https://arnaudflaesch.github.io${doc.path}`, e)}
               >
-                <MdiIcon path={icons.twitter} />
+                <Twitter />
               </a>
 
               <a
@@ -80,7 +82,7 @@ export default function TemplateBlogPost({ doc, previous, next, locale = DEFAULT
                 title="Partager sur LinkedIn"
                 onClick={(e) => handleShare(`${linkedinShareUrl}https://arnaudflaesch.github.io${doc.path}`, e)}
               >
-                <MdiIcon path={icons.linkedin} />
+                <LinkedIn />
               </a>
             </div>
           </div>

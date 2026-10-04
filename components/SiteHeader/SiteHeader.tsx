@@ -3,11 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import BookOutline from "~/components/icons/BookOutline";
-import HomeTwoTone from "~/components/icons/HomeTwoTone";
-import MdiCode from "~/components/icons/MdiCode";
-import MdiEmailOutline from "~/components/icons/MdiEmailOutline";
-import WorkTwoTone from "~/components/icons/WorkTwoTone";
+import BookOutlined from "@mui/icons-material/BookOutlined";
+import HomeTwoTone from "@mui/icons-material/HomeTwoTone";
+import Code from "@mui/icons-material/Code";
+import EmailOutlined from "@mui/icons-material/EmailOutlined";
+import WorkTwoTone from "@mui/icons-material/WorkTwoTone";
 import { DEFAULT_LOCALE, fullName } from "~/data/SiteData";
 import { t, getLocalePath } from "~/utils/i18n";
 import "./SiteHeader.scss";
@@ -33,17 +33,17 @@ export default function SiteHeader({ locale }: { locale?: string } = {}) {
     {
       path: "/blog",
       label: "BLOG.LABEL",
-      icon: <BookOutline />
+      icon: <BookOutlined />
     },
     {
       path: "/projets",
       label: "PROJECTS.LABEL",
-      icon: <MdiCode />
+      icon: <Code />
     },
     {
       path: "/contact",
       label: "CONTACT.LABEL",
-      icon: <MdiEmailOutline />
+      icon: <EmailOutlined />
     }
   ];
 

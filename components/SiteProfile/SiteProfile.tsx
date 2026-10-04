@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import TooltipIcon from "~/components/TooltipIcon";
-import MdiIcon, { icons } from "~/components/icons/MdiIcon";
+import Tooltip from "@mui/material/Tooltip";
+import Work from "@mui/icons-material/Work";
+import LocationOn from "@mui/icons-material/LocationOn";
 import { fullName, jobName, company, city, DEFAULT_LOCALE } from "~/data/SiteData";
 import { profileSocialLinks } from "~/data/ProfileSocialsData";
 import { t, getLocalePath } from "~/utils/i18n";
@@ -21,7 +22,7 @@ export default function SiteProfile({ locale = DEFAULT_LOCALE }: { locale?: stri
       <div id="profile">
         <div id="bio">
           <div id="work">
-            <MdiIcon path={icons.briefcase} />
+            <Work className="v-icon" />
             <span>
               {t(jobName, locale)}
               <br />
@@ -30,7 +31,7 @@ export default function SiteProfile({ locale = DEFAULT_LOCALE }: { locale?: stri
             </span>
           </div>
           <div id="location">
-            <MdiIcon path={icons.mapMarker} />
+            <LocationOn className="v-icon" />
             <span>{city}</span>
           </div>
         </div>
@@ -43,13 +44,14 @@ export default function SiteProfile({ locale = DEFAULT_LOCALE }: { locale?: stri
               rel="noopener noreferrer"
               className="social-link"
             >
-              <TooltipIcon
-                tooltip={socialLink.name}
-                iconWidth={IMAGE_WIDTH}
-                iconHeight={IMAGE_HEIGHT}
-                iconPath={socialLink.imgPath}
-                alt={socialLink.name.toLowerCase()}
-              />
+              <Tooltip title={socialLink.name}>
+                <img
+                  src={socialLink.imgPath}
+                  width={IMAGE_WIDTH}
+                  height={IMAGE_HEIGHT}
+                  alt={socialLink.name.toLowerCase()}
+                />
+              </Tooltip>
               <span>{t(socialLink.labelI18nCode, locale)}</span>
             </a>
           ))}

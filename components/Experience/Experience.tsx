@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import { enUS } from "date-fns/locale/en-US";
 import { fr } from "date-fns/locale/fr";
 import DetailBlock from "~/components/DetailBlock/DetailBlock";
-import MdiIcon, { icons } from "~/components/icons/MdiIcon";
+import ArrowForward from "@mui/icons-material/ArrowForward";
 import type { IExperience } from "~/model/IExperience";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
@@ -30,7 +30,7 @@ export default function Experience({ experience, locale = DEFAULT_LOCALE }: Expe
       titleComponent={
         <div className="job-content">
           <div className="job-period">
-            {formatDate(experience.dateDebut)} <MdiIcon path={icons.arrowRightThin} />
+            {formatDate(experience.dateDebut)} <ArrowForward />
             {experience.dateFin ? <span> {formatDate(experience.dateFin)}</span> : <span>{t("TODAY", locale)}</span>}
           </div>
           <div className="job-name">

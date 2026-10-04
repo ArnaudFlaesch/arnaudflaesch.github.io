@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { format } from "date-fns";
+import Tooltip from "@mui/material/Tooltip";
 import DetailBlock from "~/components/DetailBlock/DetailBlock";
-import TooltipIcon from "~/components/TooltipIcon";
 import { certificationsData } from "~/data/CertificationData";
 import { getLocaleFromLanguage } from "~/utils/DateUtils";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
@@ -44,13 +44,9 @@ export default function Certifications({ locale = DEFAULT_LOCALE }: { locale?: s
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <TooltipIcon
-                      tooltip={label}
-                      iconWidth={width}
-                      iconHeight={height}
-                      iconPath={certification.imagePath}
-                      alt={label}
-                    />
+                    <Tooltip title={label}>
+                      <img src={certification.imagePath} width={width} height={height} alt={label} />
+                    </Tooltip>
                   </Link>
                 );
               })}

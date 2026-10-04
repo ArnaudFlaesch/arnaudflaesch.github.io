@@ -1,5 +1,5 @@
 import React from "react";
-import TooltipIcon from "~/components/TooltipIcon";
+import Tooltip from "@mui/material/Tooltip";
 import type { IRepoIcon } from "~/model/IRepoIcon";
 import type { IEdge, IRepository } from "~/model/IRepository";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
@@ -43,7 +43,9 @@ export default function RepositoryWidget({
           </a>
         </h3>
         <a href={repositoryData.url} target="_blank" rel="noopener noreferrer">
-          <TooltipIcon tooltip="Lien GitHub" iconPath="/icons/tools/github.png" alt="Lien GitHub" />
+          <Tooltip title="Lien GitHub">
+            <img src="/icons/tools/github.png" width={40} height={40} alt="Lien GitHub" />
+          </Tooltip>
         </a>
       </div>
 
@@ -57,7 +59,9 @@ export default function RepositoryWidget({
             {repoIcons.map((languageIcon, index) => {
               const iconPath = `${ICONS_PATH}${languageIcon.label.toLowerCase()}/${languageIcon.path ? languageIcon.path : languageIcon.name.replace(/\s/g, "").toLowerCase()}.${languageIcon.extension ? languageIcon.extension : "svg"}`;
               return (
-                <TooltipIcon key={index} tooltip={languageIcon.name} iconPath={iconPath} alt={languageIcon.name} />
+                <Tooltip key={index} title={languageIcon.name}>
+                  <img src={iconPath} width={40} height={40} alt={languageIcon.name} />
+                </Tooltip>
               );
             })}
           </div>
