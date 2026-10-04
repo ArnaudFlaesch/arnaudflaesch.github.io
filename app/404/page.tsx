@@ -1,8 +1,6 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
+import NotFoundPage from "~/components/NotFoundPage";
 import { buildMetadata } from "~/utils/seo";
-import { t } from "~/utils/i18n";
-import { fullName, jobName } from "~/data/SiteData";
 
 export const metadata = buildMetadata({
   titleCode: "404.NOT.FOUND",
@@ -11,18 +9,6 @@ export const metadata = buildMetadata({
   locale: "fr"
 });
 
-export default function NotFoundPage() {
-  const locale = "fr";
-  const titleCode = "404.NOT.FOUND";
-  const descriptionCode = "PAGE.NOT.FOUND.MESSAGE";
-  const pageTitle = `${t(titleCode, locale)} | ${fullName} - ${t(jobName, locale)}`;
-
-  return (
-    <div className="layout-container">
-      <title>{pageTitle}</title>
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <div />
-      </DefaultLayout>
-    </div>
-  );
+export default function Page() {
+  return <NotFoundPage locale="fr" />;
 }

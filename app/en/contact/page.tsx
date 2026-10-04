@@ -1,6 +1,5 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import ContactForm from "~/components/ContactForm";
+import ContactPage from "~/components/ContactPage";
 import { buildMetadata } from "~/utils/seo";
 
 export const metadata = buildMetadata({
@@ -10,16 +9,6 @@ export const metadata = buildMetadata({
   locale: "en"
 });
 
-export default function ContactPageEN() {
-  const locale = "en";
-  const titleCode = "CONTACT.PAGE.TITLE";
-  const descriptionCode = "CONTACT.PAGE.DESCRIPTION";
-
-  return (
-    <div className="layout-container">
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <ContactForm locale={locale} />
-      </DefaultLayout>
-    </div>
-  );
+export default function Page() {
+  return <ContactPage locale="en" />;
 }

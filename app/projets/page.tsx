@@ -1,6 +1,5 @@
 import React from "react";
-import DefaultLayout from "~/components/DefaultLayout";
-import RepositoryWidget from "~/components/RepositoryWidget";
+import ProjectsPage from "~/components/ProjectsPage";
 import { projectsInfo } from "~/data/ProjectsData";
 import { fetchProjectData } from "~/utils/github";
 import { buildMetadata } from "~/utils/seo";
@@ -12,29 +11,7 @@ export const metadata = buildMetadata({
   locale: "fr"
 });
 
-export default async function ProjectsPage() {
-  const locale = "fr";
-  const titleCode = "PROJECTS.PAGE.TITLE";
-  const descriptionCode = "PROJECTS.PAGE.DESCRIPTION";
-  const projectsData = await Promise.all(
-    projectsInfo.map((projectInfo) => fetchProjectData(projectInfo.name))
-  );
-
-  return (
-    <div className="layout-container">
-      <DefaultLayout titleCode={titleCode} descriptionCode={descriptionCode} locale={locale}>
-        <div id="projects-list">
-          {projectsData.map((repository, index) => (
-            <RepositoryWidget
-              key={repository.name}
-              description={projectsInfo[index].description}
-              repoIcons={projectsInfo[index].repoIcons}
-              repositoryData={repository}
-              locale={locale}
-            />
-          ))}
-        </div>
-      </DefaultLayout>
-    </div>
-  );
+export default async function Page() {
+  const projectsData = await Promise.all(projectsInfo.map((projectInfo) => fetchProjectData(projectInfo.name)));
+  return <ProjectsPage projectsData={projectsData} locale="fr" />;
 }
