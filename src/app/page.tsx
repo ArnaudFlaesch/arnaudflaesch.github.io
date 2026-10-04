@@ -1,0 +1,14 @@
+import React from "react";
+import HomePage from "~/components/HomePage/HomePage";
+import { buildMetadata } from "~/utils/seo";
+
+export const metadata = buildMetadata({
+  titleCode: "INDEX.PAGE.TITLE",
+  descriptionCode: "INDEX.PAGE.DESCRIPTION",
+  path: "/",
+  locale: "fr"
+});
+
+export default function Page() {
+  return <HomePage locale="fr" />;
+}

@@ -1,0 +1,43 @@
+.post-list-item {
+  margin: 2rem 0;
+
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    /* stylelint-disable */
+    font-size: 1.728rem;
+    /* stylelint-enable */
+    color: #005b99;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  header {
+    margin-bottom: 1rem;
+  }
+
+  .article-preview {
+    .blog-thumbnail {
+      max-height: 300px;
+      max-width: 300px;
+      border-radius: 2%;
+    }
+
+    @media (width > 700px) {
+      display: flex;
+      flex-direction: row;
+      column-gap: 1em;
+
+      .description {
+        max-width: 25em;
+      }
+    }
+  }
+}

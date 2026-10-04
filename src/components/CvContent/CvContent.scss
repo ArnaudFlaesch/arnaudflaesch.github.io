@@ -1,0 +1,23 @@
+#cv-page {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+
+  #jobs-header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+
+  .cv-button {
+    margin: 0 auto;
+  }
+
+  #job-list,
+  #formation-list,
+  #hobbies-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+}

@@ -1,0 +1,17 @@
+#projects-list {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 3em;
+
+  > * {
+    flex-basis: calc(50% - 1.5em);
+    padding: 10px;
+    box-shadow: 0 0 5px black;
+    border-radius: 1%;
+
+    @media (width <= 850px) {
+      flex-basis: 100%;
+    }
+  }
+}

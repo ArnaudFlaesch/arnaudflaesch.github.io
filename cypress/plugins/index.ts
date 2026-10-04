@@ -16,7 +16,10 @@
  * @type {Cypress.PluginConfig}
  */
 
-export function displayBrowserInFullSize(browser: Cypress.Browser, launchOptions) {
+export function displayBrowserInFullSize(
+  browser: Cypress.Browser,
+  launchOptions: Cypress.BeforeBrowserLaunchOptions
+) {
   console.log("launching browser %s is headless? %s", browser.name, browser.isHeadless);
 
   // the browser width and height we want to get
