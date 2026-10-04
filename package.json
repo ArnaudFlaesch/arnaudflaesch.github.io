@@ -34,7 +34,7 @@
     "@mui/material": "9.4.0",
     "date-fns": "4.4.0",
     "gray-matter": "4.0.3",
-    "marked": "15.0.7",
+    "marked": "18.0.14",
     "next": "15.2.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
