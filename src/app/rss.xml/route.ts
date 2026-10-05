@@ -3,6 +3,8 @@ import RSS from "rss";
 import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "~/data/SiteData";
 import { getAllPosts } from "~/utils/content";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const feed = new RSS({
     title: title,
