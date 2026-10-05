@@ -28,3 +28,5 @@ logs
 cypress/downloads/
 
 styleLintReport.json
+
+tsconfig.tsbuildinfo

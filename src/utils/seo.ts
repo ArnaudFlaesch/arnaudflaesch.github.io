@@ -43,7 +43,7 @@ export function buildMetadata({
     ? (image.startsWith("http") ? image : `${siteUrl}${image.startsWith("/") ? "" : "/"}${image}`)
     : `${siteUrl}${defaultImageUrl}`;
 
-  const metadata: Metadata = {
+  return {
     title: pageTitle,
     description: description,
     authors: [{ name: fullName }],
@@ -76,6 +76,4 @@ export function buildMetadata({
       "og:image": ogImageUrl
     }
   };
-
-  return metadata;
 }

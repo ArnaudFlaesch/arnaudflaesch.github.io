@@ -1,15 +1,15 @@
 import React from "react";
-import { DEFAULT_LOCALE, fullName, jobName } from "~/data/SiteData";
+import Seo from "~/components/Seo";
+import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
 
 export default function NotFoundPage({ locale = DEFAULT_LOCALE }: { locale?: string }) {
   const titleCode = "404.NOT.FOUND";
   const descriptionCode = "PAGE.NOT.FOUND.MESSAGE";
-  const pageTitle = `${t(titleCode, locale)} | ${fullName} - ${t(jobName, locale)}`;
 
   return (
     <>
-      <title>{pageTitle}</title>
+      <Seo titleCode={titleCode} descriptionCode={descriptionCode} path="/404" locale={locale} />
       <h1 id="page-header">{t(titleCode, locale)}</h1>
       <div id="page-description">{t(descriptionCode, locale)}</div>
       <div />

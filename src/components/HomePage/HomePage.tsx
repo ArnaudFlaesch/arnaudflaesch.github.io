@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Post from "~/components/Post/Post";
+import Seo from "~/components/Seo";
 import { DEFAULT_LOCALE, rssFeedFile } from "~/data/SiteData";
 import { getAllPosts } from "~/utils/content";
 import { t, getLocalePath } from "~/utils/i18n";
@@ -11,6 +12,12 @@ export default function HomePage({ locale = DEFAULT_LOCALE }: { locale?: string 
 
   return (
     <div id="home-page">
+      <Seo
+        titleCode="INDEX.PAGE.TITLE"
+        descriptionCode="INDEX.PAGE.DESCRIPTION"
+        path={locale === "en" ? "/en" : "/"}
+        locale={locale}
+      />
       <h1 id="page-header">{t("INDEX.PAGE.TITLE", locale)}</h1>
       <div id="page-description">{t("INDEX.PAGE.DESCRIPTION", locale)}</div>
 

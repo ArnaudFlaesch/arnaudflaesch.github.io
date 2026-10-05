@@ -9,7 +9,7 @@ const nextConfig = {
   output: process.env.STATIC_EXPORT === "true" ? "export" : undefined,
   sassOptions: {
     includePaths: [path.join(__dirname, "src/assets"), path.join(__dirname, "src")],
-    additionalData: `@use "colors.scss" as *;`
+    additionalData: `@use "src/assets/colors.scss" as *;`
   }
 };
 

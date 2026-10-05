@@ -11,7 +11,8 @@ describe("CV page tests", () => {
     // Download CV
     const cvFilename = "Curriculum Vitae Arnaud Flaesch.pdf";
     cy.readFile(path.join(Cypress.config("downloadsFolder"), cvFilename)).should("not.exist");
-    cy.get("#cv-download-button").should("have.text", "Télécharger mon CV").click();
+    cy.get("#cv-download-button").should("have.text", "Télécharger mon CV");
+    cy.get("#cv-download-button").click();
     cy.readFile(path.join(Cypress.config("downloadsFolder"), cvFilename));
 
     const blockTitles = [
@@ -43,60 +44,54 @@ describe("CV page tests", () => {
 
     // CV SEO test
     cy.title().should("equal", "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
-    cy.document()
-      .get('meta[name="description"]')
-      .should(
-        "have.attr",
-        "content",
-        "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
-      );
-    cy.document()
-      .get('meta[property="og:description"]')
-      .should(
-        "have.attr",
-        "content",
-        "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
-      );
-    cy.document().get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
-    cy.document()
-      .get('meta[property="og:title"]')
-      .should("have.attr", "content", "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications");
-    cy.document()
-      .get('meta[property="og:image"]')
-      .should("have.attr", "content", "https://arnaudflaesch.github.io/profile-picture.jpg");
-    cy.document().get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
-    cy.document().get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/cv");
-    cy.document().get('meta[property="og:type"]').should("have.attr", "content", "website");
+    cy.get('meta[name="description"]').should(
+      "have.attr",
+      "content",
+      "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
+    );
+    cy.get('meta[property="og:description"]').should(
+      "have.attr",
+      "content",
+      "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts."
+    );
+    cy.get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
+    cy.get('meta[property="og:title"]').should(
+      "have.attr",
+      "content",
+      "Curriculum Vitae | Arnaud Flaesch - Développeur d'applications"
+    );
+    cy.get('meta[property="og:image"]').should(
+      "have.attr",
+      "content",
+      "https://arnaudflaesch.github.io/profile-picture.jpg"
+    );
+    cy.get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
+    cy.get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/cv");
+    cy.get('meta[property="og:type"]').should("have.attr", "content", "website");
 
     // CV SEO english locale test
     cy.wait(1000);
     cy.get("#switch-language > button").click();
     cy.title().should("equal", "Resume | Arnaud Flaesch - Software developer");
-    cy.document()
-      .get('meta[name="description"]')
-      .should(
-        "have.attr",
-        "content",
-        "My detailed working experience and education, as well as my technical skills and hobbies."
-      );
-    cy.document()
-      .get('meta[property="og:description"]')
-      .should(
-        "have.attr",
-        "content",
-        "My detailed working experience and education, as well as my technical skills and hobbies."
-      );
-    cy.document().get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
-    cy.document()
-      .get('meta[property="og:title"]')
-      .should("have.attr", "content", "Resume | Arnaud Flaesch - Software developer");
-    cy.document()
-      .get('meta[property="og:image"]')
-      .should("have.attr", "content", "https://arnaudflaesch.github.io/profile-picture.jpg");
-    cy.document().get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
-    cy.document()
-      .get('meta[property="og:url"]')
-      .should("have.attr", "content", "https://arnaudflaesch.github.io/en/cv");
-    cy.document().get('meta[property="og:type"]').should("have.attr", "content", "website");
+    cy.get('meta[name="description"]').should(
+      "have.attr",
+      "content",
+      "My detailed working experience and education, as well as my technical skills and hobbies."
+    );
+    cy.get('meta[property="og:description"]').should(
+      "have.attr",
+      "content",
+      "My detailed working experience and education, as well as my technical skills and hobbies."
+    );
+    cy.get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
+    cy.get('meta[property="og:title"]').should("have.attr", "content", "Resume | Arnaud Flaesch - Software developer");
+    cy.get('meta[property="og:image"]').should(
+      "have.attr",
+      "content",
+      "https://arnaudflaesch.github.io/profile-picture.jpg"
+    );
+    cy.get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
+    cy.get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/en/cv");
+    cy.get('meta[property="og:type"]').should("have.attr", "content", "website");
   });
 });
