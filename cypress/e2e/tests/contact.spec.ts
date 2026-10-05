@@ -2,8 +2,9 @@
 
 describe("Contact page tests", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.get("#portfolio-header #url-list > a").contains("Contact").click();
+    cy.visit("/").then(() => {
+      cy.get("#portfolio-header #url-list > a").contains("Contact").click();
+    });
   });
 
   it("Contact SEO test", () => {

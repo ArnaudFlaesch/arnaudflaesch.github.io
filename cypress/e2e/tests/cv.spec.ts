@@ -3,8 +3,9 @@ import path = require("path");
 
 describe("CV page tests", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.get("#portfolio-header #url-list > a").contains("CV").click();
+    cy.visit("/").then(() => {
+      cy.get("#portfolio-header #url-list > a").contains("CV").click();
+    });
   });
 
   it("Should display the CV page", () => {

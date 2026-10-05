@@ -1,9 +1,10 @@
 /// <reference types='cypress' />
 
-xdescribe("Projects page tests", () => {
+describe("Projects page tests", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.get("#portfolio-header #url-list > a").contains("Projets").click();
+    cy.visit("/").then(() => {
+      cy.get("#portfolio-header #url-list > a").contains("Projets").click();
+    });
   });
 
   it("Projects SEO test", () => {
