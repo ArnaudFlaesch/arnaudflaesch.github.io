@@ -1,4 +1,4 @@
-import { IExperience } from "../model/IExperience";
+import { IExperience } from "~/model/IExperience";
 
 export const jobData: IExperience[] = [
   {

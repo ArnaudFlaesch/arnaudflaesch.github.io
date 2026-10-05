@@ -18,12 +18,11 @@ export default function SiteProfile({ locale }: { locale?: string } = {}) {
   const pathname = usePathname() || "/";
   const isEn = locale ? locale === "en" : pathname.startsWith("/en");
   const currentLocale = isEn ? "en" : DEFAULT_LOCALE;
-  const author = fullName;
 
   return (
     <div id="profile-bio">
       <Link id="avatar-link" href={getLocalePath("/", currentLocale)}>
-        <img id="bio-avatar" src="/profile-picture.jpg" alt={author} width={105} height={100} />
+        <img id="bio-avatar" src="/profile-picture.jpg" alt={fullName} width={105} height={100} />
       </Link>
       <div id="profile">
         <div id="bio">

@@ -1,4 +1,4 @@
-import { scrumOrgLink } from "../data/SiteData";
+import { scrumOrgLink } from "./SiteData";
 
 interface ICertificationData {
   name: string;

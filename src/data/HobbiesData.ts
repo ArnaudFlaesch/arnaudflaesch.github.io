@@ -1,4 +1,4 @@
-import type { ITranslatableElement } from "../model/ITranslatableElement";
+import type { ITranslatableElement } from "~/model/ITranslatableElement";
 
 export const hobbiesList: ITranslatableElement[] = [
   {

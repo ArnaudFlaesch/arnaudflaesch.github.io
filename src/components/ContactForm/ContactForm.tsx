@@ -14,7 +14,7 @@ export default function ContactForm({ locale = DEFAULT_LOCALE }: { locale?: stri
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const isValid = name.trim().length >= 1 && emailRegex.test(email.trim()) && message.trim().length >= 1;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValid) return;
 
