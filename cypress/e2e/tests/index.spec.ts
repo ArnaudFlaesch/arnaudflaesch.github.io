@@ -6,10 +6,8 @@ describe("Portfolio tests", () => {
   });
 
   it("Should get the home page", () => {
-    cy.get("h1")
-      .first()
-      .should("have.text", "Arnaud Flaesch")
-      .get("#bio-avatar")
+    cy.get("h1").first().should("have.text", "Arnaud Flaesch");
+    cy.get("#bio-avatar")
       .should("have.css", "height", "100px")
       .and("have.css", "width", "105px");
 
@@ -17,58 +15,50 @@ describe("Portfolio tests", () => {
 
     // Home SEO test
     cy.title().should("equal", "Arnaud Flaesch - Développeur d'applications");
-    cy.document()
-      .get('meta[name="description"]')
-      .should(
-        "have.attr",
-        "content",
-        "Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille."
-      );
-    cy.document()
-      .get('meta[property="og:description"]')
-      .should(
-        "have.attr",
-        "content",
-        "Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille."
-      );
-    cy.document().get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
-    cy.document()
-      .get('meta[property="og:title"]')
-      .should("have.attr", "content", "Arnaud Flaesch - Développeur d'applications");
-    cy.document()
-      .get('meta[property="og:image"]')
-      .should("have.attr", "content", "https://arnaudflaesch.github.io/profile-picture.jpg");
-    cy.document().get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
-    cy.document().get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/");
-    cy.document().get('meta[property="og:type"]').should("have.attr", "content", "website");
+    cy.get('meta[name="description"]').should(
+      "have.attr",
+      "content",
+      "Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille."
+    );
+    cy.get('meta[property="og:description"]').should(
+      "have.attr",
+      "content",
+      "Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille."
+    );
+    cy.get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
+    cy.get('meta[property="og:title"]').should("have.attr", "content", "Arnaud Flaesch - Développeur d'applications");
+    cy.get('meta[property="og:image"]').should(
+      "have.attr",
+      "content",
+      "https://arnaudflaesch.github.io/profile-picture.jpg"
+    );
+    cy.get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
+    cy.get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/");
+    cy.get('meta[property="og:type"]').should("have.attr", "content", "website");
 
     // Home SEO english locale test
     cy.wait(1000);
     cy.get("#switch-language > button").click();
     cy.title().should("equal", "Arnaud Flaesch - Software developer");
-    cy.document()
-      .get('meta[name="description"]')
-      .should(
-        "have.attr",
-        "content",
-        "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on."
-      );
-    cy.document()
-      .get('meta[property="og:description"]')
-      .should(
-        "have.attr",
-        "content",
-        "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on."
-      );
-    cy.document().get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
-    cy.document()
-      .get('meta[property="og:title"]')
-      .should("have.attr", "content", "Arnaud Flaesch - Software developer");
-    cy.document()
-      .get('meta[property="og:image"]')
-      .should("have.attr", "content", "https://arnaudflaesch.github.io/profile-picture.jpg");
-    cy.document().get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
-    cy.document().get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/en");
-    cy.document().get('meta[property="og:type"]').should("have.attr", "content", "website");
+    cy.get('meta[name="description"]').should(
+      "have.attr",
+      "content",
+      "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on."
+    );
+    cy.get('meta[property="og:description"]').should(
+      "have.attr",
+      "content",
+      "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on."
+    );
+    cy.get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
+    cy.get('meta[property="og:title"]').should("have.attr", "content", "Arnaud Flaesch - Software developer");
+    cy.get('meta[property="og:image"]').should(
+      "have.attr",
+      "content",
+      "https://arnaudflaesch.github.io/profile-picture.jpg"
+    );
+    cy.get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
+    cy.get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/en");
+    cy.get('meta[property="og:type"]').should("have.attr", "content", "website");
   });
 });
