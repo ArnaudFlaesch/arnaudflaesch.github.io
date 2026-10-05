@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 import Bio from "~/components/Bio/Bio";
+import Seo from "~/components/Seo";
 import Facebook from "@mui/icons-material/Facebook";
 import Twitter from "@mui/icons-material/Twitter";
 import LinkedIn from "@mui/icons-material/LinkedIn";
@@ -39,6 +40,16 @@ export default function TemplateBlogPost({ doc, previous, next, locale = DEFAULT
 
   return (
     <>
+      <Seo
+        customTitle={doc.title}
+        customDescription={doc.description}
+        path={locale === "en" ? `/en/blog/${doc.slug}/` : `/blog/${doc.slug}/`}
+        image={`/blog/${doc.image}`}
+        publishedTime={doc.date}
+        modifiedTime={doc.date}
+        type="article"
+        locale={locale}
+      />
       <article className="blog-post" itemScope itemType="https://schema.org/Article">
         <header>
           <h1 itemProp="headline">{doc.title}</h1>
