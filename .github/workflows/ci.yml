@@ -61,8 +61,8 @@ jobs:
         if: always() && steps.e2e-tests.outcome == 'failure'
         run: |
           mkdir cypress/screenshots || true
-          npx mochawesome-merge ./cypress/results/mochawesome-report/*.json > tests-report.json
-          npx marge tests-report.json -o cypress/reports/html
+          npx --no-install mochawesome-merge ./cypress/results/mochawesome-report/*.json > tests-report.json
+          npx --no-install marge tests-report.json -o cypress/reports/html
           cp -r cypress/screenshots cypress/reports/html/screenshots
 
       - name: Upload Cypress report
