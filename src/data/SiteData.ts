@@ -1,8 +1,6 @@
 export const fullName = "Arnaud Flaesch";
-export const author = fullName;
 export const city = "Paris";
 export const jobName = "Développeur d'applications";
-export const pwaShortName = "AF";
 export const company = "Institut Pasteur";
 export const title = `${fullName} - ${jobName}`;
 export const siteName = "arnaudflaesch.github.io";
@@ -18,5 +16,6 @@ export const credlyLink = "https://www.credly.com/users/arnaud-flaesch";
 export const mediumLink = "https://medium.com/@arnaudflaesch";
 export const stackOverflowLink = "https://stackoverflow.com/users/12927815/arnaud-flaesch";
 
-export const DEFAULT_LOCALE = "fr";
-export const locales = [DEFAULT_LOCALE, "en"];
+export const LOCALES = ["fr", "en"] as const;
+export type Locale = (typeof LOCALES)[number];
+export const DEFAULT_LOCALE: Locale = "fr";

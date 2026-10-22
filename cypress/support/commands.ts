@@ -25,6 +25,17 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import { Suite, Test } from "mocha";
+import addContext from "mochawesome/addContext";
+
+// Clicks the language switch once React has hydrated it (React sets __reactProps$<id> on hydrated nodes),
+// since a click on the server-rendered button before hydration does nothing.
+Cypress.Commands.add("switchLanguage", () => {
+  cy.get("#switch-language > button")
+    .should(($button) => {
+      expect(Object.keys($button[0]).some((key) => key.startsWith("__reactProps"))).to.equal(true);
+    })
+    .click();
+});
 
 // https://medium.com/egnyte-engineering/3-steps-to-awesome-test-reports-with-cypress-f4fe915bc246
 Cypress.on("test:after:run", (test, runnable) => {

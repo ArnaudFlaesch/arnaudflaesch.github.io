@@ -1,0 +1,18 @@
+$color-text: #2e353f;
+$color-link: #005b99;
+$color-body-background: #dfdddd;
+$color-header-background: #2c77a8;
+$color-header-text: black;
+$color-nav-active: #8bb3cc;
+$color-block-border: #1f5099;
+$color-block-background: #a8c9d4;
+$color-block-title-background: #96c5d4;
+$color-code-background: #f5f2f0;
+$color-subtle-background: hsl(0deg 0% 0% / 4%);
+$color-rss: #c45500; // darkest RSS orange keeping a 4.5:1 contrast with white
+$font-body: georgia, serif;
+$font-heading:
+  -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Fira Sans", "Droid Sans",
+  "Helvetica Neue", sans-serif;
+$font-mono: sfmono-regular, consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", menlo, courier, monospace;
+$spacing: 1.45rem;

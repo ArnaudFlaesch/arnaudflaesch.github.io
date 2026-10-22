@@ -1,4 +1,5 @@
 /// <reference types='cypress' />
+import { checkSeo } from "../../support/seo";
 
 describe("Projects page tests", () => {
   beforeEach(() => {
@@ -7,50 +8,18 @@ describe("Projects page tests", () => {
   });
 
   it("Projects SEO test", () => {
-    cy.title().should("equal", "Projets personnels | Arnaud Flaesch - Développeur d'applications");
-    cy.get('meta[name="description"]').should(
-      "have.attr",
-      "content",
-      "Les projets personnels sur lesquels je travaille."
-    );
-    cy.get('meta[property="og:description"]').should(
-      "have.attr",
-      "content",
-      "Les projets personnels sur lesquels je travaille."
-    );
-    cy.get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
-    cy.get('meta[property="og:title"]').should(
-      "have.attr",
-      "content",
-      "Projets personnels | Arnaud Flaesch - Développeur d'applications"
-    );
-    cy.get('meta[property="og:image"]').should(
-      "have.attr",
-      "content",
-      "https://arnaudflaesch.github.io/profile-picture.jpg"
-    );
-    cy.get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
-    cy.get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/projets");
-    cy.get('meta[property="og:type"]').should("have.attr", "content", "website");
+    checkSeo({
+      title: "Projets personnels | Arnaud Flaesch - Développeur d'applications",
+      description: "Les projets personnels sur lesquels je travaille.",
+      path: "/projets"
+    });
 
-    cy.get("#switch-language > button").click();
-    cy.wait(1000);
-    cy.title().should("equal", "Personal projects | Arnaud Flaesch - Software developer");
-    cy.get('meta[name="description"]').should("have.attr", "content", "Personal projects that I work on.");
-    cy.get('meta[property="og:description"]').should("have.attr", "content", "Personal projects that I work on.");
-    cy.get('meta[name="author"]').should("have.attr", "content", "Arnaud Flaesch");
-    cy.get('meta[property="og:title"]').should(
-      "have.attr",
-      "content",
-      "Personal projects | Arnaud Flaesch - Software developer"
-    );
-    cy.get('meta[property="og:image"]').should(
-      "have.attr",
-      "content",
-      "https://arnaudflaesch.github.io/profile-picture.jpg"
-    );
-    cy.get('meta[property="og:site_name"]').should("have.attr", "content", "arnaudflaesch.github.io");
-    cy.get('meta[property="og:url"]').should("have.attr", "content", "https://arnaudflaesch.github.io/en/projets");
-    cy.get('meta[property="og:type"]').should("have.attr", "content", "website");
+    cy.switchLanguage();
+    checkSeo({
+      title: "Personal projects | Arnaud Flaesch - Software developer",
+      description: "Personal projects that I work on.",
+      path: "/en/projets",
+      locale: "en"
+    });
   });
 });

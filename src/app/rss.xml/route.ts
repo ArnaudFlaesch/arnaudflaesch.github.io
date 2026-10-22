@@ -1,37 +1,29 @@
-import { NextResponse } from "next/server";
 import RSS from "rss";
-import { defaultImageUrl, rssFeedUrl, siteUrl, title } from "~/data/SiteData";
+import { DEFAULT_LOCALE, defaultImageUrl, rssFeedUrl, siteUrl, title } from "~/data/SiteData";
 import { getAllPosts } from "~/utils/content";
+import { t } from "~/utils/i18n";
 
 export const dynamic = "force-static";
 
-export async function GET() {
+export function GET() {
   const feed = new RSS({
-    title: title,
-    description:
-      "Mon blog sur lequel vous trouverez des articles aussi bien sur des sujets techniques que sur d'autres sujets.",
+    title,
+    description: t("BLOG.PAGE.DESCRIPTION", DEFAULT_LOCALE),
     site_url: siteUrl,
-    feed_url: `${rssFeedUrl}`,
+    feed_url: rssFeedUrl,
     image_url: `${siteUrl}${defaultImageUrl}`
   });
 
-  const blogPosts = getAllPosts();
-
-  for (const doc of blogPosts) {
+  for (const post of getAllPosts()) {
     feed.item({
-      title: doc.title || "-",
-      url: `${siteUrl}${doc.path}`,
-      date: doc.date,
-      description: doc.description
+      title: post.title || "-",
+      url: `${siteUrl}${post.path}`,
+      date: post.date,
+      description: post.description
     });
   }
 
-  const feedString = feed.xml({ indent: true });
-
-  return new NextResponse(feedString, {
-    status: 200,
-    headers: {
-      "Content-Type": "text/xml"
-    }
+  return new Response(feed.xml({ indent: true }), {
+    headers: { "Content-Type": "text/xml" }
   });
 }

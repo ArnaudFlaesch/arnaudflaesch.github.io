@@ -1,7 +1,4 @@
-.vscode
 .cache
 .next
 out
-.output
-.nuxt
 build/

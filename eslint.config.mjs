@@ -5,31 +5,13 @@ import pluginCypress from "eslint-plugin-cypress";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  { ignores: ["cypress*.config.ts", ".next/", "out/", "build/", "coverage/"] },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } }
+  },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  pluginCypress.configs.recommended,
-  eslintConfigPrettier,
-  {
-    rules: {
-      "no-undef": "off",
-      "@typescript-eslint/no-explicit-any": "off"
-    }
-  },
-  {
-    ignores: [
-      "cypress/**",
-      "cypress.config.ts",
-      "cypress-test.config.ts",
-      "next.config.mjs",
-      "dist",
-      ".next/",
-      ".nuxt/",
-      ".output/",
-      "out/",
-      "build",
-      "coverage"
-    ]
-  }
+  { ...pluginCypress.configs.recommended, files: ["cypress/**"] },
+  eslintConfigPrettier
 ];

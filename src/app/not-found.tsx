@@ -1,14 +1,5 @@
-import React from "react";
-import NotFoundPage from "~/components/NotFoundPage";
-import { buildMetadata } from "~/utils/seo";
+import NotFoundPage, { notFoundMetadata } from "~/components/NotFoundPage";
 
-export const metadata = buildMetadata({
-  titleCode: "404.NOT.FOUND",
-  descriptionCode: "PAGE.NOT.FOUND.MESSAGE",
-  path: "/404",
-  locale: "fr"
-});
+export const metadata = notFoundMetadata;
 
-export default function GlobalNotFound() {
-  return <NotFoundPage locale="fr" />;
-}
+export default NotFoundPage;

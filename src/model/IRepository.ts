@@ -1,15 +1,3 @@
-export type IRepository = {
-  createdAt: Date;
-  description: string;
-  name: string;
-  pushedAt: Date;
-  url: string;
-  primaryLanguage?: {
-    name: string;
-  };
-  languages: ILanguagesData;
-};
-
 export type IEdge = {
   node: {
     name: string;
@@ -18,7 +6,11 @@ export type IEdge = {
   size: number;
 };
 
-type ILanguagesData = {
-  edges: IEdge[];
-  totalSize: number;
+export type IRepository = {
+  name: string;
+  url: string;
+  languages: {
+    edges: IEdge[];
+    totalSize: number;
+  };
 };

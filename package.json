@@ -10,7 +10,7 @@
     "npm": "11.x"
   },
   "scripts": {
-    "clean": "node -e \"const fs = require('fs'); fs.rmSync('.next', { recursive: true, force: true }); fs.rmSync('out', { recursive: true, force: true })\"",
+    "clean": "node -e \"for (const dir of ['.next', 'out']) require('node:fs').rmSync(dir, { recursive: true, force: true })\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -18,8 +18,8 @@
     "lint:md:fix": "npm run lint:md -- --fix",
     "eslint": "eslint .",
     "eslint:fix": "npm run eslint -- --fix",
-    "lint:styles": "stylelint \"./**/*.{css,scss,sass}\" ",
-    "lint:styles:fix": "npm run lint:styles -- --fix ",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "lint:styles:fix": "npm run lint:styles -- --fix",
     "lint:styles:report": "npm run lint:styles -- --formatter json --output-file ./styleLintReport.json",
     "code:check": "prettier . --check",
     "code:format": "prettier . --write",
@@ -32,7 +32,6 @@
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "9.5.0",
     "@mui/material": "9.5.0",
-    "date-fns": "4.4.0",
     "gray-matter": "4.0.3",
     "marked": "18.1.1",
     "next": "16.4.2",

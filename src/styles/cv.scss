@@ -1,0 +1,132 @@
+@use "variables" as *;
+
+/* CV page: experiences, certifications, skills and hobbies */
+
+#cv-page {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+
+  #job-list,
+  #formation-list,
+  #certifications-list,
+  #skills-list,
+  #hobbies-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+
+  #job-list {
+    #jobs-header {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    .cv-button {
+      margin: 0 auto;
+    }
+  }
+
+  // Two-column block: title on the left, details on the right (stacked on small screens)
+  .detail-block {
+    display: flex;
+    border: 2px solid $color-block-border;
+    background-color: $color-block-background;
+
+    .block-title {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 25%;
+      padding: 10px;
+      border-right: 1px solid $color-block-border;
+      background-color: $color-block-title-background;
+
+      > * {
+        margin: auto;
+        text-align: center;
+      }
+
+      .job-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        place-items: center;
+        row-gap: 1.5em;
+        width: 100%;
+        height: 100%;
+
+        .job-period,
+        .job-location {
+          font-size: small;
+          font-weight: bold;
+        }
+
+        .job-period {
+          display: flex;
+          align-items: center;
+
+          @media (width < 850px) {
+            flex-direction: column;
+          }
+        }
+
+        .job-name {
+          a {
+            display: flex;
+            text-decoration: none;
+          }
+
+          img {
+            max-width: 160px;
+            max-height: 80px;
+          }
+        }
+
+        @media (width < 850px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 0.4em;
+        }
+      }
+
+      @media (width <= 850px) {
+        border-right: none;
+        border-bottom: 1px solid $color-block-border;
+      }
+    }
+
+    .detail-info {
+      flex-basis: 75%;
+      padding: 10px;
+
+      .job-details-content h3 {
+        text-align: center;
+      }
+
+      .certifications-logos {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        column-gap: 1em;
+
+        > * {
+          display: flex;
+          place-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    @media (width <= 850px) {
+      flex-direction: column;
+    }
+  }
+
+  #skills-list .detail-block .detail-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+}
