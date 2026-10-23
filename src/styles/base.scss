@@ -1,0 +1,236 @@
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font: 112.5%/1.45em $font-body;
+  text-size-adjust: 100%;
+  background-color: $color-body-background;
+  overflow-y: hidden;
+
+  @media (width <= 480px) {
+    font-size: 100%;
+  }
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 1rem;
+  color: $color-text;
+  overflow-wrap: break-word;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-link;
+}
+
+img {
+  max-width: 100%;
+  border-style: none;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  margin: 0 0 $spacing;
+  padding: 0;
+  color: inherit;
+  font-family: $font-heading;
+  font-weight: bold;
+  text-rendering: optimizelegibility;
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.6267rem;
+}
+
+h3 {
+  font-size: 1.3832rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.8503rem;
+}
+
+h6 {
+  font-size: 0.7841rem;
+}
+
+p,
+dl,
+dd,
+figure,
+form,
+blockquote,
+table,
+pre,
+hgroup,
+address,
+iframe,
+noscript {
+  margin: 0 0 $spacing;
+  padding: 0;
+}
+
+blockquote {
+  margin-inline: $spacing;
+}
+
+ul,
+ol {
+  margin: 0 0 $spacing $spacing;
+  padding: 0;
+  list-style-position: outside;
+}
+
+li {
+  margin-bottom: calc($spacing / 2);
+
+  > ol,
+  > ul {
+    margin-block: calc($spacing / 2);
+  }
+
+  > p {
+    margin-bottom: calc($spacing / 2);
+  }
+}
+
+blockquote *:last-child,
+li *:last-child,
+p *:last-child {
+  margin-bottom: 0;
+}
+
+small {
+  font-size: 80%;
+}
+
+hr {
+  height: 1px;
+  margin: 0 0 calc($spacing - 1px);
+  padding: 0;
+  border: none;
+  background: hsl(0deg 0% 0% / 20%);
+}
+
+abbr[title] {
+  border-bottom: 1px dotted hsl(0deg 0% 0% / 50%);
+  cursor: help;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  font-size: 1rem;
+  line-height: $spacing;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid hsl(0deg 0% 0% / 12%);
+  font-feature-settings: "tnum";
+  padding: 0.725rem 0.9667rem calc(0.725rem - 1px);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Code */
+
+code,
+kbd,
+samp,
+pre {
+  font-family: $font-mono;
+}
+
+code,
+kbd,
+samp {
+  font-size: 0.85rem;
+  line-height: $spacing;
+}
+
+code {
+  padding-block: 0.2em;
+  border-radius: 3px;
+  background-color: $color-code-background;
+
+  &::before,
+  &::after {
+    letter-spacing: -0.2em;
+    content: " ";
+  }
+}
+
+pre {
+  font-size: 0.85rem;
+  line-height: 1.42;
+  background: $color-subtle-background;
+  border-radius: 3px;
+  overflow: auto;
+  overflow-wrap: normal;
+  padding: $spacing;
+
+  code {
+    background: none;
+    line-height: 1.42;
+
+    &::before,
+    &::after {
+      content: "";
+    }
+  }
+}

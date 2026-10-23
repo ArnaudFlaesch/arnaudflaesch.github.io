@@ -1,0 +1,155 @@
+@use "variables" as *;
+
+/* Home page, blog list and blog posts */
+
+#site-links a {
+  color: black;
+}
+
+#blog-title {
+  margin-top: 2em;
+
+  a {
+    color: black;
+  }
+}
+
+#rss-link-container {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+
+  #rss-feed-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    background-color: $color-rss;
+  }
+}
+
+.post-list {
+  list-style-type: none;
+
+  .post-list-item {
+    margin-top: 2rem;
+
+    a {
+      color: unset;
+      text-decoration: none;
+    }
+
+    header {
+      margin-bottom: 1rem;
+
+      time {
+        font-size: 80%;
+      }
+    }
+
+    .article-preview {
+      .blog-thumbnail {
+        max-width: 300px;
+        max-height: 300px;
+        border-radius: 2%;
+      }
+
+      .description {
+        margin-bottom: 0;
+
+        @media (width > 700px) {
+          max-width: 25em;
+        }
+      }
+
+      @media (width > 700px) {
+        display: flex;
+        column-gap: 1em;
+      }
+    }
+  }
+}
+
+.blog-post {
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  img {
+    display: flex;
+    margin: 0.2em auto;
+
+    @media (width >= 950px) {
+      max-width: 600px;
+      max-height: 500px;
+    }
+  }
+
+  // Image captions, both for the illustration and for "![...](...)\n*caption*" in markdown
+  figcaption,
+  img + em {
+    display: inline-block;
+    width: 100%;
+    margin-top: 0.2em;
+    font-size: 0.8rem;
+    color: #4b4545;
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  figure .article-illustration {
+    margin: 1em auto 0.5em;
+  }
+
+  .blog-post-footer {
+    display: flex;
+    justify-content: space-between;
+
+    .author-bio {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.8em;
+
+      .author-socials {
+        display: flex;
+        column-gap: 0.5em;
+
+        img {
+          height: 30px;
+        }
+      }
+    }
+
+    .share-article-container {
+      display: flex;
+      flex: 0 1 60%;
+      align-items: baseline;
+      margin-right: 1em;
+
+      #share-buttons {
+        display: flex;
+
+        svg {
+          width: 37px;
+          height: 37px;
+        }
+      }
+
+      @media (width <= 600px) {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.blog-post-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}

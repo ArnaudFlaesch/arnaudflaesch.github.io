@@ -1,11 +1,11 @@
-interface ProfileSocialLink {
+import { credlyLink, scrumOrgLink, mediumLink, linkedinLink, stackOverflowLink, githubLink } from "~/data/SiteData";
+
+export interface ProfileSocialLink {
   name: string;
   link: string;
   imgPath: string;
   labelI18nCode: string;
 }
-
-import { credlyLink, scrumOrgLink, mediumLink, linkedinLink, stackOverflowLink, githubLink } from "~/data/SiteData";
 
 export const profileSocialLinks: ProfileSocialLink[] = [
   {

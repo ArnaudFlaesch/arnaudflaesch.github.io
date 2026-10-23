@@ -1,4 +1,7 @@
-export const translationEN = {
+import type { Translations } from "./fr";
+
+const en: Translations = {
+  // Common
   "DEVELOPED.WITH": "Developed with",
   "ICONS.BY": "Icons by",
   AT: "at ",
@@ -15,10 +18,9 @@ export const translationEN = {
   "MEDIUM.PROFILE": "Medium profile",
   "STACK.OVERFLOW.PROFILE": "Stack Overflow profile",
   "PAGE.NOT.FOUND.MESSAGE": "The page you're looking for doesn't exist.",
-  "404.NOT.FOUND": "404: Page not found"
-};
+  "404.NOT.FOUND": "404: Page not found",
 
-export const indexEN = {
+  // Home page
   "INDEX.PAGE.TITLE": "Hello !",
   "INDEX.PAGE.DESCRIPTION":
     "My name is Arnaud and I am a software developer. You'll find here a presentation of my experiences as well as the personal projects that I work on.",
@@ -28,10 +30,9 @@ export const indexEN = {
   "BLOG.MESSAGE": "Blog articles",
   "RSS.FEED": "RSS feed",
   "CONTACT.MESSAGE": "A contact form to send me an email",
-  "RECENT.ARTICLES": "Recent articles"
-};
+  "RECENT.ARTICLES": "Recent articles",
 
-export const projetsEN = {
+  // Projects page
   "PROJECTS.PAGE.TITLE": "Personal projects",
   "PROJECTS.PAGE.DESCRIPTION": "Personal projects that I work on.",
   "TECHNICAL.STACK": "Technical stack",
@@ -39,12 +40,12 @@ export const projetsEN = {
     "Frontend of Dash project : dashboard displaying multiple widgets on a same page such as a RSS feed, the weather or an agenda.",
   "DASH.WEBSERVICES.PROJECT.DESCRIPTION":
     "Backend of Dash project : dashboard displaying multiple widgets on a same page such as a RSS feed, the weather or an agenda.",
-  "CASHMANAGER.PROJECT.DESCRIPTION": "Personal website.",
-  "PORTFOLIO.PROJECT.DESCRIPTION": "Budget-managing application.",
-  "LANGUAGES.USED": "Languages and tools used"
-};
+  "CASHMANAGER.PROJECT.DESCRIPTION": "Budget-managing application.",
+  "PORTFOLIO.PROJECT.DESCRIPTION": "Personal website.",
+  "LANGUAGES.USED": "Languages and tools used",
+  "GITHUB.LINK": "GitHub link",
 
-export const cvEN = {
+  // CV page
   "CV.PAGE.TITLE": "Resume",
   "CV.PAGE.DESCRIPTION": "My detailed working experience and education, as well as my technical skills and hobbies.",
   RESUME: "Resume",
@@ -59,25 +60,25 @@ export const cvEN = {
   EDUCATION: "Education",
   "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE": "Sustainable IT knowledge certificate",
   "LANGUAGES.TOOLS": "Languages and tools",
-  HOBBIES: "Hobbies"
-};
+  HOBBIES: "Hobbies",
 
-export const blogEN = {
+  // Blog
   "BLOG.PAGE.TITLE": "Blog",
   "BLOG.PAGE.DESCRIPTION":
     "My blog where you'll find articles on languages and tools that I use as well as other subjects.",
-  "RSS.FEED.MESSAGE": "RSS feed"
-};
+  "RSS.FEED.MESSAGE": "RSS feed",
+  "WRITTEN.BY": "Written by",
+  "SHARE.ARTICLE": "Share this article:",
+  "SHARE.ON": "Share on",
 
-export const contactEN = {
+  // Contact page
   "CONTACT.PAGE.TITLE": "Contact me",
   "CONTACT.PAGE.DESCRIPTION": "Contact form in case you want to reach out.",
   "EMAIL.SENT": "Your mail has been sent !",
-  "SENT.ANOTHER.MAIL": "Send another mail",
   "NAME.FIRSTNAME": "Your name and first name",
   "YOUR.EMAIL.ADDRESS": "Your email address",
-  "EMAIL.NOT.VALID.MESSAGE": "Please enter a valid email.",
-  "REQUIRED.FIELD.MESSAGE": "This field is required.",
   MESSAGE: "Message",
   SEND: "Send"
 };
+
+export default en;

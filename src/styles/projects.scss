@@ -1,0 +1,51 @@
+/* Projects page */
+
+#projects-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3em;
+  width: 100%;
+
+  .repository-widget-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(50% - 1.5em);
+    row-gap: 0.5em;
+    padding: 10px;
+    border-radius: 1%;
+    box-shadow: 0 0 5px black;
+
+    .repository-widget-title {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+
+    .technical-stack {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1em;
+      margin: 0.5em 0;
+
+      .repository-icons {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.2em 0.8em;
+      }
+
+      .languages-container {
+        display: flex;
+        overflow: hidden;
+        border-radius: 0.5rem;
+
+        .language-edge {
+          height: 1.5em;
+        }
+      }
+    }
+
+    @media (width <= 850px) {
+      flex-basis: 100%;
+    }
+  }
+}

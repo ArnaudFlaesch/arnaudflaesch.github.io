@@ -1,38 +1,31 @@
-import { translationFR, indexFR, projetsFR, cvFR, blogFR, contactFR } from "~/locales/fr";
-import { translationEN, indexEN, projetsEN, cvEN, blogEN, contactEN } from "~/locales/en";
-import { DEFAULT_LOCALE } from "~/data/SiteData";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "~/data/SiteData";
+import en from "~/locales/en";
+import fr from "~/locales/fr";
 
-export const translations: Record<string, Record<string, string>> = {
-  fr: {
-    ...translationFR,
-    ...indexFR,
-    ...projetsFR,
-    ...cvFR,
-    ...blogFR,
-    ...contactFR
-  },
-  en: {
-    ...translationEN,
-    ...indexEN,
-    ...projetsEN,
-    ...cvEN,
-    ...blogEN,
-    ...contactEN
-  }
-};
+const translations: Record<Locale, Record<string, string>> = { fr, en };
 
-export function t(key: string, locale: string = DEFAULT_LOCALE): string {
-  const dict = translations[locale] || translations[DEFAULT_LOCALE];
-  return dict[key] ?? key;
+// Unknown keys are returned as-is, so plain labels can go through t() too.
+export function t(key: string, locale: Locale): string {
+  return translations[locale][key] ?? key;
 }
 
-export function getLocalePath(path: string, locale: string = DEFAULT_LOCALE): string {
+export function getLocalePath(path: string, locale: Locale): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   if (locale === DEFAULT_LOCALE) {
     return cleanPath;
   }
-  if (cleanPath === "/") {
-    return "/en";
+  return cleanPath === "/" ? `/${locale}` : `/${locale}${cleanPath}`;
+}
+
+function isPrefixedLocale(segment: string | undefined): segment is Locale {
+  return segment !== DEFAULT_LOCALE && LOCALES.includes(segment as Locale);
+}
+
+/** Splits "/en/blog/foo/" into { locale: "en", segments: ["blog", "foo"] }. */
+export function parsePath(pathname: string): { locale: Locale; segments: string[] } {
+  const segments = pathname.split("/").filter(Boolean);
+  if (isPrefixedLocale(segments[0])) {
+    return { locale: segments[0], segments: segments.slice(1) };
   }
-  return `/en${cleanPath}`;
+  return { locale: DEFAULT_LOCALE, segments };
 }

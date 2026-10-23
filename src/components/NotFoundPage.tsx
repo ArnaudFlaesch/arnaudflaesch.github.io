@@ -1,18 +1,13 @@
-import React from "react";
-import Seo from "~/components/Seo";
+import PageIntro from "~/components/PageIntro";
 import { DEFAULT_LOCALE } from "~/data/SiteData";
 import { t } from "~/utils/i18n";
+import { buildMetadata } from "~/utils/seo";
 
-export default function NotFoundPage({ locale = DEFAULT_LOCALE }: { locale?: string }) {
-  const titleCode = "404.NOT.FOUND";
-  const descriptionCode = "PAGE.NOT.FOUND.MESSAGE";
+const title = t("404.NOT.FOUND", DEFAULT_LOCALE);
+const description = t("PAGE.NOT.FOUND.MESSAGE", DEFAULT_LOCALE);
 
-  return (
-    <>
-      <Seo titleCode={titleCode} descriptionCode={descriptionCode} path="/404" locale={locale} />
-      <h1 id="page-header">{t(titleCode, locale)}</h1>
-      <div id="page-description">{t(descriptionCode, locale)}</div>
-      <div />
-    </>
-  );
+export const notFoundMetadata = buildMetadata({ title, description, path: "/404", locale: DEFAULT_LOCALE });
+
+export default function NotFoundPage() {
+  return <PageIntro title={title} description={description} />;
 }

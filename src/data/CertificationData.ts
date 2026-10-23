@@ -2,7 +2,6 @@ import { scrumOrgLink } from "./SiteData";
 
 interface ICertificationData {
   name: string;
-  isNameTranslatableCode?: boolean;
   badgeLink: string;
   imagePath: string;
 }
@@ -10,7 +9,6 @@ interface ICertificationData {
 interface ICertificationGroup {
   title: {
     label: string;
-    isNameTranslatableCode?: boolean;
     date: Date;
   }[];
   certifications: ICertificationData[];
@@ -22,14 +20,15 @@ const githubActionsBadgeLink = "https://www.credly.com/badges/bcc83162-8396-4e95
 const githubAdvancedSecurityBadgeLink = "https://www.credly.com/badges/a20775eb-8713-4013-b0fe-d5e359a543e8";
 const githubFoundationsBadgeLink = "https://www.credly.com/badges/85ef131c-c299-4bd5-aa55-77141c16c822";
 const githubCopilotBadgeLink = "https://www.credly.com/badges/e8fd9833-c41b-40b9-8af6-7c7105b7f5c2";
-const githubAdministrationBadgeLink = "https://learn.microsoft.com/fr-fr/users/arnaudflaesch-5043/credentials/84831c38dd0a695a";
+const githubAdministrationBadgeLink =
+  "https://learn.microsoft.com/fr-fr/users/arnaudflaesch-5043/credentials/84831c38dd0a695a";
 
 const leadingSafeBadgeLink = "https://www.credly.com/badges/73047751-ef1f-47b9-a0d1-6c4f24319c61";
 const googleCloudDigitalLeaderBadgeLink = "https://www.credly.com/badges/b849f990-e002-40ac-b8dd-ac3f5f9fa211";
 const googleCloudProfessionalDeveloperBadgeLink = "https://www.credly.com/badges/6fc2687b-3a79-4828-b164-f5da38917bd0";
 const inrCertificateLink = "https://numerique-responsable.univ-lr.fr/ecocertifications/";
 
-export const certificationsData = [
+export const certificationsData: ICertificationGroup[] = [
   {
     title: [{ label: "Google Cloud Professional Cloud Developer & Digital Leader", date: new Date(2024, 5, 4) }],
     imageSize: 130,
@@ -133,18 +132,15 @@ export const certificationsData = [
     ]
   },
   {
-    title: [
-      { label: "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE", isNameTranslatableCode: true, date: new Date(2024, 3, 1) }
-    ],
+    title: [{ label: "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE", date: new Date(2024, 3, 1) }],
     imageSize: 450,
     imageHeight: 270,
     certifications: [
       {
         name: "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE",
-        isNameTranslatableCode: true,
         badgeLink: inrCertificateLink,
         imagePath: "/certifications/numerique-responsable.png"
       }
     ]
   }
-] as ICertificationGroup[];
+];

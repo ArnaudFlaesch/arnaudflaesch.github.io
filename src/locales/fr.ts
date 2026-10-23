@@ -1,4 +1,5 @@
-export const translationFR = {
+const fr = {
+  // Common
   "DEVELOPED.WITH": "Développé avec",
   "ICONS.BY": "Icônes de",
   AT: "chez l'",
@@ -15,10 +16,9 @@ export const translationFR = {
   "MEDIUM.PROFILE": "Profil Medium",
   "STACK.OVERFLOW.PROFILE": "Profil Stack Overflow",
   "PAGE.NOT.FOUND.MESSAGE": "La page que vous cherchez n'existe pas.",
-  "404.NOT.FOUND": "404: Page non trouvée"
-};
+  "404.NOT.FOUND": "404: Page non trouvée",
 
-export const indexFR = {
+  // Home page
   "INDEX.PAGE.TITLE": "Bonjour !",
   "INDEX.PAGE.DESCRIPTION":
     "Je m'appelle Arnaud et je suis développeur. Vous trouverez sur ce site une présentation de mon parcours ainsi que les projets personnels sur lesquels je travaille.",
@@ -28,10 +28,9 @@ export const indexFR = {
   "BLOG.MESSAGE": "Des articles de blog",
   "RSS.FEED": "flux RSS",
   "CONTACT.MESSAGE": "Un formulaire de contact pour m'envoyer un email",
-  "RECENT.ARTICLES": "Articles récents"
-};
+  "RECENT.ARTICLES": "Articles récents",
 
-export const projetsFR = {
+  // Projects page
   "PROJECTS.PAGE.TITLE": "Projets personnels",
   "PROJECTS.PAGE.DESCRIPTION": "Les projets personnels sur lesquels je travaille.",
   "TECHNICAL.STACK": "Stack technique",
@@ -41,10 +40,10 @@ export const projetsFR = {
     "Backend du projet Dash : dashboard permettant d'afficher plusieurs widgets sur une même page comme un flux RSS, la météo ou encore un agenda.",
   "CASHMANAGER.PROJECT.DESCRIPTION": "Application de gestion de budget.",
   "PORTFOLIO.PROJECT.DESCRIPTION": "Site web personnel.",
-  "LANGUAGES.USED": "Langages et outils utilisés"
-};
+  "LANGUAGES.USED": "Langages et outils utilisés",
+  "GITHUB.LINK": "Lien GitHub",
 
-export const cvFR = {
+  // CV page
   "CV.PAGE.TITLE": "Curriculum Vitae",
   "CV.PAGE.DESCRIPTION":
     "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.",
@@ -60,25 +59,27 @@ export const cvFR = {
   EDUCATION: "Formation",
   "SUSTAINABLE.IT.KNOWLEDGE.CERTIFICATE": "Certificat de connaissances Numérique Responsable",
   "LANGUAGES.TOOLS": "Langages et technologies",
-  HOBBIES: "Centres d'intérêts"
-};
+  HOBBIES: "Centres d'intérêts",
 
-export const blogFR = {
+  // Blog
   "BLOG.PAGE.TITLE": "Blog",
   "BLOG.PAGE.DESCRIPTION":
     "Mon blog sur lequel vous trouverez des articles aussi bien sur des sujets techniques que sur d'autres sujets.",
-  "RSS.FEED.MESSAGE": "Flux RSS des articles"
-};
+  "RSS.FEED.MESSAGE": "Flux RSS des articles",
+  "WRITTEN.BY": "Écrit par",
+  "SHARE.ARTICLE": "Partager cet article :",
+  "SHARE.ON": "Partager sur",
 
-export const contactFR = {
+  // Contact page
   "CONTACT.PAGE.TITLE": "Contactez-moi",
   "CONTACT.PAGE.DESCRIPTION": "Formulaire de contact si vous souhaitez discuter.",
   "EMAIL.SENT": "Votre email a bien été envoyé !",
-  "SENT.ANOTHER.MAIL": "Envoyer un nouveau mail",
   "NAME.FIRSTNAME": "Votre nom et prénom",
   "YOUR.EMAIL.ADDRESS": "Votre adresse mail",
-  "EMAIL.NOT.VALID.MESSAGE": "Veuillez saisir une adresse email valide.",
-  "REQUIRED.FIELD.MESSAGE": "Ce champ est obligatoire.",
   MESSAGE: "Message",
   SEND: "Envoyer"
 };
+
+export type Translations = Record<keyof typeof fr, string>;
+
+export default fr;

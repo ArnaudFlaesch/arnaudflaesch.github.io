@@ -1,6 +1,6 @@
 import type { IRepoIcon } from "~/model/IRepoIcon";
 
-type IProjectData = {
+export type IProjectData = {
   name: string;
   description: string;
   repoIcons: IRepoIcon[];
@@ -44,9 +44,8 @@ export const projectsInfo: IProjectData[] = [
     name: "arnaudflaesch.github.io",
     description: "PORTFOLIO.PROJECT.DESCRIPTION",
     repoIcons: [
-      { name: "VueJS", label: "Frontend", path: "vuejs", extension: "png" },
-      { name: "Nuxt", label: "Frontend", extension: "png" },
-      { name: "Sass", label: "Frontend" },
+      { name: "ReactJS", label: "Frontend", extension: "png" },
+      { name: "CSS", label: "Frontend", extension: "png" },
       { name: "Typescript", label: "Frontend" },
       { name: "Github Actions", label: "Tools", extension: "png", path: "github-actions" },
       { name: "Cypress", label: "Frontend", extension: "png" }

@@ -1,10 +1,10 @@
-import { IExperience } from "~/model/IExperience";
+import type { IExperience } from "~/model/IExperience";
 
 export const jobData: IExperience[] = [
   {
     title_fr: "Développeur d'applications",
     title_en: "Software Developer",
-    dateDebut: new Date(Date.parse("2024-06-17")),
+    dateDebut: new Date("2024-06-17"),
     name: "Institut Pasteur",
     location: "Paris 15ème, France",
     logoPath: "/company-logos/institut-pasteur.svg",
@@ -29,8 +29,8 @@ export const jobData: IExperience[] = [
   {
     title_fr: "Développeur backend Java",
     title_en: "Java backend developer",
-    dateDebut: new Date(Date.parse("2021-08-02")),
-    dateFin: new Date(Date.parse("2024-05-24")),
+    dateDebut: new Date("2021-08-02"),
+    dateFin: new Date("2024-05-24"),
     name: "Publicis Sapient France",
     location: "Paris 20ème, France",
     logoPath: "/company-logos/publicis-sapient.png",
@@ -60,8 +60,8 @@ export const jobData: IExperience[] = [
   {
     title_fr: "Développeur fullstack",
     title_en: "Fullstack developer",
-    dateDebut: new Date(Date.parse("2019-05-01")),
-    dateFin: new Date(Date.parse("2021-04-30")),
+    dateDebut: new Date("2019-05-01"),
+    dateFin: new Date("2021-04-30"),
     name: "tbMaestro",
     location: "Montréal, Canada",
     logoPath: "/company-logos/tbmaestro.png",
@@ -93,8 +93,8 @@ export const jobData: IExperience[] = [
   {
     title_fr: "Développeur fullstack",
     title_en: "Fullstack developer",
-    dateDebut: new Date(Date.parse("2017-09-18")),
-    dateFin: new Date(Date.parse("2019-04-12")),
+    dateDebut: new Date("2017-09-18"),
+    dateFin: new Date("2019-04-12"),
     name: "Sopra Steria",
     location: "Montreuil, France",
     logoPath: "/company-logos/sopra-steria.png",
@@ -144,8 +144,8 @@ export const jobData: IExperience[] = [
     title_fr: "Développeur Java",
     title_en: "Java developer",
     name: "Franprix - Leader Price",
-    dateDebut: new Date(Date.parse("2016-9-01")),
-    dateFin: new Date(Date.parse("2017-08-31")),
+    dateDebut: new Date("2016-9-01"),
+    dateFin: new Date("2017-08-31"),
     location: "Chennevières sur Marne, France",
     logoPath: "/company-logos/franprix.png",
     description_fr: [
@@ -169,8 +169,8 @@ export const jobData: IExperience[] = [
     title_fr: "Développeur Web",
     title_en: "Web developer",
     name: "AB Cube",
-    dateDebut: new Date(Date.parse("2015-10-01")),
-    dateFin: new Date(Date.parse("2016-08-31")),
+    dateDebut: new Date("2015-10-01"),
+    dateFin: new Date("2016-08-31"),
     location: "Montreuil, France",
     logoPath: "/company-logos/ab-cube.png",
     description_fr: [
@@ -188,8 +188,8 @@ export const jobData: IExperience[] = [
     title_fr: "Développeur Java",
     title_en: "Java developer",
     name: "GMF Assurances",
-    dateDebut: new Date(Date.parse("2015-05-15")),
-    dateFin: new Date(Date.parse("2015-07-31")),
+    dateDebut: new Date("2015-05-15"),
+    dateFin: new Date("2015-07-31"),
     location: "Levallois-Perret, France",
     logoPath: "/company-logos/gmf.jpg",
     description_fr: [
@@ -207,8 +207,8 @@ export const jobData: IExperience[] = [
     title_fr: "Développeur Java / JS",
     title_en: "Java / JS developer",
     name: "La Réserve Paris",
-    dateDebut: new Date(Date.parse("2014-06-02")),
-    dateFin: new Date(Date.parse("2014-07-31")),
+    dateDebut: new Date("2014-06-02"),
+    dateFin: new Date("2014-07-31"),
     location: "Paris 8ème, France",
     logoPath: "/company-logos/la-reserve-paris.jpg",
     description_fr: [
