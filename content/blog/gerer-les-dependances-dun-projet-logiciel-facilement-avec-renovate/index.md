@@ -93,9 +93,12 @@ certain nombre de règles parmi lesquelles :
 - Déclarer une API publique.
 - Respecter le format majeur.mineur.correctif.
 - Incrémenter le nombre associé au correctif lorsqu'une correction rétrocompatible est introduite.
-- Incrémenter le nombre associé à la version mineure lorsqu'une nouvelle fonctionnalité rétrocompatible est introduite dans l'API publique. Le nombre associé au correctif est remis à 0.
-- Incrémenter le nombre associé à la version majeure lorsqu'une nouvelle fonctionnalité non rétrocompatible est introduite dans l'API publique. Les nombres associés à la version mineure et au correctif sont remis à 0.
-- Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les nombres correctement incrémentés.
+- Incrémenter le nombre associé à la version mineure lorsqu'une nouvelle fonctionnalité rétrocompatible est introduite
+  dans l'API publique. Le nombre associé au correctif est remis à 0.
+- Incrémenter le nombre associé à la version majeure lorsqu'une nouvelle fonctionnalité non rétrocompatible est
+  introduite dans l'API publique. Les nombres associés à la version mineure et au correctif sont remis à 0.
+- Ne pas modifier le contenu d'une version existante mais à la place en livrer une nouvelle avec les nombres
+  correctement incrémentés.
 
 ## Installation et utilisation de Renovate
 
@@ -115,7 +118,7 @@ Les différentes façons d'utiliser Renovate sont détaillées ici :
 
 Pour vous donner un exemple, voici la configuration nécessaire pour Azure Devops :
 
-#### **`azure-pipelines.yml`**
+### **`azure-pipelines.yml`**
 
 ```yml
 pool:
@@ -132,7 +135,7 @@ steps:
     displayName: "Run renovate"
 ```
 
-#### **`config.js`**
+### **`config.js`**
 
 ```js
 module.exports = {
@@ -168,8 +171,12 @@ Pour aller plus loin, vous pouvez modifier la configuration par défaut en modif
 présent dans chaque projet analysé en ajoutant des options telles que :
 
 - _reviewers_ pour renseigner les utilisateurs assignés aux PR créées.
-- _packageRules_ pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne pas créer des PR séparées à chaque fois.
-- _automerge_ pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des dépendances, mais associée à _packageRules_ par exemple, cela vous permet de merge automatiquement certains outils mineurs comme les _types_ des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
+- _packageRules_ pour appliquer une règle à plusieurs packages, comme les dépendances Angular, et les grouper pour ne
+  pas créer des PR séparées à chaque fois.
+- _automerge_ pour merge automatiquement une PR. Personnellement je ne recommande pas cette option pour la plupart des
+  dépendances, mais associée à _packageRules_ par exemple, cela vous permet de merge automatiquement certains outils
+  mineurs comme les _types_ des projets Node.JS ou d'autres devDependencies qui ne risquent pas d'ajouter des bugs. Cela
+  permettra de ne pas saturer la liste des pull requests et de vous concentrer sur les plus importantes d'entre elles.
 
 ## Quelques points importants
 

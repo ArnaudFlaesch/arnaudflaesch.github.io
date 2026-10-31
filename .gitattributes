@@ -1,0 +1,2 @@
+# Keep LF line endings in every checkout, as set in .editorconfig and expected by Prettier
+* text=auto eol=lf

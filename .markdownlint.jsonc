@@ -7,7 +7,11 @@
     "indent": 4
   },
   "MD013": {
-    "line_length": 120
+    "line_length": 120,
+    "code_blocks": false
+  },
+  "MD024": {
+    "siblings_only": true
   },
   "no-hard-tabs": false,
   "whitespace": false

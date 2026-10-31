@@ -25,7 +25,7 @@
     "code:format": "prettier . --write",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",
-    "cy:verify": "npx cypress verify"
+    "cy:verify": "cypress verify"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -49,6 +49,7 @@
     "cypress": "16.2.1",
     "cypress-multi-reporters": "2.0.5",
     "eslint": "10.14.0",
+    "eslint-config-next": "16.4.3",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-cypress": "7.0.2",
     "globals": "17.13.0",

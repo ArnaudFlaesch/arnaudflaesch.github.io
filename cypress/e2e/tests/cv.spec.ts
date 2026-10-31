@@ -1,4 +1,3 @@
-/// <reference types='cypress' />
 import { checkSeo } from "../../support/seo";
 
 describe("CV page tests", () => {

@@ -56,7 +56,7 @@ Pour cela, il suffit de se rendre dans "Paramètres" -> "Sécurité et analyse d
 et cliquer sur "Activer". Cela vous amènera sur une page où vous pourrez créer le fichier dependabot.yml
 et l'ajouter au dépôt.
 
-#### **`dependabot.yml`**
+### **`dependabot.yml`**
 
 ```yml
 # Exemple de configuration Dependabot pour mettre
@@ -212,7 +212,8 @@ Ce que j'ai apprécié en en apprenant plus sur GitHub Advanced Security est de 
 le code d'un projet sans avoir à sortir de GitHub et recourir à des applications tierces comme Snyk par exemple,
 même si je continue de l'utiliser sur des projets personnels.
 
-L'utilisation de GitHub Advanced Security n'empêche pas cependant de rester vigilant et de mettre en place les bonnes pratiques au niveau du code
+L'utilisation de GitHub Advanced Security n'empêche pas cependant de rester vigilant et de mettre en place les bonnes
+pratiques au niveau du code
 et de la sécurité, ainsi que de faire de la veille sur ces sujets. Ces outils sont là pour donner la possibilité
 aux développeurs d'améliorer la sécurité d'une application tout en allégeant leur travail, mais le plus important
 est que l'équipe de développement soit formée et sensibilisée au sujet de la sécurité.
