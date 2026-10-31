@@ -8,13 +8,9 @@
       "matchPackageNames": ["/^eslint/", "/^@eslint/", "/typescript-eslint/"]
     },
     {
-      "groupName": "nuxt",
-      "matchPackageNames": ["nuxt", "/^@nuxt//","/^@nuxtjs//"]
-    },
-    {
       "groupName": "stylelint",
       "matchPackageNames": ["/^stylelint/"]
-    },
+    }
   ],
   "schedule": ["on wednesday and friday at 2:00 pm"]
 }

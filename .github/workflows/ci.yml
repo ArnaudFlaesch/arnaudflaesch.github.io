@@ -19,18 +19,6 @@ jobs:
           node-version: 26.13.0
           cache: "npm"
 
-      - name: Cache node modules
-        uses: actions/cache@v6
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
       - name: Install dependencies
         # The Cypress binary (the only install script needed) is installed by the Cypress action
         run: npm ci --ignore-scripts
@@ -40,6 +28,7 @@ jobs:
           npm run lint:styles
           npm run lint:styles:report
           npm run eslint
+          npm run lint:md
 
       - name: Build
         env:

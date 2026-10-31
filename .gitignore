@@ -1,12 +1,8 @@
 # Next.js and build outputs
 .next
 out
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+next-env.d.ts
+tsconfig.tsbuildinfo
 
 # Node dependencies
 node_modules
@@ -17,16 +13,16 @@ logs
 
 # Misc
 .DS_Store
-.fleet
 .idea
 
 # Local env files
 .env.*
 !.env.example
 
-.unlighthouse/
-cypress/downloads/
-
+# Lint and test reports
 styleLintReport.json
-
-tsconfig.tsbuildinfo
+cypress/downloads/
+cypress/screenshots/
+cypress/results/
+cypress/reports/
+tests-report.json
