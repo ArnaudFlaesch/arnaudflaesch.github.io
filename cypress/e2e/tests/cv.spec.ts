@@ -1,5 +1,4 @@
 /// <reference types='cypress' />
-import * as path from "path";
 import { checkSeo } from "../../support/seo";
 
 describe("CV page tests", () => {
@@ -11,10 +10,10 @@ describe("CV page tests", () => {
   it("Should display the CV page", () => {
     // Download CV
     const cvFilename = "Curriculum Vitae Arnaud Flaesch.pdf";
-    cy.readFile(path.join(Cypress.config("downloadsFolder"), cvFilename)).should("not.exist");
+    cy.readFile(`${Cypress.config("downloadsFolder")}/${cvFilename}`).should("not.exist");
     cy.get("#cv-download-button").should("have.text", "Télécharger mon CV");
     cy.get("#cv-download-button").click();
-    cy.readFile(path.join(Cypress.config("downloadsFolder"), cvFilename));
+    cy.readFile(`${Cypress.config("downloadsFolder")}/${cvFilename}`);
 
     const blockTitles = [
       "Développeur d'applications",
