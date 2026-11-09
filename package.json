@@ -49,9 +49,9 @@
     "cypress": "16.2.1",
     "cypress-multi-reporters": "2.1.0",
     "eslint": "10.14.0",
-    "eslint-config-next": "16.4.5",
+    "eslint-config-next": "16.4.6",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-cypress": "7.0.2",
+    "eslint-plugin-cypress": "7.0.4",
     "globals": "17.14.0",
     "markdownlint-cli": "0.50.0",
     "mochawesome": "8.1.1",
@@ -61,6 +61,6 @@
     "stylelint": "17.16.0",
     "stylelint-config-standard-scss": "17.0.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.72.1"
+    "typescript-eslint": "8.72.2"
   }
 }
